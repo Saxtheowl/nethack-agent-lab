@@ -1,0 +1,18 @@
+services:
+  bothack-lab:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: super-nethack-bothack-lab:local
+    container_name: super-nethack-bothack-lab
+    ports:
+      - "2223:22"
+      - "8080:8080"
+    volumes:
+      - ./recordings:/lab/recordings
+      - ./wins:/lab/wins
+      - ./seeds:/lab/seeds
+      - ./logs:/lab/logs
+      - ./workspace:/lab/workspace
+    environment:
+      - BOTLAB_SSH_PASSWORD=botlab

@@ -1,0 +1,21 @@
+--- a/src/hacklib.c	2026-05-17 13:53:33.824476000 +0000
++++ b/src/hacklib.c	2026-05-17 13:53:33.844476124 +0000
+@@ -473,7 +473,17 @@
+ void
+ setrandom()
+ {
+-  
++  /* SUPER_NETHACK: honor NETHACK_SEED env var for deterministic replays.
++   * When set, RNG is seeded ONLY from this value (no /dev/urandom mixing,
++   * no time(NULL) mixing) so the same seed produces the same game. */
++  {
++    const char *seed_env = getenv("NETHACK_SEED");
++    if (seed_env && *seed_env) {
++      srandom((unsigned int) strtoul(seed_env, (char **)0, 10));
++      return;
++    }
++  }
++
+   FILE *fptr = NULL;
+   int rnd[2];
+ 

@@ -1,0 +1,17 @@
+services:
+  bothack:
+    build: .
+    image: bothack-nh343:latest
+    container_name: bothack-nh343
+    ports:
+      - "2225:22"     # SSH (2222=super-nethack, 2223=bothack-lab already in use)
+      - "8085:8080"   # Replay web UI (8080 taken by bothack-lab)
+    volumes:
+      - bothack-data:/data
+    restart: unless-stopped
+    environment:
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
+
+volumes:
+  bothack-data:

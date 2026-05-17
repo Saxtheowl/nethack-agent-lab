@@ -1,0 +1,39 @@
+# BotHack-compatible NetHack 3.4.3 tty settings.
+
+OPTIONS=name:smartbot3
+OPTIONS=role:Valkyrie
+OPTIONS=race:Dwarf
+OPTIONS=gender:male
+OPTIONS=align:Lawful
+
+OPTIONS=lit_corridor
+OPTIONS=!sparkle
+OPTIONS=runmode:teleport
+OPTIONS=!timed_delay
+
+OPTIONS=!showexp
+OPTIONS=showscore
+OPTIONS=time
+OPTIONS=color
+OPTIONS=boulder:8
+OPTIONS=!tombstone
+OPTIONS=!news
+OPTIONS=!legacy
+OPTIONS=suppress_alert:3.4.3
+OPTIONS=hilite_pet
+
+OPTIONS=!autopickup
+OPTIONS=pickup_types:$
+OPTIONS=pickup_burden:unburdened
+OPTIONS=!prayconfirm
+OPTIONS=pettype:none
+OPTIONS=!cmdassist
+OPTIONS=disclose:yi +avgc
+OPTIONS=menustyle:partial
+
+OPTIONS=!mail
+
+OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
+OPTIONS=traps:\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^
+OPTIONS=dungeon: |--------||.-|]]}}.##<><>_\\\\{{~.}..}} #}
+OPTIONS=objects:m

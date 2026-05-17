@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BotHack Replay - Games</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="page-index">
+<header>
+  <h1>BotHack · NetHack 3.4.3 replays</h1>
+  <div id="summary" class="muted"></div>
+</header>
+
+<main>
+  <section id="winning">
+    <h2>Parties gagnées <small id="winning-count" class="muted"></small></h2>
+    <table class="games" id="winning-table">
+      <thead><tr>
+        <th>#</th><th>run</th><th>seed</th><th>seed note</th><th>ttyrec</th><th></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <p class="muted small">
+    Cette interface liste uniquement les ascensions conservees dans <code>wins/</code>.
+    Les seeds deterministes apparaitront ici pour les futures wins locales qui en fournissent une.
+  </p>
+</main>
+
+<script>
+function bytes(n) {
+  if (!n) return "0";
+  const u = ["B","KB","MB","GB"]; let i=0;
+  while (n >= 1024 && i < u.length-1) { n/=1024; i++; }
+  return n.toFixed(n<10?1:0) + " " + u[i];
+}
+function short(id) {
+  return id.length > 34 ? id.slice(0, 31) + "..." : id;
+}
+function seed(g) {
+  if (g.seed !== null && g.seed !== undefined && g.seed !== "") return `<code>${g.seed}</code>`;
+  return `<span class="muted">${g.seed_source || "unknown"}</span>`;
+}
+function replayLink(g) {
+  if (!g.recording_id) return "";
+  return `<a href="/replay?game=${encodeURIComponent(g.id)}">replay -></a>`;
+}
+function winRow(g, n) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>#${n}</td>
+    <td title="${g.id}">${short(g.id)}</td>
+    <td>${seed(g)}</td>
+    <td class="muted">${g.seed_note || ""}</td>
+    <td>${bytes(g.ttyrec_size)}</td>
+    <td>${replayLink(g)}</td>`;
+  return tr;
+}
+function attemptRow(g) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td title="${g.id}">${short(g.id)}</td>
+    <td>${seed(g)}</td>
+    <td>${g.death || (g.ascended ? "ascended" : "saved")}</td>
+    <td>${bytes(g.ttyrec_size)}</td>
+    <td>${replayLink(g)}</td>`;
+  return tr;
+}
+async function refresh() {
+  const data = await (await fetch("/api/games")).json();
+  const wins = data.games.filter(g => g.category === "winning");
+  document.getElementById("summary").textContent =
+    `${wins.length}/10 wins`;
+
+  const wtbody = document.querySelector("#winning-table tbody");
+  wtbody.innerHTML = "";
+  if (wins.length) wins.forEach((g, i) => wtbody.appendChild(winRow(g, i + 1)));
+  else wtbody.innerHTML = '<tr><td colspan="6" class="muted">Aucune ascension sauvegardée.</td></tr>';
+  document.getElementById("winning-count").textContent = `(${wins.length})`;
+
+}
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

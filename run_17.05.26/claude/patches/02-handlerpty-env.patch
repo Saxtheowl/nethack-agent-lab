@@ -1,0 +1,22 @@
+--- a/jta26/jni/src/HandlerPTY.c	2026-05-17 15:18:10.609797176 +0000
++++ b/jta26/jni/src/HandlerPTY.c	2026-05-17 15:18:10.696796871 +0000
+@@ -10,6 +10,9 @@
+ #include <sys/ioctl.h>
+ #include <pty.h>		/* most interesting part: openpty, forkpty */
+ 
++/* SUPER_NETHACK: inherit the parent's env instead of stripping it. */
++extern char **environ;
++
+ static void fill_termios(struct termios *tp);
+ static void fill_winsize(struct winsize *wp);
+ 
+@@ -72,8 +75,7 @@
+ 	}
+ 	if (rc == 0) {	/* child */
+ 		char *eargv[] = { ncmd, NULL };
+-		char *eenvp[] = { "TERM=xterm", NULL };
+-		execve(ncmd, eargv, eenvp);
++		execve(ncmd, eargv, environ);
+ 		fprintf(stderr, "HandlerPTY.start: execve(%s) failed: %s\n",
+ 		    ncmd, strerror(errno));
+ 		exit(1);

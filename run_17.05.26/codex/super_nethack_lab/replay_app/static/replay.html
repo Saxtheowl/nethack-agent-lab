@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BotHack Replay</title>
+<link rel="stylesheet" href="/static/xterm.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="page-replay">
+<header>
+  <a href="/" class="back">&lt;- toutes les parties</a>
+  <h1 id="title">replay</h1>
+  <span id="meta-bar" class="muted"></span>
+</header>
+
+<main>
+  <div id="term-wrap"><div id="term"></div></div>
+
+  <section class="controls">
+    <div class="row top-row">
+      <div class="readout">
+        <span class="big" id="readout-turn">T:?</span>
+        <span class="readout-sub">frame <span id="readout-frame">0</span>/<span id="readout-frames">0</span></span>
+        <span class="readout-sub">@ <span id="readout-time">0.0s</span></span>
+      </div>
+      <div class="speeds">
+        speed:
+        <button data-speed="0.25">1/4x</button>
+        <button data-speed="0.5">1/2x</button>
+        <button data-speed="1" class="active">1x</button>
+        <button data-speed="2">2x</button>
+        <button data-speed="4">4x</button>
+        <button data-speed="8">8x</button>
+        <button data-speed="32">32x</button>
+        <button data-speed="0" id="skip-pauses" title="lecture sans pause">inf</button>
+      </div>
+    </div>
+
+    <div class="row scrub-row">
+      <input type="range" id="scrubber" min="0" max="0" step="1" value="0">
+    </div>
+
+    <div class="row btn-row">
+      <button id="btn-home" title="premiere frame">start</button>
+      <button id="btn-t-100" title="-100 tours">-100T</button>
+      <button id="btn-t-10" title="-10 tours">-10T</button>
+      <button id="btn-t-1" title="-1 tour">-1T</button>
+      <button id="btn-f-1" title="-1 frame">-1f</button>
+      <button id="btn-play" class="primary" title="play/pause">play</button>
+      <button id="btn-f1" title="+1 frame">+1f</button>
+      <button id="btn-t1" title="+1 tour">+1T</button>
+      <button id="btn-t10" title="+10 tours">+10T</button>
+      <button id="btn-t100" title="+100 tours">+100T</button>
+      <button id="btn-end" title="derniere frame">end</button>
+    </div>
+
+    <div class="row jump-row">
+      <label>aller au tour:
+        <input type="number" id="jump-turn" min="0" step="1" placeholder="1500">
+      </label>
+      <button id="btn-jump">go</button>
+      <span class="muted help">Space play · fleches ±1T · Ctrl ±10T · Shift ±100T · [/]</span>
+    </div>
+  </section>
+</main>
+
+<script src="/static/xterm.js"></script>
+<script src="/static/xterm-fit.js"></script>
+<script src="/static/replay.js"></script>
+</body>
+</html>
