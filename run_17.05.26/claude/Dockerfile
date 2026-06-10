@@ -70,6 +70,13 @@ WORKDIR /build/BotHack
 COPY patches/02-handlerpty-env.patch /tmp/02-handlerpty-env.patch
 RUN patch -p1 < /tmp/02-handlerpty-env.patch
 
+# Route the "In what direction do you want to dig?" prompt to the public
+# DirectionHandler instead of throwing IllegalStateException. Without this,
+# the bot stalls on its core descend-by-digging strategy and never reaches
+# the late game — observed 0/297 ascensions before this fix.
+COPY patches/03-scraper-dig-direction.patch /tmp/03-scraper-dig-direction.patch
+RUN patch -p1 < /tmp/03-scraper-dig-direction.patch
+
 # Keep -target/-source at 1.7 — eclipse-temurin:8-jdk accepts it natively.
 # (Bumping it for newer JDKs broke the build because target 1.7 is no longer
 # supported in JDK 12+.)

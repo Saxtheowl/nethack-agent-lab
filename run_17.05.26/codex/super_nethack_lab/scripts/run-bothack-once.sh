@@ -9,6 +9,7 @@ fi
 
 export JAVA_HOME=/opt/java/openjdk
 export PATH="$JAVA_HOME/bin:$PATH"
+export TERM=xterm
 unset CLASSPATH
 
 run_id="${1:-$(date -u +%Y%m%dT%H%M%SZ)}"
@@ -18,10 +19,11 @@ mkdir -p "$run_dir"
 cd /opt/bothack
 rm -f ./*.ttyrec ./*.log ./*.log.*
 rm -rf /opt/nh343/nh343/var/save/*
+rm -f /opt/nh343/nh343/var/bones* /opt/nh343/nh343/var/bon*
 rm -f /opt/nh343/nh343/var/*smartbot3* /opt/nh343/nh343/var/*Smartbot3*
 
 seed="${BOTLAB_NETHACK_SEED:-$(od -An -N4 -tu4 /dev/urandom | tr -d ' ')}"
-export NETHACK_SEED="$seed"
+printf '%s\n' "$seed" >/opt/nh343/nh343/var/botlab.seed
 seed_file="/lab/seeds/${run_id}.json"
 cat > "$seed_file" <<JSON
 {
@@ -29,9 +31,9 @@ cat > "$seed_file" <<JSON
   "started_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
   "nethack": "3.4.3",
   "seed": ${seed},
-  "seed_env": "NETHACK_SEED",
+  "seed_source": "/opt/nh343/nh343/var/botlab.seed",
   "engine": "BotHack mainbot",
-  "seed_note": "This run uses patched NetHack 3.4.3 setrandom() with NETHACK_SEED, inherited by BotHack HandlerPTY."
+  "seed_note": "This run uses patched NetHack 3.4.3 setrandom() with NETHACK_SEED. BotHack/JTA remains unmodified; the NetHack wrapper reads this seed from a local file and exports it only for NetHack."
 }
 JSON
 
@@ -55,7 +57,13 @@ if grep -qi 'ascended' "$run_dir"/record "$run_dir"/logfile 2>/dev/null; then
   mkdir -p "/lab/wins/${run_id}"
   cp -a "$run_dir"/. "/lab/wins/${run_id}/"
   cp -f "$seed_file" "/lab/wins/${run_id}/seed.json"
+  rm -f "/lab/logs/${run_id}.stdout.log" "/lab/logs/${run_id}.stderr.log"
+elif [ "${BOTLAB_KEEP_FAILURES:-0}" != "1" ]; then
+  rm -rf "$run_dir"
+  rm -f "$seed_file"
+  rm -f "/lab/logs/${run_id}.stdout.log" "/lab/logs/${run_id}.stderr.log"
 fi
+rm -f /opt/nh343/nh343/var/botlab.seed
 
 python3 /opt/replay_app/index_recordings.py --root /lab >/lab/recordings/index.json
 exit "$status"

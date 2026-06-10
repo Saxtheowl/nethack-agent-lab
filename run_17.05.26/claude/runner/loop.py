@@ -119,13 +119,37 @@ class State:
                 else:
                     summary["game_dir"] = str(game_dir) if game_dir else None
             else:
-                # Lost — drop the ttyrec + logs to save disk.
-                if game_dir and game_dir.exists():
-                    try:
-                        shutil.rmtree(game_dir)
-                    except Exception as e:
-                        log(f"   could not delete {game_dir}: {e}")
-                summary["game_dir"] = None
+                # Lost — drop the ttyrec + logs unless this run beat the
+                # previous "longest survivor" bar. We keep at most 3 such
+                # diagnostic runs to help spot systematic problems without
+                # eating disk on every failure.
+                keep = False
+                lost = sorted(
+                    (g for g in self.games if not g["ascended"]
+                     and g.get("game_dir")),
+                    key=lambda g: -(g.get("final_turn") or 0))
+                if (meta.get("final_turn") or 0) > 0:
+                    if len(lost) < 3:
+                        keep = True
+                    else:
+                        cutoff = lost[2].get("final_turn") or 0
+                        if (meta.get("final_turn") or 0) > cutoff:
+                            keep = True
+                            # evict the previous shortest of the top 3
+                            evict = lost[2]
+                            ed = evict.get("game_dir")
+                            if ed:
+                                try: shutil.rmtree(ed)
+                                except Exception: pass
+                                evict["game_dir"] = None
+                if keep:
+                    summary["game_dir"] = str(game_dir) if game_dir else None
+                else:
+                    if game_dir and game_dir.exists():
+                        try: shutil.rmtree(game_dir)
+                        except Exception as e:
+                            log(f"   could not delete {game_dir}: {e}")
+                    summary["game_dir"] = None
             self.games.append(summary)
             self.save()
             return ascended

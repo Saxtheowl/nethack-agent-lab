@@ -1,0 +1,12 @@
+services:
+  nethack:
+    build: .
+    image: easy_nethack_recreated-nethack:latest
+    container_name: super-nethack-recreated
+    ports:
+      - "2222:22"
+    volumes:
+      - nethack-data:/data
+
+volumes:
+  nethack-data:

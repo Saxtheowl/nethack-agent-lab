@@ -21,17 +21,29 @@ export NETHACKOPTIONS
 
 # Per-worker isolated playground.
 # WORKER_ID=0 means "use the default /nh343 (serial mode, shared var/)".
-# Each game starts fresh: nuke save dir and TRUNCATE (not delete) perm —
-# NetHack opens perm with O_RDWR (no O_CREAT) and loops forever on
-# fcntl(-1, F_SETLK, ...) if the file doesn't exist.
+#
+# Each game starts fresh. We must clear:
+#   • save/*  — actual saved games (.gz)
+#   • <uid><plname>.[0-9]* — per-level state files in the dir root. When a
+#     previous game was KILLED (not saved cleanly), NetHack detects these
+#     and prompts "There is already a game in progress under your name.
+#     [y]Destroy / [r]Recover / [n]Cancel" — BotHack doesn't expect that
+#     prompt and stalls forever on it.
+#   • bon*.gz — bones files left by dead characters. Less critical (our
+#     rcfile sets OPTIONS=!bones), but the per-worker dir might still
+#     accumulate them.
+# perm must be TRUNCATED (not deleted) — NetHack opens it with O_RDWR
+# (no O_CREAT) and otherwise loops on fcntl(-1, F_SETLK, ...).
 if [ "$WORKER_ID" != "0" ]; then
     export NETHACKDIR="/nh343-w${WORKER_ID}"
-    rm -f "$NETHACKDIR"/save/* 2>/dev/null || true
-    : > "$NETHACKDIR/perm" 2>/dev/null || true
+    DIR="$NETHACKDIR"
 else
-    rm -f /nh343/var/save/* 2>/dev/null || true
-    : > /nh343/var/perm 2>/dev/null || true
+    DIR="/nh343/var"
 fi
+rm -f "$DIR"/save/* 2>/dev/null || true
+rm -f "$DIR"/0BotHack.[0-9]* "$DIR"/0BotHack 2>/dev/null || true
+rm -f "$DIR"/bon[A-Za-z0-9]*.gz 2>/dev/null || true
+: > "$DIR/perm" 2>/dev/null || true
 
 cd "$NH_GAME_DIR"
 exec /nh343/nethack.343-nao "$@"

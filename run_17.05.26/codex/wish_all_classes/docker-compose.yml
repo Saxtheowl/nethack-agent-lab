@@ -1,0 +1,16 @@
+services:
+  nethack:
+    build: .
+    image: wish_all_classes-nethack:latest
+    container_name: super-nethack-wish-all-classes
+    ports:
+      - "2223:22"
+    environment:
+      WISH_POOL_TARGET_PER_ROLE: "1"
+      WISH_MAX_CONCURRENT_BOTS: "13"
+      WISH_MAX_ACTIVE_NETHACK: "55"
+    volumes:
+      - wish-all-classes-data:/data
+
+volumes:
+  wish-all-classes-data:

@@ -1,0 +1,254 @@
+[
+    {
+        "Id": "8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e",
+        "Created": "2026-05-10T22:38:47.947077488Z",
+        "Path": "/opt/nethack/entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1892512,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-05-24T14:09:19.800174788Z",
+            "FinishedAt": "2026-05-24T14:09:19.478753701Z"
+        },
+        "Image": "sha256:70bf92599f64cf9f2f5216bc13a26a945f7a742871deb79ec79044344abc11bb",
+        "ResolvConfPath": "/var/lib/docker/containers/8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e/hostname",
+        "HostsPath": "/var/lib/docker/containers/8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e/hosts",
+        "LogPath": "/var/lib/docker/containers/8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e/8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e-json.log",
+        "Name": "/super-nethack",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "easy_win_nethack-data:/data:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "easy_win_default",
+            "PortBindings": {
+                "22/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "2222"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "8c8bd168c9b82a55ab2c368357f092a2ae4d76177696bfb8ba184a8fb7c5199e",
+                "LowerDir": "/var/lib/docker/overlay2/4a179e1dfe5f2676c4f290531d60890e0873bf5a198190cbece347b68b7f8d44-init/diff:/var/lib/docker/overlay2/eb7b6ve7d6c8cis1z6oonpb9g/diff:/var/lib/docker/overlay2/8hknfzi1mk4x1n6l9tihd42cv/diff:/var/lib/docker/overlay2/jbn6xmdjhvgckfzn8h02jjkn3/diff:/var/lib/docker/overlay2/7x5gttspju9dnt6ohix4opqoy/diff:/var/lib/docker/overlay2/pt8uwgipwgcj1lo3xpgttq2ao/diff:/var/lib/docker/overlay2/mg3i9y12bl1d9zmew837ko037/diff:/var/lib/docker/overlay2/4p1wu89dclwu1jgbw8mbnkmcl/diff:/var/lib/docker/overlay2/no7580g42aiv6lclqp3n1yiod/diff:/var/lib/docker/overlay2/mgh2xg6j1sqdxp7xmf4r289vn/diff:/var/lib/docker/overlay2/x2c809ryksymdenapbk7h4bjo/diff:/var/lib/docker/overlay2/il0jcqolcwjpptmyz7h3u7tz7/diff:/var/lib/docker/overlay2/jegr81tr8gss7vu8zo1cner36/diff:/var/lib/docker/overlay2/aap1g7yo7fb75y1gmtl2ihitp/diff:/var/lib/docker/overlay2/dcq54022eg5xb178imnvizn5h/diff:/var/lib/docker/overlay2/ysphfhs0990h21rxlwunqr2lg/diff:/var/lib/docker/overlay2/3418bab8014d8f4d47161a653fe1b7321ede8ca149ba97a508e241eadde8bcdb/diff",
+                "MergedDir": "/var/lib/docker/overlay2/4a179e1dfe5f2676c4f290531d60890e0873bf5a198190cbece347b68b7f8d44/merged",
+                "UpperDir": "/var/lib/docker/overlay2/4a179e1dfe5f2676c4f290531d60890e0873bf5a198190cbece347b68b7f8d44/diff",
+                "WorkDir": "/var/lib/docker/overlay2/4a179e1dfe5f2676c4f290531d60890e0873bf5a198190cbece347b68b7f8d44/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "easy_win_nethack-data",
+                "Source": "/var/lib/docker/volumes/easy_win_nethack-data/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "8c8bd168c9b8",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "22/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=en_US.UTF-8",
+                "LC_ALL=en_US.UTF-8"
+            ],
+            "Cmd": null,
+            "Image": "easy_win-nethack",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/opt/nethack/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "6f49d07eb072ceabce0c883356ba8431a07d4478f7ee6858786fcf078b8ab2d4",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:70bf92599f64cf9f2f5216bc13a26a945f7a742871deb79ec79044344abc11bb",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "easy_win",
+                "com.docker.compose.project.config_files": "/home/roro/work/projects/super_nethack/easy_win/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/roro/work/projects/super_nethack/easy_win",
+                "com.docker.compose.replace": "super-nethack",
+                "com.docker.compose.service": "nethack",
+                "com.docker.compose.version": "2.39.1"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "0b29353a40b2f05744aaa4c736f79f8c1255bce1a29abea54813c32bf9e0f195",
+            "SandboxKey": "/var/run/docker/netns/0b29353a40b2",
+            "Ports": {
+                "22/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "2222"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "2222"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "easy_win_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "super-nethack",
+                        "nethack"
+                    ],
+                    "MacAddress": "ee:34:b1:30:3f:13",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8c8488d2f09e8984d3d76f6fcb37f9b846ad62fcfd38d887691b04c62668fa75",
+                    "EndpointID": "51c7fab80d2bab708119cc42b1f9576d7f4c32baa49ca6918e8eae8303b9e9c2",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "super-nethack",
+                        "nethack",
+                        "8c8bd168c9b8"
+                    ]
+                }
+            }
+        }
+    }
+]

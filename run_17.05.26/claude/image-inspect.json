@@ -1,0 +1,73 @@
+[
+    {
+        "Id": "sha256:70bf92599f64cf9f2f5216bc13a26a945f7a742871deb79ec79044344abc11bb",
+        "RepoTags": [
+            "easy_win-nethack:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-05-10T22:38:42.763300361Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 205564654,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/8hknfzi1mk4x1n6l9tihd42cv/diff:/var/lib/docker/overlay2/jbn6xmdjhvgckfzn8h02jjkn3/diff:/var/lib/docker/overlay2/7x5gttspju9dnt6ohix4opqoy/diff:/var/lib/docker/overlay2/pt8uwgipwgcj1lo3xpgttq2ao/diff:/var/lib/docker/overlay2/mg3i9y12bl1d9zmew837ko037/diff:/var/lib/docker/overlay2/4p1wu89dclwu1jgbw8mbnkmcl/diff:/var/lib/docker/overlay2/no7580g42aiv6lclqp3n1yiod/diff:/var/lib/docker/overlay2/mgh2xg6j1sqdxp7xmf4r289vn/diff:/var/lib/docker/overlay2/x2c809ryksymdenapbk7h4bjo/diff:/var/lib/docker/overlay2/il0jcqolcwjpptmyz7h3u7tz7/diff:/var/lib/docker/overlay2/jegr81tr8gss7vu8zo1cner36/diff:/var/lib/docker/overlay2/aap1g7yo7fb75y1gmtl2ihitp/diff:/var/lib/docker/overlay2/dcq54022eg5xb178imnvizn5h/diff:/var/lib/docker/overlay2/ysphfhs0990h21rxlwunqr2lg/diff:/var/lib/docker/overlay2/3418bab8014d8f4d47161a653fe1b7321ede8ca149ba97a508e241eadde8bcdb/diff",
+                "MergedDir": "/var/lib/docker/overlay2/eb7b6ve7d6c8cis1z6oonpb9g/merged",
+                "UpperDir": "/var/lib/docker/overlay2/eb7b6ve7d6c8cis1z6oonpb9g/diff",
+                "WorkDir": "/var/lib/docker/overlay2/eb7b6ve7d6c8cis1z6oonpb9g/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:5d0ffcca6050b9c12db964453426d0c2bf06c4a53fb7754feeda08f53a3cf424",
+                "sha256:6916d73a526326306b3958ff034dc94f0b5188a8812c27626318277e1138bf19",
+                "sha256:3306fe29a01b3e4cbc3d466690d2c262d773b10f23528e76ddf44851d2c33ece",
+                "sha256:047f0cc9b5e78d79c224a2744f285a06982af95553e78e983539cfa789866578",
+                "sha256:881390c139a96998ae88f7264aed38b66e43b7aa9636c5efb17b94e4b737a00f",
+                "sha256:e08175604f1298be20d41745db5431fe1d4897d18e60fa650e21a156b1c3003d",
+                "sha256:fbfe92cb8c1e467b7b54369a61e997e77a7bd2433079d2405b62fb3ba07e7152",
+                "sha256:ce32ddeae1915473d4853bcf8df9803a23e7cd7e1831161f0888e6164d74ec18",
+                "sha256:c12e6e856d3ff4478901ef7c0d6565806ebbccef014ab521b5cc75a92bfcc944",
+                "sha256:bb53a3dca32902efd66faf5e919338d7a7c0390cbce9107cee90e194d259eeb3",
+                "sha256:e655fc98d8debffdffa7d0e94c7ed5dcce45c09540e815fcbf672003338fc262",
+                "sha256:7d4916f8af5716af63f8ca27058366b6592ab8a3791bcb6eeb1c7e10c0b06334",
+                "sha256:727312d0bc9441741f0390f8c725375a388d08d8f64334760064899eb2d2c491",
+                "sha256:bda268129b762cc1752ff827ee01e4c3213b5f1ef91f6f95a8c7b456d077dd9f",
+                "sha256:68db6f91d4aa67aec01c68a20a585377f32de03afe48d308271163b0348ad6ed",
+                "sha256:26a8bfcad8f39512cc01bd25365187b3a289fdf5a0fd23d2a22e67a8634faf3a"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-05-10T22:38:42.913564899Z"
+        },
+        "Config": {
+            "Cmd": null,
+            "Entrypoint": [
+                "/opt/nethack/entrypoint.sh"
+            ],
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=en_US.UTF-8",
+                "LC_ALL=en_US.UTF-8"
+            ],
+            "ExposedPorts": {
+                "22/tcp": {}
+            },
+            "Labels": {
+                "com.docker.compose.project": "easy_win",
+                "com.docker.compose.service": "nethack",
+                "com.docker.compose.version": "2.39.1"
+            },
+            "OnBuild": null,
+            "User": "",
+            "Volumes": null,
+            "WorkingDir": ""
+        }
+    }
+]

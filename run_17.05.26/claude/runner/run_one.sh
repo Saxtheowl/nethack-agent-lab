@@ -61,11 +61,11 @@ export TERM=xterm
 : "${USER:=bot}"; export USER
 : "${LOGNAME:=$USER}"; export LOGNAME
 
-# Wall-clock cap. Failed runs end quickly (death is fast); only winning games
-# run long. BotHack plays at ~10-15 turns/sec, ascending takes 50-100k turns,
-# so a real win is ~1.5-3h. We cap at 3h to release the loop from a runaway.
-# Override with $GAME_TIMEOUT_SEC for smoke-tests.
-timeout --signal=KILL "${GAME_TIMEOUT_SEC:-10800}" \
+# Wall-clock cap. We want to NOT kill a slow winning game under CPU
+# contention, so we set this very high (24h). Failed runs end quickly via
+# BotHack's own quit-when-idle/looping/stuck handlers (~3min idle). The
+# cap only catches the rare case where all internal anti-stuck fails.
+timeout --signal=KILL "${GAME_TIMEOUT_SEC:-86400}" \
   env LD_LIBRARY_PATH="$JNI_DIR" \
       java -Xms512m -Xmx2g -jar "$UBERJAR" "$CONFIG" \
   >"$OUT_DIR/bothack.log" 2>&1

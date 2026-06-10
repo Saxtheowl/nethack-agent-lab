@@ -25,6 +25,8 @@ while [ "$(count_wins)" -lt "$target" ]; do
   echo "Starting ${run_id}; wins=$(count_wins)/${target}"
   /opt/botlab_scripts/run-bothack-once.sh "$run_id" || true
   if [ ! -d "/lab/wins/${run_id}" ]; then
+    rm -rf "/lab/recordings/${run_id}"
+    rm -f "/lab/seeds/${run_id}.json"
     rm -f "/lab/logs/${run_id}.stdout.log" "/lab/logs/${run_id}.stderr.log"
   fi
 done

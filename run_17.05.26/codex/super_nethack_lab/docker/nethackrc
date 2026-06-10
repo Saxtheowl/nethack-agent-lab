@@ -1,16 +1,20 @@
-# BotHack-compatible NetHack 3.4.3 tty settings.
+# slightly altered TAEB settings
 
+ROLE=valkyrie
+OPTIONS=race:dwarf
 OPTIONS=name:smartbot3
-OPTIONS=role:Valkyrie
-OPTIONS=race:Dwarf
-OPTIONS=gender:male
-OPTIONS=align:Lawful
 
+OPTIONS=!bones
 OPTIONS=lit_corridor
+
+# more feedback!
+OPTIONS=msg_wall_hits
+
 OPTIONS=!sparkle
 OPTIONS=runmode:teleport
 OPTIONS=!timed_delay
 
+# display
 OPTIONS=!showexp
 OPTIONS=showscore
 OPTIONS=time
@@ -22,6 +26,7 @@ OPTIONS=!legacy
 OPTIONS=suppress_alert:3.4.3
 OPTIONS=hilite_pet
 
+# functionality
 OPTIONS=!autopickup
 OPTIONS=pickup_types:$
 OPTIONS=pickup_burden:unburdened
@@ -31,9 +36,25 @@ OPTIONS=!cmdassist
 OPTIONS=disclose:yi +avgc
 OPTIONS=menustyle:partial
 
+# miscellaneous
 OPTIONS=!mail
 
+# map changes for code simplicity
 OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
+# "strange monster" = m (mimic)
+# ghost/shade = X     now space is solid rock
+
 OPTIONS=traps:\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^
+# spider web = ^      now " is amulet
+
 OPTIONS=dungeon: |--------||.-|]]}}.##<><>_\\\\{{~.}..}} #}
+#  sink => {          one less #, walkable
+#  drawbridge => }    one less #, not walkable
+#  iron bars => }     one less #, not walkable (color: cyan)
+#  trees => }         one less #, not walkable (color: green)
+#  closed doors => ]  now + is spellbook
+#  grave => \         now gray | and - are walls, (grey -- thrones)
+
 OPTIONS=objects:m
+# "strange object" = m (mimic)
+# now ] is closed door

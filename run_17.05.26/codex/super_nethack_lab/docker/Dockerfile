@@ -56,7 +56,6 @@ RUN set -eux; \
 RUN git clone --depth 1 https://github.com/krajj7/BotHack.git "$BOT_HOME" \
     && cd "$BOT_HOME" \
     && sed -i 's|\[org.clojars.achim/multiset "0.1.0-SNAPSHOT"\]|[metametadata/multiset "0.1.1"]|' project.clj \
-    && python3 -c 'from pathlib import Path; p=Path("jta26/jni/src/HandlerPTY.c"); s=p.read_text(); s=s.replace("#include <pty.h>\t\t/* most interesting part: openpty, forkpty */", "#include <pty.h>\t\t/* most interesting part: openpty, forkpty */\n\nextern char **environ;"); s=s.replace("\t\tchar *eenvp[] = { \"TERM=xterm\", NULL };\n\t\texecve(ncmd, eargv, eenvp);", "\t\texecve(ncmd, eargv, environ);"); p.write_text(s)' \
     && CLASSPATH=/usr/share/java/jsch.jar ant -f jta26/build.xml \
     && cd jta26/jni/linux \
     && javac -h . -classpath ../.. ../../de/mud/jta/plugin/HandlerPTY.java \

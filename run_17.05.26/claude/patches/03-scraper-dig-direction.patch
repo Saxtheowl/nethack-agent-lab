@@ -1,0 +1,16 @@
+--- a/src/bothack/scraper.clj
++++ b/src/bothack/scraper.clj
+@@ -172,8 +172,11 @@
+
+ (defn- choice-fn [msg]
+   (condp re-first-groups msg
+-    #"^In what direction" (throw (IllegalStateException. ; should recover itself
+-                                   (str "Unexpected direction prompt: " msg)))
++    ;; SUPER_NETHACK: route direction prompts (e.g. "In what direction do you
++    ;; want to dig? [hknjb>]") to the public DirectionHandler instead of
++    ;; throwing. Upstream comment said "should recover itself" but the bot
++    ;; in fact stalls on this prompt — costing the dig→descend strategy.
++    #"^In what direction" what-direction
+     #"^What do you want to charge" charge-what
+     #"^\"Shall I remove|^\"Take off your |let me run my fingers" seduced-remove
+     #"Would you wear it for me" seduced-puton
