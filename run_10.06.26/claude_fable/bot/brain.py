@@ -13,8 +13,8 @@ SAFE_NAMES = (
 SAFE_CORPSES = re.compile(r"\b(" + SAFE_NAMES + r")\b.*corpse")
 SAFE_KILL = re.compile(r"You (?:kill|destroy) the (" + SAFE_NAMES + r")\b")
 FOOD_HERE = re.compile(
-    r"You see here (a|an|some|\d+) (food ration|cram ration|lembas wafer|apple|orange|"
-    r"pear|melon|banana|carrot|slime mold|candy bar|fortune cookie|pancake|"
+    r"You see here (a|an|some|\d+) (food rations?|cram rations?|lembas wafers?|apples?|oranges?|"
+    r"pears?|melons?|bananas?|carrots?|slime molds?|candy bars?|fortune cookies?|pancakes?|"
     r"tin of|lichen corpse)"
 )
 
@@ -63,6 +63,8 @@ class Brain:
         self.pray_count = 0
         self.food_letters = []
         self.dagger_letter = None
+        self.weapon_letter = None
+        self.rewield_letter = None  # weapon we threw and must pick up + wield
         self.mines_hunt = False
         self.mines_up_hunt = False
         self.success = False
@@ -472,6 +474,23 @@ class Brain:
         msgs = " ".join(self.g.turn_messages)
         want_dagger = self.dagger_letter is None and re.search(
             r"You see here an? (\+\d+ )?(blessed |uncursed |cursed )?dagger", msgs)
+        want_weapon = self.rewield_letter and re.search(
+            r"You see here an? .*(spear|long sword)", msgs)
+        if want_weapon:
+            snap = self.g.cmd(",")
+            if self.g.in_menu(snap):
+                self.g.sess.send(ESC)
+                self.g.pump()
+            for m in self.g.turn_messages:
+                m2 = re.match(r"([a-zA-Z]) - .*(spear|long sword)", m)
+                if m2:
+                    self.log(f"[wield] recovering thrown weapon '{m2.group(1)}'")
+                    self.weapon_letter = m2.group(1)
+                    self.rewield_letter = None
+                    snap = self.g.cmd("w")
+                    if "What do you want to wield" in snap.lines[0]:
+                        self.g.answer(m2.group(1))
+                    return
         if FOOD_HERE.search(msgs) or want_dagger:
             snap = self.g.cmd(",")
             if self.g.in_menu(snap):
@@ -953,10 +972,17 @@ class Brain:
             tile.peaceful_until = self.turn + 100
             return self.wait_or_force(pos, tile)
         if ch == "e":
-            # floating eye / sphere: throw a dagger, never melee
+            # floating eye / sphere: throw something, never melee
+            letter = None
             if self.dagger_letter:
                 letter = self.dagger_letter
                 self.dagger_letter = None  # single use until re-confirmed
+            elif self.weapon_letter and not self.rewield_letter:
+                letter = self.weapon_letter  # throw the spear, recover it after
+                self.rewield_letter = letter
+                self.weapon_letter = None
+            if letter:
+                self.log(f"[blocker] throwing '{letter}' at {ch} at {pos}")
                 snap = self.g.cmd("t")
                 if "What do you want to throw" in snap.lines[0]:
                     snap = self.g.answer(letter)
@@ -966,8 +992,8 @@ class Brain:
                 if "direction" in snap.lines[0].lower():
                     self.g.answer(DIRS[(dx, dy)])
                 return True
-            # no dagger: melee = paralysis = death if anything shows up. Avoid.
-            self.log(f"[blocker] no dagger for {ch} at {pos}: avoiding 300 turns")
+            # nothing left to throw: avoid
+            self.log(f"[blocker] nothing to throw at {ch} at {pos}: avoiding 300 turns")
             tile.peaceful_until = self.turn + 300
             self.g.cmd("m10s")
             return True
@@ -1048,6 +1074,19 @@ class Brain:
 
     def search_step(self):
         lv = self.level
+        if lv.total_searched % 100 == 0:
+            try:
+                f = lv.frontier_path(self.hero, self.turn)
+                fi = lv.frontier_path(self.hero, self.turn, ignore_monsters=True)
+                goal = self.pick_goal()
+                gp = gpi = None
+                if goal and goal[1]:
+                    gp = lv.path_to(self.hero, {goal[1]}, self.turn)
+                    gpi = lv.path_to(self.hero, {goal[1]}, self.turn, ignore_monsters=True)
+                self.log(f"[why-search] f={bool(f)} fi={(fi or [None])[0]} goal={goal} "
+                         f"gp={bool(gp)} gpi={(gpi or [None])[0]} probes={len(lv.probe_targets(self.hero, self.turn))}")
+            except Exception as e:
+                self.log(f"[why-search] diag failed: {e}")
         if self.branch == BRANCH_MINES:
             # mines caverns have no hidden doors: blocked routes mean monsters
             # or boulders; wait for the crowd to disperse instead of searching
@@ -1109,6 +1148,11 @@ class Brain:
                 "peaceful": [[x, y, lv.tiles[y][x].peaceful_until]
                              for y in range(H) for x in range(W)
                              if lv.tiles[y][x].peaceful_until > 0],
+                "denied": [[x, y, lv.tiles[y][x].denied_until]
+                           for y in range(H) for x in range(W)
+                           if lv.tiles[y][x].denied_until > 0],
+                "hard_bans": [[x, y] for y in range(H) for x in range(W)
+                              if lv.tiles[y][x].hard_ban],
                 "searched": [[x, y, lv.tiles[y][x].searched]
                              for y in range(H) for x in range(W)
                              if lv.tiles[y][x].searched > 0],
@@ -1144,11 +1188,19 @@ class Brain:
             if len(inv) >= 3:
                 break
         for letter, desc in inv.items():
-            if re.search(r"\b(food ration|cram ration|lembas wafer|apple|orange|pear|"
-                         r"melon|banana|carrot|slime mold|candy bar|fortune cookie|"
-                         r"pancake|tripe ration)\b", desc):
+            if re.search(r"\b(food rations?|cram rations?|lembas wafers?|apples?|"
+                         r"oranges?|pears?|melons?|bananas?|carrots?|slime molds?|"
+                         r"candy bars?|fortune cookies?|pancakes?|tripe rations?)\b", desc):
                 self.food_letters.append(letter)
             if "dagger" in desc and self.dagger_letter is None:
                 self.dagger_letter = letter
+            if "(weapon in" in desc:
+                self.weapon_letter = letter
+            if "dragon scale mail" in desc and "(being worn)" not in desc:
+                self.log(f"[wear] putting on the dragon scale mail '{letter}'")
+                snap = self.g.cmd("W")
+                if "What do you want to wear" in snap.lines[0]:
+                    self.g.answer(letter)
+                self.g.pump()
         self.log(f"[start] inventory={inv} food={self.food_letters}")
         self.sync()
