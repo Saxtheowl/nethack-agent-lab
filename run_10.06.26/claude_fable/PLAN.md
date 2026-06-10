@@ -70,7 +70,12 @@ claude_fable/
 | 006 | 12 | **2** | Premiers succès ! Boucle eat ("cannot eat that" → lettres du prompt = vérité) ; colère de Tyr (prière sur-utilisée → stop si dieu fâché) ; curseur pas sur '@' → validation assouplie ; lichen harceleur |
 | 007 | 15 | 1 | Dédup messages cassait les bans ; pending_eat en diagonale de porte (ban partagé dans step_dir) ; wererat `@` intouchable → riposte autorisée ; seuils Elbereth recalés (prière seulement ≤max/7) |
 | 008 | 7 (tué) | 0 | Escalier non testé sur niveau supérieur → remonter le chercher ; sondes depuis bouts de couloirs ; **mur de gnomes pacifiques bloquait même le pathfinding de secours** ; Elbereth effacé par nos attaques → attendre ; budget de recherche 400/niveau |
-| 009 | 15 | ? | Première mesure avec vraiment tous les correctifs |
+| 009 | 15 | 0* | (*mixte, fixes en cours de batch) Porte boutique = ban dur ; pièce fermée → recherche périmétrale ; budget sondes 250 + recherche 400-800 ; timeout niveau 3000 tours ; lichen toujours mangeable ; **descente paresseuse** (escalier connu → on y va, fini le perfectionnisme) |
+| 010 | 15 | **3 (20%)** | `\`` = rocher/statue 3.7 (pas un objet !) ; monstre invisible ; oscillation → perturbation aléatoire ; "under attack" → ignorer les marquages périmés ; mindless ≠ Elbereth → fuir les lents ; ne plus effacer Elbereth en frappant |
+| 011 | 15 | **3 (20%)** | Morts ↓, aborts "route bloquée" ↑ : grappes de bans diagonaux sol-sol (transitoires devenus permanents) partitionnaient le graphe → **bans expirables (400 tours)** ; #enhance ; mêlée forcée après 6 attentes ; budget Mines réduit ; branche "Other" = relecture |
+| 012 | 15 | 0 | **Régression** : porte "différée" re-traversée par les chemins ignore → boucle 3000 tours. Retour au ban dur + phase désespoir (débannir et kicker en dernier recours). Aussi : chasse-remontée si aucun `>` ; chute dans les Mines → remonter chercher la ville ; funnel anti-meute ; commerçant attaqué (flag were périmé → timer 25 tours) ; "thunders" |
+| 013 | 15 | **4 (26,7%)** | Code gelé — meilleur batch. Restant : meutes/combats à HP bas (6 morts), routes bloquées (5 timeouts). Mêlée d'œil = mort différée (paralysie + arrivant) → abandonnée ; force-attaque sur nuage de vapeur → monstres uniquement ; nuage persistant → traverser après 3 refus |
+| 014 | 15 | ? | Lot ci-dessus uniforme |
 
 ## 6. Prochaines étapes
 

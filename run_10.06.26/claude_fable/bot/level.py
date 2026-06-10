@@ -9,6 +9,8 @@ DIRS = {
 }
 
 MONSTER_CHARS = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@&;:'~")
+# note: '`' is ROCK class in 3.7 (boulder = pushable; statue = walkable);
+# we keep it walkable and let stuck-boulder messages ban dead edges
 ITEM_CHARS = set("$\"'()[]%?/=!*`")
 WALL_CHARS = set("|-")
 # passive/dangerous-to-melee monsters: (char, fg) ; fg None = any color
@@ -30,7 +32,8 @@ def melee_ok(char, fg):
 
 class Tile:
     __slots__ = ("char", "fg", "bold", "seen", "searched", "trap", "peaceful_until",
-                 "door_locked", "kick_count", "wait_count", "phantom", "hard_ban")
+                 "door_locked", "kick_count", "wait_count", "phantom", "hard_ban",
+                 "denied_until")
 
     def __init__(self):
         self.char = " "
@@ -45,6 +48,7 @@ class Tile:
         self.wait_count = 0       # times we waited for a blocker here
         self.phantom = 0          # no-op interactions with this tile
         self.hard_ban = False     # never path here in any mode (shop doors...)
+        self.denied_until = 0     # "Really attack the peaceful X?" answered no
 
 
 class Level:
@@ -57,13 +61,28 @@ class Level:
         self.tried_up = set()     # up stairs that lead somewhere useless (sokoban)
         self.doors_seen = set()
         self.visited = set()      # tiles the hero has stood on
-        self.blocked_edges = {}   # {(from,to): fail count} for silently failing moves
+        self.blocked_edges = {}   # {(from,to): [count, turn_of_last_fail]}
         self.total_searched = 0   # search turns spent on this level
         self.total_probed = 0     # probe steps spent on this level
+        self.shop_doors = set()   # locked doors skipped because a shop is near
+        self.desperate = False    # last-resort mode: kick suspected shop doors
         self.no_progress = 0
 
     def tile(self, x, y):
         return self.tiles[y][x]
+
+    def ban_edge(self, a, b, turn, amount=1):
+        c, _ = self.blocked_edges.get((a, b), (0, 0))
+        self.blocked_edges[(a, b)] = (c + amount, turn)
+
+    def edge_blocked(self, a, b, turn):
+        c, t = self.blocked_edges.get((a, b), (0, 0))
+        if c < 3:
+            return False
+        if turn - t > 400:  # transient causes (monsters) move on: retry old bans
+            del self.blocked_edges[(a, b)]
+            return False
+        return True
 
     def update_from_snap(self, snap, hero):
         """Merge the visible screen into level memory."""
@@ -166,7 +185,7 @@ class Level:
             diag = dx != 0 and dy != 0
             if diag and (self.is_doorish(nx, ny) or self.is_doorish(x, y)):
                 continue
-            if self.blocked_edges.get(((x, y), (nx, ny)), 0) >= 3:
+            if self.edge_blocked((x, y), (nx, ny), turn):
                 continue
             out.append((nx, ny))
         return out
@@ -236,7 +255,7 @@ class Level:
                         continue
                     if dx != 0 and dy != 0:
                         continue  # probe orthogonally only (doorway-safe)
-                    if self.blocked_edges.get(((x, y), (nx, ny)), 0) >= 3:
+                    if self.edge_blocked((x, y), (nx, ny), turn):
                         continue
                     out.setdefault((x, y), (dx, dy))
                     break
@@ -262,6 +281,16 @@ class Level:
                 t = self.tiles[y][x]
                 if not t.seen or not self.walkable(x, y, hero, turn) or t.searched >= 30:
                     continue
+                if t.char == "#":
+                    # corridor dead-end: hidden door/passage candidate even if
+                    # the far side is already-mapped territory
+                    nbs = sum(1 for (dx, dy) in DIRS
+                              if 0 <= x + dx < W and 0 <= y + dy < H
+                              and self.walkable(x + dx, y + dy, hero, turn,
+                                                ignore_monsters=True))
+                    if nbs <= 1:
+                        spots.append((x, y))
+                        continue
                 for (dx, dy) in ((0, -1), (0, 1), (-1, 0), (1, 0)):
                     nx, ny = x + dx, y + dy
                     fx, fy = x + 2 * dx, y + 2 * dy

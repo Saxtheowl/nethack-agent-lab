@@ -43,6 +43,8 @@ class Game:
                 self.flags.add("kill_lichen")
             if re.search(r"The \S*were\S* (hits|bites|misses|just misses|summons)", msg):
                 self.flags.add("hostile_human")
+            if "more confident in your" in msg:
+                self.flags.add("can_enhance")
             if re.search(r"You (kill|destroy) the \S*were", msg):
                 self.flags.discard("hostile_human")
             if "pull free" in msg or "You kill" in msg or "You destroy" in msg:

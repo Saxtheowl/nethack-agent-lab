@@ -18,6 +18,9 @@ FOOD_HERE = re.compile(
     r"tin of|lichen corpse)"
 )
 
+# mindless monsters can't read Elbereth; most are also slow -> walk away
+MINDLESS = set("PZFbjy")
+
 BRANCH_DOOM = "Doom"
 BRANCH_MINES = "Mines"
 BRANCH_SOKOBAN = "Sokoban"
@@ -61,6 +64,7 @@ class Brain:
         self.food_letters = []
         self.dagger_letter = None
         self.mines_hunt = False
+        self.mines_up_hunt = False
         self.success = False
         self.state = "explore"
         self.ticks = 0
@@ -76,6 +80,9 @@ class Brain:
         self.search_budget = 0
         self.no_eat_until = -1
         self.level_arrival_turn = 0
+        self.last_perturb_tick = -1000
+        self.under_attack_until = -1
+        self.hostile_human_until = -1
         self.minetown_key = None
 
     # ---------- helpers ----------
@@ -125,13 +132,27 @@ class Brain:
 
     def on_new_level(self, new_dlvl):
         prev_level, prev_stair = self.level, self.last_stair_used
+        self._prev_dlvl = self.dlvl
         branch = self.parse_branch()
+        if branch == BRANCH_OTHER:
+            branch = self.parse_branch()  # overview read may have raced: retry
+        if branch == BRANCH_OTHER and new_dlvl <= 10:
+            # almost certainly a misparse this early: keep the previous branch
+            self.log(f"[lvl] overview parse gave Other at dlvl {new_dlvl}; keeping {self.branch}")
+            branch = self.branch
         self.dlvl = new_dlvl
         self.branch = branch
         self.level = self._level(branch, new_dlvl)
+        if branch != BRANCH_MINES:
+            self.mines_up_hunt = False
         if branch == BRANCH_SOKOBAN and prev_stair and prev_stair[0] == "up":
             prev_level.tried_up.add(prev_stair[1])
         self.arrived_via = prev_stair[0] if prev_stair else None
+        if (prev_stair is None and branch == BRANCH_MINES
+                and new_dlvl > getattr(self, "_prev_dlvl", 1) + 1):
+            # fell through a hole: the town may be on the skipped levels
+            self.log(f"[lvl] fell into Mines:{new_dlvl}: will climb back to look for the town")
+            self.mines_up_hunt = True
         self.last_stair_used = None
         self.shop_level = False
         self.kill_sites = {}
@@ -190,7 +211,11 @@ class Brain:
         if snap.ynq and "Really attack" in snap.lines[0]:
             snap = self.g.answer("n")
             tx, ty = self.hero[0] + dxdy[0], self.hero[1] + dxdy[1]
-            self.level.tile(tx, ty).peaceful_until = self.turn + 150
+            t = self.level.tile(tx, ty)
+            t.peaceful_until = self.turn + 150
+            t.denied_until = self.turn + 150
+            if t.char == "@":
+                self.hostile_human_until = -1  # that @ is peaceful: stand down
             return snap
         # hazard confirmations (traps, vapor clouds...)
         if snap.ynq and ("Really step" in snap.lines[0] or "vapor cloud" in snap.lines[0]
@@ -201,9 +226,13 @@ class Brain:
                                r"rust trap", msg)
             if benign:
                 return self.g.answer("y")
+            t = self.level.tile(tx, ty) if (0 <= tx < W and 0 <= ty < H) else None
+            if t is not None and "cloud" in msg:
+                t.wait_count += 1
+                if t.wait_count > 3:
+                    return self.g.answer("y")  # persistent cloud on the only path
             snap = self.g.answer("n")
-            if 0 <= tx < W and 0 <= ty < H:
-                t = self.level.tile(tx, ty)
+            if t is not None:
                 if "trap" in msg:
                     t.trap = True   # permanent avoid (fallback pathing may cross)
                 else:
@@ -229,8 +258,7 @@ class Brain:
                 else:
                     # impassable edge (e.g. diagonal through a doorway, !cmdassist
                     # suppresses the explanation): ban it for the pathfinder
-                    edge = (before_pos, (tx, ty))
-                    self.level.blocked_edges[edge] = self.level.blocked_edges.get(edge, 0) + 1
+                    self.level.ban_edge(before_pos, (tx, ty), self.turn)
         return snap
 
     def move_along(self, path):
@@ -265,29 +293,32 @@ class Brain:
                 self.shop_level = True
             if "is in the way" in m:
                 self.level.tile(nx, ny).peaceful_until = self.turn + 100
+            if "you can't see" in m or "something there" in m:
+                # invisible monster: avoid the tile a while
+                self.level.tile(nx, ny).peaceful_until = self.turn + 100
             if ("but in vain" in m or "You cannot pass" in m or "won't budge" in m
                     or "diagonal" in m or "solid stone" in m or "bump into a wall" in m
                     or "carrying too much" in m or "cannot move it" in m
                     or "behind the boulder" in m or "stuck here" in m):
-                edge = (before_pos, (nx, ny))
-                self.level.blocked_edges[edge] = 3  # impassable from this side: ban now
+                self.level.ban_edge(before_pos, (nx, ny), self.turn, amount=3)
         # silent failure: no movement, no time passed, no meaningful message -> ban edge
         meaningful = [m for m in self.g.turn_messages
                       if not re.match(r"You hear|You smell|You feel the", m)]
         if (snap.status and snap.status.turn == before_turn
                 and snap.cursor == (before_pos[0], before_pos[1] + 1)
                 and not meaningful):
-            edge = (before_pos, (nx, ny))
-            self.level.blocked_edges[edge] = self.level.blocked_edges.get(edge, 0) + 1
+            self.level.ban_edge(before_pos, (nx, ny), self.turn)
         return snap
 
     def open_door(self, pos, dxdy):
         t = self.level.tile(*pos)
         if t.door_locked:
-            if self.shop_level:
-                # could be a closed shop: kicking it means death by shopkeeper
-                self.log(f"[door] locked door at {pos} on a shop level: leaving it alone")
+            if self.shop_level and not self.level.desperate:
+                # could be a closed shop: kicking it means death by shopkeeper.
+                # hard-ban it; the desperation phase will unban if we get stuck.
+                self.log(f"[door] locked door at {pos} on a shop level: hard ban (for now)")
                 t.hard_ban = True
+                self.level.shop_doors.add(pos)
                 return self.g.cmd("ms")
             # kick it
             snap = self.g.cmd(CTRL_D)
@@ -316,8 +347,8 @@ class Brain:
         self.last_pray_turn = self.turn
         self.pray_count += 1
         msgs = " ".join(self.g.turn_messages)
-        if re.search(r"displeased|angry|angers|thunderous|wrath|disgusted|"
-                     r"feel guilty|black cloud", msgs):
+        if re.search(r"displeased|angry|angers|thunder|wrath|disgusted|arrogant|"
+                     r"feel guilty|black cloud|relearn", msgs):
             self.log("[pray] god is upset: no more prayers this game")
             self.pray_count = 99
         return snap
@@ -341,15 +372,37 @@ class Brain:
                 break
         return self.g.pump()
 
+    def enhance_skills(self):
+        """#enhance any advancable weapon skill (free to-hit/damage)."""
+        for _ in range(3):
+            self.g.turn_messages = []
+            self.g.sess.send("#enhance\n")
+            lines = self.g.read_fullscreen()
+            letter = None
+            for line in lines:
+                m = re.match(r"\s*([a-z]) - +\S", line)
+                if m:
+                    letter = m.group(1)
+                    break
+            if not letter:
+                break
+            self.log(f"[enhance] advancing skill '{letter}'")
+            self.g.sess.send(letter)
+            self.g.pump()
+        self.g.maybe_dismiss_prompt(self.g.pump())
+
     def eat_from_inventory(self):
         if self.turn < self.no_eat_until:
             return False
         snap = self.g.cmd("e")
-        if "don't have anything to eat" in " ".join(self.g.turn_messages):
+        if re.search(r"don't have anything( else)? to eat", " ".join(self.g.turn_messages)):
             self.no_eat_until = self.turn + 150
             return False
         msg = snap.lines[0]
         if "eat it?" in msg or "; eat" in msg:
+            if "lichen corpse" in msg:  # lichen never rots: always safe
+                self.g.answer("y")
+                return True
             snap = self.g.answer("n")
             msg = snap.lines[0]
         if "What do you want to eat" not in msg:
@@ -377,13 +430,13 @@ class Brain:
         seen = self.corpse_sites.get(pos)
         killed = self.kill_sites.get(pos)
         return (seen is not None and killed is not None
-                and self.turn - killed <= 40 and self.turn - seen <= 40)
+                and self.turn - killed <= 25 and self.turn - seen <= 25)
 
     def fresh_kill_site(self):
         """Nearest corpse from our own recent kill."""
         best = None
         for pos in list(self.corpse_sites):
-            if self.turn - self.corpse_sites[pos] > 40:
+            if self.turn - self.corpse_sites[pos] > 25:
                 del self.corpse_sites[pos]
                 continue
             if not self._own_fresh_corpse(pos):
@@ -440,17 +493,23 @@ class Brain:
     def adjacent_monsters(self, snap):
         out = []
         hx, hy = self.hero
+        # if something just hit us, stale tile marks must not hide the attacker
+        attacked = self.turn <= self.under_attack_until
         for (dx, dy) in DIRS:
             x, y = hx + dx, hy + dy
             if not (0 <= x < W and 0 <= y < H):
                 continue
             t = self.level.tile(x, y)
-            if t.char == "@" and "hostile_human" not in self.g.flags:
+            if t.char == "@" and self.turn > self.hostile_human_until:
                 continue  # shopkeeper/priest/watchman: never initiate
             if t.phantom >= 2:
                 continue  # corrupted memory cell
-            if t.char in MONSTER_CHARS and t.peaceful_until <= self.turn:
-                out.append(((dx, dy), t.char, t.fg))
+            if t.char not in MONSTER_CHARS:
+                continue
+            if t.peaceful_until > self.turn:
+                if not attacked or t.denied_until > self.turn:
+                    continue
+            out.append(((dx, dy), t.char, t.fg))
         return out
 
     def fight(self, adj):
@@ -523,10 +582,32 @@ class Brain:
         if (len(self.last_positions) >= 250
                 and len({p for p, _ in self.last_positions[-250:]}) == 1):
             raise Abort("position frozen 250 ticks")
+        if (self.ticks - self.last_perturb_tick > 150
+                and len(self.last_positions) >= 120
+                and len({p for p, _ in self.last_positions[-120:]}) <= 3):
+            self.log(f"[watchdog] oscillation around {self.hero}: random perturbation")
+            self.last_perturb_tick = self.ticks
+            import random
+            for _ in range(6):
+                opts = [d for d in DIRS
+                        if 0 <= self.hero[0] + d[0] < W and 0 <= self.hero[1] + d[1] < H
+                        and self.level.walkable(self.hero[0] + d[0], self.hero[1] + d[1],
+                                                self.hero, self.turn)]
+                if not opts:
+                    break
+                self.step_dir(random.choice(opts))
+                self.sync()
+            self.last_positions.clear()
+            return
         if snap.ynq:
             snap = self.handle_prompt(snap)
             snap = self.sync(snap)
         st = snap.status
+        for m in self.g.turn_messages:
+            if re.search(r"The \w[\w ]* (bites|hits|kicks|butts|stings)!", m):
+                self.under_attack_until = self.turn + 3
+            if re.search(r"The \S*were\S* (hits|bites|misses|just misses|summons)", m):
+                self.hostile_human_until = self.turn + 25
 
         # --- umbrella safety: too long on one level means we're looping ---
         if self.turn - self.level_arrival_turn > 3000:
@@ -548,6 +629,13 @@ class Brain:
             return
         # Elbereth early: it scares most of the early-game threats
         if adj and (hp_frac < 0.35 or (hp_frac < 0.45 and len(adj) >= 2)):
+            readers = [a for a in adj if a[1] not in MINDLESS]
+            if not readers:
+                # mindless attackers ignore Elbereth; they're slow: step away
+                if self.flee_step(adj):
+                    return
+                if self.fight(adj):
+                    return
             if self.turn - self.last_elbereth_turn > 40:
                 self.last_elbereth_turn = self.turn
                 self.elbereth_waits = 0
@@ -610,8 +698,19 @@ class Brain:
                 return
             self.g.flags.discard("kill_lichen")
 
+        # --- swarmed in the open: pull back into a chokepoint first ---
+        if len(adj) >= 2 and hp_frac < 0.85:
+            if self.funnel_step(adj):
+                return
+
         # --- combat ---
         if adj and self.fight(adj):
+            return
+
+        # --- free combat upgrade: advance weapon skills when offered ---
+        if "can_enhance" in self.g.flags and not adj:
+            self.g.flags.discard("can_enhance")
+            self.enhance_skills()
             return
 
         # --- low hp, no threat: rest until mostly healed ---
@@ -686,15 +785,21 @@ class Brain:
         if path:
             nx, ny = path[0]
             t = lv.tile(nx, ny)
-            if t.char in MONSTER_CHARS:
+            if t.char in MONSTER_CHARS or t.peaceful_until > turn:
                 if t.peaceful_until > turn:
                     return self.wait_or_force((nx, ny), t)
                 return self.handle_blocker((nx, ny), t)
             self.move_along(path)
             return True
 
+        # In Doom with a known way down (and no mines hunt), don't be a
+        # completionist: descending fast saves food, time and fights.
+        lazy = (self.branch == BRANCH_DOOM and not self.mines_hunt
+                and (lv.stairs_down - lv.tried_down))
+
         # 1c. probe unseen pockets (dark room corners etc.)
-        probes = lv.probe_targets(hero, turn) if lv.total_probed < 250 else {}
+        probes = {} if lazy else (
+            lv.probe_targets(hero, turn) if lv.total_probed < 250 else {})
         if probes:
             if hero in probes:
                 lv.total_probed += 1
@@ -709,7 +814,7 @@ class Brain:
             if path:
                 nx, ny = path[0]
                 t = lv.tile(nx, ny)
-                if t.char in MONSTER_CHARS:
+                if t.char in MONSTER_CHARS or t.peaceful_until > turn:
                     if t.peaceful_until > turn:
                         return self.wait_or_force((nx, ny), t)
                     return self.handle_blocker((nx, ny), t)
@@ -746,11 +851,64 @@ class Brain:
         if path:
             nx, ny = path[0]
             t = lv.tile(nx, ny)
-            if t.char in MONSTER_CHARS:
+            if t.char in MONSTER_CHARS or t.peaceful_until > turn:
                 if t.peaceful_until > turn:
                     return self.wait_or_force((nx, ny), t)
                 return self.handle_blocker((nx, ny), t)
             self.move_along(path)
+            return True
+        return False
+
+    def _openness(self, x, y):
+        return sum(1 for (dx, dy) in DIRS
+                   if 0 <= x + dx < W and 0 <= y + dy < H
+                   and self.level.walkable(x + dx, y + dy, self.hero, self.turn,
+                                           ignore_monsters=True))
+
+    def funnel_step(self, adj):
+        """Step into a chokepoint (corridor/doorway) so fewer enemies can hit us."""
+        hx, hy = self.hero
+        cur_open = self._openness(hx, hy)
+        if cur_open <= 3:
+            return False  # already in a chokepoint: stand and fight
+        threats = [(hx + d[0][0], hy + d[0][1]) for d in adj]
+        best = None
+        for (dx, dy) in DIRS:
+            nx, ny = hx + dx, hy + dy
+            if not (0 <= nx < W and 0 <= ny < H):
+                continue
+            if not self.level.walkable(nx, ny, self.hero, self.turn):
+                continue
+            # don't step INTO contact with even more monsters
+            n_adj = sum(1 for tx, ty in threats
+                        if max(abs(nx - tx), abs(ny - ty)) <= 1)
+            if n_adj >= len(adj):
+                continue
+            op = self._openness(nx, ny)
+            if op <= cur_open - 2 and (best is None or op < best[0]):
+                best = (op, (dx, dy))
+        if best:
+            self.log(f"[funnel] retreating into chokepoint dir={best[1]} (open {cur_open}->{best[0]})")
+            self.step_dir(best[1])
+            return True
+        return False
+
+    def flee_step(self, adj):
+        """Step to a walkable neighbor that increases distance from attackers."""
+        hx, hy = self.hero
+        threats = [(hx + d[0][0], hy + d[0][1]) for d in adj]
+        best = None
+        for (dx, dy) in DIRS:
+            nx, ny = hx + dx, hy + dy
+            if not (0 <= nx < W and 0 <= ny < H):
+                continue
+            if not self.level.walkable(nx, ny, self.hero, self.turn):
+                continue
+            score = min(max(abs(nx - tx), abs(ny - ty)) for tx, ty in threats)
+            if score >= 2 and (best is None or score > best[0]):
+                best = (score, (dx, dy))
+        if best:
+            self.step_dir(best[1])
             return True
         return False
 
@@ -768,6 +926,14 @@ class Brain:
             t.peaceful_until = self.turn + 10**9
             return True
         dx, dy = pos[0] - self.hero[0], pos[1] - self.hero[1]
+        if t.char not in MONSTER_CHARS:
+            # marked non-monster tile (vapor cloud, invisible long gone):
+            # just try to walk in; the hazard prompt handler decides
+            if abs(dx) <= 1 and abs(dy) <= 1 and (dx or dy):
+                self.step_dir((dx, dy))
+                return True
+            self.g.cmd("ms")
+            return True
         if abs(dx) <= 1 and abs(dy) <= 1 and (dx or dy):
             self.log(f"[force] attacking sleeping peaceful blocker {t.char} at {pos}")
             snap = self.g.cmd("F" + DIRS[(dx, dy)])
@@ -800,24 +966,17 @@ class Brain:
                 if "direction" in snap.lines[0].lower():
                     self.g.answer(DIRS[(dx, dy)])
                 return True
-            # no dagger: if the eye is isolated and we're at full strength,
-            # melee it — paralysis with nobody else around is survivable
-            snap = self.g.pump()
-            others = [1 for (dxdy2, ch2, fg2) in self.adjacent_monsters(snap)
-                      if (dxdy2 != (dx, dy))]
-            hp_ok = snap.status and snap.status.hp > 0.85 * max(1, snap.status.hpmax)
-            if hp_ok and not others:
-                self.log(f"[blocker] meleeing isolated {ch} at {pos} (calculated risk)")
-                self.step_dir((dx, dy))
-                return True
+            # no dagger: melee = paralysis = death if anything shows up. Avoid.
             self.log(f"[blocker] no dagger for {ch} at {pos}: avoiding 300 turns")
             tile.peaceful_until = self.turn + 300
             self.g.cmd("m10s")
             return True
         # passive monsters (molds, jellies): melee them if we're healthy
         snap = self.g.pump()
-        hp_ok = snap.status and snap.status.hp > 0.55 * max(1, snap.status.hpmax)
-        if hp_ok:
+        hp = snap.status.hp if snap.status else 0
+        hpmax = max(1, snap.status.hpmax if snap.status else 1)
+        tile.wait_count += 1
+        if hp > 0.55 * hpmax or (tile.wait_count > 6 and hp > 0.35 * hpmax):
             self.log(f"[blocker] melee passive {ch} ({fg}) at {pos} T={self.turn}")
             self.step_dir((dx, dy))
             return True
@@ -837,6 +996,11 @@ class Brain:
             return next(iter(pool)) if pool else None
 
         if self.branch == BRANCH_MINES:
+            if self.mines_up_hunt:
+                t = any_up()
+                if t:
+                    return ("up", t)
+                self.mines_up_hunt = False  # no more ups: resume descending
             t = any_down()
             return ("down", t) if t else None
         if self.branch == BRANCH_SOKOBAN:
@@ -867,10 +1031,14 @@ class Brain:
         t = any_down()
         if t:
             return ("down", t)
-        if self.untried_stairs_above() is False and self.dlvl > 1:
-            return None
-        t = any_up()
-        return ("up", t) if t else None
+        # no way down here: the missing stairs are in zones we lazily skipped
+        # on upper levels — climb back and explore them properly
+        if self.dlvl > 2:
+            self.mines_hunt = True
+            t = any_up()
+            if t:
+                return ("up", t)
+        return None
 
     def untried_stairs_above(self):
         for (br, dl), L in self.levels.items():
@@ -880,8 +1048,26 @@ class Brain:
 
     def search_step(self):
         lv = self.level
+        if self.branch == BRANCH_MINES:
+            # mines caverns have no hidden doors: blocked routes mean monsters
+            # or boulders; wait for the crowd to disperse instead of searching
+            if lv.total_searched > 250:
+                raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
+            lv.total_searched += 10
+            self.g.cmd("m10s")
+            return
         budget = 400 if lv.stairs_down else 800
         if lv.total_searched > budget:
+            if lv.shop_doors and not lv.desperate:
+                # nothing else worked: kick the suspected shop doors after all
+                self.log("[door] desperation: will kick the deferred doors")
+                lv.desperate = True
+                for pos in lv.shop_doors:
+                    dt = lv.tile(*pos)
+                    dt.peaceful_until = 0
+                    dt.hard_ban = False
+                lv.total_searched = 0
+                return
             raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
         spots = lv.search_spots(self.hero, self.turn)
         if spots:
@@ -916,7 +1102,7 @@ class Brain:
                 "chars": ["".join(lv.tiles[y][x].char for x in range(W)) for y in range(H)],
                 "fgs": [",".join(str(lv.tiles[y][x].fg) for x in range(W)) for y in range(H)],
                 "visited": sorted(list(lv.visited)),
-                "blocked_edges": [[list(a), list(b), c] for (a, b), c in lv.blocked_edges.items()],
+                "blocked_edges": [[list(a), list(b), list(c)] for (a, b), c in lv.blocked_edges.items()],
                 "stairs_down": sorted(lv.stairs_down),
                 "stairs_up": sorted(lv.stairs_up),
                 "tried_down": sorted(lv.tried_down),
