@@ -1,0 +1,33 @@
+[1/10] g0001: abort:position frozen 250 ticks branch=Mines dlvl=3 T=3731 death=None  | success so far: 0/1
+[2/10] g0002: died branch=Doom dlvl=5 T=1204 death='killed by a kitten'  | success so far: 0/2
+[3/10] g0003: died branch=Doom dlvl=4 T=3036 death='killed by a coyote'  | success so far: 0/3
+[4/10] g0005: abort:position frozen 250 ticks branch=Doom dlvl=2 T=1893 death=None  | success so far: 0/4
+[5/10] g0006: abort:position frozen 250 ticks branch=Doom dlvl=4 T=2853 death=None  | success so far: 0/5
+[6/10] g0004: died branch=Doom dlvl=4 T=3470 death='killed by a werejackal'  | success so far: 0/6
+[7/10] g0008: died branch=Doom dlvl=4 T=3078 death='killed by a pony'  | success so far: 0/7
+[8/10] g0007: died branch=Doom dlvl=5 T=4228 death='poisoned by a rotted giant ant corpse'  | success so far: 0/8
+[9/10] g0000: no_meta branch=None dlvl=None T=None death=None  | success so far: 0/9
+[10/10] g0009: no_meta branch=None dlvl=None T=None death=None  | success so far: 0/10
+
+========== SUMMARY ==========
+games: 10  minetown: 0  rate: 0.0%
+wall time: 64.9 min
+
+results breakdown:
+    5  died
+    3  abort:position frozen 250 ticks
+    2  no_meta
+
+deaths breakdown:
+    1  killed by a kitten
+    1  killed by a coyote
+    1  killed by a werejackal
+    1  killed by a pony
+    1  poisoned by a rotted giant ant corpse
+
+failures by branch/dlvl:
+    4  ('Doom', 4)
+    2  ('Doom', 5)
+    2  (None, None)
+    1  ('Mines', 3)
+    1  ('Doom', 2)

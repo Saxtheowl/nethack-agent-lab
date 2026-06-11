@@ -1,0 +1,27 @@
+[1/6] g0000: died branch=Doom dlvl=3 T=2716 death='killed by a giant bat'  | success so far: 0/1
+[2/6] g0001: died branch=Doom dlvl=1 T=1415 death='killed by a fox'  | success so far: 0/2
+[3/6] g0003: died branch=Doom dlvl=2 T=750 death='killed by a wand'  | success so far: 0/3
+[4/6] g0005: crash branch=Doom dlvl=1 T=1 death=None  | success so far: 0/4
+[5/6] g0002: terminated branch=Doom dlvl=2 T=697 death=None  | success so far: 0/5
+[6/6] g0004: died branch=Mines dlvl=4 T=1974 death='killed by a hill orc'  | success so far: 0/6
+
+========== SUMMARY ==========
+games: 6  minetown: 0  rate: 0.0%
+wall time: 8.0 min
+
+results breakdown:
+    4  died
+    1  crash
+    1  terminated
+
+deaths breakdown:
+    1  killed by a giant bat
+    1  killed by a fox
+    1  killed by a wand
+    1  killed by a hill orc
+
+failures by branch/dlvl:
+    2  ('Doom', 1)
+    2  ('Doom', 2)
+    1  ('Doom', 3)
+    1  ('Mines', 4)

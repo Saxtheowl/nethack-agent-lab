@@ -80,7 +80,27 @@ claude_fable/
 | Vast v2 | 120 | 10 (8%) | **GDSM départ** : morts 61%→13% ; blocages nav = 65% → analyse de masse (mass_diag.py) |
 | Vast v3 | 120 | 13 (11%) | **Statues 3.7 = glyphes de monstres !** (corrigé) ; 3 dagues départ ; critère "entrer dans la ville" ; reste : **oscillation de cible** (23 cas probe-reachable) |
 | Vast v5 | 119 | 13 (11%) | Sticky targets + épée/Excalibur + prière 500 — insuffisant : "stairs-unreachable-hard" domine (21) = exploration trop restrictive |
-| Vast v6 | 120 | ? | **Explorateur unifié** : BFS où l'inconnu est traversable (remplace frontière-visited + sondes restreintes), bans expirables comme seul filtre |
+| Vast v6 | 120 | **21 (18%)** | **Explorateur unifié** : BFS où l'inconnu est traversable — quasi ×2 du taux ; "minetown" devient la 1re catégorie de résultats |
+| Vast v7 | 120 | **26 (22%)** | **Mode rush** : succès médian 1165 tours, morts 7% ! Mais 51 "search exhausted" — abandon trop rapide quand l'escalier ne se montre pas |
+| Vast v8 | 120 | **33 (28%)** | Recherche cyclique + retraite Mines ; morts tombées à ~10% |
+| Vast v9 | 120 | 31 (26%) | Fouille élargie tous-murs — pas de gain ; **diagnostic décisif** : les tuiles phantom≥2 muraient le pathfinding ignore → coupures artificielles (ex : 160 fouilles sur place à côté d'un lichen) |
+| v10 local | 12 | 1 (8%) | Phantom relax = régression (boucles de re-attaque) → reverté |
+| v11 local | 12 | 2 (17%) | **Phantom sur échecs orthogonaux uniquement** (les diagonales-portes empoisonnaient les tuiles monstres) ; 2 morts évitables : piège à pierre accepté en boucle, gas spore éclaté près du commerçant |
+| v12 local | 12 | **7 (58%!)** | Piège bénin 1 fois + pas de tir sur `e` près d'un `@`. Le phantom-orthogonal (v11) était LE poison : bond 30%→58%, zéro mort |
+| v13 local | 24 | 6 (25%) | v12 58% = bruit d'échantillon ; **réel Minetown ≈ 35%** (v12+v13 = 13/35) |
+
+## 5bis. NOUVEL OBJECTIF (consigne user 11/06) : la Quête Valkyrie
+
+Succès = **XL 14 + trouver le portail magique (Doom 11-16) + entrer dans la Quête**.
+- Mode quête (`GOAL="quest"` dans brain.py) : descente directe Doom (Mines ignorées), exploration complète dès Dlvl 10, détection du portail via overview ("a magic portal"), prompts de pièges pour identifier le bon `^`, **grind d'XP autour du portail jusqu'au niveau 14**, puis entrée.
+- Status "Home N" (niveaux de quête) parsé.
+- Timeouts étendus (70 min/partie, 45k ticks).
+- Nouvelle instance Vast : 40626651 (28 cœurs, 0,068 $/h, Corée).
+
+| Batch quête | N | Quête | Notes |
+|---|---|---|---|
+| quest-v1 | 100 | 0 | Profondeur médiane Dlvl 4, max 10 — la proba composée tue (0,9^14) ; morts étalées + 3 famines |
+| quest-v2 | 100 | ? | **Trappes/trous = descente gratuite** (oui aux prompts + recherche active des `^` quand pas d'escalier) |
 
 ## 6. Prochaines étapes
 

@@ -1,0 +1,33 @@
+[1/12] g0002: abort:position frozen 250 ticks branch=Doom dlvl=2 T=2415 death=None  | success so far: 0/1
+[2/12] g0001: abort:position frozen 250 ticks branch=Doom dlvl=4 T=3603 death=None  | success so far: 0/2
+[3/12] g0000: abort:position frozen 250 ticks branch=Doom dlvl=2 T=4214 death=None  | success so far: 0/3
+[4/12] g0004: abort:position frozen 250 ticks branch=Doom dlvl=3 T=3432 death=None  | success so far: 0/4
+[5/12] g0003: died branch=Doom dlvl=4 T=5741 death='died of starvation'  | success so far: 0/5
+[6/12] g0005: died branch=Doom dlvl=4 T=2540 death='killed by the wrath of Tyr'  | success so far: 0/6
+[7/12] g0006: minetown branch=Mines dlvl=5 T=1792 death=None  | success so far: 1/7
+[8/12] g0007: died branch=Doom dlvl=1 T=1904 death='killed by the wrath of Tyr'  | success so far: 1/8
+[9/12] g0010: died branch=Doom dlvl=3 T=2011 death='killed by a manes'  | success so far: 1/9
+[10/12] g0008: minetown branch=Mines dlvl=5 T=4260 death=None  | success so far: 2/10
+[11/12] g0009: abort:position frozen 250 ticks branch=Doom dlvl=4 T=4493 death=None  | success so far: 2/11
+[12/12] g0011: abort:position frozen 250 ticks branch=Mines dlvl=3 T=1236 death=None  | success so far: 2/12
+
+========== SUMMARY ==========
+games: 12  minetown: 2  rate: 16.7%
+wall time: 25.5 min
+
+results breakdown:
+    6  abort:position frozen 250 ticks
+    4  died
+    2  minetown
+
+deaths breakdown:
+    2  killed by the wrath of Tyr
+    1  died of starvation
+    1  killed by a manes
+
+failures by branch/dlvl:
+    4  ('Doom', 4)
+    2  ('Doom', 2)
+    2  ('Doom', 3)
+    1  ('Doom', 1)
+    1  ('Mines', 3)

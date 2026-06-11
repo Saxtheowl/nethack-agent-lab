@@ -8,7 +8,7 @@ STATUS1 = 22
 STATUS2 = 23
 
 STATUS2_RE = re.compile(
-    r"Dlvl:(?P<dlvl>\d+)\s+\$:(?P<gold>\d+)\s+HP:(?P<hp>-?\d+)\((?P<hpmax>\d+)\)\s+"
+    r"(?:Dlvl:|Home[: ]?|Fort[: ]?|End[: ]?)(?P<dlvl>\d+)\s+\$:(?P<gold>\d+)\s+HP:(?P<hp>-?\d+)\((?P<hpmax>\d+)\)\s+"
     r"Pw:(?P<pw>\d+)\((?P<pwmax>\d+)\)\s+AC:(?P<ac>-?\d+)\s+"
     r"(?:Xp:(?P<xp>\d+)(?:/(?P<exp>\d+))?|HD:\d+)\s+T:(?P<turn>\d+)\s*(?P<flags>.*)"
 )

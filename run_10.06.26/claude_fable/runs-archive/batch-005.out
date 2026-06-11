@@ -1,0 +1,37 @@
+[1/12] g0000: abort:position frozen 250 ticks branch=Doom dlvl=2 T=470 death=None  | success so far: 0/1
+[2/12] g0002: died branch=Doom dlvl=5 T=1616 death='killed by a kitten'  | success so far: 0/2
+[3/12] g0001: abort:position frozen 250 ticks branch=Mines dlvl=3 T=1380 death=None  | success so far: 0/3
+[4/12] g0003: died branch=Mines dlvl=4 T=1968 death='killed by a giant ant'  | success so far: 0/4
+[5/12] g0006: died branch=Doom dlvl=3 T=9962 death='killed by a kobold zombie'  | success so far: 0/5
+[6/12] g0007: abort:position frozen 250 ticks branch=Doom dlvl=3 T=3717 death=None  | success so far: 0/6
+[7/12] g0008: died branch=Doom dlvl=2 T=699 death='killed by a coyote'  | success so far: 0/7
+[8/12] g0009: died branch=Doom dlvl=1 T=405 death='killed by falling down a mine shaft'  | success so far: 0/8
+[9/12] g0004: terminated branch=Doom dlvl=3 T=2595 death=None  | success so far: 0/9
+[10/12] g0005: terminated branch=Mines dlvl=3 T=2552 death=None  | success so far: 0/10
+[11/12] g0011: died branch=Doom dlvl=5 T=3078 death='killed by a pony'  | success so far: 0/11
+[12/12] g0010: terminated branch=Doom dlvl=3 T=1076 death=None  | success so far: 0/12
+
+========== SUMMARY ==========
+games: 12  minetown: 0  rate: 0.0%
+wall time: 74.8 min
+
+results breakdown:
+    6  died
+    3  abort:position frozen 250 ticks
+    3  terminated
+
+deaths breakdown:
+    1  killed by a kitten
+    1  killed by a giant ant
+    1  killed by a kobold zombie
+    1  killed by a coyote
+    1  killed by falling down a mine shaft
+    1  killed by a pony
+
+failures by branch/dlvl:
+    4  ('Doom', 3)
+    2  ('Doom', 2)
+    2  ('Doom', 5)
+    2  ('Mines', 3)
+    1  ('Mines', 4)
+    1  ('Doom', 1)

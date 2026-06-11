@@ -1,0 +1,41 @@
+[1/15] g0002: abort:position frozen 250 ticks branch=Doom dlvl=1 T=160 death=None  | success so far: 0/1
+[2/15] g0003: abort:position frozen 250 ticks branch=Doom dlvl=1 T=108 death=None  | success so far: 0/2
+[3/15] g0001: abort:position frozen 250 ticks branch=Doom dlvl=1 T=268 death=None  | success so far: 0/3
+[4/15] g0000: died branch=Doom dlvl=2 T=4736 death='killed by a gnome zombie'  | success so far: 0/4
+[5/15] g0005: died branch=Doom dlvl=3 T=1637 death='killed by a little dog'  | success so far: 0/5
+[6/15] g0007: died branch=Mines dlvl=3 T=8975 death='killed by a little dog'  | success so far: 0/6
+[7/15] g0006: died branch=Doom dlvl=1 T=5670 death='died of starvation'  | success so far: 0/7
+[8/15] g0008: died branch=Doom dlvl=3 T=1329 death='killed by a wererat'  | success so far: 0/8
+[9/15] g0010: died branch=Doom dlvl=3 T=1186 death='killed by a werejackal'  | success so far: 0/9
+[10/15] g0011: died branch=Doom dlvl=3 T=1920 death='killed by a hobbit'  | success so far: 0/10
+[11/15] g0004: died branch=Doom dlvl=1 T=9735 death='killed by a gecko'  | success so far: 0/11
+[12/15] g0012: minetown branch=Mines dlvl=8 T=4257 death=None  | success so far: 1/12
+[13/15] g0009: died branch=Doom dlvl=2 T=5347 death='killed by a werejackal'  | success so far: 1/13
+[14/15] g0014: died branch=Doom dlvl=4 T=2294 death='killed by a little dog'  | success so far: 1/14
+[15/15] g0013: died branch=Doom dlvl=2 T=11928 death='killed by a giant rat'  | success so far: 1/15
+
+========== SUMMARY ==========
+games: 15  minetown: 1  rate: 6.7%
+wall time: 50.6 min
+
+results breakdown:
+   11  died
+    3  abort:position frozen 250 ticks
+    1  minetown
+
+deaths breakdown:
+    3  killed by a little dog
+    2  killed by a werejackal
+    1  killed by a gnome zombie
+    1  died of starvation
+    1  killed by a wererat
+    1  killed by a hobbit
+    1  killed by a gecko
+    1  killed by a giant rat
+
+failures by branch/dlvl:
+    5  ('Doom', 1)
+    4  ('Doom', 3)
+    3  ('Doom', 2)
+    1  ('Mines', 3)
+    1  ('Doom', 4)

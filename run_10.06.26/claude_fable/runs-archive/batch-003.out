@@ -1,0 +1,26 @@
+[1/8] g0002: died branch=Doom dlvl=2 T=217 death='killed by a wand'  | success so far: 0/1
+[2/8] g0000: abort:position frozen 250 ticks branch=Doom dlvl=2 T=668 death=None  | success so far: 0/2
+[3/8] g0004: abort:position frozen 250 ticks branch=Doom dlvl=1 T=35 death=None  | success so far: 0/3
+[4/8] g0003: abort:position frozen 250 ticks branch=Doom dlvl=2 T=805 death=None  | success so far: 0/4
+[5/8] g0005: abort:position frozen 250 ticks branch=Doom dlvl=2 T=644 death=None  | success so far: 0/5
+[6/8] g0001: died branch=Doom dlvl=1 T=1586 death='killed by a newt'  | success so far: 0/6
+[7/8] g0006: abort:position frozen 250 ticks branch=Doom dlvl=2 T=711 death=None  | success so far: 0/7
+[8/8] g0007: terminated branch=Doom dlvl=3 T=1273 death=None  | success so far: 0/8
+
+========== SUMMARY ==========
+games: 8  minetown: 0  rate: 0.0%
+wall time: 6.9 min
+
+results breakdown:
+    5  abort:position frozen 250 ticks
+    2  died
+    1  terminated
+
+deaths breakdown:
+    1  killed by a wand
+    1  killed by a newt
+
+failures by branch/dlvl:
+    5  ('Doom', 2)
+    2  ('Doom', 1)
+    1  ('Doom', 3)

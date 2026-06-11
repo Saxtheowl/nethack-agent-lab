@@ -67,6 +67,9 @@ class Level:
         self.total_probed = 0     # probe steps spent on this level
         self.shop_doors = set()   # locked doors skipped because a shop is near
         self.desperate = False    # last-resort mode: kick suspected shop doors
+        self.retreats = 0         # times we retreated upstairs from this level
+        self.search_wide = False  # widen search spots after a full recycle
+        self.extensions = 0       # level-timeout extensions granted
         self.no_progress = 0
 
     def tile(self, x, y):
@@ -345,8 +348,11 @@ class Level:
                     nch = self.tiles[ny][nx].char
                     if nch not in WALL_CHARS and nch != " ":
                         continue
-                    # beyond the wall must be unseen (or off our explored area)
-                    if 0 <= fx < W and 0 <= fy < H and self.tiles[fy][fx].seen:
+                    # first pass: only walls with unseen space beyond; wide
+                    # mode (after a recycle): any wall — hidden doors often
+                    # join two already-mapped areas
+                    if (not self.search_wide and 0 <= fx < W and 0 <= fy < H
+                            and self.tiles[fy][fx].seen):
                         continue
                     spots.append((x, y))
                     break

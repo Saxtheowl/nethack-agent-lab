@@ -54,13 +54,13 @@ def main():
         for fut in as_completed(futs):
             meta = fut.result()
             results.append(meta)
-            n_ok = sum(1 for r in results if r.get("result") == "minetown")
+            n_ok = sum(1 for r in results if r.get("result") in ("minetown", "quest"))
             print(f"[{len(results)}/{args.n}] {meta.get('id')}: {meta.get('result')} "
                   f"branch={meta.get('branch')} dlvl={meta.get('dlvl')} T={meta.get('turn')} "
                   f"death={meta.get('death')!r}  | success so far: {n_ok}/{len(results)}",
                   flush=True)
 
-    n_ok = sum(1 for r in results if r.get("result") == "minetown")
+    n_ok = sum(1 for r in results if r.get("result") in ("minetown", "quest"))
     print("\n========== SUMMARY ==========")
     print(f"games: {len(results)}  minetown: {n_ok}  rate: {100.0*n_ok/max(1,len(results)):.1f}%")
     print(f"wall time: {(time.time()-t0)/60:.1f} min")

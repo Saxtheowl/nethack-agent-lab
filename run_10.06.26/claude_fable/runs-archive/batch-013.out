@@ -1,0 +1,42 @@
+[1/15] g0001: minetown branch=Mines dlvl=5 T=2489 death=None  | success so far: 1/1
+[2/15] g0000: abort:search exhausted on Mines:5 branch=Mines dlvl=5 T=3397 death=None  | success so far: 1/2
+[3/15] g0002: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=4546 death=None  | success so far: 1/3
+[4/15] g0003: minetown branch=Mines dlvl=6 T=3242 death=None  | success so far: 2/4
+[5/15] g0004: minetown branch=Mines dlvl=7 T=2976 death=None  | success so far: 3/5
+[6/15] g0007: died branch=Doom dlvl=2 T=526 death='killed by a wand'  | success so far: 3/6
+[7/15] g0005: died branch=Doom dlvl=4 T=2307 death='killed by a hill orc'  | success so far: 3/7
+[8/15] g0006: died branch=Mines dlvl=4 T=2509 death='killed by a hill orc'  | success so far: 3/8
+[9/15] g0008: died branch=Doom dlvl=4 T=3480 death='killed by a giant rat'  | success so far: 3/9
+[10/15] g0009: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=4095 death=None  | success so far: 3/10
+[11/15] g0011: minetown branch=Mines dlvl=5 T=2739 death=None  | success so far: 4/11
+[12/15] g0012: died branch=Doom dlvl=2 T=3285 death='killed by a homunculus'  | success so far: 4/12
+[13/15] g0014: died branch=Doom dlvl=2 T=794 death='killed by a goblin'  | success so far: 4/13
+[14/15] g0010: abort:level timeout on Doom:1 branch=Doom dlvl=1 T=3001 death=None  | success so far: 4/14
+[15/15] g0013: abort:level timeout on Doom:3 branch=Doom dlvl=3 T=3596 death=None  | success so far: 4/15
+
+========== SUMMARY ==========
+games: 15  minetown: 4  rate: 26.7%
+wall time: 36.1 min
+
+results breakdown:
+    6  died
+    4  minetown
+    2  abort:level timeout on Doom:4
+    1  abort:search exhausted on Mines:5
+    1  abort:level timeout on Doom:1
+    1  abort:level timeout on Doom:3
+
+deaths breakdown:
+    2  killed by a hill orc
+    1  killed by a wand
+    1  killed by a giant rat
+    1  killed by a homunculus
+    1  killed by a goblin
+
+failures by branch/dlvl:
+    4  ('Doom', 4)
+    3  ('Doom', 2)
+    1  ('Mines', 5)
+    1  ('Mines', 4)
+    1  ('Doom', 1)
+    1  ('Doom', 3)

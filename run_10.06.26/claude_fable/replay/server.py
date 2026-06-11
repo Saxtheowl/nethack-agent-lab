@@ -98,6 +98,8 @@ def list_games():
             except Exception:
                 pass
         ttyrec = _ttyrec_path(d)
+        if not meta:
+            continue  # unfinished/killed game: don't list ghosts
         won = meta.get("result") == "minetown"
         games.append({
             "id": f"{d.parent.name}__{d.name}",

@@ -22,9 +22,9 @@ from playground import make_playground, nethack_argv_env
 from game import Game, GameOver, ESC
 from brain import Brain, Abort
 
-MAX_TICKS = 25000
+MAX_TICKS = 45000
 MAX_TURNS = 40000
-WALL_TIMEOUT = 40 * 60  # seconds
+WALL_TIMEOUT = 70 * 60  # seconds
 
 
 def parse_xlogfile(playground):
@@ -80,7 +80,7 @@ def run_one(outdir, game_id="g0", verbose=False):
         brain.start()
         while True:
             if brain.success:
-                meta["result"] = "minetown"
+                meta["result"] = "quest" if brain.branch == "Quest" else "minetown"
                 break
             if brain.ticks >= MAX_TICKS:
                 meta["result"] = "max_ticks"

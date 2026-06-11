@@ -1,0 +1,43 @@
+[1/15] g0000: abort:search exhausted on Mines:5 branch=Mines dlvl=5 T=1746 death=None  | success so far: 0/1
+[2/15] g0002: abort:search exhausted on Doom:2 branch=Doom dlvl=2 T=2338 death=None  | success so far: 0/2
+[3/15] g0003: abort:level timeout on Doom:3 branch=Doom dlvl=3 T=3420 death=None  | success so far: 0/3
+[4/15] g0005: died branch=Doom dlvl=1 T=408 death='killed by the ghost of Mike'  | success so far: 0/4
+[5/15] g0001: died branch=Mines dlvl=5 T=1832 death='killed by a pony'  | success so far: 0/5
+[6/15] g0004: abort:level timeout on Doom:2 branch=Doom dlvl=2 T=5199 death=None  | success so far: 0/6
+[7/15] g0006: abort:search exhausted on Mines:5 branch=Mines dlvl=5 T=2774 death=None  | success so far: 0/7
+[8/15] g0008: abort:search exhausted on Mines:5 branch=Mines dlvl=5 T=2470 death=None  | success so far: 0/8
+[9/15] g0007: abort:level timeout on Mines:3 branch=Mines dlvl=3 T=3640 death=None  | success so far: 0/9
+[10/15] g0009: abort:search exhausted on Mines:3 branch=Mines dlvl=3 T=1225 death=None  | success so far: 0/10
+[11/15] g0010: died branch=Doom dlvl=2 T=840 death='killed by a boulder'  | success so far: 0/11
+[12/15] g0012: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=4188 death=None  | success so far: 0/12
+[13/15] g0011: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=4520 death=None  | success so far: 0/13
+[14/15] g0014: abort:level timeout on Doom:2 branch=Doom dlvl=2 T=5222 death=None  | success so far: 0/14
+[15/15] g0013: terminated branch=Doom dlvl=3 T=2198 death=None  | success so far: 0/15
+
+========== SUMMARY ==========
+games: 15  minetown: 0  rate: 0.0%
+wall time: 60.7 min
+
+results breakdown:
+    3  abort:search exhausted on Mines:5
+    3  died
+    2  abort:level timeout on Doom:2
+    2  abort:level timeout on Doom:4
+    1  abort:search exhausted on Doom:2
+    1  abort:level timeout on Doom:3
+    1  abort:level timeout on Mines:3
+    1  abort:search exhausted on Mines:3
+    1  terminated
+
+deaths breakdown:
+    1  killed by the ghost of Mike
+    1  killed by a pony
+    1  killed by a boulder
+
+failures by branch/dlvl:
+    4  ('Mines', 5)
+    4  ('Doom', 2)
+    2  ('Doom', 3)
+    2  ('Mines', 3)
+    2  ('Doom', 4)
+    1  ('Doom', 1)

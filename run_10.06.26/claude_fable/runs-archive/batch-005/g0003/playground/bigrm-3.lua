@@ -1,0 +1,1 @@
+/home/roro/work/projects/super_nethack/run_10.06.26/claude_fable/nh370/games/lib/nethackdir/bigrm-3.lua

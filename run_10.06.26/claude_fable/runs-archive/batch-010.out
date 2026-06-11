@@ -1,0 +1,44 @@
+[1/15] g0000: died branch=Mines dlvl=5 T=2270 death='killed by a gray ooze'  | success so far: 0/1
+[2/15] g0003: died branch=Doom dlvl=1 T=136 death='killed by a yeti'  | success so far: 0/2
+[3/15] g0002: minetown branch=Mines dlvl=6 T=2542 death=None  | success so far: 1/3
+[4/15] g0001: abort:level timeout on Doom:1 branch=Doom dlvl=1 T=3001 death=None  | success so far: 1/4
+[5/15] g0005: minetown branch=Mines dlvl=7 T=2234 death=None  | success so far: 2/5
+[6/15] g0004: died branch=Doom dlvl=3 T=3025 death='killed by a giant bat'  | success so far: 2/6
+[7/15] g0008: died branch=Doom dlvl=1 T=602 death='killed by a sewer rat'  | success so far: 2/7
+[8/15] g0007: minetown branch=Mines dlvl=6 T=2971 death=None  | success so far: 3/8
+[9/15] g0006: abort:level timeout on Doom:2 branch=Doom dlvl=2 T=5269 death=None  | success so far: 3/9
+[10/15] g0009: died branch=Doom dlvl=3 T=3478 death='killed by a bat'  | success so far: 3/10
+[11/15] g0010: died branch=Mines dlvl=4 T=2706 death='killed by a homunculus'  | success so far: 3/11
+[12/15] g0013: abort:level timeout on Doom:3 branch=Doom dlvl=3 T=3733 death=None  | success so far: 3/12
+[13/15] g0012: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=3876 death=None  | success so far: 3/13
+[14/15] g0014: died branch=Doom dlvl=2 T=593 death='killed by a small mimic'  | success so far: 3/14
+[15/15] g0011: abort:level timeout on Doom:4 branch=Doom dlvl=4 T=4142 death=None  | success so far: 3/15
+
+========== SUMMARY ==========
+games: 15  minetown: 3  rate: 20.0%
+wall time: 38.4 min
+
+results breakdown:
+    7  died
+    3  minetown
+    2  abort:level timeout on Doom:4
+    1  abort:level timeout on Doom:1
+    1  abort:level timeout on Doom:2
+    1  abort:level timeout on Doom:3
+
+deaths breakdown:
+    1  killed by a gray ooze
+    1  killed by a yeti
+    1  killed by a giant bat
+    1  killed by a sewer rat
+    1  killed by a bat
+    1  killed by a homunculus
+    1  killed by a small mimic
+
+failures by branch/dlvl:
+    3  ('Doom', 1)
+    3  ('Doom', 3)
+    2  ('Doom', 2)
+    2  ('Doom', 4)
+    1  ('Mines', 5)
+    1  ('Mines', 4)
