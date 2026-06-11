@@ -64,6 +64,10 @@ class Brain:
         self.food_letters = []
         self.dagger_letter = None
         self.weapon_letter = None
+        self.long_sword_letter = None
+        self.spear_letter = None
+        self.excalibur = False
+        self.fountain_dips = 0
         self.rewield_letter = None  # weapon we threw and must pick up + wield
         self.mines_hunt = False
         self.mines_up_hunt = False
@@ -83,6 +87,7 @@ class Brain:
         self.no_eat_until = -1
         self.level_arrival_turn = 0
         self.last_perturb_tick = -1000
+        self.nav_target = None    # sticky exploration target (kind, pos, tick)
         self.under_attack_until = -1
         self.hostile_human_until = -1
         self.minetown_key = None
@@ -160,6 +165,7 @@ class Brain:
         self.kill_sites = {}
         self.corpse_sites = {}
         self.level_arrival_turn = self.turn
+        self.nav_target = None
         self.log(f"[lvl] arrived branch={branch} dlvl={new_dlvl} T={self.turn}")
 
     def parse_branch(self):
@@ -240,6 +246,11 @@ class Brain:
                 else:
                     t.peaceful_until = self.turn + 50  # cloud: dissipates
             return snap
+        for m in self.g.turn_messages:
+            if "statue" in m:
+                tx2, ty2 = before_pos[0] + dxdy[0], before_pos[1] + dxdy[1]
+                if 0 <= tx2 < W and 0 <= ty2 < H:
+                    self.level.tile(tx2, ty2).statue = True
         # silent failure: no movement, no time, no meaningful message
         meaningful = [m for m in self.g.turn_messages
                       if not re.match(r"You hear|You smell|You feel the", m)]
@@ -282,6 +293,8 @@ class Brain:
                 self.kill_sites[(nx, ny)] = self.turn
             if re.search(r"You see here .* corpse", m):
                 self.corpse_sites[(nx, ny)] = self.turn
+            if "statue" in m:
+                self.level.tile(nx, ny).statue = True
             if "Closed for inventory" in m:
                 # shop door warning: never touch the doors around here
                 for ddx in (-1, 0, 1):
@@ -373,6 +386,39 @@ class Brain:
             else:
                 break
         return self.g.pump()
+
+    def excalibur_step(self):
+        """Walk to a fountain and #dip the long sword (lawful XL5+ -> Excalibur)."""
+        lv = self.level
+        fountains = [(x, y) for y in range(H) for x in range(W)
+                     if lv.tiles[y][x].char == "{"]
+        if not fountains:
+            return False
+        if self.hero in fountains:
+            self.fountain_dips += 1
+            self.log(f"[excalibur] dip #{self.fountain_dips} T={self.turn}")
+            snap = self.g.cmd("#dip\n")
+            if "What do you want to dip" in snap.lines[0]:
+                snap = self.g.answer(self.long_sword_letter)
+            if snap.ynq and ("into the fountain" in snap.lines[0]
+                             or "Dip" in snap.lines[0]):
+                snap = self.g.answer("y")
+            msgs = " ".join(self.g.turn_messages)
+            if "hand reaches up" in msgs or "Excalibur" in msgs:
+                self.log("[excalibur] OBTAINED! wielding it")
+                self.excalibur = True
+                snap = self.g.cmd("w")
+                if "What do you want to wield" in snap.lines[0]:
+                    self.g.answer(self.long_sword_letter)
+                    self.weapon_letter = self.long_sword_letter
+            if "dries up" in msgs or "dry" in msgs:
+                lv.tiles[self.hero[1]][self.hero[0]].char = "."
+            return True
+        path = lv.path_to(self.hero, set(fountains), self.turn)
+        if path:
+            self.move_along(path)
+            return True
+        return False
 
     def enhance_skills(self):
         """#enhance any advancable weapon skill (free to-hit/damage)."""
@@ -521,8 +567,8 @@ class Brain:
             t = self.level.tile(x, y)
             if t.char == "@" and self.turn > self.hostile_human_until:
                 continue  # shopkeeper/priest/watchman: never initiate
-            if t.phantom >= 2:
-                continue  # corrupted memory cell
+            if t.phantom >= 2 or t.statue:
+                continue  # corrupted memory cell / statue glyph
             if t.char not in MONSTER_CHARS:
                 continue
             if t.peaceful_until > self.turn:
@@ -550,14 +596,22 @@ class Brain:
 
     # ---------- goal logic ----------
 
+    def town_features(self):
+        if self.branch != BRANCH_MINES:
+            return []
+        lv = self.level
+        feats = [(x, y) for y in range(H) for x in range(W)
+                 if lv.tiles[y][x].char in "{_"]
+        feats.extend(lv.doors_seen)
+        return feats
+
     def town_detected(self):
         if self.branch != BRANCH_MINES:
             return False
         lv = self.level
-        fountains = sum(1 for y in range(H) for x in range(W)
-                        if lv.tiles[y][x].char == "{")
-        altars = sum(1 for y in range(H) for x in range(W)
-                     if lv.tiles[y][x].char == "_")
+        feats = self.town_features()
+        fountains = sum(1 for x, y in feats if lv.tiles[y][x].char == "{")
+        altars = sum(1 for x, y in feats if lv.tiles[y][x].char == "_")
         if len(lv.doors_seen) >= 2 or fountains >= 1 or altars >= 1:
             return True
         return False
@@ -629,19 +683,44 @@ class Brain:
                 self.hostile_human_until = self.turn + 25
 
         # --- umbrella safety: too long on one level means we're looping ---
-        if self.turn - self.level_arrival_turn > 3000:
+        cap = 5000 if not self.level.stairs_down else 3000
+        if self.turn - self.level_arrival_turn > cap:
             raise Abort(f"level timeout on {self.branch}:{self.dlvl}")
 
-        # --- success check ---
+        # --- success check: must actually WALK INTO the town ---
         if self.town_detected():
-            self.log(f"[GOAL] Minetown reached! branch={self.branch} dlvl={self.dlvl} T={self.turn}")
-            self.success = True
-            return
+            feats = self.town_features()
+            dist = min(max(abs(self.hero[0] - x), abs(self.hero[1] - y))
+                       for x, y in feats)
+            if dist <= 3:
+                self.log(f"[GOAL] Minetown ENTERED! branch={self.branch} dlvl={self.dlvl} "
+                         f"T={self.turn} dist={dist}")
+                self.success = True
+                return
+            # walk toward the town
+            path = self.level.path_to(self.hero, set(feats), self.turn, adjacent=True)
+            if path:
+                self.move_along(path)
+                return
+            path = self.level.path_to(self.hero, set(feats), self.turn,
+                                      adjacent=True, ignore_monsters=True)
+            if path:
+                nx, ny = path[0]
+                t = self.level.tile(nx, ny)
+                if t.char in MONSTER_CHARS or t.peaceful_until > self.turn:
+                    if t.peaceful_until > self.turn:
+                        self.wait_or_force((nx, ny), t)
+                    else:
+                        self.handle_blocker((nx, ny), t)
+                    return
+                self.move_along(path)
+                return
+            # no path yet: keep exploring (fall through)
 
         # --- emergencies ---
         hp_frac = st.hp / max(1, st.hpmax)
         adj = self.adjacent_monsters(snap)
-        pray_ok = (self.turn - self.last_pray_turn) > 1100 and self.pray_count < 6
+        pray_ok = (self.turn - self.last_pray_turn) > 550 and self.pray_count < 10
         # prayer only helps when the god agrees we're in trouble: hp <= max/7
         if (hp_frac <= 1 / 7 or st.hp < 6) and pray_ok:
             self.pray()
@@ -680,8 +759,8 @@ class Brain:
                 self.pray()  # certain death otherwise
                 return
             if st.weak:
-                # no food at all: prayer is the only fix (relaxed cooldown)
-                if (self.turn - self.last_pray_turn) > 600 and self.pray_count < 8:
+                # Weak = major trouble: safe past ~450-500 turns (wiki: rnz(350)<201)
+                if (self.turn - self.last_pray_turn) > 500 and self.pray_count < 12:
                     self.pray()
                     return
         if st.confused or st.stunned or st.blind:
@@ -767,6 +846,12 @@ class Brain:
                         self.move_along(path)
                         return
 
+        # --- Excalibur: dip the long sword at XL5+ on a fountain ---
+        if (not self.excalibur and self.long_sword_letter and st.xp >= 5
+                and self.fountain_dips < 15 and not adj):
+            if self.excalibur_step():
+                return
+
         # --- navigation ---
         if self.navigate():
             return
@@ -777,6 +862,23 @@ class Brain:
     def navigate(self):
         hero, turn = self.hero, self.turn
         lv = self.level
+
+        # sticky target: commit to the current exploration goal to avoid
+        # nearest-target flapping (the classic two-goal oscillation)
+        if self.nav_target:
+            kind, pos, since = self.nav_target
+            if self.hero == pos or self.ticks - since > 80:
+                self.nav_target = None
+            elif not lv.walkable(pos[0], pos[1], hero, turn):
+                self.nav_target = None
+            elif kind in ("frontier", "probe") and pos in lv.visited:
+                self.nav_target = None
+            else:
+                path = lv.path_to(hero, {pos}, turn)
+                if path:
+                    self.move_along(path)
+                    return True
+                self.nav_target = None
 
         # 0. too deep in Doom: bail out immediately, don't explore dangerous levels
         if self.branch == BRANCH_DOOM and self.dlvl >= 5:
@@ -796,6 +898,7 @@ class Brain:
         # 1. explore the level fully first (needed to spot mines stairs / the town)
         path = lv.frontier_path(hero, turn)
         if path:
+            self.nav_target = ("frontier", path[-1], self.ticks)
             self.move_along(path)
             return True
 
@@ -816,21 +919,12 @@ class Brain:
         lazy = (self.branch == BRANCH_DOOM and not self.mines_hunt
                 and (lv.stairs_down - lv.tried_down))
 
-        # 1c. probe unseen pockets (dark room corners etc.)
-        probes = {} if lazy else (
-            lv.probe_targets(hero, turn) if lv.total_probed < 250 else {})
-        if probes:
-            if hero in probes:
-                lv.total_probed += 1
-                self.step_dir(probes[hero])  # poke into the dark; bans handle rock
-                return True
-            path = lv.path_to(hero, set(probes), turn)
+        # 1c. unified unknown-explorer: walk INTO the unknown (BFS where unseen
+        # tiles are traversable); edge bans with expiry prune solid rock.
+        if not lazy:
+            path = lv.explore_unknown_path(hero, turn)
             if path:
-                self.move_along(path)
-                return True
-            # probes unreachable: a monster is walling off the region
-            path = lv.path_to(hero, set(probes), turn, ignore_monsters=True)
-            if path:
+                self.nav_target = ("probe", path[-1], self.ticks)
                 nx, ny = path[0]
                 t = lv.tile(nx, ny)
                 if t.char in MONSTER_CHARS or t.peaceful_until > turn:
@@ -1090,12 +1184,12 @@ class Brain:
         if self.branch == BRANCH_MINES:
             # mines caverns have no hidden doors: blocked routes mean monsters
             # or boulders; wait for the crowd to disperse instead of searching
-            if lv.total_searched > 250:
+            if lv.total_searched > 400:
                 raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
             lv.total_searched += 10
             self.g.cmd("m10s")
             return
-        budget = 400 if lv.stairs_down else 800
+        budget = 700 if lv.stairs_down else 1600
         if lv.total_searched > budget:
             if lv.shop_doors and not lv.desperate:
                 # nothing else worked: kick the suspected shop doors after all
@@ -1194,6 +1288,10 @@ class Brain:
                 self.food_letters.append(letter)
             if "dagger" in desc and self.dagger_letter is None:
                 self.dagger_letter = letter
+            if "long sword" in desc and self.long_sword_letter is None:
+                self.long_sword_letter = letter
+            if "spear" in desc:
+                self.spear_letter = letter
             if "(weapon in" in desc:
                 self.weapon_letter = letter
             if "dragon scale mail" in desc and "(being worn)" not in desc:
@@ -1202,5 +1300,12 @@ class Brain:
                 if "What do you want to wear" in snap.lines[0]:
                     self.g.answer(letter)
                 self.g.pump()
+        if self.long_sword_letter:
+            self.log(f"[start] wielding the long sword '{self.long_sword_letter}'")
+            snap = self.g.cmd("w")
+            if "What do you want to wield" in snap.lines[0]:
+                self.g.answer(self.long_sword_letter)
+            if self.spear_letter:
+                self.weapon_letter = self.spear_letter  # throwable backup
         self.log(f"[start] inventory={inv} food={self.food_letters}")
         self.sync()

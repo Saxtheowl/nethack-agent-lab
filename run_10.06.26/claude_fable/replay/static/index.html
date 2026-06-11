@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NetHack 3.7 Bot – Replays</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="page-index">
+<header>
+  <h1>Bot Valkyrie &middot; NetHack 3.7 &mdash; replays des parties</h1>
+  <div id="summary" class="muted"></div>
+</header>
+
+<main>
+  <section id="winning">
+    <h2>Won games <small id="winning-count" class="muted"></small></h2>
+    <table class="games" id="winning-table">
+      <thead><tr>
+        <th>#</th><th>détail</th><th>tours</th><th>size</th><th></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="attempts">
+    <h2>In progress <small id="attempts-count" class="muted"></small></h2>
+    <table class="games" id="attempts-table">
+      <thead><tr>
+        <th>id</th><th>détail</th><th>tours</th><th>ttyrec</th><th></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="muted small">
+      Succès = le bot entre dans Minetown. La colonne détail donne résultat / branche:niveau / cause de mort.
+      In-progress games are watchable live (turn index updates as the ttyrec grows).
+    </p>
+  </section>
+</main>
+
+<script>
+function bytes(n) {
+  if (!n) return "0";
+  const u = ["B","KB","MB","GB"]; let i=0;
+  while (n >= 1024 && i < u.length-1) { n/=1024; i++; }
+  return n.toFixed(n<10?1:0) + " " + u[i];
+}
+function row(g) {
+  const tr = document.createElement("tr");
+  const link = `<a href="/replay?game=${encodeURIComponent(g.id)}">replay →</a>`;
+  const live = g.in_progress ? ' <span class="live">● LIVE</span>' : '';
+  tr.innerHTML = `
+    <td>${g.id}${live}</td>
+    <td><code>${g.exit_code ?? "?"}</code></td>
+    <td>${g.final_turn ?? "?"}</td>
+    <td>${bytes(g.ttyrec_size)}</td>
+    <td>${link}</td>`;
+  return tr;
+}
+function winRow(g, n) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>#${n} ${g.id}</td>
+    <td><code>${g.exit_code ?? "?"}</code></td>
+    <td>${g.final_turn ?? "?"}</td>
+    <td>${bytes(g.ttyrec_size)}</td>
+    <td><a href="/replay?game=${encodeURIComponent(g.id)}">replay →</a></td>`;
+  return tr;
+}
+
+async function refresh() {
+  const r = await fetch("/api/games");
+  const data = await r.json();
+  const wins = data.games.filter(g => g.ascended);
+  const live = data.games.filter(g => !g.ascended);
+  document.getElementById("summary").textContent =
+    `${wins.length}/10 wins  ·  ${live.length} game${live.length===1?"":"s"} in progress`;
+
+  const wtbody = document.querySelector("#winning-table tbody");
+  wtbody.innerHTML = "";
+  if (wins.length) {
+    wins.forEach((g, i) => wtbody.appendChild(winRow(g, i+1)));
+  } else {
+    wtbody.innerHTML = '<tr><td colspan="6" class="muted">Pas encore de succès dans cette sélection.</td></tr>';
+  }
+  document.getElementById("winning-count").textContent = `(${wins.length})`;
+
+  const atbody = document.querySelector("#attempts-table tbody");
+  atbody.innerHTML = "";
+  if (live.length) {
+    live.forEach(g => atbody.appendChild(row(g)));
+  } else {
+    atbody.innerHTML = '<tr><td colspan="6" class="muted">No games running.</td></tr>';
+  }
+  document.getElementById("attempts-count").textContent = `(${live.length})`;
+}
+
+refresh();
+setInterval(refresh, 5000);
+</script>
+</body>
+</html>

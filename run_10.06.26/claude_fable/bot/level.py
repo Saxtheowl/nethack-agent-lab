@@ -33,7 +33,7 @@ def melee_ok(char, fg):
 class Tile:
     __slots__ = ("char", "fg", "bold", "seen", "searched", "trap", "peaceful_until",
                  "door_locked", "kick_count", "wait_count", "phantom", "hard_ban",
-                 "denied_until")
+                 "denied_until", "statue")
 
     def __init__(self):
         self.char = " "
@@ -49,6 +49,7 @@ class Tile:
         self.phantom = 0          # no-op interactions with this tile
         self.hard_ban = False     # never path here in any mode (shop doors...)
         self.denied_until = 0     # "Really attack the peaceful X?" answered no
+        self.statue = False       # 3.7 statues display as monster glyphs
 
 
 class Level:
@@ -139,6 +140,8 @@ class Level:
             return True
         if t.phantom >= 2 or t.hard_ban:
             return False  # corrupted memory cell / forbidden door: wall
+        if t.statue:
+            return True   # statue: walkable floor despite the monster glyph
         if not t.seen:
             return False
         if t.trap and not ignore_monsters:  # fallback pathing may cross known traps
@@ -260,6 +263,49 @@ class Level:
                     out.setdefault((x, y), (dx, dy))
                     break
         return out
+
+    def explore_unknown_path(self, hero, turn=0):
+        """BFS where unseen tiles are traversable; returns a path whose final
+        steps walk INTO the unknown. Edge bans (with expiry) prune real rock."""
+        prev = {hero: None}
+        q = deque([hero])
+        goal = None
+        while q:
+            cur = q.popleft()
+            x, y = cur
+            if not self.tiles[y][x].seen and cur != hero:
+                goal = cur
+                break
+            for (dx, dy) in DIRS:
+                nx, ny = x + dx, y + dy
+                if not (0 <= nx < W and 0 <= ny < H):
+                    continue
+                if (nx, ny) in prev:
+                    continue
+                t = self.tiles[ny][nx]
+                if t.seen:
+                    if not self.walkable(nx, ny, hero, turn):
+                        continue
+                    diag = dx != 0 and dy != 0
+                    if diag and (self.is_doorish(nx, ny) or self.is_doorish(x, y)):
+                        continue
+                else:
+                    # unknown tile: only orthogonal probing, and respect bans
+                    if dx != 0 and dy != 0:
+                        continue
+                if self.edge_blocked((x, y), (nx, ny), turn):
+                    continue
+                prev[(nx, ny)] = cur
+                q.append((nx, ny))
+        if goal is None:
+            return None
+        path = []
+        cur = goal
+        while cur != hero:
+            path.append(cur)
+            cur = prev[cur]
+        path.reverse()
+        return path
 
     def path_to(self, hero, targets, turn=0, adjacent=False, ignore_monsters=False):
         """Path to nearest of `targets` (set of coords). adjacent=True stops next to it."""

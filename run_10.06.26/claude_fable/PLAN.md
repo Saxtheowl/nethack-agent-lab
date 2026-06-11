@@ -75,7 +75,12 @@ claude_fable/
 | 011 | 15 | **3 (20%)** | Morts ↓, aborts "route bloquée" ↑ : grappes de bans diagonaux sol-sol (transitoires devenus permanents) partitionnaient le graphe → **bans expirables (400 tours)** ; #enhance ; mêlée forcée après 6 attentes ; budget Mines réduit ; branche "Other" = relecture |
 | 012 | 15 | 0 | **Régression** : porte "différée" re-traversée par les chemins ignore → boucle 3000 tours. Retour au ban dur + phase désespoir (débannir et kicker en dernier recours). Aussi : chasse-remontée si aucun `>` ; chute dans les Mines → remonter chercher la ville ; funnel anti-meute ; commerçant attaqué (flag were périmé → timer 25 tours) ; "thunders" |
 | 013 | 15 | **4 (26,7%)** | Code gelé — meilleur batch. Restant : meutes/combats à HP bas (6 morts), routes bloquées (5 timeouts). Mêlée d'œil = mort différée (paralysie + arrivant) → abandonnée ; force-attaque sur nuage de vapeur → monstres uniquement ; nuage persistant → traverser après 3 refus |
-| 014 | 15 | ? | Lot ci-dessus uniforme |
+| 014 | 15 | 0 | Vague mi-batch (lance pas encore là) — abandonné au profit de Vast |
+| Vast v1 | 31 | 1 | (pré-armure) 61% morts combat |
+| Vast v2 | 120 | 10 (8%) | **GDSM départ** : morts 61%→13% ; blocages nav = 65% → analyse de masse (mass_diag.py) |
+| Vast v3 | 120 | 13 (11%) | **Statues 3.7 = glyphes de monstres !** (corrigé) ; 3 dagues départ ; critère "entrer dans la ville" ; reste : **oscillation de cible** (23 cas probe-reachable) |
+| Vast v5 | 119 | 13 (11%) | Sticky targets + épée/Excalibur + prière 500 — insuffisant : "stairs-unreachable-hard" domine (21) = exploration trop restrictive |
+| Vast v6 | 120 | ? | **Explorateur unifié** : BFS où l'inconnu est traversable (remplace frontière-visited + sondes restreintes), bans expirables comme seul filtre |
 
 ## 6. Prochaines étapes
 
