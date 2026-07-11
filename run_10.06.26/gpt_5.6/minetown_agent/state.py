@@ -188,15 +188,13 @@ class LevelState:
         targets = set(targets)
         if not targets:
             return None
-        for avoid_traps in (True, False):
-            dist, parent = self.distances(start, blocked, avoid_traps)
-            reachable = [point for point in targets if dist[point] >= 0]
-            if not reachable:
-                continue
-            target = min(reachable, key=lambda point: (dist[point], self.visits[point]))
-            path = [target]
-            while path[-1] != start:
-                path.append(parent[path[-1]])
-            path.reverse()
-            return path
-        return None
+        dist, parent = self.distances(start, blocked, avoid_traps=True)
+        reachable = [point for point in targets if dist[point] >= 0]
+        if not reachable:
+            return None
+        target = min(reachable, key=lambda point: (dist[point], self.visits[point]))
+        path = [target]
+        while path[-1] != start:
+            path.append(parent[path[-1]])
+        path.reverse()
+        return path

@@ -15,7 +15,7 @@ diff --git a/src/u_init.c b/src/u_init.c
 index 77e7445..2ecdb3f 100644
 --- a/src/u_init.c
 +++ b/src/u_init.c
-@@ -153,6 +153,13 @@ static struct trobj Valkyrie[] = {
+@@ -153,6 +153,14 @@ static struct trobj Valkyrie[] = {
      { LONG_SWORD, 1, WEAPON_CLASS, 1, UNDEF_BLESS },
 -    { DAGGER, 0, WEAPON_CLASS, 1, UNDEF_BLESS },
 +    { DAGGER, 1, WEAPON_CLASS, 8, 1 },
@@ -26,15 +26,17 @@ index 77e7445..2ecdb3f 100644
 +    { PICK_AXE, 0, TOOL_CLASS, 1, 0 },
 +    /* One blessed map per early level; these remain ordinary consumables. */
 +    { SCR_MAGIC_MAPPING, 0, SCROLL_CLASS, 12, 1 },
-+    { POT_EXTRA_HEALING, 0, POTION_CLASS, 3, 1 },
++    { POT_EXTRA_HEALING, 0, POTION_CLASS, 5, 1 },
++    { POT_WATER, 0, POTION_CLASS, 2, 1 },
      { FOOD_RATION, 0, FOOD_CLASS, 1, 0 },
      { 0, 0, 0, 0, 0 }
  };
-@@ -784,5 +791,7 @@ u_init()
+@@ -784,5 +792,8 @@ u_init()
          knows_class(WEAPON_CLASS);
          knows_class(ARMOR_CLASS);
 +        knows_object(SCR_MAGIC_MAPPING);
 +        knows_object(POT_EXTRA_HEALING);
++        knows_object(POT_WATER);
          skill_init(Skill_V);
          break;
      case PM_WIZARD:

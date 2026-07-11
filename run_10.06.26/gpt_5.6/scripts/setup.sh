@@ -19,10 +19,10 @@ else
 fi
 
 mkdir -p .deps/debs .deps/root
-if [[ ! -x .deps/root/usr/bin/flex || ! -x .deps/root/usr/bin/bison ]]; then
+if [[ ! -x .deps/root/usr/bin/flex || ! -x .deps/root/usr/bin/bison || ! -x .deps/root/usr/bin/m4 ]]; then
     (
         cd .deps/debs
-        apt-get download flex bison
+        apt-get download flex bison m4
         for deb in ./*.deb; do
             dpkg-deb -x "$deb" ../root
         done

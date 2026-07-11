@@ -72,7 +72,11 @@ Adaptations bot : NH_PREFIX=nh367, rc sans statuslines/tutorial/suppress_alert, 
 | Batch 3.6.7 | Taux | Enseignements |
 |---|---|---|
 | m367-1 | 4/32 (12%) interrompu | Doom:1 sans `>` trouvable (forage étendu au Dlvl 1) ; **cadavres d'ex-zombies = toujours avariés** (gnome zombie → "gnome corpse" piégeux) ; parties lentes |
-| m367-2 | ? | forage Dlvl 1-4 + exclusion cadavres morts-vivants |
+| m367-2 | 15/53 (28%) interrompu | Restait : cadavres partagés (vieux cadavre + kill frais sur la même case → manger le vieux), parties lentes 2,9 ticks/s (blocages), Doom:1 avec monstre adjacent bloquant le forage |
+| m367-3 | 11/37 (30%) interrompu | 17 terminated : le check wall-time était placé APRÈS le `return` du watchdog → jamais atteint une fois coincé ; diag type : Doom:4, frontier=None mais chemin dispo en ignorant un glyphe de monstre périmé ; le forage (compté en TOURS) ne part pas quand les tours sont gelés |
+| m367-4 | 30/93 (32%) | Plus aucun "terminated" (wall-time coupe à 600 s) mais les coincements demeurent : **boutique** (commerçant pacifique dans la porte → l'escalade re-marche en boucle, il fallait forer) ; **Doom:5+ (10 parties)** : arrivé par trou, `<` inconnu, et rush=True poursuivait les `>` → toujours plus profond (1 bot à Doom:14 est tombé dans la Quête !) ; "You don't have anything to zap" non géré → zaps infinis à 0 charge ; morts (26) très variées, surtout en profondeur excessive |
+| m367-5 | 47/97 (48%) | Record. Restait : **Doom:4 bloqué (12)** — 2 `>` connus jamais pris, pathfinding maison empoisonné par les bans, oscillation ; **Mines profondes 9-12 (~15)** — g0008 : remonté jusqu'à Mines:5 puis RE-plongé en rush 5→11 en 120 tours sans explorer (la ville re-ratée aller ET retour) ; faim présente dans 20/51 échecs |
+| m367-6 | ? | **rush interdit dans les Mines** (le balayage est le but, jamais foncer aux `>`) ; jamais descendre sous Mines:9 ; forage Mines exige frontière épuisée (ou 900 tours) ; **échelon "travel du jeu"** dans les 2 watchdogs (le pathfinding natif marche là où le nôtre est empoisonné) |
 
 Axes restants (par impact) :
 1. Doom 2-4 : trouver l'escalier de branche — le forage descend mais ne "branche" pas ;
