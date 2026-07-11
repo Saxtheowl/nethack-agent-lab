@@ -105,6 +105,7 @@ class Brain:
         self.eye_wait_turns = 0
         self.dig_letter = None
         self.dig_letters = []    # all digging wands; advance when one is spent
+        self.unknown_wands = []  # looted wands; zap-tested only as a last resort
         self.mines_drilled = 0
         import collections as _c
         self.action_counts = _c.Counter()
@@ -376,7 +377,7 @@ class Brain:
                 self.log(f"[door] locked door at {pos} on a shop level: hard ban (for now)")
                 t.hard_ban = True
                 self.level.shop_doors.add(pos)
-                return self.g.cmd("ms")
+                return self.g.cmd("s")
             # kick it
             snap = self.g.cmd(CTRL_D)
             if "direction" in snap.lines[0].lower() or "In what direction" in snap.lines[0]:
@@ -596,7 +597,7 @@ class Brain:
             self.move_along(path)
             return True
         self.grind_anchor = None
-        self.g.cmd("m10s")  # rest a little: spawns keep coming
+        self.g.cmd("10s")  # rest a little: spawns keep coming
         return True
 
     def portal_step(self):
@@ -759,7 +760,8 @@ class Brain:
                     if "What do you want to wield" in snap.lines[0]:
                         self.g.answer(m2.group(1))
                     return
-        if FOOD_HERE.search(msgs) or want_dagger:
+        want_wand = re.search(r"You see here an? .*\bwand\b", msgs)
+        if FOOD_HERE.search(msgs) or want_dagger or want_wand:
             snap = self.g.cmd(",")
             if self.g.in_menu(snap):
                 self.g.sess.send(ESC)
@@ -774,6 +776,14 @@ class Brain:
                     self.food_letters.append(m2.group(1))
                 if "dagger" in m2.group(2):
                     self.dagger_letter = m2.group(1)
+                if "wand" in m2.group(2):
+                    if "digging" in m2.group(2):
+                        self.dig_letters.append(m2.group(1))
+                        self.dig_letter = self.dig_letter or m2.group(1)
+                        self.log(f"[loot] wand of digging '{m2.group(1)}'!")
+                    else:
+                        self.unknown_wands.append(m2.group(1))
+                        self.log(f"[loot] unknown wand '{m2.group(1)}'")
 
     # ---------- combat ----------
 
@@ -923,11 +933,13 @@ class Brain:
                 # walking already failed here (immovable peaceful, e.g. a
                 # shopkeeper in the doorway) or there is nowhere to walk
                 lv0 = self.level
-                if not path and lv0.blocked_edges and lv0.amnesties < 3:
-                    # bans from long-gone monsters can wall off half the map
+                if not path and lv0.amnesties < 3 and (
+                        lv0.blocked_edges or lv0.has_unseen()):
+                    # bans and written-off search spots both poison the memory
                     lv0.amnesties += 1
                     lv0.blocked_edges.clear()
-                    self.log(f"[watchdog] escalate: ban amnesty #{lv0.amnesties}")
+                    lv0.reset_searched()
+                    self.log(f"[watchdog] escalate: ban+search amnesty #{lv0.amnesties}")
                     return
                 probes = []
                 if not path:
@@ -942,10 +954,24 @@ class Brain:
                                             adjacent=True)
                     if p2:
                         self.move_along(p2[:6])
-                    self.g.cmd("m10s")
+                    self.g.cmd("10s")
                 elif self.dig_letter:
                     self.log("[watchdog] escalate: digging down")
                     self.dig_down()
+                elif self.unknown_wands:
+                    w = self.unknown_wands.pop(0)
+                    self.log(f"[watchdog] escalate: zap-testing wand '{w}' downward")
+                    snap = self.g.cmd("z")
+                    if "What do you want to zap" in snap.lines[0]:
+                        snap = self.g.answer(w)
+                    if "direction" in snap.lines[0].lower():
+                        self.g.answer(">")
+                    msgs = " ".join(self.g.turn_messages)
+                    if "dig" in msgs or "fall through" in msgs:
+                        self.dig_letters.append(w)
+                        self.dig_letter = self.dig_letter or w
+                        self.log(f"[loot] '{w}' identified as digging!")
+                    self.g.pump()
                 else:
                     self.recover()
                 return
@@ -1085,7 +1111,7 @@ class Brain:
             if self.turn - self.last_elbereth_turn <= 12 and self.elbereth_waits < 4:
                 # attacking from the square would wipe the engraving: hold still
                 self.elbereth_waits += 1
-                self.g.cmd("ms")
+                self.g.cmd("s")
                 return
             # they ignore Elbereth (or it's gone): fight for our life
             if self.fight(adj):
@@ -1108,7 +1134,7 @@ class Brain:
                     return
         if st.confused or st.stunned or st.blind:
             if not (adj and self.fight(adj)):
-                self.g.cmd("ms")  # always consume time while impaired
+                self.g.cmd("s")  # always consume time while impaired
             return
 
         # --- stuck to a lichen/clinger: kill it first ---
@@ -1159,7 +1185,7 @@ class Brain:
         rest_bar = 0.8 if self.branch == BRANCH_MINES else 0.7
         if hp_frac < rest_bar and not adj:
             self.action_counts["rest"] += 1
-            self.g.cmd("m20s")
+            self.g.cmd("20s")
             return
 
         # --- go eat the corpse of our last safe kill (bank nutrition) ---
@@ -1371,7 +1397,7 @@ class Brain:
                 snap = self.g.pump()
                 if (snap.status and snap.status.hp < 0.75 * max(1, snap.status.hpmax)
                         and not self.adjacent_monsters(snap)):
-                    self.g.cmd("m20s")  # heal up before descending
+                    self.g.cmd("20s")  # heal up before descending
                     return True
                 self.log(f"[nav] descending at {hero} ({self.branch}:{self.dlvl})")
                 lv.tried_down.add(hero)
@@ -1479,7 +1505,7 @@ class Brain:
         if t.char == "e":
             return self.handle_blocker(pos, t)  # floating eye: never force-attack
         if t.wait_count <= 12:
-            self.g.cmd("ms")
+            self.g.cmd("s")
             return True
         if t.char == "@":
             # never anger shopkeepers/priests/watchmen: treat as a wall
@@ -1492,7 +1518,7 @@ class Brain:
             if abs(dx) <= 1 and abs(dy) <= 1 and (dx or dy):
                 self.step_dir((dx, dy))
                 return True
-            self.g.cmd("ms")
+            self.g.cmd("s")
             return True
         if abs(dx) <= 1 and abs(dy) <= 1 and (dx or dy):
             self.log(f"[force] attacking sleeping peaceful blocker {t.char} at {pos}")
@@ -1501,7 +1527,7 @@ class Brain:
                 self.g.answer("y")
             t.peaceful_until = 0
             return True
-        self.g.cmd("ms")
+        self.g.cmd("s")
         return True
 
     def handle_blocker(self, pos, tile):
@@ -1518,7 +1544,7 @@ class Brain:
                 for xx in range(max(0, pos[0] - 3), min(W, pos[0] + 4)):
                     if self.level.tiles[yy][xx].char == "@":
                         tile.peaceful_until = self.turn + 300
-                        self.g.cmd("m10s")
+                        self.g.cmd("10s")
                         return True
             # floating eye / sphere: throw something, never melee
             letter = None
@@ -1548,7 +1574,7 @@ class Brain:
                 raise Abort("eye-locked with no projectiles")
             self.log(f"[blocker] nothing to throw at {ch} at {pos}: avoiding 300 turns")
             tile.peaceful_until = self.turn + 300
-            self.g.cmd("m10s")
+            self.g.cmd("10s")
             return True
         # passive monsters (molds, jellies): melee them if we're healthy
         snap = self.g.pump()
@@ -1559,7 +1585,7 @@ class Brain:
             self.log(f"[blocker] melee passive {ch} ({fg}) at {pos} T={self.turn}")
             self.step_dir((dx, dy))
             return True
-        self.g.cmd("m20s")  # rest until healthy enough
+        self.g.cmd("20s")  # rest until healthy enough
         return True
 
     def pick_goal(self):
@@ -1704,15 +1730,16 @@ class Brain:
                     if self.dig_down():
                         return
                 raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
-            if (lv.total_searched >= 100 and lv.blocked_edges
-                    and lv.amnesties < 3):
+            if (lv.total_searched >= 150 and lv.amnesties < 3
+                    and (lv.blocked_edges or lv.has_unseen())):
                 lv.amnesties += 1
                 lv.blocked_edges.clear()
+                lv.reset_searched()
                 lv.total_searched = 0
-                self.log(f"[search] ban amnesty #{lv.amnesties}: re-explore first")
+                self.log(f"[search] ban+search amnesty #{lv.amnesties}: retry all spots")
                 return
             t0 = self.turn
-            snap = self.g.cmd("m10s")
+            snap = self.g.cmd("10s")
             lv.total_searched += max(1, (snap.status.turn - t0) if snap.status else 1)
             return
         budget = 500 if lv.stairs_down else 900
@@ -1739,22 +1766,23 @@ class Brain:
             if lv.extensions < 2:
                 lv.extensions += 1
                 self.level_arrival_turn += 1200  # extend the level timeout
-        spots = lv.search_spots(self.hero, self.turn)
-        if spots:
-            if self.hero in spots:
+        best = lv.best_search_spot(self.hero, self.turn)
+        if best:
+            _, spot = best
+            if self.hero == spot:
                 t0 = self.turn
-                snap = self.g.cmd("m10s")
+                snap = self.g.cmd("10s")
                 spent = max(1, (snap.status.turn - t0) if snap.status else 1)
                 lv.tile(*self.hero).searched += spent
                 lv.total_searched += spent
                 return
-            path = lv.path_to(self.hero, set(spots), self.turn)
+            path = lv.path_to(self.hero, {spot}, self.turn)
             if path:
                 self.move_along(path)
                 return
         # nothing to search: search in place as last resort
         t0 = self.turn
-        snap = self.g.cmd("m10s")
+        snap = self.g.cmd("10s")
         spent = max(1, (snap.status.turn - t0) if snap.status else 1)
         lv.tile(*self.hero).searched += spent
         lv.total_searched += spent
@@ -1811,7 +1839,7 @@ class Brain:
         self.g.sess.send(CTRL_R)
         self.g.pump()
         # nudge: search once (consumes a turn if UI is live)
-        self.g.cmd("ms")
+        self.g.cmd("s")
 
     # ---------- bootstrap ----------
 

@@ -5,7 +5,7 @@ officielle NetHack **3.6.7**. Les parties comptées sont des Valkyries naines,
 loyales et féminines, sans wizard mode et sans seed contrôlée. La seule
 modification favorable du jeu est le kit explicitement autorisé et documenté
 dans le patch NetHack : une blessed greased `+2 gray dragon scale mail`.
-Le reste est l’inventaire Valkyrie standard. Le pet est désactivé.
+Le reste est le départ Valkyrie standard, familier compris.
 
 Le succès est mesuré au premier tile que NetHack considère comme appartenant à
 la ville. Ce signal reste dans l’observation privée de l’évaluateur : il termine
@@ -65,7 +65,7 @@ retiré :
 - NetHack 3.6.7, environnement `NetHackChallenge`, `wizard=False` forcé ;
 - personnage fixe `val-dwa-fem-law` ;
 - aucune seed injectée et effets temporels non figés ;
-- monstres normaux activés, pas de sauvegardes/bones, pas de pet ;
+- monstres normaux activés, pas de sauvegardes/bones, familier standard ;
 - avantage de départ strict : seulement la GDSM blessed greased +2 ;
 - succès exact au premier appel vrai à `in_town(u.ux, u.uy)` ;
 - le canal interne contenant ce bit est supprimé avant l’appel à la politique.

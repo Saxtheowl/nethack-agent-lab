@@ -32,7 +32,7 @@ class NetHackMinetown(NetHackChallenge):
         # keyboard.  Keeping this class based on Challenge makes counted runs
         # incapable of silently enabling wizard mode or deterministic seeds.
         if "options" not in kwargs:
-            kwargs["options"] = [*nethack.NETHACKOPTIONS, "pettype:none"]
+            kwargs["options"] = list(nethack.NETHACKOPTIONS)
         super().__init__(*args, character=character, **kwargs)
 
     def _is_episode_end(self, observation):

@@ -81,7 +81,8 @@ Adaptations bot : NH_PREFIX=nh367, rc sans statuslines/tutorial/suppress_alert, 
 | m367-5 | 47/97 (48%) | Record. Restait : **Doom:4 bloqué (12)** — 2 `>` connus jamais pris, pathfinding maison empoisonné par les bans, oscillation ; **Mines profondes 9-12 (~15)** — g0008 : remonté jusqu'à Mines:5 puis RE-plongé en rush 5→11 en 120 tours sans explorer (la ville re-ratée aller ET retour) ; faim présente dans 20/51 échecs |
 | m367-6 | 42/98 (43%) | Aborts en chute (7 familles wall-time contre 24) mais morts dominantes (29) : autopsie grid bug = **mort de faim** (évanouissements, prière unique refusée "Tyr is displeased", 0 nourriture depuis 1000 tours) ; Doom:4 encore 17 (oscillation 2↔3 remettait le timer de forage à zéro à chaque arrivée) ; 2 morts shopkeeper = trou foré dans le plancher de boutique |
 | m367-7 | 24/47 (51%) interrompu | 3 rations + corpses élargis + tours cumulés/niveau + amnistie bans + pas de forage près d'un `@`. Interrompu par la consigne kit strict |
-| m367-8 | ? | **KIT STRICT (user)** : défaut + GDSM uniquement — plus de wands de digging (toute la stratégie forage ne s'appliquera qu'aux wands trouvées en jeu), 1 seule ration. Nouvelle baseline à mesurer |
+| m367-8 | 15/99 (15%) | **Baseline kit strict.** 41 parties bloquées Doom:1-2 → autopsie : **BUG MAJEUR "Invalid direction for 'm' prefix"** — en 3.6.7 `m` exige une direction, la syntaxe `m10s` (héritée 3.7) était invalide : TOUTES les fouilles ne duraient que 1 tour au lieu de 10 depuis la migration ! (masqué avant par les wands qui contournaient les passages cachés) ; portes verrouillées 25, boulders coincés 20 |
+| m367-9 | ? | Syntaxe fouille 3.6.7 : `10s`/`20s`/`s` (sans préfixe m) ; **ramassage des wands trouvées** (digging auto-identifiée au 1er zap) + zap-test `>` des wands inconnues en dernier recours de coincement |
 
 Axes restants (par impact) :
 1. Doom 2-4 : trouver l'escalier de branche — le forage descend mais ne "branche" pas ;

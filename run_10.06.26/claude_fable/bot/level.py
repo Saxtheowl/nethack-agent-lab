@@ -69,11 +69,21 @@ class Level:
         self.desperate = False    # last-resort mode: kick suspected shop doors
         self.retreats = 0         # times we retreated upstairs from this level
         self.turns_spent = 0      # cumulative game turns on this level
-        self.amnesties = 0        # times blocked_edges were wiped clean
+        self.amnesties = 0        # times bans/search counters were wiped
         self.mines_stairs = set() # down stairs known to lead into the Mines
         self.search_wide = False  # widen search spots after a full recycle
         self.extensions = 0       # level-timeout extensions granted
         self.no_progress = 0
+
+    def has_unseen(self):
+        """Rough test: does a meaningful unexplored region remain?"""
+        n = sum(1 for row in self.tiles for t in row if not t.seen)
+        return n > 150
+
+    def reset_searched(self):
+        for row in self.tiles:
+            for t in row:
+                t.searched = 0
 
     def tile(self, x, y):
         return self.tiles[y][x]
@@ -333,6 +343,87 @@ class Level:
             def pred(x, y):
                 return (x, y) in tset
         return self.bfs(hero, pred, hero, turn, ignore_monsters)
+
+    def unseen_components(self):
+        """8-connected regions of never-seen tiles (candidate hidden rooms)."""
+        comp = [[0] * W for _ in range(H)]
+        sizes = {}
+        cid = 0
+        for y in range(H):
+            for x in range(W):
+                if comp[y][x] or self.tiles[y][x].seen:
+                    continue
+                cid += 1
+                stack = [(x, y)]
+                comp[y][x] = cid
+                n = 0
+                while stack:
+                    cx, cy = stack.pop()
+                    n += 1
+                    for dx in (-1, 0, 1):
+                        for dy in (-1, 0, 1):
+                            nx, ny = cx + dx, cy + dy
+                            if (0 <= nx < W and 0 <= ny < H and not comp[ny][nx]
+                                    and not self.tiles[ny][nx].seen):
+                                comp[ny][nx] = cid
+                                stack.append((nx, ny))
+                sizes[cid] = n
+        return comp, sizes
+
+    def best_search_spot(self, hero, turn=0):
+        """Occupancy-map style targeting (autoascend / Campbell&Verbrugge):
+        search dead-ends and walls that FACE a large unseen region, close to
+        us, not already over-searched. Returns (score, (x,y)) or None."""
+        comp, sizes = self.unseen_components()
+        # distance map from hero (through walkable tiles, ignoring monsters)
+        dist = {hero: 0}
+        from collections import deque
+        q = deque([hero])
+        while q:
+            cx, cy = q.popleft()
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    if dx == dy == 0:
+                        continue
+                    nx, ny = cx + dx, cy + dy
+                    if (0 <= nx < W and 0 <= ny < H and (nx, ny) not in dist
+                            and self.walkable(nx, ny, hero, turn,
+                                              ignore_monsters=True)):
+                        dist[(nx, ny)] = dist[(cx, cy)] + 1
+                        q.append((nx, ny))
+        best = None
+        for (x, y), d in dist.items():
+            t = self.tiles[y][x]
+            passes = t.searched / 10.0
+            if passes >= 5:
+                continue
+            score = -4.0 * passes * passes - 0.5 * d
+            interesting = False
+            if t.char == "#":
+                nbs = sum(1 for (dx, dy) in DIRS
+                          if 0 <= x + dx < W and 0 <= y + dy < H
+                          and self.walkable(x + dx, y + dy, hero, turn,
+                                            ignore_monsters=True))
+                if nbs <= 1:
+                    score += 25  # dead-end corridors are prime suspects
+                    interesting = True
+            for (dx, dy) in ((0, -1), (0, 1), (-1, 0), (1, 0)):
+                fx, fy = x + 2 * dx, y + 2 * dy
+                nx, ny = x + dx, y + dy
+                if not (0 <= nx < W and 0 <= ny < H):
+                    continue
+                nch = self.tiles[ny][nx].char
+                if nch not in WALL_CHARS and nch != " ":
+                    continue
+                if 0 <= fx < W and 0 <= fy < H and comp[fy][fx]:
+                    score += min(50, 2 * sizes[comp[fy][fx]])
+                    interesting = True
+                    break
+            if not interesting and not self.search_wide:
+                continue
+            if best is None or score > best[0]:
+                best = (score, (x, y))
+        return best
 
     def search_spots(self, hero, turn=0):
         """Tiles worth searching: along a wall (or dead end) with unseen space beyond."""

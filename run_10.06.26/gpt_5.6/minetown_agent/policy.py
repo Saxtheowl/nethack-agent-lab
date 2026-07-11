@@ -19,11 +19,14 @@ from .state import (
     CORRIDOR,
     DARKROOM,
     DIRECTIONS,
+    DOORWAY,
     FOUNTAIN,
     LevelKey,
     LevelState,
     Point,
     ROOM,
+    OPEN_DOOR_H,
+    OPEN_DOOR_V,
     STONE,
     WALL_MAX,
     WALL_MIN,
@@ -751,11 +754,19 @@ class MinetownPolicy:
                 value = int(level.terrain[nxt])
                 if value in (CLOSED_DOOR_V, CLOSED_DOOR_H):
                     failures = level.door_failures.get(nxt, 0)
-                    if failures == 0:
+                    if failures < 6:
                         candidates.append((d + failures * 3 - 8, point, nxt, "door"))
                 elif (
                     value in (-1, STONE)
-                    and int(level.terrain[point]) == CORRIDOR
+                    and (
+                        int(level.terrain[point]) in (
+                            CORRIDOR,
+                            DOORWAY,
+                            OPEN_DOOR_V,
+                            OPEN_DOOR_H,
+                        )
+                        or level.key[0] != 0
+                    )
                     and (point, nxt) not in level.failed_edges
                     and level.unknown_attempts < unknown_budget
                 ):
@@ -786,13 +797,10 @@ class MinetownPolicy:
         delta = (target[0] - self.position[0], target[1] - self.position[1])
         if kind == "door":
             failures = level.door_failures.get(target, 0)
-            if failures > 0:
-                level.door_failures[target] = 10
-                return None
-            raw = int(nethack.Command.OPEN)
-            level.door_failures[target] = 1
+            raw = int(nethack.Command.OPEN if failures == 0 else nethack.Command.KICK)
+            level.door_failures[target] = failures + 1
             self.intent = {"kind": "direction", "raw": int(DIRECTION_ACTION[delta])}
-            return self._emit(raw, "open_door")
+            return self._emit(raw, "open_door" if failures == 0 else "kick_door")
         return self._move(level, target, "probe_unknown")
 
     def _search_hidden(
@@ -810,8 +818,6 @@ class MinetownPolicy:
         candidates: list[tuple[float, Point]] = []
         for y, x in map(tuple, np.argwhere(dist >= 0)):
             point = (int(y), int(x))
-            if level.searches[point] >= per_tile:
-                continue
             wallish = 0
             known_degree = 0
             for nxt in neighbors(point, diagonals=False):
@@ -820,6 +826,14 @@ class MinetownPolicy:
                 value = int(level.terrain[nxt])
                 wallish += value in (-1, STONE) or WALL_MIN <= value <= WALL_MAX
                 known_degree += value in (ROOM, DARKROOM, CORRIDOR)
+            terrain = int(level.terrain[point])
+            local_limit = (
+                per_tile
+                if terrain == CORRIDOR and known_degree <= 1
+                else max(3, per_tile // 5)
+            )
+            if level.searches[point] >= local_limit:
+                continue
             # Culs-de-sac remain highest priority, but ordinary room-edge
             # squares must stay eligible: many generated levels put their only
             # continuation behind an otherwise unremarkable wall segment.
@@ -829,6 +843,7 @@ class MinetownPolicy:
                     + int(level.searches[point]) * 7
                     + known_degree * 2
                     - wallish * 2
+                    - (80 if terrain == CORRIDOR and known_degree <= 1 else 0)
                 )
                 candidates.append((priority, point))
         if not candidates:
@@ -1005,8 +1020,8 @@ class MinetownPolicy:
         if mapped:
             level.exhausted = True
             return None
-        search_budget = (1800 if thorough else 600) + level.escalation * 600
-        per_tile = 20 + level.escalation * 8
+        search_budget = (700 if thorough else 260) + level.escalation * 350
+        per_tile = 20 + level.escalation * 5
         action = self._search_hidden(
             level, blocked, budget=search_budget, per_tile=per_tile
         )
@@ -1147,6 +1162,18 @@ class MinetownPolicy:
 
         if dnum != 0:
             self.mines_dnum = dnum
+            # The evaluator succeeds on the arrival square itself.  Once a
+            # Mines down stair is known, taking it immediately is both faster
+            # and safer than sweeping the current non-town cavern.
+            if dlevel <= 4 and level.stairs_down:
+                point = min(
+                    level.stairs_down,
+                    key=lambda p: abs(p[0] - self.position[0])
+                    + abs(p[1] - self.position[1]),
+                )
+                action = self._go_stair(level, point, blocked, down=True)
+                if action is not None:
+                    return action
             if dlevel >= 5:
                 if dlevel <= 6:
                     action = self._patrol_unvisited(level, blocked)
@@ -1242,24 +1269,6 @@ class MinetownPolicy:
             return None
 
         if 2 <= dlevel <= 4:
-            attempted_here = {
-                point for key, point in self.attempted_down if key == self.current_key
-            }
-            untested = level.stairs_down - attempted_here
-            if untested:
-                point = min(untested)
-                action = self._go_stair(
-                    level,
-                    point,
-                    blocked,
-                    down=True,
-                    return_if_main=(
-                        self.branch_backtracking or len(level.stairs_down) >= 2
-                    ),
-                )
-                if action is not None:
-                    return action
-
             if not level.stairs_down:
                 action = self._inspect_objects(level, blocked)
                 if action is not None:
@@ -1281,9 +1290,7 @@ class MinetownPolicy:
                     point,
                     blocked,
                     down=True,
-                    return_if_main=(
-                        self.branch_backtracking or len(level.stairs_down) >= 2
-                    ),
+                    return_if_main=True,
                 )
                 if action is not None:
                     return action

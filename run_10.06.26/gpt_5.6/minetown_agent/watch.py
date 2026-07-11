@@ -27,6 +27,26 @@ CLEAR = "\033[0m\033[H\033[2J"
 
 def load_results(root: Path) -> list[dict]:
     rows: list[dict] = []
+    seen: set[tuple[str, int]] = set()
+
+    def add_row(row: dict, run_dir: Path) -> None:
+        key = (str(run_dir.resolve()), int(row["episode"]))
+        if key in seen:
+            return
+        seen.add(key)
+        row["_run"] = run_dir.name
+        row["_run_dir"] = str(run_dir)
+        ttyrec = Path(row.get("ttyrec") or "")
+        if not row.get("ttyrec") or not ttyrec.exists():
+            local_ttyrecs = sorted(
+                (run_dir / "episodes" / f"{int(row['episode']):06d}").glob(
+                    "*.ttyrec*.bz2"
+                )
+            )
+            if local_ttyrecs:
+                row["ttyrec"] = str(local_ttyrecs[-1])
+        rows.append(row)
+
     paths = []
     if (root / "results.jsonl").exists():
         paths.append(root / "results.jsonl")
@@ -36,18 +56,11 @@ def load_results(root: Path) -> list[dict]:
         for line in path.read_text().splitlines():
             if line.strip():
                 row = json.loads(line)
-                row["_run"] = run_dir.name
-                row["_run_dir"] = str(run_dir)
-                ttyrec = Path(row.get("ttyrec") or "")
-                if row.get("ttyrec") and not ttyrec.exists():
-                    local_ttyrecs = sorted(
-                        (run_dir / "episodes" / f"{int(row['episode']):06d}").glob(
-                            "*.ttyrec*.bz2"
-                        )
-                    )
-                    if local_ttyrecs:
-                        row["ttyrec"] = str(local_ttyrecs[-1])
-                rows.append(row)
+                add_row(row, run_dir)
+    run_dirs = [root] if (root / "episodes").is_dir() else list(root.iterdir()) if root.is_dir() else []
+    for run_dir in run_dirs:
+        for path in (run_dir / "episodes").glob("*/result.json"):
+            add_row(json.loads(path.read_text()), run_dir)
     return sorted(rows, key=lambda row: (row["_run"], row["episode"]), reverse=True)
 
 
@@ -55,7 +68,11 @@ def available_runs(root: Path) -> list[str]:
     base = root if root.exists() and root.name == "runs" else Path("runs")
     if not base.exists():
         return []
-    return sorted(path.name for path in base.iterdir() if (path / "results.jsonl").exists())
+    return sorted(
+        path.name
+        for path in base.iterdir()
+        if (path / "results.jsonl").exists() or (path / "episodes").is_dir()
+    )
 
 
 def label(row: dict) -> str:

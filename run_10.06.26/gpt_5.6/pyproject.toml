@@ -11,6 +11,7 @@ dependencies = ["gymnasium==1.2.0", "numpy>=2.0"]
 
 [project.scripts]
 mt-run = "minetown_agent.runner:main"
+mt-run-autoascend = "minetown_agent.autoascend_runner:main"
 mt-watch = "minetown_agent.watch:main"
 
 [tool.setuptools.packages.find]
@@ -18,4 +19,3 @@ include = ["minetown_agent*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-
