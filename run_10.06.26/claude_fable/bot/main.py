@@ -49,6 +49,9 @@ def run_one(outdir, game_id="g0", verbose=False):
     playground = os.path.join(outdir, "playground")
     make_playground(playground)
     argv, env = nethack_argv_env(playground, user=f"Bot")
+    import brain as brain_mod
+    if getattr(brain_mod, "WIZARD_JUMP", 0):
+        argv.insert(1, "-D")
 
     logpath = os.path.join(outdir, "bot.log")
     logf = open(logpath, "w")
@@ -138,7 +141,12 @@ if __name__ == "__main__":
     ap.add_argument("outdir")
     ap.add_argument("--id", default="g0")
     ap.add_argument("-v", "--verbose", action="store_true")
+    ap.add_argument("--wizard-jump", type=int, default=0)
     args = ap.parse_args()
+    wj = args.wizard_jump or int(os.environ.get("NH_WIZARD_JUMP", "0"))
+    if wj:
+        import brain as brain_mod
+        brain_mod.WIZARD_JUMP = wj
     meta = run_one(args.outdir, args.id, args.verbose)
     print(json.dumps(meta, indent=2))
     sys.exit(0 if meta["result"] == "minetown" else 1)

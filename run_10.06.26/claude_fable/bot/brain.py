@@ -11,7 +11,7 @@ SAFE_NAMES = (
     r"rothe|floating eye|dingo|wolf|warg|jaguar|panther|housecat|kitten|pony|horse"
 )
 SAFE_CORPSES = re.compile(r"\b(" + SAFE_NAMES + r")\b.*corpse")
-SAFE_KILL = re.compile(r"You (?:kill|destroy) the (" + SAFE_NAMES + r")\b")
+SAFE_KILL = re.compile(r"You (?:kill|destroy) the (" + SAFE_NAMES + r")\b(?! zombie| mummy)")
 FOOD_HERE = re.compile(
     r"You see here (a|an|some|\d+) (food rations?|cram rations?|lembas wafers?|apples?|oranges?|"
     r"pears?|melons?|bananas?|carrots?|slime molds?|candy bars?|fortune cookies?|pancakes?|"
@@ -21,7 +21,8 @@ FOOD_HERE = re.compile(
 # mindless monsters can't read Elbereth; most are also slow -> walk away
 MINDLESS = set("PZFbjy")
 
-GOAL = "quest"  # "minetown" ou "quest"
+GOAL = "minetown"  # "minetown" ou "quest"
+WIZARD_JUMP = 0  # test: level-teleport after start; immortal prompts
 
 BRANCH_DOOM = "Doom"
 BRANCH_MINES = "Mines"
@@ -95,6 +96,11 @@ class Brain:
         self.portal_denied = set()  # '^' tiles that turned out to be other traps
         self.last_xp = 1
         self.grind_anchor = None    # roaming corner for the XP grind
+        self.eye_wait_turns = 0
+        self.dig_letter = None
+        self.mines_drilled = 0
+        import collections as _c
+        self.action_counts = _c.Counter()
         self.under_attack_until = -1
         self.hostile_human_until = -1
         self.minetown_key = None
@@ -159,8 +165,11 @@ class Brain:
         self.level = self._level(branch, new_dlvl)
         if branch != BRANCH_MINES:
             self.mines_up_hunt = False
+            self.mines_drilled = 0
         if branch == BRANCH_SOKOBAN and prev_stair and prev_stair[0] == "up":
             prev_level.tried_up.add(prev_stair[1])
+        if branch == BRANCH_MINES and prev_stair and prev_stair[0] == "down":
+            prev_level.mines_stairs.add(prev_stair[1])
         self.arrived_via = prev_stair[0] if prev_stair else None
         if (prev_stair is None and branch == BRANCH_MINES
                 and new_dlvl > getattr(self, "_prev_dlvl", 1) + 1):
@@ -212,6 +221,8 @@ class Brain:
             return self.g.answer("n")
         if "Really quit" in msg:
             return self.g.answer("n")
+        if WIZARD_JUMP and ("Die?" in msg or "Dry up" in msg):
+            return self.g.answer("n")  # wizard-mode immortality for tests
         if "Shall I remove" in msg or "force its lock" in msg:
             return self.g.answer("n")
         if "What do you want" in msg or "don't have that object" in msg:
@@ -312,7 +323,8 @@ class Brain:
             if "door is locked" in m:
                 self.level.tile(nx, ny).door_locked = True
             if "You kill" in m or "You destroy" in m:
-                self.kill_sites[(nx, ny)] = self.turn
+                if "zombie" not in m and "mummy" not in m:
+                    self.kill_sites[(nx, ny)] = self.turn
             if re.search(r"You see here .* corpse", m):
                 self.corpse_sites[(nx, ny)] = self.turn
             if "statue" in m:
@@ -442,6 +454,102 @@ class Brain:
             return True
         return False
 
+    def travel_to_stairs(self, kind):
+        """Use the game's own travel command: _ then < or > then . — the game
+        pathfinds natively (doors, diagonals, doorways all handled)."""
+        before = self.hero
+        self.g.turn_messages = []
+        self.g.sess.send("_")
+        self.g.sess.settle(quiet=0.08, total=1.5)
+        snap = self.g.snap()
+        # first-use tips screen / --More--
+        guard = 0
+        while (snap.more or self.g.in_menu(snap)) and guard < 6:
+            self.g.sess.send(" ")
+            self.g.sess.settle(quiet=0.08, total=1.5)
+            snap = self.g.snap()
+            guard += 1
+        if "travel to" not in snap.lines[0] and "(For instructions" not in snap.lines[0]:
+            # prompt did not open as expected; escape and report failure
+            self.g.sess.send("\x1b")
+            self.g.pump()
+            return False
+        self.g.sess.send(kind)
+        self.g.sess.settle(quiet=0.08, total=1.0)
+        self.g.sess.send(".")
+        snap = self.g.pump()
+        moved = self.g.pump().cursor != (before[0], before[1] + 1)
+        return moved
+
+    def dig_down(self):
+        """Zap the wand of digging downwards: instant descent."""
+        lv = self.level
+        if self.hero in lv.stairs_up or self.hero in lv.stairs_down:
+            # can't dig through stairs: side-step first
+            for (dx, dy) in DIRS:
+                nx, ny = self.hero[0] + dx, self.hero[1] + dy
+                if (0 <= nx < W and 0 <= ny < H
+                        and lv.walkable(nx, ny, self.hero, self.turn)
+                        and (nx, ny) not in lv.stairs_up
+                        and (nx, ny) not in lv.stairs_down):
+                    self.step_dir((dx, dy))
+                    return True
+            return False
+        self.log(f"[dig] zapping down from {self.branch}:{self.dlvl}")
+        snap = self.g.cmd("z")
+        if "What do you want to zap" in snap.lines[0]:
+            snap = self.g.answer(self.dig_letter)
+        if "don't have that object" in snap.lines[0] or "Nothing happens" in " ".join(self.g.turn_messages):
+            self.dig_letter = None
+            self.g.maybe_dismiss_prompt(self.g.pump())
+            return False
+        if "direction" in snap.lines[0].lower():
+            self.g.answer(">")
+        msgs = " ".join(self.g.turn_messages)
+        if "bounces off the stairs" in msgs:
+            # we are standing on hidden-under-us stairs: remember + side-step
+            self.level.stairs_up.add(self.hero)
+            return True
+        if "wrested" in msgs or "nothing happens" in msgs.lower():
+            self.dig_letter = None
+        self.g.pump()
+        return True
+
+    def coverage_step(self):
+        """Visit every walkable tile (portal hunting on 11-16)."""
+        lv = self.level
+        cands = [(x, y) for y in range(H) for x in range(W)
+                 if lv.tiles[y][x].char in ".<>{_" and (x, y) not in lv.visited
+                 and lv.walkable(x, y, self.hero, self.turn)]
+        if not cands:
+            return False  # fully covered: fall through (descend)
+        # stall watchdog: unreachable-in-practice tiles must be written off
+        if getattr(self, "_cov_pos", None) == self.hero:
+            self._cov_stall = getattr(self, "_cov_stall", 0) + 1
+        else:
+            self._cov_stall = 0
+            self._cov_pos = self.hero
+        if self._cov_stall > 6:
+            tgt = min(cands, key=lambda c: max(abs(c[0]-self.hero[0]), abs(c[1]-self.hero[1])))
+            lv.visited.add(tgt)  # write it off as covered
+            self._cov_stall = 0
+            return True
+        path = lv.path_to(self.hero, set(cands), self.turn)
+        if path:
+            self.move_along(path)
+            return True
+        path = lv.path_to(self.hero, set(cands), self.turn, ignore_monsters=True)
+        if path:
+            nx, ny = path[0]
+            t = lv.tile(nx, ny)
+            if t.char in MONSTER_CHARS or t.peaceful_until > self.turn:
+                if t.peaceful_until > self.turn:
+                    return self.wait_or_force((nx, ny), t)
+                return self.handle_blocker((nx, ny), t)
+            self.move_along(path)
+            return True
+        return False
+
     def grind_step(self):
         """XL < 14 with the portal found: roam this level to farm spawns.
         Combat/eating/rest are handled by the main tick before navigation."""
@@ -531,7 +639,7 @@ class Brain:
             return False
         msg = snap.lines[0]
         if "eat it?" in msg or "; eat" in msg:
-            if "lichen corpse" in msg:  # lichen never rots: always safe
+            if "lichen corpse" in msg and "rotted" not in msg:
                 self.g.answer("y")
                 return True
             snap = self.g.answer("n")
@@ -590,7 +698,7 @@ class Brain:
         snap = self.g.cmd("e")
         msg = snap.lines[0]
         if ("eat it?" in msg or "; eat" in msg) and snap.ynq:
-            if SAFE_CORPSES.search(msg) and "dwarf" not in msg:
+            if SAFE_CORPSES.search(msg) and "dwarf" not in msg and "rotted" not in msg:
                 self.g.answer("y")
                 return True
             snap = self.g.answer("n")
@@ -601,8 +709,10 @@ class Brain:
 
     def pickup_food(self):
         msgs = " ".join(self.g.turn_messages)
-        want_dagger = self.dagger_letter is None and re.search(
-            r"You see here an? (\+\d+ )?(blessed |uncursed |cursed )?dagger", msgs)
+        if "for sale" in msgs or "zorkmids" in msgs:
+            return  # shop merchandise: touching it means debt/aggro
+        want_dagger = re.search(
+            r"You see here (an? |\d+ )?(\+\d+ )?(blessed |uncursed |cursed )?daggers?", msgs)
         want_weapon = self.rewield_letter and re.search(
             r"You see here an? .*(spear|long sword)", msgs)
         if want_weapon:
@@ -633,7 +743,7 @@ class Brain:
                 if re.search(r"ration|wafer|apple|orange|pear|melon|banana|carrot|"
                              r"slime mold|candy|cookie|pancake", m2.group(2)):
                     self.food_letters.append(m2.group(1))
-                if "dagger" in m2.group(2) and self.dagger_letter is None:
+                if "dagger" in m2.group(2):
                     self.dagger_letter = m2.group(1)
 
     # ---------- combat ----------
@@ -671,9 +781,12 @@ class Brain:
                 snap = self.step_dir(dxdy)
                 for m in self.g.turn_messages:
                     if "You kill" in m or "You destroy" in m:
-                        self.kill_sites[(tx, ty)] = self.turn
-                        if SAFE_KILL.search(m):
-                            self.pending_eat = ((tx, ty), self.turn, self.ticks)
+                        if "zombie" in m or "mummy" in m:
+                            self.corpse_sites.pop((tx, ty), None)  # undead: old meat
+                        else:
+                            self.kill_sites[(tx, ty)] = self.turn
+                            if SAFE_KILL.search(m):
+                                self.pending_eat = ((tx, ty), self.turn, self.ticks)
                 return True
         return False
 
@@ -710,8 +823,10 @@ class Brain:
         snap = self.sync()
         if self.ticks % 100 == 0:
             st = snap.status
+            acts = " ".join(f"{k}:{v}" for k, v in self.action_counts.most_common(8))
+            self.action_counts.clear()
             self.log(f"[tick {self.ticks}] T={st.turn} {self.branch}:{self.dlvl} "
-                     f"pos={self.hero} hp={st.hp}/{st.hpmax} xp={st.xp} state={self.state}")
+                     f"pos={self.hero} hp={st.hp}/{st.hpmax} xp={st.xp} | {acts}")
         if self.ticks % 400 == 0:
             self.dump_map()
         # --- anti-stuck watchdog ---
@@ -778,6 +893,8 @@ class Brain:
 
         # --- umbrella safety: too long on one level means we're looping ---
         cap = 4000 if not self.level.stairs_down else 2500
+        if GOAL == "quest" and 11 <= self.dlvl <= 16:
+            cap = 4500  # portal coverage needs time
         if self.turn - self.level_arrival_turn > cap:
             raise Abort(f"level timeout on {self.branch}:{self.dlvl}")
 
@@ -818,10 +935,19 @@ class Brain:
         pray_ok = (self.turn - self.last_pray_turn) > 550 and self.pray_count < 10
         # prayer only helps when the god agrees we're in trouble: hp <= max/7
         if (hp_frac <= 1 / 7 or st.hp < 6) and pray_ok:
+            self.action_counts["pray"] += 1
             self.pray()
             return
+        # ultimate escape: dig through the floor out of a losing fight
+        if (adj and hp_frac < 0.3 and not pray_ok and self.dig_letter
+                and not any(a[1] in "eF" for a in adj)):
+            self.log(f"[escape] digging out of the fight (hp={st.hp}/{st.hpmax})")
+            if self.dig_down():
+                return
+
         # Elbereth early: it scares most of the early-game threats
-        if adj and (hp_frac < 0.35 or (hp_frac < 0.45 and len(adj) >= 2)):
+        _elb_hi = 0.55 if self.branch == BRANCH_MINES else 0.45
+        if adj and (hp_frac < 0.35 or (hp_frac < _elb_hi and len(adj) >= 2)):
             readers = [a for a in adj if a[1] not in MINDLESS]
             if not readers:
                 # mindless attackers ignore Elbereth; they're slow: step away
@@ -898,6 +1024,7 @@ class Brain:
 
         # --- combat ---
         if adj and self.fight(adj):
+            self.action_counts["fight"] += 1
             return
 
         # --- free combat upgrade: advance weapon skills when offered ---
@@ -907,7 +1034,9 @@ class Brain:
             return
 
         # --- low hp, no threat: rest until mostly healed ---
-        if hp_frac < 0.7 and not adj:
+        rest_bar = 0.8 if self.branch == BRANCH_MINES else 0.7
+        if hp_frac < rest_bar and not adj:
+            self.action_counts["rest"] += 1
             self.g.cmd("m20s")
             return
 
@@ -949,9 +1078,13 @@ class Brain:
 
         # --- navigation ---
         if self.navigate():
+            self.action_counts["nav"] += 1
             return
 
         # --- stuck: search for hidden passages ---
+        self.action_counts["search"] += 1
+        if self.ticks % 50 == 0:
+            self.nav_fail_diag()
         self.search_step()
 
     def navigate(self):
@@ -976,18 +1109,63 @@ class Brain:
                 self.nav_target = None
 
         # RUSH MODE: stairs known -> go; explore only when we have no exit.
-        rush = bool(lv.stairs_down - lv.tried_down)
+        rush = bool(lv.stairs_down - lv.tried_down - lv.mines_stairs)
         if GOAL == "minetown":
             if self.branch == BRANCH_DOOM and self.mines_hunt and 2 <= self.dlvl <= 4:
                 rush = False  # hunting the hidden mines stairs: explore properly
             if self.branch == BRANCH_MINES and self.mines_up_hunt:
                 rush = False  # climbed back to find the town: explore properly
-        if GOAL == "quest" and self.branch == BRANCH_DOOM and self.dlvl >= 10:
-            rush = False  # the quest portal is on 11-16: explore each level
+        if GOAL == "quest" and self.branch == BRANCH_DOOM and self.dlvl >= 6:
+            rush = False  # 6-10: full explore = XP + fountains (Excalibur) + loot
+                          # 11-16: portal coverage
+
+        # minetown: Doom 2-4 without a fresh branch stairs after a fair try ->
+        # drill to the next level; the mines entrance is on 2, 3 OR 4
+        _stuck_here = self.turn - self.level_arrival_turn
+        if (GOAL == "minetown" and self.branch == BRANCH_DOOM
+                and 1 <= self.dlvl <= 4 and self.dig_letter
+                and (not (lv.stairs_down - lv.tried_down - lv.mines_stairs)
+                     or _stuck_here > 900)
+                and _stuck_here > 600
+                and not self.adjacent_monsters(self.g.pump())):
+            if self.dig_down():
+                return True
+
+        # minetown: in the Mines, drill down level by level; sweep ~250 turns
+        # per level looking for the town before drilling further
+        if (GOAL == "minetown" and self.branch == BRANCH_MINES and self.dig_letter
+                and not self.town_detected()
+                and self.turn - self.level_arrival_turn > 400
+                and not self.adjacent_monsters(self.g.pump())):
+            if (self.mines_drilled >= 4 or self.dlvl >= 9) and not self.mines_up_hunt:
+                # town must be behind us: climb back and sweep properly
+                self.log("[mines] 4 drills without the town: climbing back up")
+                self.mines_up_hunt = True
+            if not self.mines_up_hunt and self.dig_down():
+                self.mines_drilled += 1
+                return True
+
+        # quest: dig straight down toward the portal range
+        if (GOAL == "quest" and self.branch == BRANCH_DOOM and self.dlvl < 11
+                and self.dig_letter and not self.adjacent_monsters(self.g.pump())):
+            if self.last_xp + 3 >= self.dlvl:
+                if self.dig_down():
+                    return True
+            else:
+                # too weak for this depth: farm XP here before drilling on
+                if self.grind_step():
+                    return True
+
+        # quest: coverage pass on 11-16 — the portal is invisible until
+        # stepped on; tread every walkable tile before going deeper
+        if (GOAL == "quest" and self.branch == BRANCH_DOOM
+                and 11 <= self.dlvl <= 16 and not self.quest_portal_here):
+            if self.coverage_step():
+                return True
 
         # quest: if the portal is known on this level, enter at XL14+ else grind
         if GOAL == "quest" and self.quest_portal_here:
-            if self.last_xp >= 14:
+            if self.last_xp >= (1 if WIZARD_JUMP else 14):
                 if self.portal_step():
                     return True
             else:
@@ -1042,6 +1220,17 @@ class Brain:
                     return self.handle_blocker((nx, ny), t)
                 self.move_along(path)
                 return True
+            # the way to the unknown is monster-blocked: clear the blocker
+            path = lv.explore_unknown_path(hero, turn, ignore_monsters=True)
+            if path:
+                nx, ny = path[0]
+                t = lv.tile(nx, ny)
+                if t.char in MONSTER_CHARS or t.peaceful_until > turn:
+                    if t.peaceful_until > turn:
+                        return self.wait_or_force((nx, ny), t)
+                    return self.handle_blocker((nx, ny), t)
+                self.move_along(path)
+                return True
 
         # 2. fully explored: pick a stairs goal according to branch strategy
         goal = self.pick_goal()
@@ -1066,6 +1255,11 @@ class Brain:
                 self.last_stair_used = ("up", hero)
                 self.g.cmd("<")
             return True
+        # prefer the game's native travel; fall back to our own pathfinding
+        if kind in ("down", "up") and self.ticks - getattr(self, "_last_travel", -9) > 3:
+            self._last_travel = self.ticks
+            if self.travel_to_stairs(">" if kind == "down" else "<"):
+                return True
         path = lv.path_to(hero, {target}, turn)
         if path:
             self.move_along(path)
@@ -1081,6 +1275,21 @@ class Brain:
                 return self.handle_blocker((nx, ny), t)
             self.move_along(path)
             return True
+
+        # goal unreachable even ignoring monsters: the stairs are in a part of
+        # the map not yet CONNECTED to us — explore the unknown regardless of
+        # rush mode (root cause of the endless stuck levels)
+        for ign in (False, True):
+            path = lv.explore_unknown_path(hero, turn, ignore_monsters=ign)
+            if path:
+                nx, ny = path[0]
+                t = lv.tile(nx, ny)
+                if t.char in MONSTER_CHARS or t.peaceful_until > turn:
+                    if t.peaceful_until > turn:
+                        return self.wait_or_force((nx, ny), t)
+                    return self.handle_blocker((nx, ny), t)
+                self.move_along(path)
+                return True
         return False
 
     def _openness(self, x, y):
@@ -1188,7 +1397,8 @@ class Brain:
             letter = None
             if self.dagger_letter:
                 letter = self.dagger_letter
-                self.dagger_letter = None  # single use until re-confirmed
+                # keep the letter: stacks throw one at a time; cleared on
+                # "don't have that object" below
             elif self.weapon_letter and not self.rewield_letter:
                 letter = self.weapon_letter  # throw the spear, recover it after
                 self.rewield_letter = letter
@@ -1199,12 +1409,16 @@ class Brain:
                 if "What do you want to throw" in snap.lines[0]:
                     snap = self.g.answer(letter)
                 if "don't have that object" in snap.lines[0]:
+                    self.dagger_letter = None
                     snap = self.g.answer(ESC)
                     return True
                 if "direction" in snap.lines[0].lower():
                     self.g.answer(DIRS[(dx, dy)])
                 return True
-            # nothing left to throw: avoid
+            # nothing left to throw: avoid; give up the game if eye-locked
+            self.eye_wait_turns += 10
+            if self.eye_wait_turns > 800:
+                raise Abort("eye-locked with no projectiles")
             self.log(f"[blocker] nothing to throw at {ch} at {pos}: avoiding 300 turns")
             tile.peaceful_until = self.turn + 300
             self.g.cmd("m10s")
@@ -1240,10 +1454,10 @@ class Brain:
             if self.branch == BRANCH_SOKOBAN:
                 t = any_down()
                 return ("down", t) if t else None
-            t = any_down()
-            if t:
-                return ("down", t)
-            return None  # no way down found yet: search
+            pool = lv.stairs_down - lv.mines_stairs
+            if pool:
+                return ("down", next(iter(pool)))
+            return None  # only mines stairs known: keep exploring/searching
 
         if self.branch == BRANCH_MINES:
             if self.mines_up_hunt:
@@ -1296,6 +1510,30 @@ class Brain:
                 return True
         return False
 
+    def nav_fail_diag(self):
+        lv, hero, turn = self.level, self.hero, self.turn
+        rush = bool(lv.stairs_down - lv.tried_down - lv.mines_stairs)
+        goal = None
+        try:
+            goal = self.pick_goal()
+        except Exception:
+            pass
+        bits = [f"rush={rush}", f"goal={goal}", f"down={lv.stairs_down}",
+                f"mines_st={lv.mines_stairs}"]
+        if goal and goal[1]:
+            p = lv.path_to(hero, {goal[1]}, turn)
+            pi = lv.path_to(hero, {goal[1]}, turn, ignore_monsters=True)
+            bits.append(f"gp={bool(p)} gpi={(pi or [None])[0]}")
+            if pi:
+                nx, ny = pi[0]
+                t = lv.tile(nx, ny)
+                bits.append(f"step1=({nx},{ny}) ch={t.char!r} ph={t.phantom} "
+                            f"pcf={max(0, t.peaceful_until - turn)} st={t.statue} hb={t.hard_ban}")
+        eu = lv.explore_unknown_path(hero, turn)
+        eui = lv.explore_unknown_path(hero, turn, ignore_monsters=True)
+        bits.append(f"eu={(eu or [None])[0]} eui={(eui or [None])[0]}")
+        self.log("[nav-fail] " + " ".join(str(b) for b in bits))
+
     def search_step(self):
         lv = self.level
         if lv.total_searched and lv.total_searched % 100 == 0:
@@ -1329,8 +1567,9 @@ class Brain:
                         self.move_along(path)
                         return
                 raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
-            lv.total_searched += 10
-            self.g.cmd("m10s")
+            t0 = self.turn
+            snap = self.g.cmd("m10s")
+            lv.total_searched += max(1, (snap.status.turn - t0) if snap.status else 1)
             return
         budget = 500 if lv.stairs_down else 900
         if lv.total_searched > budget:
@@ -1359,18 +1598,22 @@ class Brain:
         spots = lv.search_spots(self.hero, self.turn)
         if spots:
             if self.hero in spots:
-                lv.tile(*self.hero).searched += 10
-                lv.total_searched += 10
-                self.g.cmd("m10s")
+                t0 = self.turn
+                snap = self.g.cmd("m10s")
+                spent = max(1, (snap.status.turn - t0) if snap.status else 1)
+                lv.tile(*self.hero).searched += spent
+                lv.total_searched += spent
                 return
             path = lv.path_to(self.hero, set(spots), self.turn)
             if path:
                 self.move_along(path)
                 return
         # nothing to search: search in place as last resort
-        lv.tile(*self.hero).searched += 10
-        lv.total_searched += 10
-        self.g.cmd("m10s")
+        t0 = self.turn
+        snap = self.g.cmd("m10s")
+        spent = max(1, (snap.status.turn - t0) if snap.status else 1)
+        lv.tile(*self.hero).searched += spent
+        lv.total_searched += spent
 
     def dump_map(self):
         lv = self.level
@@ -1431,9 +1674,9 @@ class Brain:
     def start(self):
         snap = self.g.pump()
         inv = {}
-        for _ in range(3):
+        for _ in range(4):
             inv = self.g.inventory()
-            if len(inv) >= 3:
+            if len(inv) >= 6:  # lab kit = 7 items; don't accept a torn read
                 break
         for letter, desc in inv.items():
             if re.search(r"\b(food rations?|cram rations?|lembas wafers?|apples?|"
@@ -1446,6 +1689,8 @@ class Brain:
                 self.long_sword_letter = letter
             if "spear" in desc:
                 self.spear_letter = letter
+            if "digging" in desc:
+                self.dig_letter = letter
             if "(weapon in" in desc:
                 self.weapon_letter = letter
             if "dragon scale mail" in desc and "(being worn)" not in desc:
@@ -1454,6 +1699,14 @@ class Brain:
                 if "What do you want to wear" in snap.lines[0]:
                     self.g.answer(letter)
                 self.g.pump()
+        if WIZARD_JUMP:
+            self.log(f"[wizard] level-teleporting to Dlvl {WIZARD_JUMP}")
+            self.g.sess.send("\x16")
+            self.g.sess.settle(quiet=0.1, total=2.0)
+            snap = self.g.snap()
+            if "level" in snap.lines[0].lower() or "?" in snap.lines[0]:
+                self.g.answer(f"{WIZARD_JUMP}\n")
+            self.g.pump()
         if self.long_sword_letter:
             self.log(f"[start] wielding the long sword '{self.long_sword_letter}'")
             snap = self.g.cmd("w")

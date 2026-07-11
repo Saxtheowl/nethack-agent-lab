@@ -100,7 +100,18 @@ Succès = **XL 14 + trouver le portail magique (Doom 11-16) + entrer dans la Qu�
 | Batch quête | N | Quête | Notes |
 |---|---|---|---|
 | quest-v1 | 100 | 0 | Profondeur médiane Dlvl 4, max 10 — la proba composée tue (0,9^14) ; morts étalées + 3 famines |
-| quest-v2 | 100 | ? | **Trappes/trous = descente gratuite** (oui aux prompts + recherche active des `^` quand pas d'escalier) |
+| quest-v2 | 98 | 0 | Trappes ok mais rarement rencontrées ; **16 parties piégées en boucle dans les Mines** (l'escalier de branche repris sans le savoir) ; 2 morts "rotted corpse" (filtre raté) ; 4 famines |
+| quest-v3 | 96 | 0 | Mines-pièges 16→7 mais 54 timeouts Doom 1-5. **Bug de fond démasqué : les bruits ambiants interrompent `10s` après 1-2 tours — la fouille réelle était 5-10× moindre que comptée depuis le début !** |
+| quest-v4 | 98 | 0 | Fouille réelle : pas suffisant. Dissection : **œil flottant dans une brèche de mur, plus de projectiles** → coincé 6000 tours |
+| quest-v5 | 95 | 0 | Piles de dagues + abort eye-locked. Médiane tjs 3-4, 49 timeouts — **trou trouvé : explore_unknown_path sans mode ignore-monstres** (un monstre endormi sur la route de l'inconnu tue l'exploration) |
+| quest-v6 | 91 | 0 | Fallback explorateur : insuffisant. **CAUSE RACINE TROUVÉE** (compteur d'actions + nav-fail diag) : escalier VU de loin → rush → exploration coupée → mais escalier pas encore CONNECTÉ → aucun chemin → recherche infinie |
+| quest-v7 | 89 | 0 | Fix racine : **médiane 3→5**, timeouts ÷2. Nouveau mur : "nav:100" — marche infinie le long des **frontières stériles** (tuiles adjacentes à de la roche bannie) qui empêchent la recherche |
+| quest-v8 | 95 | 0 | Frontières stériles éliminées mais "nav:100" persiste : **les bans expirables = manège infini** (roche re-testable toutes les 400 tours) |
+| quest-v9 | 96 | 0 | Bans permanents : médiane tjs 4. **Validation en mode wizard** (téléport Dlvl 11, immortalité de test) : découvert que le portail est INVISIBLE jusqu'au contact → ajout d'une **passe de couverture** (piétiner toutes les cases) sur 11-16 |
+| quest-wiz | 13 | **1 — PREMIÈRE ENTRÉE DANS LA QUÊTE** (g0014 : Dlvl 11→12→portail→Quest, T=2406) | Mais 11 timeouts : la couverture s'acharne sur des cases injoignables (5,5 ticks/tour, cloué sur place) |
+| quest-wiz2 | 13 | 1 | À XL7-8, Doom:11 = guerre permanente (fight:97) — couverture intenable trop faible. **Excalibur jamais tentée en 800 parties** (fontaine jamais sur le niveau courant au bon moment en rush) |
+| quest-v11 | 94 | 0 | Explo 6-10 = +morts sans +XP (max Dlvl 8). Pivot labo (signalé au user) : **wand of digging ×2 au kit** |
+| quest-v12 | 100 | ? | **Fore & farme** : creuser `>` tant que Dlvl ≤ XL+3, sinon grinder sur place ; Doom:10 atteint en 309 tours en test ! |
 
 ## 6. Prochaines étapes
 

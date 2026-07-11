@@ -207,6 +207,8 @@ def cmd_claim_info(args):
     print(claim.get("dlvl", ""))
     print(claim.get("exp", ""))
     print(claim.get("turns", ""))
+    print(claim.get("hp", ""))
+    print(claim.get("maxhp", ""))
     return 0
 
 
@@ -255,7 +257,7 @@ def cmd_list_claimed_active(args):
 
 
 def cmd_update_stats(args):
-    claim_dir, char_name, dlvl, exp, turns = args
+    claim_dir, char_name, dlvl, exp, turns, hp, maxhp = args
     claim = claim_index_by_char_name(claim_dir).get(char_name)
     if not claim:
         return 1
@@ -270,6 +272,10 @@ def cmd_update_stats(args):
         record["exp"] = exp
     if turns:
         record["turns"] = turns
+    if hp:
+        record["hp"] = hp
+    if maxhp:
+        record["maxhp"] = maxhp
     record["updated_at"] = int(time.time())
     with open(path, "w") as fh:
         json.dump(record, fh)
@@ -282,7 +288,7 @@ def main(argv):
         "ensure-claim": ((3, 4, 5), cmd_ensure_claim),
         "list-ready": ((1, 2), cmd_list_ready),
         "list-claimed-active": (2, cmd_list_claimed_active),
-        "update-stats": (5, cmd_update_stats),
+        "update-stats": (7, cmd_update_stats),
     }
     if len(argv) < 2 or argv[1] not in commands:
         print(

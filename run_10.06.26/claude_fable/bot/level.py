@@ -9,9 +9,9 @@ DIRS = {
 }
 
 MONSTER_CHARS = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@&;:'~")
-# note: '`' is ROCK class in 3.7 (boulder = pushable; statue = walkable);
-# we keep it walkable and let stuck-boulder messages ban dead edges
-ITEM_CHARS = set("$\"'()[]%?/=!*`")
+# 3.6.7: boulder = '0' (blocks/pushes; message bans handle stuck ones),
+# '`' = rocks/statues (walkable items)
+ITEM_CHARS = set("$\"'()[]%?/=!*`0")
 WALL_CHARS = set("|-")
 # passive/dangerous-to-melee monsters: (char, fg) ; fg None = any color
 MELEE_BLACKLIST = {
@@ -68,6 +68,7 @@ class Level:
         self.shop_doors = set()   # locked doors skipped because a shop is near
         self.desperate = False    # last-resort mode: kick suspected shop doors
         self.retreats = 0         # times we retreated upstairs from this level
+        self.mines_stairs = set() # down stairs known to lead into the Mines
         self.search_wide = False  # widen search spots after a full recycle
         self.extensions = 0       # level-timeout extensions granted
         self.no_progress = 0
@@ -83,8 +84,10 @@ class Level:
         c, t = self.blocked_edges.get((a, b), (0, 0))
         if c < 3:
             return False
-        if turn - t > 400:  # transient causes (monsters) move on: retry old bans
-            del self.blocked_edges[(a, b)]
+        if c >= 6:
+            return True  # failed across two ban cycles: that's solid rock
+        if turn - t > 400:  # transient causes (monsters) move on: retry once
+            self.blocked_edges[(a, b)] = (3, turn)  # keep history, allow retry
             return False
         return True
 
@@ -155,8 +158,8 @@ class Level:
             return False
         if ch in ".<>_{":
             return True
-        if ch == "#" and t.fg != "green":  # corridor (green # = tree)
-            return True
+        if ch == "#" and t.fg not in ("green", "cyan", "blue"):
+            return True  # corridor (green # = tree, cyan/blue # = iron bars)
         if ch == "+" and t.fg in ("brown", "yellow"):
             return True   # closed door: path through it, brain opens it
         if ch in "|-" and t.fg in ("brown", "yellow"):
@@ -229,8 +232,15 @@ class Level:
             for dx in (-1, 0, 1):
                 for dy in (-1, 0, 1):
                     nx, ny = x + dx, y + dy
-                    if 0 <= nx < W and 0 <= ny < H and not self.tiles[ny][nx].seen:
-                        return True
+                    if not (0 <= nx < W and 0 <= ny < H):
+                        continue
+                    if self.tiles[ny][nx].seen:
+                        continue
+                    # the unknown neighbour must still be probeable: otherwise
+                    # this is a sterile frontier along banned rock
+                    if self.edge_blocked((x, y), (nx, ny), turn):
+                        continue
+                    return True
             return False
         return self.bfs(hero, is_frontier, hero, turn, ignore_monsters)
 
@@ -267,7 +277,7 @@ class Level:
                     break
         return out
 
-    def explore_unknown_path(self, hero, turn=0):
+    def explore_unknown_path(self, hero, turn=0, ignore_monsters=False):
         """BFS where unseen tiles are traversable; returns a path whose final
         steps walk INTO the unknown. Edge bans (with expiry) prune real rock."""
         prev = {hero: None}
@@ -287,7 +297,7 @@ class Level:
                     continue
                 t = self.tiles[ny][nx]
                 if t.seen:
-                    if not self.walkable(nx, ny, hero, turn):
+                    if not self.walkable(nx, ny, hero, turn, ignore_monsters):
                         continue
                     diag = dx != 0 and dy != 0
                     if diag and (self.is_doorish(nx, ny) or self.is_doorish(x, y)):

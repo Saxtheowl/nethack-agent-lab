@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minetown-agent"
+version = "0.1.0"
+description = "A symbolic NetHack 3.6.7 Valkyrie agent targeting Minetown"
+requires-python = ">=3.10"
+dependencies = ["gymnasium==1.2.0", "numpy>=2.0"]
+
+[project.scripts]
+mt-run = "minetown_agent.runner:main"
+mt-watch = "minetown_agent.watch:main"
+
+[tool.setuptools.packages.find]
+include = ["minetown_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

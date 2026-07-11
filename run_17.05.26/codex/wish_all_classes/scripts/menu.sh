@@ -73,9 +73,11 @@ update_claimed_wish_stats() {
     local dlvl="$2"
     local exp="$3"
     local turns="$4"
+    local hp="$5"
+    local maxhp="$6"
 
     [ -n "$char_name" ] || return 0
-    python3 "$WISH_UTILS" update-stats "$CLAIM_DIR" "$char_name" "$dlvl" "$exp" "$turns" 2>/dev/null || true
+    python3 "$WISH_UTILS" update-stats "$CLAIM_DIR" "$char_name" "$dlvl" "$exp" "$turns" "$hp" "$maxhp" 2>/dev/null || true
 }
 
 is_wish_role() {
@@ -113,15 +115,17 @@ launch_nethack_session() {
 
 capture_game_stats() {
     local target="$1"
-    local screen status dlvl exp turns
+    local screen status dlvl exp turns hp maxhp
 
     screen=$(tmux capture-pane -t "$target" -p 2>/dev/null | tr -d '\r')
     status=$(printf '%s\n' "$screen" | grep -E 'Dlvl:|T:[0-9]' | tail -1)
     dlvl=$(printf '%s\n' "$status" | sed -n 's/.*Dlvl:\([^ ]*\).*/\1/p')
     exp=$(printf '%s\n' "$status" | sed -n 's/.*Exp:\([^ ]*\).*/\1/p')
     turns=$(printf '%s\n' "$status" | sed -n 's/.*T:\([0-9][0-9]*\).*/\1/p')
+    hp=$(printf '%s\n' "$status" | sed -n 's/.*HP:\([0-9-][0-9-]*\)([0-9-][0-9-]*).*/\1/p')
+    maxhp=$(printf '%s\n' "$status" | sed -n 's/.*HP:[0-9-][0-9-]*(\([0-9-][0-9-]*\)).*/\1/p')
 
-    printf '%s\t%s\t%s\n' "$dlvl" "$exp" "$turns"
+    printf '%s\t%s\t%s\t%s\t%s\n' "$dlvl" "$exp" "$turns" "$hp" "$maxhp"
 }
 
 format_game_details() {
@@ -130,21 +134,33 @@ format_game_details() {
     local dlvl="$3"
     local exp="$4"
     local turns="$5"
+    local hp="$6"
+    local maxhp="$7"
     local parts=()
 
+    if [ "$entry_type" = "active" ]; then
+        parts+=("Type=EN COURS")
+    else
+        parts+=("Type=SAUVEGARDE")
+    fi
     [ -n "$role" ] && parts+=("Classe=$role")
     [ -n "$dlvl" ] && parts+=("Dlvl=$dlvl")
     [ -n "$exp" ] && parts+=("Exp=$exp")
     [ -n "$turns" ] && parts+=("Tours=$turns")
+    if [ -n "$hp" ] && [ -n "$maxhp" ]; then
+        parts+=("HP=$hp/$maxhp")
+    elif [ -n "$maxhp" ]; then
+        parts+=("HPmax=$maxhp")
+    fi
 
     if [ "$entry_type" = "save" ]; then
-        if [ -n "$dlvl$exp$turns" ]; then
-            parts+=("Etat=sauvegarde, dernier connu")
+        if [ -n "$dlvl$exp$turns$hp$maxhp" ]; then
+            parts+=("Stats=dernier connu")
         else
-            parts+=("Etat=sauvegarde")
+            parts+=("Stats=pas encore dispo")
         fi
-    elif [ -z "$dlvl$exp$turns" ]; then
-        parts+=("Etat=en cours")
+    elif [ -z "$dlvl$exp$turns$hp$maxhp" ]; then
+        parts+=("Stats=lecture en cours")
     fi
 
     local out=""
@@ -232,10 +248,10 @@ play_game() {
         local wish_label="${claim_info[0]:-wish}"
         local wish_role="${claim_info[3]:-}"
         local wish_hackdir="${claim_info[4]:-}"
-        local stats dlvl exp turns
+        local stats dlvl exp turns hp maxhp
         stats=$(capture_game_stats "$sess")
-        IFS=$'\t' read -r dlvl exp turns <<< "$stats"
-        update_claimed_wish_stats "$pname" "$dlvl" "$exp" "$turns"
+        IFS=$'\t' read -r dlvl exp turns hp maxhp <<< "$stats"
+        update_claimed_wish_stats "$pname" "$dlvl" "$exp" "$turns" "$hp" "$maxhp"
 
         entries+=("$wish_label - $pname (wish en cours)")
         names+=("$pname")
@@ -243,7 +259,7 @@ play_game() {
         targets+=("$sess")
         roles+=("$wish_role")
         hackdirs+=("$wish_hackdir")
-        details+=("$(format_game_details "$wish_role" "active" "$dlvl" "$exp" "$turns")")
+        details+=("$(format_game_details "$wish_role" "active" "$dlvl" "$exp" "$turns" "$hp" "$maxhp")")
         active_names+=("$pname")
         ((wish_count++))
     done < <(tmux list-sessions -F '#{session_name}' 2>/dev/null | grep '^play-' | sort)
@@ -253,10 +269,10 @@ play_game() {
         [ -n "$sess" ] || continue
         [ -n "$char_name" ] || continue
         [ -n "$wish_label" ] || wish_label="wish"
-        local stats dlvl exp turns
+        local stats dlvl exp turns hp maxhp
         stats=$(capture_game_stats "$sess")
-        IFS=$'\t' read -r dlvl exp turns <<< "$stats"
-        update_claimed_wish_stats "$char_name" "$dlvl" "$exp" "$turns"
+        IFS=$'\t' read -r dlvl exp turns hp maxhp <<< "$stats"
+        update_claimed_wish_stats "$char_name" "$dlvl" "$exp" "$turns" "$hp" "$maxhp"
 
         local dup=0
         local n
@@ -271,7 +287,7 @@ play_game() {
         targets+=("$sess")
         roles+=("$wish_role")
         hackdirs+=("$wish_hackdir")
-        details+=("$(format_game_details "$wish_role" "active" "$dlvl" "$exp" "$turns")")
+        details+=("$(format_game_details "$wish_role" "active" "$dlvl" "$exp" "$turns" "$hp" "$maxhp")")
         active_names+=("$char_name")
         ((wish_count++))
     done < <(python3 "$WISH_UTILS" list-claimed-active "$DATA_DIR" "$CLAIM_DIR" 2>/dev/null)
@@ -294,6 +310,8 @@ play_game() {
         local wish_dlvl=""
         local wish_exp=""
         local wish_turns=""
+        local wish_hp=""
+        local wish_maxhp=""
         if readarray -t claim_info < <(load_claimed_wish_info "$sname" 2>/dev/null); then
             wish_label="${claim_info[0]:-}"
             wish_role="${claim_info[3]:-}"
@@ -301,6 +319,8 @@ play_game() {
             wish_dlvl="${claim_info[5]:-}"
             wish_exp="${claim_info[6]:-}"
             wish_turns="${claim_info[7]:-}"
+            wish_hp="${claim_info[8]:-}"
+            wish_maxhp="${claim_info[9]:-}"
         fi
         [ -n "$wish_label" ] || continue
 
@@ -310,7 +330,7 @@ play_game() {
         targets+=("")
         roles+=("$wish_role")
         hackdirs+=("$wish_hackdir")
-        details+=("$(format_game_details "$wish_role" "save" "$wish_dlvl" "$wish_exp" "$wish_turns")")
+        details+=("$(format_game_details "$wish_role" "save" "$wish_dlvl" "$wish_exp" "$wish_turns" "$wish_hp" "$wish_maxhp")")
         ((wish_count++))
     done < <(get_saves)
 
@@ -485,10 +505,10 @@ join_wish_game() {
         local selected_hackdir="${wish_hackdirs[$((choice-1))]}"
         local wish_label
         wish_label=$(ensure_claimed_wish "$selected" "$selected_char" "$selected_role" "$selected_hackdir")
-        local stats dlvl exp turns
+        local stats dlvl exp turns hp maxhp
         stats=$(capture_game_stats "$selected")
-        IFS=$'\t' read -r dlvl exp turns <<< "$stats"
-        update_claimed_wish_stats "$selected_char" "$dlvl" "$exp" "$turns"
+        IFS=$'\t' read -r dlvl exp turns hp maxhp <<< "$stats"
+        update_claimed_wish_stats "$selected_char" "$dlvl" "$exp" "$turns" "$hp" "$maxhp"
 
         # Mark the session as claimed
         python3 -c "

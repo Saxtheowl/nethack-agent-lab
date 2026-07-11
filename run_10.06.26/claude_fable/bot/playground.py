@@ -3,7 +3,8 @@ import os
 import shutil
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-NHDIR = os.path.join(BASE, "nh370", "games", "lib", "nethackdir")
+NH_PREFIX = os.environ.get("NH_PREFIX", "nh367")
+NHDIR = os.path.join(BASE, NH_PREFIX, "games", "lib", "nethackdir")
 NHBIN = os.path.join(NHDIR, "nethack")
 RCFILE = os.path.join(BASE, "config", "nethackrc")
 
