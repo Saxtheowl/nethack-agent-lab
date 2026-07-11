@@ -725,7 +725,6 @@ class MinetownPolicy:
             None,
         )
         if scroll is None:
-            self.mapped_levels.add(self.current_key)
             return None
         self.mapped_levels.add(self.current_key)
         self.intent = {"kind": "read_map", "letter": scroll}
@@ -756,6 +755,7 @@ class MinetownPolicy:
                         candidates.append((d + failures * 3 - 8, point, nxt, "door"))
                 elif (
                     value in (-1, STONE)
+                    and int(level.terrain[point]) == CORRIDOR
                     and (point, nxt) not in level.failed_edges
                     and level.unknown_attempts < unknown_budget
                 ):
@@ -994,9 +994,9 @@ class MinetownPolicy:
         thorough: bool,
     ) -> int | None:
         mapped = level.key in self.mapped_levels
-        unknown_budget = 0 if mapped else (
-            (180 if thorough else 85) + level.escalation * 100
-        )
+        # Probe darkness only from a known corridor endpoint.  This follows
+        # unlit corridors without wasting turns bumping along every room wall.
+        unknown_budget = 320 if not mapped else 0
         action = self._door_or_frontier(level, blocked, unknown_budget=unknown_budget)
         if action is not None:
             level.exhausted = False
@@ -1005,8 +1005,8 @@ class MinetownPolicy:
         if mapped:
             level.exhausted = True
             return None
-        search_budget = (120 if thorough else 36) + level.escalation * 150
-        per_tile = 6 + level.escalation * 5
+        search_budget = (1800 if thorough else 600) + level.escalation * 600
+        per_tile = 20 + level.escalation * 8
         action = self._search_hidden(
             level, blocked, budget=search_budget, per_tile=per_tile
         )

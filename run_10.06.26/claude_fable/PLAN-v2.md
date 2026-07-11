@@ -50,10 +50,13 @@ Remplacer le cœur navigation par la délégation au jeu :
 - Local d'abord (12-24 parties) pour dégrossir, Vast (~0,07 $/h, 100-120
   parties/batch) pour valider ≥80 % — sur accord de l'utilisateur.
 
-## Kit labo actuel (validé par l'utilisateur)
+## Kit labo actuel (consigne user 11/07 : STRICT)
 
-GDSM bénie graissée +2 (auto-portée) · épée longue +1 bénie · 3 dagues ·
-2 wands of digging (12 ch.) · Excalibur par trempage (XL5+, codé).
+Kit par défaut de la Valkyrie + **une seule modification : GDSM bénie
+graissée +2** (auto-portée). Plus de dagues bonus, plus de wands of
+digging, plus de rations bonus. Excalibur par trempage (XL5+) reste
+(mécanique normale du jeu). Le bot peut utiliser les wands trouvées
+dans le donjon (butin légitime).
 
 ## Mesures bot v2 (2026-07-10)
 
@@ -76,7 +79,9 @@ Adaptations bot : NH_PREFIX=nh367, rc sans statuslines/tutorial/suppress_alert, 
 | m367-3 | 11/37 (30%) interrompu | 17 terminated : le check wall-time était placé APRÈS le `return` du watchdog → jamais atteint une fois coincé ; diag type : Doom:4, frontier=None mais chemin dispo en ignorant un glyphe de monstre périmé ; le forage (compté en TOURS) ne part pas quand les tours sont gelés |
 | m367-4 | 30/93 (32%) | Plus aucun "terminated" (wall-time coupe à 600 s) mais les coincements demeurent : **boutique** (commerçant pacifique dans la porte → l'escalade re-marche en boucle, il fallait forer) ; **Doom:5+ (10 parties)** : arrivé par trou, `<` inconnu, et rush=True poursuivait les `>` → toujours plus profond (1 bot à Doom:14 est tombé dans la Quête !) ; "You don't have anything to zap" non géré → zaps infinis à 0 charge ; morts (26) très variées, surtout en profondeur excessive |
 | m367-5 | 47/97 (48%) | Record. Restait : **Doom:4 bloqué (12)** — 2 `>` connus jamais pris, pathfinding maison empoisonné par les bans, oscillation ; **Mines profondes 9-12 (~15)** — g0008 : remonté jusqu'à Mines:5 puis RE-plongé en rush 5→11 en 120 tours sans explorer (la ville re-ratée aller ET retour) ; faim présente dans 20/51 échecs |
-| m367-6 | ? | **rush interdit dans les Mines** (le balayage est le but, jamais foncer aux `>`) ; jamais descendre sous Mines:9 ; forage Mines exige frontière épuisée (ou 900 tours) ; **échelon "travel du jeu"** dans les 2 watchdogs (le pathfinding natif marche là où le nôtre est empoisonné) |
+| m367-6 | 42/98 (43%) | Aborts en chute (7 familles wall-time contre 24) mais morts dominantes (29) : autopsie grid bug = **mort de faim** (évanouissements, prière unique refusée "Tyr is displeased", 0 nourriture depuis 1000 tours) ; Doom:4 encore 17 (oscillation 2↔3 remettait le timer de forage à zéro à chaque arrivée) ; 2 morts shopkeeper = trou foré dans le plancher de boutique |
+| m367-7 | 24/47 (51%) interrompu | 3 rations + corpses élargis + tours cumulés/niveau + amnistie bans + pas de forage près d'un `@`. Interrompu par la consigne kit strict |
+| m367-8 | ? | **KIT STRICT (user)** : défaut + GDSM uniquement — plus de wands de digging (toute la stratégie forage ne s'appliquera qu'aux wands trouvées en jeu), 1 seule ration. Nouvelle baseline à mesurer |
 
 Axes restants (par impact) :
 1. Doom 2-4 : trouver l'escalier de branche — le forage descend mais ne "branche" pas ;

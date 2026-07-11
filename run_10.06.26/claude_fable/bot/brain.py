@@ -6,7 +6,8 @@ from game import Game, GameOver, ESC, CTRL_D
 from level import Level, DIRS, MONSTER_CHARS, melee_ok, W, H
 
 SAFE_NAMES = (
-    r"newt|gecko|jackal|fox|coyote|sewer rat|giant rat|gnome lord|gnome|hobbit|"
+    r"newt|gecko|grid bug|garter snake|cave spider|bat|giant bat|"
+    r"jackal|fox|coyote|sewer rat|giant rat|gnome lord|gnome|hobbit|"
     r"hill orc|Mordor orc|Uruk-hai|orc|rock piercer|giant ant|lichen|red mold|woodchuck|"
     r"rothe|floating eye|dingo|wolf|warg|jaguar|panther|housecat|kitten|pony|horse"
 )
@@ -95,6 +96,7 @@ class Brain:
         self.last_perturb_tick = -1000
         self.watchdog_streak = 0
         self.last_escalation_pos = None
+        self._prev_turn = 0
         self.nav_target = None    # sticky exploration target (kind, pos, tick)
         self.quest_portal_here = False
         self.portal_denied = set()  # '^' tiles that turned out to be other traps
@@ -501,6 +503,16 @@ class Brain:
                     self.step_dir((dx, dy))
                     return True
             return False
+        st = self.g.pump().status
+        hp_frac = (st.hp / max(1, st.hpmax)) if st else 1.0
+        if hp_frac >= 0.3:
+            for dy in range(-6, 7):
+                for dx in range(-6, 7):
+                    x, y = self.hero[0] + dx, self.hero[1] + dy
+                    if (dx, dy) != (0, 0) and 0 <= x < W and 0 <= y < H \
+                            and lv.tile(x, y).char == "@":
+                        self.log("[dig] @ in sight: not digging (shop floor = theft)")
+                        return False
         self.log(f"[dig] zapping down from {self.branch}:{self.dlvl}")
         snap = self.g.cmd("z")
         if "What do you want to zap" in snap.lines[0]:
@@ -910,6 +922,13 @@ class Brain:
                     return
                 # walking already failed here (immovable peaceful, e.g. a
                 # shopkeeper in the doorway) or there is nowhere to walk
+                lv0 = self.level
+                if not path and lv0.blocked_edges and lv0.amnesties < 3:
+                    # bans from long-gone monsters can wall off half the map
+                    lv0.amnesties += 1
+                    lv0.blocked_edges.clear()
+                    self.log(f"[watchdog] escalate: ban amnesty #{lv0.amnesties}")
+                    return
                 probes = []
                 if not path:
                     try:
@@ -968,6 +987,10 @@ class Brain:
             snap = self.handle_prompt(snap)
             snap = self.sync(snap)
         st = snap.status
+        if st and st.turn > self._prev_turn:
+            self.level.turns_spent += st.turn - self._prev_turn
+        if st:
+            self._prev_turn = st.turn
         for m in self.g.turn_messages:
             if re.search(r"The \w[\w ]* (bites|hits|kicks|butts|stings)!", m):
                 self.under_attack_until = self.turn + 3
@@ -1223,7 +1246,7 @@ class Brain:
 
         # minetown: Doom 2-4 without a fresh branch stairs after a fair try ->
         # drill to the next level; the mines entrance is on 2, 3 OR 4
-        _stuck_here = self.turn - self.level_arrival_turn
+        _stuck_here = max(self.turn - self.level_arrival_turn, lv.turns_spent)
         if (GOAL == "minetown" and self.branch == BRANCH_DOOM
                 and 1 <= self.dlvl <= 3 and self.dig_letter
                 and (not (lv.stairs_down - lv.tried_down - lv.mines_stairs)
@@ -1234,7 +1257,7 @@ class Brain:
 
         # minetown: in the Mines, drill down level by level; sweep ~250 turns
         # per level looking for the town before drilling further
-        _mines_stuck = self.turn - self.level_arrival_turn
+        _mines_stuck = max(self.turn - self.level_arrival_turn, lv.turns_spent)
         if (GOAL == "minetown" and self.branch == BRANCH_MINES and self.dig_letter
                 and not self.town_detected()
                 and (_mines_stuck > 900
@@ -1681,6 +1704,13 @@ class Brain:
                     if self.dig_down():
                         return
                 raise Abort(f"search exhausted on {self.branch}:{self.dlvl}")
+            if (lv.total_searched >= 100 and lv.blocked_edges
+                    and lv.amnesties < 3):
+                lv.amnesties += 1
+                lv.blocked_edges.clear()
+                lv.total_searched = 0
+                self.log(f"[search] ban amnesty #{lv.amnesties}: re-explore first")
+                return
             t0 = self.turn
             snap = self.g.cmd("m10s")
             lv.total_searched += max(1, (snap.status.turn - t0) if snap.status else 1)

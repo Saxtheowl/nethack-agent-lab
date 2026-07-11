@@ -25,11 +25,10 @@ def test_counted_environment_hides_internal_signal_and_has_starting_kit():
             "blessed greased +2 gray dragon scale mail (being worn)" in item
             for item in inventory
         )
-        assert any("8 blessed +1 daggers" in item for item in inventory)
-        assert any("12 blessed scrolls of magic mapping" in item for item in inventory)
-        assert any("5 blessed potions of extra healing" in item for item in inventory)
-        assert any("2 potions of holy water" in item for item in inventory)
-        assert any("pick-axe" in item for item in inventory)
+        assert not any("magic mapping" in item for item in inventory)
+        assert not any("extra healing" in item for item in inventory)
+        assert not any("holy water" in item for item in inventory)
+        assert not any("pick-axe" in item for item in inventory)
         assert int(obs["blstats"][16]) == -5
     finally:
         env.close()

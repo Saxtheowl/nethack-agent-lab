@@ -7,9 +7,12 @@ import bz2
 import gzip
 import json
 import os
+import select
 import struct
 import sys
+import termios
 import time
+import tty
 from pathlib import Path
 
 
@@ -17,6 +20,9 @@ GREEN = "\033[32m"
 RED = "\033[31m"
 CYAN = "\033[36m"
 RESET = "\033[0m"
+ALT_SCREEN = "\033[?1049h"
+MAIN_SCREEN = "\033[?1049l"
+CLEAR = "\033[0m\033[H\033[2J"
 
 
 def load_results(root: Path) -> list[dict]:
@@ -45,6 +51,13 @@ def load_results(root: Path) -> list[dict]:
     return sorted(rows, key=lambda row: (row["_run"], row["episode"]), reverse=True)
 
 
+def available_runs(root: Path) -> list[str]:
+    base = root if root.exists() and root.name == "runs" else Path("runs")
+    if not base.exists():
+        return []
+    return sorted(path.name for path in base.iterdir() if (path / "results.jsonl").exists())
+
+
 def label(row: dict) -> str:
     color = GREEN if row.get("success") else RED
     outcome = "MINETOWN" if row.get("success") else row.get("failure_cause", "?")
@@ -66,6 +79,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--speed", type=float, default=8.0)
     parser.add_argument("--max-delay", type=float, default=0.25)
     parser.add_argument("--inputs", action="store_true", help="display agent keystrokes")
+    parser.add_argument("--json", action="store_true", help="print stored policy metadata before replay")
+    parser.add_argument(
+        "--raw",
+        action="store_true",
+        help="stream ttyrec bytes without interactive controls",
+    )
     return parser
 
 
@@ -93,6 +112,120 @@ def _ttyrec_frames(path: Path):
             if len(data) != length:
                 raise OSError(f"frame ttyrec incomplète dans {path}")
             yield sec + usec * 1e-6, channel, data
+
+
+def load_ttyrec(path: Path) -> list[tuple[float, int, bytes]]:
+    return list(_ttyrec_frames(path))
+
+
+def _write_status(index: int, frames: list[tuple[float, int, bytes]], speed: float, paused: bool) -> None:
+    if not frames:
+        return
+    state = "pause" if paused else "play "
+    status = (
+        f"{RESET}\033[24;1H\033[2K"
+        f"[{state}] frame {index + 1}/{len(frames)}  speed={speed:.1f}  "
+        "espace play/pause | n/→ +1 | p/← -1 | g début | G fin | +/- vitesse | q quitter"
+    )
+    sys.stdout.write(status)
+    sys.stdout.flush()
+
+
+def _render_until(frames: list[tuple[float, int, bytes]], index: int, speed: float, paused: bool) -> None:
+    sys.stdout.buffer.write(CLEAR.encode("ascii"))
+    for _, channel, data in frames[: index + 1]:
+        if channel == 0:
+            sys.stdout.buffer.write(data)
+    sys.stdout.buffer.flush()
+    _write_status(index, frames, speed, paused)
+
+
+def _read_key(timeout: float) -> str | None:
+    ready, _, _ = select.select([sys.stdin], [], [], max(0.0, timeout))
+    if not ready:
+        return None
+    key = os.read(sys.stdin.fileno(), 8)
+    if key == b"\x1b[C":
+        return "n"
+    if key == b"\x1b[D":
+        return "p"
+    return key.decode("utf-8", "replace")
+
+
+def interactive_ttyrec(
+    path: Path,
+    speed: float,
+    max_delay: float,
+    show_inputs: bool,
+) -> int:
+    if speed <= 0:
+        raise SystemExit("--speed doit être positif")
+    frames = load_ttyrec(path)
+    if not frames:
+        print("ttyrec vide", file=sys.stderr)
+        return 1
+
+    index = 0
+    paused = True
+    old_termios = termios.tcgetattr(sys.stdin.fileno())
+    try:
+        tty.setcbreak(sys.stdin.fileno())
+        sys.stdout.write(ALT_SCREEN)
+        _render_until(frames, index, speed, paused)
+        while True:
+            if paused:
+                key = _read_key(3600.0)
+            else:
+                if index + 1 >= len(frames):
+                    paused = True
+                    _write_status(index, frames, speed, paused)
+                    key = _read_key(3600.0)
+                else:
+                    previous_timestamp = frames[index][0]
+                    index += 1
+                    timestamp, channel, data = frames[index]
+                    delay = min(max_delay, max(0.0, timestamp - previous_timestamp) / speed)
+                    key = _read_key(delay)
+                    if key is None:
+                        if channel == 0:
+                            sys.stdout.buffer.write(data)
+                            sys.stdout.buffer.flush()
+                        elif channel == 1 and show_inputs:
+                            os.write(2, b"\n[input] " + data[:1].hex().encode("ascii") + b"\n")
+                        _write_status(index, frames, speed, paused)
+                        continue
+
+            if key in {"q", "\x03", "\x04"}:
+                return 0
+            if key in {" ", "\r", "\n"}:
+                paused = not paused
+                _write_status(index, frames, speed, paused)
+            elif key in {"n", "."}:
+                paused = True
+                index = min(len(frames) - 1, index + 1)
+                _render_until(frames, index, speed, paused)
+            elif key in {"p", ","}:
+                paused = True
+                index = max(0, index - 1)
+                _render_until(frames, index, speed, paused)
+            elif key == "g":
+                paused = True
+                index = 0
+                _render_until(frames, index, speed, paused)
+            elif key == "G":
+                paused = True
+                index = len(frames) - 1
+                _render_until(frames, index, speed, paused)
+            elif key in {"+", "="}:
+                speed = min(200.0, speed * 1.5)
+                _write_status(index, frames, speed, paused)
+            elif key in {"-", "_"}:
+                speed = max(0.1, speed / 1.5)
+                _write_status(index, frames, speed, paused)
+    finally:
+        termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, old_termios)
+        sys.stdout.write(MAIN_SCREEN)
+        sys.stdout.flush()
 
 
 def replay_ttyrec(path: Path, speed: float, max_delay: float, show_inputs: bool) -> int:
@@ -126,7 +259,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.episode is not None:
         rows = [row for row in rows if row["episode"] == args.episode]
     if not rows:
-        print("Aucun replay correspondant.", file=sys.stderr)
+        if not args.root.exists():
+            runs = ", ".join(available_runs(args.root)[-8:])
+            suffix = f" Runs disponibles récents: {runs}" if runs else ""
+            print(f"Run introuvable: {args.root}.{suffix}", file=sys.stderr)
+        else:
+            print("Aucun replay correspondant dans ce run.", file=sys.stderr)
         return 1
 
     shown = rows[: args.limit]
@@ -146,8 +284,12 @@ def main(argv: list[str] | None = None) -> int:
     if not 0 <= selected < len(shown):
         raise SystemExit("sélection hors limites")
     row = shown[selected]
-    print(json.dumps(row.get("policy", {}), indent=2, ensure_ascii=False))
+    print(label(row))
+    if args.json:
+        print(json.dumps(row.get("policy", {}), indent=2, ensure_ascii=False))
 
+    if not args.raw and sys.stdin.isatty() and sys.stdout.isatty():
+        return interactive_ttyrec(Path(row["ttyrec"]), args.speed, args.max_delay, args.inputs)
     return replay_ttyrec(Path(row["ttyrec"]), args.speed, args.max_delay, args.inputs)
 
 

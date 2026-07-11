@@ -4,10 +4,8 @@ Ce projet exécute un agent symbolique sur le NLE maintenu, basé sur la version
 officielle NetHack **3.6.7**. Les parties comptées sont des Valkyries naines,
 loyales et féminines, sans wizard mode et sans seed contrôlée. La seule
 modification favorable du jeu est le kit explicitement autorisé et documenté
-dans le patch NetHack : `+1 long sword`, 8 blessed `+1 daggers`, `+3 small
-shield`, blessed greased `+2 gray dragon scale mail`, `+0 pick-axe`, 12 blessed
-scrolls of magic mapping, 5 blessed potions of extra healing, 2 potions of holy
-water et 1 food ration. Le pet est désactivé.
+dans le patch NetHack : une blessed greased `+2 gray dragon scale mail`.
+Le reste est l’inventaire Valkyrie standard. Le pet est désactivé.
 
 Le succès est mesuré au premier tile que NetHack considère comme appartenant à
 la ville. Ce signal reste dans l’observation privée de l’évaluateur : il termine
@@ -38,12 +36,25 @@ ttyrecs. `mt-watch` affiche un petit tableau puis rejoue la partie choisie dans
 le terminal avec un lecteur ttyrec intégré, avec `--inputs` pour voir les
 touches de l’agent. `--root` accepte soit le dossier `runs`, soit un run précis.
 
+Dans un vrai terminal, le replay est interactif par défaut :
+
+- `espace` lance/met en pause ;
+- `n` ou flèche droite avance d’une frame ;
+- `p` ou flèche gauche recule d’une frame ;
+- `g` va au début, `G` va à la fin ;
+- `+` et `-` changent la vitesse ;
+- `q` quitte.
+
+Options utiles : `--raw` streame le ttyrec sans contrôles, `--json` affiche le
+bloc de diagnostic de l’agent avant le replay.
+
 ## Résultat actuel
 
-Validation Vast AI `runs/vast-validation-001`, 200 parties comptées, 24 workers,
-NetHack 3.6.7 non-wizard :
+Ancienne validation Vast AI `runs/vast-validation-001`, 200 parties comptées,
+24 workers, NetHack 3.6.7 non-wizard, avec un kit de départ élargi maintenant
+retiré :
 
-- 187/200 arrivées Minetown, soit **93,5 %** ;
+- 187/200 arrivées Minetown, soit **93,5 %** avec l’ancien kit large ;
 - intervalle Wilson 95 % : **89,2 %–96,2 %** ;
 - médiane des succès : 719 pas agent ;
 - échecs principaux : `step_timeout=8`, puis combats isolés (`giant spider`,
@@ -55,6 +66,7 @@ NetHack 3.6.7 non-wizard :
 - personnage fixe `val-dwa-fem-law` ;
 - aucune seed injectée et effets temporels non figés ;
 - monstres normaux activés, pas de sauvegardes/bones, pas de pet ;
+- avantage de départ strict : seulement la GDSM blessed greased +2 ;
 - succès exact au premier appel vrai à `in_town(u.ux, u.uy)` ;
 - le canal interne contenant ce bit est supprimé avant l’appel à la politique.
 

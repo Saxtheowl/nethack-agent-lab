@@ -68,6 +68,8 @@ class Level:
         self.shop_doors = set()   # locked doors skipped because a shop is near
         self.desperate = False    # last-resort mode: kick suspected shop doors
         self.retreats = 0         # times we retreated upstairs from this level
+        self.turns_spent = 0      # cumulative game turns on this level
+        self.amnesties = 0        # times blocked_edges were wiped clean
         self.mines_stairs = set() # down stairs known to lead into the Mines
         self.search_wide = False  # widen search spots after a full recycle
         self.extensions = 0       # level-timeout extensions granted
