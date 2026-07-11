@@ -122,6 +122,9 @@ PASSIVE_DANGER_NAMES = frozenset(
         "yellow mold",
         "green mold",
         "red mold",
+        # Toucher un (chick|cock)atrice pétrifie : à traiter à distance.
+        "chickatrice",
+        "cockatrice",
     }
 )
 
@@ -228,6 +231,7 @@ class MinetownPolicy:
         self.normal_turns = 0
         self.action_counts: Counter[str] = Counter()
         self.failure_hint = "unknown"
+        self.trail: deque[tuple] = deque(maxlen=400)
         # Elbereth.
         self.elbereth_pos: Point | None = None
         self.elbereth_key: LevelKey | None = None
@@ -235,6 +239,8 @@ class MinetownPolicy:
         self.last_engrave_attempt = -10_000
         # Anti-blocage.
         self.blocked_streak = 0
+        self.last_evade_step = -10_000
+        self.more_streak = 0
         # Repos avant descente.
         self.descent_rest: Counter[LevelKey] = Counter()
         # Hostiles visibles de la frame courante (pour le repos sûr).
@@ -263,6 +269,12 @@ class MinetownPolicy:
     def _emit(self, raw: int, label: str) -> int:
         self.last_raw_action = int(raw)
         self.action_counts[label] += 1
+        hp = None
+        if self.latest_obs is not None:
+            hp = int(self.latest_obs["blstats"][nethack.NLE_BL_HP])
+        self.trail.append(
+            (self.steps, label, hp, self.current_key, self.position)
+        )
         return self._index(int(raw))
 
     def _queue_keys(self, keys: str, label: str) -> int:
@@ -447,7 +459,12 @@ class MinetownPolicy:
     def _prompt(self, obs: dict[str, np.ndarray]) -> int | None:
         misc = obs["misc"]
         if misc[2]:
+            self.more_streak += 1
+            if self.more_streak > 30:
+                # Fenêtre coincée sur --More-- : la fermer autrement.
+                return self._emit(int(nethack.Command.ESC), "more_breaker")
             return self._emit(int(nethack.MiscAction.MORE), "more")
+        self.more_streak = 0
 
         message = self.last_message.lower()
         if misc[1]:
@@ -842,7 +859,7 @@ class MinetownPolicy:
                 and other_name not in PASSIVE_DANGER_NAMES
             ]
             if (
-                name not in ("floating eye", "gas spore")
+                name not in ("floating eye", "gas spore", "chickatrice", "cockatrice")
                 and hp * 4 >= hpmax * 3
                 and (not other_hostiles or self.blocked_streak >= 60)
             ):
@@ -850,9 +867,11 @@ class MinetownPolicy:
                 return self._move(level, target, "melee_passive_last_resort")
             if (
                 name == "floating eye"
-                and self.blocked_streak >= 150
+                and (
+                    (self.blocked_streak >= 150 and not other_hostiles)
+                    or self.blocked_streak >= 250
+                )
                 and hp * 100 >= hpmax * 85
-                and not other_hostiles
             ):
                 # Ultime recours : pari sur la paralysie, seul un blocage
                 # total sans autre hostile visible le justifie.
@@ -1000,6 +1019,10 @@ class MinetownPolicy:
         if not fresh:
             return None
         if self.position in fresh:
+            # Une seule tentative par cadavre : purger l'enregistrement dès
+            # l'émission (s'il a disparu, EAT ne produit aucun prompt et on
+            # bouclerait sinon indéfiniment).
+            self.corpses.pop((self.current_key, self.position), None)
             self.intent = {"kind": "eat_floor", "name": fresh[self.position]}
             return self._emit(int(nethack.Command.EAT), "eat_corpse")
         level = self.levels[self.current_key]
@@ -1186,8 +1209,12 @@ class MinetownPolicy:
             return None
         dist, _ = level.distances(self.position, blocked=blocked, avoid_traps=True)
         # Masse d'inconnu derrière chaque mur : les passages cachés mènent aux
-        # zones jamais vues, on fouille en priorité les murs qui les bordent.
-        unknown = (level.terrain == -1).astype(np.int32)
+        # zones jamais vues OU vues mais injoignables (pièce aperçue de loin
+        # sans couloir connu) ; on fouille en priorité les murs qui les bordent.
+        unknown = (
+            (level.terrain == -1)
+            | (np.isin(level.terrain, tuple(BASE_PASSABLE)) & (dist < 0))
+        ).astype(np.int32)
         integral = unknown.cumsum(0).cumsum(1)
 
         def unknown_mass(center: Point, radius: int = 5) -> int:
@@ -1801,6 +1828,26 @@ class MinetownPolicy:
             action = self._dig_escape(self.latest_obs, level, blocked)
             if action is not None:
                 return action
+        if self.blocked_streak >= 120 and self.steps - self.last_evade_step > 400:
+            # Changer de niveau par n'importe quel escalier accessible : les
+            # monstres se redistribuent et le blocage local disparaît souvent.
+            stairs = set(level.stairs_down)
+            if self.current_key != (0, 1):
+                # L'escalier montant du niveau 1 sort du donjon (refusé), il
+                # provoquait une boucle ascend/decline infinie.
+                stairs |= level.stairs_up
+            for point in sorted(
+                stairs,
+                key=lambda p: abs(p[0] - self.position[0])
+                + abs(p[1] - self.position[1]),
+            ):
+                action = self._go_stair(
+                    level, point, blocked, down=point in level.stairs_down
+                )
+                if action is not None:
+                    self.last_evade_step = self.steps
+                    self.action_counts["evade_level"] += 1
+                    return action
         if self.blocked_streak >= 200:
             # Désespoir : retenter les sondes (des passages ont pu s'ouvrir,
             # les failed_edges restent car ce sont de vrais murs).
@@ -1914,6 +1961,10 @@ class MinetownPolicy:
                 for key, point in sorted(self.attempted_down)
             ],
             "actions": dict(self.action_counts),
+            "trail": [
+                [step, label, hp, list(key) if key else None, list(pos) if pos else None]
+                for step, label, hp, key, pos in self.trail
+            ],
             "screen": screen,
             "levels": {
                 f"{key[0]}:{key[1]}": {
