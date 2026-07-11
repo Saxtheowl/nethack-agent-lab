@@ -90,6 +90,29 @@ PEACEFUL_DWARF_NAMES = frozenset(
     }
 )
 
+# Cadavres toujours sans danger pour une Valkyrie naine (pas de poison, pas
+# de cannibalisme — donc pas de nain).
+SAFE_CORPSES = frozenset(
+    {
+        "lichen",
+        "newt",
+        "gecko",
+        "jackal",
+        "fox",
+        "coyote",
+        "sewer rat",
+        "giant rat",
+        "grid bug",
+        "cave spider",
+        "iguana",
+        "gnome",
+        "gnome lord",
+        "hobbit",
+        "rock piercer",
+        "floating eye",
+    }
+)
+
 PASSIVE_DANGER_NAMES = frozenset(
     {
         "floating eye",
@@ -99,6 +122,23 @@ PASSIVE_DANGER_NAMES = frozenset(
         "yellow mold",
         "green mold",
         "red mold",
+    }
+)
+
+# Animaux pacifiques qu'on accepte d'attaquer s'ils bloquent durablement le
+# seul passage (pénalité d'alignement mineure, pas un meurtre).
+FORCE_ATTACK_ANIMALS = frozenset(
+    {
+        "kitten",
+        "housecat",
+        "large cat",
+        "little dog",
+        "dog",
+        "large dog",
+        "pony",
+        "horse",
+        "warhorse",
+        "hobbit",
     }
 )
 
@@ -199,6 +239,19 @@ class MinetownPolicy:
         self.descent_rest: Counter[LevelKey] = Counter()
         # Hostiles visibles de la frame courante (pour le repos sûr).
         self.visible_hostiles: dict[Point, str] = {}
+        # Attaque forcée d'un animal pacifique bloquant.
+        self.force_attack_step = -10_000
+        # Suivi des attaques subies et de l'efficacité d'Elbereth.
+        self.last_attacked_step = -10_000
+        self.elbereth_futile_until = -10_000
+        # Lancer cassé (ex. polymorphé sans mains) : ne pas boucler.
+        self.throw_pending: int | None = None
+        self.throw_broken_until = -10_000
+        # Cadavres sûrs connus : (niveau, position) -> (tour, nom).
+        self.corpses: dict[tuple[LevelKey, Point], tuple[int, str]] = {}
+        # Récupération de projectiles au sol (contre les passifs bloquants).
+        self.pickup_attempts: Counter[LevelKey] = Counter()
+        self.shopkeeper_levels: set[LevelKey] = set()
 
     @staticmethod
     def _index(raw: int) -> int:
@@ -263,6 +316,14 @@ class MinetownPolicy:
             if name.startswith("invisible "):
                 name = name.removeprefix("invisible ")
             self.hostile_names.add(name)
+            self.last_attacked_step = self.steps
+            if (
+                self.elbereth_pos == self.position
+                and self.elbereth_key == self.current_key
+                and self.steps - self.elbereth_step < 60
+            ):
+                # Attaqué debout sur la gravure : elle ne protège pas ici.
+                self.elbereth_futile_until = self.steps + 200
 
         old_key, old_point = self.current_key, self.position
         self.previous_key, self.previous_position = old_key, old_point
@@ -353,6 +414,23 @@ class MinetownPolicy:
                         self.levels[move_key].unknown_attempts += 1
             self.last_move = None
 
+        # Détection des kills pour manger les cadavres sûrs.
+        kill_match = re.search(r"You (?:kill|destroy) the ([a-z][a-z ]*)!", message)
+        if kill_match and self.last_move is not None and self.last_move[4]:
+            name = kill_match.group(1).strip()
+            if name in SAFE_CORPSES:
+                turn = int(bl[nethack.NLE_BL_TIME])
+                self.corpses[(key, self.last_move[2])] = (turn, name)
+        if "you see here a lichen corpse" in lowered_message:
+            # Les cadavres de lichen ne pourrissent jamais.
+            self.corpses[(key, point)] = (10**9, "lichen")
+
+        # Lancer sans effet (ex. sans mains) : désactiver le lancer un moment.
+        if self.throw_pending is not None and self.steps > self.throw_pending:
+            if not np.any(obs["misc"]):
+                self.throw_broken_until = self.steps + 500
+            self.throw_pending = None
+
         # Une intention de commande est terminée dès le retour au mode normal.
         if not np.any(obs["misc"]) and self.intent is not None:
             if (
@@ -389,6 +467,10 @@ class MinetownPolicy:
             return None
 
         if "really attack" in message:
+            if self.steps - self.force_attack_step <= 3:
+                # Déblocage assumé d'un animal pacifique qui campe le passage.
+                self.intent = None
+                return self._emit(ord("y"), "force_attack_yes")
             match = re.search(r"really attack (?:the |a |an )?([^?]+?)\?", message)
             if match:
                 name = match.group(1).strip().lower()
@@ -410,6 +492,22 @@ class MinetownPolicy:
                     self.intent["stage"] = 1
                     return self._emit(ord("-"), "engrave_fingers")
                 return self._emit(ord("y"), "engrave_yes")
+            if kind == "pickup":
+                if "pick it up" in message or "pick up" in message:
+                    self.intent = None
+                    return self._emit(ord("y"), "pickup_confirm")
+                self.intent = None
+                return self._emit(int(nethack.Command.ESC), "pickup_abort")
+            if kind == "eat_floor":
+                if "eat it?" in message or "eat one?" in message:
+                    self.intent = None
+                    if self.current_key is not None and self.position is not None:
+                        self.corpses.pop((self.current_key, self.position), None)
+                    return self._emit(ord("y"), "eat_floor_confirm")
+                self.intent = None
+                if self.current_key is not None and self.position is not None:
+                    self.corpses.pop((self.current_key, self.position), None)
+                return self._emit(int(nethack.Command.ESC), "eat_floor_abort")
             if kind == "eat":
                 if "eat it?" in message or "eat one?" in message:
                     return self._emit(ord("n"), "decline_floor_food")
@@ -430,6 +528,7 @@ class MinetownPolicy:
                 stage = int(self.intent.get("stage", 0))
                 if stage == 0:
                     self.intent["stage"] = 1
+                    self.throw_pending = None
                     return self._emit(ord(self.intent["letter"]), "select_throw_item")
                 raw = int(self.intent["raw"])
                 self.intent = None
@@ -503,7 +602,9 @@ class MinetownPolicy:
             name in PEACEFUL_DWARF_NAMES and name not in self.hostile_names
         ) and name not in self.forced_peaceful_names
 
-    _COMBAT_MOVE_LABELS = frozenset({"melee", "melee_passive_last_resort"})
+    _COMBAT_MOVE_LABELS = frozenset(
+        {"melee", "melee_passive_last_resort", "melee_forced"}
+    )
 
     def _move(self, level: LevelState, target: Point, label: str) -> int:
         assert self.position is not None and self.current_key is not None
@@ -572,6 +673,8 @@ class MinetownPolicy:
 
         if self.incapacitated:
             return False
+        if self.steps < self.elbereth_futile_until:
+            return False
         if self.steps - self.last_engrave_attempt < 6:
             return False
         respecters = [
@@ -618,12 +721,14 @@ class MinetownPolicy:
         blocked = set(creatures) | pets
 
         if hostiles:
-            low_hp = hp * 100 < hpmax * 60
-            critical = hp * 100 < hpmax * 40 or (
-                hp * 100 < hpmax * 55 and len(hostiles) >= 2
+            low_hp = hp * 100 < hpmax * 45
+            critical = hp * 100 < hpmax * 30 or (
+                hp * 100 < hpmax * 45 and len(hostiles) >= 2
             )
-            # Repos protégé : déjà sur une gravure fraîche -> rester dessus.
-            if self._on_fresh_elbereth() and hp < hpmax:
+            under_fire = self.steps - self.last_attacked_step <= 2
+            # Repos protégé sur une gravure fraîche — mais si on se fait
+            # quand même taper dessus, la gravure ne marche pas : on riposte.
+            if self._on_fresh_elbereth() and not under_fire and hp < hpmax:
                 if self.steps - self.elbereth_step > 14 and self._elbereth_applicable(
                     hostiles
                 ):
@@ -680,7 +785,7 @@ class MinetownPolicy:
                 ),
                 None,
             )
-            if projectile is not None:
+            if projectile is not None and self.steps >= self.throw_broken_until:
                 target, name = passive_dangers[0]
                 delta = (
                     target[0] - self.position[0],
@@ -693,6 +798,7 @@ class MinetownPolicy:
                     "raw": int(DIRECTION_ACTION[delta]),
                     "stage": 0,
                 }
+                self.throw_pending = self.steps
                 return self._emit(int(nethack.Command.THROW), "throw_at_passive")
             target, name = passive_dangers[0]
             wand_key = (self.current_key, target)
@@ -719,23 +825,39 @@ class MinetownPolicy:
                     "stage": 0,
                 }
                 return self._emit(int(nethack.Command.ZAP), "zap_at_passive")
-            # Jamais de mêlée contre un floating eye : la paralysie de 1d70
-            # tours est presque toujours fatale.  Les autres passifs restent
-            # attaquables en dernier recours à PV hauts.
+            # Plus de projectile ni de wand : tenter d'aller ramasser un objet
+            # au sol (souvent notre propre dague lancée).
+            fetch = self._fetch_projectile(level, blocked)
+            if fetch is not None:
+                return fetch
+            # Jamais de mêlée contre un floating eye tant qu'il reste une
+            # alternative : la paralysie de 1d70 tours est presque toujours
+            # fatale.  Les autres passifs deviennent attaquables à PV hauts,
+            # d'autant plus vite qu'on est coincé depuis longtemps.
+            other_hostiles = [
+                other_name
+                for other_point, other_name in creatures.items()
+                if other_point not in pets
+                and self._is_hostile(other_name)
+                and other_name not in PASSIVE_DANGER_NAMES
+            ]
             if (
                 name not in ("floating eye", "gas spore")
                 and hp * 4 >= hpmax * 3
+                and (not other_hostiles or self.blocked_streak >= 60)
             ):
-                other_hostiles = [
-                    other_name
-                    for other_point, other_name in creatures.items()
-                    if other_point not in pets
-                    and self._is_hostile(other_name)
-                    and other_name not in PASSIVE_DANGER_NAMES
-                ]
-                if not other_hostiles:
-                    self.failure_hint = f"combat:{name}"
-                    return self._move(level, target, "melee_passive_last_resort")
+                self.failure_hint = f"combat:{name}"
+                return self._move(level, target, "melee_passive_last_resort")
+            if (
+                name == "floating eye"
+                and self.blocked_streak >= 150
+                and hp * 100 >= hpmax * 85
+                and not other_hostiles
+            ):
+                # Ultime recours : pari sur la paralysie, seul un blocage
+                # total sans autre hostile visible le justifie.
+                self.failure_hint = f"combat:{name}"
+                return self._move(level, target, "melee_passive_last_resort")
             # Un passif sessile est plus sûr comme mur temporaire que comme
             # cible.  La navigation cherchera un autre chemin.
             return None
@@ -766,6 +888,39 @@ class MinetownPolicy:
             self.intent = {"kind": "wield", "letter": sword}
             return self._emit(int(nethack.Command.WIELD), "wield_for_combat")
         return self._move(level, target, "melee")
+
+    def _fetch_projectile(
+        self, level: LevelState, blocked: set[Point]
+    ) -> int | None:
+        """Va ramasser un objet au sol quand on n'a plus rien à lancer."""
+
+        assert self.position is not None and self.current_key is not None
+        if self.latest_obs is None:
+            return None
+        if self.pickup_attempts[self.current_key] >= 6:
+            return None
+        inventory = self._inventory(self.latest_obs)
+        if any(
+            projectile in description
+            for projectile in ("dagger", "rock", "dart", "arrow")
+            for description in inventory.values()
+        ):
+            return None
+        candidates = level.objects - level.boulders - blocked
+        candidates.discard(self.position)
+        if self.position in level.objects:
+            candidates.add(self.position)
+        if not candidates:
+            return None
+        path = level.path(self.position, candidates, blocked)
+        if path is None:
+            return None
+        if len(path) > 1:
+            return self._move(level, path[1], "fetch_projectile")
+        self.pickup_attempts[self.current_key] += 1
+        level.objects.discard(self.position)
+        self.intent = {"kind": "pickup"}
+        return self._emit(int(nethack.Command.PICKUP), "pickup_projectile")
 
     def _hostile_nearby(self, radius: int = 6) -> bool:
         assert self.position is not None
@@ -811,16 +966,46 @@ class MinetownPolicy:
                 if "food ration" in description:
                     self.intent = {"kind": "eat", "letter": letter}
                     return self._emit(int(nethack.Command.EAT), "eat_ration")
+            # Pas de ration : manger un cadavre sûr (frais ou lichen).
+            action = self._eat_corpse(obs, turn)
+            if action is not None:
+                return action
 
-        if hunger >= 3 and turn >= 350 and turn - self.last_prayer_turn >= 450:
+        if hunger >= 3 and turn >= 350 and turn - self.last_prayer_turn >= 700:
             self.last_prayer_turn = turn
             self.intent = {"kind": "pray"}
             return self._emit(int(nethack.Command.PRAY), "pray_for_hunger")
+        if hunger >= 4 and turn - self.last_prayer_turn >= 300:
+            # Évanouissements : prier même si le délai est incertain.
+            self.last_prayer_turn = turn
+            self.intent = {"kind": "pray"}
+            return self._emit(int(nethack.Command.PRAY), "pray_fainting")
 
         # Repos : uniquement sans hostile visible proche, par rafales de
         # recherche comptée (le jeu interrompt la rafale si un monstre surgit).
-        if hp * 100 < hpmax * 70 and not self._hostile_nearby(6) and hunger < 3:
+        if hp * 100 < hpmax * 60 and not self._hostile_nearby(6) and hunger < 3:
             return self._rest_search(15, "rest")
+        return None
+
+    def _eat_corpse(self, obs: dict[str, np.ndarray], turn: int) -> int | None:
+        assert self.position is not None and self.current_key is not None
+        fresh: dict[Point, str] = {}
+        for (key, point), (killed_turn, name) in list(self.corpses.items()):
+            if key != self.current_key:
+                continue
+            if name != "lichen" and turn - killed_turn > 40:
+                del self.corpses[(key, point)]
+                continue
+            fresh[point] = name
+        if not fresh:
+            return None
+        if self.position in fresh:
+            self.intent = {"kind": "eat_floor", "name": fresh[self.position]}
+            return self._emit(int(nethack.Command.EAT), "eat_corpse")
+        level = self.levels[self.current_key]
+        path = level.path(self.position, set(fresh), set())
+        if path is not None and len(path) > 1:
+            return self._move(level, path[1], "go_to_corpse")
         return None
 
     def _emergency(self, obs: dict[str, np.ndarray]) -> int | None:
@@ -976,10 +1161,15 @@ class MinetownPolicy:
         delta = (target[0] - self.position[0], target[1] - self.position[1])
         if kind == "door":
             failures = level.door_failures.get(target, 0)
-            raw = int(nethack.Command.OPEN if failures == 0 else nethack.Command.KICK)
+            kick = failures > 0
+            if kick and level.key in self.shopkeeper_levels:
+                # Défoncer une porte de boutique rend le shopkeeper meurtrier.
+                level.door_failures[target] = 6
+                return self._emit(int(nethack.MiscDirection.WAIT), "skip_shop_door")
+            raw = int(nethack.Command.KICK if kick else nethack.Command.OPEN)
             level.door_failures[target] = failures + 1
             self.intent = {"kind": "direction", "raw": int(DIRECTION_ACTION[delta])}
-            return self._emit(raw, "open_door" if failures == 0 else "kick_door")
+            return self._emit(raw, "kick_door" if kick else "open_door")
         level.probe_attempts.add((self.position, target))
         return self._move(level, target, "probe_unknown")
 
@@ -995,17 +1185,46 @@ class MinetownPolicy:
         if level.search_total >= budget:
             return None
         dist, _ = level.distances(self.position, blocked=blocked, avoid_traps=True)
+        # Masse d'inconnu derrière chaque mur : les passages cachés mènent aux
+        # zones jamais vues, on fouille en priorité les murs qui les bordent.
+        unknown = (level.terrain == -1).astype(np.int32)
+        integral = unknown.cumsum(0).cumsum(1)
+
+        def unknown_mass(center: Point, radius: int = 5) -> int:
+            y0 = max(0, center[0] - radius)
+            x0 = max(0, center[1] - radius)
+            y1 = min(level.shape[0] - 1, center[0] + radius)
+            x1 = min(level.shape[1] - 1, center[1] + radius)
+            total = int(integral[y1, x1])
+            if y0 > 0:
+                total -= int(integral[y0 - 1, x1])
+            if x0 > 0:
+                total -= int(integral[y1, x0 - 1])
+            if y0 > 0 and x0 > 0:
+                total += int(integral[y0 - 1, x0 - 1])
+            return total
+
         candidates: list[tuple[float, Point]] = []
         for y, x in map(tuple, np.argwhere(dist >= 0)):
             point = (int(y), int(x))
             wallish = 0
             known_degree = 0
-            for nxt in neighbors(point, diagonals=False):
+            best_mass = 0
+            for delta in CARDINALS:
+                nxt = add(point, delta)
                 if not inside(nxt, level.shape):
                     continue
                 value = int(level.terrain[nxt])
-                wallish += value in (-1, STONE) or WALL_MIN <= value <= WALL_MAX
+                is_wall = value in (-1, STONE) or WALL_MIN <= value <= WALL_MAX
+                wallish += is_wall
                 known_degree += value in (ROOM, DARKROOM, CORRIDOR)
+                if is_wall:
+                    beyond = (point[0] + delta[0] * 4, point[1] + delta[1] * 4)
+                    beyond = (
+                        min(max(beyond[0], 0), level.shape[0] - 1),
+                        min(max(beyond[1], 0), level.shape[1] - 1),
+                    )
+                    best_mass = max(best_mass, unknown_mass(beyond))
             terrain = int(level.terrain[point])
             local_limit = (
                 per_tile
@@ -1020,6 +1239,7 @@ class MinetownPolicy:
                     + int(level.searches[point]) * 0.5
                     + known_degree * 2
                     - wallish * 2
+                    - best_mass * 0.4
                     - (80 if terrain == CORRIDOR and known_degree <= 1 else 0)
                 )
                 candidates.append((priority, point))
@@ -1177,18 +1397,20 @@ class MinetownPolicy:
         blocked: set[Point],
         *,
         thorough: bool,
+        do_search: bool = True,
+        unknown_cap: int = 320,
     ) -> int | None:
         mapped = level.key in self.mapped_levels
-        unknown_budget = 320 if not mapped else 0
+        unknown_budget = unknown_cap if not mapped else 0
         action = self._door_or_frontier(level, blocked, unknown_budget=unknown_budget)
         if action is not None:
             level.exhausted = False
             return action
 
-        if mapped:
+        if mapped or not do_search:
             level.exhausted = True
             return None
-        search_budget = (700 if thorough else 260) + level.escalation * 350
+        search_budget = (900 if thorough else 420) + level.escalation * 400
         per_tile = 32 + level.escalation * 16
         action = self._search_hidden(
             level, blocked, budget=search_budget, per_tile=per_tile
@@ -1420,11 +1642,45 @@ class MinetownPolicy:
                 return self._explore(level, blocked, thorough=True)
             return None
 
-        # Le niveau 1 du donjon principal ne peut pas contenir la branche.
+        # ---- Donjon principal ----
+        # Phase 1 (descente rapide) : descendre tout escalier non testé dès
+        # qu'il est vu ; l'arrivée nous dit si c'était la branche des Mines.
+        # Phase 2 (retour, branch_backtracking) : après dépassement au niveau
+        # 5, remonter et fouiller sérieusement les niveaux 2-4.
+        def nearest(points: set[Point]) -> Point:
+            return min(
+                points,
+                key=lambda p: abs(p[0] - self.position[0])
+                + abs(p[1] - self.position[1]),
+            )
+
+        attempted_here = {
+            point for key, point in self.attempted_down if key == self.current_key
+        }
+        known_main = {
+            point
+            for point, dest in level.down_outcomes.items()
+            if dest[0] == 0
+        }
+        untested = level.stairs_down - attempted_here - known_main
+
+        if dlevel >= 5:
+            self.branch_backtracking = True
+            if not level.stairs_up and int(level.visits.sum()) < 20:
+                level.stairs_up.add(self.position)
+            if level.stairs_up:
+                action = self._go_stair(
+                    level, nearest(level.stairs_up), blocked, down=False
+                )
+                if action is not None:
+                    return action
+            return self._explore(level, blocked, thorough=False)
+
         if dlevel == 1:
+            # Le niveau 1 ne peut pas contenir la branche : descendre.
             if level.stairs_down:
                 action = self._go_stair(
-                    level, next(iter(level.stairs_down)), blocked, down=True
+                    level, nearest(level.stairs_down), blocked, down=True
                 )
                 if action is not None:
                     return action
@@ -1434,69 +1690,76 @@ class MinetownPolicy:
             action = self._explore(level, blocked, thorough=False)
             if action is not None:
                 return action
-            if not level.stairs_down and level.escalation < 1:
+            if not level.stairs_down and level.escalation < 3:
                 level.escalation += 1
                 level.exhausted = False
                 return self._explore(level, blocked, thorough=True)
             return None
 
-        if 2 <= dlevel <= 4:
+        # dlevel 2..4
+        if not self.branch_backtracking:
+            if untested:
+                action = self._go_stair(level, nearest(untested), blocked, down=True)
+                if action is not None:
+                    return action
+            # Frontière limitée dès qu'un escalier est connu : descendre vite,
+            # la fouille sérieuse n'arrive qu'en phase retour.
+            action = self._explore(
+                level,
+                blocked,
+                thorough=False,
+                do_search=not level.stairs_down,
+                unknown_cap=120 if level.stairs_down else 320,
+            )
+            if action is not None:
+                return action
             if not level.stairs_down:
                 action = self._inspect_objects(level, blocked)
                 if action is not None:
                     return action
-            action = self._explore(level, blocked, thorough=self.branch_backtracking)
-            if action is not None:
-                return action
-
-            attempted_here = {
-                point for key, point in self.attempted_down if key == self.current_key
-            }
-            untested = level.stairs_down - attempted_here
-            if untested:
-                point = min(untested)
+                if level.escalation < 2:
+                    level.escalation += 1
+                    level.exhausted = False
+                    return self._explore(level, blocked, thorough=True)
+            if level.stairs_down:
                 action = self._go_stair(
-                    level,
-                    point,
-                    blocked,
-                    down=True,
-                    return_if_main=True,
+                    level, nearest(level.stairs_down), blocked, down=True
                 )
                 if action is not None:
                     return action
-
-            if not level.stairs_down and level.escalation < 1:
-                level.escalation += 1
-                level.exhausted = False
-                return self._explore(level, blocked, thorough=True)
-
-            if self.branch_backtracking:
-                if level.stairs_up:
-                    return self._go_stair(
-                        level, next(iter(level.stairs_up)), blocked, down=False
-                    )
-            else:
-                known_main = [
-                    point
-                    for point, dest in level.down_outcomes.items()
-                    if dest[0] == 0
-                ]
-                if known_main:
-                    return self._go_stair(level, known_main[0], blocked, down=True)
             return None
 
-        # Niveau principal 5 atteint : la branche des Mines (2-4) a été ratée.
-        self.branch_backtracking = True
-        if not level.stairs_up and int(level.visits.sum()) < 20:
-            level.stairs_up.add(self.position)
-        if level.stairs_up:
-            point = min(
-                level.stairs_up,
-                key=lambda p: abs(p[0] - self.position[0])
-                + abs(p[1] - self.position[1]),
+        # Phase retour : chasse à la branche cachée sur ce niveau.
+        action = self._inspect_objects(level, blocked)
+        if action is not None:
+            return action
+        action = self._explore(level, blocked, thorough=True)
+        if action is not None:
+            return action
+        if untested:
+            action = self._go_stair(level, nearest(untested), blocked, down=True)
+            if action is not None:
+                return action
+        if dlevel > 2 and level.stairs_up:
+            action = self._go_stair(
+                level, nearest(level.stairs_up), blocked, down=False
             )
-            return self._go_stair(level, point, blocked, down=False)
-        return self._explore(level, blocked, thorough=False)
+            if action is not None:
+                return action
+        if dlevel == 2:
+            # Balayage 2-4 terminé sans branche : réarmer avec plus de budget
+            # et redescendre par l'escalier principal connu.
+            for candidate in self.levels.values():
+                if candidate.key[0] == 0 and 2 <= candidate.key[1] <= 4:
+                    candidate.escalation = min(candidate.escalation + 1, 6)
+                    candidate.exhausted = False
+            if known_main:
+                action = self._go_stair(
+                    level, nearest(known_main), blocked, down=True
+                )
+                if action is not None:
+                    return action
+        return None
 
     def _unstick(self, level: LevelState, blocked: set[Point]) -> int | None:
         """Après une longue attente derrière un pacifique, bouger ailleurs."""
@@ -1504,6 +1767,23 @@ class MinetownPolicy:
         assert self.position is not None
         if self.blocked_streak < 30:
             return None
+        # Un animal pacifique campe le passage depuis ~60 steps : on l'attaque
+        # (coût d'alignement mineur, très inférieur à un step_timeout).
+        if self.blocked_streak >= 60:
+            for delta in DIRECTIONS:
+                point = add(self.position, delta)
+                if point in blocked and self.latest_obs is not None:
+                    creatures, pets = self._creatures(self.latest_obs)
+                    name = creatures.get(point, "")
+                    if name in FORCE_ATTACK_ANIMALS and point not in pets:
+                        if delta[0] and delta[1]:
+                            here = int(level.terrain[self.position])
+                            there = int(level.terrain[point])
+                            if here in DOOR_TILES or there in DOOR_TILES:
+                                continue
+                        self.force_attack_step = self.steps
+                        self.failure_hint = f"combat:{name}"
+                        return self._move(level, point, "melee_forced")
         # Oublier la cible de patrouille : elle est peut-être injoignable
         # uniquement à cause du pacifique immobile.
         self.patrol_targets.pop(level.key, None)
@@ -1521,10 +1801,9 @@ class MinetownPolicy:
             action = self._dig_escape(self.latest_obs, level, blocked)
             if action is not None:
                 return action
-        if self.blocked_streak >= 120:
-            # Désespoir : oublier les échecs mémorisés du niveau et retenter
-            # tout (les pacifiques ont bougé, des passages ont pu s'ouvrir).
-            level.failed_edges.clear()
+        if self.blocked_streak >= 200:
+            # Désespoir : retenter les sondes (des passages ont pu s'ouvrir,
+            # les failed_edges restent car ce sont de vrais murs).
             level.probe_attempts.clear()
             level.unknown_attempts = 0
             level.exhausted = False
@@ -1547,6 +1826,8 @@ class MinetownPolicy:
 
         self.normal_turns += 1
         creatures, pets = self._creatures(obs)
+        if any(name == "shopkeeper" for name in creatures.values()):
+            self.shopkeeper_levels.add(self.current_key)
         self.visible_hostiles = {
             point: name
             for point, name in creatures.items()
