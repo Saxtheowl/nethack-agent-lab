@@ -1645,10 +1645,25 @@ class Brain:
             # a known untried staircase awaits on a shallower level: go get it
             self.mines_hunt = True
         if self.mines_hunt:
-            if self.dlvl > 2:
+            if self.untried_stairs_above():
+                # a fresh, never-tested > waits on a shallower level
+                t = any_up()
+                if t:
+                    return ("up", t)
+            # the branch stairs hide on 2, 3 OR 4 with equal odds: rotate the
+            # hunt toward whichever of those levels got the least effort yet
+            def _effort(dl):
+                L = self.levels.get((BRANCH_DOOM, dl))
+                return L.turns_spent if L else 0
+            target = min((2, 3, 4), key=_effort)
+            if (target == self.dlvl
+                    or _effort(self.dlvl) - _effort(target) < 300):
+                return None  # hunt here: explore leftovers + hidden search
+            if target < self.dlvl:
                 t = any_up()
                 return ("up", t) if t else None
-            return None  # dlvl 2 exhausted: search for hidden stairs
+            t = any_down()
+            return ("down", t) if t else None
         # not hunting yet: keep going down the main branch
         t = any_down()
         if t:

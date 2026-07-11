@@ -82,7 +82,10 @@ Adaptations bot : NH_PREFIX=nh367, rc sans statuslines/tutorial/suppress_alert, 
 | m367-6 | 42/98 (43%) | Aborts en chute (7 familles wall-time contre 24) mais morts dominantes (29) : autopsie grid bug = **mort de faim** (évanouissements, prière unique refusée "Tyr is displeased", 0 nourriture depuis 1000 tours) ; Doom:4 encore 17 (oscillation 2↔3 remettait le timer de forage à zéro à chaque arrivée) ; 2 morts shopkeeper = trou foré dans le plancher de boutique |
 | m367-7 | 24/47 (51%) interrompu | 3 rations + corpses élargis + tours cumulés/niveau + amnistie bans + pas de forage près d'un `@`. Interrompu par la consigne kit strict |
 | m367-8 | 15/99 (15%) | **Baseline kit strict.** 41 parties bloquées Doom:1-2 → autopsie : **BUG MAJEUR "Invalid direction for 'm' prefix"** — en 3.6.7 `m` exige une direction, la syntaxe `m10s` (héritée 3.7) était invalide : TOUTES les fouilles ne duraient que 1 tour au lieu de 10 depuis la migration ! (masqué avant par les wands qui contournaient les passages cachés) ; portes verrouillées 25, boulders coincés 20 |
-| m367-9 | ? | Syntaxe fouille 3.6.7 : `10s`/`20s`/`s` (sans préfixe m) ; **ramassage des wands trouvées** (digging auto-identifiée au 1er zap) + zap-test `>` des wands inconnues en dernier recours de coincement |
+| m367-9 | 23/99 (23%) | Syntaxe fouille 3.6.7 : `10s`/`20s`/`s` (sans préfixe m) ; ramassage des wands trouvées + zap-test en dernier recours. Restait : Doom:1-2 timeout ×32 avec carte à peine explorée |
+| m367-10 | interrompu | amnistie bans+fouilles (relancé avec l'explorateur en plus) |
+| m367-11 | 25/100 (25%) | Explorateur occupancy-map (best_search_spot : composantes inexplorées, bonus impasse, malus fouilles², distance). **Autopsie clé : les timeouts Doom:2 (29) avaient le `>` CONNU** — c'est la chasse à l'escalier de branche qui campait sur le niveau 2 pendant 2500 tours alors que l'escalier des Mines est sur 2, 3 OU 4 équiprobables |
+| m367-12 | ? | **Rotation de chasse Doom 2-3-4** : fouiller le niveau le moins travaillé (turns_spent), y rester tant que l'écart <300 tours, préférer les `>` jamais testés au-dessus. Vérifié empiriquement : `10s` fonctionne bien sur le binaire 3.6.7 |
 
 Axes restants (par impact) :
 1. Doom 2-4 : trouver l'escalier de branche — le forage descend mais ne "branche" pas ;

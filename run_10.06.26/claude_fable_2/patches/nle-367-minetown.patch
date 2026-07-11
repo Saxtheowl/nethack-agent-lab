@@ -1,0 +1,50 @@
+diff --git a/include/nletypes.h b/include/nletypes.h
+index 31b9110..c786b8b 100644
+--- a/include/nletypes.h
++++ b/include/nletypes.h
+@@ -9,7 +9,7 @@
+ #define NLE_MESSAGE_SIZE 256
+ #define NLE_BLSTATS_SIZE 27
+ #define NLE_PROGRAM_STATE_SIZE 6
+-#define NLE_INTERNAL_SIZE 9
++#define NLE_INTERNAL_SIZE 10
+ #define NLE_MISC_SIZE 3
+ #define NLE_INVENTORY_SIZE 55
+ #define NLE_INVENTORY_STR_LENGTH 80
+diff --git a/src/u_init.c b/src/u_init.c
+index 77e7445..2ecdb3f 100644
+--- a/src/u_init.c
++++ b/src/u_init.c
+@@ -153,6 +153,8 @@ static struct trobj Valkyrie[] = {
+     { LONG_SWORD, 1, WEAPON_CLASS, 1, UNDEF_BLESS },
+     { DAGGER, 0, WEAPON_CLASS, 1, UNDEF_BLESS },
+     { SMALL_SHIELD, 3, ARMOR_CLASS, 1, UNDEF_BLESS },
++    /* Project-approved starting kit: blessed greased +2 gray dragon scale mail. */
++    { GRAY_DRAGON_SCALE_MAIL, 2, ARMOR_CLASS, 1, 1 },
+     { FOOD_RATION, 0, FOOD_CLASS, 1, 0 },
+     { 0, 0, 0, 0, 0 }
+ };
+@@ -1100,6 +1108,9 @@ register struct trobj *trop;
+                 obj->spe = trop->trspe;
+             if (trop->trbless != UNDEF_BLESS)
+                 obj->blessed = trop->trbless;
++            if (Role_if(PM_VALKYRIE)
++                && otyp == GRAY_DRAGON_SCALE_MAIL)
++                obj->greased = 1;
+         }
+         /* defined after setting otyp+quan + blessedness */
+         obj->owt = weight(obj);
+diff --git a/win/rl/winrl.cc b/win/rl/winrl.cc
+index f3159ba..60613ab 100644
+--- a/win/rl/winrl.cc
++++ b/win/rl/winrl.cc
+@@ -285,6 +285,9 @@ NetHackRL::fill_obs(nle_obs *obs)
+         obs->internal[7] = u.uhunger;
+         obs->internal[8] =
+             u.urexp; /* score (careful! check botl_score() and end.c) */
++        /* Evaluation-only signal.  The Minetown policy never requests the
++           internal observation, so this is not exposed to agent decisions. */
++        obs->internal[9] = in_town(u.ux, u.uy) ? 1 : 0;
+     }
+     if (obs->misc) {
+         obs->misc[0] = in_yn_function;

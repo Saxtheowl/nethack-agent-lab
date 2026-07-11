@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minetown2"
+version = "0.1.0"
+description = "Agent symbolique NetHack 3.6.7 Valkyrie -> Minetown (run claude_fable_2)"
+requires-python = ">=3.10"
+dependencies = ["gymnasium==1.2.0", "numpy>=2.0"]
+
+[project.scripts]
+mt-run = "minetown2.runner:main"
+mt-watch = "minetown2.watch:main"
+
+[tool.setuptools.packages.find]
+include = ["minetown2*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
