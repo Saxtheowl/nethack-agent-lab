@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable — NetHack Replay Viewer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐉</text></svg>">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand"><span class="logo">🐉</span> <b>FABLE</b><span class="brand-sep">·</span>NetHack Replay Viewer</div>
+  <div class="topbar-right">
+    <span id="root-path" title="Répertoire des runs"></span>
+    <button id="refresh-btn" class="ghost-btn" title="Rescanner les runs">⟳</button>
+  </div>
+</header>
+<div id="layout">
+  <nav id="sidebar"></nav>
+  <main id="main"><div class="loading">Chargement de l'index…</div></main>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
