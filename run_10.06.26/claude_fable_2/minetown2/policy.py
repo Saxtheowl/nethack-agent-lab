@@ -679,6 +679,10 @@ class MinetownPolicy:
             point = add(self.position, delta)
             if not inside(point, level.shape) or not passable[point]:
                 continue
+            if (self.position, point) in level.failed_edges:
+                # Sans ce filtre, une fuite diagonale refusée par le jeu
+                # (« can't move diagonally out of a doorway ») bouclait.
+                continue
             if delta[0] and delta[1]:
                 side1 = (self.position[0] + delta[0], self.position[1])
                 side2 = (self.position[0], self.position[1] + delta[1])
@@ -1467,6 +1471,30 @@ class MinetownPolicy:
         }
         return self._emit(int(nethack.Command.APPLY), "dig_escape")
 
+    # cmap NetHack 3.6.7 : S_hole=54, S_trap_door=55 (include/rm.h).
+    _DIVE_TRAPS = (54, 55)
+
+    def _dive_trapdoor(self, level: LevelState, blocked: set[Point]) -> int | None:
+        """Descend volontairement par un trou/trappe connu (dernier recours)."""
+
+        assert self.position is not None
+        holes = {
+            point
+            for point, value in level.trap_types.items()
+            if value in self._DIVE_TRAPS and point not in blocked
+        }
+        if not holes:
+            return None
+        if self.position in holes:
+            # Marcher sur la trappe la déclenche ; si on y est déjà, avancer
+            # dessus à nouveau n'a pas de sens — le jeu nous a laissés dessus,
+            # utiliser la descente classique.
+            return self._emit(int(nethack.MiscDirection.DOWN), "dive_trapdoor")
+        path = level.path(self.position, holes, blocked, allow_targets=True)
+        if path is None or len(path) < 2:
+            return None
+        return self._move(level, path[1], "dive_trapdoor_path")
+
     def _explore(
         self,
         level: LevelState,
@@ -1728,6 +1756,10 @@ class MinetownPolicy:
                 level.escalation += 1
                 level.exhausted = False
                 return self._explore(level, blocked, thorough=True)
+            if not level.stairs_down:
+                action = self._dive_trapdoor(level, blocked)
+                if action is not None:
+                    return action
             return None
 
         # ---- Donjon principal ----
@@ -1782,6 +1814,10 @@ class MinetownPolicy:
                 level.escalation += 1
                 level.exhausted = False
                 return self._explore(level, blocked, thorough=True)
+            if not level.stairs_down:
+                action = self._dive_trapdoor(level, blocked)
+                if action is not None:
+                    return action
             return None
 
         # dlevel 2..4
@@ -1809,6 +1845,9 @@ class MinetownPolicy:
                     level.escalation += 1
                     level.exhausted = False
                     return self._explore(level, blocked, thorough=True)
+                action = self._dive_trapdoor(level, blocked)
+                if action is not None:
+                    return action
             if level.stairs_down:
                 action = self._go_stair(
                     level, nearest(level.stairs_down), blocked, down=True
@@ -1965,14 +2004,19 @@ class MinetownPolicy:
                 or (name in PEACEFUL_DWARF_NAMES and name not in self.hostile_names)
             )
         } - pets
-        # Boutiques : rester à distance des shopkeepers (vol involontaire,
-        # portes, colères = morts assurées à bas niveau).
+        # Boutiques : rester à petite distance des shopkeepers (vol
+        # involontaire = mort).  Rayon court, et jamais sur un escalier :
+        # un grand rayon scellait des niveaux entiers.
         for point, name in creatures.items():
             if name == "shopkeeper":
-                for dy in range(-4, 5):
-                    for dx in range(-4, 5):
+                for dy in range(-2, 3):
+                    for dx in range(-2, 3):
                         tile = (point[0] + dy, point[1] + dx)
-                        if inside(tile, level.shape):
+                        if (
+                            inside(tile, level.shape)
+                            and tile not in level.stairs_down
+                            and tile not in level.stairs_up
+                        ):
                             blocked.add(tile)
         blocked.discard(self.position)
         self.current_blocked = blocked

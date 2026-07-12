@@ -60,6 +60,7 @@ class LevelState:
     stairs_down: set[Point] = field(default_factory=set)
     fountains: set[Point] = field(default_factory=set)
     traps: set[Point] = field(default_factory=set)
+    trap_types: dict[Point, int] = field(default_factory=dict)
     boulders: set[Point] = field(default_factory=set)
     objects: set[Point] = field(default_factory=set)
     inspected_objects: set[Point] = field(default_factory=set)
@@ -106,7 +107,12 @@ class LevelState:
         self.stairs_up.update(map(tuple, np.argwhere(cmap == UPSTAIR)))
         self.stairs_down.update(map(tuple, np.argwhere(cmap == DOWNSTAIR)))
         self.fountains.update(map(tuple, np.argwhere(cmap == FOUNTAIN)))
-        self.traps.update(map(tuple, np.argwhere(nethack.glyph_is_trap(glyphs))))
+        for y, x in np.argwhere(nethack.glyph_is_trap(glyphs)):
+            point = (int(y), int(x))
+            self.traps.add(point)
+            self.trap_types[point] = int(
+                nethack.glyph_to_cmap(int(glyphs[point]))
+            )
 
         boulders: set[Point] = set()
         object_points = set(map(tuple, np.argwhere(nethack.glyph_is_object(glyphs))))
@@ -149,8 +155,12 @@ class LevelState:
         start: Point,
         blocked: set[Point] | None = None,
         avoid_traps: bool = True,
+        allow: set[Point] | None = None,
     ) -> tuple[np.ndarray, dict[Point, Point]]:
         passable = self.passable_mask(blocked=blocked, avoid_traps=avoid_traps)
+        if allow:
+            for point in allow:
+                passable[point] = True
         passable[start] = True
         dist = np.full(self.shape, -1, dtype=np.int32)
         parent: dict[Point, Point] = {}
@@ -185,11 +195,17 @@ class LevelState:
         start: Point,
         targets: Iterable[Point],
         blocked: set[Point] | None = None,
+        allow_targets: bool = False,
     ) -> list[Point] | None:
         targets = set(targets)
         if not targets:
             return None
-        dist, parent = self.distances(start, blocked, avoid_traps=True)
+        dist, parent = self.distances(
+            start,
+            blocked,
+            avoid_traps=True,
+            allow=targets if allow_targets else None,
+        )
         reachable = [point for point in targets if dist[point] >= 0]
         if not reachable:
             return None
