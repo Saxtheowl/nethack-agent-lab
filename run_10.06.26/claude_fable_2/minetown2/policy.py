@@ -481,6 +481,18 @@ class MinetownPolicy:
 
         message = self.last_message.lower()
         if misc[1]:
+            if "who are you" in message:
+                # Garde de vault : répondre « Croesus » le fait repartir sans
+                # violence (ESC le rendait hostile, et il frappe très fort).
+                text = "Croesus"
+                index = int((self.intent or {}).get("croesus_i", 0)) if (
+                    self.intent and self.intent.get("kind") == "croesus"
+                ) else 0
+                if index < len(text):
+                    self.intent = {"kind": "croesus", "croesus_i": index + 1}
+                    return self._emit(ord(text[index]), "vault_croesus")
+                self.intent = None
+                return self._emit(ord("\r"), "vault_croesus_end")
             if self.intent and self.intent.get("kind") == "engrave":
                 text = self.intent.setdefault("text", "Elbereth")
                 index = int(self.intent.get("text_i", 0))
@@ -1894,29 +1906,17 @@ class MinetownPolicy:
         assert self.position is not None
         if self.blocked_streak < 30:
             return None
-        # Un pacifique campe le passage : à 60 steps on attaque les animaux,
-        # à 150 n'importe quel pacifique sauf le personnel de ville (coût
-        # d'alignement mineur, très inférieur à un step_timeout garanti).
-        if self.blocked_streak >= 60 and self.latest_obs is not None:
+        # Tuer un pacifique coûte de l'alignement et fait échouer les prières
+        # (dont dépend toute la survie : faim, PV, lycanthropie).  On ne force
+        # donc l'attaque que d'un animal, et seulement en tout dernier recours.
+        if self.blocked_streak >= 200 and self.latest_obs is not None:
             creatures, pets = self._creatures(self.latest_obs)
             for delta in DIRECTIONS:
                 point = add(self.position, delta)
                 if point not in blocked or point in pets:
                     continue
                 name = creatures.get(point, "")
-                if not name or name in PASSIVE_DANGER_NAMES:
-                    continue
-                town_staff = name in (
-                    "shopkeeper",
-                    "watchman",
-                    "watch captain",
-                    "guard",
-                    "aligned priest",
-                    "high priest",
-                )
-                if town_staff:
-                    continue
-                if name not in FORCE_ATTACK_ANIMALS and self.blocked_streak < 150:
+                if name not in FORCE_ATTACK_ANIMALS:
                     continue
                 if delta[0] and delta[1]:
                     here = int(level.terrain[self.position])

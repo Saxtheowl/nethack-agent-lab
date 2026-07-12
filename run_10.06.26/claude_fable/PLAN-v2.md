@@ -85,7 +85,8 @@ Adaptations bot : NH_PREFIX=nh367, rc sans statuslines/tutorial/suppress_alert, 
 | m367-9 | 23/99 (23%) | Syntaxe fouille 3.6.7 : `10s`/`20s`/`s` (sans préfixe m) ; ramassage des wands trouvées + zap-test en dernier recours. Restait : Doom:1-2 timeout ×32 avec carte à peine explorée |
 | m367-10 | interrompu | amnistie bans+fouilles (relancé avec l'explorateur en plus) |
 | m367-11 | 25/100 (25%) | Explorateur occupancy-map (best_search_spot : composantes inexplorées, bonus impasse, malus fouilles², distance). **Autopsie clé : les timeouts Doom:2 (29) avaient le `>` CONNU** — c'est la chasse à l'escalier de branche qui campait sur le niveau 2 pendant 2500 tours alors que l'escalier des Mines est sur 2, 3 OU 4 équiprobables |
-| m367-12 | ? | **Rotation de chasse Doom 2-3-4** : fouiller le niveau le moins travaillé (turns_spent), y rester tant que l'écart <300 tours, préférer les `>` jamais testés au-dessus. Vérifié empiriquement : `10s` fonctionne bien sur le binaire 3.6.7 |
+| m367-12 | 8/28 (29%) PERDU | **Rotation de chasse Doom 2-3-4** (fouiller le niveau le moins travaillé). À 29% mi-batch, timeouts Doom:2 en chute (3 vs 29). **L'instance Vast 44497883 a disparu en cours de batch** (résiliée côté hôte) |
+| m367-12b | ? | Même code, nouvelle instance **44596108** (24 cœurs eff., 0,056 $/h, ssh -p 36108 root@ssh3.vast.ai). Redéploiement complet : rebuild 3.6.7 avec les pré-générés officiels sys/share (la régénération bison 3.8 donnait "syntax error" dans dgn_comp), WIZARDS=nobody, kit strict vérifié |
 
 Axes restants (par impact) :
 1. Doom 2-4 : trouver l'escalier de branche — le forage descend mais ne "branche" pas ;
