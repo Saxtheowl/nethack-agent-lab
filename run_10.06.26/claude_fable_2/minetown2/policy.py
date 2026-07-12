@@ -173,6 +173,11 @@ FAST_HOSTILES = frozenset(
         "horse",
         "warhorse",
         "leprechaun",
+        # Fourmis : vitesse 18, fuir est perdant ; on les combat.
+        "giant ant",
+        "soldier ant",
+        "fire ant",
+        "killer bee",
     }
 )
 
@@ -257,6 +262,7 @@ class MinetownPolicy:
         self.corpses: dict[tuple[LevelKey, Point], tuple[int, str]] = {}
         # Récupération de projectiles au sol (contre les passifs bloquants).
         self.pickup_attempts: Counter[LevelKey] = Counter()
+        self.fetch_hold = -1
         self.shopkeeper_levels: set[LevelKey] = set()
 
     @staticmethod
@@ -920,6 +926,10 @@ class MinetownPolicy:
         assert self.position is not None and self.current_key is not None
         if self.latest_obs is None:
             return None
+        if self.current_key in self.shopkeeper_levels:
+            # Ramasser un article de boutique puis sortir = vol = shopkeeper
+            # meurtrier.  On ne ramasse jamais rien sur un niveau à boutique.
+            return None
         if self.pickup_attempts[self.current_key] >= 6:
             return None
         inventory = self._inventory(self.latest_obs)
@@ -939,7 +949,11 @@ class MinetownPolicy:
         if path is None:
             return None
         if len(path) > 1:
+            # Mode collant : sans persistance, ce but de navigation entrait en
+            # ping-pong avec l'inspection d'objets de la couche objectif.
+            self.fetch_hold = self.steps + 60
             return self._move(level, path[1], "fetch_projectile")
+        self.fetch_hold = -1
         self.pickup_attempts[self.current_key] += 1
         level.objects.discard(self.position)
         self.intent = {"kind": "pickup"}
@@ -1049,6 +1063,14 @@ class MinetownPolicy:
                 self.lycanthropy_suspected = False
                 self.intent = {"kind": "quaff", "letter": holy_water}
                 return self._emit(int(nethack.Command.QUAFF), "cure_lycanthropy")
+            # La lycanthropie est un « trouble majeur » : la prière la soigne.
+            # Non traitée, elle finit par tuer (forme de rat surchargée,
+            # incapable de combattre, entourée de rats invoqués).
+            turn = int(obs["blstats"][nethack.NLE_BL_TIME])
+            if turn - self.last_prayer_turn >= 500:
+                self.last_prayer_turn = turn
+                self.intent = {"kind": "pray"}
+                return self._emit(int(nethack.Command.PRAY), "pray_lycanthropy")
         bl = obs["blstats"]
         hp = int(bl[nethack.NLE_BL_HP])
         hpmax = max(1, int(bl[nethack.NLE_BL_HPMAX]))
@@ -1910,6 +1932,12 @@ class MinetownPolicy:
             self.blocked_streak = 0
             return action
 
+        if self.fetch_hold > self.steps:
+            action = self._fetch_projectile(level, blocked)
+            if action is not None:
+                return action
+            self.fetch_hold = -1
+
         action = self._map_level(obs)
         if action is not None:
             self.blocked_streak = 0
@@ -1922,7 +1950,21 @@ class MinetownPolicy:
 
         action = self._objective(obs, level, blocked)
         if action is not None:
-            self.blocked_streak = 0
+            # Les actions de pur déplacement ne prouvent aucun progrès : sans
+            # cette distinction, une oscillation sur place remettait le
+            # compteur à zéro et l'évasion de niveau ne partait jamais.
+            label = self.trail[-1][1] if self.trail else ""
+            if label not in (
+                "explore_path",
+                "search_path",
+                "go_to_stair",
+                "inspect_object_path",
+                "patrol_mapped_mines",
+                "fetch_projectile",
+                "go_to_corpse",
+                "tunnel_path",
+            ):
+                self.blocked_streak = 0
             return action
 
         # Des pacifiques occupent parfois le seul couloir.  Attendre est plus
