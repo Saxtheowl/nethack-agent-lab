@@ -694,6 +694,10 @@ class MinetownPolicy:
             return False
         if self.steps - self.last_engrave_attempt < 6:
             return False
+        if any(name in FAST_HOSTILES for _, name in hostiles):
+            # Les animaux rapides multi-attaques usent la gravure en un ou
+            # deux coups : graver ne fait que perdre des tours, on se bat.
+            return False
         respecters = [
             name for _, name in hostiles if not ELBERETH_IGNORER_PATTERN.search(name)
         ]
@@ -738,9 +742,9 @@ class MinetownPolicy:
         blocked = set(creatures) | pets
 
         if hostiles:
-            low_hp = hp * 100 < hpmax * 45
-            critical = hp * 100 < hpmax * 30 or (
-                hp * 100 < hpmax * 45 and len(hostiles) >= 2
+            low_hp = hp * 100 < hpmax * 60
+            critical = hp * 100 < hpmax * 40 or (
+                hp * 100 < hpmax * 55 and len(hostiles) >= 2
             )
             under_fire = self.steps - self.last_attacked_step <= 2
             # Repos protégé sur une gravure fraîche — mais si on se fait
@@ -1002,7 +1006,7 @@ class MinetownPolicy:
 
         # Repos : uniquement sans hostile visible proche, par rafales de
         # recherche comptée (le jeu interrompt la rafale si un monstre surgit).
-        if hp * 100 < hpmax * 60 and not self._hostile_nearby(6) and hunger < 3:
+        if hp * 100 < hpmax * 70 and not self._hostile_nearby(6) and hunger < 3:
             return self._rest_search(15, "rest")
         return None
 
