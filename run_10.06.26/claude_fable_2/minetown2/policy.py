@@ -366,6 +366,12 @@ class MinetownPolicy:
             level.stairs_down.add(point)
         if "staircase up" in lowered_message:
             level.stairs_up.add(point)
+        # Escaliers fantômes (ex. case d'arrivée d'une chute de trappe
+        # supposée être un escalier) : le jeu nous corrige, on écoute.
+        if "can't go up" in lowered_message:
+            level.stairs_up.discard(point)
+        if "can't go down" in lowered_message:
+            level.stairs_down.discard(point)
 
         if old_key is not None and old_point is not None and key != old_key:
             self.pending.clear()
@@ -1357,7 +1363,7 @@ class MinetownPolicy:
 
         assert self.position is not None
         dist, _ = level.distances(self.position, blocked=blocked, avoid_traps=True)
-        if self.patrol_actions[level.key] < 200:
+        if self.patrol_actions[level.key] < 500:
             target = self.patrol_targets.get(level.key)
             if target is not None and dist[target] >= 0 and level.visits[target] == 0:
                 action = self._path_step(
@@ -1633,14 +1639,26 @@ class MinetownPolicy:
         if dnum != 0:
             self.mines_dnum = dnum
             if dlevel <= 4 and level.stairs_down:
-                point = min(
-                    level.stairs_down,
-                    key=lambda p: abs(p[0] - self.position[0])
-                    + abs(p[1] - self.position[1]),
-                )
-                action = self._go_stair(level, point, blocked, down=True)
-                if action is not None:
-                    return action
+                # Ne re-descendre que vers une destination encore utile,
+                # sinon ping-pong infini 4<->5 quand le bas est épuisé.
+                viable = [
+                    p
+                    for p in level.stairs_down
+                    if not (
+                        (dest := level.down_outcomes.get(p)) in self.levels
+                        and self.levels[dest].exhausted
+                        and not self.levels[dest].stairs_down
+                    )
+                ]
+                if viable:
+                    point = min(
+                        viable,
+                        key=lambda p: abs(p[0] - self.position[0])
+                        + abs(p[1] - self.position[1]),
+                    )
+                    action = self._go_stair(level, point, blocked, down=True)
+                    if action is not None:
+                        return action
             if dlevel >= 5:
                 if dlevel <= 6:
                     action = self._patrol_unvisited(level, blocked)
