@@ -263,6 +263,7 @@ class MinetownPolicy:
         # Récupération de projectiles au sol (contre les passifs bloquants).
         self.pickup_attempts: Counter[LevelKey] = Counter()
         self.fetch_hold = -1
+        self.current_blocked: set[Point] = set()
         self.shopkeeper_levels: set[LevelKey] = set()
 
     @staticmethod
@@ -1004,7 +1005,7 @@ class MinetownPolicy:
                     self.intent = {"kind": "eat", "letter": letter}
                     return self._emit(int(nethack.Command.EAT), "eat_ration")
             # Pas de ration : manger un cadavre sûr (frais ou lichen).
-            action = self._eat_corpse(obs, turn)
+            action = self._eat_corpse(obs, turn, self.current_blocked)
             if action is not None:
                 return action
 
@@ -1024,7 +1025,9 @@ class MinetownPolicy:
             return self._rest_search(15, "rest")
         return None
 
-    def _eat_corpse(self, obs: dict[str, np.ndarray], turn: int) -> int | None:
+    def _eat_corpse(
+        self, obs: dict[str, np.ndarray], turn: int, blocked: set[Point]
+    ) -> int | None:
         assert self.position is not None and self.current_key is not None
         fresh: dict[Point, str] = {}
         for (key, point), (killed_turn, name) in list(self.corpses.items()):
@@ -1032,6 +1035,10 @@ class MinetownPolicy:
                 continue
             if name != "lichen" and turn - killed_turn > 40:
                 del self.corpses[(key, point)]
+                continue
+            if point in blocked:
+                # Une créature (souvent pacifique) occupe le cadavre : marcher
+                # dessus déclenchait une boucle « Really attack? ».
                 continue
             fresh[point] = name
         if not fresh:
@@ -1044,7 +1051,7 @@ class MinetownPolicy:
             self.intent = {"kind": "eat_floor", "name": fresh[self.position]}
             return self._emit(int(nethack.Command.EAT), "eat_corpse")
         level = self.levels[self.current_key]
-        path = level.path(self.position, set(fresh), set())
+        path = level.path(self.position, set(fresh), blocked)
         if path is not None and len(path) > 1:
             return self._move(level, path[1], "go_to_corpse")
         return None
@@ -1176,6 +1183,14 @@ class MinetownPolicy:
                     if failures < 6:
                         candidates.append((d + failures * 3 - 8, point, nxt, "door"))
                 elif (
+                    nxt in level.boulders
+                    and (point, nxt) not in level.failed_edges
+                    and (point, nxt) not in level.probe_attempts
+                ):
+                    # Un boulder bouche souvent l'unique couloir : le pousser
+                    # est prioritaire sur les sondes d'inconnu.
+                    candidates.append((d - 6, point, nxt, "boulder"))
+                elif (
                     value in (-1, STONE)
                     and (point, nxt) not in level.failed_edges
                     and (point, nxt) not in level.probe_attempts
@@ -1220,6 +1235,8 @@ class MinetownPolicy:
             self.intent = {"kind": "direction", "raw": int(DIRECTION_ACTION[delta])}
             return self._emit(raw, "kick_door" if kick else "open_door")
         level.probe_attempts.add((self.position, target))
+        if kind == "boulder":
+            return self._move(level, target, "push_boulder")
         return self._move(level, target, "probe_unknown")
 
     def _search_hidden(
@@ -1820,23 +1837,38 @@ class MinetownPolicy:
         assert self.position is not None
         if self.blocked_streak < 30:
             return None
-        # Un animal pacifique campe le passage depuis ~60 steps : on l'attaque
-        # (coût d'alignement mineur, très inférieur à un step_timeout).
-        if self.blocked_streak >= 60:
+        # Un pacifique campe le passage : à 60 steps on attaque les animaux,
+        # à 150 n'importe quel pacifique sauf le personnel de ville (coût
+        # d'alignement mineur, très inférieur à un step_timeout garanti).
+        if self.blocked_streak >= 60 and self.latest_obs is not None:
+            creatures, pets = self._creatures(self.latest_obs)
             for delta in DIRECTIONS:
                 point = add(self.position, delta)
-                if point in blocked and self.latest_obs is not None:
-                    creatures, pets = self._creatures(self.latest_obs)
-                    name = creatures.get(point, "")
-                    if name in FORCE_ATTACK_ANIMALS and point not in pets:
-                        if delta[0] and delta[1]:
-                            here = int(level.terrain[self.position])
-                            there = int(level.terrain[point])
-                            if here in DOOR_TILES or there in DOOR_TILES:
-                                continue
-                        self.force_attack_step = self.steps
-                        self.failure_hint = f"combat:{name}"
-                        return self._move(level, point, "melee_forced")
+                if point not in blocked or point in pets:
+                    continue
+                name = creatures.get(point, "")
+                if not name or name in PASSIVE_DANGER_NAMES:
+                    continue
+                town_staff = name in (
+                    "shopkeeper",
+                    "watchman",
+                    "watch captain",
+                    "guard",
+                    "aligned priest",
+                    "high priest",
+                )
+                if town_staff:
+                    continue
+                if name not in FORCE_ATTACK_ANIMALS and self.blocked_streak < 150:
+                    continue
+                if delta[0] and delta[1]:
+                    here = int(level.terrain[self.position])
+                    there = int(level.terrain[point])
+                    if here in DOOR_TILES or there in DOOR_TILES:
+                        continue
+                self.force_attack_step = self.steps
+                self.failure_hint = f"combat:{name}"
+                return self._move(level, point, "melee_forced")
         # Oublier la cible de patrouille : elle est peut-être injoignable
         # uniquement à cause du pacifique immobile.
         self.patrol_targets.pop(level.key, None)
@@ -1915,7 +1947,17 @@ class MinetownPolicy:
                 or (name in PEACEFUL_DWARF_NAMES and name not in self.hostile_names)
             )
         } - pets
+        # Boutiques : rester à distance des shopkeepers (vol involontaire,
+        # portes, colères = morts assurées à bas niveau).
+        for point, name in creatures.items():
+            if name == "shopkeeper":
+                for dy in range(-4, 5):
+                    for dx in range(-4, 5):
+                        tile = (point[0] + dy, point[1] + dx)
+                        if inside(tile, level.shape):
+                            blocked.add(tile)
         blocked.discard(self.position)
+        self.current_blocked = blocked
 
         action = self._emergency(obs)
         if action is not None:
