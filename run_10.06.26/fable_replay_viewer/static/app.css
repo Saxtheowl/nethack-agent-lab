@@ -45,6 +45,21 @@ html, body {
 .brand .logo { font-size: 18px; }
 .brand-sep { margin: 0 8px; color: var(--text-faint); }
 .topbar-right { display: flex; align-items: center; gap: 12px; }
+.kit-seg button { padding: 4px 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.cheat-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--red);
+  background: rgba(255, 107, 122, 0.13);
+  border: 1px solid rgba(255, 107, 122, 0.3);
+  border-radius: 4px;
+  padding: 1px 5px;
+  vertical-align: middle;
+}
+.cheat-badge.big { font-size: 11px; padding: 2px 8px; }
 #root-path { color: var(--text-faint); font-family: var(--mono); font-size: 11px; }
 .ghost-btn {
   background: var(--bg-panel-2);

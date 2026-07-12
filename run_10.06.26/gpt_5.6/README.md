@@ -50,6 +50,16 @@ bloc de diagnostic de l’agent avant le replay.
 
 ## Résultat actuel
 
+Le meilleur benchmark strict reste `runs/vast-strict-validation-003` :
+
+- 32/50 arrivées Minetown, soit **64 %** ;
+- intervalle Wilson 95 % : **50,1 %–75,9 %**.
+
+Une validation plus large après correction des plantages et de la prière,
+`runs/vast-strict-validation-008`, obtient 59/100 (**59 %**). Les essais
+suivants sur l'évitement des boutiques et Excalibur au niveau 5 n'ont pas
+dépassé ce plateau et ont été annulés. L'objectif de 80 % n'est pas atteint.
+
 Ancienne validation Vast AI `runs/vast-validation-001`, 200 parties comptées,
 24 workers, NetHack 3.6.7 non-wizard, avec un kit de départ élargi maintenant
 retiré :

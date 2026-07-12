@@ -34,10 +34,18 @@ const escapeHtml = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;
 const state = {
   index: null,
   activeRun: null,
+  kit: "strict", // strict = parties honnêtes uniquement (défaut)
   epFilter: "all",
   epSearch: "",
   epSort: { key: "episode", dir: 1 },
 };
+
+function visibleRuns() {
+  const runs = state.index.runs;
+  if (state.kit === "strict") return runs.filter((r) => r.clean);
+  if (state.kit === "cheat") return runs.filter((r) => !r.clean);
+  return runs;
+}
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const el = (tag, cls, html) => {
@@ -54,8 +62,9 @@ async function loadIndex() {
   state.index = await res.json();
   $("#root-path").textContent = state.index.root;
   renderSidebar();
-  if (!state.activeRun && state.index.runs.length) {
-    selectRun(state.index.runs[state.index.runs.length - 1].name);
+  const runs = visibleRuns();
+  if (!state.activeRun && runs.length) {
+    selectRun(runs[runs.length - 1].name);
   } else if (state.activeRun) {
     renderRun(state.activeRun);
   }
@@ -73,10 +82,12 @@ function rateColor(rate) {
 function renderSidebar() {
   const nav = $("#sidebar");
   nav.innerHTML = "";
-  nav.appendChild(el("div", "side-section-title", `Runs (${state.index.runs.length})`));
+  const runs = visibleRuns();
+  const kitLabel = { strict: "strict", all: "tous", cheat: "triche" }[state.kit];
+  nav.appendChild(el("div", "side-section-title", `Runs · ${kitLabel} (${runs.length})`));
 
   const families = new Map();
-  for (const run of state.index.runs) {
+  for (const run of runs) {
     if (!families.has(run.family)) families.set(run.family, []);
     families.get(run.family).push(run);
   }
@@ -106,7 +117,10 @@ function renderSidebar() {
       const item = el("div", "run-item");
       item.dataset.run = run.name;
       if (run.name === state.activeRun) item.classList.add("active");
-      item.appendChild(el("div", "run-name", run.name));
+      const nameRow = el("div", "run-name");
+      nameRow.textContent = run.name;
+      if (!run.clean) nameRow.appendChild(el("span", "cheat-badge", "triche"));
+      item.appendChild(nameRow);
       const meta = el("div", "run-meta");
       const rc = rateColor(run.win_rate);
       const badge = el("span", "rate-badge",
@@ -147,7 +161,9 @@ function renderRun(name) {
   if (!info) { main.appendChild(el("div", "empty", "Run introuvable.")); return; }
 
   const header = el("div", "run-header");
-  header.appendChild(el("h1", "run-title", escapeHtml(info.name)));
+  const h1 = el("h1", "run-title", escapeHtml(info.name));
+  if (!info.clean) h1.appendChild(el("span", "cheat-badge big", "triche · avantages"));
+  header.appendChild(h1);
   const bits = [];
   if (info.character) bits.push(`<code>${escapeHtml(info.character)}</code>`);
   if (info.nethack) bits.push(`NetHack ${escapeHtml(info.nethack)}`);
@@ -566,6 +582,22 @@ function jumpToNextInput() {
     if (frameIdx > player.frame) { seekFrame(frameIdx); return; }
   }
 }
+
+// ---------- toggle kit strict/tous/triche ----------
+document.querySelectorAll("#kit-seg button").forEach((btn) => {
+  btn.onclick = () => {
+    state.kit = btn.dataset.kit;
+    document.querySelectorAll("#kit-seg button").forEach((b) =>
+      b.classList.toggle("active", b === btn));
+    const runs = visibleRuns();
+    if (!runs.some((r) => r.name === state.activeRun)) {
+      state.activeRun = runs.length ? runs[runs.length - 1].name : null;
+    }
+    renderSidebar();
+    if (state.activeRun) renderRun(state.activeRun);
+    else $("#main").innerHTML = '<div class="empty">Aucun run pour ce filtre.</div>';
+  };
+});
 
 // ---------- démarrage ----------
 $("#refresh-btn").onclick = () => loadIndex();

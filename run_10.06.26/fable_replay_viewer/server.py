@@ -32,6 +32,18 @@ RUN_NAME_RE = re.compile(r"^[A-Za-z0-9._-]+$")
 INDEX_TTL = 10.0
 REPLAY_CACHE_SIZE = 24
 
+# Runs antérieurs au correctif anti-triche (commit d1392f7) et non « strict » :
+# l'agent modifiait la source pour révéler la carte / dépasser l'avantage défini.
+CHEAT_CUTOFF = "2026-07-11T16:40:51+00:00"
+
+
+def is_clean(name: str, started_at: str | None) -> bool:
+    if "strict" in name.lower():
+        return True
+    if started_at:
+        return started_at >= CHEAT_CUTOFF
+    return False
+
 CONTENT_TYPES = {
     ".html": "text/html; charset=utf-8",
     ".css": "text/css; charset=utf-8",
@@ -203,6 +215,7 @@ class Library:
         info = {
             "name": run_dir.name,
             "family": re.sub(r"-\d+$", "", run_dir.name),
+            "clean": is_clean(run_dir.name, config.get("started_at")),
             "episodes": total,
             "successes": successes,
             "win_rate": (successes / total) if total else None,

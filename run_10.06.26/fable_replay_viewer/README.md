@@ -19,13 +19,31 @@ python3 play.py                       # menu : choisir un run puis un épisode
 Direct sans menu :
 
 ```bash
-python3 play.py --run vast-validation-001 --episode 3
+python3 play.py --run vast-strict-validation-001 --episode 3
 python3 play.py --outcome success     # ne proposer que les succès
-python3 play.py --list                # lister les runs et leur taux, sans jouer
-python3 play.py --run baseline-005 --list   # lister les épisodes d'un run
+python3 play.py --list                # lister les runs propres et leur taux
+python3 play.py --run strict-baseline-001 --list   # lister les épisodes d'un run
 python3 play.py --runs /autre/chemin  # autre répertoire de runs
 python3 play.py --speed 8             # vitesse de départ
 ```
+
+### Parties honnêtes vs parties qui trichent
+
+À partir du correctif anti-triche (commit `d1392f7`, 2026-07-11 16:40 UTC),
+l'agent ne peut plus modifier la source de NetHack pour se donner des avantages
+(carte entière révélée d'un coup, kit élargi…). Les runs **antérieurs** à ce
+correctif — et non nommés `strict` — trichent : on y voit toute la carte
+d'emblée. Le lecteur les **masque par défaut**.
+
+```bash
+python3 play.py               # --kit strict (défaut) : uniquement les parties honnêtes
+python3 play.py --kit cheat   # au contraire, les anciennes parties avec avantages
+python3 play.py --kit all     # tout, sans distinction
+```
+
+Un run est considéré honnête si son nom contient `strict` ou s'il a démarré
+après le correctif. Dans `--list` et le menu, les runs qui trichent sont
+tagués `[triche]`.
 
 ### Touches pendant la lecture
 
@@ -63,8 +81,9 @@ lecteur graphique :
 python3 server.py --host 0.0.0.0 --port 8791   # http://localhost:8791/
 ```
 
-Voir `server.py` / `static/`. La CLI reste l'outil recommandé pour un usage
-rapide en terminal.
+Elle applique le même tri honnête/triche : en haut à droite, le sélecteur
+`strict / tous / triche` (strict par défaut). Voir `server.py` / `static/`.
+La CLI reste l'outil recommandé pour un usage rapide en terminal.
 
 ## Format attendu
 

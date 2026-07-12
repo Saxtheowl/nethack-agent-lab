@@ -73,7 +73,9 @@ def run_episode(episode: int, run_dir: str, max_steps: int, record: bool) -> dic
             OldGymAPI(base),
             visualizer_args={"enable": False},
             step_limit=None,
-            agent_args={"panic_on_errors": False, "verbose": False},
+            # AutoAscend recovers from parser assertions by resetting its
+            # inferred state. These assertions caused 5/18 strict failures.
+            agent_args={"panic_on_errors": True, "verbose": False},
         )
         wrapped.main()
         result["steps"] = wrapped.step_count

@@ -39,6 +39,11 @@ BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_RUNS = (BASE_DIR / ".." / "gpt_5.6" / "runs").resolve()
 JUMP = 50
 
+# Avant ce commit (d1392f7 « fixed … modifying nethack source code to cheat »),
+# l'agent modifiait la source pour révéler toute la carte / s'octroyer plus que
+# l'avantage de départ défini. Les runs plus anciens et non « strict » trichent.
+CHEAT_CUTOFF = "2026-07-11T16:40:51+00:00"
+
 GREEN, RED, CYAN, YELLOW, DIM, RESET = (
     "\033[32m", "\033[31m", "\033[36m", "\033[33m", "\033[2m", "\033[0m",
 )
@@ -134,6 +139,20 @@ def scan_run(run_dir: Path) -> list[dict]:
     return episodes
 
 
+def is_clean(name: str, started_at: str | None) -> bool:
+    """Run « propre » : kit strict (pas de triche, pas de carte pré-révélée).
+
+    Vrai si le nom contient « strict », ou si le run a démarré après le
+    correctif anti-triche. Les runs sans horodatage et non « strict » sont
+    considérés comme douteux (donc non propres).
+    """
+    if "strict" in name.lower():
+        return True
+    if started_at:
+        return started_at >= CHEAT_CUTOFF
+    return False
+
+
 def scan_runs(root: Path) -> list[dict]:
     runs = []
     for run_dir in sorted(root.iterdir()):
@@ -142,6 +161,8 @@ def scan_runs(root: Path) -> list[dict]:
         episodes = scan_run(run_dir)
         if not episodes:
             continue
+        config = _load_json(run_dir / "config.json") or {}
+        started_at = config.get("started_at")
         wins = sum(1 for e in episodes if e["success"])
         runs.append({
             "name": run_dir.name,
@@ -150,6 +171,8 @@ def scan_runs(root: Path) -> list[dict]:
             "count": len(episodes),
             "wins": wins,
             "rate": wins / len(episodes) if episodes else 0.0,
+            "started_at": started_at,
+            "clean": is_clean(run_dir.name, started_at),
         })
     return runs
 
@@ -183,9 +206,10 @@ def choose_run(runs: list[dict]) -> dict | None:
     print(f"{CYAN}Runs disponibles{RESET}")
     for i, run in enumerate(runs):
         c = rate_color(run["rate"])
+        tag = "" if run["clean"] else f"  {RED}[triche]{RESET}"
         print(
             f"{i:>3}  {run['name']:<32} {c}{run['rate'] * 100:>3.0f}%{RESET}  "
-            f"{run['wins']}/{run['count']} succès"
+            f"{run['wins']}/{run['count']} succès{tag}"
         )
     choice = input(f"\nNuméro du run [{len(runs) - 1}] : ").strip()
     if not choice:
@@ -372,6 +396,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--run", help="nom du run (sinon menu interactif)")
     parser.add_argument("--episode", type=int, help="numéro d'épisode")
     parser.add_argument("--outcome", choices=("all", "success", "failure"), default="all")
+    parser.add_argument(
+        "--kit", choices=("strict", "all", "cheat"), default="strict",
+        help="strict = parties honnêtes (défaut) ; cheat = anciennes parties "
+             "avec avantages/carte révélée ; all = tout",
+    )
     parser.add_argument("--list", action="store_true", help="lister sans jouer")
     parser.add_argument("--speed", type=float, default=4.0)
     parser.add_argument("--max-delay", type=float, default=0.25)
@@ -386,11 +415,23 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Aucun run jouable dans {root}", file=sys.stderr)
         return 1
 
+    # Par défaut on masque les parties qui trichent (avantages / carte révélée).
+    if args.run:
+        pass  # un run nommé explicitement est toujours accessible
+    elif args.kit == "strict":
+        runs = [r for r in runs if r["clean"]]
+    elif args.kit == "cheat":
+        runs = [r for r in runs if not r["clean"]]
+    if not runs:
+        print("Aucun run pour ce filtre --kit.", file=sys.stderr)
+        return 1
+
     if args.list and not args.run:
         for run in runs:
             c = rate_color(run["rate"])
+            tag = f"{GREEN}strict{RESET}" if run["clean"] else f"{RED}triche{RESET}"
             print(f"{run['name']:<32} {c}{run['rate'] * 100:>3.0f}%{RESET}  "
-                  f"{run['wins']}/{run['count']}")
+                  f"{run['wins']}/{run['count']:<3}  [{tag}]")
         return 0
 
     # choix du run
