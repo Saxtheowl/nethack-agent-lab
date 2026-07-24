@@ -160,6 +160,8 @@ class MinetownPolicy:
         self.forced_peaceful_names: set[str] = set()
         self.patrol_targets: dict[LevelKey, Point] = {}
         self.patrol_actions: Counter[LevelKey] = Counter()
+        self.frontier_targets: dict[LevelKey, tuple[Point, Point, str]] = {}
+        self.search_targets: dict[LevelKey, Point] = {}
         self.prebuff_healing_used = 0
         self.lycanthropy_suspected = False
         self.latest_obs: dict[str, np.ndarray] | None = None
@@ -287,6 +289,15 @@ class MinetownPolicy:
                     if was_unknown:
                         self.levels[move_key].unknown_attempts += 1
             self.last_move = None
+
+        # A speculative `>` on an object pile that was not actually a stair
+        # completes immediately without changing levels.
+        if (
+            old_key == key
+            and self.descent is not None
+            and self.last_raw_action == int(nethack.MiscDirection.DOWN)
+        ):
+            self.descent = None
 
         # A command intent is complete once NetHack returns to ordinary mode.
         if not np.any(obs["misc"]) and self.intent is not None:
@@ -789,11 +800,17 @@ class MinetownPolicy:
 
         if not candidates:
             return None
-        _, approach, target, kind = min(candidates, key=lambda row: row[0])
+        stored = self.frontier_targets.get(level.key)
+        chosen = next((row for row in candidates if row[1:] == stored), None)
+        if chosen is None:
+            chosen = min(candidates, key=lambda row: row[0])
+            self.frontier_targets[level.key] = chosen[1:]
+        _, approach, target, kind = chosen
         if approach != self.position:
             action = self._path_step(level, {approach}, blocked, "explore_path")
             return None if action == -1 else action
 
+        self.frontier_targets.pop(level.key, None)
         delta = (target[0] - self.position[0], target[1] - self.position[1])
         if kind == "door":
             failures = level.door_failures.get(target, 0)
@@ -851,10 +868,14 @@ class MinetownPolicy:
         # Once we reach a promising wall, perform the whole local search burst
         # before selecting another room.  Re-selecting globally after every
         # single `s` caused costly cross-level oscillation.
-        current_candidate = next(
-            (point for _, point in candidates if point == self.position), None
-        )
-        target = current_candidate if current_candidate is not None else min(candidates)[1]
+        candidate_points = {point for _, point in candidates}
+        target = self.search_targets.get(level.key)
+        if target not in candidate_points:
+            current_candidate = next(
+                (point for _, point in candidates if point == self.position), None
+            )
+            target = current_candidate if current_candidate is not None else min(candidates)[1]
+            self.search_targets[level.key] = target
         if target != self.position:
             action = self._path_step(level, {target}, blocked, "search_path")
             return None if action == -1 else action
@@ -867,7 +888,7 @@ class MinetownPolicy:
         level: LevelState,
         blocked: set[Point],
     ) -> int | None:
-        """Use `:` to reveal a staircase hidden beneath an object glyph."""
+        """Test `>` directly on piles that may obscure a down staircase."""
 
         assert self.position is not None
         candidates = level.objects - level.inspected_objects - level.boulders
@@ -880,7 +901,11 @@ class MinetownPolicy:
         if len(path) > 1:
             return self._move(level, path[1], "inspect_object_path")
         level.inspected_objects.add(target)
-        return self._emit(int(nethack.Command.LOOK), "inspect_under_object")
+        return_if_main = (
+            self.current_key[0] == 0 and 2 <= self.current_key[1] <= 4
+        )
+        self.descent = DescentContext(self.current_key, target, return_if_main)
+        return self._emit(int(nethack.MiscDirection.DOWN), "probe_object_stair")
 
     def _patrol_unvisited(
         self,
@@ -1273,18 +1298,21 @@ class MinetownPolicy:
                 action = self._inspect_objects(level, blocked)
                 if action is not None:
                     return action
-            action = self._explore(
-                level, blocked, thorough=self.branch_backtracking
-            )
-            if action is not None:
-                return action
 
+            # Test every visible staircase before spending turns clearing the
+            # level.  One is the ordinary continuation and the other (when
+            # present) is the Mines branch; a main-dungeon descent is marked
+            # and immediately reversed by ``return_after_descent``.
             attempted_here = {
                 point for key, point in self.attempted_down if key == self.current_key
             }
             untested = level.stairs_down - attempted_here
             if untested:
-                point = min(untested)
+                point = min(
+                    untested,
+                    key=lambda p: abs(p[0] - self.position[0])
+                    + abs(p[1] - self.position[1]),
+                )
                 action = self._go_stair(
                     level,
                     point,
@@ -1294,6 +1322,12 @@ class MinetownPolicy:
                 )
                 if action is not None:
                     return action
+
+            action = self._explore(
+                level, blocked, thorough=self.branch_backtracking
+            )
+            if action is not None:
+                return action
 
             if not level.stairs_down and level.escalation < 1:
                 level.escalation += 1

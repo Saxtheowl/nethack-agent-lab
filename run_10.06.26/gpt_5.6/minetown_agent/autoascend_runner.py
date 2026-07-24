@@ -7,6 +7,7 @@ import json
 import os
 import sys
 import traceback
+from collections import Counter
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
@@ -84,6 +85,10 @@ def run_episode(episode: int, run_dir: str, max_steps: int, record: bool) -> dic
         result["policy"] = {
             "engine": "autoascend",
             "panics": len(wrapped.agent.all_panics),
+            "panic_causes": Counter(
+                f"{type(exc).__name__}: {str(exc)[:240]}"
+                for exc in wrapped.agent.all_panics
+            ).most_common(5),
             "milestone": str(wrapped.agent.global_logic.milestone),
             "dungeon": int(wrapped.agent.blstats.dungeon_number),
             "dlevel": int(wrapped.agent.blstats.level_number),
@@ -92,6 +97,12 @@ def run_episode(episode: int, run_dir: str, max_steps: int, record: bool) -> dic
             "hp": int(wrapped.agent.blstats.hitpoints),
             "hpmax": int(wrapped.agent.blstats.max_hitpoints),
             "hunger": int(wrapped.agent.blstats.hunger_state),
+            "nutrition_stock": int(wrapped.agent.inventory.items.total_nutrition()),
+            "searches": int(sum(level.search_count.sum()
+                                  for level in wrapped.agent.levels.values())),
+            "visited_tiles": int(sum(level.was_on.sum()
+                                      for level in wrapped.agent.levels.values())),
+            "known_levels": len(wrapped.agent.levels),
             "experience_level": int(wrapped.agent.blstats.experience_level),
             "inventory": str(wrapped.agent.inventory.items),
         }
