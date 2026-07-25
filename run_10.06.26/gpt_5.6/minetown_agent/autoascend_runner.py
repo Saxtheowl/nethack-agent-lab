@@ -105,6 +105,12 @@ def run_episode(episode: int, run_dir: str, max_steps: int, record: bool) -> dic
             "known_levels": len(wrapped.agent.levels),
             "experience_level": int(wrapped.agent.blstats.experience_level),
             "forage_attacks": int(wrapped.agent._forage_attacks),
+            "forage_attacks_total": int(wrapped.agent._forage_attacks_total),
+            "failed_prayers": int(wrapped.agent._failed_prayers),
+            "deferred_locked_doors": int(sum(
+                len(level.deferred_locked_doors)
+                for level in wrapped.agent.levels.values()
+            )),
             "inventory": str(wrapped.agent.inventory.items),
         }
     except BaseException as exc:
