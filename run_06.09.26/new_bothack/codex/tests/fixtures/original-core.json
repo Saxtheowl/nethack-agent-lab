@@ -1,0 +1,1658 @@
+{
+  "revision": "70226b3c8ed12d29c64068aec0acc0ca71d57adf",
+  "cases": [
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Attack",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "Fy"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "FarmAttack",
+          [
+            "NW",
+            3
+          ]
+        ]
+      ],
+      "expected": "\u001b\u001bFy\u001b\u001bFy\u001b\u001bFy\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b\u001b##'"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Move",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "y"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Pray",
+          []
+        ]
+      ],
+      "expected": "#pray\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Search",
+          []
+        ]
+      ],
+      "expected": "s"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Wait",
+          []
+        ]
+      ],
+      "expected": "."
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Ascend",
+          []
+        ]
+      ],
+      "expected": "<"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Descend",
+          []
+        ]
+      ],
+      "expected": ">"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Kick",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "\u0004y"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Close",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "cy"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Look",
+          []
+        ]
+      ],
+      "expected": ":"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "FarLook",
+          [
+            {
+              "x": 40,
+              "y": 10
+            }
+          ]
+        ]
+      ],
+      "expected": ";HHHHHHHHHHKKKKjjjjjjjjjllllllllllllllllllllllllllllllllllllllll."
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Open",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "oy"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Inventory",
+          []
+        ]
+      ],
+      "expected": "i"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Discoveries",
+          []
+        ]
+      ],
+      "expected": "\\"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Name",
+          [
+            "a",
+            "STASH"
+          ]
+        ]
+      ],
+      "expected": "#name\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Call",
+          [
+            "a",
+            "STASH"
+          ]
+        ]
+      ],
+      "expected": "#call\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Apply",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "a"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "ForceLock",
+          []
+        ]
+      ],
+      "expected": "#force\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Wield",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "w"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Wear",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "W"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "PutOn",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "P"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Remove",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "R"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "TakeOff",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "T"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "DropSingle",
+          [
+            "a",
+            2
+          ]
+        ]
+      ],
+      "expected": "d"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Quiver",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "Q"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "PickUp",
+          [
+            [
+              "a dagger"
+            ]
+          ]
+        ]
+      ],
+      "expected": ","
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Autotravel",
+          [
+            {
+              "x": 40,
+              "y": 10
+            }
+          ]
+        ]
+      ],
+      "expected": "_"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Enhance",
+          []
+        ]
+      ],
+      "expected": "#enhance\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Read",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "r"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Sit",
+          []
+        ]
+      ],
+      "expected": "#sit\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Eat",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "e"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Quaff",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "q"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Repeated",
+          [
+            [
+              "Search",
+              []
+            ],
+            10
+          ]
+        ]
+      ],
+      "expected": "10s"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Offer",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "#offer\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Loot",
+          []
+        ]
+      ],
+      "expected": "#loot\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Dip",
+          [
+            "a",
+            "b"
+          ]
+        ]
+      ],
+      "expected": "#dip\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Throw",
+          [
+            "a",
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "t"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Engrave",
+          [
+            "a",
+            "Elbereth",
+            false
+          ]
+        ]
+      ],
+      "expected": "E"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Wipe",
+          []
+        ]
+      ],
+      "expected": "#wipe\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "ZapWand",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "z"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Rub",
+          [
+            "a"
+          ]
+        ]
+      ],
+      "expected": "#rub\n"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Chat",
+          [
+            "NW"
+          ]
+        ]
+      ],
+      "expected": "#chat\ny"
+    },
+    {
+      "op": "action-trigger",
+      "args": [
+        [
+          "Pay",
+          [
+            {
+              "x": 39,
+              "y": 10
+            }
+          ]
+        ]
+      ],
+      "expected": "p"
+    },
+    {
+      "op": "label",
+      "args": [
+        "a blessed +1 long sword (weapon in hand)"
+      ],
+      "expected": {
+        "label": "a blessed +1 long sword (weapon in hand)",
+        "buc": "blessed",
+        "enchantment": 1,
+        "erosion": 0,
+        "name": "long sword",
+        "in-use": "(weapon in hand)",
+        "wielded": "(weapon in hand)",
+        "qty": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "3 uncursed food rations"
+      ],
+      "expected": {
+        "label": "3 uncursed food rations",
+        "buc": "uncursed",
+        "erosion": 0,
+        "name": "food ration",
+        "qty": 3
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "2 potions of holy water"
+      ],
+      "expected": {
+        "label": "2 potions of holy water",
+        "buc": "blessed",
+        "erosion": 0,
+        "name": "potion of water",
+        "qty": 2
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "a potion of unholy water"
+      ],
+      "expected": {
+        "label": "a potion of unholy water",
+        "buc": "cursed",
+        "erosion": 0,
+        "name": "potion of water",
+        "qty": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "a wand of wishing (1:3)"
+      ],
+      "expected": {
+        "label": "a wand of wishing (1:3)",
+        "buc": "uncursed",
+        "erosion": 0,
+        "name": "wand of wishing",
+        "charges": 3,
+        "qty": 1,
+        "recharges": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "a Candelabrum of Invocation (7 candles, lit)"
+      ],
+      "expected": {
+        "label": "a Candelabrum of Invocation (7 candles, lit)",
+        "erosion": 0,
+        "name": "Candelabrum of Invocation",
+        "lit": true,
+        "candles": 7,
+        "qty": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "Lord Surtur's partly eaten corpse"
+      ],
+      "expected": {
+        "label": "Lord Surtur's partly eaten corpse",
+        "eaten": "partly eaten",
+        "erosion": 0,
+        "name": "Lord Surtur's corpse",
+        "qty": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "a greased rustproof +0 long sword"
+      ],
+      "expected": {
+        "label": "a greased rustproof +0 long sword",
+        "buc": "uncursed",
+        "enchantment": 0,
+        "erosion": 0,
+        "name": "long sword",
+        "grease": "greased",
+        "proof": "rustproof",
+        "qty": 1
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "a bag called bag1 named STASH"
+      ],
+      "expected": {
+        "label": "a bag called bag1 named STASH",
+        "erosion": 0,
+        "name": "bag",
+        "generic": "bag1",
+        "qty": 1,
+        "specific": "STASH"
+      }
+    },
+    {
+      "op": "label",
+      "args": [
+        "2 gunyoki"
+      ],
+      "expected": {
+        "label": "2 gunyoki",
+        "erosion": 0,
+        "name": "food ration",
+        "qty": 2
+      }
+    },
+    {
+      "op": "strength",
+      "args": [
+        "3"
+      ],
+      "expected": 3
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18"
+      ],
+      "expected": 18
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18/00"
+      ],
+      "expected": 20
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18/49"
+      ],
+      "expected": 20
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18/50"
+      ],
+      "expected": 19
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18/99"
+      ],
+      "expected": 19
+    },
+    {
+      "op": "strength",
+      "args": [
+        "18/**"
+      ],
+      "expected": 21
+    },
+    {
+      "op": "strength",
+      "args": [
+        "25"
+      ],
+      "expected": 25
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "choice",
+        "What do you want to charge? [a-z]"
+      ],
+      "expected": [
+        "charge-what",
+        "What do you want to charge? [a-z]"
+      ]
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "choice",
+        "Really attack the peaceful dwarf? [yn]"
+      ],
+      "expected": [
+        "really-attack",
+        "the peaceful dwarf"
+      ]
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "choice",
+        "There is a newt corpse here; eat it? [yn]"
+      ],
+      "expected": [
+        "eat-it",
+        "a newt corpse"
+      ]
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "choice",
+        "You have much trouble lifting a chest. Continue? [yn]"
+      ],
+      "expected": [
+        "lift-burden",
+        "heavy",
+        "a chest"
+      ]
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "choice",
+        "Izchak offers 100 gold pieces for your daggers.  Sell them? [yn]"
+      ],
+      "expected": [
+        "sell-it",
+        100,
+        "daggers"
+      ]
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "menu",
+        "Pick up what?"
+      ],
+      "expected": {
+        "fn": "pick-up-what",
+        "multi": true,
+        "merge": false
+      }
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "menu",
+        "What would you like to identify first?"
+      ],
+      "expected": {
+        "fn": "identify-what",
+        "multi": true,
+        "merge": true
+      }
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "menu",
+        "Pick a skill to advance:"
+      ],
+      "expected": {
+        "fn": "enhance-what",
+        "multi": false,
+        "merge": false
+      }
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "prompt",
+        "For what do you wish?"
+      ],
+      "expected": "make-wish"
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "prompt",
+        "What do you want to engrave on the floor here?"
+      ],
+      "expected": "write-what"
+    },
+    {
+      "op": "scraper-call",
+      "args": [
+        "location",
+        "Where do you want to travel to?"
+      ],
+      "expected": "travel-where"
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        0
+      ],
+      "expected": [
+        0
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        5
+      ],
+      "expected": [
+        2
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        7
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        10
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        15
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        17
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        18
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        1,
+        25
+      ],
+      "expected": [
+        0
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        0
+      ],
+      "expected": [
+        3
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        5
+      ],
+      "expected": [
+        14,
+        18,
+        24
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        7
+      ],
+      "expected": [
+        10,
+        13,
+        18
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        10
+      ],
+      "expected": [
+        12,
+        16,
+        9
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        15
+      ],
+      "expected": [
+        12,
+        7,
+        9
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        17
+      ],
+      "expected": [
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        18
+      ],
+      "expected": [
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        7,
+        25
+      ],
+      "expected": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        0
+      ],
+      "expected": [
+        10,
+        8
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        5
+      ],
+      "expected": [
+        40,
+        52,
+        68
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        7
+      ],
+      "expected": [
+        30,
+        39,
+        51
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        10
+      ],
+      "expected": [
+        26,
+        34,
+        45
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        15
+      ],
+      "expected": [
+        20,
+        26,
+        34
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        17
+      ],
+      "expected": [
+        15,
+        20,
+        26
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        18
+      ],
+      "expected": [
+        14,
+        18,
+        23
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        20,
+        25
+      ],
+      "expected": [
+        10,
+        13,
+        17
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        0
+      ],
+      "expected": [
+        23,
+        30
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        5
+      ],
+      "expected": [
+        120,
+        160,
+        212
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        7
+      ],
+      "expected": [
+        120,
+        159,
+        90
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        10
+      ],
+      "expected": [
+        106,
+        141,
+        80
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        15
+      ],
+      "expected": [
+        106,
+        60,
+        80
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        17
+      ],
+      "expected": [
+        45,
+        60,
+        80
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        18
+      ],
+      "expected": [
+        40,
+        54,
+        71
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        60,
+        25
+      ],
+      "expected": [
+        30,
+        40,
+        53
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        0
+      ],
+      "expected": [
+        66,
+        87
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        5
+      ],
+      "expected": [
+        350,
+        466,
+        620
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        7
+      ],
+      "expected": [
+        262,
+        349,
+        465
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        10
+      ],
+      "expected": [
+        233,
+        310,
+        413
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        15
+      ],
+      "expected": [
+        175,
+        233,
+        310
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        17
+      ],
+      "expected": [
+        132,
+        175,
+        233
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        18
+      ],
+      "expected": [
+        117,
+        156,
+        207
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        175,
+        25
+      ],
+      "expected": [
+        116,
+        155,
+        87
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        0
+      ],
+      "expected": [
+        188,
+        250
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        5
+      ],
+      "expected": [
+        1000,
+        1332,
+        1776
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        7
+      ],
+      "expected": [
+        1332,
+        750,
+        999
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        10
+      ],
+      "expected": [
+        1184,
+        666,
+        888
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        15
+      ],
+      "expected": [
+        500,
+        666,
+        888
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        17
+      ],
+      "expected": [
+        375,
+        500,
+        666
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        18
+      ],
+      "expected": [
+        334,
+        444,
+        592
+      ]
+    },
+    {
+      "op": "prices",
+      "args": [
+        500,
+        25
+      ],
+      "expected": [
+        250,
+        333,
+        444
+      ]
+    },
+    {
+      "op": "moves",
+      "args": [
+        [
+          40,
+          9
+        ],
+        [
+          42,
+          9
+        ]
+      ],
+      "expected": [
+        {
+          "x": 40,
+          "y": 9
+        },
+        {
+          "x": 41,
+          "y": 9
+        },
+        {
+          "x": 42,
+          "y": 9
+        }
+      ]
+    },
+    {
+      "op": "moves",
+      "args": [
+        [
+          43,
+          16
+        ],
+        [
+          39,
+          16
+        ]
+      ],
+      "expected": [
+        {
+          "x": 43,
+          "y": 16
+        },
+        {
+          "x": 42,
+          "y": 16
+        },
+        {
+          "x": 41,
+          "y": 16
+        },
+        {
+          "x": 40,
+          "y": 16
+        },
+        {
+          "x": 39,
+          "y": 16
+        }
+      ]
+    },
+    {
+      "op": "moves",
+      "args": [
+        [
+          42,
+          7
+        ],
+        [
+          42,
+          15
+        ]
+      ],
+      "expected": [
+        {
+          "x": 42,
+          "y": 7
+        },
+        {
+          "x": 42,
+          "y": 8
+        },
+        {
+          "x": 42,
+          "y": 9
+        },
+        {
+          "x": 42,
+          "y": 10
+        },
+        {
+          "x": 42,
+          "y": 11
+        },
+        {
+          "x": 42,
+          "y": 12
+        },
+        {
+          "x": 42,
+          "y": 13
+        },
+        {
+          "x": 42,
+          "y": 14
+        },
+        {
+          "x": 42,
+          "y": 15
+        }
+      ]
+    },
+    {
+      "op": "moves",
+      "args": [
+        [
+          34,
+          17
+        ],
+        [
+          34,
+          13
+        ]
+      ],
+      "expected": [
+        {
+          "x": 34,
+          "y": 17
+        },
+        {
+          "x": 34,
+          "y": 16
+        },
+        {
+          "x": 34,
+          "y": 15
+        },
+        {
+          "x": 34,
+          "y": 14
+        },
+        {
+          "x": 34,
+          "y": 13
+        }
+      ]
+    },
+    {
+      "op": "status",
+      "args": [
+        [
+          "Bot the Fighter St:18/50 Dx:12 Co:18 In:8 Wi:10 Ch:7 Lawful S:12345",
+          "Dlvl:1 $:123 HP:40(100) Pw:10(20) AC:-15 Exp:14 T:15000 Weak Burdened"
+        ]
+      ],
+      "expected": {
+        "xp": null,
+        "score": 12345,
+        "nickname": "Bot",
+        "pw": 10,
+        "gold": 123,
+        "ac": -15,
+        "alignment": "lawful",
+        "xp-label": "Exp",
+        "encumbrance": "burdened",
+        "dlvl": "Dlvl:1",
+        "xplvl": 14,
+        "hp": 40,
+        "hunger": "weak",
+        "maxhp": 100,
+        "title": "Fighter",
+        "state": [],
+        "turn": 15000,
+        "maxpw": 20,
+        "stats": {
+          "cha": 7,
+          "wis": 10,
+          "int": 8,
+          "con": 18,
+          "dex": 12,
+          "str*": "18/50",
+          "str": 19
+        }
+      }
+    },
+    {
+      "op": "status",
+      "args": [
+        [
+          "Bot the Fighter St:18/50 Dx:12 Co:18 In:8 Wi:10 Ch:7 Lawful S:12345",
+          "Home 3 $:123 HP:40(100) Pw:10(20) AC:-15 Exp:14 T:15000 Weak Burdened"
+        ]
+      ],
+      "expected": {
+        "xp": null,
+        "score": 12345,
+        "nickname": "Bot",
+        "pw": 10,
+        "gold": 123,
+        "ac": -15,
+        "alignment": "lawful",
+        "xp-label": "Exp",
+        "encumbrance": "burdened",
+        "dlvl": "Home 3",
+        "xplvl": 14,
+        "hp": 40,
+        "hunger": "weak",
+        "maxhp": 100,
+        "title": "Fighter",
+        "state": [],
+        "turn": 15000,
+        "maxpw": 20,
+        "stats": {
+          "cha": 7,
+          "wis": 10,
+          "int": 8,
+          "con": 18,
+          "dex": 12,
+          "str*": "18/50",
+          "str": 19
+        }
+      }
+    },
+    {
+      "op": "status",
+      "args": [
+        [
+          "Bot the Fighter St:18/50 Dx:12 Co:18 In:8 Wi:10 Ch:7 Lawful S:12345",
+          "Astral Plane $:123 HP:40(100) Pw:10(20) AC:-15 Exp:14 T:15000 Weak Burdened"
+        ]
+      ],
+      "expected": {
+        "xp": null,
+        "score": 12345,
+        "nickname": "Bot",
+        "pw": 10,
+        "gold": 123,
+        "ac": -15,
+        "alignment": "lawful",
+        "xp-label": "Exp",
+        "encumbrance": "burdened",
+        "dlvl": "Astral Plane",
+        "xplvl": 14,
+        "hp": 40,
+        "hunger": "weak",
+        "maxhp": 100,
+        "title": "Fighter",
+        "state": [],
+        "turn": 15000,
+        "maxpw": 20,
+        "stats": {
+          "cha": 7,
+          "wis": 10,
+          "int": 8,
+          "con": 18,
+          "dex": 12,
+          "str*": "18/50",
+          "str": 19
+        }
+      }
+    }
+  ]
+}

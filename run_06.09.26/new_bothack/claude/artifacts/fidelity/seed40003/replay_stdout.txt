@@ -1,0 +1,75 @@
+ERROR bothack.itemid unknown itemtype for item 
+ERROR bothack.delegator delegator caught error
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 282, in <lambda>
+    lambda: self._respond_escapable(kind, name, *args))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 245, in _respond_escapable
+    res = self._invoke_prompt(name, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 240, in _invoke_prompt
+    raise RuntimeError("No handler responded to prompt of " + name)
+RuntimeError: No handler responded to prompt of throw_what
+ERROR bothack.delegator delegator caught error
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 282, in <lambda>
+    lambda: self._respond_escapable(kind, name, *args))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 245, in _respond_escapable
+    res = self._invoke_prompt(name, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 240, in _invoke_prompt
+    raise RuntimeError("No handler responded to prompt of " + name)
+RuntimeError: No handler responded to prompt of what_direction
+ERROR bothack.delegator delegator caught error
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 282, in <lambda>
+    lambda: self._respond_escapable(kind, name, *args))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 245, in _respond_escapable
+    res = self._invoke_prompt(name, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 240, in _invoke_prompt
+    raise RuntimeError("No handler responded to prompt of " + name)
+RuntimeError: No handler responded to prompt of pick_up_what
+ERROR bothack.delegator delegator caught error
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 282, in <lambda>
+    lambda: self._respond_escapable(kind, name, *args))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 245, in _respond_escapable
+    res = self._invoke_prompt(name, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 240, in _invoke_prompt
+    raise RuntimeError("No handler responded to prompt of " + name)
+RuntimeError: No handler responded to prompt of throw_what
+ERROR bothack.delegator delegator caught error
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 282, in <lambda>
+    lambda: self._respond_escapable(kind, name, *args))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 245, in _respond_escapable
+    res = self._invoke_prompt(name, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 240, in _invoke_prompt
+    raise RuntimeError("No handler responded to prompt of " + name)
+RuntimeError: No handler responded to prompt of what_direction
+chunks replayed: 8762/8766
+keystrokes: original 22729 bytes, port 21092 bytes
+actions chosen by the port: 1503
+first divergence at keystroke byte 7770 (34.2% of the original's stream)
+  original: b":##'\x08\n\n\x10\x10\x10h##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10p##'\x08\n\n\x10\x10\x10n##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10"
+  port    : b":##'\x08\n\n\x10\x10\x10h##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10p##'\x08\n\n\x10\x10\x10l##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10"
+keystroke-stream similarity: 87.18%
+matching blocks: 189 (longest 7770 bytes)
+last actions: eat, inventory, attack, attack, attack, attack, attack, attack

@@ -1,0 +1,8 @@
+chunks replayed: 42065/42068
+keystrokes: original 113186 bytes, port 123949 bytes
+actions chosen by the port: 6400
+first divergence at keystroke byte 14132 (12.5% of the original's stream)
+  original: b"jjjjllllllllllllllllllllllllll.##'\x08\n\n\x10\x10\x10s##'\x08\n\n\x10\x10\x10: ##'\x08\n\n\x10\x10"
+  port    : b"jjjjllllllllllllllllllllllllll.##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10: ##'\x08\n\n\x10\x10"
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: move, move, move, move, move, move, move, move

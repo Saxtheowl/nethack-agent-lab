@@ -1,0 +1,6 @@
+original: 69302 keystroke bytes, 3273639 output bytes, 40610 chunks
+port    : 57389 keystroke bytes, 2576922 output bytes, 32821 chunks
+first divergence at keystroke byte 37810 (65.9% of the shorter stream)
+  original: b"#'\x08\n\n\x10\x10\x10thj##' ##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10j ##'\x08\n\n\x10\x10\x10: #"
+  port    : b"#'\x08\n\n\x10\x10\x10thj##' ##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10j ##'\x08\n\n\x10\x10\x10: ##'\x08\n\n\x10\x10\x10,a"
+the two games were byte-identical for their first 1662785 output bytes

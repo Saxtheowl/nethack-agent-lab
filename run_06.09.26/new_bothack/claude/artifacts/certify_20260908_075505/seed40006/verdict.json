@@ -1,0 +1,13 @@
+{
+  "expected_bytes": 128407,
+  "got_bytes": 232423,
+  "common_prefix": 128407,
+  "attested_end": false,
+  "first_divergence": 11920,
+  "status": "DIVERGENCE",
+  "context_expected": "b\"HKKKKjjlllllllllllllllllllllllllllllll.##'\\x08\\n\\n\\x10\\x10\\x10k##'\\x08\\n\\n\\x10\\x10\\x10y##'\\x08\\n\\n\\x10\\x10\\x10l##'\"",
+  "context_got": "b\"HKKKKjjlllllllllllllllllllllllllllllll.##'\\x08\\n\\n\\x10\\x10\\x10s##'\\x08\\n\\n\\x10\\x10\\x10y##'\\x08\\n\\n\\x10\\x10\\x10l##'\"",
+  "chunks_replayed": 47590,
+  "chunks_total": 47590,
+  "port_actions": 7489
+}

@@ -1,0 +1,9 @@
+chunks replayed: 11630/11630
+keystrokes: original 24086 bytes, port 26408 bytes
+actions chosen by the port: 1652
+first divergence at keystroke byte 10 (0.0% of the original's stream)
+  original: b" ##'\x08\n\n\x10\x10\x10i   ##'\x08\n\n\x10\x10\x10\\##' ##"
+  port    : b" ##'\x08\n\n\x10\x10\x10\\   ##'\x08\n\n\x10\x10\x10i##' ##"
+keystroke-stream similarity: 45.43%
+matching blocks: 743 (longest 214 bytes)
+last actions: inventory, wield, inventory, wield, inventory, wield, inventory, wield

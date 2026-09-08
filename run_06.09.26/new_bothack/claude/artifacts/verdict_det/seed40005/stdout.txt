@@ -1,0 +1,90 @@
+ERROR bothack.itemid unknown itemtype for item 
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 602, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: For instructions type a ?
+status: DIVERGENCE
+chunks replayed: 32214/32214
+keystrokes: original 95922 bytes, port 95502 bytes
+actions chosen by the port: 5160
+first divergence at keystroke byte 23854 (24.9% of the original's stream)
+  original: b"\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10tbb##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10"
+  port    : b"\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10tbb##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10"
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: farlook, farlook, farlook, farlook, farlook, farlook, farlook, look

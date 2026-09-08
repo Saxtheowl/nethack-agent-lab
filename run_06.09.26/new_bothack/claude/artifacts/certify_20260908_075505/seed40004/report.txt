@@ -1,0 +1,9 @@
+status: DIVERGENCE
+chunks replayed: 51851/51851
+keystrokes: original 149556 bytes, port 148967 bytes
+actions chosen by the port: 8559
+first divergence at keystroke byte 30170 (20.2% of the original's stream)
+  original: b"\n\x10\x10\x10h##'\x08\n\n\x10\x10\x10tbh##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10:##'\x08\n\n\x10\x10\x10thh##'\x08\n\n\x10"
+  port    : b"\n\x10\x10\x10h##'\x08\n\n\x10\x10\x10tbh##'\x08\n\n\x10\x10\x10i##' ##'\x08\n\n\x10\x10\x10t##'\x08\n\n\x10\x10\x10i##'\x08\n\n\x10\x10\x10"
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: move, move, move, move, move, move, move, move

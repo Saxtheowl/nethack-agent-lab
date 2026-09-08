@@ -1,0 +1,26 @@
+[project]
+name = "bothack-py"
+version = "0.1.0"
+description = "A faithful Python rewrite of krajj7's BotHack (NetHack 3.4.3-NAO bot framework)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-2.0-only" }
+dependencies = [
+    "pyte>=0.8.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["bothack", "bothack.bots"]
+
+[tool.setuptools.package-data]
+bothack = ["_data.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
