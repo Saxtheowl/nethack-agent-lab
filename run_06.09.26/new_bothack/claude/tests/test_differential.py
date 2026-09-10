@@ -20,7 +20,7 @@ from tests.differential_cases import (BOTLS, ITEM_LABELS,        # noqa: E402
                                       INVORDER_CASES, MAPORDER_CASES,
                                       MENU_CASES,
                                       INVENTORY_CASES,
-                                      NAV_CASES, STRENGTHS,
+                                      NAV_CASES, RANK_DESCRIPTIONS, STRENGTHS,
                                       TILE_CASES, TRAP_NAMES)
 from pybothack import item as pyitem                             # noqa: E402
 from pybothack import itemid as pyitemid                         # noqa: E402
@@ -47,6 +47,8 @@ def cases():
         out.append(("by-description", d))
     for m in MONSTER_NAMES:
         out.append(("monster-preds", m))
+    for d in RANK_DESCRIPTIONS:
+        out.append(("monster-preds-desc", d))
     for t in TILE_CASES:
         out.append(("infer-feature", t))
     for pos, rows in FOV_MAPS:
@@ -204,8 +206,9 @@ def _combat(arg):
         if a.get('pos'):
             out['pos'] = [a['pos']['x'], a['pos']['y']]
         return out
-    threats = sorted([m['x'], m['y']]
-                     for m in mb.hostile_threats(game).values())
+    # hostile_threats now returns the monsters in Clojure set-seq order (it
+    # models a PersistentHashSet, not a map); the oracle sorts them anyway
+    threats = sorted([m['x'], m['y']] for m in mb.hostile_threats(game))
     return jsn({
         'threats': threats,
         'monster-order': [[m['x'], m['y']]
@@ -431,6 +434,33 @@ def python_answer(op, arg):
             "nw-ratio": float(pyitem.nw_ratio(i)),
             "enchantment": pyitem.enchantment(i),
             "utility": pymainbot.utility(i),
+        })
+    if op == "monster-preds-desc":
+        # `by_description` returns a plain str for a player rank, and FarLook
+        # stores it as the monster's :type.  Clojure's keyword lookup is
+        # nil-safe on that; Python indexing is not.
+        from pybothack import monster as pymonster
+        t = pymontype.by_description(arg)
+        tm = t if isinstance(t, dict) else {}
+        m = {'type': t, 'glyph': tm.get('glyph'), 'color': tm.get('color')}
+        return jsn({
+            "type-is-string": isinstance(t, str),
+            # (str nil) is "" in Clojure, not "None"
+            "typename": pymonster.typename(m) or "",
+            "passive": bool(pymonster.passive(m)),
+            "corrosive": bool(pymonster.corrosive(m)),
+            "flies": bool(pymonster.flies(m)),
+            "slow": bool(pymonster.slow(m)),
+            "mindless": bool(pymonster.mindless(m)),
+            "demon-lord": bool(pymonster.demon_lord(m)),
+            "drowner": bool(pymonster.drowner(m)),
+            "werecreature": bool(pymonster.werecreature(m)),
+            "sees-invisible": bool(pymonster.sees_invisible(m)),
+            "follower": bool(pymonster.follower(m)),
+            "amphibious": bool(pymonster.amphibious(m)),
+            "unique": bool(pymonster.unique(m)),
+            "ignores-e": bool(pymonster.ignores_e(m)),
+            "shopkeeper": bool(pymonster.shopkeeper(m)),
         })
     if op == "monster-preds":
         from pybothack import monster as pymonster

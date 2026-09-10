@@ -102,6 +102,53 @@ def clj_hash_chunks(k):
     return hamt_chunks(clj_hasheq(k))
 
 
+class CljAssertionError(BaseException):
+    """A failed `{:pre ...}`, modelled with Java's Error/Exception split.
+
+    Clojure's `assert` throws `java.lang.AssertionError`, which extends `Error`,
+    and BotHack's delegator catches only `Exception`:
+
+        (try (apply method handler args)
+             (catch Exception e (log/error e "Delegator caught handler exception")))
+
+    So a precondition failure is *not* swallowed - it escapes the handler, the
+    event dispatch and the agent.  Python's `AssertionError` is an `Exception`
+    subclass, so a plain `assert` in the port would be caught and the handler
+    merely skipped: the two would fail in different places for the same cause.
+    Deriving from `BaseException` reproduces the split, since `except Exception`
+    does not catch it.
+
+    It also survives `python -O`, which strips `assert` statements outright -
+    a fragility the original does not have.
+    """
+
+
+def clj_assert(cond, msg):
+    """`{:pre [cond]}` - raise the way Clojure's assert does (see
+    CljAssertionError)."""
+    if not cond:
+        raise CljAssertionError(msg)
+
+
+class CljStr(str):
+    """A Clojure **String**, as opposed to a Character.
+
+    The port keeps both as Python `str`, and `Util.hasheq` hashes them
+    differently: a Character hashes to its code point, a String to
+    `Murmur3.hashInt(String.hashCode())`.  For a menu answer that difference is
+    observable behaviour, because `(string/join options)` walks a
+    PersistentHashSet in the hash order of its elements.
+
+    Length is not a usable discriminator: `put-in-what` and `take-out-what`
+    build their answers with `(str amt slot)`, which yields a **one-character
+    String** whenever the amount is nil.  Keying on length made the port send
+    `AGgiox` where the original sent `xGigAo` (seed 40005, put-in of six items
+    into a bag).  So the producing site says which it is, and this type carries
+    that decision to `clj_hasheq`.
+    """
+    __slots__ = ()
+
+
 def clj_set_order(items, hasheq):
     """Iterate `items` the way `(set items)` iterates in Clojure.
 
@@ -271,3 +318,23 @@ def clj_keys(m):
 def clj_items(m):
     """`(seq m)` with Clojure's iteration order - see clj_vals."""
     return [(k, m[k]) for k in clj_keys(m)]
+
+
+def kw(m, key, default=None):
+    """`(:key m)` - Clojure keyword lookup, which is nil-safe on non-maps.
+
+    `(:name montype)` returns nil when `montype` is a String, and BotHack relies
+    on that: `rank->monster` is `(comp by-rank-map string/lower-case)` and
+    `by-rank-map` maps a rank to a *role name string*, not a MonsterType - so
+    `by-description` genuinely returns a String for "vagrant", "chieftain" and
+    every other player rank.  The original then evaluates
+    `(= "gremlin" (:name montype))` against that String and quietly gets false.
+
+    Indexing it as a dict instead raised TypeError 3002 times across the logged
+    games, and because the delegator catches handler exceptions the game carried
+    on with the farlook silently discarded - the monster's :peaceful and :type
+    were never recorded.
+    """
+    if isinstance(m, dict):
+        return m.get(key, default)
+    return default

@@ -1,4 +1,5 @@
 """Port of bothack.tile."""
+from .clj import clj_assert
 from .clj import assoc, dissoc, update, conj_vec, conj_set
 from .item import container
 from .position import neighbors
@@ -81,7 +82,8 @@ def stairs(tile):
 
 
 def opposite_stairs(feature):
-    assert feature in ('stairs-up', 'stairs-down')
+    clj_assert(feature in ('stairs-up', 'stairs-down'),
+               '#{:stairs-up :stairs-down} feature')
     return 'stairs-down' if feature == 'stairs-up' else 'stairs-up'
 
 

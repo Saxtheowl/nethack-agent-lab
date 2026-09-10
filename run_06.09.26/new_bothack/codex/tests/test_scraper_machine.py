@@ -53,6 +53,19 @@ def test_mark_and_sink(oracle):
     compare(oracle, synchronization() + [('reset', None)] + synchronization(''))
 
 
+def test_repeated_markers_wait_for_final_redraw(oracle):
+    # Claude's real hallucination replay exposed early decisions on a marker.
+    # Compare to Clojure, with changing monsters but an unchanged player cursor.
+    frames = synchronization()[:4] + [
+        screen('# #', rows={10: ' ' * 42 + glyph}) for glyph in ('d', 'D', 'L')
+    ] + [screen('', rows={10: ' ' * 42 + 'n'}), screen('')]
+    compare(oracle, frames)
+    scraper = Scraper()
+    calls = [scraper.feed(frame) for frame in frames]
+    assert not any(call[0] == 'full-frame' for step in calls[:7] for call in step)
+    assert any(call[0] == 'full-frame' for step in calls[7:] for call in step)
+
+
 def test_escape_extended_command(oracle):
     compare(oracle, [screen(), screen("# '", 3, 0), screen('Unknown extended command.')])
 

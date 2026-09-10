@@ -22,6 +22,14 @@ from pybothack.util import (clj_keyword_hasheq, clj_symbol_hasheq,  # noqa
 FAILED = []
 
 
+def check_str(name, got, expected):
+    if got == expected:
+        print('  ok   %-34s %s' % (name, got))
+    else:
+        print('  FAIL %-34s got %s, JVM said %s' % (name, got, expected))
+        FAILED.append(name)
+
+
 def check(name, got, expected):
     if got == expected:
         print('  ok   %-34s %d' % (name, got))
@@ -78,6 +86,26 @@ def main():
     ]
     for i, (m, exp) in enumerate(samples):
         check('monster sample %d' % i, monster_hasheq(m), exp)
+
+    print('menu answer order: Characters vs one-character Strings')
+    from pybothack.clj import CljStr, clj_set_order
+    from pybothack.util import clj_hasheq
+    # dumped from the JVM: (apply str (seq (set [\x \G \i \g \A \o])))
+    chars = ['x', 'G', 'i', 'g', 'A', 'o']
+    got = ''.join(clj_set_order(chars, clj_hasheq))
+    check_str('set of Characters', got, 'AGgiox')
+    # and the same six as Clojure Strings, which is what `(str amt slot)`
+    # produces when the amount is nil - what the original actually sent
+    got = ''.join(clj_set_order([CljStr(c) for c in chars], clj_hasheq))
+    check_str('set of one-char Strings', got, 'xGigAo')
+    for src, exp in ((['a', 'b', 'c'], 'abc'),
+                     (['A', 'B', 'C', 'a', 'b', 'c'], 'AaBbCc'),
+                     (['1', '2', '3', '4', '5'], '12345'),
+                     (['x', 'G'], 'Gx'),
+                     (['i', 'g'], 'gi'),
+                     (['a', 'A'], 'Aa')):
+        check_str('set of Characters %r' % (''.join(src),),
+                  ''.join(clj_set_order(src, clj_hasheq)), exp)
 
     print('every monster type has a dumped hasheq')
     from pybothack import montype

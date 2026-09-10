@@ -63,7 +63,16 @@ def xlog_entry(path, name, window):
 
 def main():
     tap, seed, name, xlog, out = sys.argv[1:6]
-    rec = {'seed': int(seed), 'player': name, 'tap': tap}
+    # Two different seeds, and conflating them costs a day: `seed` is the
+    # NETHACK seed (NETHACK_FIXED_SEED, via det_rng.so) and is what the corpus
+    # directories are named after; `bot_seed` is BOTHACK_SEED, the seed of the
+    # *bot's* own RNG, which replay_compare.py must be given to reproduce the
+    # recording.  Only the first used to be written down, so nothing could
+    # catch a replay run against the wrong one - and a single flipped
+    # coin-toss ("s" for search where the original moved "j") reads exactly
+    # like a fidelity regression.
+    rec = {'seed': int(seed), 'player': name, 'tap': tap,
+           'bot_seed': int(os.environ.get('BOTHACK_SEED', 12345))}
     try:
         records = tapio.read_records(tap)
     except (tapio.TapError, IOError) as e:

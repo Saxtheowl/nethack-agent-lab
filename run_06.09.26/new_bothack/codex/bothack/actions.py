@@ -42,6 +42,14 @@ class Responses:
         self.__dict__.update(methods)
 
 
+class Slot(str):
+    """An inventory Character, distinct from a ground-item label String."""
+    def __new__(cls, value):
+        if not isinstance(value, str) or len(value) != 1:
+            raise ValueError('An inventory slot must be one character')
+        return super().__new__(cls, value)
+
+
 @dataclass(frozen=True)
 class Action:
     kind: str
@@ -77,6 +85,15 @@ class Action:
         return replace(self, extra=self.extra | values)
 
     def handler(self, context):
+        if self.kind == 'discoveries':
+            from .discovery_actions import handler
+            return handler(context)
+        if self.kind in ('eat', 'quaff', 'offer'):
+            from .consumption_actions import handler
+            return handler(self, context)
+        if self.kind in ('ascend', 'descend'):
+            from .stairs_actions import handler
+            return handler(context)
         if self.kind in {'search', 'sit', 'open', 'close', 'kick', 'attack', 'move'}:
             from .movement_actions import handler
             return handler(self, context)
@@ -136,6 +153,33 @@ class Action:
                 game.setdefault('player', {})['can-enhance'] = None
                 return set()
             return Responses(current_skills=current_skills)
+        if self.kind in ('wear', 'puton', 'remove', 'takeoff'):
+            context.update_inventory()
+            slot = self.args[0]
+            if self.kind in ('wear', 'puton'):
+                context.possible_autoid(slot)
+
+            def choose(prompt):
+                context.mark_use(slot)
+                return slot
+
+            def message(text):
+                pattern, worn = (
+                    (r"You don't have anything else to wear|already wearing that", True)
+                    if self.kind == 'wear' else
+                    (r'Not wearing any armor|not wearing that', False))
+                if re.search(pattern, text):
+                    from .state import update_in
+                    context.game = update_in(
+                        context.game, ['player', 'inventory', slot],
+                        lambda item: (item or {}) | {'worn': worn, 'in-use': worn})
+                    return deepcopy(context.game)
+
+            methods = {{'wear': 'wear_what', 'puton': 'put_on_what',
+                        'remove': 'remove_what', 'takeoff': 'take_off_what'}[self.kind]: choose}
+            if self.kind in ('wear', 'takeoff'):
+                methods['message'] = message
+            return Responses(**methods)
         if self.kind in ('wield', 'quiver', 'name'):
             context.update_inventory()
             slot = self.args[0]

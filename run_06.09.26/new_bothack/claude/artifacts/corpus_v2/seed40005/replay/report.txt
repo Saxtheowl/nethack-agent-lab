@@ -1,0 +1,10 @@
+status: DIVERGENCE
+chunks replayed: 28088/28088
+keystrokes: original 82753 bytes, port 82754 bytes
+actions chosen by the port: 4370
+first divergence at keystroke byte 58693 (70.9% of the original's stream)
+  original: b" n##'\x08\n\n\x10\x10\x10\\   ##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10aHny <xGigAo xGigAo ##'   "
+  port    : b" n##'\x08\n\n\x10\x10\x10\\   ##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10aHny <AGgiox AGgiox ##'   "
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: move, move, move, move, autotravel, move, move, move
+rc=4

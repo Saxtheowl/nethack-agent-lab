@@ -8,7 +8,7 @@ from .action import handler as action_handler, typekw
 from .actions import (call_id_handler, examine_handler, mark_recharge_handler,
                       update_discoveries, update_inventory, wish_id_handler)
 from .atom import Atom
-from .clj import assoc, dissoc
+from .clj import CljStr, assoc, dissoc
 from .delegator import Delegator, Handler
 from .game import game_handler, itemid_handler, new_game, set_race_role_handler
 from .handlers import deregister_handler, register_handler, replace_handler
@@ -147,8 +147,11 @@ def unpause(bh):
 def _prompt_escape():
     """Default responses for unhandled prompts."""
     def warn_identify(_o):
+        # `#{","}` - a Clojure String, not a Character (see clj.CljStr).  A
+        # single-element set has no observable order, but marking it keeps the
+        # rule "the producing site says which it is" true everywhere.
         log.warning("default handler identifying anything")
-        return {","}
+        return {CljStr(",")}
 
     def warn_wish(_p):
         log.warning("default handler wishing for nothing")
@@ -288,9 +291,22 @@ def stop(bh):
     return bh
 
 
-def run(bh, max_seconds=None, idle_timeout=180):
+def run(bh, max_seconds=None, idle_timeout=None):
     """The reader loop - JTA reads at most 256 bytes at a time and emits one
-    redraw per non-empty chunk."""
+    redraw per non-empty chunk.
+
+    `idle_timeout` has **no counterpart in the original**: JTA's reader simply
+    blocks.  It was added as a harness safety net, and it defaults to off,
+    because a timeout here ends the whole run while the bot may only be
+    thinking - and it raced the framework's own recovery.  `quit-when-idle`
+    notices an idle bot on a 130 s tick, so it can take up to 260 s to react and
+    another 50 s before it gives up; a 180 s reader timeout always won that race
+    and killed the game first.  Seven of sixteen real games died that way, the
+    best of them at Dlvl 15 with 66 778 points.
+
+    Pass one explicitly for a comparison run, where the harness owns the process
+    lifetime and `:no-exit true` has disabled the recovery handlers.
+    """
     start_time = time.time()
     last_data = time.time()
     while not bh._stop:
@@ -298,7 +314,8 @@ def run(bh, max_seconds=None, idle_timeout=180):
             log.warning("time limit reached")
             break
         if not bh.iface.wait_readable(1.0):
-            if time.time() - last_data > idle_timeout:
+            if idle_timeout is not None and \
+                    time.time() - last_data > idle_timeout:
                 log.error("idle timeout")
                 break
             continue

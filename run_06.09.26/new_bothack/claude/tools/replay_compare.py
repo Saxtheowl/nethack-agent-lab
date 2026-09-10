@@ -88,7 +88,11 @@ def _dump_state(bh, pos):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('tap_log')
-    ap.add_argument('--seed', type=int, default=12345)
+    ap.add_argument('--seed', type=int, default=12345,
+                    help="the BOT's RNG seed (BOTHACK_SEED at record time), "
+                         "NOT the NetHack seed the corpus directories are "
+                         "named after - passing the latter silently produces a "
+                         "one-byte 'divergence' that looks like a regression")
     ap.add_argument('--report', default=None)
     ap.add_argument('--keys-out', default=None)
     ap.add_argument('--actions-out', default=None)
@@ -110,6 +114,13 @@ def main():
                          "with the action index")
     ap.add_argument('--verdict-out', default=None,
                     help="write the structured verdict (JSON) here")
+    ap.add_argument('--align-out', default=None,
+                    help="log the port's view of one tile at every write, "
+                         "keyed by cumulative keystroke bytes, so it can be "
+                         "compared with tools/align_check.py's reading of the "
+                         "original's view at the same offset")
+    ap.add_argument('--align-pos', default='23,11',
+                    help="X,Y for --align-out (default 23,11)")
     a = ap.parse_args()
     logging.basicConfig(level=getattr(logging, a.log.upper()),
                         format='%(levelname)s %(name)s %(message)s')
@@ -142,6 +153,12 @@ def main():
                 [(p['x'], p['y']) for p in (act.get('path') or ())])
         elif act.get('dir'):
             detail = " dir=%s" % act['dir']
+        # the slot is what says *which* item a drop/apply/zap acted on, and
+        # "dropping junk" without it names no suspect at all
+        if act.get('slot') is not None:
+            detail += " slot=%r" % (act['slot'],)
+        if act.get('qty') is not None:
+            detail += " qty=%r" % (act['qty'],)
         # Stringify (and truncate) here: the reason lists hold whole tile and
         # monster maps, and keeping thousands of them alive is hundreds of MB.
         reasons = [str(r)[:120] for r in (act.get('reason') or ())]
@@ -172,6 +189,41 @@ def main():
                           % (_off(), len(actions), lines))
         register_handler(bh, PRIORITY_TOP - 1,
                          Handler(message=_msg, message_lines=_msg_lines))
+
+    if a.align_out:
+        # Under hallucination NetHack re-randomises every monster glyph on each
+        # redraw, so "which redraw did the bot act on" is the first thing to
+        # establish before reading anything into a different monster set.
+        ax, ay = (int(v) for v in a.align_pos.split(','))
+        align_log = open(a.align_out, 'w')
+        _inner_write = iface.write
+        _written = [0]
+
+        def _align_write(data):
+            b = data.encode('latin-1') if isinstance(data, str) else data
+            try:
+                fr = bh.terminal.frame()
+                term_row = fr.lines[ay - 1][max(0, ax - 6):ax + 7]
+            except Exception:                             # noqa: BLE001
+                term_row = '?'
+            try:
+                from pybothack.dungeon import curlvl
+                g = bh.game.deref()
+                tiles = curlvl(g)['tiles']
+                model_row = "".join(
+                    (tiles[ay - 1][x].get('glyph') or ' ')
+                    for x in range(max(0, ax - 6), ax + 7))
+                player = (g['player']['x'], g['player']['y'])
+            except Exception:                             # noqa: BLE001
+                model_row, player = '?', None
+            align_log.write("keys=%-7d wrote=%r term=%r model=%r player=%s\n"
+                            % (_written[0], b[:12], term_row, model_row,
+                               player))
+            _written[0] += len(b)
+            return _inner_write(data)
+
+        iface.write = _align_write
+        bh.delegator.set_writer(_align_write)
 
     bh.delegator.started()
     bh.delegator.drain()

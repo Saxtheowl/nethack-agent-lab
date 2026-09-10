@@ -1,0 +1,182 @@
+{
+ "by_recording_status": {
+  "GAME": 2,
+  "TRUNCATED": 3
+ },
+ "by_replay_status": {
+  "PASS_COMPLETE": 2,
+  "PREFIX_ONLY": 3
+ },
+ "campaign": "corpus_det",
+ "dir": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det",
+ "environment": {
+  "det_rng_so_sha256": "433aa247d2d88cfefcfcfa10f2cbe2f74c10e83ccd91155935e409e1d70de045",
+  "nethack_binary_sha256": "ef68b3e3bee9b880e0a39e9986827d72810576d42ff8f7157231c3ff2ed30464",
+  "nethackrc_sha256": "3586faf65e6f40da070a3326b94d6e16b09bd7fd9b9c0a993fdd5014fc1d0a1c",
+  "port_commit": "c62a6797ccc83ab0a20af0e471869beec44509e8",
+  "port_dirty": true,
+  "pybothack_tree_sha256": "7999b63b498e1f07ef7a30cb1e4780718059c8b5a28c19be87565dc4b76962e1",
+  "python": "3.12.3",
+  "recorded_at": "2026-09-09T03:17:43+0000",
+  "tools_tree_sha256": "b13aa39e8d1bf085ea35f1e3e0679d15f167f3c6aae1deaa1e30aab58ed46df4"
+ },
+ "identical_keystrokes_total": 326624,
+ "original_keystrokes_total": 326624,
+ "pass_complete": 2,
+ "passes": 2,
+ "recordings_that_are_games": 2,
+ "rows": [
+  {
+   "bot_seed": "12345",
+   "chunks": 10296,
+   "end_marker": "You die...",
+   "first_divergence": null,
+   "identical_prefix": 25672,
+   "nethack_seed": "40001",
+   "orig_keystrokes": 25672,
+   "orig_output": 1422484,
+   "player": "bot1",
+   "port_keystrokes": 25672,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det/seed40001/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "GAME",
+   "replay": "PASS_COMPLETE",
+   "seed": "40001",
+   "tap_bytes": 1545141,
+   "tap_sha256": "1727892cdd9de7a4fc82db5d74b0446e460faf53764a3c509b406828c65501fd",
+   "xlog": {
+    "align": "Law",
+    "caveat": "death/hp come from NAO's hangup path, not a clean end; turns/points describe the game",
+    "death": "killed by a guard",
+    "deathlev": "3",
+    "endtime": "1788880185",
+    "hp": "-11",
+    "matched_by": "name + endtime inside the recording window",
+    "maxhp": "54",
+    "maxlvl": "7",
+    "points": "4212",
+    "race": "Dwa",
+    "role": "Val",
+    "starttime": "1788879610",
+    "turns": "2775"
+   }
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 32001,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 84892,
+   "nethack_seed": "40002",
+   "orig_keystrokes": 84892,
+   "orig_output": 4662079,
+   "player": "bot1",
+   "port_keystrokes": 84895,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det/seed40002/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40002",
+   "tap_bytes": 5042496,
+   "tap_sha256": "56e688a106b99a3ffec7d9334b4a0ba5a1f1d188d612505b2a0fdf1ce0c671e0",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 31776,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 98962,
+   "nethack_seed": "40004",
+   "orig_keystrokes": 98962,
+   "orig_output": 4616224,
+   "player": "bot1",
+   "port_keystrokes": 98964,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det/seed40004/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40004",
+   "tap_bytes": 5009646,
+   "tap_sha256": "7e5a1bbd55471044fe3147082282d79e8e01d3ff53d909fe3d25b1c53f147f2d",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 32214,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 95922,
+   "nethack_seed": "40005",
+   "orig_keystrokes": 95922,
+   "orig_output": 4748379,
+   "player": "bot1",
+   "port_keystrokes": 95924,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det/seed40005/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40005",
+   "tap_bytes": 5141406,
+   "tap_sha256": "2d669bbf80aeacaa2c6cf4617842ed5ea13925e63cab91d50e0e3541b05ae868",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 8161,
+   "end_marker": "You die...",
+   "first_divergence": null,
+   "identical_prefix": 21176,
+   "nethack_seed": "40008",
+   "orig_keystrokes": 21176,
+   "orig_output": 1128611,
+   "player": "bot1",
+   "port_keystrokes": 21176,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_det/seed40008/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "GAME",
+   "replay": "PASS_COMPLETE",
+   "seed": "40008",
+   "tap_bytes": 1227122,
+   "tap_sha256": "8de890a4f7323d4e3959d352e37e222fd058699ec3d50494a1c7aa353708b82d",
+   "xlog": {
+    "align": "Law",
+    "caveat": "death/hp come from NAO's hangup path, not a clean end; turns/points describe the game",
+    "death": "killed by a giant ant, while frozen by a trap",
+    "deathlev": "5",
+    "endtime": "1788887794",
+    "hp": "-1",
+    "matched_by": "name + endtime inside the recording window",
+    "maxhp": "54",
+    "maxlvl": "5",
+    "points": "2383",
+    "race": "Dwa",
+    "role": "Val",
+    "starttime": "1788887339",
+    "turns": "2325"
+   }
+  }
+ ],
+ "seeds": 5,
+ "var_initial": null
+}

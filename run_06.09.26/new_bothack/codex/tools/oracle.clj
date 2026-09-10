@@ -21,8 +21,11 @@
 
 (defn action-input [[kind args]]
   (let [ctor (ns-resolve 'bothack.actions (symbol (str "->" kind)))
+        args (mapv #(if (and (map? %) (:character %)) (first (:character %)) %) args)
         args (cond
                (= kind "Repeated") (assoc args 0 (action-input (first args)))
+               (#{"Wear" "PutOn" "Remove" "TakeOff"} kind)
+               (assoc args 0 (if (char? (first args)) (first args) (first (first args))))
                (#{"Attack" "Move" "FarmAttack" "Kick" "Close" "Open" "Chat"} kind)
                (assoc args 0 (keyword (first args)))
                :else args)]
@@ -108,6 +111,7 @@
                        context (bh/map->BotHack {:game game})
                        calls (atom []) pending (atom [])]
                    (with-redefs [bothack.actions/update-inventory (fn [_] (swap! calls conj "inventory") context)
+                                 bothack.actions/possible-autoid (fn [_ slot] (swap! calls conj ["autoid" slot]) context)
                                  bothack.actions/update-tile (fn [_] (swap! calls conj "tile") context)
                                  bothack.actions/update-discoveries (fn [_] (swap! calls conj "discoveries") context)
                                  bothack.handlers/update-on-known-position (fn [_ f & args]
@@ -116,7 +120,9 @@
                                  bothack.handlers/update-before-action (fn [_ f & args]
                                                                         (swap! calls conj "before")
                                                                         (swap! pending conj [f args]) context)]
-                     (let [handler (bothack.game/game-handler context)]
+                     (let [handler (if (second args)
+                                     (bothack.action/handler (action-input (second args)) context)
+                                     (bothack.game/game-handler context))]
                        (doseq [message messages] (bothack.delegator/message handler message))
                        (doseq [[f args] @pending] (apply swap! game f args))
                        {:player (:player @game) :level (level-summary (bothack.dungeon/curlvl @game))
@@ -187,8 +193,42 @@
                                                           (repeat (dec (count (first (:arglists (meta v))))) nil))}
                           {:handled false}))
     :action-trigger (bothack.action/trigger (action-input (first args)))
+    :discovery-lines
+    (let [facts (atom []) game (atom {})]
+      (with-redefs [bothack.itemid/add-discoveries (fn [g discoveries] (reset! facts discoveries) g)]
+        (bothack.delegator/message-lines
+          (bothack.action/handler (bothack.actions/->Discoveries) (bh/map->BotHack {:game game}))
+          (first args)))
+      @facts)
+    :stairs-transition
+    (let [[old-branch old-label new-label destination messages pet] args
+          initial (-> (bothack.game/new-game)
+                      (assoc :branch-id (keyword old-branch) :dlvl old-label)
+                      (update-in [:player] merge {:x 40 :y 10})
+                      bothack.dungeon/ensure-curlvl
+                      (bothack.dungeon/update-at-player assoc :feature :stairs-down))
+          initial (if destination (bothack.dungeon/update-at-player initial assoc :branch-id (keyword destination)) initial)
+          initial (if pet (bothack.dungeon/reset-monster initial
+                           (assoc (bothack.monster/known-monster 41 10 (bothack.montype/name->monster "little dog")) :friendly true)) initial)
+          game (atom initial)
+          pending (atom [])]
+      (with-redefs [bothack.handlers/update-on-known-position
+                    (fn [_ f & args] (swap! pending conj [f args]) nil)]
+        (let [handler (bothack.actions/stairs-handler (bh/map->BotHack {:game game}))]
+          (doseq [text messages] (bothack.delegator/message handler text))
+          (swap! game assoc :dlvl new-label)
+          (bothack.delegator/dlvl-changed handler old-label new-label)
+          (swap! game #(-> % bothack.dungeon/ensure-curlvl
+                          (bothack.dungeon/update-at-player assoc :feature :stairs-up)))
+          (doseq [[f args] @pending] (apply swap! game f args))
+          {:branch (:branch-id @game) :last-branch-no (:last-branch-no @game)
+           :old-tags (get-in @game [:dungeon :levels (keyword old-branch) old-label :tags])
+           :old-stairs (get-in @game [:dungeon :levels (keyword old-branch) old-label :tiles 9 40])
+           :new-stairs (bothack.dungeon/at-player @game)
+           :neighbor (bothack.position/at (bothack.dungeon/curlvl @game) {:x 41 :y 10})})))
     :action-handler (let [[spec input steps] args
                           game (atom (cond-> (update-in input [:player :state] #(when % (set (map keyword %))))
+                                       (:tried input) (update-in [:tried] set)
                                        (get-in input [:player :inventory])
                                        (update-in [:player :inventory]
                                          #(into {} (for [[slot item] %]
@@ -196,6 +236,7 @@
                                                                            (:buc item) (update-in [:buc] keyword))])))))
                           calls (atom [])]
                       (with-redefs [bothack.actions/update-inventory (fn [& _] (swap! calls conj ["update-inventory"]) nil)
+                                    bothack.actions/update-tile (fn [& _] (swap! calls conj ["update-tile"]) "deferred-tile")
                                     bothack.actions/possible-autoid (fn [_ slot] (swap! calls conj ["possible-autoid" slot]) nil)]
                         (let [handler (bothack.action/handler (action-input spec) (bh/map->BotHack {:game game}))]
                           {:results (mapv (fn [[name values]]

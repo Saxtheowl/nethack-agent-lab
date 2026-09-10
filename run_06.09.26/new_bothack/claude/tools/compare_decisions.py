@@ -20,16 +20,38 @@ import re
 import sys
 
 ACTION_RE = re.compile(r'Performing action: #bothack\.actions\.(\w+)')
-# Clojure's record printing for the action follows the type name; the reasons
-# come on the next lines as a printed vector.
-REASONS_RE = re.compile(r'^\s*\[(.*)\]\s*$')
+# The reasons follow on their own lines as a printed Clojure vector, and one
+# reason can be a whole printed record spanning several lines, so the vector is
+# collected until its brackets balance rather than matched on one line.
+LOG_LINE_RE = re.compile(r'^\d{4}-\d\d-\d\d \d\d:\d\d:\d\d,\d+ ')
+
+
+def _reason_strings(text):
+    """The quoted strings of a printed reason vector, in order."""
+    return [m.group(1) for m in re.finditer(r'"((?:[^"\\]|\\.)*)"', text)]
 
 
 def orig_decisions(path):
-    """(type, reasons) per action, in order, from the original's DEBUG log."""
+    """(type, reasons) per chosen action, in order, from the DEBUG log.
+
+    log4j writes the reasons as continuation lines of the same event, and one
+    reason can be a whole printed record wrapping over several lines, so the
+    block runs until the next timestamped event or a blank line.  Counting
+    brackets instead swallows the rest of the log, because a printed record
+    carries its own vectors and its strings can hold stray brackets.
+    """
     out = []
-    pending = None
+    pending = None          # [type, reasons]
+    block = None            # accumulated reason lines, or None
     for line in open(path, errors='replace'):
+        if block is not None:
+            if not line.strip() or LOG_LINE_RE.match(line):
+                pending[1] = _reason_strings(block)
+                block = None
+                # fall through: this line may itself start the next action
+            else:
+                block += line
+                continue
         m = ACTION_RE.search(line)
         if m:
             if pending is not None:
@@ -39,18 +61,10 @@ def orig_decisions(path):
         if pending is None:
             continue
         if line.strip() == 'reasons:':
-            pending.append('await')
-            continue
-        if pending[-1] == 'await':
-            pending.pop()
-            m2 = REASONS_RE.match(line)
-            if m2:
-                pending[1] = [s.strip().strip('"')
-                              for s in re.findall(r'"((?:[^"\\]|\\.)*)"',
-                                                  m2.group(1))]
+            block = ''
     if pending is not None:
         out.append(pending)
-    return [(t, r) for t, r, *_ in out]
+    return [tuple(x) for x in out]
 
 
 def _snake(name):

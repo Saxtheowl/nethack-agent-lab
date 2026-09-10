@@ -596,8 +596,21 @@ def should_try(game, item):
     if item.get('cost') or know_id(game, item):
         return False
     if wand_p(item):
+        # ((some-fn (every-pred (complement :engrave)
+        #                       (complement (partial tried? game)))
+        #           (comp nil? :target))
+        #  (item-id game item))
+        # Every predicate in that some-fn is applied to the **item-id record**,
+        # not to the item - including `tried?`, which then asks
+        # `((:tried game) (appearance-of id-record))`.  An id record that still
+        # has several candidates has no :name, so `appearance-of` is nil and the
+        # wand counts as never tried however many times its appearance was
+        # engrave-tested.  The port used to pass `item` here, which made an
+        # engrave-tested wand fail `should-try?` and become junk: on the
+        # 2-hour seed 40002 recording the port dropped the glass wand the
+        # original kept, then livelocked trying to drop it again.
         iid = item_id(game, item) or {}
-        return bool((not iid.get('engrave') and not tried(game, item))
+        return bool((not iid.get('engrave') and not tried(game, iid))
                     or iid.get('target') is None)
     if (scroll_p(item) or potion_p(item) or ring_p(item) or amulet_p(item)
             or armor_p(item)):
@@ -1343,7 +1356,7 @@ def retreat(game):
             res = with_reason("retreat engrave",
                               engrave_e(game, not any(ignores_e(m)
                                                       for m in
-                                                      threats.values())))
+                                                      clj_vals(threats))))
         else:
             from ..dungeon import passable_walking
             t = find_first(lambda x: (engravable(x)
@@ -1360,7 +1373,7 @@ def retreat(game):
     if res is None and (not threats
                         or (perma_e(tile)
                             and not any(ignores_e(m)
-                                        for m in threats.values()))):
+                                        for m in clj_vals(threats)))):
         res = recover(game)
     if res is None:
         p = navigate(game, stairs_up_p, {'no-fight', 'explored', 'no-autonav',
@@ -1795,7 +1808,8 @@ def _seek_fountain(game):
                                                   for t in tile_seq(oracle)):
         res = seek_level(game, 'main', 'oracle')
     if res is None:
-        # (if-let [{:keys [step]} (and (not minetown) (navigate game fountain?))]
+        # (if-let [{:keys [step]} (and (not (:minetown (curlvl-tags game)))
+        #                              (navigate game fountain?))]
         #   step        <- binds on the Path, so this is nil when we are already
         #                  standing on the fountain, and the else branch is NOT
         #                  taken: seek-fountain returns nil and make-excal dips

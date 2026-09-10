@@ -4,11 +4,12 @@ from pathlib import Path
 import re
 from types import SimpleNamespace
 import pytest
-from bothack.actions import Action, SPECS, action, with_handler, search, enhance_all
+from bothack.actions import Action, Slot, SPECS, action, with_handler, search, enhance_all
 
 
 def spec(a):
-    return [SPECS[a.kind][0], [spec(v) if isinstance(v, Action) else v for v in a.args]]
+    return [SPECS[a.kind][0], [spec(v) if isinstance(v, Action) else
+                             {'character': str(v)} if isinstance(v, Slot) else v for v in a.args]]
 
 
 def plain(value):
@@ -89,6 +90,35 @@ def test_handler_effects(oracle, a, steps):
 def test_unsupported_handler_is_explicit():
     with pytest.raises(NotImplementedError, match='loot'):
         action('loot').handler(SimpleNamespace(game={}))
+
+
+@pytest.mark.oracle
+@pytest.mark.parametrize('state', [[], ['blind'], ['conf'], ['hallu'], ['stun'], ['ext-blind']])
+@pytest.mark.parametrize('kind,method,message', [
+    ('wear', 'wear-what', "You don't have anything else to wear."),
+    ('wear', 'wear-what', 'You are already wearing that!'),
+    ('takeoff', 'take-off-what', 'Not wearing any armor.'),
+    ('takeoff', 'take-off-what', 'You are not wearing that.'),
+    ('puton', 'put-on-what', None), ('remove', 'remove-what', None),
+])
+def test_equipment_use_and_reconciliation(oracle, state, kind, method, message):
+    from bothack.runtime import Runtime
+    initial = {'turn': 100, 'tried': [], 'player': {'state': state, 'inventory': {
+        'a': {'name': 'leather armor', 'worn': None, 'in-use': None}}}}
+    context = Runtime(lambda _: None, deepcopy(initial))
+    context.game['tried'] = set()
+    calls = []
+    context.update_inventory = lambda: calls.append(['update-inventory'])
+    context.possible_autoid = lambda slot: calls.append(['possible-autoid', slot])
+    a = action(kind, 'a')
+    handler = a.handler(context)
+    steps = [(method, ['Which item?'])]
+    if message:
+        steps += [('message', ['Nothing happens.']), ('message', [message])]
+    results = [getattr(handler, name.replace('-', '_'))(*args) for name, args in steps]
+    context.game['player']['state'] = set(state)
+    assert plain(dict(results=results, game=context.game, calls=calls,
+                      **{'handler-map': False})) == oracle.call('action-handler', spec(a), initial, steps)
 
 
 def test_attachment_order_and_enhance():

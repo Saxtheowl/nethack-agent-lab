@@ -1,0 +1,11 @@
+ERROR bothack.itemid unknown itemtype for item 
+status: DIVERGENCE
+chunks replayed: 8156/8161
+keystrokes: original 21176 bytes, port 21176 bytes
+actions chosen by the port: 1381
+first divergence at keystroke byte 15592 (73.6% of the original's stream)
+  original: b"lllllllll.##'\x08\n\n\x10\x10\x10l ##'\x08\n\n\x10\x10\x10s##'\x08\n\n\x10\x10\x10s##'\x08\n\n\x10\x10\x10l##'\x08\n\n\x10\x10\x10"
+  port    : b"lllllllll.##'\x08\n\n\x10\x10\x10l ##'\x08\n\n\x10\x10\x10s##'\x08\n\n\x10\x10\x10l##'\x08\n\n\x10\x10\x10l##'\x08\n\n\x10\x10\x10"
+keystroke-stream similarity: 99.98%
+matching blocks: 5 (longest 15592 bytes)
+last actions: pickup, inventory, look, move, move, move, look, loot

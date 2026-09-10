@@ -134,6 +134,55 @@ La partie originale `Ref343d`, sans mode wizard, a duré 2 986 tours : niveau ma
 
 L’ancienne cible `make install` supprimait le répertoire d’installation à chaque invocation. La vérification du bootstrap a ainsi supprimé le xlogfile global de la première partie ; son export JSON `artifacts/benchmark-corrected.json`, les journaux et le ttyrec restent conservés. Le script utilise désormais `make update` pour toute installation existante, et chaque nouvelle partie archive sa propre ligne brute de xlogfile dans son répertoire de résultats.
 
+## Monde, événements et actions intégrés au modèle Python
+
+Les modules `level`, `dungeon`, `tracker`, `game`, `game_events` et `runtime`
+portent maintenant les cartes persistantes, les branches, 33 plans originaux,
+la mémoire des monstres, la mise à jour du champ de vision et les événements
+du jeu. Le runtime ordonne les mises à jour différées et installe les
+gestionnaires temporaires des actions. Il manque encore leur connexion à une
+chaîne complète de jeu et à la stratégie originale.
+
+`movement_actions.py` contient les premiers gestionnaires de déplacement,
+attaque, recherche, portes, coups de pied et position assise. Leurs déclencheurs
+sont comparés à l'original ; leurs effets n'ont pas encore une couverture
+différentielle complète.
+
+Le 9 septembre, les gestionnaires `Wear`, `PutOn`, `Remove` et `TakeOff` ont
+été ajoutés : demandes d'inventaire, identification éventuelle, mémorisation de
+l'utilisation et correction des champs d'équipement après refus du jeu.
+Les tests utilisent les véritables caractères Clojure pour les emplacements
+d'inventaire. **106 tests d'actions réussis**, dont 36 cas d'équipement avec
+et sans confusion, étourdissement, hallucination ou cécité, sont conservés dans
+`artifacts/equipment-tests.log`.
+
+`stairs_actions.py` porte les gestionnaires d'ascension et de descente :
+choix de branche, passage vers Vlad, tags de niveau, numérotation des branches
+inconnues et mémorisation différée du passage à la nouvelle position.
+**32 comparaisons avec le Clojure réussissent** dans `artifacts/stairs-tests.log`,
+avec et sans familier, y compris Sokoban, mines, quête et entrée dans End Game.
+Ce sont des scénarios d'état synthétiques, pas des passages réellement joués.
+
+Une particularité de l'original est conservée : `mark-branch-entrance` utilise
+`mapcat` sur les résultats de `monster-at`, donc parcourt les entrées des
+records au lieu des monstres. Les prédicats de familier/suiveur ne déclenchent
+alors pas le marquage des cases voisines annoncé par le commentaire Clojure.
+Les scénarios avec familier vérifient que seule la case d'arrivée est marquée.
+
+`consumption_actions.py` porte `Eat`, `Quaff` et `Offer`, notamment les réponses
+aux choix d'objets au sol, les demandes d'inventaire, la mémorisation des
+potions utilisées et des fontaines réduites à un filet d'eau. Pour manger ou
+sacrifier, utiliser `Slot('a')` pour un emplacement d'inventaire et une chaîne
+ordinaire pour un libellé au sol. Même la chaîne `'a'` reste un libellé : Clojure
+distingue explicitement `Character` et `String`, et le portage doit conserver
+cette distinction. Les outils d'oracle encodent ces arguments avec leur type.
+
+Les sacrifices reproduisent l'écriture de `:last-prayer` dans `:player` après
+réconciliation ou les messages de trèfle/herbe ; ce champ n'est pas déplacé
+vers le champ homonyme du jeu, malgré la différence avec `Pray`.
+Les réponses différées qui valent vrai sont conservées : `eat-it` retourne
+le contexte fourni par la demande de mise à jour, plutôt qu'un simple booléen.
+
 ## Travail restant pour atteindre l’objectif
 
 1. Porter les protocoles d’actions et connecter la machine de synchronisation du scraper, puis vérifier les interactions sur de vrais flux de jeu.

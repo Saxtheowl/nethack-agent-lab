@@ -11,7 +11,7 @@ from .fov import visible
 from .handlers import update_before_action
 from .item import corpse, single
 from .itemtype import name_to_item
-from .monster import (mindless, rodney, typename, undead, unique,
+from .monster import (mindless, type_map, rodney, typename, undead, unique,
                       unknown_monster)
 from .player import blind, hallu, have_intrinsic
 from .position import distance, distance_manhattan, in_direction, position
@@ -160,7 +160,7 @@ def death_tracker(bh):
 def _only_fresh_deaths(tile, corpse_type, turn):
     deaths = tile.get('deaths') or []
     relevant = [d for d in deaths
-                if not (turn - d[0] > 500 and (d[1].get('type') or {}).get(
+                if not (turn - d[0] > 500 and type_map(d[1]).get(
                     'name') and d[1].get('type') != corpse_type)]
     unsafe = []
     safe = []

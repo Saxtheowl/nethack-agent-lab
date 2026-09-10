@@ -1,0 +1,10 @@
+status: DIVERGENCE
+chunks replayed: 10292/10296
+keystrokes: original 25672 bytes, port 25672 bytes
+actions chosen by the port: 1750
+first divergence at keystroke byte 14132 (55.0% of the original's stream)
+  original: b"jjjjllllllllllllllllllllllllll.##'\x08\n\n\x10\x10\x10j##'\x08\n\n\x10\x10\x10;HHHHHHHHH"
+  port    : b"jjjjllllllllllllllllllllllllll.##'\x08\n\n\x10\x10\x10s##'\x08\n\n\x10\x10\x10;HHHHHHHHH"
+keystroke-stream similarity: 99.97%
+matching blocks: 8 (longest 14132 bytes)
+last actions: move, move, move, move, farlook, move, move, move

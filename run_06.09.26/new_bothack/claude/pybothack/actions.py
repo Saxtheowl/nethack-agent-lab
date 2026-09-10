@@ -3,8 +3,9 @@ import logging
 import re
 
 from .action import action, handler as action_handler, trigger, typekw
-from .clj import (assoc, assoc_in, CljMap, clj_items, conj_set, conj_vec,
-                  dissoc, get_in, merge, update, update_in)
+from .clj import (assoc, assoc_in, CljMap, CljStr, clj_items, conj_set,
+                  conj_vec,
+                  dissoc, get_in, kw, merge, update, update_in)
 from .delegator import Handler
 from .dungeon import (add_curlvl_tag, at_curlvl, at_player, branch_key,
                       curlvl, curlvl_monsters, curlvl_tags, dlvl,
@@ -582,10 +583,15 @@ def FarLook(pos):
 
         def message(text):
             align = re_first_group(r'\(([^ ]*) altar\)$', text)
-            if align:
-                if align != "aligned":
-                    game.swap(update_at, pos,
-                              lambda t: assoc(t, 'alignment', str_kw(align)))
+            if align and align != "aligned":
+                # (or (when-let [align ...] (if (not= align "aligned") (swap! ...)))
+                #     (when-let [trap ...] ...) ...)
+                # The clause's value is the inner `if`'s, so an *aligned* altar
+                # yields nil and the `or` carries on to the trap and monster
+                # clauses.  Returning on `align` alone - which reads naturally -
+                # would swallow the rest of the chain.
+                game.swap(update_at, pos,
+                          lambda t: assoc(t, 'alignment', str_kw(align)))
                 return
             trapname = re_first_group(FARLOOK_TRAP_RE, text)
             if trapname:
@@ -601,7 +607,11 @@ def FarLook(pos):
                     peaceful = "peaceful " in desc
                     montype = by_description(desc)
                     log.debug("monster description %s => %s", text, montype)
-                    if montype and montype['name'] == "gremlin":
+                    # (if (= "gremlin" (:name montype)) ...) - `montype` is a
+                    # plain String for any player rank, because `rank->monster`
+                    # maps ranks to role names.  Clojure's keyword lookup is
+                    # nil-safe on a String; indexing is not.  See clj.kw.
+                    if kw(montype, 'name') == "gremlin":
                         game.swap(assoc, 'gremlins-peaceful', peaceful)
                     game.swap(update_monster, pos,
                               lambda m: assoc(m, 'peaceful', peaceful,
@@ -1623,8 +1633,12 @@ def put_in(bag_slot, slot_or_amt_map, amt=None):
         return Handler(
             take_something_out=lambda _p: False,
             put_something_in=lambda _p: True,
+            # (set (map #(str (val %) (key %)) amt-map)) - `str` makes these
+            # Clojure Strings, one character long when the amount is nil, and
+            # they hash as Strings rather than as Characters
             put_in_what=lambda _o: set(
-                ("" if v is None else str(v)) + k for k, v in amt_map.items()))
+                CljStr(("" if v is None else str(v)) + k)
+                for k, v in amt_map.items()))
     act = Loot() if bag_slot == '.' else Apply(bag_slot)
     return with_reason("putting", amt_map, "into bag at", bag_slot,
                        with_handler(PRIORITY_TOP - 1, hfactory, act))
@@ -1647,7 +1661,8 @@ def take_out(bag_slot, label_or_amt_map, amt=None):
             for slot, label in options.items():
                 if label in amt_map:
                     a = amt_map[label]
-                    res.add(("" if a is None else str(a)) + slot)
+                    # (str amt slot): a Clojure String, see put-in-what above
+                    res.add(CljStr(("" if a is None else str(a)) + slot))
             return res
         return Handler(take_something_out=lambda _p: True,
                        take_out_what=take_out_what,

@@ -1,4 +1,5 @@
 """Port of bothack.position."""
+from .clj import clj_assert
 from .util import VI_DIRECTIONS
 
 
@@ -62,9 +63,21 @@ def valid_position(x, y=None):
 
 
 def at(level, x, y=None):
-    """Tile of the level at given terminal position."""
+    """Tile of the level at given terminal position.
+
+    `(defn at ... {:pre [(valid-position? x y)]} ...)` - the original asserts,
+    so an out-of-range coordinate throws and the delegator catches it, skipping
+    the handler that asked.  Python would instead answer silently and wrongly:
+    `tiles[y - 1][-1]` is the *last column*, so `(at level (update tile :x dec))`
+    on a tile at x=0 - which `searchable-extremity` can produce, since it scans
+    `(range col -1 -1)` down to zero - would compare against column 79 rather
+    than failing.  Raising keeps the two implementations failing in the same
+    place for the same reason.
+    """
     if y is None:
         x, y = x['x'], x['y']
+    if not (0 <= x <= 79 and 1 <= y <= 21):
+        clj_assert(False, 'at: invalid position (%r, %r)' % (x, y))
     return level['tiles'][y - 1][x]
 
 
@@ -155,7 +168,8 @@ def diagonal_neighbors(level_or_tile, tile=None):
 def in_direction(level_or_from, frm_or_dir, dir_=None):
     if dir_ is None:
         frm, d = level_or_from, frm_or_dir
-        assert valid_position(frm) and d is not None
+        clj_assert(valid_position(frm) and d is not None,
+                   'valid-position? from, some? dir')
         dx, dy = DIRMAP[d]
         res = Pos(frm['x'] + dx, frm['y'] + dy)
         return res if valid_position(res) else None

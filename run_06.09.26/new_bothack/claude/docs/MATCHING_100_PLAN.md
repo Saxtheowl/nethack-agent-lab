@@ -46,6 +46,8 @@ Sources : [résumé existant](../artifacts/fidelity/summary.txt), `tap.log`,
 [classify_divergence.py](../tools/classify_divergence.py). Ses numéros de
 commandes issus de la synchronisation ne sont pas les numéros d’actions du bot.
 
+*(Note d'exécution, 2026-09-09 : cette section décrit l'état au moment de l'audit ; voir la section 8 en fin de document pour l'état courant.)*
+
 **Le résultat démontré reste 0/9 captures intégralement identiques.** Les
 fichiers de 40008 et 40009 ont même exactement la même longueur des deux côtés,
 mais contiennent des octets différents : comparer les longueurs ne suffit pas.
@@ -449,3 +451,55 @@ Le prochain travail utile est l’étape A, suivie de l’attribution du candida
 de navigation et du cache sur 40005. Le budget Vast.ai devient alors un moyen
 de tester plus de transitions et de parties, avec un verdict dont le « 100 % »
 désigne exactement le corpus et les conditions effectivement vérifiés.
+
+---
+
+## 8. État au 2026-09-09 (réponse aux étapes A–F)
+
+Ajouté après coup par l'agent qui exécute le plan. Les preuves sont dans
+`artifacts/final_gate/`, `artifacts/corpus_det/manifest.json` et
+`artifacts/corpus_v2/manifest.json` ; le détail est dans `docs/RESULTS.md` §2d,
+`docs/TESTS.md` §2b–2h et `docs/LIMITATIONS.md`.
+
+| Étape | État | Preuve |
+| --- | --- | --- |
+| A — comparateur strict et manifeste | **fait** | `tools/verdict.py` (7 statuts), `tools/tapio.py` (lecteur strict), `tools/recording_verdict.py` (GAME/TRUNCATED + corrélation xlogfile), `tools/fidelity_manifest.py` ; `tests/test_verdict.py` couvre les cas négatifs, y compris le piège de comptabilité décrit ci-dessous |
+| B — répétabilité original→original | **fait, avec une limite mesurée** | seed 40001 identique octet pour octet sur **trois** enregistrements indépendants ; mais sur machine chargée la référence cesse de concorder au-delà d'un certain point (`docs/TESTS.md`, « The pinning is partial ») |
+| C — 40005 | **fait** | deux causes internes mesurées puis corrigées : l'ordre d'itération du set de `Monster` (`fight`, appât) et la chaîne Clojure d'un caractère (`put-in-what`). 40005 passe de DIVERGENCE à 6,4 % à identique sur toute sa longueur |
+| D — autres premiers écarts | **fait sur 15 captures** | 15 enregistrements (deux campagnes, une capture de 7200 s, une partie longue, deux sondes de délai) : **1 182 022 octets de frappes, 1 182 022 identiques, aucune divergence**. Statut de fin explicite par capture (6 GAME, 9 TRUNCATED) |
+| E — pilote Vast | **prêt ; provisionnement validé, campagne non lancée** | `docs/VAST.md` (plan, plafond, critères d'arrêt), `tools/vast/{provision,worker,collect}.sh`. `provision.sh` a été exécuté pour de vrai sur le chemin exact du worker (non-root, sans JDK 8 système, `/tmp` vidé par un reboot) : il a révélé que `libjtapty.so` n'est pas livré et que le premier `lein run` échoue en compilant les 88 sources Java — les deux sont désormais dans le script |
+| F — corpus supplémentaire | **en cours** | corpus à plafond long (7 200 s) en enregistrement ; il doit convertir des préfixes en parties complètes. Les parties live des deux bots restent à refaire : leurs chiffres datent d'avant les cinq corrections |
+
+### Ce que le plan demandait et qui manquait vraiment
+
+Le manifeste. La version précédente ne portait que les statuts et les longueurs.
+Il contient désormais : identifiant de campagne, commit du port **et** état propre
+ou non de l'arbre, commit BotHack épinglé, sha256 du binaire NetHack, du shim RNG
+et du `nethackrc`, empreinte d'arbre de `pybothack/` et `tools/`, version de
+Python et du JDK, paramètres PTY par graine, les deux seeds, nom du joueur,
+état initial de `var/`, sha256 de chaque capture, longueurs de frappes, préfixe
+identique, premier écart et statut des deux verdicts.
+
+Et un piège de comptabilité que le plan avait raison d'exiger de verrouiller :
+`common_prefix` est `min(len(attendu), len(obtenu))`, c'est-à-dire la longueur sur
+laquelle les deux flux **se recouvrent**, pas celle sur laquelle ils
+**concordent**. L'utiliser dans la colonne « identique » faisait rapporter une
+exécution divergente comme identique à 100 %. Corrigé, et verrouillé par un test
+négatif dans `tests/test_verdict.py`.
+
+### Ce que « 100 % » désigne exactement ici
+
+Quinze captures nommées, rejouées par le commit du port inscrit dans les
+manifestes. Six sont des parties entières, neuf sont des
+préfixes longs — jusqu'à 313 786 frappes — de parties que le bot n'avait pas
+perdues quand le plafond horaire a coupé. Aucune n'est une ascension. Un nouveau commit du port
+invalide le verdict de rejeu jusqu'au prochain rejeu ; il n'invalide pas les
+captures.
+
+### Méthode qui a produit ces résultats, en une phrase
+
+Tracer **l'écrivain** de l'état plutôt que ses lecteurs (seize éliminations
+successives portaient sur des lecteurs et avaient même déclaré à tort la vraie
+cause « écartée »), puis, chaque fois qu'un bug est trouvé, écrire un audit
+structurel qui décide si sa **classe** en compte d'autres — cinq audits dans
+`tools/audit_*.py`, chacun vérifié contre son instance connue avant d'être cru.

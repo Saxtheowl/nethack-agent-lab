@@ -417,9 +417,19 @@ def clj_record_hasheq(type_hash, entries, val_hasheq):
 
 
 def clj_hasheq(o):
-    """clojure.lang.Util.hasheq for the values the bot puts in menu sets: a
-    single character is a Character (hashCode = code point), anything longer
-    is a String (Murmur3.hashInt of its Java hashCode)."""
+    """clojure.lang.Util.hasheq for the values the bot puts in menu sets.
+
+    A Character hashes to its code point, a String to
+    `Murmur3.hashInt(String.hashCode())`.  The port stores both as Python
+    `str`, so a one-character value is ambiguous: `pick-up-what` answers with
+    inventory slots, which are Characters, while `put-in-what` answers with
+    `(str amt slot)`, which is a String even when it is one character long.
+    `clj.CljStr` marks the latter at the site that builds it; anything else
+    that is one character long is a Character.
+    """
+    from .clj import CljStr
+    if isinstance(o, CljStr):
+        return murmur3_hash_int(java_string_hash(str(o)))
     s = o if isinstance(o, str) else str(o)
     if len(s) == 1:
         return ord(s)

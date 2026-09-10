@@ -1,0 +1,11 @@
+ERROR bothack.itemid unknown itemtype for item 
+status: PREFIX_ONLY
+chunks replayed: 31041/31041
+keystrokes: original 85101 bytes, port 85102 bytes
+actions chosen by the port: 4613
+first divergence at keystroke byte 85101 (100.0% of the original's stream)
+  original: b" ##'\x08\n\n\x10\x10\x10#loot\ny y n##'\x08\n\n\x10\x10\x10k##'\x08\n\n\x10\x10\x10"
+  port    : b" ##'\x08\n\n\x10\x10\x10#loot\ny y n##'\x08\n\n\x10\x10\x10k##'\x08\n\n\x10\x10\x10:"
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: move, look, farlook, move, look, loot, move, look
+rc=3

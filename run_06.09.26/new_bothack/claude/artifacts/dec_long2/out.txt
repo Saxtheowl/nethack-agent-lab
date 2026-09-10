@@ -1,0 +1,41 @@
+ERROR bothack.itemid unknown itemtype for item 
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 608, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: 66 zorkmids
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 608, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: 9 zorkmids
+ERROR bothack.delegator Delegator caught handler exception in message
+Traceback (most recent call last):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/delegator.py", line 223, in _invoke_event
+    fn(*args)
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/actions.py", line 608, in message
+    montype = by_description(desc)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/pybothack/montype.py", line 159, in by_description
+    raise ValueError("Failed to parse monster description: " + text)
+ValueError: Failed to parse monster description: 66 zorkmids
+status: DIVERGENCE
+chunks replayed: 41907/116624
+keystrokes: original 313786 bytes, port 110846 bytes
+actions chosen by the port: 6560
+first divergence at keystroke byte 110316 (35.2% of the original's stream)
+  original: b"\x10\x10\x10i  ##'\x08\n\n\x10\x10\x10\\    ##'\x08\n\n\x10\x10\x10: ##'\x08\n\n\x10\x10\x10b##'\x08\n\n\x10\x10\x10h##'\x08\n\n\x10\x10\x10"
+  port    : b"\x10\x10\x10i  ##'\x08\n\n\x10\x10\x10\\    ##'\x08\n\n\x10\x10\x10: ##'\x08\n\n\x10\x10\x10d##'\x08\n\n\x10\x10\x10i##'\x08\n\n\x10\x10\x10"
+keystroke-stream similarity: not computed (streams over 40000 bytes; set REPLAY_DIFFLIB_LIMIT to override)
+last actions: farlook, look, farlook, farlook, farlook, farlook, farlook, farlook
+rc=4

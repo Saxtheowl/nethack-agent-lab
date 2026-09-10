@@ -16,33 +16,49 @@ case "$OUT" in /*) ;; *) OUT="$PWD/$OUT" ;; esac
 SECS="${2:-300}"
 NHSEED="${NETHACK_FIXED_SEED:-4242}"
 BSEED="${BOTHACK_SEED:-12345}"
+# one name for this comparison; parallel runs must pass different
+# ones so their lock and level files in var/ cannot collide
+PLAYER="${LIVE_PLAYER:-claudebot}"
 mkdir -p "$OUT"
 
 kill_strays () {
   # A killed JVM leaves its NetHack child running, and every run here plays as
   # the same user, so a leftover process removes the *current* game's level
-  # files on its way out ("Cannot open file 1000claudebot.0").  Clear them out
+  # files on its way out ("Cannot open file 1000claudebot.0").  Clear those out
   # before touching var/.
-  # -x matches the process *name*, not the command line: `pgrep -f` also
-  # matches whatever shell happens to have this script's name in its argv,
-  # including the caller, which then gets killed (exit 144).
-  local pids
-  pids=$(pgrep -x nethack.343-nao || true)
+  #
+  # But kill only *our own* games.  `pgrep -x nethack.343-nao` matches every
+  # NetHack on the machine, including a recording campaign's, and killing one
+  # mid-game destroys hours of work - the exact hazard this script is supposed
+  # to avoid for itself.  So match on the player name in the process's
+  # environment (`-u NAME` is on its command line) and never on the binary
+  # alone.  `-x` rather than `-f` because `pgrep -f` also matches whatever shell
+  # has this script's name in its argv, i.e. the caller, which then dies with
+  # exit 144.
+  local pids kept
+  pids=""
+  kept=""
+  for p in $(pgrep -x nethack.343-nao || true); do
+    if tr '\0' ' ' < "/proc/$p/cmdline" 2>/dev/null | grep -q -- "-u $PLAYER"; then
+      pids="$pids $p"
+    else
+      kept="$kept $p"
+    fi
+  done
+  [ -n "$kept" ] && echo "   (leaving other players' NetHack alone:$kept)"
   if [ -n "$pids" ]; then
-    echo "   (killing leftover NetHack processes: $(echo $pids | tr '\n' ' '))"
+    echo "   (killing leftover $PLAYER games:$pids)"
     for p in $pids; do kill "$p" 2>/dev/null || true; done
     sleep 1
-    for p in $(pgrep -x nethack.343-nao || true); do
-      kill -9 "$p" 2>/dev/null || true
-    done
+    for p in $pids; do kill -9 "$p" 2>/dev/null || true; done
     sleep 1
   fi
 }
 
 clean_locks () {
   kill_strays
-  rm -f "$ROOT/upstream/nh343/var/"*claudebot* \
-        "$ROOT/upstream/nh343/var/save/"*claudebot* 2>/dev/null || true
+  rm -f "$ROOT/upstream/nh343/var/"*"$PLAYER"* \
+        "$ROOT/upstream/nh343/var/save/"*"$PLAYER"* 2>/dev/null || true
 }
 
 mk_launcher () {   # $1 = dir
@@ -51,7 +67,7 @@ mk_launcher () {   # $1 = dir
 export NETHACKOPTIONS="@$ROOT/upstream/bothack.nethackrc"
 export TERM=xterm
 export HOME="$1/home"
-export USER=claudebot
+export USER=$PLAYER
 export PTY_TAP_LOG="$1/tap.log"
 export NETHACK_FIXED_SEED="$NHSEED"
 # 250 ms: long enough that a whole travel command - whose output NetHack
@@ -61,7 +77,7 @@ export PTY_TAP_SETTLE="${PTY_TAP_SETTLE:-0.25}"
 export PTY_TAP_PIECE_DELAY="${PTY_TAP_PIECE_DELAY:-0.015}"
 export LD_PRELOAD="$ROOT/artifacts/det_rng.so"
 mkdir -p "\$HOME"
-exec python3 "$ROOT/tools/pty_tap.py" "$ROOT/upstream/nh343/nethack.343-nao" -u claudebot
+exec python3 "$ROOT/tools/pty_tap.py" "$ROOT/upstream/nh343/nethack.343-nao" -u $PLAYER
 LAUNCH
   chmod +x "$1/nh.sh"
 }

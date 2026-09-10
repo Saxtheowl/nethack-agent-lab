@@ -1,5 +1,6 @@
 """Port of bothack.level.  The special level blueprints are the ones from the
 original (extracted verbatim, see tools/cljdump)."""
+from .clj import clj_assert
 from ._load import LEVELDATA
 from .montype import name_to_monster
 from .position import Pos, at, position, rectangle, rectangle_boundary
@@ -24,7 +25,7 @@ def tile_seq(level):
     """All 80x21 tiles of the level, left to right, top to bottom."""
     if level is None:
         return []
-    assert 'monsters' in level
+    clj_assert('monsters' in level, ':monsters level')
     return [t for row in level['tiles'] for t in row]
 
 

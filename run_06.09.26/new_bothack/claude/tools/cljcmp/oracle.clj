@@ -520,6 +520,30 @@
                     "nw-ratio" (double (item/nw-ratio i))
                     "enchantment" (item/enchantment i)
                     "utility" ((resolve 'bothack.bots.mainbot/utility) i)})))
+      "monster-preds-desc"
+      ;; Same predicates, but the monster's :type comes from by-description
+      ;; rather than name->monster - so for a player rank ("vagrant") the :type
+      ;; is a plain String, which is what FarLook actually stores.  The
+      ;; name->monster path can never produce that, so it never exercised it.
+      (let [t (montype/by-description arg)
+            m {:type t :glyph (:glyph t) :color (:color t)}]
+        (jsn (into (sorted-map)
+                   {"type-is-string" (string? t)
+                    "typename" (str (monster/typename m))
+                    "passive" (boolean (monster/passive? m))
+                    "corrosive" (boolean (monster/corrosive? m))
+                    "flies" (boolean (monster/flies? m))
+                    "slow" (boolean (monster/slow? m))
+                    "mindless" (boolean (monster/mindless? m))
+                    "demon-lord" (boolean (monster/demon-lord? m))
+                    "drowner" (boolean (monster/drowner? m))
+                    "werecreature" (boolean (monster/werecreature? m))
+                    "sees-invisible" (boolean (monster/sees-invisible? m))
+                    "follower" (boolean (monster/follower? m))
+                    "amphibious" (boolean (monster/amphibious? m))
+                    "unique" (boolean (monster/unique? m))
+                    "ignores-e" (boolean (monster/ignores-e? m))
+                    "shopkeeper" (boolean (monster/shopkeeper? m))}))) 
       "monster-preds"
       (let [t (montype/name->monster arg)
             m {:type t :glyph (:glyph t) :color (:color t)}]

@@ -10,6 +10,7 @@
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SEED="${1:?seed}"; OUT="${2:?outdir}"; NAME="${3:-claudebot}"; SECS="${4:-2400}"
+export BOTHACK_PORT_ROOT="$ROOT"
 case "$OUT" in /*) ;; *) OUT="$PWD/$OUT" ;; esac
 mkdir -p "$OUT/home"
 rm -f "$ROOT/upstream/nh343/var/"*"$NAME"* \
@@ -58,7 +59,60 @@ LOG
   lein update-in :source-paths conj "\"$ROOT/tools\"" -- \
   run -m cljcmp.runner "$OUT/config.edn" > "$OUT/stdout.log" 2>&1 ) &
 runner=$!
-for _ in $(seq 1 "$SECS"); do kill -0 "$runner" 2>/dev/null || break; sleep 1; done
+
+# Wait for the game, but stop as soon as it is *finished* rather than when the
+# clock runs out.  A bot that dies leaves NetHack at the DYWYPI prompt, which it
+# never answers, so the capture stops growing while the JVM sits there for the
+# rest of the cap.  With a 7 200 s cap and a game that dies at 600 s that is
+# nearly two hours of a rented worker staring at a death screen.
+#
+# Two idle rules, deliberately different:
+#   * the capture has an attested end and has been quiet for IDLE_DONE seconds
+#     -> the game is over, stop now;
+#   * no attested end and quiet for IDLE_STALL seconds -> something is wrong
+#     (a prompt nobody answers, a lost scraper).  Stop too, and say so: the
+#     recording verdict will label it TRUNCATED and it must not be counted as a
+#     game.
+IDLE_DONE="${RECORD_IDLE_DONE:-60}"
+IDLE_STALL="${RECORD_IDLE_STALL:-600}"
+last_size=-1
+quiet=0
+elapsed=0
+reason="cap"
+while [ "$elapsed" -lt "$SECS" ]; do
+  kill -0 "$runner" 2>/dev/null || { reason="exited"; break; }
+  sleep 5
+  elapsed=$((elapsed + 5))
+  size=$(stat -c%s "$OUT/tap.log" 2>/dev/null || echo 0)
+  if [ "$size" = "$last_size" ]; then
+    quiet=$((quiet + 5))
+  else
+    quiet=0
+    last_size="$size"
+  fi
+  if [ "$quiet" -lt "$IDLE_DONE" ]; then
+    continue
+  fi
+  if python3 - "$OUT/tap.log" <<'ENDCHECK'
+import os
+import sys
+sys.path.insert(0, os.environ['BOTHACK_PORT_ROOT'])
+from tools import tapio
+try:
+    sys.exit(0 if tapio.attested_end(tapio.read_records(sys.argv[1])) else 1)
+except Exception:
+    sys.exit(1)
+ENDCHECK
+  then
+    reason="finished (quiet ${quiet}s, capture attests an end)"
+    break
+  fi
+  if [ "$quiet" -ge "$IDLE_STALL" ]; then
+    reason="stalled (quiet ${quiet}s, no attested end)"
+    break
+  fi
+done
+echo "recording stopped after ${elapsed}s: $reason"
 kill "$runner" 2>/dev/null || true
 wait "$runner" 2>/dev/null || true
 # the JVM outlives the lein wrapper; a few leftovers exhaust this machine

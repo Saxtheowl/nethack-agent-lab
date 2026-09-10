@@ -1,4 +1,5 @@
 """Port of bothack.behaviors."""
+from .clj import clj_assert
 from .actions import Apply, Dip, Read, descend, unbag, with_reason
 from .dungeon import at_player, get_level
 from .item import BELL, BOOK, CANDELABRUM, blessed, candle, holy_water
@@ -13,7 +14,7 @@ def _invocation_complete(game):
 
 def attach_candles(game):
     c = have(game, CANDELABRUM)
-    assert c
+    clj_assert(c, 'have game candelabrum')
     if c[1].get('candles') != 7:
         found = have(game, candle)
         if found:

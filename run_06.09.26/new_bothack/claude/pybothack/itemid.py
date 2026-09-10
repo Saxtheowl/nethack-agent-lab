@@ -10,6 +10,7 @@ import logging
 import re
 
 from . import itemtype as it
+from .clj import clj_assert
 from .clj import assoc, dissoc, update
 from .itemtype import (items, name_to_item, exclusive_appearances, jap_to_eng,
                        blank_itemtype)
@@ -129,7 +130,7 @@ BLIND_APPEARANCES = {
 
 def knowable_appearance(appearance):
     """Does it make sense to know anything about this appearance?"""
-    assert isinstance(appearance, str)
+    clj_assert(isinstance(appearance, str), 'string? appearance')
     return not (appearance in BLIND_APPEARANCES
                 or (appearance not in names
                     and appearance not in exclusive_appearances))
@@ -141,7 +142,10 @@ def appearance_of(item):
     spec = name_to_item.get(item.get('specific'))
     if spec:
         return spec['name']
-    return item['name']
+    # `(:name item)` is nil-safe in Clojure, and this is called on things that
+    # are not items - `should-try?` hands it an item-*id* record, which has no
+    # :name once several candidates remain
+    return item.get('name')
 
 
 # ------------------------------------------------------------- discoveries db
@@ -313,7 +317,7 @@ def add_eliminated(game, appearance):
 
 
 def add_discovery(game, appearance, id_):
-    assert isinstance(appearance, str)
+    clj_assert(isinstance(appearance, str), 'string? appearance')
     if appearance == id_ or not knowable_appearance(appearance):
         return game
     id_ = jap_to_eng.get(id_, id_)
@@ -328,7 +332,7 @@ def add_discoveries(game, discoveries):
 
 
 def add_prop_discovery(game, appearance, prop, propval):
-    assert prop in OBSERVABLE_PROPS
+    clj_assert(prop in OBSERVABLE_PROPS, 'observable-props prop')
     if knowable_appearance(appearance):
         log.debug("for appearance %s adding observed property %s = %s",
                   appearance, prop, propval)
@@ -339,7 +343,7 @@ def add_prop_discovery(game, appearance, prop, propval):
 def add_observed_cost(game, appearance, cost, sell=False, cha=None):
     if cha is None:
         cha = game['player']['stats']['cha']
-    assert isinstance(appearance, str)
+    clj_assert(isinstance(appearance, str), 'string? appearance')
     if knowable_appearance(appearance):
         log.debug("for appearance %s adding observed cost %s", appearance, cost)
         return _add_fact(game, 'cost', appearance,
@@ -430,7 +434,7 @@ def know_price(game, item):
 
 
 def know_appearance(game, id_):
-    assert isinstance(id_, str)
+    clj_assert(isinstance(id_, str), 'string? id')
     cnt = 0
     disc = game['discoveries']
     for a in APPEARANCE_NAMES:
@@ -442,7 +446,7 @@ def know_appearance(game, id_):
 
 
 def could_be(game, id_, item):
-    assert isinstance(id_, str)
+    clj_assert(isinstance(id_, str), 'string? id')
     return any(i['name'] == id_ for i in (possible_ids(game, item) or ()))
 
 

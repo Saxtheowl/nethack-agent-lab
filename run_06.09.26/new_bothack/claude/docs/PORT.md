@@ -114,6 +114,48 @@ engrave-id + price) reproduce exactly.
   character, `Murmur3.hashInt(String.hashCode())` for the `count + slot`
   strings `take-out-what` returns.  The port tells the two apart by length,
   which is correct because no set the bot builds mixes them.
+* **The UI's recovery handlers are part of the bot's behaviour.**  `init-ui`
+  registers `quit-when-idle`, `quit-when-looping` and `quit-when-stuck` unless
+  `:no-exit` is set.  The first is a background thread and is the only thing that
+  recovers from a *scraper* deadlock (the other two are `choose-action`
+  handlers, which a bot stuck on an unclassifiable prompt never reaches).  All
+  three are ported; `config/shell-config.edn` keeps `:no-exit true` for
+  comparison runs, `config/play-config.edn` leaves them enabled for real games.
+* **Preconditions are `Error`s, not `Exception`s.**  Clojure's `{:pre ...}` throws
+  `java.lang.AssertionError`, which extends `Error`, and BotHack's delegator
+  catches only `Exception` - so a precondition failure escapes the handler, the
+  event dispatch and the agent rather than being logged and skipped.  Python's
+  `AssertionError` is an `Exception`, so a plain `assert` would be swallowed
+  instead.  `clj.CljAssertionError` derives from `BaseException` to reproduce the
+  split, and `clj.clj_assert` is used at every ported `:pre` site.  It also
+  survives `python -O`, which strips `assert` statements.
+* **`(into {} …)` promotes at the ninth entry.**  The scraper's menu options map
+  is built that way, so it keeps screen order for eight entries and switches to
+  the hash order of the slot Characters from the ninth.  `clj.into_map` models
+  both regimes; `scraper._menu_options` uses it.  Observable through
+  `(vals options)`, which fixes the order items enter a looted container.
+* **Record hashing, and therefore set order.**  `hostile-threats` hands the bot
+  a PersistentHashSet of `Monster` records; `find-first` over it walks the HAMT
+  order of `hasheq`, which for a record is
+  `(bit-xor type-hash (APersistentMap/mapHasheq r))`.  `pybothack/util.py` has
+  the Murmur3 primitives (`murmur3_hash_long`, `murmur3_hash_unencoded_chars`,
+  `clj_keyword_hasheq`, `clj_hash_ordered`/`_unordered`, `clj_record_hasheq`),
+  `pybothack/monster.py` has `monster_hasheq` plus a per-field type table (the
+  port stores Clojure keywords and strings both as `str`, so only a table can
+  say which rule applies), and `clj.clj_set_order` sorts by it.  The 376
+  monster-type hashes are *dumped*, not computed: `pybothack/_hashdata.json`
+  comes from `tools/cljcmp/dump_hash.clj` and `tests/test_clj_hash.py` checks
+  the port against it.  Two things this got wrong until measured against the
+  JVM: `Util.hashCombine`'s `seed >> 2` is an **arithmetic** shift, and
+  `map->Monster` materialises declared-but-omitted fields as nil, so a monster
+  dict missing `awake` hashes as an 11-entry map where the record has 12.
+* **Upstream bugs the port reproduces on purpose.**  `Throw`'s handler and
+  `Discoveries`' about-to-choose both pass the game **atom** where a function
+  wants the map, so `(:key atom)` and `(get-in atom …)` return nil: `Throw`'s
+  `(not (visible? …))` guard is always true (it marks the tile
+  unconditionally), and `forget-names` always gets an empty set (it forgets
+  nothing).  Both are reproduced, with the reasoning in a comment at the site;
+  `tools/audit_atom_args.py` finds the class.
 * `(min-key f)` / `(max-key f)` keep the **last** extreme on ties;
   `util.min_by`/`max_by` do the same (`first_min_by` keeps the first).  Getting
   this wrong silently changes which level the bot picks as a branch candidate.

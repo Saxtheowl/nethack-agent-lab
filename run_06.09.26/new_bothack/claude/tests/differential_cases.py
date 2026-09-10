@@ -568,3 +568,22 @@ INVORDER_CASES = [
     "$:5 gold pieces;a:a food ration;b:a food ration;c:a food ration",
     _INV_BASE + ";d:an apple;e:a food ration;f:a lichen corpse",
 ]
+
+
+#: Farlook descriptions whose `by-description` result is a plain String rather
+#: than a MonsterType, because `rank->monster` maps a player rank to a role
+#: *name*.  FarLook stores that String as the monster's :type, so every monster
+#: predicate must stay nil-safe on it.  The port used to raise TypeError here -
+#: 3002 times across the logged games - and the delegator swallowed it, so the
+#: farlook was silently discarded.  None of these can be reached through
+#: `name->monster`, which is why the existing monster-preds cases missed them.
+RANK_DESCRIPTIONS = [
+    "vagrant",           # caveman
+    "chieftain",         # barbarian
+    "digger",            # archeologist
+    "candidate",         # monk
+    "gallant",           # knight
+    "stripling",         # valkyrie
+    "evoker",            # wizard
+    "footpad",           # rogue
+]

@@ -1,0 +1,192 @@
+{
+ "by_recording_status": {
+  "GAME": 1,
+  "TRUNCATED": 5
+ },
+ "by_replay_status": {
+  "PASS_CAPTURE": 1,
+  "PASS_COMPLETE": 1,
+  "PREFIX_ONLY": 4
+ },
+ "campaign": "corpus_v2",
+ "dir": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2",
+ "environment": {
+  "det_rng_so_sha256": "433aa247d2d88cfefcfcfa10f2cbe2f74c10e83ccd91155935e409e1d70de045",
+  "nethack_binary_sha256": "ef68b3e3bee9b880e0a39e9986827d72810576d42ff8f7157231c3ff2ed30464",
+  "nethackrc_sha256": "3586faf65e6f40da070a3326b94d6e16b09bd7fd9b9c0a993fdd5014fc1d0a1c",
+  "port_commit": "c62a6797ccc83ab0a20af0e471869beec44509e8",
+  "port_dirty": true,
+  "pybothack_tree_sha256": "7999b63b498e1f07ef7a30cb1e4780718059c8b5a28c19be87565dc4b76962e1",
+  "python": "3.12.3",
+  "recorded_at": "2026-09-09T03:17:43+0000",
+  "tools_tree_sha256": "b13aa39e8d1bf085ea35f1e3e0679d15f167f3c6aae1deaa1e30aab58ed46df4"
+ },
+ "identical_keystrokes_total": 453453,
+ "original_keystrokes_total": 453453,
+ "pass_complete": 1,
+ "passes": 2,
+ "recordings_that_are_games": 1,
+ "rows": [
+  {
+   "bot_seed": "12345",
+   "chunks": 10297,
+   "end_marker": "You die...",
+   "first_divergence": null,
+   "identical_prefix": 25672,
+   "nethack_seed": "40001",
+   "orig_keystrokes": 25672,
+   "orig_output": 1422509,
+   "player": "bot1",
+   "port_keystrokes": 25672,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40001/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "GAME",
+   "replay": "PASS_COMPLETE",
+   "seed": "40001",
+   "tap_bytes": 1545176,
+   "tap_sha256": "fd47c9f5486954bda9d5142cd35321c268f936423203642f33d21d6d97afdf40",
+   "xlog": {
+    "align": "Law",
+    "death": "killed by a guard",
+    "deathlev": "3",
+    "endtime": "1788903814",
+    "hp": "-11",
+    "killed_not_ended": false,
+    "matched_by": "name + endtime inside the recording window",
+    "maxhp": "54",
+    "maxlvl": "7",
+    "points": "4212",
+    "race": "Dwa",
+    "role": "Val",
+    "starttime": "1788903205",
+    "turns": "2775"
+   }
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 30242,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 78763,
+   "nethack_seed": "40002",
+   "orig_keystrokes": 78763,
+   "orig_output": 4397533,
+   "player": "bot1",
+   "port_keystrokes": 78766,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40002/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40002",
+   "tap_bytes": 4755241,
+   "tap_sha256": "be4efffa05921da3fa527261a6a4bb490683194f6b1a368f73fd88e3164cdd5e",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 28231,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 87106,
+   "nethack_seed": "40003",
+   "orig_keystrokes": 87106,
+   "orig_output": 4085022,
+   "player": "bot1",
+   "port_keystrokes": 87106,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40003/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PASS_CAPTURE",
+   "seed": "40003",
+   "tap_bytes": 4435903,
+   "tap_sha256": "f6507ca8b954838b2969b4e7c940bb6ac48c370e257f3b7e1697a1e9911a4d3c",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 30235,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 94058,
+   "nethack_seed": "40004",
+   "orig_keystrokes": 94058,
+   "orig_output": 4399698,
+   "player": "bot1",
+   "port_keystrokes": 94061,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40004/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40004",
+   "tap_bytes": 4773386,
+   "tap_sha256": "eda8e4ee940de3bb923ae19c2ce682184505e1d860d467123b656d98f239e08d",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 28088,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 82753,
+   "nethack_seed": "40005",
+   "orig_keystrokes": 82753,
+   "orig_output": 4198888,
+   "player": "bot1",
+   "port_keystrokes": 82754,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40005/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40005",
+   "tap_bytes": 4537821,
+   "tap_sha256": "d64251723e6143634a90f2e92d27d1d3ff7066c0d39fa652b30205bc4273fed8",
+   "xlog": null
+  },
+  {
+   "bot_seed": "12345",
+   "chunks": 31041,
+   "end_marker": null,
+   "first_divergence": null,
+   "identical_prefix": 85101,
+   "nethack_seed": "40006",
+   "orig_keystrokes": 85101,
+   "orig_output": 4452214,
+   "player": "bot1",
+   "port_keystrokes": 85102,
+   "pty": {
+    "PTY_TAP_IDLE": "1",
+    "PTY_TAP_LOG": "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/claude/artifacts/corpus_v2/seed40006/tap.log",
+    "PTY_TAP_PIECE_DELAY": "0.05",
+    "PTY_TAP_SETTLE": "0.25"
+   },
+   "recording": "TRUNCATED",
+   "replay": "PREFIX_ONLY",
+   "seed": "40006",
+   "tap_bytes": 4823360,
+   "tap_sha256": "93fc2e203e9a1bcac745b3a9b6c4dd3c49bcb30d9ca2ea05f82a8d13ee7eccf7",
+   "xlog": null
+  }
+ ],
+ "seeds": 6,
+ "var_initial": "5c71e551896e1d9bc7cd7574eee7a7132169a882525d0d4ad5adcbbf01dad9b3"
+}

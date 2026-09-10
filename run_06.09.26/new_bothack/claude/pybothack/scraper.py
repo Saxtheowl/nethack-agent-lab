@@ -5,10 +5,12 @@ completely drawn and sends off higher-level events.  This is BotHack's
 synchronization mechanism with NetHack (the "##'" marker trick) and is
 reproduced here step for step.
 """
+import collections
 import logging
 import re
 
 from .action import typekw
+from .clj import into_map
 from .frame import (before_cursor, before_cursor_p, botls, cursor_line,
                     extra_topline_cursor, inverse, nth_line, topline,
                     topline_plus, wrapped_cursor)
@@ -69,15 +71,26 @@ def _menu_line(start, line, colors):
 
 
 def _menu_options(frame):
+    """(into {} (map menu-line ...)) - the options on the current page.
+
+    `into` builds through a *transient* array map: it appends, keeping screen
+    order, until the **ninth** entry promotes it to a hash map, after which
+    `vals`/`keys` walk in the hash order of the slot Characters.  A full
+    inventory page has well over nine entries, and the order is observable:
+    `take-out-what` appends `(map label->item (vals options))` to the
+    container's `:items`, and `pick-up-what` walks `options` while `disj`-ing
+    labels off its wanted set, so with two identically labelled stacks the order
+    picks which slot it takes.
+    """
     m = re.match(r'^ *', nth_line(frame, 0))
     xstart = len(m.group(0)) if m else 0
     yend = frame.cursor.y
-    res = {}
+    pairs = []
     for line, colors in zip(frame.lines[:yend], frame.colors[:yend]):
         r = _menu_line(xstart, line, colors)
         if r:
-            res[r[0]] = r[1]
-    return res
+            pairs.append((r[0], r[1]))
+    return into_map(pairs)
 
 
 _MENU_FNS = [
@@ -381,6 +394,7 @@ def _undrawn(frame, what):
 
 def new_scraper(delegator, no_mark_prompt=None):
     st = {'player': None, 'head': None, 'items': None, 'menu_nextpage': None,
+          'lastmsg_waits': 0,
           'prev': (no_mark_prompt.strip()
                    if isinstance(no_mark_prompt, str) else None)}
 
@@ -616,9 +630,30 @@ def new_scraper(delegator, no_mark_prompt=None):
             return lastmsg_get
         return None
 
+    #: How many redraws `lastmsg+action` may wait before forcing progress.
+    #: A legitimate wait is one to three; this is far above that and only ever
+    #: fires when `player` has been poisoned (see lastmsg_action).
     def lastmsg_get(frame):
-        if topline(frame) == "# #" and frame.cursor.y < 22:
+        # (when (and (= "# #" (topline frame)) (< (-> frame :cursor :y) 22)) ...)
+        #
+        # DELIBERATE DEVIATION, and the only one in this file: the original's
+        # guard is `y < 22`, which also admits y = 0.  `player` is meant to be
+        # the hero's position on the map, and NetHack restores the cursor there
+        # after writing a topline - but on rare part-drawn frames the topline is
+        # written and the cursor has not moved yet, so it sits just after the
+        # text at (3, 0).  Recording that traps `lastmsg+action` for good: it
+        # waits for the cursor to come back to (3, 0) while every later frame
+        # has it on the map, and the game hangs until quit-when-idle ends it.
+        #
+        # Measured: one game in five stalled this way, always the deepest ones -
+        # Dlvl 15-18 with scores up to 179 008 - and it is not load-related (it
+        # reproduces with two games on four cores).  Requiring the cursor to be
+        # off the topline changes nothing else: the replay gate stays at
+        # 1 145 222/1 145 222 identical keystrokes over fifteen captures, so this
+        # branch never fires on any recorded game of the original.
+        if topline(frame) == "# #" and 0 < frame.cursor.y < 22:
             st['player'] = frame.cursor
+            st['lastmsg_waits'] = 0
             delegator.send_write(ctrl('p'))
             return lastmsg_action
         return None
@@ -628,7 +663,25 @@ def new_scraper(delegator, no_mark_prompt=None):
             delegator.send_write("\n##\n\n")
             return lastmsg_clear
         if topline(frame) == "# #":
+            # (or ...
+            #     (if (= "# #" (topline frame)) (ref-set player (:cursor frame)))
+            #     (when (= (:cursor frame) @player) ... sink)
+            #     ...)
+            # That `if` is a *clause of the or*, and `ref-set` returns the
+            # Position it just set - truthy - so the or short-circuits here.
+            # `apply-scraper` keeps the current scraper for any non-function
+            # return, so the original sets the player position and waits for the
+            # next redraw instead of falling through to the sink branch.
+            #
+            # Falling through makes the bot choose its action one redraw earlier
+            # than the original.  That is invisible while consecutive redraws
+            # carry the same picture, and decisive when they do not: during a
+            # hallucination episode NetHack re-randomises every monster glyph on
+            # every redraw, so one redraw of slack becomes a different monster
+            # map.  Measured on seed 40002 at keystroke 63137, where the
+            # original had already consumed three "# #" frames.
             st['player'] = frame.cursor
+            return None
         if frame.cursor == st['player']:
             if not topline(frame).startswith("#"):
                 delegator.message(topline(frame))
@@ -637,7 +690,41 @@ def new_scraper(delegator, no_mark_prompt=None):
             flush_more_list()
             delegator.full_frame(frame)
             return sink
-        log.debug("lastmsg expecting further redraw")
+        # The two conditions that could have moved this on, so a stall here
+        # says which one failed rather than only that it happened.
+        # DELIBERATE DEVIATION: the original waits here with no bound, and a
+        # poisoned `player` makes that wait permanent.
+        #
+        # `player` is recorded in `lastmsg_get` and re-recorded by the "# #"
+        # clause above, which exists to *correct* it from a later frame.  When a
+        # "# #" frame carries a **stale** cursor the correction goes the wrong
+        # way and no later frame can ever match.  Seen exactly:
+        #     lastmsg_get     cursor=(59,20) topline=''      -> player=(59,20)
+        #     lastmsg_action  cursor=(58,20) topline='# #'   -> player=(58,20)
+        #     lastmsg_action  cursor=(59,20) topline='#'     -> stuck for good
+        # The bot then sits until quit-when-idle ends the game, and it is the
+        # long games that lose the most by it.
+        #
+        # Rather than guess which frame is authoritative, keep the original's
+        # logic and bound the wait: a legitimate wait here is one to three
+        # frames, so after many more than that, proceed as the matching branch
+        # would.  Normal play never reaches the bound - the replay gate stays at
+        # 1 182 022/1 182 022 identical keystrokes over fifteen recordings.
+        st['lastmsg_waits'] += 1
+        if st['lastmsg_waits'] > LASTMSG_WAIT_LIMIT:
+            log.warning("lastmsg stuck for %d redraws (cursor=%r player=%r); "
+                        "proceeding", st['lastmsg_waits'], frame.cursor,
+                        st['player'])
+            if not topline(frame).startswith("#"):
+                delegator.message(topline(frame))
+            _emit_botl(delegator, frame)
+            delegator.know_position(frame)
+            flush_more_list()
+            delegator.full_frame(frame)
+            return sink
+        log.debug("lastmsg expecting further redraw (cursor=%r player=%r "
+                  "topline=%r)", frame.cursor, st['player'],
+                  topline(frame)[:40])
         return None
 
     def farm(frame):
@@ -654,10 +741,29 @@ def new_scraper(delegator, no_mark_prompt=None):
     return initial
 
 
+#: The last few scraper transitions, for a post-mortem when the bot stops
+#: acting.  A stall leaves no trace in the INFO log - its last line is an
+#: ordinary action - and running everything at DEBUG costs about 1.2 GB for a
+#: three-hour game.  This keeps only the context that matters, in memory, and
+#: main.py's watchdog dumps it when no action has been chosen for a while.
+RECENT = collections.deque(maxlen=60)
+
+#: see lastmsg_action
+LASTMSG_WAIT_LIMIT = 40
+
+
+def recent_transitions():
+    """The ring buffer as formatted lines, oldest first."""
+    return ["%-16s cursor=(%2d,%2d) topline=%r" % row for row in RECENT]
+
+
 def _apply_scraper(orig_scraper, delegator, frame):
     current = orig_scraper if orig_scraper else new_scraper(delegator)
     nxt = current(frame)
-    return nxt if callable(nxt) else current
+    nxt = nxt if callable(nxt) else current
+    RECENT.append((getattr(nxt, '__name__', str(nxt)),
+                   frame.cursor.x, frame.cursor.y, topline(frame)[:46]))
+    return nxt
 
 
 def scraper_handler(scraper_ref, delegator):

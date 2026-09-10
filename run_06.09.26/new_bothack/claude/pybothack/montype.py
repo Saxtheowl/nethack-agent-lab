@@ -76,8 +76,17 @@ def rank_to_monster(desc):
 
 
 def _strip_modifier(desc):
-    for pre, n in (("saddled invisible ", 18), ("invisible ", 10),
-                   ("saddled ", 8)):
+    # (condp #(.startsWith ^String %2 %1) desc
+    #   "invisible " (subs desc 10)
+    #   "saddled " (subs desc 8)
+    #   desc)
+    #
+    # `condp` takes the FIRST matching clause and there is no combined
+    # "saddled invisible " case, so a saddled invisible pony loses only the
+    # "saddled " and stays "invisible pony".  This port used to carry an extra
+    # ("saddled invisible ", 18) entry ahead of these two, which stripped both
+    # and left "pony" - a description the original never produces.
+    for pre, n in (("invisible ", 10), ("saddled ", 8)):
         if desc.startswith(pre):
             return desc[n:]
     return desc

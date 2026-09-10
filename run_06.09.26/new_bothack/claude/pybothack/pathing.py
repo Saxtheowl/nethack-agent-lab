@@ -8,6 +8,7 @@ from .actions import (Autotravel, Close, Drop, Move, Open, Read, Remove, Search,
                       Sit, TakeOff, Unlock, ZapWandAt, descend, dig, kick,
                       search, untrap_move, with_reason, without_levitation,
                       Ascend, Descend)
+from .clj import clj_assert
 from .clj import assoc, get_in, update
 from .delegator import Handler
 from .dungeon import (at_curlvl, at_planes, below_castle, below_medusa,
@@ -51,7 +52,8 @@ TIE = int(os.environ.get('BOTHACK_ASTAR_TIE', '1'))
 
 
 def base_cost(level, dir_, tile, opts):
-    assert level is not None and dir_ is not None and tile is not None
+    clj_assert(level is not None and dir_ is not None and tile is not None,
+               'some? level, some? dir, some? tile')
     cost = 1
     if opts.get('prefer-items') and not tile.get('new-items'):
         cost += 0.5

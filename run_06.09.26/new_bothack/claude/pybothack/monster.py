@@ -4,6 +4,24 @@ from .montype import (appearance_to_monster, has_drowning_attack,
                       passive_type, corrosive_type, name_to_monster)
 
 
+def type_map(m):
+    """`(:type m)` as a map, or {} - Clojure's keyword lookup is nil-safe.
+
+    A monster's `:type` is not always a MonsterType.  `by-description` returns a
+    plain String for every player rank, because `rank->monster` is
+    `(comp by-rank-map string/lower-case)` and `by-rank-map` maps a rank to a
+    *role name*.  The original stores that String as `:type` and every later
+    `(:tags (:type m))` quietly yields nil.
+
+    In Python `"caveman" or {}` is `"caveman"`, so the idiom this replaces -
+    `type_map(m).get('tags')` - raises AttributeError instead.  It had
+    never fired only because a TypeError in the farlook handler aborted before
+    the String was ever stored; fixing that one unmasked fourteen of these.
+    """
+    t = m.get('type') if m else None
+    return t if isinstance(t, dict) else {}
+
+
 def hostile(m):
     return not m.get('peaceful') and not m.get('friendly')
 
@@ -18,8 +36,7 @@ def _default_peaceful(monster_type):
 
 
 def typename(m):
-    t = m.get('type') if m else None
-    return t.get('name') if t else None
+    return type_map(m).get('name')
 
 
 def shopkeeper(m):
@@ -32,7 +49,7 @@ def high_priest(m):
 
 def demon_lord(m):
     # (every? #{:demon :prince} tags) - vacuously true for an unknown type
-    tags = (m.get('type') or {}).get('tags') or ()
+    tags = type_map(m).get('tags') or ()
     return all(t in ('demon', 'prince') for t in tags)
 
 
@@ -49,8 +66,8 @@ def pudding(m):
 
 
 def unique(m):
-    return ((m.get('type') or {}).get('gen-flags') or set()) and 'unique' in (
-        (m.get('type') or {}).get('gen-flags') or set())
+    return (type_map(m).get('gen-flags') or set()) and 'unique' in (
+        type_map(m).get('gen-flags') or set())
 
 
 def priest(m):
@@ -69,19 +86,19 @@ def mimic(m):
 
 
 def werecreature(m):
-    return 'were' in ((m.get('type') or {}).get('tags') or ())
+    return 'were' in (type_map(m).get('tags') or ())
 
 
 def drowner(m):
-    return has_drowning_attack(m.get('type'))
+    return has_drowning_attack(type_map(m))
 
 
 def flies(m):
-    return 'fly' in ((m.get('type') or {}).get('tags') or ())
+    return 'fly' in (type_map(m).get('tags') or ())
 
 
 def covetous(m):
-    tags = (m.get('type') or {}).get('tags') or ()
+    tags = type_map(m).get('tags') or ()
     return any(t in tags for t in ('covetous', 'wants-arti', 'wants-amulet',
                                    'wants-book'))
 
@@ -89,31 +106,31 @@ def covetous(m):
 def steals(m):
     if covetous(m):
         return True
-    for a in ((m.get('type') or {}).get('attacks') or ()):
+    for a in (type_map(m).get('attacks') or ()):
         if a.get('damage-type') in ('steal-amulet', 'steal-items'):
             return True
     return False
 
 
 def ignores_e(m):
-    return 'elbereth' in ((m.get('type') or {}).get('resistances') or ())
+    return 'elbereth' in (type_map(m).get('resistances') or ())
 
 
 def sees_invisible(m):
-    return 'see-invis' in ((m.get('type') or {}).get('tags') or ())
+    return 'see-invis' in (type_map(m).get('tags') or ())
 
 
 def follower(m):
-    return 'follows' in ((m.get('type') or {}).get('tags') or ())
+    return 'follows' in (type_map(m).get('tags') or ())
 
 
 def amphibious(m):
-    return 'amphibious' in ((m.get('type') or {}).get('tags') or ())
+    return 'amphibious' in (type_map(m).get('tags') or ())
 
 
 def _tagpred(tag):
     def p(m):
-        return tag in ((m.get('type') or {}).get('tags') or ())
+        return tag in (type_map(m).get('tags') or ())
     p.__name__ = tag + '_p'
     return p
 
@@ -135,16 +152,18 @@ def spellcaster(m):
 
 def passive(m):
     # (passive-type? (:type m)) - vacuously true when the type is unknown
-    return passive_type(m.get('type') or {})
+    return passive_type(type_map(m))
 
 
 def corrosive(m):
-    t = m.get('type')
+    # (corrosive-type? (:type m)) - a String :type yields nil for (:attacks _),
+    # so the original is vacuously false rather than an error.
+    t = type_map(m)
     return corrosive_type(t) if t else False
 
 
 def slow(m):
-    t = m.get('type')
+    t = type_map(m)
     return bool(t and t.get('speed') is not None and t['speed'] < 7)
 
 
@@ -169,9 +188,15 @@ def known_monster(x, y, mtype):
 
 
 def new_monster(x, y, known, glyph, color):
+    # (map->Monster {...}) fills every *declared* record field the literal
+    # omits with nil, so :awake is present-and-nil rather than absent.  It has
+    # to be here too: `hasheq` counts map entries, so a missing key changes the
+    # monster's hash and with it the order `hostile-threats`' set iterates -
+    # which is what picks the monster `fight` baits.  See monster_hasheq.
     mtype = appearance_to_monster.get(glyph, {}).get(color)
     return {'x': x, 'y': y, 'known': known, 'first-known': known,
             'glyph': glyph, 'color': non_inverse(color), 'type': mtype,
+            'awake': None,
             'friendly': bool(inverse(color)),
             'peaceful': _default_peaceful(mtype), 'remembered': False}
 
@@ -261,6 +286,21 @@ def _field_hasheq(k, v):
                    "monster._FIELD_KIND" % (k, v))
 
 
+# The record's declared fields, which `map->Monster` always materialises (nil
+# when the literal omits them).  A dict missing one of these is not a faithful
+# Monster: it has fewer map entries than the record, so it hashes differently
+# and lands elsewhere in a set's iteration order.  Checked rather than assumed,
+# because the symptom is a silently different monster choice hundreds of turns
+# later.
+MONSTER_BASE_FIELDS = ('x', 'y', 'known', 'glyph', 'color', 'type', 'awake',
+                       'friendly', 'peaceful', 'remembered')
+
+
 def monster_hasheq(m):
     """`hasheq` of a bothack.monster.Monster record."""
+    missing = [k for k in MONSTER_BASE_FIELDS if k not in m]
+    if missing:
+        raise KeyError("monster %r is missing declared record field(s) %s; "
+                       "map->Monster would have them as nil and the hash "
+                       "counts them" % (m, missing))
     return clj_record_hasheq(MONSTER_TYPE_HASH, m.items(), _field_hasheq)

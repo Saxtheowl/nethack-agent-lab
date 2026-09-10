@@ -2,6 +2,7 @@
 import logging
 import re
 
+from .clj import clj_assert
 from .clj import (assoc, assoc_in, clj_vals, dissoc, get_in,
                   update_in, conj_set, merge)
 from .level import (blueprints, diggable_floor, geh_maze, new_level, tile_seq,
@@ -120,7 +121,7 @@ def next_dlvl(branch_or_dlvl, dlvl_=None):
 def branch_key(game, level_or_branch_id=None):
     if level_or_branch_id is None:
         branch_id = game['branch-id']
-        assert branch_id
+        clj_assert(branch_id, 'branch-id')
         return branch_key(game, branch_id)
     if isinstance(level_or_branch_id, str):
         branch_id = level_or_branch_id

@@ -21,28 +21,58 @@ python3 -m pybothack.main config/shell-config.edn    # plays a game
 | --- | --- |
 | `pybothack/` | the port (framework + `bots/mainbot.py`) |
 | `pybothack/_data.json` | item/monster/level data extracted verbatim from the original |
+| `pybothack/_hashdata.json` | Clojure `hasheq` values dumped from the JVM (set iteration order) |
 | `tools/` | build scripts, the comparison harness, the Clojure oracle |
 | `tests/` | differential tests against the original |
-| `docs/` | detailed documentation (port, tests, results, limitations) |
+| `docs/` | detailed documentation (port, tests, results, limitations, the rented pilot) |
 | `artifacts/` | build output, run logs, ttyrecs, evidence |
 
 ## Status
 
 Read `docs/RESULTS.md` and `docs/LIMITATIONS.md` before trusting anything
-here.  Where it stands, in three numbers:
+here.  Where it stands:
 
+* **Whole games, byte for byte.**  Fifteen recordings of the original - two
+  independent campaigns, a two-hour capture, and two made at a reduced piece
+  delay - replayed into the port under the deterministic protocol
+  (`docs/TESTS.md` §2b): **1 182 022 keystroke bytes, 1 182 022 identical, no
+  divergence.**  The six recordings that are complete games are reproduced from
+  the first keystroke to the last; the nine that the wall clock cut short each
+  match over their whole length, up to 313 786 bytes.  It says those fifteen
+  recordings are reproduced - not that the port is equivalent, and none of them
+  is an ascension;
 * **1821/1821** differential cases identical to the live original
-  (`python3 tests/test_differential.py`);
-* both bots playing **the same live NetHack game** — same pinned game seed,
-  same binary, no wizard mode — stay **byte-for-byte identical for 1 969
-  actions / 37 810 keystrokes / 1.66 MB of game output** before their first
-  difference, and are identical over the whole comparison on the shorter runs
-  (`docs/RESULTS.md` §2c);
-* **12 real games** (6 per bot, 600 s each, sequential on an idle machine, no
-  wizard mode, no human input): the port is **behind** — median max depth 6 vs
-  6.5, median score 7046 vs 11 606, 3 deaths in 6 against 2.  Its action-type
-  distribution overlaps the original's by 93.7 % (96.1 % once one 948-action
-  farlook livelock in the *original* is discounted).
+  (`python3 tests/test_differential.py`), plus `tests/test_clj_hash.py`
+  (Clojure record hashing against a JVM dump) and `tests/test_verdict.py`;
+* both bots playing **the same live NetHack game** (`docs/RESULTS.md` §2c) -
+  superseded by the bullet above and **measured before the fidelity fixes of
+  2026-09-08/09**, so its "1 969 actions before the first difference" is a floor
+  from an older port, not the current result;
+* **~140 real games** (no wizard mode, no human intervention, each run until it
+  ends by itself).  Two records, from two different populations, both stated
+  because quoting one number from each would overstate the result: NetHack's own
+  xlogfile - which records only games that ended *in NetHack* - gives deepest
+  **Dlvl 21** and top score **120 050** over 138 games; the bot's own logs, which
+  also cover games the bot abandoned, give deepest **Dlvl 28** and top score
+  **15 669 164** over 121 580 turns.  The seven-figure scores are sink farming,
+  an upstream strategy (`farm-sink` / `FarmAttack` / `farm-done?`), so the port
+  reaches the phase the original credits for its own first win.  Playing found
+  nine defects the replay gate cannot see (`docs/RESULTS.md` §2e).  The three
+  most recent: an idle-recovery handler that never sent the ESCs that unstick
+  NetHack (17 games lost), a `TypeError` that silently discarded 3002 farlooks,
+  and a monster-description strip that the original does not do;
+* **the blocker is not dying, it is giving up**: of the 76 games that finished,
+  32% ended because the bot abandoned them (idle loop, stuck, crash) rather than
+  because it died - including games at Dlvl 17 and 18.  Whether the original
+  does the same at the same rate is **not yet settled**; `tools/ascend_pool_orig.sh`
+  and `tools/compare_realgames.py` exist to settle it and are running;
+
+The port makes **two deliberate deviations** from the original, both in the
+scraper's synchronisation path and both listed with their evidence at the top of
+`docs/LIMITATIONS.md`.  Each removes a state in which a live game hangs for good;
+neither fires on any recorded game of the original.  A third was claimed and
+turned out to be a port defect misread as an improvement - that story is in the
+same file, because it is the more useful one.
 
 **The port has not ascended, and neither did the original in these runs.**
 Known gaps and reproduced upstream bugs are listed in `docs/LIMITATIONS.md`.

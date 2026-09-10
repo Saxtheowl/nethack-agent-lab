@@ -4,6 +4,7 @@ import logging
 
 from ._load import LEVELDATA
 from .action import typekw
+from .clj import clj_assert
 from .clj import assoc, dissoc, get_in, update
 from .delegator import Handler
 from .position import Pos, adjacent, at, in_direction, position, towards
@@ -20,7 +21,8 @@ BSWITCH = Pos(30, 15)   # handles the one layout where paths have to cross
 
 
 def _moves_for(src, dest):
-    assert src[0] == dest[0] or src[1] == dest[1]
+    clj_assert(src[0] == dest[0] or src[1] == dest[1],
+               'src and dest share a row or a column')
     idx = 0 if src[0] != dest[0] else 1
     step = 1 if dest[idx] > src[idx] else -1
     res = []

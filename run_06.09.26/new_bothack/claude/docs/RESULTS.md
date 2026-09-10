@@ -147,6 +147,238 @@ in the port, and each is worth recording because each looked convincing:
   where at INFO speed it produced a different one.  A 250 ms window removed the
   divergence with no change to either bot.
 
+## 2d. Whole games under the deterministic protocol (2026-09-09)
+
+This is the number that matters, and the one to read in preference to §2 and
+§2c: those were measured against the reference *before* it was made
+reproducible against itself (`docs/TESTS.md` §2c-bis), so they were measured
+against a moving target.
+
+Fifteen recordings of the original - two independent campaigns, one two-hour
+capture, and two made at reduced piece delays - replayed with
+`tools/replay_compare.py`:
+
+| capture | recording | orig keystrokes | replay verdict | identical |
+| --- | --- | --- | --- | --- |
+| corpus_det 40001 | GAME (2 775 turns) | 25 672 | **PASS_COMPLETE** | 25 672 |
+| corpus_det 40008 | GAME (2 325 turns) | 21 176 | **PASS_COMPLETE** | 21 176 |
+| corpus_v2 40001 | GAME | 25 672 | **PASS_COMPLETE** | 25 672 |
+| delay_probe 0.02 | GAME | 25 672 | **PASS_COMPLETE** | 25 672 |
+| delay_probe 0.01 | GAME | 25 687 | **PASS_COMPLETE** | 25 687 |
+| corpus_long 40002 | TRUNCATED (7 200 s cap) | 313 786 | PREFIX_ONLY | 313 786 |
+| corpus_det 40004 | TRUNCATED | 98 962 | PREFIX_ONLY | 98 962 |
+| corpus_det 40005 | TRUNCATED | 95 922 | PREFIX_ONLY | 95 922 |
+| corpus_v2 40004 | TRUNCATED | 94 058 | PREFIX_ONLY | 94 058 |
+| corpus_v2 40003 | TRUNCATED | 87 106 | PASS_CAPTURE | 87 106 |
+| corpus_v2 40006 | TRUNCATED | 85 101 | PREFIX_ONLY | 85 101 |
+| corpus_det 40002 | TRUNCATED | 84 892 | PREFIX_ONLY | 84 892 |
+| corpus_v2 40005 | TRUNCATED | 82 753 | PREFIX_ONLY | 82 753 |
+| corpus_v2 40002 | TRUNCATED | 78 763 | PREFIX_ONLY | 78 763 |
+
+**1 182 022 keystroke bytes of the original, 1 182 022 identical - 100.00 %, no
+divergence anywhere.**  Six of the fifteen recordings are complete games and
+all six are PASS_COMPLETE, first keystroke to last; the other nine are captures
+the wall clock cut short and each matches over its whole length, which is the
+best verdict a prefix can receive.  Evidence: `artifacts/gate_v2/`.
+
+Read it as "these fifteen recordings are reproduced", not "the port is
+equivalent".  The five complete games are 2 300-2 800 turns each; none is an
+ascension, and the longest capture (313 786 keystrokes, the bot still alive after
+two hours) is a prefix precisely because the interesting late game lies beyond
+it.
+
+### What it took
+
+The same fourteen captures scored 5 PASS + 1 PREFIX_ONLY + 8 DIVERGENCE before
+the day's work, the earliest divergence at 6.4 % of its stream.  Nine fixes, each
+found by measurement and each carrying a regression test or a reusable trace:
+
+1. **`Throw` marks the tile unconditionally** - the original passes the game
+   *atom* to `visible?`, so the guard is always true.  Reproduced as the upstream
+   bug it is; closed the class "the original does a `Look` the port does not".
+2. **`Discoveries` never forgets a name**, same atom-for-value shape.
+3. **Clojure set iteration order for `Monster` records** - `hostile-threats`
+   returns a PersistentHashSet and `find-first` over it picks the monster `fight`
+   baits.  `hasheq` implemented and verified against a JVM dump.
+4. **`map->Monster` materialises `awake` as nil** where the port's dict had no
+   key: 11 map entries instead of 12, a different hash, a different place in the
+   set.
+5. **The scraper chose one redraw too early** - an `(if …)` that is a clause of
+   an enclosing `or` returns a truthy Position, so the original waits for another
+   frame.  Invisible until a hallucination episode re-randomises every glyph per
+   redraw.
+6. **A one-character Clojure String is not a Character** and hashes differently,
+   so `put-in-what`'s menu answer reached NetHack in the wrong order.
+7. **`should-try?` applies its predicates to the item-*id* record**, not the
+   item, so a wand whose appearance was engrave-tested still counts as untried.
+   The port dropped the glass wand the original kept and then livelocked.  Found
+   only by the two-hour capture, 110 316 bytes in - past the end of every other
+   recording.
+8. **`FarLook`'s altar clause, the menu options map, `at`'s bounds assertion and
+   `:pre` failures escaping the delegator** - four fixes found by structural
+   audits rather than by a divergence, each neutral on all fourteen captures and
+   fixed because the next capture might not be.
+
+## 2e. Real games: playing to the end (2026-09-10)
+
+The replay gate answers "does the port send the same keystrokes".  It cannot
+answer the question the mission actually asks - **does the port play the game?**
+Those are different properties, and playing found six defects that fifteen
+byte-identical captures could not, because each is a property of the live
+dialogue with NetHack rather than of keystroke agreement:
+
+| # | defect | how it showed |
+| --- | --- | --- |
+| 1 | scraper deadlock on `In what direction do you want to dig?` | game froze at Dlvl 9 |
+| 2 | `quit-when-idle` not ported - the only recovery below the action layer | 1 game in 5 sat until the reader gave up |
+| 3 | a reader idle timeout the original does not have | killed 7 of 16 games *while the bot was thinking* |
+| 4 | `lastmsg-get` recording a cursor that was still on the topline | permanent deadlock |
+| 5 | `lastmsg+action` waiting unbounded on a poisoned position | permanent deadlock, always the deepest games |
+| 6 | `quit-when-stuck` raising instead of exiting | ended the best game on an exception |
+
+`tools/ascend_batch.sh` plays N games in waves; `tools/ascend_pool.sh` keeps
+every slot busy, which matters because a farming game runs for hours and a wave
+would leave the other slots idle for all of it.  Outcomes come from NetHack's own
+xlogfile.
+
+### What the bot achieves
+
+Two records exist and they are not the same population, so both are given with
+their source.  NetHack writes an xlogfile line only when the *game* ends; when
+the bot abandons a game instead, NetHack records nothing and only the bot's log
+attests to it.  Quoting one number from each without saying so - which an
+earlier draft of this file did - overstates the result.
+
+| | from NetHack's xlogfile | from the bot's own log |
+| --- | --- | --- |
+| games covered | 138 (games that ended *in NetHack*) | 107 (every game launched) |
+| deepest level | Dlvl 21 | **Dlvl 28** (dug through from 27) |
+| highest score | 120 050 | **15 669 164** |
+| longest game | 16 232 turns | 121 580 turns |
+| ascensions | **0** | **0** |
+
+The right reading: Dlvl 28 and the seven-figure scores are real and are attested
+by NetHack's own status line, which the scraper reads - but they belong to games
+that ended *without* a NetHack record, because the bot stopped rather than died.
+The xlogfile column is the stricter one, and it is the one to quote against
+another bot.
+
+The seven-figure scores are **sink farming**, an upstream strategy: `farm-sink`,
+`FarmAttack` and `farm-done?` in `bots/mainbot.clj`.  `farm-done?` releases the
+bot to descend at 15M points, or at 6M once it also holds a bag, six scrolls of
+remove curse, identify, reflection and AC below -10.  The port reproduces this:
+one game reached 9.9M and was observed pulling remove-curse scrolls out of its
+bag and reading identify - assembling exactly `farm-done?`'s checklist.  So the
+port reaches the phase the original credits for its own first win.
+
+### Three defects found by playing, not by replaying
+
+All three were invisible to a replay gate sitting at 100%, because the games the
+original recorded never reach the states that trigger them.  Listed by what they
+cost:
+
+| # | defect | how it showed | cost |
+| --- | --- | --- | --- |
+| 1 | `quit-when-idle` called the private REPL helper's logic instead of `unpause`, so the four ESCs that cancel NetHack's pending prompt were never sent | games hung, then quit themselves 50 s later | **17 games**, deepest Dlvl 18 |
+| 2 | `montype['name']` where the original writes `(:name montype)` - nil-safe on a String, which `montype` genuinely is | `TypeError`, caught by the delegator, farlook silently discarded | **3002 occurrences** |
+| 3 | `_strip_modifier` carried a `"saddled invisible "` clause `condp` does not have | a saddled invisible pony became `"pony"` instead of `"invisible pony"` | wrong monster identity |
+
+Defect 2 deserves its own note, because the surprise is upstream.  BotHack's
+`rank->monster` is `(comp by-rank-map string/lower-case)` and `by-rank-map` maps
+a player rank to a **role name String**, not a MonsterType.  So farlooking
+`a human or elf (vagrant)` makes `by-description` return `"caveman"`, the
+original stores that String as the monster's `:type`, and every later
+`(:tags (:type m))` quietly yields nil.  The port has to reproduce that, not
+correct it.
+
+Fixing 2 also **unmasked fourteen latent crashes**: `(m.get('type') or {})` is
+unsafe the same way, since a String is truthy and `.get` then raises.  They had
+never fired only because the TypeError aborted before the String was ever
+stored.  That was checked against the logs - no `AttributeError` appears in any
+of them - rather than assumed, and all fourteen now go through a nil-safe
+`monster.type_map`.
+
+Regression coverage was taken from the JVM, not from my reading of it: a new
+`monster-preds-desc` oracle case builds the monster through `by-description`
+instead of `name->monster`, which is the path the existing 1821 cases could
+never reach.  The port matches Clojure on all of it, including the vacuous
+`demon-lord: true` and `passive: true` that a String type produces.  The suite
+is now **1829/1829**.
+
+### How games end - the actual blocker
+
+`tools/ending_mix.py` classifies every game from the bot's own log, which is the
+half `tools/compare_realgames.py` cannot see:
+
+| ending | games | share |
+| --- | --- | --- |
+| death in NetHack | 52 | 48.6% |
+| bot quit: idle | 16 | 15.0% |
+| bot quit: stuck | 4 | 3.7% |
+| bot quit: no action chosen | 3 | 2.8% |
+| crash | 1 | 0.9% |
+| interrupted or still running | 31 | 29.0% |
+
+**Of the 76 games that actually finished, 32% ended because the bot gave up, not
+because it died.**
+
+(An earlier count put this at 35% by treating `unknown itemtype for item` as a
+crash.  It is not one: it is a faithful port of the original's own `log/error`
+at `itemid.clj:188`, which returns nil and lets play continue.  The port differs
+from it only in log shape - the original passes an `IllegalArgumentException`
+as the throwable argument and the appearance as the message - which changes no
+decision.)  That, and not the death rate, is what stands between this and
+an ascension - a game abandoned at Dlvl 17 was not lost to NetHack.
+
+### The idle-quits were one port defect, and it is fixed
+
+They looked at first like *decision* loops, because the last few actions before
+each quit repeat an action name.  Timestamping them says otherwise: in **all 17**
+the bot issues an action and then nothing is logged for 138-259 s, so these are
+I/O deadlocks, not loops.  (The repeated names are just a bot walking - 119
+distinct tiles in 138 `exploring` actions in one case.)
+
+One game had a ttyrec, and it settles the mechanism:
+
+* the bot dropped a lembas wafer on Odin's altar; it exploded - *"You are caught
+  in a blast of kaleidoscopic light!"* - and it was **hallucinating**;
+* under hallucination it read a glyph as a monster (`'type': None`) and attacked
+  it; the glyph was the temple priest.  *"Odin roars in anger"*, a bolt of
+  lightning, *"You are blinded by the flash!"*;
+* then silence.  NetHack was **not** dead: when the handler later wrote `#`, it
+  echoed it within milliseconds.  It was simply waiting for input;
+* the watchdog's scraper trace names the state: `lastmsg_action`, topline
+  `'# #'`.  The scraper was inside BotHack's ctrl-P last-message protocol,
+  waiting for a redraw; NetHack was waiting for a keystroke.  Deadlock.
+
+The recovery that exists for exactly this is `quit-when-idle`, and the port had
+it wrong.  The original (`main.clj:98`) does:
+
+```clojure
+(w "#") (unpause a) (Thread/sleep 50000) (when-not @chosen ... (q))
+```
+
+`(unpause a)` is `bothack.bothack/unpause`: reset the scraper, clear inhibition,
+**write ESC ESC ESC ESC** - called unconditionally.  The port had confused it
+with the private REPL helper `u` (no argument, adds a ctrl-R, conditional on
+inhibition), so it sent a ctrl-R and, whenever the bot was not inhibited - the
+ordinary case - **never sent the ESCs**.  The ESCs are the whole recovery: they
+cancel the prompt NetHack is holding.  Without them the unstick wrote `#`, got
+its echo, and changed nothing; 50 s later the handler gave up.
+
+Fixed in `pybothack/main.py`; `tests/test_idle_recovery.py` now asserts the four
+ESCs, the unconditional unpause and the scraper reset, and asserts that no
+ctrl-R is sent.  That test previously asserted the *opposite* on both counts -
+it had been written from the port instead of from the Clojure, so it passed
+while seventeen games were lost.
+
+Depths lost to it: 1, 3, 4, 4, 4, 5, 5, 5, 5, 8, 9, 10, 11, 17, 17, 18.
+
+The comparison against the original at equal volume is still worth having and is
+still the plan (`tools/ascend_pool_orig.sh`, `tools/compare_realgames.py`) - but
+this particular question no longer needs it, because the Clojure answered it
+directly.
+
 ## 3. Real games
 
 `tools/batch_py.sh` / `tools/batch_orig.sh`, 6 games each, 600 s of wall clock

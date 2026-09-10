@@ -25,17 +25,41 @@ game, the port must send the same keystrokes as the original, byte for byte,
 from the first to the last.  That is a binary, checkable property, unlike any
 statistic over played games.
 
-## 3. Where it stands
+## 3. Where it stands (updated 2026-09-09)
 
 | | |
 | --- | --- |
 | differential unit cases vs the live original | **1821/1821 identical** |
-| recordings of the original | 9 (1 381 – 8 559 actions) |
-| of those, with an **attested** end of game (`You die...`) | **5** (40001-40003, 40008, 40009) |
-| with an unattested end (cut off, or PTY error) | 4 (40004-40007) |
-| recordings reproduced **end to end** | **0 / 9** |
-| earliest divergence | 3.7 % of the stream (seed 40005) |
-| latest divergence | 93.4 % (seed 40009) |
+| Clojure-hash checks against a JVM dump | all green (`tests/test_clj_hash.py`) |
+| recordings replayed | **15** (two campaigns, one 2-hour capture, one long game, two delay probes) |
+| original keystroke bytes / identical | **1 182 022 / 1 182 022 (100.00 %)** |
+| recordings that are whole games | 6 |
+| of those, PASS_COMPLETE | **6 / 6** |
+| the other nine (wall clock cut the capture) | PASS_CAPTURE or PREFIX_ONLY over their whole length |
+| divergences | **none** |
+
+Full table in `docs/RESULTS.md` §2d, evidence in `artifacts/gate_v2/`.  The
+honest reading: fourteen recordings are reproduced, the port is *not* proven
+equivalent, and none of the captures is an ascension - the deepest and rarest
+parts of a game are exactly what they do not contain.  The longest capture is a
+prefix because the bot was still alive after two hours.
+
+Nine fidelity bugs have been found and fixed by measurement so far.  The four
+from 2026-09-08/09, which are the instructive ones:
+
+* `Throw` and `Discoveries` pass the game **atom** where a function wants the
+  map, so a guard is always true and a `difference` is always nil.  Reproduced,
+  not repaired.  `tools/audit_atom_args.py` scans for the class.
+* Clojure **set iteration order** for `Monster` records decides which monster
+  `fight` baits.  `hasheq` for records is implemented and checked against a JVM
+  dump; two traps in it (`hashCombine`'s arithmetic shift, `map->Monster`
+  materialising omitted fields as nil) only showed up against real values.
+* The **scraper decided one redraw too early**: an `(if ...)` that is a clause of
+  an enclosing `or` returns a truthy Position, so the original waits for another
+  frame.  Invisible until a hallucination episode re-randomises every glyph per
+  redraw.
+* A **one-character Clojure String is not a Character** and hashes differently,
+  so `put-in-what`'s menu answer reached NetHack in the wrong order.
 
 Five real fidelity bugs were found and fixed in the session that produced this
 document: `seek-fountain` (the port never dipped for Excalibur), monster-map
