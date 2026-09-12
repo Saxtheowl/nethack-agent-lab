@@ -6,6 +6,7 @@ synchronization mechanism with NetHack (the "##'" marker trick) and is
 reproduced here step for step.
 """
 import collections
+import time
 import logging
 import re
 
@@ -754,15 +755,24 @@ LASTMSG_WAIT_LIMIT = 40
 
 def recent_transitions():
     """The ring buffer as formatted lines, oldest first."""
-    return ["%-16s cursor=(%2d,%2d) topline=%r" % row for row in RECENT]
+    now = time.time()
+    return ["%7.1fs ago  %-16s cursor=(%2d,%2d) topline=%r"
+            % (now - r[4], r[0], r[1], r[2], r[3]) for r in RECENT]
 
 
 def _apply_scraper(orig_scraper, delegator, frame):
     current = orig_scraper if orig_scraper else new_scraper(delegator)
     nxt = current(frame)
     nxt = nxt if callable(nxt) else current
+    # Timestamped: a dump of RECENT is only useful if the reader can tell which
+    # transitions happened *after* the event being investigated.  Without this,
+    # a 60-entry deque read at the end of quit-when-idle's grace window cannot
+    # distinguish "the scraper recovered and the bot still chose nothing" from
+    # "the scraper never moved" - which is exactly the question the dump exists
+    # to answer, and it went unanswered twice for want of a clock.
     RECENT.append((getattr(nxt, '__name__', str(nxt)),
-                   frame.cursor.x, frame.cursor.y, topline(frame)[:46]))
+                   frame.cursor.x, frame.cursor.y, topline(frame)[:46],
+                   time.time()))
     return nxt
 
 

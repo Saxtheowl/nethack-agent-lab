@@ -57,6 +57,63 @@ deliberate improvement*, when the original was already doing it - and doing more
 besides.  A deviation claimed without re-reading the Clojure it deviates from is
 just an unexamined bug.
 
+## Undocumented divergences found on 2026-09-10, and one still open
+
+### Fixed: a third `farm-done?` threshold the original does not have
+
+`farm_done` carried an invented arm:
+
+```python
+if score > 10_000_000 and turn > 75_000:
+    return True
+```
+
+The original has exactly three: wiztower branch known, `score > 15M`, or
+`score > 6M` with the full consumable checklist.  The comment that came with it
+argued in strategic terms - a farm that has already paid for itself should not
+sit on its sink waiting for a missing consumable.  That may even be good play.
+It is still a **gameplay decision**, and inheriting those rather than improving
+on them is the whole point of this port.  It is not the same class as the two
+scraper deviations above, which break deadlocks in which the game cannot
+proceed at all.
+
+It was not hypothetical: `game9` ended at **14 770 000 points on turn 74 993**,
+seven turns and 230 000 points short of the invented threshold.  The JVM was
+asked directly and answers `farm-done: false` for that exact state, and for
+`score 12M / turn 80000`.  The port now agrees.
+
+Removed, and covered: `tools/cljcmp/oracle.clj` gained a `farm-done` case that
+builds a whole game state (score, turn, wishes, AC, genocided set, branches,
+inventory) and ten states exercise it, two of them aimed at the invented
+threshold's zone.  Suite is **1839/1839**.
+
+Why it survived so long is the part worth keeping: the differential suite's
+1829 earlier cases are all item and monster *predicates*.  No strategic decision
+function was covered by anything, and `farm-done?` is among the most
+consequential the bot makes.
+
+### Open: defensive guards where the original throws
+
+A sweep of every numeric literal in `mainbot` found no other invented threshold.
+It did surface a different class, in `desired-food` / `nw-ratio-avg`:
+
+| situation | original | port |
+| --- | --- | --- |
+| no food carried | nil | `None` - matches |
+| food carried, total weight 0 | `(/ n 0)` **throws** | returns `None` |
+| an unidentified food with no weight | `(+ nil res)` **NPEs** | reads `or 0` |
+| `min-nw` nil reaching the comparison | `(> x nil)` **throws** | falls back to `24` |
+
+The port is systematically more defensive here.  Reproducing the original means
+reintroducing exceptions - which the delegator catches, aborting the handler,
+exactly as it does for the `unknown itemtype` error already reproduced
+elsewhere.  **This has not been done**, and the reason is scheduling rather than
+judgement: it was found with a nine-hour game in Gehennom and live pools on the
+machine, and destabilising those for a divergence that only affects food
+selection is a bad trade tonight.  It is recorded here rather than quietly left
+out, and no claim is made that the guards elsewhere in the port have been
+audited for the same pattern - they have not.
+
 ## Differences that are known and measured
 
 * **Handler priority ties.**  `clojure.data.priority-map` iterates

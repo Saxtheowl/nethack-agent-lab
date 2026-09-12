@@ -116,6 +116,23 @@ def _quit_when_idle(bh):
                 logging.exception("unstuck write failed")
             time.sleep(stop_wait)
             if not chosen[0] and not bh._stop:
+                # The unstick failed.  Dump the scraper's transitions *now*,
+                # because the watchdog's own dump fires on its own clock and
+                # landed in the same second as the unstick last time - which
+                # made it look like evidence about the grace window when it
+                # covered none of it.  This is the only window in which the
+                # residual failure is observable: NetHack answered the `#` and
+                # redrew (the ttyrec proves it) and the bot still never moved.
+                try:
+                    from .scraper import recent_transitions
+                    sys.stderr.write(
+                        "=== unstick failed after %.0fs, scraper trace:\n"
+                        % stop_wait)
+                    for line in recent_transitions():
+                        sys.stderr.write("    %s\n" % line)
+                    sys.stderr.flush()
+                except Exception:                         # noqa: BLE001
+                    logging.exception("could not dump scraper trace")
                 logging.error("3+ min idle - quitting")
                 _quit(bh)
                 return

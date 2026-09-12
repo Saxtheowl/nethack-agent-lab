@@ -587,3 +587,35 @@ RANK_DESCRIPTIONS = [
     "evoker",            # wizard
     "footpad",           # rogue
 ]
+
+
+#: `farm-done?` decides when the bot stops pudding farming and resumes the route
+#: to the Amulet - one of the most consequential decisions it makes, and covered
+#: by nothing until a port-only third threshold (`score > 10M and turn > 75000`)
+#: was found in it.  The original has exactly three arms: wiztower branch known,
+#: score > 15M, or score > 6M with the full consumable checklist.
+#: Format: score|turn|wishes|ac|genocided|branches|slot:label;...
+_KIT = ("a:a bag of holding;b:6 scrolls of remove curse;c:a scroll of identify;"
+        "d:7 wax candles;e:a ring of levitation;f:a shield of reflection;"
+        "g:a cloak of magic resistance")
+FARM_DONE_CASES = [
+    # wiztower known -> done regardless of anything else
+    "0|0|0|10||wiztower|",
+    # unconditional score threshold
+    "15000001|1000|0|10|||",
+    "15000000|1000|0|10|||",          # boundary: strictly greater
+    # THE INVENTED CLAUSE'S ZONE: score > 10M and turn > 75000, no checklist.
+    # The original says no; a port that "helpfully" gives up farming says yes.
+    "12000000|80000|0|10|||",
+    "14770000|74993|0|10|||",         # game9's actual final state
+    # 6M arm, full checklist, three wishes
+    "7000000|1000|3|10||castle|" + _KIT,
+    # 6M arm via the levi/mr/reflection/ac path at high turn count
+    "7000000|66000|0|-11||castle|" + _KIT,
+    # same but AC not low enough
+    "7000000|66000|0|-9||castle|" + _KIT,
+    # missing the remove-curse scrolls
+    "7000000|1000|3|10||castle|a:a bag of holding;c:a scroll of identify",
+    # below every threshold
+    "5999999|90000|3|-20||castle|" + _KIT,
+]

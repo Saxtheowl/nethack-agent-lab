@@ -20,6 +20,7 @@ from tests.differential_cases import (BOTLS, ITEM_LABELS,        # noqa: E402
                                       INVORDER_CASES, MAPORDER_CASES,
                                       MENU_CASES,
                                       INVENTORY_CASES,
+                                      FARM_DONE_CASES,
                                       NAV_CASES, RANK_DESCRIPTIONS, STRENGTHS,
                                       TILE_CASES, TRAP_NAMES)
 from pybothack import item as pyitem                             # noqa: E402
@@ -31,6 +32,13 @@ from pybothack import scraper as pyscraper                       # noqa: E402
 from pybothack import util as pyutil                             # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def op_arg_split(arg, n):
+    """Split on "|" into exactly n fields, padding with "" like Clojure's
+    (string/split s #"\\|" n) which drops trailing empties."""
+    parts = arg.split('|')
+    return (parts + [""] * n)[:n]
 
 
 def cases():
@@ -49,6 +57,8 @@ def cases():
         out.append(("monster-preds", m))
     for d in RANK_DESCRIPTIONS:
         out.append(("monster-preds-desc", d))
+    for c in FARM_DONE_CASES:
+        out.append(("farm-done", c))
     for t in TILE_CASES:
         out.append(("infer-feature", t))
     for pos, rows in FOV_MAPS:
@@ -435,6 +445,32 @@ def python_answer(op, arg):
             "enchantment": pyitem.enchantment(i),
             "utility": pymainbot.utility(i),
         })
+    if op == "farm-done":
+        from pybothack.game import new_game
+        from pybothack.clj import assoc, assoc_in
+        from pybothack.bots.mainbot import farm_done
+        from pybothack.level import new_level
+        from pybothack.item import label_to_item
+        sc, tn, wi, ac, geno, brs, invspec = (op_arg_split(arg, 7))
+        inv = {}
+        for e in [x for x in invspec.split(';') if x]:
+            sl, lbl = e.split(':', 1)
+            inv[sl[0]] = label_to_item(lbl)
+        brset = set(x for x in brs.split(',') if x)
+        game = new_game()
+        game = assoc(game, 'dlvl', "Dlvl:5", 'branch-id', 'main',
+                     'turn', int(tn), 'turn*', int(tn), 'score', int(sc),
+                     'wishes', int(wi),
+                     'genocided', frozenset(x for x in geno.split(',') if x))
+        game = assoc_in(game, ['player', 'ac'], int(ac))
+        game = assoc_in(game, ['player', 'inventory'], inv)
+        if 'castle' in brset:
+            lv = assoc(new_level("Dlvl:30", 'main'), 'tags', frozenset({'castle'}))
+            game = assoc_in(game, ['dungeon', 'levels', 'main', "Dlvl:30"], lv)
+        if 'wiztower' in brset:
+            game = assoc_in(game, ['dungeon', 'levels', 'wiztower', "Dlvl:35"],
+                            new_level("Dlvl:35", 'wiztower'))
+        return jsn({"farm-done": bool(farm_done(game))})
     if op == "monster-preds-desc":
         # `by_description` returns a plain str for a player rank, and FarLook
         # stores it as the monster's :type.  Clojure's keyword lookup is

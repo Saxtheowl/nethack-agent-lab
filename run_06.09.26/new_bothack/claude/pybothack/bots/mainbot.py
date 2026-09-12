@@ -262,10 +262,20 @@ def have_throwable(game):
 def castle_plan_b(game):
     player = game['player']
     level = curlvl(game)
+    # (or (not (have-levi game))
+    #     (not-any? (:genocided game) #{";" "electric eel"})
+    #     (not (reflection? game)))
+    #
+    # `(not-any? pred coll)` with the genocided *set* as the predicate is true
+    # only when NEITHER ";" nor "electric eel" has been genocided.  This port
+    # carried a fourth clause - `";" not in genocided` - with no counterpart
+    # upstream: a leftover from a first attempt at `not-any?`, and implied by
+    # the real one.  Inside an `or` an extra clause can only make the guard
+    # fire more often, so castle-plan-b would engage when ";" was ungenocided
+    # but the eel was genocided, where the original declines.
     if not ('castle' in level['tags'] and player['x'] < 13
             and not any(walkable(at(level, 13, y)) for y in (11, 12, 13))
             and (not have_levi(game)
-                 or not all(g in game['genocided'] for g in (";",))
                  or not any(g in game['genocided']
                             for g in (";", "electric eel"))
                  or not reflection(game))):
@@ -2599,6 +2609,17 @@ def farm_done(game):
         return True
     if (game.get('score') or 0) > 15000000:
         return True
+    # There is NO third threshold here.  A previous version of this port added
+    # `score > 10M and turn > 75000 -> done`, reasoning that a farm which had
+    # already paid for itself should not sit on its sink forever waiting on a
+    # missing consumable.  That reasoning may even be right, but it is a
+    # *gameplay* decision and the original does not make it: farm-done? has
+    # exactly the three arms above (wiztower branch known, score > 15M, or
+    # score > 6M with the full checklist).  Deciding when to stop farming is
+    # precisely the kind of judgement this port must inherit rather than
+    # improve on, and it is not in the same class as the two scraper
+    # deviations in docs/LIMITATIONS.md, which break deadlocks rather than
+    # change strategy.
     return bool(
         (game.get('score') or 0) > 6000000
         and (game['wishes'] >= 3

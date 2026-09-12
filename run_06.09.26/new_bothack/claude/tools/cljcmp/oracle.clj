@@ -355,6 +355,37 @@
                                       (string/split e #","))]]
                  (bothack.position/position x y))]
         (jsn (vec (for [p (seq (set ps))] [(:x p) (:y p)]))))
+      "farm-done"
+      ;; "<score>|<turn>|<wishes>|<ac>|<genocided csv>|<branches csv>|<slot:label;...>"
+      ;; farm-done? decides when the bot stops pudding farming and resumes the
+      ;; route to the Amulet.  No test covered it, and the port had grown a
+      ;; third threshold that the original does not have.
+      (let [[sc tn wi ac geno brs invspec] (string/split arg #"\|" 7)
+            inv (into {} (for [e (remove empty? (string/split (or invspec "") #";"))
+                               :let [[sl lbl] (string/split e #":" 2)]]
+                           [(first sl) (item/label->item lbl)]))
+            brset (set (remove empty? (string/split (or brs "") #",")))
+            game (-> (#'bothack.game/new-game)
+                     (assoc :dlvl "Dlvl:5" :branch-id :main
+                            :turn (Integer/parseInt tn)
+                            :turn* (Integer/parseInt tn)
+                            :score (Integer/parseInt sc)
+                            :wishes (Integer/parseInt wi)
+                            :genocided (set (remove empty?
+                                              (string/split (or geno "") #","))))
+                     (assoc-in [:player :ac] (Integer/parseInt ac))
+                     (assoc-in [:player :inventory] inv))
+            game (if (brset "castle")
+                   (assoc-in game [:dungeon :levels :main "Dlvl:30"]
+                             (-> (bothack.level/new-level "Dlvl:30" :main)
+                                 (assoc :tags #{:castle})))
+                   game)
+            game (if (brset "wiztower")
+                   (assoc-in game [:dungeon :levels :wiztower "Dlvl:35"]
+                             (bothack.level/new-level "Dlvl:35" :wiztower))
+                   game)]
+        (jsn {"farm-done" (boolean
+                            ((resolve 'bothack.bots.mainbot/farm-done?) game))}))
       "inventory-logic"
       ;; "<slot>:<label>;...||<candidate label>;..."
       (let [[invspec cands] (string/split arg #"\|\|" 2)

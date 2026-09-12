@@ -1,0 +1,14 @@
+{
+ ;; Real games: no wizard mode, no human intervention, run until the game ends.
+ ;;
+ ;; The difference from shell-config.edn is `:no-exit`, which is absent here.
+ ;; With `:no-exit true` the framework skips quit-when-idle, quit-when-looping
+ ;; and quit-when-stuck - in the original as well as the port - so a bot that
+ ;; deadlocks on a prompt it cannot classify simply sits there.  That flag
+ ;; exists for comparison runs, where the harness owns the process lifetime; it
+ ;; is the wrong setting for a game that is supposed to reach an outcome.
+ :bot "mainbot"
+ :ttyrec true
+ :interface :shell
+ :nh-command "/home/roro/work/projects/super_nethack/run_06.09.26/new_bothack/codex_2/tools/nethack.sh"
+}

@@ -372,12 +372,12 @@ null
 "high priest"
 "Woodland-elf"
 "gnome"
-ERR class java.lang.IllegalArgumentException Failed to parse monster description: a mimic or a strange object @ bothack.montype$by_description.invoke(montype.clj:620) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2360.invoke(oracle.clj:587) <- cljcmp.oracle$_main.doInvoke(oracle.clj:587) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init5860083549718671667.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
-ERR class java.lang.IllegalArgumentException Failed to parse monster description: the ghost of Bob @ bothack.montype$by_description.invoke(montype.clj:620) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2360.invoke(oracle.clj:587) <- cljcmp.oracle$_main.doInvoke(oracle.clj:587) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init5860083549718671667.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
+ERR class java.lang.IllegalArgumentException Failed to parse monster description: a mimic or a strange object @ bothack.montype$by_description.invoke(montype.clj:620) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2380.invoke(oracle.clj:618) <- cljcmp.oracle$_main.doInvoke(oracle.clj:618) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init7195959243764022970.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
+ERR class java.lang.IllegalArgumentException Failed to parse monster description: the ghost of Bob @ bothack.montype$by_description.invoke(montype.clj:620) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2380.invoke(oracle.clj:618) <- cljcmp.oracle$_main.doInvoke(oracle.clj:618) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init7195959243764022970.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
 "Norn"
 "guardian naga hatchling"
 "aligned priest"
-ERR class java.lang.IllegalArgumentException Failed to parse monster-of description: a minion of Huhetotl @ bothack.montype$by_description.invoke(montype.clj:603) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2360.invoke(oracle.clj:587) <- cljcmp.oracle$_main.doInvoke(oracle.clj:587) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init5860083549718671667.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
+ERR class java.lang.IllegalArgumentException Failed to parse monster-of description: a minion of Huhetotl @ bothack.montype$by_description.invoke(montype.clj:603) <- cljcmp.oracle$answer.invoke(oracle.clj:63) <- cljcmp.oracle$_main$fn__2380.invoke(oracle.clj:618) <- cljcmp.oracle$_main.doInvoke(oracle.clj:618) <- clojure.lang.RestFn.invoke(RestFn.java:397) <- clojure.lang.Var.invoke(Var.java:375) <- user$eval5.invoke(form-init7195959243764022970.clj:1) <- clojure.lang.Compiler.eval(Compiler.java:6703)
 "large mimic"
 "soldier ant"
 null
@@ -465,6 +465,16 @@ null
 {"amphibious":false,"corrosive":false,"demon-lord":true,"drowner":false,"flies":false,"follower":false,"ignores-e":false,"mindless":false,"passive":true,"sees-invisible":false,"shopkeeper":false,"slow":false,"type-is-string":true,"typename":"","unique":false,"werecreature":false}
 {"amphibious":false,"corrosive":false,"demon-lord":true,"drowner":false,"flies":false,"follower":false,"ignores-e":false,"mindless":false,"passive":true,"sees-invisible":false,"shopkeeper":false,"slow":false,"type-is-string":true,"typename":"","unique":false,"werecreature":false}
 {"amphibious":false,"corrosive":false,"demon-lord":true,"drowner":false,"flies":false,"follower":false,"ignores-e":false,"mindless":false,"passive":true,"sees-invisible":false,"shopkeeper":false,"slow":false,"type-is-string":true,"typename":"","unique":false,"werecreature":false}
+{"farm-done":true}
+{"farm-done":true}
+{"farm-done":false}
+{"farm-done":false}
+{"farm-done":false}
+{"farm-done":true}
+{"farm-done":false}
+{"farm-done":false}
+{"farm-done":false}
+{"farm-done":false}
 {"boulder":false,"color":null,"diggable":false,"door":false,"dug":false,"feature":"floor","glyph":".","item":false,"item-glyph":"","monster":false,"new-items":false,"seen":false,"transparent":true,"trap":false,"walkable":true}
 {"boulder":false,"color":"cyan","diggable":false,"door":false,"dug":false,"feature":"ice","glyph":".","item":false,"item-glyph":"","monster":false,"new-items":false,"seen":false,"transparent":true,"trap":false,"walkable":true}
 {"boulder":false,"color":"brown","diggable":false,"door":false,"dug":false,"feature":"drawbridge-lowered","glyph":".","item":false,"item-glyph":"","monster":false,"new-items":false,"seen":false,"transparent":true,"trap":false,"walkable":true}

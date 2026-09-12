@@ -181,6 +181,18 @@ all six are PASS_COMPLETE, first keystroke to last; the other nine are captures
 the wall clock cut short and each matches over its whole length, which is the
 best verdict a prefix can receive.  Evidence: `artifacts/gate_v2/`.
 
+> **Re-verification status (2026-09-11).**  The 1 182 022-byte figure was
+> measured **before** the six fidelity fixes of 2026-09-10 (`unpause`,
+> `kw`/nil-safe monster type, `_strip_modifier`, `castle_plan_b`, the invented
+> `farm_done` threshold, and the 14 `type_map` sites).  Re-run against the
+> current code: **13 of the 15 captures, 842 549 / 842 549 bytes, 100.00 %, 0
+> divergences** (5 PASS_COMPLETE, 7 PREFIX_ONLY at their full recorded length,
+> 1 PASS_CAPTURE).  The two not re-measured are the longest captures, which
+> exceeded a 2400 s cap while another workspace's games shared the machine -
+> a timeout, not a failure; `corpus_long_seed40002` returned PREFIX_ONLY
+> 313 786/313 786 in the original campaign.  So: no fidelity regression from
+> any of the six fixes, on every capture that produced a verdict.
+
 Read it as "these fifteen recordings are reproduced", not "the port is
 equivalent".  The five complete games are 2 300-2 800 turns each; none is an
 ascension, and the longest capture (313 786 keystrokes, the bot still alive after
@@ -251,11 +263,17 @@ earlier draft of this file did - overstates the result.
 
 | | from NetHack's xlogfile | from the bot's own log |
 | --- | --- | --- |
-| games covered | 138 (games that ended *in NetHack*) | 107 (every game launched) |
-| deepest level | Dlvl 21 | **Dlvl 28** (dug through from 27) |
+| games covered | 161 (games that ended *in NetHack*) | 139 (every game launched) |
+| deepest level | Dlvl 21 | **Dlvl 39** (`pool_f/game2`, in Gehennom) |
 | highest score | 120 050 | **15 669 164** |
-| longest game | 16 232 turns | 121 580 turns |
+| longest game | 17 478 turns | 121 580 turns |
 | ascensions | **0** | **0** |
+
+Counts refreshed 2026-09-11 with the neighbouring workspace's games excluded
+(see the correction below).  The **maxima did not move**: no foreign game had set
+any record, so only the totals and the longest-game figure were stale.  The
+bot-log column's depth is now 39 rather than 28 because `pool_f/game2` went
+past the Castle.
 
 The right reading: Dlvl 28 and the seven-figure scores are real and are attested
 by NetHack's own status line, which the scraper reads - but they belong to games
@@ -304,6 +322,253 @@ instead of `name->monster`, which is the path the existing 1821 cases could
 never reach.  The port matches Clojure on all of it, including the vacuous
 `demon-lord: true` and `passive: true` that a String type produces.  The suite
 is now **1829/1829**.
+
+### Both bots, played at volume, in the same environment
+
+`tools/compare_realgames.py`, reading NetHack's own xlogfile - written by the
+game, not by either bot or by this harness:
+
+| | original | port |
+| --- | --- | --- |
+| games recorded | 12 | 161 |
+| ascensions | **0** | **0** |
+| median Dlvl | 8 | 6 |
+| p90 Dlvl | 14 | 9 |
+| max Dlvl | 19 | **21** |
+| median score | 11 772 | 4 212 |
+| median turns | 5 393 | 3 408 |
+
+**Corrected on 2026-09-11.**  An earlier version of this table read 11 vs 156
+games with identical medians of 6, and concluded "the port is not
+underperforming the original".  Two things were wrong with it.
+
+NetHack writes its xlogfile to a path fixed at compile time, and a neighbouring
+workspace on this machine shares that destination for some runs.  **19 of the
+lines were not ours**, and since `compare_realgames.py` counted anything without
+an `orig` prefix as the port, they were being reported as the port's.  The tool
+now excludes them by player-name prefix and prints how many it dropped.
+
+With that fixed the medians are 8 against 6, not 6 against 6 - so the earlier
+conclusion was not supported.  Nor is its opposite: n=12 is far too small (the
+tool warns below twenty), and one extra original game moved the median from 6 to
+8, which is itself the measure of how unstable the figure is.  The populations
+are also not comparable: the port's 161 games span its whole history, including
+the 17 lost to the `unpause` defect - disproportionately the *deep* ones - games
+killed by pool restarts, and everything before the five fidelity fixes.  The
+port is measured with its bugs in; the original is not.
+
+The honest statement is that **this comparison is not yet conclusive in either
+direction**.
+
+### What an ascension actually costs, in the author's own words
+
+Worth stating plainly, because it sets the expectation for "run until it
+ascends".  From BotHack's README:
+
+* *27.12.2014* - "can reach the castle fairly regularly ... eventually dying to
+  Orcus-spawned Demogorgon";
+* *25.1.2015* - pudding farming landed and the bot "has **finally** managed to
+  win the game" - one win, after months;
+* *22.6.2015* - the two tournament ascensions were by "**slightly modified**
+  versions" of the bot.
+
+And `doc/issues.md` lists a long tail of *terminal* states in the ascension run:
+reaching the castle without a wand of striking, failing to uncurse the
+invocation artifacts, missing a ring of levitation for Rodney's tower, farming
+broken by a trapdoor or a djinni at the sink.  Each ends a run that has already
+cost hours.
+
+So an ascension is a rare event **for the original too**, and neither bot here
+has produced one in 167 games.  Nothing in the data so far distinguishes the
+port from the original on that axis; what distinguishes them is that only one of
+them has 156 games behind it.
+
+One line in that file is direct corroboration of today's `unpause` fix: *"very
+rarely the scraper gets stuck in unusual situations (eg. many potions breaking
+during farming). ... the auto-unstuck mechanism after 3 idle minutes usually
+fixes the situation however."*  That auto-unstuck is exactly `quit-when-idle`
+calling `unpause`, and "usually fixes the situation" is the behaviour the port
+was missing.
+
+### The unstick fix, measured in real play
+
+Two unsticks fired in the first pool run after the fix.  They disagree, and the
+disagreement is the useful part:
+
+| game | outcome | evidence |
+| --- | --- | --- |
+| `pool_f/game2` | **recovered** | unstick at 17:34:50, `unpaused`, then **11 375 further actions** and no idle-quit |
+| `pool_f/game1` | not recovered | same hallucination trigger, unstick fired, 0 actions after, quit 50 s later |
+
+Under the old code `game2` was a lost game, so the fix does what it was meant to
+do.  One in two is also exactly the author's own claim for this mechanism -
+*"the auto-unstuck mechanism after 3 idle minutes **usually** fixes the
+situation"* (`doc/issues.md`).
+
+`game1`'s trigger is worth recording because it is precise: the bot sent `;`
+(farlook), NetHack answered **"Pick an object."**, and *while that prompt was
+open* a gas spore exploded - "You feel an unseen monster!  It explodes!  You are
+caught in a blast of kaleidoscopic light!" - leaving it hallucinating mid-prompt.
+That is the same class the author lists as the framework's own residual bug:
+*"very rarely the scraper gets stuck in unusual situations (eg. many potions
+breaking during farming)"*.
+
+**Why it did not recover is unresolved.**  The ttyrec shows NetHack answering
+the unstick's `#` and sending a full redraw within milliseconds, so the game was
+recoverable at the NetHack end and the four ESCs did cancel the prompt.  What
+the bot did with that redraw is not known: the watchdog's scraper dump fires on
+its own 120 s clock and landed in the *same second* as the unstick, so it covers
+none of the 50 s grace window.  An earlier draft of this section read that dump
+as proof the scraper processed nothing - it is not evidence either way.
+
+`_quit_when_idle` now dumps the scraper trace itself at the end of the grace
+window, immediately before giving up, so the next occurrence is diagnosable
+rather than inferred.
+
+### Did the fix move the abandonment rate?  Not demonstrably, yet.
+
+`tools/ending_mix.py`, split at the fix:
+
+| | before (pools a/b/c + ascend_run*) | after (pools e/f) |
+| --- | --- | --- |
+| games finished | 67 | 17 |
+| ended in NetHack | 66% | 82% |
+| **abandoned by the bot** | **34%** (23) | **18%** (3) |
+
+The direction is right and it agrees with the mechanism evidence above.  It is
+also **not statistically significant**: Fisher's exact test on 23/67 against
+3/17 gives **p = 0.246**.  At a true rate of 18% it would take roughly **80**
+post-fix games to reach p < 0.05, against 17 so far.
+
+Stating it plainly because it would be easy to quote the 34% -> 18% and stop:
+that pair of percentages, on its own, is consistent with chance.  The evidence
+that the fix works is not the rate - it is `pool_f/game2`, where an unstick was
+followed by 11 375 further actions in a game the old code would have quit.  A
+mechanism observed once beats a proportion measured on seventeen samples, and
+the rate will become quotable only after the games accumulate.
+
+### Gehennom reached (2026-09-10, `pool_f/game2`)
+
+The deepest run of the campaign by a wide margin, and the first to leave the
+Dungeons of Doom.  Every step below is attested by a `Topline message:` line or
+a `dlvl changed` transition - the two log sources that are actually reliable
+here, as opposed to keyword counts over a file that embeds game-state dicts.
+
+| step | evidence |
+| --- | --- |
+| descended to Dlvl 30 (Castle) | `dlvl changed` chain |
+| got the Castle wand of wishing | `D - a wand of wishing (0:2)` |
+| recharged it twice, spent 16 wishes | "Your wand of wishing glows blue"; "You may wish for an object." x16 |
+| **survived a scraper deadlock** | unstick at 17:34:50, then **11 375 further actions** |
+| climbed 26 -> 14, swept the Quest end level (49 min) | `explore-level :quest :end` |
+| returned 14 -> 30 in six minutes | `dlvl changed` chain |
+| **fell through the Castle trapdoor** | "You float gently to the floor.  A trap door opens up under you!" |
+| **entered Gehennom** | "You arrive at the Valley of the Dead..." then "You are standing at the gate to Gehennom." |
+
+Two things this settles.
+
+**The port executes the Castle -> Gehennom transition.**  That is the stretch of
+code no test covers - no recording in the corpus goes near it - and it is where
+the `castle-plan-b` defect was found the same evening.
+
+**The levitation "oscillation" was the solution, not a failure.**  It was
+reported here as a probable wall: the bot alternating `puton 'need levi for next
+move'` with `remove "don't want levi"` for twenty minutes, with no watchdog able
+to see it.  That reading was wrong.  Crossing the Castle *requires* levitation
+to move and *forbids* it at the instant the trapdoor opens, so the alternation
+is the manoeuvre.  The bot completed it: "A trap door opens up under you!  You
+don't fall in" (levitating) became "You float gently to the floor" (levitation
+ended) and the fall followed in the same second.
+
+The error was structural, not incidental: a twenty-minute observation window was
+read as a permanent state.  The same mistake produced the "8 h with no unstick"
+claim from a watcher whose pool had died after 1 h 02, and the "reached the
+Castle" claim from 602 grep hits that were tile dumps.  Short windows and
+keyword counts have both now failed here; toplines and level transitions have
+not.
+
+Without the `unpause` fix made that morning, this game would have ended at
+17:34:50 like the seventeen before it.
+
+### How `pool_f/game2` ended, and what it identified
+
+Lost at **01:52 on 2026-09-11, Dlvl 40, turn 57 631, score 7 925 266, HP
+230/230, AC -30** - to `3+ min idle - quitting`, after nine hours and twenty
+minutes.  It did not die: it was abandoned while in perfect health.
+
+The ttyrec names the state, and it is more specific than the previous one.  The
+last frame before the 240 s silence ends with `\x1b[H# \x1b[K` - NetHack had
+**`# ` on the topline**, sitting at the extended-command prompt.  The scraper's
+last recorded state was `lastmsg_get`, whose guard is
+
+```clojure
+(when (and (= "# #" (topline frame)) (< (-> frame :cursor :y) 22)) ...)
+```
+
+exactly **two** `#`.  With one, the guard fails, the state returns nil, and it
+waits for a redraw that says something it will never say.
+
+The escape for that exact frame exists - in `marked`:
+
+```clojure
+(when (and (zero? (-> frame :cursor :y)) (before-cursor? frame "# '"))
+  (send delegator write (str esc esc))
+  initial)
+```
+
+and the port carries it verbatim.  But it is reachable only from `marked`, not
+from `lastmsg_get`, **in both implementations**.  So the deadlock is upstream,
+and it matches the author's own note: *"very rarely the scraper gets stuck in
+unusual situations ... the auto-unstuck mechanism after 3 idle minutes usually
+fixes the situation however."*
+
+Here it did not, and **why is still unknown**.  The unstick wrote `#`, called
+`unpause` (scraper to nil, inhibition cleared, ESC x4), NetHack answered and
+redrew - and the bot still chose no action in the 50 s that followed.
+
+The instrumentation added the previous evening to dump the scraper trace at the
+end of the grace window **produced nothing here, and the reason is my own
+oversight**: the process had been running since 16:30 and the edit landed around
+midnight, so Python was executing the old module.  Editing a source file does
+not reach a running interpreter.  It is armed for every game started since.
+
+What this run did establish, before it was lost: the port reaches Gehennom,
+fights its demon lords (Juiblex, put to flight at 23:06), and pursues Vlad's
+Tower level by level for the Bell of Opening - `trying to enter vlad from
+Dlvl:34/38/39/40`.  The ascension path works; this deadlock is what ends it.
+
+### The endgame path, audited by reading
+
+No test exercises the endgame: the differential suite covers item and monster
+predicates, and no recording in the corpus gets near the Castle.  With a live
+game approaching it, the ten endgame functions were compared against the Clojure
+by hand.
+
+**One real defect, in `castle-plan-b`.**  The original's guard is
+
+```clojure
+(or (not (have-levi game))
+    (not-any? (:genocided game) #{";" "electric eel"})
+    (not (reflection? game)))
+```
+
+The port carried a **fourth** clause, `";" not in genocided`, with no counterpart
+upstream - a leftover from a first attempt at `not-any?`, and implied by the real
+one.  Inside an `or` a surplus clause can only make the guard fire more often, so
+the port engaged plan B when `;` was ungenocided but the eel was genocided, where
+the original declines.  Fixed; suite still 1829/1829.
+
+**`offer-amulet` is faithful**, which matters because it is the last step of an
+ascension.  Checked case by case, including the `if-let` subtlety: upstream the
+"same alignment -> Offer" test is the *else* branch of the helm-of-opposite-
+alignment `if-let`, and the port reproduces all three outcomes.  `(some-> (have
+game real-amulet?) key ->Offer)` maps to `Offer(found[0])`.
+
+A note on method, because the first attempt was wasted.  Counting `or`/`and`
+tokens on both sides to spot arity mismatches flagged 8 of 10 functions and was
+pure noise: `(and a b c)` is one form in Clojure and two `and` tokens in Python,
+so the counts are not comparable.  The real defect was found by reading, and the
+counter would not have distinguished it from the noise.
 
 ### How games end - the actual blocker
 

@@ -14,12 +14,27 @@ import re, sys, collections
 
 ORIG_PREFIXES = ('origbot', 'origp', 'origsmk')
 
+#: NetHack writes its xlogfile to a path fixed at compile time, and a
+#: neighbouring workspace on this machine (codex_2) shares that destination for
+#: some of its runs.  Its games therefore land in *this* var/xlogfile and, since
+#: anything not matching ORIG_PREFIXES used to count as "the port", were being
+#: reported as ours.  Measured on 2026-09-11: 21 of 192 lines were not ours.
+#: Excluded by player-name prefix, with a count printed so the exclusion is
+#: visible rather than silent.
+FOREIGN_PREFIXES = ('codex', 'seed1009', 'patch2')
+
 def load(path):
-    rows = []
+    rows, foreign = [], 0
     for line in open(path):
         r = dict(kv.split('=', 1) for kv in line.strip().split(':') if '=' in kv)
         if 'name' in r and 'points' in r:
+            if r['name'].startswith(FOREIGN_PREFIXES):
+                foreign += 1
+                continue
             rows.append(r)
+    if foreign:
+        print("note: %d games excluded as another workspace's (prefixes %s)\n"
+              % (foreign, ", ".join(FOREIGN_PREFIXES)))
     return rows
 
 def side(name):

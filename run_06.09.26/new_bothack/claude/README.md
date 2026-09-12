@@ -67,6 +67,18 @@ here.  Where it stands:
   does the same at the same rate is **not yet settled**; `tools/ascend_pool_orig.sh`
   and `tools/compare_realgames.py` exist to settle it and are running;
 
+> **Re-verification status (2026-09-11).**  The 1 182 022-byte figure was
+> measured **before** the six fidelity fixes of 2026-09-10 (`unpause`,
+> `kw`/nil-safe monster type, `_strip_modifier`, `castle_plan_b`, the invented
+> `farm_done` threshold, and the 14 `type_map` sites).  Re-run against the
+> current code: **13 of the 15 captures, 842 549 / 842 549 bytes, 100.00 %, 0
+> divergences** (5 PASS_COMPLETE, 7 PREFIX_ONLY at their full recorded length,
+> 1 PASS_CAPTURE).  The two not re-measured are the longest captures, which
+> exceeded a 2400 s cap while another workspace's games shared the machine -
+> a timeout, not a failure; `corpus_long_seed40002` returned PREFIX_ONLY
+> 313 786/313 786 in the original campaign.  So: no fidelity regression from
+> any of the six fixes, on every capture that produced a verdict.
+
 The port makes **two deliberate deviations** from the original, both in the
 scraper's synchronisation path and both listed with their evidence at the top of
 `docs/LIMITATIONS.md`.  Each removes a state in which a live game hangs for good;
