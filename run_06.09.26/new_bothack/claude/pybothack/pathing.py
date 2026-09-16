@@ -1077,6 +1077,26 @@ def seek(game, smth, opts=None):
     return with_reason("seeking", res) if res else None
 
 
+def _tile_member(tiles):
+    """`(set tiles)` used as a predicate, which is what Clojure does here.
+
+    The original writes `(seek game (set (straight-neighbors level leader)) ...)`
+    and relies on a PersistentHashSet being callable: it tests membership.
+    Translating `set` literally raises `TypeError: unhashable type: 'dict'`,
+    because a tile is a dict in this port and dicts are not hashable, while
+    Clojure maps are.  That crash killed a 4h22 game at Dlvl 29 and ten others -
+    always the long ones, because this path is only reached on the quest level
+    with a leader still to greet.
+
+    Membership in Clojure is *structural* equality against the tiles as they
+    were when the set was built, so the snapshot is taken here and compared with
+    `==`, which is structural for dicts.  A tile that has since changed - the
+    hero walked onto it, say - no longer matches, exactly as upstream.
+    """
+    snapshot = [dict(t) for t in tiles]
+    return lambda t: any(t == s for s in snapshot)
+
+
 def _switch_dlvl(game, new_dlvl):
     if game['dlvl'] == new_dlvl or new_dlvl is None:
         return None
@@ -1089,7 +1109,8 @@ def _switch_dlvl(game, new_dlvl):
                 "switching within branch to", new_dlvl,
                 with_reason("trying to seek out quest leader at", leader,
                             "before descending",
-                            seek(game, set(straight_neighbors(level, leader)),
+                            seek(game, _tile_member(
+                                     straight_neighbors(level, leader)),
                                  {'explored': True})))
     branch = branch_key(game)
     level = curlvl(game)

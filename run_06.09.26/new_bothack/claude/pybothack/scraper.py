@@ -396,6 +396,7 @@ def _undrawn(frame, what):
 def new_scraper(delegator, no_mark_prompt=None):
     st = {'player': None, 'head': None, 'items': None, 'menu_nextpage': None,
           'lastmsg_waits': 0,
+          'lastmsg_since': None,
           'prev': (no_mark_prompt.strip()
                    if isinstance(no_mark_prompt, str) else None)}
 
@@ -654,7 +655,14 @@ def new_scraper(delegator, no_mark_prompt=None):
         # branch never fires on any recorded game of the original.
         if topline(frame) == "# #" and 0 < frame.cursor.y < 22:
             st['player'] = frame.cursor
-            st['lastmsg_waits'] = 0
+            # `lastmsg_waits` is deliberately NOT reset here.  It used to be,
+            # and that made the bound below unreachable: the observed stall is
+            # not the scraper sitting in `lastmsg+action`, it is the whole
+            # protocol cycling - lastmsg_get -> lastmsg+action -> sink ->
+            # marked -> lastmsg_clear -> lastmsg_get - so every lap cleared the
+            # counter.  Measured: "lastmsg stuck" was logged **zero** times
+            # across ~40 games containing 14 of these stalls.  A safeguard that
+            # has never fired is not a safeguard.
             delegator.send_write(ctrl('p'))
             return lastmsg_action
         return None
@@ -684,6 +692,10 @@ def new_scraper(delegator, no_mark_prompt=None):
             st['player'] = frame.cursor
             return None
         if frame.cursor == st['player']:
+            # a normal pass completed: this is the only place the wait is
+            # considered satisfied, so it is the only place the bound resets
+            st['lastmsg_waits'] = 0
+            st['lastmsg_since'] = None
             if not topline(frame).startswith("#"):
                 delegator.message(topline(frame))
             _emit_botl(delegator, frame)
@@ -712,10 +724,17 @@ def new_scraper(delegator, no_mark_prompt=None):
         # would.  Normal play never reaches the bound - the replay gate stays at
         # 1 182 022/1 182 022 identical keystrokes over fifteen recordings.
         st['lastmsg_waits'] += 1
-        if st['lastmsg_waits'] > LASTMSG_WAIT_LIMIT:
-            log.warning("lastmsg stuck for %d redraws (cursor=%r player=%r); "
-                        "proceeding", st['lastmsg_waits'], frame.cursor,
+        if st['lastmsg_since'] is None:
+            st['lastmsg_since'] = time.time()
+        waited = time.time() - st['lastmsg_since']
+        if (st['lastmsg_waits'] > LASTMSG_WAIT_LIMIT
+                or waited > LASTMSG_WAIT_SECONDS):
+            log.warning("lastmsg stuck for %d redraws / %.0fs "
+                        "(cursor=%r player=%r); proceeding",
+                        st['lastmsg_waits'], waited, frame.cursor,
                         st['player'])
+            st['lastmsg_waits'] = 0
+            st['lastmsg_since'] = None
             if not topline(frame).startswith("#"):
                 delegator.message(topline(frame))
             _emit_botl(delegator, frame)
@@ -751,6 +770,14 @@ RECENT = collections.deque(maxlen=60)
 
 #: see lastmsg_action
 LASTMSG_WAIT_LIMIT = 40
+
+#: Wall-clock companion to LASTMSG_WAIT_LIMIT.  The redraw count alone cannot
+#: see the failure that actually happens: the protocol cycles through
+#: lastmsg_get on every lap, and a per-state counter is meaningless when the
+#: state is re-entered.  A legitimate pass takes milliseconds, so twenty
+#: seconds is three orders of magnitude of headroom - replays finish whole
+#: games in less time than this, which is why the gate is unaffected.
+LASTMSG_WAIT_SECONDS = 20.0
 
 
 def recent_transitions():

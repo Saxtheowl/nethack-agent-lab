@@ -57,6 +57,54 @@ deliberate improvement*, when the original was already doing it - and doing more
 besides.  A deviation claimed without re-reading the Clojure it deviates from is
 just an unexamined bug.
 
+## The `lastmsg` wait bound never fired (found and fixed 2026-09-12)
+
+The second deviation in the table above - "gives up after `LASTMSG_WAIT_LIMIT`
+(40) redraws and proceeds" - **had never once fired**.  `lastmsg stuck` appears
+zero times across ~40 real games containing 14 of exactly the stall it was
+written for.  It was described here as a safeguard for two days while being
+inert.
+
+The reason: the counter was reset in `lastmsg_get`, and the stall is not the
+scraper sitting in `lastmsg+action`.  It is the **whole protocol cycling** -
+`lastmsg_get -> lastmsg+action -> sink -> marked -> lastmsg_clear ->
+lastmsg_get` - so every lap cleared the count.  A per-state counter is
+meaningless when the state is re-entrant, which is the general lesson.
+
+Measured cost of the inert bound: **37 % of games abandoned**, and the hazard
+grows sharply with duration - 0 % of games under 30 minutes, 54 % between one
+and three hours, **92 % beyond three hours**.  Since an ascension needs 13-20
+hours of play, this was the binding constraint on the whole campaign, not
+throughput.  It is also what ended `pool_f/game2` at Dlvl 40 in Gehennom with
+HP 230/230.
+
+Fixed three ways:
+
+* the counter is no longer reset in `lastmsg_get`, only on a normal exit to
+  `sink`;
+* a wall-clock bound (`LASTMSG_WAIT_SECONDS = 20`) sits beside the redraw count,
+  because a reentrant state needs a clock rather than a tally.  A legitimate pass
+  takes milliseconds - three orders of magnitude of headroom, and a whole replay
+  finishes in less than the bound, which is why no recorded game can reach it;
+* `tests/test_lastmsg_bound.py` walks the protocol's real route with real
+  `Frame` objects, reproduces the `player` poisoning from a stale `"# #"` frame,
+  and asserts the bound fires.  Written because the previous bound's failure was
+  precisely that nobody had ever watched it fire.
+
+Gate after the change: **4 of 4 fast captures PASS_COMPLETE, 0 divergences**.
+
+### What is not yet established
+
+That this resolves the stalls.  One trace (`pool_g/game15`) shows the scraper
+cycling normally and **reaching `sink`** - so frames were reaching the bot -
+while no action was chosen for three minutes.  If that case dominates, the
+problem is in the decision layer and a scraper bound will not touch it.  The two
+could not be separated because `RECENT` carried no timestamps when those traces
+were taken; it does now, so the next stall will say which.
+
+The validation criterion is a game passing **six hours without abandonment**,
+that being the duration band where 92 % were previously lost.
+
 ## Undocumented divergences found on 2026-09-10, and one still open
 
 ### Fixed: a third `farm-done?` threshold the original does not have

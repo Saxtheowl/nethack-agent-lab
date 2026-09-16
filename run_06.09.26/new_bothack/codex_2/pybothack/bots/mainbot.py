@@ -1377,6 +1377,7 @@ def retreat(game):
     if (res is None
             and any(not m.get('fleeing') and not passive(m)
                     for m in adjacent_m)
+            and player.get('hp', 0) > 5
             and not any(ignores_e(m) for m in adjacent_m)
             and not perma_e(tile) and can_engrave(game)):
         if engravable(tile):
@@ -1576,11 +1577,15 @@ def fight(game):
                   if m is not None and hostile(m) and not can_ignore(game, m)]
 
     if not e_p(at_player(game)):
+        poison_threat = any(
+            'poisonous' in (m.get('tags') or set())
+            and not have_intrinsic(game, 'poison')
+            for m in adjacent_m)
         if (more_than(1, [m for m in adjacent_m
                           if not (m.get('fleeing') or ignores_e(m))])
                 or (any(keep_away(game, m) and not m.get('fleeing')
-                        for m in adjacent_m)
-                    and game['rng'].randrange(4) > 0)):
+                       for m in adjacent_m)
+                    and game['rng'].randrange(4) > 0)) and not poison_threat:
             r = with_reason("fight engrave", engrave_e(game))
             if r:
                 return r
