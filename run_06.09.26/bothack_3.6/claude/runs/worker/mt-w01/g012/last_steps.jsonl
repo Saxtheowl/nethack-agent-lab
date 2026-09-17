@@ -1,0 +1,800 @@
+{"a": "a"}
+{"r": 424, "k": "yn", "T": 323, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "e"}
+{"r": 425, "k": "cmd", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24}
+{"m": "Your lamp is now off."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 426, "k": "cmd", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24}
+{"act": "open", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines minetown", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "o"}
+{"r": 427, "k": "yn", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "j"}
+{"r": 428, "k": "cmd", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24}
+{"m": "This door is locked."}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines minetown", "reaching exploration target", "exploring mines until minetown", "full-explore"], "dir": "S"}
+{"a": "\\x04"}
+{"r": 429, "k": "yn", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "j"}
+{"r": 430, "k": "cmd", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24}
+{"m": "WHAMMM!!!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines minetown", "reaching exploration target", "exploring mines until minetown", "full-explore"], "dir": "S"}
+{"a": "\\x04"}
+{"r": 431, "k": "yn", "T": 324, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "j"}
+{"r": 432, "k": "cmd", "T": 325, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24}
+{"m": "As you kick the door, it crashes open!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines minetown", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 69, :y 5}"}
+{"a": "_"}
+{"r": 433, "k": "pos", "T": 325, "lvl": "Dlvl:1", "u": [19, 14], "hp": 24, "hpmax": 24, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(70, 4)"}
+{"r": 434, "k": "cmd", "T": 358, "lvl": "Dlvl:1", "u": [70, 4], "hp": 24, "hpmax": 24}
+{"act": "descend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines minetown", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 435, "k": "cmd", "T": 358, "lvl": "Dlvl:2", "u": [14, 12], "hp": 24, "hpmax": 24}
+{"m": "You descend the stairs."}
+{"act": "look", "why": ["examining tile {'x': 13, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 436, "k": "cmd", "T": 358, "lvl": "Dlvl:2", "u": [14, 12], "hp": 24, "hpmax": 24}
+{"m": "There is a staircase up here."}
+{"act": "apply", "why": ["using any light source"], "slot": "e"}
+{"a": "a"}
+{"r": 437, "k": "yn", "T": 358, "lvl": "Dlvl:2", "u": [14, 12], "hp": 24, "hpmax": 24, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "e"}
+{"r": 438, "k": "cmd", "T": 359, "lvl": "Dlvl:2", "u": [14, 12], "hp": 24, "hpmax": 24}
+{"m": "Your lamp is now on."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 439, "k": "cmd", "T": 359, "lvl": "Dlvl:2", "u": [14, 12], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 440, "k": "cmd", "T": 360, "lvl": "Dlvl:2", "u": [13, 11], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 441, "k": "cmd", "T": 360, "lvl": "Dlvl:2", "u": [13, 10], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 442, "k": "cmd", "T": 361, "lvl": "Dlvl:2", "u": [14, 10], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 443, "k": "cmd", "T": 361, "lvl": "Dlvl:2", "u": [15, 10], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 444, "k": "cmd", "T": 362, "lvl": "Dlvl:2", "u": [16, 10], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 445, "k": "cmd", "T": 362, "lvl": "Dlvl:2", "u": [16, 9], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 446, "k": "cmd", "T": 363, "lvl": "Dlvl:2", "u": [16, 8], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 447, "k": "cmd", "T": 363, "lvl": "Dlvl:2", "u": [16, 7], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 448, "k": "cmd", "T": 364, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 449, "k": "cmdcont", "T": 364, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"a": "0"}
+{"r": 450, "k": "cmdcont", "T": 364, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 451, "k": "cmd", "T": 370, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 452, "k": "cmdcont", "T": 370, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"a": "0"}
+{"r": 453, "k": "cmdcont", "T": 370, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 454, "k": "cmd", "T": 373, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "You find a hidden door."}
+{"act": "open", "why": ["exploring {'x': 15, 'y': 6, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "o"}
+{"r": 455, "k": "yn", "T": 373, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "k"}
+{"r": 456, "k": "cmd", "T": 373, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "This door is locked."}
+{"act": "kick", "why": ["kick", "exploring {'x': 15, 'y': 6, 'glyph': ']', 'color': 'brown', 'feature': 'door-locked', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "\\x04"}
+{"r": 457, "k": "yn", "T": 373, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "k"}
+{"r": 458, "k": "cmd", "T": 374, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "WHAMMM!!!"}
+{"act": "kick", "why": ["kick", "exploring {'x': 15, 'y': 6, 'glyph': ']', 'color': 'brown', 'feature': 'door-locked', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "\\x04"}
+{"r": 459, "k": "yn", "T": 374, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "k"}
+{"r": 460, "k": "cmd", "T": 375, "lvl": "Dlvl:2", "u": [16, 6], "hp": 24, "hpmax": 24}
+{"m": "As you kick the door, it crashes open!"}
+{"act": "move", "why": ["new or desired item at {'x': 16, 'y': 3, 'glyph': '!', 'color': None, 'feature': None, 'seen': False"], "dir": "N"}
+{"a": "k"}
+{"r": 461, "k": "cmd", "T": 375, "lvl": "Dlvl:2", "u": [16, 5], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["new or desired item at #Position{:x 17, :y 4}"], "dir": "NE"}
+{"a": "u"}
+{"r": 462, "k": "cmd", "T": 376, "lvl": "Dlvl:2", "u": [17, 4], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["new or desired item at #Position{:x 17, :y 4}"], "dir": "NE"}
+{"a": "u"}
+{"r": 463, "k": "cmd", "T": 376, "lvl": "Dlvl:2", "u": [18, 3], "hp": 24, "hpmax": 24}
+{"m": "You see here 4 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 17, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 464, "k": "cmd", "T": 376, "lvl": "Dlvl:2", "u": [18, 3], "hp": 24, "hpmax": 24}
+{"m": "You see here 4 gold pieces."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 465, "k": "cmd", "T": 377, "lvl": "Dlvl:2", "u": [18, 3], "hp": 24, "hpmax": 24}
+{"m": "$ - 4 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 466, "k": "cmd", "T": 377, "lvl": "Dlvl:2", "u": [18, 3], "hp": 24, "hpmax": 24}
+{"act": "look", "why": ["examining tile {'x': 17, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 467, "k": "cmd", "T": 377, "lvl": "Dlvl:2", "u": [18, 3], "hp": 24, "hpmax": 24}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at {'x': 16, 'y': 3, 'glyph': '!', 'color': None, 'feature': None, 'seen': True,"], "dir": "NW"}
+{"a": "y"}
+{"r": 468, "k": "cmd", "T": 377, "lvl": "Dlvl:2", "u": [17, 2], "hp": 24, "hpmax": 24}
+{"m": "You see here a dark green potion."}
+{"act": "look", "why": ["examining tile {'x': 16, 'y': 3, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 469, "k": "cmd", "T": 377, "lvl": "Dlvl:2", "u": [17, 2], "hp": 24, "hpmax": 24}
+{"m": "You see here a dark green potion."}
+{"act": "move", "why": ["exploring {'x': 18, 'y': 3, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 470, "k": "cmd", "T": 378, "lvl": "Dlvl:2", "u": [18, 2], "hp": 24, "hpmax": 24}
+{"act": "open", "why": ["exploring {'x': 18, 'y': 3, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 471, "k": "yn", "T": 378, "lvl": "Dlvl:2", "u": [18, 2], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "l"}
+{"r": 472, "k": "cmd", "T": 378, "lvl": "Dlvl:2", "u": [18, 2], "hp": 24, "hpmax": 24}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 18, 'y': 3, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 473, "k": "cmd", "T": 379, "lvl": "Dlvl:2", "u": [19, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 19, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 474, "k": "cmd", "T": 380, "lvl": "Dlvl:2", "u": [20, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 475, "k": "cmd", "T": 380, "lvl": "Dlvl:2", "u": [21, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 21, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 476, "k": "cmd", "T": 381, "lvl": "Dlvl:2", "u": [22, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 22, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 477, "k": "cmd", "T": 381, "lvl": "Dlvl:2", "u": [23, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 23, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 478, "k": "cmd", "T": 382, "lvl": "Dlvl:2", "u": [24, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 24, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 479, "k": "cmd", "T": 383, "lvl": "Dlvl:2", "u": [25, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 480, "k": "cmd", "T": 383, "lvl": "Dlvl:2", "u": [26, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 481, "k": "cmd", "T": 384, "lvl": "Dlvl:2", "u": [27, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 27, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 482, "k": "cmd", "T": 384, "lvl": "Dlvl:2", "u": [28, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 483, "k": "cmd", "T": 385, "lvl": "Dlvl:2", "u": [29, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 484, "k": "cmd", "T": 385, "lvl": "Dlvl:2", "u": [30, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 485, "k": "cmd", "T": 386, "lvl": "Dlvl:2", "u": [31, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 486, "k": "cmd", "T": 386, "lvl": "Dlvl:2", "u": [32, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 487, "k": "cmd", "T": 387, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 488, "k": "cmd", "T": 387, "lvl": "Dlvl:2", "u": [34, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 489, "k": "cmd", "T": 388, "lvl": "Dlvl:2", "u": [35, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 490, "k": "cmd", "T": 389, "lvl": "Dlvl:2", "u": [36, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 491, "k": "cmd", "T": 389, "lvl": "Dlvl:2", "u": [37, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 492, "k": "cmd", "T": 390, "lvl": "Dlvl:2", "u": [38, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 493, "k": "cmd", "T": 390, "lvl": "Dlvl:2", "u": [39, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 494, "k": "cmd", "T": 391, "lvl": "Dlvl:2", "u": [40, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 495, "k": "cmd", "T": 392, "lvl": "Dlvl:2", "u": [41, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 496, "k": "cmd", "T": 392, "lvl": "Dlvl:2", "u": [42, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 497, "k": "cmd", "T": 393, "lvl": "Dlvl:2", "u": [43, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 498, "k": "cmd", "T": 393, "lvl": "Dlvl:2", "u": [44, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 499, "k": "cmd", "T": 394, "lvl": "Dlvl:2", "u": [45, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 500, "k": "cmd", "T": 395, "lvl": "Dlvl:2", "u": [46, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 501, "k": "cmd", "T": 396, "lvl": "Dlvl:2", "u": [47, 2], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 502, "k": "cmd", "T": 396, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 503, "k": "cmdcont", "T": 396, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"a": "0"}
+{"r": 504, "k": "cmdcont", "T": 396, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 505, "k": "cmd", "T": 402, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 506, "k": "cmdcont", "T": 402, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"a": "0"}
+{"r": 507, "k": "cmdcont", "T": 402, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 508, "k": "cmd", "T": 408, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 509, "k": "cmdcont", "T": 408, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"a": "0"}
+{"r": 510, "k": "cmdcont", "T": 408, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 511, "k": "cmd", "T": 413, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24}
+{"act": "autotravel", "why": ["exploring {'x': 18, 'y': 5, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 17, :y 5}"}
+{"a": "_"}
+{"r": 512, "k": "pos", "T": 413, "lvl": "Dlvl:2", "u": [48, 2], "hp": 24, "hpmax": 24, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(18, 4)"}
+{"r": 513, "k": "cmd", "T": 433, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24}
+{"act": "open", "why": ["exploring {'x': 18, 'y': 5, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 514, "k": "yn", "T": 433, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "l"}
+{"r": 515, "k": "cmd", "T": 433, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24}
+{"m": "The door resists!"}
+{"act": "open", "why": ["exploring {'x': 18, 'y': 5, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 516, "k": "yn", "T": 433, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "l"}
+{"r": 517, "k": "cmd", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24}
+{"m": "The door resists!"}
+{"act": "open", "why": ["exploring {'x': 18, 'y': 5, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 518, "k": "yn", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24, "q": "In what direction?"}
+{"a": "l"}
+{"r": 519, "k": "cmd", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24}
+{"m": "The door opens."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 30, :y 5}"}
+{"a": ";"}
+{"r": 520, "k": "pos", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(31, 4)"}
+{"r": 521, "k": "cmd", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24}
+{"m": "B        a bat or bird (bat) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 34, :y 5}"], "pos": "#Position{:x 32, :y 3}"}
+{"a": "_"}
+{"r": 522, "k": "pos", "T": 434, "lvl": "Dlvl:2", "u": [18, 4], "hp": 24, "hpmax": 24, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(33, 2)"}
+{"r": 523, "k": "cmd", "T": 444, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24}
+{"act": "wield", "why": ["new or desired item at #Position{:x 34, :y 5}"], "slot": "l"}
+{"a": "w"}
+{"r": 524, "k": "yn", "T": 444, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "l"}
+{"r": 525, "k": "cmd", "T": 445, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24}
+{"m": "l - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 526, "k": "cmd", "T": 445, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24}
+{"act": "apply", "why": ["new or desired item at #Position{:x 34, :y 5}"], "slot": "l"}
+{"a": "a"}
+{"r": 527, "k": "yn", "T": 445, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "l"}
+{"r": 528, "k": "yn", "T": 445, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24, "q": "In what direction do you want to dig? [ykunjb>]"}
+{"a": "n"}
+{"r": 529, "k": "cmd", "T": 447, "lvl": "Dlvl:2", "u": [33, 2], "hp": 24, "hpmax": 24}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You make an opening in the wall."}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 5}"], "dir": "SE"}
+{"a": "n"}
+{"r": 530, "k": "cmd", "T": 448, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 6}"}
+{"a": ";"}
+{"r": 531, "k": "pos", "T": 448, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 5)"}
+{"r": 532, "k": "cmd", "T": 448, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"m": "d        a dog or other canine (jackal) [seen: normal vision, infravision]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 6, 'known': 448, 'first-known': 448, 'glyph': 'd', 'color': 'brown',"]}
+{"a": "s"}
+{"r": 533, "k": "cmd", "T": 449, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - a +1 long sword", "hitting {'x': 33, 'y': 5, 'known': 449, 'first-known': 448, 'glyph': 'd', 'color': 'brown', 'type': ", "targetting enemy {'x': 33, 'y': 5, 'known': 449, 'first-known': 448, 'glyph': 'd', 'color': 'brown',"], "slot": "a"}
+{"a": "w"}
+{"r": 534, "k": "yn", "T": 449, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "a"}
+{"r": 535, "k": "cmd", "T": 450, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"m": "The jackal misses!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 536, "k": "cmd", "T": 450, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["hitting {'x': 33, 'y': 5, 'known': 450, 'first-known': 448, 'glyph': 'd', 'color': 'brown', 'type': ", "targetting enemy {'x': 33, 'y': 5, 'known': 450, 'first-known': 448, 'glyph': 'd', 'color': 'brown',"], "dir": "S"}
+{"a": "j"}
+{"r": 537, "k": "cmd", "T": 451, "lvl": "Dlvl:2", "u": [34, 3], "hp": 24, "hpmax": 24}
+{"m": "You kill the jackal!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 5}"], "dir": "SE"}
+{"a": "n"}
+{"r": 538, "k": "cmd", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "You see here a chest."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 539, "k": "cmd", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "You see here a chest."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 540, "k": "ext", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 541, "k": "yn", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 542, "k": "cmd", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "Hmmm, it turns out to be locked."}
+{"act": "wield", "why": ["making use of b", "unlock chest"], "slot": "b"}
+{"a": "w"}
+{"r": 543, "k": "yn", "T": 451, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "b"}
+{"r": 544, "k": "cmd", "T": 452, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "b - a +0 dagger (weapon in hand)."}
+{"m": "a - a +1 long sword (alternate weapon; not wielded)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 545, "k": "cmd", "T": 452, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"act": "forcelock", "why": ["unlock chest"]}
+{"a": "#"}
+{"r": 546, "k": "ext", "T": 452, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "force"}
+{"r": 547, "k": "yn", "T": 452, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here; force its lock?", "c": "ynq"}
+{"a": "y"}
+{"r": 548, "k": "cmd", "T": 455, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "You force your dagger into a crack and pry."}
+{"m": "You stop forcing the lock."}
+{"m": "The bat misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 5}"}
+{"a": ";"}
+{"r": 549, "k": "pos", "T": 455, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 4)"}
+{"r": 550, "k": "cmd", "T": 455, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "B        a bat or bird (bat) [seen: normal vision, infravision]"}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - a +1 long sword (alternate weapon; not wielded)", "hitting {'x': 33, 'y': 5, 'known': 455, 'first-known': 455, 'glyph': 'B', 'color': 'brown', 'type': ", "targetting enemy {'x': 33, 'y': 5, 'known': 455, 'first-known': 455, 'glyph': 'B', 'color': 'brown',"], "slot": "a"}
+{"a": "w"}
+{"r": 551, "k": "yn", "T": 455, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "a"}
+{"r": 552, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"m": "b - a +0 dagger (alternate weapon; not wielded)."}
+{"m": "The bat misses!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 553, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"act": "move", "why": ["hitting {'x': 33, 'y': 5, 'known': 456, 'first-known': 455, 'glyph': 'B', 'color': 'brown', 'type': ", "targetting enemy {'x': 33, 'y': 5, 'known': 456, 'first-known': 455, 'glyph': 'B', 'color': 'brown',"], "dir": "W"}
+{"a": "h"}
+{"r": 554, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "You kill the bat!"}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 555, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 556, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 557, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 558, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 559, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 560, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 561, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 562, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 563, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 564, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 565, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 566, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 567, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 568, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 569, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 570, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 571, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 572, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 573, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 574, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 575, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 576, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 577, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 578, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 579, "k": "ext", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 580, "k": "yn", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 581, "k": "cmd", "T": 456, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"note": "recovery", "d": "action-loop x8 loot: forced search"}
+{"m": "It is locked."}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 582, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 583, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 584, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 585, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 586, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 587, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 588, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 589, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 590, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 591, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 592, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 593, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 594, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 595, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 596, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 597, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 598, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 599, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 600, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 601, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 602, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 603, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 604, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 605, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 606, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"note": "recovery", "d": "action-loop x8 loot: forced search"}
+{"m": "It is locked."}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 607, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 608, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 609, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 610, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 611, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 612, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 613, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 614, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 615, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 616, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 617, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 618, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 619, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 620, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 621, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 622, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 623, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 624, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 625, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 626, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 627, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 628, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 629, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 630, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 631, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 632, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 633, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 634, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 635, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 636, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 637, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 638, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 639, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 640, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 641, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 642, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 643, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 644, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 645, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 646, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 647, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 648, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 649, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 650, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 651, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 652, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 653, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 654, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 655, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 656, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 657, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 658, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 659, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 660, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 661, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 662, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 663, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 664, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 665, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 666, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 667, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 668, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 669, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 670, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 671, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 672, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 673, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 674, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 675, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 676, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 677, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 678, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 679, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 680, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 681, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 682, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 683, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 684, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 685, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 686, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 687, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 688, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 689, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 690, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 691, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 692, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 693, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 694, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 695, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 696, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 697, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"m": "It is locked."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 698, "k": "ext", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"a": "loot"}
+{"r": 699, "k": "yn", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24, "q": "There is a locked chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 700, "k": "cmd", "T": 457, "lvl": "Dlvl:2", "u": [35, 4], "hp": 24, "hpmax": 24}
+{"note": "abort", "d": "stuck: action loop: loot repeated 40 times at turn 457 ({'act': 'loot', 'why': ['learning contents of containers on ground']})"}

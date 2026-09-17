@@ -1,0 +1,94 @@
+{
+ "game_id": "medusa05",
+ "outcome": "stuck",
+ "reason": "prompt loop: 'the desired position'",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": 1,
+ "engine_seed": 77,
+ "turns": 114,
+ "depth": 23,
+ "max_depth": 25,
+ "xl": 14,
+ "lvl": "Dlvl:23",
+ "dname": "The Dungeons of Doom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "medusa": 1
+ },
+ "last_stage": "dlvl2",
+ "assist_counts": {
+  "kit": 8
+ },
+ "counters": {
+  "compat:container:q": 1,
+  "unknown_pos": 37,
+  "fallback": 37
+ },
+ "notes": {
+  "scenario": 36,
+  "recovery": 2,
+  "forced-command": 1,
+  "compat": 1,
+  "unknown-prompt": 37,
+  "fallback": 37,
+  "forced-escape": 3,
+  "abort": 1
+ },
+ "protoerrs": 0,
+ "requests": 379,
+ "actions": 207,
+ "action_hist": {
+  "move": 94,
+  "farlook": 47,
+  "search": 20,
+  "look": 10,
+  "apply": 10,
+  "inventory": 8,
+  "repeated": 8,
+  "open": 3,
+  "ascend": 2,
+  "wield": 2,
+  "discoveries": 1,
+  "wear": 1,
+  "pickup": 1
+ },
+ "elapsed_s": 13.0,
+ "turns_per_s": 8.75,
+ "last_action": {
+  "act": "move",
+  "why": [
+   "hitting {'x': 57, 'y': 15, 'known': 114, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan', 'type': ",
+   "targetting enemy {'x': 57, 'y': 15, 'known': 114, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan',"
+  ],
+  "dir": "W"
+ },
+ "final_screen": [
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                               -----------      ",
+  "                                                              #-....>....|      ",
+  "                                                              #|.........|      ",
+  "                                                           ####|.........|      ",
+  "                                                           #   |.%.......|      ",
+  "                                                        ####   |.........|      ",
+  "                                                    #####      |.........|      ",
+  "                                             ----- ##          -----------      ",
+  "                                                 -##                            ",
+  "                                                 |                              ",
+  "                                                 .####                          ",
+  "                                                 |   #                          ",
+  "                                               ---   ####Q@*        ---------   ",
+  "                                                           #####   ....(....|   ",
+  "                                                                           .|   ",
+  "                                                                            |   ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "Bot the Warrior  St:16 Dx:11 Co:19 In:9 Wi:8 Ch:9  Lawful                       ",
+  "Dlvl:23 $:145 HP:139(139) Pw:23(23) AC:-8 Exp:14/80171 T:114                    "
+ ]
+}

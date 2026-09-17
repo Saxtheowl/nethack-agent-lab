@@ -1,0 +1,59 @@
+{
+ "description": "Default kit, XL 30, endgame gear a full run would carry (Excalibur, +5 helm/gauntlets of power/cloak, worn), level-teleported to the Astral Plane (the wizard-mode teleport adds the Amulet of Yendor); goal: offer the Amulet on the co-aligned altar (engine verdict ascended)",
+ "steps": [
+  [
+   "xl",
+   30
+  ],
+  [
+   "wish",
+   "blessed rustproof +5 Excalibur"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 dwarvish iron helm"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 gauntlets of power"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 elven cloak"
+  ],
+  [
+   "identify"
+  ],
+  [
+   "wield",
+   "Excalibur"
+  ],
+  [
+   "wear",
+   "helm"
+  ],
+  [
+   "wear",
+   "gauntlets"
+  ],
+  [
+   "wear",
+   "cloak"
+  ],
+  [
+   "levelport_menu",
+   "astral"
+  ]
+ ],
+ "goal": "ascended",
+ "max_turns": 6000,
+ "profile": "fast",
+ "skip": [
+  "excalibur",
+  "quest-portal",
+  "quest",
+  "vlad",
+  "wiztower",
+  "dlvl20"
+ ]
+}

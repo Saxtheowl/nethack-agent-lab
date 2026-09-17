@@ -1,0 +1,60 @@
+{
+ "game_id": "valley-to-vlad-01",
+ "series": null,
+ "started": "2026-09-17T07:35:06+0000",
+ "host": "SandboxVibing",
+ "python": "3.12.3",
+ "engine": {
+  "nethack": "3.6.7",
+  "windowport": "bot",
+  "proto": 1
+ },
+ "code": {
+  "engine_binary_sha256": "3252c12cd4583a951bd5a48031e4cd348d550af7c5b520cea8d8e2d1386d8a1c",
+  "engine_patch_sha256": "cfbe36dd8176064ad1c14c594c995ddfbb7790e15c42f10c77537606bbabbc32",
+  "bot_code_hash": "fcd803d85733c6f2",
+  "git_head": "92b5789856c580ad3e155400fb4b901f608de88d"
+ },
+ "engine_seed": 301,
+ "bot_seed": 301,
+ "character": "val-dwa-fem-law",
+ "assists": {
+  "invincible": true,
+  "nostarve": true,
+  "kit": [
+   "wear blessed +2 greased gray dragon scale mail",
+   "wear blessed amulet of reflection",
+   "wear blessed +2 fireproof speed boots",
+   "inv blessed ring of levitation",
+   "inv blessed unicorn horn",
+   "inv bag of holding",
+   "inv blessed +0 pick-axe",
+   "inv 2 uncursed food rations"
+  ]
+ },
+ "wizard": true,
+ "scenario": "valley-to-vlad",
+ "goal": null,
+ "bot_profile": "fast",
+ "bot_tactics": "assisted",
+ "bot_skip": "quest-portal,dlvl20,excalibur,quest",
+ "limits": {
+  "max_turns": 20000,
+  "max_seconds": 43200,
+  "max_requests": 3000000,
+  "prompt_loop": 40,
+  "no_turn_requests": 600,
+  "action_loop": 8,
+  "action_loop_abort": 40,
+  "stall_turns": 6000,
+  "fixation_recover": 400,
+  "fixation_abort": 1200,
+  "death_loop": 150,
+  "death_loop_turns": 300,
+  "storm_window": 3000,
+  "storm_min_turns": 30,
+  "decision_warn": 60.0,
+  "decision_kill": 600.0
+ },
+ "counted_as_full_game": false
+}

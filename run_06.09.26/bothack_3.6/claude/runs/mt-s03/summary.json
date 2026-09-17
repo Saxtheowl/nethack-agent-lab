@@ -1,0 +1,107 @@
+{
+ "series": "mt-s03",
+ "games": 4,
+ "outcomes": {
+  "stuck": 1,
+  "goal_reached": 1,
+  "crash_bot": 2
+ },
+ "stage_funnel": {
+  "dlvl2": 2,
+  "mines": 1,
+  "minetown": 1,
+  "oracle": 1
+ },
+ "failure_signatures": [
+  [
+   "stuck | request storm: N requests for N turns (turn N, last action {..})",
+   1
+  ],
+  [
+   "crash_bot | rungame exited rc=-N without result",
+   1
+  ],
+  [
+   "crash_bot | rungame exited rc=N without result",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "fallback": 1061,
+  "note:fallback": 1061,
+  "unknown_yn": 1050,
+  "note:unknown-prompt": 1050,
+  "note:recovery": 26,
+  "note:forced-command": 26,
+  "note:compat": 18,
+  "note:assist": 16,
+  "compat:container:o": 13,
+  "compat:container:i": 5,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 4,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 2,
+  "note:abort": 2,
+  "menu_show:current_skills": 1,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 1
+ },
+ "assist_totals": {
+  "kit": 16
+ },
+ "turns_total": 4121,
+ "turns_max": 3153,
+ "elapsed_total_s": 789.6,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 1001,
+   "outcome": "stuck",
+   "reason": "request storm: 3000 requests for 10 turns (turn 3153, last action {'act': 'dip', 'why': ['getting Excal'], 'slot': 'a'})",
+   "turns": 3153,
+   "max_depth": 5,
+   "last_stage": "oracle",
+   "elapsed_s": 663.8,
+   "turns_per_s": 4.75,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 1002,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 968,
+   "max_depth": 6,
+   "last_stage": "minetown",
+   "elapsed_s": 125.8,
+   "turns_per_s": 7.7,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 1003,
+   "outcome": "crash_bot",
+   "reason": "rungame exited rc=-15 without result",
+   "turns": null,
+   "max_depth": null,
+   "last_stage": null,
+   "elapsed_s": null,
+   "turns_per_s": null,
+   "assist_counts": null
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 1004,
+   "outcome": "crash_bot",
+   "reason": "rungame exited rc=1 without result",
+   "turns": null,
+   "max_depth": null,
+   "last_stage": null,
+   "elapsed_s": null,
+   "turns_per_s": null,
+   "assist_counts": null
+  }
+ ]
+}

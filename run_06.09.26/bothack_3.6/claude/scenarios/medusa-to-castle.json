@@ -1,0 +1,25 @@
+{
+ "description": "Default kit (reflection, levitation, speed), XL 14, level-teleported to Medusa's level, mapped; the stage is tested in isolation (no Excalibur/quest detours); goal: reach the Castle",
+ "steps": [
+  [
+   "xl",
+   14
+  ],
+  [
+   "levelport",
+   "medusa"
+  ],
+  [
+   "map"
+  ]
+ ],
+ "goal": "castle",
+ "max_turns": 8000,
+ "profile": "fast",
+ "skip": [
+  "quest-portal",
+  "dlvl20",
+  "excalibur",
+  "quest"
+ ]
+}

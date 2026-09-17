@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 384, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 374, in main
+    res = run_game(args)
+          ^^^^^^^^^^^^^^
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 218, in run_game
+    from pybothack.bh36 import new_bh36
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/bh36.py", line 8, in <module>
+    from .actions import (call_id_handler, examine_handler, mark_recharge_handler,
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/actions.py", line 10, in <module>
+    from .dungeon import (add_curlvl_tag, at_curlvl, at_player, branch_key,
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/dungeon.py", line 8, in <module>
+    from .level import (blueprints, diggable_floor, geh_maze, new_level, tile_seq,
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/level.py", line 7, in <module>
+    from .tile import initial_tile, door, wall_p
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/tile.py", line 4, in <module>
+    from .item import container
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/item.py", line 5, in <module>
+    from .itemid import (item_id, item_name, item_type, item_subtype, item_weight,
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/itemid.py", line 133, in <module>
+    assert set(APPEARANCE_NAMES) == set(_ORDER), "appearance set mismatch"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: appearance set mismatch

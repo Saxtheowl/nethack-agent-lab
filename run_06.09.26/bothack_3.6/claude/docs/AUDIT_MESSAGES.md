@@ -1,0 +1,264 @@
+# BotHack message regexes vs 3.6.7 (automatic audit)
+
+Columns: bot regex (file:line) | 3.4.3 message format it matched | closest 3.6.7 format | does the regex still match some 3.6.7 string?
+
+- `game.py:545` `You feel (?:more )?limber|What a pity - you just ruined a future piece`
+  - 3.4.3 (pray.c): `You feel more limber.`
+  - 3.6.7 closest: `You feel limber!`
+  - regex still matches something in 3.6.7: True
+- `game.py:545` `You feel (?:more )?limber|What a pity - you just ruined a future piece`
+  - 3.4.3 (eat.c): `What a pity - you just ruined a future piece of %sart!fine `
+  - 3.6.7 closest: `What a pity--you just ruined a future piece of %sart!`
+  - regex still matches something in 3.6.7: True
+- `game.py:563` `Your .* feels? somewhat better`
+  - 3.4.3 (do.c): `Your %s feel somewhat better.`
+  - 3.6.7 closest: `You feel somewhat better.`
+  - regex still matches something in 3.6.7: False
+- `game.py:563` `Your .* feels? somewhat better`
+  - 3.4.3 (do.c): `Your %s feels somewhat better.`
+  - 3.6.7 closest: `You feel somewhat better.`
+  - regex still matches something in 3.6.7: False
+- `game.py:565` `It's a wall\.`
+  - 3.4.3 (hack.c): `It's a wall.`
+  - 3.6.7 closest: `%s swallows`
+  - regex still matches something in 3.6.7: False
+- `game.py:569` `You sink into the lava`
+  - 3.4.3 (trap.c): `You sink into the lava, but it only burns slightly!`
+  - 3.6.7 closest: `You sink into the %s%s!lava, but it only burns slightly and are about to be immolated`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:183` `^Unknown direction: ''' \(use hjkl or \.\)|.*\(For instructions type a \?\)$`
+  - 3.4.3 (do_name.c): `(For instructions type a ?)`
+  - 3.6.7 closest: `(For instructions type a '%s')`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:68` `^(.)  ?[-+#] (.*?)\s*$`
+  - 3.4.3 (invent.c): `%c - %-45s %6ld %s`
+  - 3.6.7 closest: ` %*s %4ld`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:68` `^(.)  ?[-+#] (.*?)\s*$`
+  - 3.4.3 (invent.c): `%c - %s%s`
+  - 3.6.7 closest: `  %c%s.`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:68` `^(.)  ?[-+#] (.*?)\s*$`
+  - 3.4.3 (spell.c): `%c - %-20s  %2d%s   %-12s %3d%%`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:201` `^What do you want to name `
+  - 3.4.3 (do_name.c): `What do you want to name %s %s?`
+  - 3.6.7 closest: `What do you want to name %s `
+  - regex still matches something in 3.6.7: True
+- `scraper.py:202` `^Call .*:`
+  - 3.4.3 (do_name.c): `Call %s:`
+  - 3.6.7 closest: `Invalid %s`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:209` `^For what do you wish\?`
+  - 3.4.3 (zap.c): `For what do you wish?`
+  - 3.6.7 closest: `For what do you wish`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:212` `^\"Hello stranger, who are you\?\"`
+  - 3.4.3 (vault.c): `\"Hello stranger, who are you?\" -`
+  - 3.6.7 closest: `You are required to supply your name. -\"Hello stranger, who are you?\" -`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:228` `Would you wear it for me`
+  - 3.4.3 (mhitu.c): `\"That %s looks pretty.  Would you wear it for me?\"`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:230` `^Really attack (.*)\?`
+  - 3.4.3 (uhitm.c): `Really attack %s? [no/yes]`
+  - 3.6.7 closest: `Really attack %s?`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:247` `There is .*force its lock\?`
+  - 3.4.3 (lock.c): `There is %s here, force its lock?`
+  - 3.6.7 closest: `You resume your attempt to force the lock.`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:271` `There is ([^,]+) here, loot it\?`
+  - 3.4.3 (pickup.c): `There is %s here, loot it?`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:272` `Stop eating\?`
+  - 3.4.3 (eat.c): `Stop eating?`
+  - 3.6.7 closest: `, eating`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:273` `Do you want to take something out.*`
+  - 3.4.3 (pickup.c): `Do you want to take something out of `
+  - 3.6.7 closest: `You fail to %sleash something.un`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:277` `^Dip (?:the .*|it|them) into the .*\?`
+  - 3.4.3 (potion.c): `Dip %s into the fountain?`
+  - 3.6.7 closest: `%s%s into the fountain?`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:277` `^Dip (?:the .*|it|them) into the .*\?`
+  - 3.4.3 (potion.c): `Dip %s into the %s?`
+  - 3.6.7 closest: `%s%s into the %s?`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:277` `^Dip (?:the .*|it|them) into the .*\?`
+  - 3.4.3 (potion.c): `Dip it into the %s?`
+  - 3.6.7 closest: `%s%s into the %s?`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:177` `(For instructions type a ?)`
+  - 3.4.3 (do_name.c): `(For instructions type a ?)`
+  - 3.6.7 closest: `(For instructions type a '%s')`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:375` ` Hun`
+  - 3.4.3 (attrib.c): `exerper: Hunger checks`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `scraper.py:376` ` Fai`
+  - 3.4.3 (spell.c): `%-20s     Level  %-12s Fail`
+  - 3.6.7 closest: `%-20s     Level %-12s Fail Retention`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:376` ` Fai`
+  - 3.4.3 (spell.c): `%-20s   Level    %-12s Fail`
+  - 3.6.7 closest: `%-20s     Level %-12s Fail Retention`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:316` ` level \d+`
+  - 3.4.3 (exper.c): `Welcome to experience level %d.`
+  - 3.6.7 closest: `Welcome %sto experience level %d.back `
+  - regex still matches something in 3.6.7: True
+- `scraper.py:316` ` level \d+`
+  - 3.4.3 (mkmaze.c): `mkportal: at (%d,%d), to %s, level %d`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:316` ` level \d+`
+  - 3.4.3 (dungeon.c): `%s: level %d`
+  - 3.6.7 closest: `%s level %d.`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:699` `#`
+  - 3.4.3 (wield.c): `Note: Please use #quit if you wish to exit the game.`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:364` ` Con`
+  - 3.4.3 (pickup.c): ` %s. Continue?`
+  - 3.6.7 closest: `You %s %s.begincontinue`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:364` ` Con`
+  - 3.4.3 (uhitm.c): `You succeed in destroying %s camera.  Congratulations!`
+  - 3.6.7 closest: `You succeed in destroying %s.  Congratulations!`
+  - regex still matches something in 3.6.7: True
+- `scraper.py:364` ` Con`
+  - 3.4.3 (spell.c): `This spellbook is %sdifficult to comprehend. Continue?`
+  - 3.6.7 closest: `This spellbook is %sdifficult to comprehend.  Continue?`
+  - regex still matches something in 3.6.7: True
+- `util.py:195` `**`
+  - 3.4.3 (botl.c): `St:18/** `
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `item.py:277` `\begg\b`
+  - 3.4.3 (sit.c): `You lay an egg.`
+  - 3.6.7 closest: `You fall asleep.`
+  - regex still matches something in 3.6.7: True
+- `item.py:277` `\begg\b`
+  - 3.4.3 (polyself.c): `sitlay an egg`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `actions.py:50` `^(?:You see|There is|You escape)(?: an?| your)?(?: \w+)* (falling rock trap|rolling boulder trap|rust trap|statue trap|magic trap|anti-magic field|polymorph trap|fire trap|arrow trap|dart trap|land mine|teleportation trap|sleeping gas trap|magic portal|level teleporter|bear trap|spiked pit|pit|ladder (?:up|down)|staircase (?:up|down)|spider web|web|ice|opulent throne|pool of water|lowered drawbridge|hole|trap door|fountain|sink|grave|molten lava|doorway|squeaky board|open door|broken door)(?: here| below you)?\.`
+  - 3.4.3 (do.c): `You see some air in the sink.`
+  - 3.6.7 closest: `You see some %s in the sink.oxygen moleculesair`
+  - regex still matches something in 3.6.7: True
+- `actions.py:99` `You .*(?:thin air|empty water|empty space)`
+  - 3.4.3 (hack.c): `You %s %s.explode atattackthin airempty water`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `actions.py:99` `You .*(?:thin air|empty water|empty space)`
+  - 3.4.3 (dig.c): `You swing your %s through thin air.`
+  - 3.6.7 closest: `You swing %s through thin air.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:185` `trap door opens|trap door in the .*and a rock falls on you|trigger a rolling boulder|\(little dart|arrow\) shoots out at you|gush of water hits|tower of flame erupts|cloud of gas`
+  - 3.4.3 (trap.c): `Click! You trigger a rolling boulder trap!`
+  - 3.6.7 closest: `Click!  You trigger a rolling boulder trap!`
+  - regex still matches something in 3.6.7: True
+- `actions.py:901` `has no oil|has run out of power`
+  - 3.4.3 (timeout.c): `%s lantern has run out of power.`
+  - 3.6.7 closest: `%slantern has run out of power.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1114` `Not wearing any armor|not wearing that`
+  - 3.4.3 (do_wear.c): `Not wearing any armor.%s  Use 'R' command to remove accessories.`
+  - 3.6.7 closest: `Not wearing any armor or accessories.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1579` `You carefully open`
+  - 3.4.3 (pickup.c): `You carefully open the bag...`
+  - 3.6.7 closest: `You carefully open %s...`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1833` `^([a-zA-Z]) - `
+  - 3.4.3 (invent.c): `%c - %-45s %6ld %s`
+  - 3.6.7 closest: ` %*s %4ld`
+  - regex still matches something in 3.6.7: False
+- `actions.py:1833` `^([a-zA-Z]) - `
+  - 3.4.3 (invent.c): `%c - %s%s`
+  - 3.6.7 closest: `  %c%s.`
+  - regex still matches something in 3.6.7: False
+- `actions.py:1833` `^([a-zA-Z]) - `
+  - 3.4.3 (spell.c): `%c - %-20s  %2d%s   %-12s %3d%%`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: False
+- `actions.py:1899` `puff of smoke`
+  - 3.4.3 (apply.c): `You see a puff of smoke.`
+  - 3.6.7 closest: `You %s smoke.see a puff ofsmell`
+  - regex still matches something in 3.6.7: False
+- `actions.py:904` ` lamp is now (on|off)|burns? brightly!|You light your |^You snuff `
+  - 3.4.3 (apply.c): `%s lamp is now off.`
+  - 3.6.7 closest: `%slamp is now off.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:904` ` lamp is now (on|off)|burns? brightly!|You light your |^You snuff `
+  - 3.4.3 (apply.c): `%s lamp is now on.`
+  - 3.6.7 closest: `%slamp is now on.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1282` `You feel like someone is helping you\.|You feel in touch with the Universal Oneness\.|You feel like you need some help\.|You feel the power of the Force against you`
+  - 3.4.3 (read.c): `You feel the power of the Force against you!`
+  - 3.6.7 closest: `You feel like someone is helping you.like you need some help.in touch with the Universal Oneness.the power of the Force against you!`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1282` `You feel like someone is helping you\.|You feel in touch with the Universal Oneness\.|You feel like you need some help\.|You feel the power of the Force against you`
+  - 3.4.3 (read.c): `You feel like you need some help.`
+  - 3.6.7 closest: `You feel as if you need some help.`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1282` `You feel like someone is helping you\.|You feel in touch with the Universal Oneness\.|You feel like you need some help\.|You feel the power of the Force against you`
+  - 3.4.3 (read.c): `You feel in touch with the Universal Oneness.`
+  - 3.6.7 closest: `You feel like someone is helping you.like you need some help.in touch with the Universal Oneness.the power of the Force against you!`
+  - regex still matches something in 3.6.7: True
+- `actions.py:1282` `You feel like someone is helping you\.|You feel in touch with the Universal Oneness\.|You feel like you need some help\.|You feel the power of the Force against you`
+  - 3.4.3 (read.c): `You feel like someone is helping you.`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `actions.py:907` ` seems to be locked`
+  - 3.4.3 (pickup.c): `Hmmm, %s seems to be locked.it`
+  - 3.6.7 closest: `Hmmm, %s turns out to be locked.`
+  - regex still matches something in 3.6.7: False
+- `actions.py:1587` ` seems to be locked\.`
+  - 3.4.3 (pickup.c): `Hmmm, %s seems to be locked.it`
+  - 3.6.7 closest: `Hmmm, %s turns out to be locked.`
+  - regex still matches something in 3.6.7: False
+- `montype.py:150` `'?s? ghost`
+  - 3.4.3 (priest.c): `An enormous ghost appears next to you!`
+  - 3.6.7 closest: `A%s ghost appears next to you%cn enormous`
+  - regex still matches something in 3.6.7: True
+- `montype.py:127` `poohbah|priest|priestess`
+  - 3.4.3 (priest.c): `poohbah `
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `montype.py:127` `poohbah|priest|priestess`
+  - 3.4.3 (priest.c): `priestess `
+  - 3.6.7 closest: `high priestesshigh priest`
+  - regex still matches something in 3.6.7: True
+- `montype.py:127` `poohbah|priest|priestess`
+  - 3.4.3 (priest.c): `priest `
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `montype.py:127` `poohbah|priest|priestess`
+  - 3.4.3 (do_name.c): `The high priest%s doesn't like being called names!ess`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `mainbot.py:2001` ` (?:stole|snatches) ([^.!]*)[.!]`
+  - 3.4.3 (steal.c): `%s quickly snatches some gold from between your %s!`
+  - 3.6.7 closest: `%s quickly snatches some gold from %s %s %s!beneathbetween`
+  - regex still matches something in 3.6.7: True
+- `mainbot.py:2001` ` (?:stole|snatches) ([^.!]*)[.!]`
+  - 3.4.3 (steal.c): `%s stole %s.She`
+  - 3.6.7 closest: `%s%s stole %s.She removed your chain and`
+  - regex still matches something in 3.6.7: True
+- `mainbot.py:2001` ` (?:stole|snatches) ([^.!]*)[.!]`
+  - 3.4.3 (steal.c): `%s stole %s!`
+  - 3.6.7 closest: `None`
+  - regex still matches something in 3.6.7: True
+- `mainbot.py:2852` `divides as you`
+  - 3.4.3 (uhitm.c): `%s divides as you hit it!`
+  - 3.6.7 closest: `%s divides as you hit it%s!`
+  - regex still matches something in 3.6.7: True

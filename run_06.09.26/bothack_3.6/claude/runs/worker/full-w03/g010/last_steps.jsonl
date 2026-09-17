@@ -1,0 +1,800 @@
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 12}"}
+{"a": ";"}
+{"r": 33086, "k": "pos", "T": 20408, "lvl": "Home 5", "u": [41, 15], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 11)"}
+{"r": 33087, "k": "cmd", "T": 20408, "lvl": "Home 5", "u": [41, 15], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 16}"], "dir": "E"}
+{"a": "l"}
+{"r": 33088, "k": "cmd", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33089, "k": "cmd", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 33090, "k": "menu", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127, "p": "Pick up what?", "items": ["# Comestibles", "a an egg", "b Lord Surtur's corpse", "# Scrolls", "c a scroll of create monster", "# Tools", "d a silver bell", "e a glass orb named The Orb of Fate", "# Gems/Stones", "f 7 blue gems", "g 4 red gems", "h 4 green gems", "i 3 green gems"]}
+{"a": [6, 7]}
+{"r": 33091, "k": "cmd", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127}
+{"m": "G - a silver bell."}
+{"m": "[You must return the Orb of Fate to the Norn.]"}
+{"m": "J - a glass orb named The Orb of Fate."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33092, "k": "cmd", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33093, "k": "cmd", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127}
+{"act": "autotravel", "why": ["new or desired item at {'x': 39, 'y': 10, 'glyph': '!', 'color': 'white', 'feature': None, 'seen': F"], "pos": "#Position{:x 40, :y 11}"}
+{"a": "_"}
+{"r": 33094, "k": "pos", "T": 20409, "lvl": "Home 5", "u": [42, 15], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 10)"}
+{"r": 33095, "k": "cmd", "T": 20413, "lvl": "Home 5", "u": [45, 11], "hp": 127, "hpmax": 127}
+{"m": "You stop at the edge of the lava."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 14}"}
+{"a": ";"}
+{"r": 33096, "k": "pos", "T": 20413, "lvl": "Home 5", "u": [45, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 13)"}
+{"r": 33097, "k": "cmd", "T": 20413, "lvl": "Home 5", "u": [45, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 13}"}
+{"a": ";"}
+{"r": 33098, "k": "pos", "T": 20413, "lvl": "Home 5", "u": [45, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 12)"}
+{"r": 33099, "k": "cmd", "T": 20413, "lvl": "Home 5", "u": [45, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 39, 'y': 10, 'glyph': '!', 'color': 'white', 'feature': None, 'seen': F"], "dir": "W"}
+{"a": "h"}
+{"r": 33100, "k": "cmd", "T": 20414, "lvl": "Home 5", "u": [44, 11], "hp": 127, "hpmax": 127}
+{"m": "A board beneath you squeaks an E note loudly."}
+{"m": "A tower of flame erupts from the floor under the fire giant!"}
+{"m": "The fire giant is uninjured."}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, '"]}
+{"a": ":"}
+{"r": 33101, "k": "cmd", "T": 20414, "lvl": "Home 5", "u": [44, 11], "hp": 127, "hpmax": 127}
+{"m": "There is a squeaky board here."}
+{"m": "You see no objects here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 14}"}
+{"a": ";"}
+{"r": 33102, "k": "pos", "T": 20414, "lvl": "Home 5", "u": [44, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 13)"}
+{"r": 33103, "k": "cmd", "T": 20414, "lvl": "Home 5", "u": [44, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 40, 'y': 14, 'known': 20414, 'first-known': 20403, 'glyph': 'H', 'color': 'ye"], "dir": "SW"}
+{"a": "b"}
+{"r": 33104, "k": "cmd", "T": 20415, "lvl": "Home 5", "u": [43, 12], "hp": 127, "hpmax": 127}
+{"m": "The fire giant attacks a spot beside you."}
+{"act": "move", "why": ["targetting enemy {'x': 40, 'y': 14, 'known': 20415, 'first-known': 20403, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33105, "k": "cmd", "T": 20415, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "The fire giant swings his guisarme."}
+{"m": "The fire giant misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 20}"}
+{"a": ";"}
+{"r": 33106, "k": "pos", "T": 20415, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 19)"}
+{"r": 33107, "k": "cmd", "T": 20415, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 11}"}
+{"a": ";"}
+{"r": 33108, "k": "pos", "T": 20415, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 10)"}
+{"r": 33109, "k": "cmd", "T": 20415, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 14, 'known': 20415, 'first-known': 20403, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "SW"}
+{"a": "b"}
+{"r": 33110, "k": "cmd", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"m": "The fire giant turns to flee."}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 14, 'known': 20416, 'first-known': 20403, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "SW"}
+{"a": "b"}
+{"r": 33111, "k": "cmd", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire giant!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 9}"}
+{"a": ";"}
+{"r": 33112, "k": "pos", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 8)"}
+{"r": 33113, "k": "cmd", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 13}"}
+{"a": ";"}
+{"r": 33114, "k": "pos", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 12)"}
+{"r": 33115, "k": "cmd", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 10}"}
+{"a": ";"}
+{"r": 33116, "k": "pos", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 9)"}
+{"r": 33117, "k": "cmd", "T": 20416, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 13, 'known': 20416, 'first-known': 20416, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "W"}
+{"a": "h"}
+{"r": 33118, "k": "cmd", "T": 20417, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 13, 'known': 20417, 'first-known': 20416, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "W"}
+{"a": "h"}
+{"r": 33119, "k": "cmd", "T": 20418, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire giant!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 20}"}
+{"a": ";"}
+{"r": 33120, "k": "pos", "T": 20418, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 19)"}
+{"r": 33121, "k": "cmd", "T": 20418, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["targetting enemy {'x': 39, 'y': 10, 'known': 20418, 'first-known': 20386, 'glyph': 'a', 'color': 'bl"], "dir": "NW"}
+{"a": "y"}
+{"r": 33122, "k": "cmd", "T": 20419, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "The giant beetle snaps wildly and misses!"}
+{"act": "move", "why": ["targetting enemy {'x': 39, 'y': 10, 'known': 20419, 'first-known': 20386, 'glyph': 'a', 'color': 'bl"], "dir": "N"}
+{"a": "k"}
+{"r": 33123, "k": "cmd", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 10}"}
+{"a": ";"}
+{"r": 33124, "k": "pos", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 9)"}
+{"r": 33125, "k": "cmd", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["hitting {'x': 39, 'y': 10, 'known': 20420, 'first-known': 20386, 'glyph': 'a', 'color': 'blue', 'typ", "targetting enemy {'x': 39, 'y': 10, 'known': 20420, 'first-known': 20386, 'glyph': 'a', 'color': 'bl"], "dir": "NW"}
+{"a": "y"}
+{"r": 33126, "k": "cmd", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127}
+{"m": "You hit the giant beetle!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 9}"}
+{"a": ";"}
+{"r": 33127, "k": "pos", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 8)"}
+{"r": 33128, "k": "cmd", "T": 20420, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["hitting {'x': 39, 'y': 10, 'known': 20420, 'first-known': 20386, 'glyph': 'a', 'color': 'blue', 'typ", "targetting enemy {'x': 39, 'y': 10, 'known': 20420, 'first-known': 20386, 'glyph': 'a', 'color': 'bl"], "dir": "NW"}
+{"a": "y"}
+{"r": 33129, "k": "cmd", "T": 20421, "lvl": "Home 5", "u": [41, 10], "hp": 127, "hpmax": 127}
+{"m": "You kill the giant beetle!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 39, :y 10}"], "dir": "NW"}
+{"a": "y"}
+{"r": 33130, "k": "line", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127, "q": "Call a white potion:"}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "The wand misses the fire giant."}
+{"m": "Boing!"}
+{"m": "A white potion shatters!"}
+{"m": "You smell a peculiar odor..."}
+{"a": "\\x1b"}
+{"r": 33131, "k": "cmd", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 33132, "k": "cmd", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127}
+{"m": "You see here a giant beetle corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 10}"}
+{"a": ";"}
+{"r": 33133, "k": "pos", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 9)"}
+{"r": 33134, "k": "cmd", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 11}"}
+{"a": ";"}
+{"r": 33135, "k": "pos", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 10)"}
+{"r": 33136, "k": "cmd", "T": 20421, "lvl": "Home 5", "u": [40, 9], "hp": 122, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["new or desired item at #Position{:x 40, :y 13}"], "dir": "SE"}
+{"a": "n"}
+{"r": 33137, "k": "cmd", "T": 20422, "lvl": "Home 5", "u": [41, 10], "hp": 122, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 40, :y 13}"], "dir": "S"}
+{"a": "j"}
+{"r": 33138, "k": "cmd", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 11}"}
+{"a": ";"}
+{"r": 33139, "k": "pos", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 10)"}
+{"r": 33140, "k": "cmd", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 12}"}
+{"a": ";"}
+{"r": 33141, "k": "pos", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 11)"}
+{"r": 33142, "k": "cmd", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "wield", "why": ["new or desired item at #Position{:x 40, :y 13}"], "slot": "k"}
+{"a": "w"}
+{"r": 33143, "k": "yn", "T": 20422, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "k"}
+{"r": 33144, "k": "cmd", "T": 20423, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33145, "k": "cmd", "T": 20423, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"act": "apply", "why": ["new or desired item at #Position{:x 40, :y 13}"], "slot": "k"}
+{"a": "a"}
+{"r": 33146, "k": "yn", "T": 20423, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127, "q": "What do you want to use or apply? [di-kyzA-CGI-LQUX or ?*]"}
+{"a": "k"}
+{"r": 33147, "k": "yn", "T": 20423, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127, "q": "In what direction do you want to dig? [j>]"}
+{"a": "j"}
+{"r": 33148, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "A board beneath the fire giant squeaks a B flat loudly."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33149, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 12}"}
+{"a": ";"}
+{"r": 33150, "k": "pos", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 11)"}
+{"r": 33151, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 13}"}
+{"a": ";"}
+{"r": 33152, "k": "pos", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 12)"}
+{"r": 33153, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 35, :y 12}"}
+{"a": ";"}
+{"r": 33154, "k": "pos", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(36, 11)"}
+{"r": 33155, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "^        a trap (squeaky board)"}
+{"act": "move", "why": ["targetting enemy {'x': 36, 'y': 13, 'known': 20425, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33156, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "The wand misses the fire giant."}
+{"m": "Boing!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 12}"}
+{"a": ";"}
+{"r": 33157, "k": "pos", "T": 20425, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 11)"}
+{"r": 33158, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 11}"}
+{"a": ";"}
+{"r": 33159, "k": "pos", "T": 20425, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 10)"}
+{"r": 33160, "k": "cmd", "T": 20425, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 36, 'y': 12, 'known': 20425, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33161, "k": "cmd", "T": 20426, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 36, 'y': 12, 'known': 20426, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33162, "k": "cmd", "T": 20426, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "The fire giant attacks a spot beside you."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 36, 'y': 12, 'known': 20426, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33163, "k": "cmd", "T": 20427, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "The fire giant strikes at thin air!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 36, 'y': 12, 'known': 20427, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33164, "k": "cmd", "T": 20427, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "A board beneath the fire giant squeaks an E note loudly."}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "The wand hits the fire giant!"}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +6 Excalibur", "hitting {'x': 37, 'y': 12, 'known': 20427, 'first-known': 20425, 'glyph': 'H', 'color': 'yellow', 't"], "slot": "a"}
+{"a": "w"}
+{"r": 33165, "k": "yn", "T": 20427, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "a"}
+{"r": 33166, "k": "cmd", "T": 20428, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "a - the blessed rustproof +6 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33167, "k": "cmd", "T": 20428, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["hitting {'x': 37, 'y': 12, 'known': 20428, 'first-known': 20425, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "W"}
+{"a": "h"}
+{"r": 33168, "k": "cmd", "T": 20428, "lvl": "Home 5", "u": [39, 11], "hp": 122, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"m": "The fire giant hits!"}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "The wand hits the fire giant!"}
+{"m": "The fire giant is killed!"}
+{"m": "Boing!"}
+{"act": "move", "why": ["targetting enemy {'x': 42, 'y': 13, 'known': 20428, 'first-known': 20407, 'glyph': 'H', 'color': 'ye"], "dir": "E"}
+{"a": "l"}
+{"r": 33169, "k": "cmd", "T": 20429, "lvl": "Home 5", "u": [40, 11], "hp": 122, "hpmax": 127}
+{"act": "move", "why": ["targetting enemy {'x': 42, 'y': 13, 'known': 20429, 'first-known': 20407, 'glyph': 'H', 'color': 'ye"], "dir": "E"}
+{"a": "l"}
+{"r": 33170, "k": "cmd", "T": 20429, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"m": "A tower of flame erupts from the floor under the fire giant!"}
+{"m": "The fire giant is uninjured."}
+{"m": "A board beneath the fire giant squeaks a B flat loudly."}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "Boing!"}
+{"m": "The wand hits the fire giant!"}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, '"]}
+{"a": ":"}
+{"r": 33171, "k": "cmd", "T": 20429, "lvl": "Home 5", "u": [41, 11], "hp": 122, "hpmax": 127}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 42, 'y': 12, 'known': 20429, 'first-known': 20407, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33172, "k": "cmd", "T": 20430, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["targetting enemy {'x': 42, 'y': 12, 'known': 20430, 'first-known': 20407, 'glyph': 'H', 'color': 'ye"], "dir": "SE"}
+{"a": "n"}
+{"r": 33173, "k": "cmd", "T": 20431, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You hear a nearby zap."}
+{"m": "The boulder falls apart."}
+{"m": "Boing!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33174, "k": "cmd", "T": 20431, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 42, :y 12}"}
+{"a": ";"}
+{"r": 33175, "k": "pos", "T": 20431, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 11)"}
+{"r": 33176, "k": "cmd", "T": 20431, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "^        a trap (fire trap)"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 11, 'known': 20431, 'first-known': 20407, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33177, "k": "cmd", "T": 20431, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "The fire giant zaps a wand of striking!"}
+{"m": "Boing!"}
+{"act": "move", "why": ["hitting {'x': 41, 'y': 12, 'known': 20431, 'first-known': 20407, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "N"}
+{"a": "k"}
+{"r": 33178, "k": "cmd", "T": 20432, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"act": "move", "why": ["hitting {'x': 41, 'y': 12, 'known': 20432, 'first-known': 20407, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "N"}
+{"a": "k"}
+{"r": 33179, "k": "cmd", "T": 20432, "lvl": "Home 5", "u": [42, 12], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire giant!"}
+{"act": "move", "why": ["targetting enemy {'x': 38, 'y': 13, 'known': 20432, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "NW"}
+{"a": "y"}
+{"r": 33180, "k": "cmd", "T": 20433, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 38, 'y': 13, 'known': 20433, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33181, "k": "cmd", "T": 20433, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["targetting enemy {'x': 37, 'y': 12, 'known': 20433, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33182, "k": "cmd", "T": 20434, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 37, 'y': 12, 'known': 20434, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33183, "k": "cmd", "T": 20435, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"m": "The fire giant throws a boulder!"}
+{"m": "The boulder hits the fire giant!"}
+{"m": "The fire giant swings wildly and misses!"}
+{"act": "move", "why": ["targetting enemy {'x': 37, 'y': 12, 'known': 20435, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33184, "k": "cmd", "T": 20436, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "The fire giant picks up a boulder."}
+{"act": "move", "why": ["hitting {'x': 37, 'y': 12, 'known': 20436, 'first-known': 20425, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "W"}
+{"a": "h"}
+{"r": 33185, "k": "cmd", "T": 20437, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"m": "A board beneath the fire giant squeaks a B flat loudly."}
+{"m": "The fire giant misses!"}
+{"act": "move", "why": ["hitting {'x': 37, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "W"}
+{"a": "h"}
+{"r": 33186, "k": "cmd", "T": 20437, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire giant!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 12}"}
+{"a": ";"}
+{"r": 33187, "k": "pos", "T": 20437, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 11)"}
+{"r": 33188, "k": "cmd", "T": 20437, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 36, 'y': 12, 'known': 20437, 'first-known': 20437, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33189, "k": "cmd", "T": 20438, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["targetting enemy {'x': 36, 'y': 12, 'known': 20438, 'first-known': 20437, 'glyph': 'H', 'color': 'ye"], "dir": "SW"}
+{"a": "b"}
+{"r": 33190, "k": "cmd", "T": 20439, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "The fire giant misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 20}"}
+{"a": ";"}
+{"r": 33191, "k": "pos", "T": 20439, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 19)"}
+{"r": 33192, "k": "cmd", "T": 20439, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 12, 'known': 20439, 'first-known': 20437, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "NW"}
+{"a": "y"}
+{"r": 33193, "k": "cmd", "T": 20440, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"m": "The fire giant misses!"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 12, 'known': 20440, 'first-known': 20437, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "NW"}
+{"a": "y"}
+{"r": 33194, "k": "cmd", "T": 20441, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "You hit the fire giant!"}
+{"m": "The fire giant misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 20}"}
+{"a": ";"}
+{"r": 33195, "k": "pos", "T": 20441, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 19)"}
+{"r": 33196, "k": "cmd", "T": 20441, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 12, 'known': 20441, 'first-known': 20437, 'glyph': 'H', 'color': 'yellow', 't"], "dir": "NW"}
+{"a": "y"}
+{"r": 33197, "k": "cmd", "T": 20441, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire giant!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33198, "k": "cmd", "T": 20442, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33199, "k": "cmd", "T": 20443, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 19}"}
+{"a": ";"}
+{"r": 33200, "k": "pos", "T": 20443, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 18)"}
+{"r": 33201, "k": "cmd", "T": 20443, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33202, "k": "cmd", "T": 20444, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33203, "k": "cmd", "T": 20444, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33204, "k": "cmd", "T": 20445, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"]}
+{"a": "s"}
+{"r": 33205, "k": "cmd", "T": 20445, "lvl": "Home 5", "u": [38, 12], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["targetting enemy {'x': 35, 'y': 12, 'known': 20437, 'first-known': 20425, 'glyph': 'H', 'color': 'ye"], "dir": "W"}
+{"a": "h"}
+{"r": 33206, "k": "cmd", "T": 20446, "lvl": "Home 5", "u": [37, 12], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 12}"], "dir": "N"}
+{"a": "k"}
+{"r": 33207, "k": "cmd", "T": 20447, "lvl": "Home 5", "u": [37, 11], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33208, "k": "cmd", "T": 20447, "lvl": "Home 5", "u": [37, 11], "hp": 127, "hpmax": 127}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 40, :y 13}"], "pos": "#Position{:x 40, :y 13}"}
+{"a": "_"}
+{"r": 33209, "k": "pos", "T": 20447, "lvl": "Home 5", "u": [37, 11], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 12)"}
+{"r": 33210, "k": "cmd", "T": 20449, "lvl": "Home 5", "u": [41, 12], "hp": 127, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33211, "k": "cmd", "T": 20449, "lvl": "Home 5", "u": [41, 12], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 12}"], "dir": "NE"}
+{"a": "u"}
+{"r": 33212, "k": "cmd", "T": 20450, "lvl": "Home 5", "u": [42, 11], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33213, "k": "cmd", "T": 20450, "lvl": "Home 5", "u": [42, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 37, :y 12}"], "dir": "W"}
+{"a": "h"}
+{"r": 33214, "k": "cmd", "T": 20451, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 20}"}
+{"a": ";"}
+{"r": 33215, "k": "pos", "T": 20451, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 19)"}
+{"r": 33216, "k": "cmd", "T": 20451, "lvl": "Home 5", "u": [41, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at #Position{:x 37, :y 12}"], "dir": "W"}
+{"a": "h"}
+{"r": 33217, "k": "cmd", "T": 20451, "lvl": "Home 5", "u": [40, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 37, :y 12}"], "dir": "W"}
+{"a": "h"}
+{"r": 33218, "k": "cmd", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 20}"}
+{"a": ";"}
+{"r": 33219, "k": "pos", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 19)"}
+{"r": 33220, "k": "cmd", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: telepathy]"}
+{"act": "wield", "why": ["new or desired item at #Position{:x 37, :y 12}"], "slot": "k"}
+{"a": "w"}
+{"r": 33221, "k": "yn", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "k"}
+{"r": 33222, "k": "cmd", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33223, "k": "cmd", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "apply", "why": ["new or desired item at #Position{:x 37, :y 12}"], "slot": "k"}
+{"a": "a"}
+{"r": 33224, "k": "yn", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "q": "What do you want to use or apply? [di-kyzA-CGI-LQUX or ?*]"}
+{"a": "k"}
+{"r": 33225, "k": "yn", "T": 20452, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127, "q": "In what direction do you want to dig? [h>]"}
+{"a": "h"}
+{"r": 33226, "k": "cmd", "T": 20454, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33227, "k": "cmd", "T": 20454, "lvl": "Home 5", "u": [39, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 37, :y 12}"], "dir": "W"}
+{"a": "h"}
+{"r": 33228, "k": "cmd", "T": 20454, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 33229, "k": "cmd", "T": 20454, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +6 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 33230, "k": "yn", "T": 20454, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "a"}
+{"r": 33231, "k": "cmd", "T": 20455, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127}
+{"m": "a - the blessed rustproof +6 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33232, "k": "cmd", "T": 20455, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at {'x': 40, 'y': 14, 'glyph': '%', 'color': 'yellow', 'feature': 'firetrap', 's"], "dir": "SE"}
+{"a": "n"}
+{"r": 33233, "k": "cmd", "T": 20456, "lvl": "Home 5", "u": [39, 12], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 20}"}
+{"a": ";"}
+{"r": 33234, "k": "pos", "T": 20456, "lvl": "Home 5", "u": [39, 12], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 19)"}
+{"r": 33235, "k": "cmd", "T": 20456, "lvl": "Home 5", "u": [39, 12], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision, telepathy]"}
+{"act": "move", "why": ["new or desired item at {'x': 40, 'y': 14, 'glyph': '%', 'color': 'yellow', 'feature': 'firetrap', 's"], "dir": "E"}
+{"a": "l"}
+{"r": 33236, "k": "cmd", "T": 20456, "lvl": "Home 5", "u": [40, 12], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at {'x': 40, 'y': 14, 'glyph': '%', 'color': 'yellow', 'feature': 'firetrap', 's"], "dir": "SE"}
+{"a": "n"}
+{"r": 33237, "k": "cmd", "T": 20457, "lvl": "Home 5", "u": [41, 13], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"m": "A tower of flame erupts from the floor!"}
+{"m": "You are uninjured."}
+{"m": "Your gloves smoulder completely!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33238, "k": "cmd", "T": 20457, "lvl": "Home 5", "u": [41, 13], "hp": 127, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'firetrap', 'seen': Tru"]}
+{"a": ":"}
+{"r": 33239, "k": "cmd", "T": 20457, "lvl": "Home 5", "u": [41, 13], "hp": 127, "hpmax": 127}
+{"m": "There is a fire trap here."}
+{"act": "autotravel", "why": ["destroy drawbridge"], "pos": "#Position{:x 39, :y 10}"}
+{"a": "_"}
+{"r": 33240, "k": "pos", "T": 20457, "lvl": "Home 5", "u": [41, 13], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(40, 9)"}
+{"r": 33241, "k": "cmd", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 19}"}
+{"a": ";"}
+{"r": 33242, "k": "pos", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 18)"}
+{"r": 33243, "k": "cmd", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "zapwand", "why": ["destroy drawbridge"], "slot": "y"}
+{"a": "z"}
+{"r": 33244, "k": "yn", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127, "q": "What do you want to zap? [dyzCIKQU or ?*]"}
+{"a": "y"}
+{"r": 33245, "k": "yn", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127, "q": "In what direction?"}
+{"a": "k"}
+{"r": 33246, "k": "cmd", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127}
+{"m": "The portcullis of the drawbridge falls into the lava!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33247, "k": "cmd", "T": 20459, "lvl": "Home 5", "u": [40, 9], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 8}"], "dir": "SW"}
+{"a": "b"}
+{"r": 33248, "k": "cmd", "T": 20460, "lvl": "Home 5", "u": [39, 10], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 8}"], "dir": "SW"}
+{"a": "b"}
+{"r": 33249, "k": "cmd", "T": 20461, "lvl": "Home 5", "u": [38, 11], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 8}"], "dir": "W"}
+{"a": "h"}
+{"r": 33250, "k": "cmd", "T": 20462, "lvl": "Home 5", "u": [37, 11], "hp": 127, "hpmax": 127}
+{"m": "There are several objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 8}"], "dir": "W"}
+{"a": "h"}
+{"r": 33251, "k": "cmd", "T": 20462, "lvl": "Home 5", "u": [36, 11], "hp": 127, "hpmax": 127}
+{"m": "A board beneath you squeaks a B flat loudly."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 38, :y 8}"], "pos": "#Position{:x 38, :y 8}"}
+{"a": "_"}
+{"r": 33252, "k": "pos", "T": 20462, "lvl": "Home 5", "u": [36, 11], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(39, 7)"}
+{"r": 33253, "k": "cmd", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 33254, "k": "cmd", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127}
+{"m": "You see here an iron chain."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 19}"}
+{"a": ";"}
+{"r": 33255, "k": "pos", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 18)"}
+{"r": 33256, "k": "cmd", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 20}"}
+{"a": ";"}
+{"r": 33257, "k": "pos", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 19)"}
+{"r": 33258, "k": "cmd", "T": 20466, "lvl": "Home 5", "u": [39, 7], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 39, 'y': 7, 'glyph': '_', 'color': 'cyan', 'feature': None, 'seen': Tru"], "dir": "NE"}
+{"a": "u"}
+{"r": 33259, "k": "cmd", "T": 20467, "lvl": "Home 5", "u": [40, 6], "hp": 127, "hpmax": 127}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 33260, "k": "cmd", "T": 20467, "lvl": "Home 5", "u": [40, 6], "hp": 127, "hpmax": 127}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 33261, "k": "yn", "T": 20467, "lvl": "Home 5", "u": [40, 6], "hp": 127, "hpmax": 127, "q": "What do you want to put on? [hlmruFLT or ?*]"}
+{"a": "h"}
+{"r": 33262, "k": "cmd", "T": 20468, "lvl": "Home 5", "u": [40, 6], "hp": 127, "hpmax": 127}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on right hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33263, "k": "cmd", "T": 20468, "lvl": "Home 5", "u": [40, 6], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 33264, "k": "cmd", "T": 20469, "lvl": "Home 5", "u": [41, 5], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 33265, "k": "cmd", "T": 20469, "lvl": "Home 5", "u": [42, 4], "hp": 127, "hpmax": 127}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 67, :y 14}"}
+{"a": "_"}
+{"r": 33266, "k": "pos", "T": 20469, "lvl": "Home 5", "u": [42, 4], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(68, 13)"}
+{"r": 33267, "k": "cmd", "T": 20472, "lvl": "Home 5", "u": [48, 7], "hp": 127, "hpmax": 127}
+{"m": "A fire ant blocks your path."}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 7, 'known': 20472, 'first-known': 20472, 'glyph': 'a', 'color': 'red', 'type'", "targetting enemy {'x': 48, 'y': 7, 'known': 20472, 'first-known': 20472, 'glyph': 'a', 'color': 'red"], "dir": "NE"}
+{"a": "u"}
+{"r": 33268, "k": "cmd", "T": 20473, "lvl": "Home 5", "u": [48, 7], "hp": 127, "hpmax": 127}
+{"m": "You kill the fire ant!"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 33269, "k": "cmd", "T": 20473, "lvl": "Home 5", "u": [49, 6], "hp": 127, "hpmax": 127}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 33270, "k": "yn", "T": 20473, "lvl": "Home 5", "u": [49, 6], "hp": 127, "hpmax": 127, "q": "What do you want to remove? [fhP or ?*]"}
+{"a": "h"}
+{"r": 33271, "k": "cmd", "T": 20474, "lvl": "Home 5", "u": [49, 6], "hp": 127, "hpmax": 127}
+{"m": "You were wearing a blessed ring of levitation (on right hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33272, "k": "cmd", "T": 20474, "lvl": "Home 5", "u": [49, 6], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33273, "k": "cmd", "T": 20474, "lvl": "Home 5", "u": [50, 7], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33274, "k": "cmd", "T": 20475, "lvl": "Home 5", "u": [51, 8], "hp": 126, "hpmax": 127}
+{"m": "You feel sluggish."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33275, "k": "cmd", "T": 20475, "lvl": "Home 5", "u": [52, 8], "hp": 126, "hpmax": 127}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 50, :y 9}"}
+{"a": ";"}
+{"r": 33276, "k": "pos", "T": 20475, "lvl": "Home 5", "u": [52, 8], "hp": 126, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(51, 8)"}
+{"r": 33277, "k": "cmd", "T": 20475, "lvl": "Home 5", "u": [52, 8], "hp": 126, "hpmax": 127}
+{"m": "^        a trap (anti-magic field)"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 33278, "k": "cmd", "T": 20476, "lvl": "Home 5", "u": [53, 7], "hp": 126, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 33279, "k": "cmd", "T": 20476, "lvl": "Home 5", "u": [54, 6], "hp": 126, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33280, "k": "cmd", "T": 20477, "lvl": "Home 5", "u": [55, 6], "hp": 126, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33281, "k": "cmd", "T": 20477, "lvl": "Home 5", "u": [56, 6], "hp": 126, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33282, "k": "cmd", "T": 20478, "lvl": "Home 5", "u": [57, 7], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33283, "k": "cmd", "T": 20478, "lvl": "Home 5", "u": [58, 8], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33284, "k": "cmd", "T": 20479, "lvl": "Home 5", "u": [59, 8], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33285, "k": "cmd", "T": 20480, "lvl": "Home 5", "u": [60, 8], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33286, "k": "cmd", "T": 20480, "lvl": "Home 5", "u": [61, 8], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33287, "k": "cmd", "T": 20481, "lvl": "Home 5", "u": [62, 8], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 33288, "k": "cmd", "T": 20482, "lvl": "Home 5", "u": [63, 8], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 20}"}
+{"a": ";"}
+{"r": 33289, "k": "pos", "T": 20482, "lvl": "Home 5", "u": [63, 8], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 19)"}
+{"r": 33290, "k": "cmd", "T": 20482, "lvl": "Home 5", "u": [63, 8], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33291, "k": "cmd", "T": 20482, "lvl": "Home 5", "u": [64, 9], "hp": 127, "hpmax": 127}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 20}"}
+{"a": ";"}
+{"r": 33292, "k": "pos", "T": 20482, "lvl": "Home 5", "u": [64, 9], "hp": 127, "hpmax": 127, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 19)"}
+{"r": 33293, "k": "cmd", "T": 20482, "lvl": "Home 5", "u": [64, 9], "hp": 127, "hpmax": 127}
+{"m": "H        a giant humanoid (fire giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33294, "k": "cmd", "T": 20483, "lvl": "Home 5", "u": [65, 10], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33295, "k": "cmd", "T": 20483, "lvl": "Home 5", "u": [66, 11], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33296, "k": "cmd", "T": 20484, "lvl": "Home 5", "u": [67, 12], "hp": 127, "hpmax": 127}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 33297, "k": "cmd", "T": 20485, "lvl": "Home 5", "u": [68, 13], "hp": 127, "hpmax": 127}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch quest", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 33298, "k": "cmd", "T": 20485, "lvl": "Home 4", "u": [46, 17], "hp": 127, "hpmax": 127}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 11, 'y': 16, 'glyph': '*', 'color': 'blue', 'feature': 'floor', 'seen':"], "pos": "#Position{:x 39, :y 14}"}
+{"a": "_"}
+{"r": 33299, "k": "pos", "T": 20485, "lvl": "Home 4", "u": [46, 17], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(40, 13)"}
+{"r": 33300, "k": "cmd", "T": 20488, "lvl": "Home 4", "u": [45, 12], "hp": 127, "hpmax": 127}
+{"m": "You stop at the edge of the lava."}
+{"act": "move", "why": ["new or desired item at {'x': 11, 'y': 16, 'glyph': '*', 'color': 'blue', 'feature': 'floor', 'seen':"], "dir": "SW"}
+{"a": "b"}
+{"r": 33301, "k": "cmd", "T": 20488, "lvl": "Home 4", "u": [44, 13], "hp": 127, "hpmax": 127}
+{"act": "autotravel", "why": ["new or desired item at {'x': 11, 'y': 16, 'glyph': '*', 'color': 'blue', 'feature': 'floor', 'seen':"], "pos": "#Position{:x 39, :y 14}"}
+{"a": "_"}
+{"r": 33302, "k": "pos", "T": 20488, "lvl": "Home 4", "u": [44, 13], "hp": 127, "hpmax": 127, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(40, 13)"}
+{"r": 33303, "k": "cmd", "T": 20491, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127}
+{"act": "wield", "why": ["new or desired item at {'x': 11, 'y': 16, 'glyph': '*', 'color': 'blue', 'feature': 'floor', 'seen':"], "slot": "k"}
+{"a": "w"}
+{"r": 33304, "k": "yn", "T": 20491, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "k"}
+{"r": 33305, "k": "cmd", "T": 20492, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33306, "k": "cmd", "T": 20492, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127}
+{"act": "apply", "why": ["new or desired item at {'x': 11, 'y': 16, 'glyph': '*', 'color': 'blue', 'feature': 'floor', 'seen':"], "slot": "k"}
+{"a": "a"}
+{"r": 33307, "k": "yn", "T": 20492, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127, "q": "What do you want to use or apply? [di-kyzA-CGI-LQUX or ?*]"}
+{"a": "k"}
+{"r": 33308, "k": "yn", "T": 20492, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127, "q": "In what direction do you want to dig? [h>]"}
+{"a": "h"}
+{"r": 33309, "k": "cmd", "T": 20494, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 33310, "k": "cmd", "T": 20494, "lvl": "Home 4", "u": [40, 13], "hp": 127, "hpmax": 127}
+{"note": "abort", "d": "limit: terminated by signal 15"}

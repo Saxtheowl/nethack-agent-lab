@@ -1,0 +1,8 @@
+{
+ "description": "Default kit (reflection, levitation, speed), XL 14, level-teleported to the Castle, mapped; stage tested in isolation (no Excalibur/quest detours); goal: enter the Valley of the Dead (through the Castle trap doors)",
+ "steps": [["xl", 14], ["levelport", "castle"], ["map"]],
+ "goal": "valley",
+ "max_turns": 6000,
+ "profile": "fast",
+ "skip": ["quest-portal", "dlvl20", "excalibur", "quest"]
+}

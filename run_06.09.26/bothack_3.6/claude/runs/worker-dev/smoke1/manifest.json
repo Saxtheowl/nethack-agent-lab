@@ -1,0 +1,60 @@
+{
+ "game_id": "smoke1",
+ "series": null,
+ "started": "2026-09-17T08:50:10+0000",
+ "host": "miniforum-worker",
+ "python": "3.12.3",
+ "engine": {
+  "nethack": "3.6.7",
+  "windowport": "bot",
+  "proto": 1
+ },
+ "code": {
+  "engine_binary_sha256": "99076a8c6d298ec74d38de0a8a3eb86de664066208ee0c90492a2913eb27c622",
+  "engine_patch_sha256": "75eaa63bf981ce5caea982b03ce6e7556c99d68723483bda0c8dfd22ca8e88e6",
+  "bot_code_hash": "bfcc2e0715b38db8",
+  "git_head": null
+ },
+ "engine_seed": 1,
+ "bot_seed": 1,
+ "character": "val-dwa-fem-law",
+ "assists": {
+  "invincible": true,
+  "nostarve": true,
+  "kit": [
+   "wear blessed +2 greased gray dragon scale mail",
+   "wear blessed amulet of reflection",
+   "wear blessed +2 fireproof speed boots",
+   "inv blessed ring of levitation",
+   "inv blessed unicorn horn",
+   "inv bag of holding",
+   "inv blessed +0 pick-axe",
+   "inv 2 uncursed food rations"
+  ]
+ },
+ "wizard": true,
+ "scenario": "smoke-levelport",
+ "goal": null,
+ "bot_profile": "full",
+ "bot_tactics": "assisted",
+ "bot_skip": "",
+ "limits": {
+  "max_turns": 300,
+  "max_seconds": 43200,
+  "max_requests": 3000000,
+  "prompt_loop": 40,
+  "no_turn_requests": 600,
+  "action_loop": 8,
+  "action_loop_abort": 40,
+  "stall_turns": 6000,
+  "fixation_recover": 400,
+  "fixation_abort": 1200,
+  "death_loop": 150,
+  "death_loop_turns": 300,
+  "storm_window": 3000,
+  "storm_min_turns": 30,
+  "decision_warn": 60.0,
+  "decision_kill": 600.0
+ },
+ "counted_as_full_game": false
+}

@@ -1,0 +1,800 @@
+{"r": 6026, "k": "cmd", "T": 4487, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6027, "k": "cmd", "T": 4487, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"m": "You see here a scroll labeled FOOBIE BLETCH (for sale, 150 zorkmids)."}
+{"act": "apply", "why": ["putting {'A': None, 'B': None, 'O': None, 'P': None, 'u': None, 'v': None} into bag at j", "bag items"], "slot": "j"}
+{"a": "a"}
+{"r": 6028, "k": "yn", "T": 4487, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "q": "What do you want to use or apply? [ijCN or ?*]"}
+{"a": "j"}
+{"r": 6029, "k": "menu", "T": 4487, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 6030, "k": "menu", "T": 4487, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "p": "Put in what?", "items": ["# Coins", "$ 174 gold pieces", "# Amulets", "f a blessed amulet of reflection (being worn)", "L a circular amulet", "# Weapons", "a the blessed rustproof +1 Excalibur (weapon in hand)", "b a +0 dagger", "p an orcish dagger", "z an orcish dagger (at the ready)", "I 11 darts", "K an elven dagger", "# Armor", "c an uncursed +3 small shield (being worn)", "e a blessed greased +2 gray dragon scale mail (being worn)", "g a blessed fireproof +2 pair of speed boots (being worn)"]}
+{"a": [26, 28, 30, 29, 25, 27]}
+{"r": 6031, "k": "cmd", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"m": "You put a scroll labeled YUM YUM into the bag of holding."}
+{"m": "You put a scroll labeled PRATYAVAYAH into the bag of holding."}
+{"m": "You put a scroll labeled ZELGO MER into the bag of holding."}
+{"m": "You put a scroll labeled DAIYEN FOOELS into the bag of holding."}
+{"m": "You put a scroll labeled DAIYEN FOOELS into the bag of holding."}
+{"m": "You put a scroll labeled NR 9 into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6032, "k": "cmd", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 6033, "k": "yn", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "q": "What do you want to use or apply? [ijCN or ?*]"}
+{"a": "j"}
+{"r": 6034, "k": "menu", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 6035, "k": "menu", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled NR 9", "b a scroll labeled DAIYEN FOOELS", "c a scroll labeled DAIYEN FOOELS", "d a scroll labeled ZELGO MER", "e a scroll labeled PRATYAVAYAH", "f a scroll labeled YUM YUM", "g a scroll labeled READ ME", "h a scroll labeled READ ME"]}
+{"a": []}
+{"r": 6036, "k": "cmd", "T": 4488, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"act": "pay", "why": ["fidgeting to make peacefuls move", "peaceful blocker {'x': 35, 'y': 16, 'known': 4488, 'first-known': 4452, 'glyph': '@', 'color': 'whit", "exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "p"}
+{"r": 6037, "k": "cmd", "T": 4489, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"m": "You do not owe Upernavik anything."}
+{"m": "You hear a door open."}
+{"act": "move", "why": ["arbitrary direction", "fidgeting to make peacefuls move", "peaceful blocker {'x': 35, 'y': 16, 'known': 4489, 'first-known': 4452, 'glyph': '@', 'color': 'whit", "exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6038, "k": "cmd", "T": 4490, "lvl": "Dlvl:8", "u": [38, 16], "hp": 71, "hpmax": 71}
+{"m": "You see here a scroll called scroll labeled FNORD1 (for sale, 150 zorkmids)."}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6039, "k": "cmd", "T": 4490, "lvl": "Dlvl:8", "u": [38, 16], "hp": 71, "hpmax": 71}
+{"m": "You see here a scroll called scroll labeled FNORD1 (for sale, 150 zorkmids)."}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6040, "k": "cmd", "T": 4490, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"m": "You see here a scroll labeled FOOBIE BLETCH (for sale, 150 zorkmids)."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6041, "k": "cmd", "T": 4490, "lvl": "Dlvl:8", "u": [37, 15], "hp": 71, "hpmax": 71}
+{"m": "You see here a scroll labeled FOOBIE BLETCH (for sale, 150 zorkmids)."}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6042, "k": "cmd", "T": 4491, "lvl": "Dlvl:8", "u": [36, 15], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6043, "k": "cmd", "T": 4491, "lvl": "Dlvl:8", "u": [35, 15], "hp": 71, "hpmax": 71}
+{"m": "There is an open door here."}
+{"m": "You see here an orc corpse."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 6044, "k": "cmd", "T": 4491, "lvl": "Dlvl:8", "u": [35, 15], "hp": 71, "hpmax": 71}
+{"m": "There is an open door here."}
+{"m": "You see here an orc corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 18}"}
+{"a": ";"}
+{"r": 6045, "k": "pos", "T": 4491, "lvl": "Dlvl:8", "u": [35, 15], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 17)"}
+{"r": 6046, "k": "cmd", "T": 4491, "lvl": "Dlvl:8", "u": [35, 15], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6047, "k": "cmd", "T": 4492, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"m": "You see here a blessed +0 pick-axe."}
+{"act": "look", "why": ["examining tile {'x': 33, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6048, "k": "cmd", "T": 4492, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"m": "You see here a blessed +0 pick-axe."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 6049, "k": "cmd", "T": 4493, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"m": "k - a blessed +0 pick-axe."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6050, "k": "cmd", "T": 4493, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 33, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6051, "k": "cmd", "T": 4493, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 6052, "k": "cmd", "T": 4494, "lvl": "Dlvl:8", "u": [33, 16], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 19, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6053, "k": "cmd", "T": 4495, "lvl": "Dlvl:8", "u": [34, 17], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 19, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6054, "k": "cmd", "T": 4495, "lvl": "Dlvl:8", "u": [35, 18], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 35, 'y': 13, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 35, :y 13}"}
+{"a": "_"}
+{"r": 6055, "k": "pos", "T": 4495, "lvl": "Dlvl:8", "u": [35, 18], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(36, 12)"}
+{"r": 6056, "k": "cmd", "T": 4496, "lvl": "Dlvl:8", "u": [34, 17], "hp": 71, "hpmax": 71}
+{"m": "A watchman blocks your path."}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 13, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6057, "k": "cmd", "T": 4496, "lvl": "Dlvl:8", "u": [33, 16], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 13, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 6058, "k": "cmd", "T": 4497, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 35, 'y': 13, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 35, :y 13}"}
+{"a": "_"}
+{"r": 6059, "k": "pos", "T": 4497, "lvl": "Dlvl:8", "u": [34, 15], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(36, 12)"}
+{"r": 6060, "k": "cmd", "T": 4499, "lvl": "Dlvl:8", "u": [36, 12], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 12}"}
+{"a": ";"}
+{"r": 6061, "k": "pos", "T": 4499, "lvl": "Dlvl:8", "u": [36, 12], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 11)"}
+{"r": 6062, "k": "cmd", "T": 4499, "lvl": "Dlvl:8", "u": [36, 12], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6063, "k": "cmd", "T": 4500, "lvl": "Dlvl:8", "u": [35, 12], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 33, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 33, :y 7}"}
+{"a": "_"}
+{"r": 6064, "k": "pos", "T": 4500, "lvl": "Dlvl:8", "u": [35, 12], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(34, 6)"}
+{"r": 6065, "k": "cmd", "T": 4503, "lvl": "Dlvl:8", "u": [34, 6], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6066, "k": "cmd", "T": 4504, "lvl": "Dlvl:8", "u": [34, 5], "hp": 71, "hpmax": 71}
+{"m": "You hear an animal carcass being offered in sacrifice."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 5}"}
+{"a": ";"}
+{"r": 6067, "k": "pos", "T": 4504, "lvl": "Dlvl:8", "u": [34, 5], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 4)"}
+{"r": 6068, "k": "cmd", "T": 4504, "lvl": "Dlvl:8", "u": [34, 5], "hp": 71, "hpmax": 71}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6069, "k": "cmd", "T": 4505, "lvl": "Dlvl:8", "u": [33, 5], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 6070, "k": "cmd", "T": 4505, "lvl": "Dlvl:8", "u": [34, 5], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 18, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6071, "k": "cmd", "T": 4506, "lvl": "Dlvl:8", "u": [34, 6], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 40, 'y': 18, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 40, :y 19}"}
+{"a": "_"}
+{"r": 6072, "k": "pos", "T": 4506, "lvl": "Dlvl:8", "u": [34, 6], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 18)"}
+{"r": 6073, "k": "cmd", "T": 4511, "lvl": "Dlvl:8", "u": [34, 17], "hp": 71, "hpmax": 71}
+{"m": "A watchman blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 18}"}
+{"a": ";"}
+{"r": 6074, "k": "pos", "T": 4511, "lvl": "Dlvl:8", "u": [34, 17], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 17)"}
+{"r": 6075, "k": "cmd", "T": 4511, "lvl": "Dlvl:8", "u": [34, 17], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 18, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6076, "k": "cmd", "T": 4512, "lvl": "Dlvl:8", "u": [35, 18], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 40, 'y': 18, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 40, :y 19}"}
+{"a": "_"}
+{"r": 6077, "k": "pos", "T": 4512, "lvl": "Dlvl:8", "u": [35, 18], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 18)"}
+{"r": 6078, "k": "cmd", "T": 4515, "lvl": "Dlvl:8", "u": [41, 18], "hp": 71, "hpmax": 71}
+{"act": "open", "why": ["exploring {'x': 40, 'y': 18, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "o"}
+{"r": 6079, "k": "yn", "T": 4515, "lvl": "Dlvl:8", "u": [41, 18], "hp": 71, "hpmax": 71, "q": "In what direction?"}
+{"a": "k"}
+{"r": 6080, "k": "cmd", "T": 4515, "lvl": "Dlvl:8", "u": [41, 18], "hp": 71, "hpmax": 71}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 18, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6081, "k": "cmd", "T": 4516, "lvl": "Dlvl:8", "u": [41, 17], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 48, 'y': 19, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 48, :y 19}"}
+{"a": "_"}
+{"r": 6082, "k": "pos", "T": 4516, "lvl": "Dlvl:8", "u": [41, 17], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(49, 18)"}
+{"r": 6083, "k": "cmd", "T": 4522, "lvl": "Dlvl:8", "u": [49, 18], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 6084, "k": "cmd", "T": 4522, "lvl": "Dlvl:8", "u": [50, 17], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6085, "k": "cmd", "T": 4523, "lvl": "Dlvl:8", "u": [50, 16], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6086, "k": "cmd", "T": 4524, "lvl": "Dlvl:8", "u": [50, 15], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 48, :y 8}"}
+{"a": ";"}
+{"r": 6087, "k": "pos", "T": 4524, "lvl": "Dlvl:8", "u": [50, 15], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(49, 7)"}
+{"r": 6088, "k": "cmd", "T": 4524, "lvl": "Dlvl:8", "u": [50, 15], "hp": 71, "hpmax": 71}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6089, "k": "cmd", "T": 4524, "lvl": "Dlvl:8", "u": [50, 14], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6090, "k": "cmd", "T": 4525, "lvl": "Dlvl:8", "u": [49, 13], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6091, "k": "cmd", "T": 4525, "lvl": "Dlvl:8", "u": [48, 12], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 6092, "k": "cmd", "T": 4526, "lvl": "Dlvl:8", "u": [49, 11], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 6093, "k": "cmd", "T": 4527, "lvl": "Dlvl:8", "u": [50, 10], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6094, "k": "cmd", "T": 4528, "lvl": "Dlvl:8", "u": [49, 9], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6095, "k": "cmd", "T": 4528, "lvl": "Dlvl:8", "u": [49, 8], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 48, :y 7}"}
+{"a": ";"}
+{"r": 6096, "k": "pos", "T": 4528, "lvl": "Dlvl:8", "u": [49, 8], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(49, 6)"}
+{"r": 6097, "k": "cmd", "T": 4528, "lvl": "Dlvl:8", "u": [49, 8], "hp": 71, "hpmax": 71}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6098, "k": "cmd", "T": 4529, "lvl": "Dlvl:8", "u": [48, 7], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6099, "k": "cmd", "T": 4529, "lvl": "Dlvl:8", "u": [48, 6], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 6100, "k": "cmd", "T": 4530, "lvl": "Dlvl:8", "u": [48, 5], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 6101, "k": "cmd", "T": 4530, "lvl": "Dlvl:8", "u": [47, 4], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 5}"}
+{"a": ";"}
+{"r": 6102, "k": "pos", "T": 4530, "lvl": "Dlvl:8", "u": [47, 4], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 4)"}
+{"r": 6103, "k": "cmd", "T": 4530, "lvl": "Dlvl:8", "u": [47, 4], "hp": 71, "hpmax": 71}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6104, "k": "cmd", "T": 4531, "lvl": "Dlvl:8", "u": [46, 4], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6105, "k": "cmd", "T": 4531, "lvl": "Dlvl:8", "u": [45, 4], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6106, "k": "cmd", "T": 4532, "lvl": "Dlvl:8", "u": [45, 5], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 40, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 40, :y 5}"}
+{"a": "_"}
+{"r": 6107, "k": "pos", "T": 4532, "lvl": "Dlvl:8", "u": [45, 5], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 4)"}
+{"r": 6108, "k": "cmd", "T": 4535, "lvl": "Dlvl:8", "u": [41, 4], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 5}"}
+{"a": ";"}
+{"r": 6109, "k": "pos", "T": 4535, "lvl": "Dlvl:8", "u": [41, 4], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 4)"}
+{"r": 6110, "k": "cmd", "T": 4535, "lvl": "Dlvl:8", "u": [41, 4], "hp": 71, "hpmax": 71}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 6111, "k": "cmd", "T": 4535, "lvl": "Dlvl:8", "u": [40, 5], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6112, "k": "cmd", "T": 4536, "lvl": "Dlvl:8", "u": [40, 6], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 8, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6113, "k": "cmd", "T": 4537, "lvl": "Dlvl:8", "u": [40, 7], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["hitting {'x': 39, 'y': 9, 'known': 4537, 'first-known': 4537, 'glyph': 'f', 'color': 'blue', 'type':", "targetting enemy {'x': 39, 'y': 9, 'known': 4537, 'first-known': 4537, 'glyph': 'f', 'color': 'blue'"], "dir": "S"}
+{"a": "j"}
+{"r": 6114, "k": "cmd", "T": 4537, "lvl": "Dlvl:8", "u": [40, 7], "hp": 71, "hpmax": 71}
+{"m": "You kill the panther!"}
+{"act": "move", "why": ["new or desired item at {'x': 39, 'y': 9, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': Tr"], "dir": "S"}
+{"a": "j"}
+{"r": 6115, "k": "cmd", "T": 4538, "lvl": "Dlvl:8", "u": [40, 8], "hp": 71, "hpmax": 71}
+{"m": "You see here a panther corpse."}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6116, "k": "cmd", "T": 4538, "lvl": "Dlvl:8", "u": [40, 8], "hp": 71, "hpmax": 71}
+{"m": "You see here a panther corpse."}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 10, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6117, "k": "cmd", "T": 4538, "lvl": "Dlvl:8", "u": [40, 9], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 9}"}
+{"a": ";"}
+{"r": 6118, "k": "pos", "T": 4538, "lvl": "Dlvl:8", "u": [40, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 8)"}
+{"r": 6119, "k": "cmd", "T": 4538, "lvl": "Dlvl:8", "u": [40, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 10, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 6120, "k": "cmd", "T": 4539, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71}
+{"m": "The priestess of Odin intones:"}
+{"m": "\"Pilgrim, you enter a sacred place!\""}
+{"m": "You have a forbidding feeling..."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 35, :y 8}"}
+{"a": ";"}
+{"r": 6121, "k": "pos", "T": 4539, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(36, 7)"}
+{"r": 6122, "k": "cmd", "T": 4539, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful priestess of Odin) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 36, :y 8}"}
+{"a": ";"}
+{"r": 6123, "k": "pos", "T": 4539, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 7)"}
+{"r": 6124, "k": "cmd", "T": 4539, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71}
+{"m": "_        an iron chain or an altar (neutral altar)"}
+{"act": "move", "why": ["going to altar"], "dir": "W"}
+{"a": "h"}
+{"r": 6125, "k": "cmd", "T": 4540, "lvl": "Dlvl:8", "u": [38, 9], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["going to altar"], "dir": "N"}
+{"a": "k"}
+{"r": 6126, "k": "cmd", "T": 4540, "lvl": "Dlvl:8", "u": [38, 8], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["going to altar"], "dir": "NW"}
+{"a": "y"}
+{"r": 6127, "k": "cmd", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "C"}
+{"a": "d"}
+{"r": 6128, "k": "yn", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EG-N or ?*]"}
+{"a": "1"}
+{"r": 6129, "k": "key", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "C"}
+{"r": 6130, "k": "cmd", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 1 C"}
+{"m": "A key lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6131, "k": "cmd", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6132, "k": "cmd", "T": 4541, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"m": "You see here an uncursed key."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 6133, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "C - an uncursed key."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6134, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6135, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "D"}
+{"a": "d"}
+{"r": 6136, "k": "yn", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EG-N or ?*]"}
+{"a": "1"}
+{"r": 6137, "k": "key", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "D"}
+{"r": 6138, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 1 D"}
+{"m": "A pancake lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6139, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6140, "k": "cmd", "T": 4542, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"m": "You see here an uncursed pancake."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 6141, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "D - an uncursed pancake."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6142, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6143, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "E"}
+{"a": "d"}
+{"r": 6144, "k": "yn", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EG-N or ?*]"}
+{"a": "1"}
+{"r": 6145, "k": "key", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "E"}
+{"r": 6146, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 1 E"}
+{"m": "There is a black flash as a clay ring hits the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6147, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6148, "k": "cmd", "T": 4543, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"m": "You see here a cursed clay ring."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 6149, "k": "cmd", "T": 4544, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "E - a cursed clay ring."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6150, "k": "cmd", "T": 4544, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6151, "k": "cmd", "T": 4544, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "G"}
+{"a": "d"}
+{"r": 6152, "k": "yn", "T": 4544, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EG-N or ?*]"}
+{"a": "1"}
+{"r": 6153, "k": "key", "T": 4544, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "G"}
+{"r": 6154, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 1 G"}
+{"m": "A food ration lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6155, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6156, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"m": "You see here an uncursed food ration."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 6157, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "d - an uncursed food ration."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6158, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6159, "k": "cmd", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "I"}
+{"a": "d"}
+{"r": 6160, "k": "yn", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EH-N or ?*]"}
+{"a": "1"}
+{"r": 6161, "k": "key", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "1"}
+{"r": 6162, "k": "key", "T": 4545, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 11"}
+{"a": "I"}
+{"r": 6163, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 11 I"}
+{"m": "11 darts land on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6164, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6165, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "There is an altar to Odin (neutral) here."}
+{"m": "You see here 11 uncursed darts."}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "J"}
+{"a": "d"}
+{"r": 6166, "k": "yn", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71, "q": "What do you want to drop? [$a-knpxzC-EHJ-N or ?*]"}
+{"a": "1"}
+{"r": 6167, "k": "key", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"a": "J"}
+{"r": 6168, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"m": "Count: 1 J"}
+{"m": "A tattered cape lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 6169, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6170, "k": "cmd", "T": 4546, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6171, "k": "cmd", "T": 4547, "lvl": "Dlvl:8", "u": [38, 8], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["new or desired item at {'x': 36, 'y': 8, 'glyph': '[', 'color': None, 'feature': 'floor', 'seen': Tr"], "dir": "NW"}
+{"a": "y"}
+{"r": 6172, "k": "cmd", "T": 4547, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 6173, "k": "cmd", "T": 4547, "lvl": "Dlvl:8", "u": [37, 7], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 6174, "k": "cmd", "T": 4548, "lvl": "Dlvl:8", "u": [38, 8], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 6175, "k": "cmd", "T": 4549, "lvl": "Dlvl:8", "u": [38, 9], "hp": 71, "hpmax": 71}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 6176, "k": "cmd", "T": 4549, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71}
+{"act": "autotravel", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "reaching exploration target", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 42, :y 10}"}
+{"a": "_"}
+{"r": 6177, "k": "pos", "T": 4549, "lvl": "Dlvl:8", "u": [39, 9], "hp": 71, "hpmax": 71, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 9)"}
+{"r": 6178, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6179, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6180, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6181, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6182, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6183, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6184, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6185, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6186, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6187, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6188, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6189, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6190, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6191, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6192, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6193, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6194, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6195, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6196, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"note": "recovery", "d": "action-loop x8 farlook: farlook target #Position{:x 42, :y 16} marked examined"}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6197, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6198, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6199, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6200, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6201, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6202, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6203, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6204, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6205, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6206, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6207, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6208, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6209, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6210, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6211, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6212, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6213, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6214, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6215, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6216, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6217, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6218, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6219, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6220, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6221, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6222, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6223, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6224, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6225, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6226, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6227, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6228, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6229, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6230, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6231, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6232, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6233, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6234, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6235, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6236, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6237, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6238, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6239, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6240, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6241, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6242, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6243, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6244, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6245, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6246, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6247, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6248, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6249, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6250, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6251, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6252, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6253, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6254, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6255, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6256, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6257, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6258, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"m": "@        a human or elf (peaceful Dark Eery) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 6259, "k": "pos", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 6260, "k": "cmd", "T": 4552, "lvl": "Dlvl:8", "u": [43, 9], "hp": 71, "hpmax": 71}
+{"note": "abort", "d": "stuck: action loop: farlook repeated 40 times at turn 4552 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 42, :y 16}'})"}

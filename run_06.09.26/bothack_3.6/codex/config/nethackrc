@@ -1,0 +1,10 @@
+OPTIONS=name:localbot,role:valkyrie,race:dwarf,gender:female,align:lawful
+OPTIONS=!bones,!autopickup,pickup_types:$,pettype:none
+OPTIONS=lit_corridor,!sparkle,runmode:teleport,!timed_delay
+OPTIONS=!showexp,showscore,time,color,!tombstone,!news,!legacy
+OPTIONS=!prayconfirm,!cmdassist,menustyle:partial
+OPTIONS=disclose:-i -a -v -g -c -o
+OPTIONS=mention_walls
+SYMBOLS=S_boulder:8,S_ghost:X,S_web:^,S_vcdoor:],S_hcdoor:]
+SYMBOLS=S_bars:},S_tree:},S_sink:{,S_grave:\\
+SYMBOLS=S_vodbridge:},S_hodbridge:},S_vcdbridge:},S_hcdbridge:}

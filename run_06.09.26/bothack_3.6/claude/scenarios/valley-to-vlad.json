@@ -1,0 +1,60 @@
+{
+ "description": "Default kit, XL 20, level-teleported to the Valley of the Dead, mapped; stage in isolation (no Excalibur/quest detours); goal: enter Vlad's Tower (with the endgame gear of a full run: Excalibur, +5 helm/gauntlets of power/cloak, worn)",
+ "steps": [
+  [
+   "xl",
+   20
+  ],
+  [
+   "wish",
+   "blessed rustproof +5 Excalibur"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 dwarvish iron helm"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 gauntlets of power"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 elven cloak"
+  ],
+  [
+   "identify"
+  ],
+  [
+   "wield",
+   "Excalibur"
+  ],
+  [
+   "wear",
+   "helm"
+  ],
+  [
+   "wear",
+   "gauntlets"
+  ],
+  [
+   "wear",
+   "cloak"
+  ],
+  [
+   "levelport",
+   "valley"
+  ],
+  [
+   "map"
+  ]
+ ],
+ "goal": "vlad",
+ "max_turns": 20000,
+ "profile": "fast",
+ "skip": [
+  "quest-portal",
+  "dlvl20",
+  "excalibur",
+  "quest"
+ ]
+}

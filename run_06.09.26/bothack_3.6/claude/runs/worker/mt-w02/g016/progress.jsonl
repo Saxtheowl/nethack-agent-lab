@@ -1,0 +1,25 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 207, "depth": 2, "t": 6.6, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 207, "depth": 2, "t": 6.6, "stage": "dlvl2"}
+{"kind": "xl", "turn": 473, "depth": 2, "t": 14.1, "value": 2}
+{"kind": "depth", "turn": 550, "depth": 3, "t": 18.2, "value": 3, "dname": "The Gnomish Mines"}
+{"kind": "branch", "turn": 550, "depth": 3, "t": 18.2, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 550, "depth": 3, "t": 18.2, "stage": "mines"}
+{"kind": "depth", "turn": 796, "depth": 4, "t": 25.9, "value": 4, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 820, "depth": 4, "t": 26.5, "value": 3}
+{"kind": "depth", "turn": 945, "depth": 5, "t": 31.1, "value": 5, "dname": "The Gnomish Mines"}
+{"kind": "heartbeat", "turn": 1000, "depth": 5, "t": 33.0, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 35, "hpmax": 35, "xl": 3, "ac": -10, "requests": 1689, "actions": 1286}
+{"kind": "xl", "turn": 1171, "depth": 5, "t": 37.6, "value": 4}
+{"kind": "depth", "turn": 1274, "depth": 6, "t": 40.1, "value": 6, "dname": "The Gnomish Mines"}
+{"kind": "special", "turn": 1274, "depth": 6, "t": 40.1, "name": "minetn", "lvl": "Dlvl:6  "}
+{"kind": "stage", "turn": 1274, "depth": 6, "t": 40.1, "stage": "minetown", "variant": "minetn"}
+{"kind": "end", "turn": 1274, "depth": 6, "t": 40.1, "outcome": "goal_reached", "reason": "minetown"}

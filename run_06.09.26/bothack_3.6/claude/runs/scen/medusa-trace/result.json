@@ -1,0 +1,103 @@
+{
+ "game_id": "medusa-trace",
+ "outcome": "limit",
+ "reason": "max_turns 200",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": -6,
+ "engine_seed": 77,
+ "turns": 205,
+ "depth": 23,
+ "max_depth": 25,
+ "xl": 14,
+ "lvl": "Dlvl:23",
+ "dname": "The Dungeons of Doom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "medusa": 1
+ },
+ "last_stage": "dlvl2",
+ "assist_counts": {
+  "kit": 8,
+  "lifesave": 1
+ },
+ "counters": {
+  "compat:container:q": 1,
+  "menu_show:current_skills": 1
+ },
+ "notes": {
+  "scenario": 36,
+  "recovery": 1,
+  "forced-command": 1,
+  "compat": 1,
+  "assist": 1,
+  "abort": 1
+ },
+ "protoerrs": 0,
+ "requests": 474,
+ "actions": 361,
+ "action_hist": {
+  "move": 208,
+  "farlook": 54,
+  "look": 29,
+  "search": 25,
+  "inventory": 10,
+  "apply": 10,
+  "repeated": 8,
+  "open": 3,
+  "discoveries": 2,
+  "ascend": 2,
+  "wear": 2,
+  "pickup": 2,
+  "wield": 2,
+  "enhance": 2,
+  "eat": 1,
+  "autotravel": 1
+ },
+ "elapsed_s": 34.3,
+ "turns_per_s": 5.97,
+ "last_action": {
+  "act": "autotravel",
+  "why": [
+   "exploring {'x': 67, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F",
+   "using cached exploration step",
+   "seeking",
+   "looking for the stairs-up",
+   "switching within branch to Dlvl:11",
+   "trying to enter quest from Dlvl:11",
+   "seeking branch quest ( quest )",
+   "seeking level quest end",
+   "full-explore",
+   "progress"
+  ],
+  "pos": "#Position{:x 67, :y 18}"
+ },
+ "final_screen": [
+  "Where do you want to travel to?                                                 ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                               -----------      ",
+  "                                                              #-....>....|      ",
+  "                                                              #|.........|      ",
+  "                                                           ####|.........|      ",
+  "                                                           #   |.%.......|      ",
+  "                                                        ####   |.........|      ",
+  "                                                    #####      |.........|      ",
+  "                                             ----- ##          -----------      ",
+  "                                                 -##                            ",
+  "                                                 |                              ",
+  "                                                 .####                          ",
+  "                                                 |   #                          ",
+  "                                               ---   ######*       ----------   ",
+  "                                                           ########...%%%.%@|   ",
+  "                                                                   |%.)[%)%%|   ",
+  "                                                                  #.........|   ",
+  "                                                                   ----------   ",
+  "                                                                                ",
+  "                                                                                ",
+  "Bot the Warrior  St:16 Dx:11 Co:19 In:9 Wi:8 Ch:9  Lawful                       ",
+  "Dlvl:23 $:145 HP:82(139) Pw:23(23) AC:-9 Exp:14/82108 T:199                     "
+ ]
+}

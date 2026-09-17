@@ -1,0 +1,22 @@
+{
+ "description": "Like medusa-to-castle but the level is NOT mapped (as in a real game: the bot must find the way/dig down itself)",
+ "steps": [
+  [
+   "xl",
+   14
+  ],
+  [
+   "levelport",
+   "medusa"
+  ]
+ ],
+ "goal": "castle",
+ "max_turns": 8000,
+ "profile": "fast",
+ "skip": [
+  "quest-portal",
+  "dlvl20",
+  "excalibur",
+  "quest"
+ ]
+}

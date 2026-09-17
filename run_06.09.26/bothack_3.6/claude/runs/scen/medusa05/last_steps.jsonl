@@ -1,0 +1,800 @@
+{"r": 104, "k": "pos", "T": 12, "lvl": "Dlvl:25", "u": [38, 5], "hp": 138, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(65, 8)"}
+{"r": 105, "k": "cmd", "T": 12, "lvl": "Dlvl:25", "u": [38, 5], "hp": 138, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 7}"}
+{"a": ";"}
+{"r": 106, "k": "pos", "T": 12, "lvl": "Dlvl:25", "u": [38, 5], "hp": 138, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 6)"}
+{"r": 107, "k": "cmd", "T": 12, "lvl": "Dlvl:25", "u": [38, 5], "hp": 138, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 7, 'known': 12, 'first-known': 12, 'glyph': 'B', 'color': 'blue', 'type': {'t", "targetting enemy {'x': 36, 'y': 7, 'known': 12, 'first-known': 12, 'glyph': 'B', 'color': 'blue', 't"], "dir": "SW"}
+{"a": "b"}
+{"r": 108, "k": "cmd", "T": 13, "lvl": "Dlvl:25", "u": [38, 5], "hp": 138, "hpmax": 139}
+{"m": "You hit the raven!"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 7, 'known': 13, 'first-known': 12, 'glyph': 'B', 'color': 'blue', 'type': {'t", "targetting enemy {'x': 36, 'y': 7, 'known': 13, 'first-known': 12, 'glyph': 'B', 'color': 'blue', 't"], "dir": "SW"}
+{"a": "b"}
+{"r": 109, "k": "cmd", "T": 13, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139}
+{"m": "You kill the raven!"}
+{"m": "The raven bites!"}
+{"m": "The raven misses!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 7, 'known': 13, 'first-known': 1, 'glyph': 'B', 'color': 'blue', 'type': {'ta", "targetting enemy {'x': 38, 'y': 7, 'known': 13, 'first-known': 1, 'glyph': 'B', 'color': 'blue', 'ty"], "dir": "SE"}
+{"a": "n"}
+{"r": 110, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139}
+{"m": "You kill the raven!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 20}"}
+{"a": ";"}
+{"r": 111, "k": "pos", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 19)"}
+{"r": 112, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "apply", "why": ["learning contents of {'label': 'an empty uncursed bag of holding', 'qty': 1, 'buc': 'uncursed', 'nam"], "slot": "k"}
+{"a": "a"}
+{"r": 113, "k": "yn", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "k"}
+{"r": 114, "k": "menu", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139, "p": "Your bag of holding is empty.  Do what with it?", "items": [": Look inside the bag of holding", "i put something in", "r put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 115, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [38, 5], "hp": 137, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 7}"], "dir": "SE"}
+{"a": "n"}
+{"r": 116, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139}
+{"m": "You see here a raven corpse."}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 117, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139}
+{"m": "You see here a raven corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 17}"}
+{"a": ";"}
+{"r": 118, "k": "pos", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 16)"}
+{"r": 119, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 26, :y 17}"}
+{"a": ";"}
+{"r": 120, "k": "pos", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(27, 16)"}
+{"r": 121, "k": "cmd", "T": 14, "lvl": "Dlvl:25", "u": [39, 6], "hp": 137, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 122, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 60, :y 13}"}
+{"a": ";"}
+{"r": 123, "k": "pos", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(61, 12)"}
+{"r": 124, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 20}"}
+{"a": ";"}
+{"r": 125, "k": "pos", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 19)"}
+{"r": 126, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 14}"}
+{"a": ";"}
+{"r": 127, "k": "pos", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 13)"}
+{"r": 128, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [38, 6], "hp": 139, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "NW"}
+{"a": "y"}
+{"r": 129, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [37, 5], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 14, :y 16}"}
+{"a": ";"}
+{"r": 130, "k": "pos", "T": 15, "lvl": "Dlvl:25", "u": [37, 5], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(15, 15)"}
+{"r": 131, "k": "cmd", "T": 15, "lvl": "Dlvl:25", "u": [37, 5], "hp": 139, "hpmax": 139}
+{"m": "B        a bat or bird (raven) [seen: normal vision, infravision]"}
+{"act": "ascend", "why": ["switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "<"}
+{"r": 132, "k": "cmd", "T": 16, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"m": "You climb up the stairs."}
+{"act": "look", "why": ["examining tile {'x': 76, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 133, "k": "cmd", "T": 16, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"m": "There is a staircase down here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 76, :y 5}"}
+{"a": ";"}
+{"r": 134, "k": "pos", "T": 16, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(77, 4)"}
+{"r": 135, "k": "cmd", "T": 16, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"m": "&        a major demon (incubus) [seen: normal vision, infravision]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 16, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 136, "k": "cmd", "T": 16, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 16, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 137, "k": "cmd", "T": 17, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 17, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 138, "k": "cmd", "T": 17, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 17, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 139, "k": "cmd", "T": 18, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 18, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 140, "k": "cmd", "T": 18, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 18, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 141, "k": "cmd", "T": 19, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 19, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 142, "k": "cmd", "T": 19, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 19, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 143, "k": "cmd", "T": 20, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 20, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 144, "k": "cmd", "T": 20, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 20, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 145, "k": "cmd", "T": 21, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 21, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 146, "k": "cmd", "T": 21, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 76, 'y': 5, 'known': 21, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"]}
+{"a": "s"}
+{"r": 147, "k": "cmd", "T": 22, "lvl": "Dlvl:24", "u": [77, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["targetting enemy {'x': 76, 'y': 5, 'known': 22, 'first-known': 16, 'glyph': '&', 'color': None, 'typ"], "dir": "N"}
+{"a": "k"}
+{"r": 148, "k": "cmd", "T": 22, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You see here 145 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 76, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 149, "k": "cmd", "T": 22, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You see here 145 gold pieces."}
+{"act": "move", "why": ["hitting {'x': 76, 'y': 5, 'known': 22, 'first-known': 16, 'glyph': '&', 'color': None, 'type': {'tag"], "dir": "N"}
+{"a": "k"}
+{"r": 150, "k": "cmd", "T": 23, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the incubus."}
+{"act": "move", "why": ["hitting {'x': 76, 'y': 5, 'known': 23, 'first-known': 16, 'glyph': '&', 'color': None, 'type': {'tag"], "dir": "N"}
+{"a": "k"}
+{"r": 151, "k": "cmd", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You miss the incubus."}
+{"m": "The incubus pretends to be friendly."}
+{"m": "The incubus hits!"}
+{"m": "The incubus hits!"}
+{"act": "move", "why": ["hitting {'x': 76, 'y': 5, 'known': 24, 'first-known': 16, 'glyph': '&', 'color': None, 'type': {'tag"], "dir": "N"}
+{"a": "k"}
+{"r": 152, "k": "yn", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139, "q": "\"Shall I remove your boots, lover?\"", "c": "yn"}
+{"m": "You hit the incubus."}
+{"m": "You feel very attracted to the incubus."}
+{"m": "The incubus murmurs in your ear, while helping you undress."}
+{"m": "\"Take off your dragon mail; let's get a little closer.\""}
+{"a": "n"}
+{"r": 153, "k": "yn", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139, "q": "\"Shall I remove your shield, lover?\"", "c": "yn"}
+{"a": "n"}
+{"r": 154, "k": "cmd", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "Time stands still while you and the incubus lie in each other's arms..."}
+{"m": "The incubus seems to have enjoyed it more than you..."}
+{"m": "Your senses are dulled."}
+{"m": "\"It's on the house!\""}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 155, "k": "cmd", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"act": "wear", "why": ["making use of f", "wearing better armor"], "slot": "f"}
+{"a": "W"}
+{"r": 156, "k": "yn", "T": 24, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139, "q": "What do you want to wear? [f or ?*]"}
+{"a": "f"}
+{"r": 157, "k": "cmd", "T": 29, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You hear a door open."}
+{"m": "You finish your dressing maneuver."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 158, "k": "cmd", "T": 29, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 159, "k": "cmd", "T": 30, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "$ - 145 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 160, "k": "cmd", "T": 30, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 76, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 161, "k": "cmd", "T": 30, "lvl": "Dlvl:24", "u": [77, 5], "hp": 139, "hpmax": 139}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 74, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "NW"}
+{"a": "y"}
+{"r": 162, "k": "cmd", "T": 30, "lvl": "Dlvl:24", "u": [76, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 73, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SW"}
+{"a": "b"}
+{"r": 163, "k": "cmd", "T": 31, "lvl": "Dlvl:24", "u": [75, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 73, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "NW"}
+{"a": "y"}
+{"r": 164, "k": "cmd", "T": 31, "lvl": "Dlvl:24", "u": [74, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 72, 'y': 6, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 165, "k": "cmd", "T": 32, "lvl": "Dlvl:24", "u": [74, 5], "hp": 139, "hpmax": 139}
+{"act": "open", "why": ["exploring {'x': 72, 'y': 6, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "o"}
+{"r": 166, "k": "yn", "T": 32, "lvl": "Dlvl:24", "u": [74, 5], "hp": 139, "hpmax": 139, "q": "In what direction?"}
+{"a": "h"}
+{"r": 167, "k": "cmd", "T": 32, "lvl": "Dlvl:24", "u": [74, 5], "hp": 139, "hpmax": 139}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 72, 'y': 6, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 168, "k": "cmd", "T": 33, "lvl": "Dlvl:24", "u": [73, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 71, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 169, "k": "cmd", "T": 33, "lvl": "Dlvl:24", "u": [72, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 70, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 170, "k": "cmd", "T": 34, "lvl": "Dlvl:24", "u": [71, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 70, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "N"}
+{"a": "k"}
+{"r": 171, "k": "cmd", "T": 35, "lvl": "Dlvl:24", "u": [71, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 70, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "N"}
+{"a": "k"}
+{"r": 172, "k": "cmd", "T": 35, "lvl": "Dlvl:24", "u": [71, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 69, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 173, "k": "cmd", "T": 36, "lvl": "Dlvl:24", "u": [70, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 174, "k": "cmd", "T": 37, "lvl": "Dlvl:24", "u": [69, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 175, "k": "cmd", "T": 37, "lvl": "Dlvl:24", "u": [68, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 64, 'y': 3, 'glyph': '*', 'color': None, 'feature': None, 'seen': False"], "dir": "W"}
+{"a": "h"}
+{"r": 176, "k": "cmd", "T": 38, "lvl": "Dlvl:24", "u": [67, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 64, 'y': 3, 'glyph': '*', 'color': None, 'feature': None, 'seen': False"], "dir": "NW"}
+{"a": "y"}
+{"r": 177, "k": "cmd", "T": 38, "lvl": "Dlvl:24", "u": [66, 2], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 64, 'y': 3, 'glyph': '*', 'color': None, 'feature': None, 'seen': True,"], "dir": "W"}
+{"a": "h"}
+{"r": 178, "k": "cmd", "T": 39, "lvl": "Dlvl:24", "u": [65, 2], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet gem."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 3, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 179, "k": "cmd", "T": 39, "lvl": "Dlvl:24", "u": [65, 2], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet gem."}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SW"}
+{"a": "b"}
+{"r": 180, "k": "cmd", "T": 39, "lvl": "Dlvl:24", "u": [64, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SE"}
+{"a": "n"}
+{"r": 181, "k": "cmd", "T": 40, "lvl": "Dlvl:24", "u": [65, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SE"}
+{"a": "n"}
+{"r": 182, "k": "cmd", "T": 40, "lvl": "Dlvl:24", "u": [66, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SW"}
+{"a": "b"}
+{"r": 183, "k": "cmd", "T": 41, "lvl": "Dlvl:24", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"act": "ascend", "why": ["switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "<"}
+{"r": 184, "k": "cmd", "T": 41, "lvl": "Dlvl:23", "u": [69, 3], "hp": 139, "hpmax": 139}
+{"m": "You climb up the stairs."}
+{"act": "look", "why": ["examining tile {'x': 68, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 185, "k": "cmd", "T": 41, "lvl": "Dlvl:23", "u": [69, 3], "hp": 139, "hpmax": 139}
+{"m": "There is a staircase down here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 65, :y 7}"}
+{"a": ";"}
+{"r": 186, "k": "pos", "T": 41, "lvl": "Dlvl:23", "u": [69, 3], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(66, 6)"}
+{"r": 187, "k": "cmd", "T": 41, "lvl": "Dlvl:23", "u": [69, 3], "hp": 139, "hpmax": 139}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "move", "why": ["targetting enemy {'x': 65, 'y': 7, 'known': 41, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 188, "k": "cmd", "T": 42, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 42, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 189, "k": "cmd", "T": 42, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 42, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 190, "k": "cmd", "T": 43, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 43, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 191, "k": "cmd", "T": 43, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 43, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 192, "k": "cmd", "T": 44, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 44, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 193, "k": "cmd", "T": 45, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 45, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 194, "k": "cmd", "T": 45, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 45, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 195, "k": "cmd", "T": 46, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 65, 'y': 7, 'known': 46, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"]}
+{"a": "s"}
+{"r": 196, "k": "cmd", "T": 47, "lvl": "Dlvl:23", "u": [68, 4], "hp": 139, "hpmax": 139}
+{"m": "You hear a door open."}
+{"act": "move", "why": ["targetting enemy {'x': 65, 'y': 7, 'known': 47, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 197, "k": "cmd", "T": 47, "lvl": "Dlvl:23", "u": [67, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 47, 'first-known': 41, 'glyph': 'F', 'color': 'magenta', 'type': ", "targetting enemy {'x': 65, 'y': 7, 'known': 47, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 198, "k": "cmd", "T": 48, "lvl": "Dlvl:23", "u": [67, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 48, 'first-known': 41, 'glyph': 'F', 'color': 'magenta', 'type': ", "targetting enemy {'x': 65, 'y': 7, 'known': 48, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 199, "k": "cmd", "T": 48, "lvl": "Dlvl:23", "u": [67, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus."}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 48, 'first-known': 41, 'glyph': 'F', 'color': 'magenta', 'type': ", "targetting enemy {'x': 65, 'y': 7, 'known': 48, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 200, "k": "cmd", "T": 49, "lvl": "Dlvl:23", "u": [67, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 49, 'first-known': 41, 'glyph': 'F', 'color': 'magenta', 'type': ", "targetting enemy {'x': 65, 'y': 7, 'known': 49, 'first-known': 41, 'glyph': 'F', 'color': 'magenta',"], "dir": "SW"}
+{"a": "b"}
+{"r": 201, "k": "cmd", "T": 50, "lvl": "Dlvl:23", "u": [67, 5], "hp": 139, "hpmax": 139}
+{"m": "You kill the violet fungus!"}
+{"act": "move", "why": ["new or desired item at {'x': 65, 'y': 7, 'glyph': '%', 'color': None, 'feature': None, 'seen': True,"], "dir": "SW"}
+{"a": "b"}
+{"r": 202, "k": "cmd", "T": 50, "lvl": "Dlvl:23", "u": [66, 6], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet fungus corpse."}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 203, "k": "cmd", "T": 50, "lvl": "Dlvl:23", "u": [66, 6], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet fungus corpse."}
+{"act": "move", "why": ["searching extremity #Position{:x 64, :y 7}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 204, "k": "cmd", "T": 51, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching extremity #Position{:x 64, :y 7}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 205, "k": "cmdcont", "T": 51, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 206, "k": "cmdcont", "T": 51, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 207, "k": "cmd", "T": 57, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching extremity #Position{:x 64, :y 7}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 208, "k": "cmdcont", "T": 57, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 209, "k": "cmdcont", "T": 57, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 210, "k": "cmd", "T": 63, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching extremity #Position{:x 64, :y 7}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 211, "k": "cmdcont", "T": 63, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 212, "k": "cmdcont", "T": 63, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 213, "k": "cmd", "T": 68, "lvl": "Dlvl:23", "u": [65, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["searching extremity #Position{:x 64, :y 5}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "N"}
+{"a": "k"}
+{"r": 214, "k": "cmd", "T": 69, "lvl": "Dlvl:23", "u": [65, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["searching extremity #Position{:x 64, :y 5}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "N"}
+{"a": "k"}
+{"r": 215, "k": "cmd", "T": 70, "lvl": "Dlvl:23", "u": [65, 4], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching extremity #Position{:x 64, :y 5}", "searching - max-iter = 2", "level not explored enough, searching", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 216, "k": "cmdcont", "T": 70, "lvl": "Dlvl:23", "u": [65, 4], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 217, "k": "cmdcont", "T": 70, "lvl": "Dlvl:23", "u": [65, 4], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 218, "k": "cmd", "T": 72, "lvl": "Dlvl:23", "u": [65, 4], "hp": 139, "hpmax": 139}
+{"m": "You find a hidden door."}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 4, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "N"}
+{"a": "k"}
+{"r": 219, "k": "cmd", "T": 72, "lvl": "Dlvl:23", "u": [65, 3], "hp": 139, "hpmax": 139}
+{"act": "open", "why": ["exploring {'x': 63, 'y': 4, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "o"}
+{"r": 220, "k": "yn", "T": 72, "lvl": "Dlvl:23", "u": [65, 3], "hp": 139, "hpmax": 139, "q": "In what direction?"}
+{"a": "h"}
+{"r": 221, "k": "cmd", "T": 73, "lvl": "Dlvl:23", "u": [65, 3], "hp": 139, "hpmax": 139}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 4, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 222, "k": "cmd", "T": 74, "lvl": "Dlvl:23", "u": [64, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 223, "k": "cmd", "T": 74, "lvl": "Dlvl:23", "u": [63, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 224, "k": "cmd", "T": 75, "lvl": "Dlvl:23", "u": [63, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 225, "k": "cmd", "T": 75, "lvl": "Dlvl:23", "u": [63, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 226, "k": "cmd", "T": 76, "lvl": "Dlvl:23", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 227, "k": "cmd", "T": 76, "lvl": "Dlvl:23", "u": [61, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 228, "k": "cmd", "T": 77, "lvl": "Dlvl:23", "u": [60, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 229, "k": "cmd", "T": 77, "lvl": "Dlvl:23", "u": [60, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 230, "k": "cmd", "T": 78, "lvl": "Dlvl:23", "u": [60, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 231, "k": "cmd", "T": 79, "lvl": "Dlvl:23", "u": [59, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 232, "k": "cmd", "T": 80, "lvl": "Dlvl:23", "u": [58, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 233, "k": "cmd", "T": 80, "lvl": "Dlvl:23", "u": [57, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 234, "k": "cmd", "T": 81, "lvl": "Dlvl:23", "u": [57, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 235, "k": "cmd", "T": 81, "lvl": "Dlvl:23", "u": [56, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 236, "k": "cmd", "T": 82, "lvl": "Dlvl:23", "u": [55, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 237, "k": "cmd", "T": 82, "lvl": "Dlvl:23", "u": [54, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 238, "k": "cmd", "T": 83, "lvl": "Dlvl:23", "u": [53, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 239, "k": "cmd", "T": 83, "lvl": "Dlvl:23", "u": [53, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 240, "k": "cmd", "T": 84, "lvl": "Dlvl:23", "u": [52, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 241, "k": "cmd", "T": 85, "lvl": "Dlvl:23", "u": [52, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 242, "k": "cmd", "T": 86, "lvl": "Dlvl:23", "u": [51, 10], "hp": 139, "hpmax": 139}
+{"act": "open", "why": ["exploring {'x': 49, 'y': 11, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "o"}
+{"r": 243, "k": "yn", "T": 86, "lvl": "Dlvl:23", "u": [51, 10], "hp": 139, "hpmax": 139, "q": "In what direction?"}
+{"a": "h"}
+{"r": 244, "k": "cmd", "T": 86, "lvl": "Dlvl:23", "u": [51, 10], "hp": 139, "hpmax": 139}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 11, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 245, "k": "cmd", "T": 87, "lvl": "Dlvl:23", "u": [50, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "W"}
+{"a": "h"}
+{"r": 246, "k": "cmd", "T": 88, "lvl": "Dlvl:23", "u": [49, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 247, "k": "cmd", "T": 88, "lvl": "Dlvl:23", "u": [49, 11], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "SE"}
+{"a": "n"}
+{"r": 248, "k": "cmd", "T": 89, "lvl": "Dlvl:23", "u": [50, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 249, "k": "cmd", "T": 89, "lvl": "Dlvl:23", "u": [51, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 250, "k": "cmd", "T": 90, "lvl": "Dlvl:23", "u": [52, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 251, "k": "cmd", "T": 91, "lvl": "Dlvl:23", "u": [53, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 252, "k": "cmd", "T": 91, "lvl": "Dlvl:23", "u": [54, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 253, "k": "cmd", "T": 92, "lvl": "Dlvl:23", "u": [54, 13], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 254, "k": "cmd", "T": 92, "lvl": "Dlvl:23", "u": [54, 14], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 255, "k": "cmdcont", "T": 92, "lvl": "Dlvl:23", "u": [54, 14], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 256, "k": "cmdcont", "T": 92, "lvl": "Dlvl:23", "u": [54, 14], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 257, "k": "cmd", "T": 93, "lvl": "Dlvl:23", "u": [54, 14], "hp": 139, "hpmax": 139}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 258, "k": "cmd", "T": 94, "lvl": "Dlvl:23", "u": [55, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 259, "k": "cmd", "T": 94, "lvl": "Dlvl:23", "u": [56, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 260, "k": "cmd", "T": 95, "lvl": "Dlvl:23", "u": [57, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 261, "k": "cmd", "T": 95, "lvl": "Dlvl:23", "u": [58, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 262, "k": "cmd", "T": 96, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"act": "wield", "why": ["exploring {'x': 59, 'y': 15, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "slot": "l"}
+{"a": "w"}
+{"r": 263, "k": "yn", "T": 96, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "l"}
+{"r": 264, "k": "cmd", "T": 97, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"m": "l - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 265, "k": "cmd", "T": 97, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"act": "apply", "why": ["exploring {'x': 59, 'y': 15, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "slot": "l"}
+{"a": "a"}
+{"r": 266, "k": "yn", "T": 97, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "l"}
+{"r": 267, "k": "yn", "T": 97, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "q": "In what direction do you want to dig? [ykulnjb>]"}
+{"a": "l"}
+{"r": 268, "k": "cmd", "T": 99, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 269, "k": "cmd", "T": 99, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 59, 'y': 15, 'glyph': '*', 'color': None, 'feature': None, 'seen': True"], "dir": "E"}
+{"a": "l"}
+{"r": 270, "k": "cmd", "T": 99, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You see here 22 rocks."}
+{"act": "look", "why": ["examining tile {'x': 59, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 271, "k": "cmd", "T": 99, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You see here 22 rocks."}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - a +1 long sword"], "slot": "a"}
+{"a": "w"}
+{"r": 272, "k": "yn", "T": 99, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139, "q": "What do you want to wield? [- abjl or ?*]"}
+{"a": "a"}
+{"r": 273, "k": "cmd", "T": 100, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 274, "k": "cmd", "T": 100, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 275, "k": "cmdcont", "T": 100, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 276, "k": "cmdcont", "T": 100, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 277, "k": "cmd", "T": 106, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 278, "k": "cmdcont", "T": 106, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 279, "k": "cmdcont", "T": 106, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 280, "k": "cmd", "T": 109, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You stop searching."}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"]}
+{"a": "1"}
+{"r": 281, "k": "cmdcont", "T": 109, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 282, "k": "cmdcont", "T": 109, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 283, "k": "cmd", "T": 111, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "S"}
+{"a": "j"}
+{"r": 284, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 71, :y 16}"}
+{"a": ";"}
+{"r": 285, "k": "pos", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(72, 15)"}
+{"r": 286, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139}
+{"m": "G        a gnome (gnome king) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 74, :y 16}"}
+{"a": ";"}
+{"r": 287, "k": "pos", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(75, 15)"}
+{"r": 288, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139}
+{"m": "C        a centaur (mountain centaur) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 75, :y 16}"}
+{"a": ";"}
+{"r": 289, "k": "pos", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(76, 15)"}
+{"r": 290, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [60, 15], "hp": 139, "hpmax": 139}
+{"m": "C        a centaur (forest centaur) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:5", "seeking level main oracle", "seeking a fountain to make Excal", "getting Excal"], "dir": "E"}
+{"a": "l"}
+{"r": 291, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [61, 15], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 75, :y 17}"}
+{"a": ";"}
+{"r": 292, "k": "pos", "T": 112, "lvl": "Dlvl:23", "u": [61, 15], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(76, 16)"}
+{"r": 293, "k": "cmd", "T": 112, "lvl": "Dlvl:23", "u": [61, 15], "hp": 139, "hpmax": 139}
+{"m": "D        a dragon (red dragon) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["targetting enemy {'x': 56, 'y': 15, 'known': 112, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan',"], "dir": "NW"}
+{"a": "y"}
+{"r": 294, "k": "cmd", "T": 113, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You see here 22 rocks."}
+{"act": "look", "why": ["examining tile {'x': 59, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 295, "k": "cmd", "T": 113, "lvl": "Dlvl:23", "u": [60, 14], "hp": 139, "hpmax": 139}
+{"m": "You see here 22 rocks."}
+{"act": "move", "why": ["targetting enemy {'x': 56, 'y': 15, 'known': 113, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan',"], "dir": "W"}
+{"a": "h"}
+{"r": 296, "k": "cmd", "T": 113, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 57, 'y': 15, 'known': 113, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan', 'type': ", "targetting enemy {'x': 57, 'y': 15, 'known': 113, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan',"], "dir": "W"}
+{"a": "h"}
+{"r": 297, "k": "cmd", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139}
+{"m": "You miss the quantum mechanic."}
+{"act": "move", "why": ["hitting {'x': 57, 'y': 15, 'known': 114, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan', 'type': ", "targetting enemy {'x': 57, 'y': 15, 'known': 114, 'first-known': 109, 'glyph': 'Q', 'color': 'cyan',"], "dir": "W"}
+{"a": "h"}
+{"r": 298, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"m": "You hit the quantum mechanic!"}
+{"m": "The quantum mechanic hits!"}
+{"m": "Your position suddenly seems very uncertain!"}
+{"m": "Where do you want to be teleported?"}
+{"a": "(59, 14)"}
+{"r": 299, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #299 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 300, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #300 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 301, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #301 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 302, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #302 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 303, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #303 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 304, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #304 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 305, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #305 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 306, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #306 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 307, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #307 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 308, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #308 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 309, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #309 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 310, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #310 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 311, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #311 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 312, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #312 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 313, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #313 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 314, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #314 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 315, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #315 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 316, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #316 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 317, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #317 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 318, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #318 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 319, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "recovery", "d": "prompt-loop: escaping 'the desired position'"}
+{"note": "forced-escape", "d": "pos"}
+{"a": "\\x1b"}
+{"r": 320, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "forced-escape", "d": "pos"}
+{"a": "\\x1b"}
+{"r": 321, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "forced-escape", "d": "pos"}
+{"a": "\\x1b"}
+{"r": 322, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #322 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 323, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #323 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 324, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #324 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 325, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #325 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 326, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #326 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 327, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #327 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 328, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #328 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 329, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #329 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 330, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #330 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 331, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #331 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 332, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #332 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 333, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #333 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 334, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #334 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 335, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #335 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 336, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #336 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 337, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #337 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 338, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "unknown-prompt", "d": "pos:  the desired position"}
+{"note": "fallback", "d": "no-answer <Request #338 pos ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 339, "k": "pos", "T": 114, "lvl": "Dlvl:23", "u": [59, 14], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"note": "abort", "d": "stuck: prompt loop: 'the desired position'"}

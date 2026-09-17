@@ -1,0 +1,87 @@
+series big-w01: 49 games
+outcomes: {'stuck': 44, 'crash_bot': 3, 'limit': 2}
+stage funnel: dlvl2=46, mines=46, minetown=44, oracle=46, sokoban=43, bigroom=18, dlvl10=42, medusa=37, castle=35, valley=29, quest=25, bell=11, vlad=14, candelabrum=8, gehennom_deep=14, wizard_tower=14, book=2
+assists: {'kit': 368, 'feed': 209, 'brainsave': 22, 'lifesave': 4434, 'noslime': 77}
+STOPPED EARLY: signature repeated 12 times: stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+failure signatures:
+   12  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+   12  stuck | no novelty for N turns on Dlvl:N (last action {..})
+    3  crash_bot | rungame exited rc=N without result
+    2  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'flo)
+    2  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'floo)
+    2  limit | max_seconds N
+    2  stuck | action loop: rub repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S:)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'do)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at #Position{..})
+    1  stuck | death loop: N assisted lifesaves in N turns without progress (last: Medusa)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (exploring {S: N, S: N, S: S, S: S, S: 'door-lo)
+    1  stuck | action loop: farlook repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: S, 'featu)
+    1  stuck | death loop: N assisted lifesaves in N turns without progress (last: balrog)
+top anomalies:
+   12893  note:compat
+   10352  compat:container:o
+    6224  menu_empty_answer
+    5468  note:recovery
+    5108  note:assist
+    4982  note:forced-command
+    4552  unknown_yn
+    4552  fallback
+    4552  note:unknown-prompt
+    4552  note:fallback
+    4495  msg-rewrite:^You open (.*\.\.\.)$
+    3342  menu_letter_unmatched
+    1440  compat:container:i
+     933  note:forced-escape
+     800  msg-rewrite:^You feel as if you need some 
+games:
+  g001 seed=7001 stuck        T=18521  depth=29  stage=valley       711.8s  fixation: target (22, 15, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile
+  g002 seed=7002 stuck        T=47177  depth=48  stage=wizard_tower 1537.8s  no novelty for 6004 turns on Dlvl:44 (last action {'act': 'repeated', 'why': ['seek going 
+  g003 seed=7003 stuck        T=12533  depth=16  stage=bigroom      475.9s  fixation: target (8, 18, 'Dlvl:16 ') keeps coming back after 3 recoveries (new or desired 
+  g004 seed=7004 stuck        T=23895  depth=43  stage=wizard_tower 1239.5s  fixation: target (56, 20, 'Dlvl:43 ') keeps coming back after 3 recoveries (examining tile
+  g005 seed=7005 stuck        T=7047   depth=10  stage=dlvl10       260.9s  fixation: target (33, 16, 'Dlvl:4  ') keeps coming back after 3 recoveries (examining tile
+  g006 seed=7006 stuck        T=17669  depth=27  stage=valley       751.6s  fixation: target (13, 9, 'Dlvl:27 ') keeps coming back after 3 recoveries (examining tile 
+  g007 seed=7007 crash_bot    T=None   depth=None stage=None         Nones  rungame exited rc=1 without result
+  g008 seed=7008 stuck        T=24515  depth=32  stage=quest        956.1s  no novelty for 6008 turns on Dlvl:24 (last action {'act': 'repeated', 'why': ['unstick: no
+  g009 seed=7009 stuck        T=13200  depth=26  stage=valley       537.9s  fixation: target (64, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile
+  g010 seed=7010 stuck        T=29480  depth=28  stage=castle       775.9s  fixation: target (14, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (examining tile
+  g011 seed=7011 stuck        T=26504  depth=44  stage=wizard_tower 1333.2s  fixation: target (63, 16, 'Dlvl:44 ') keeps coming back after 3 recoveries (examining tile
+  g012 seed=7012 stuck        T=21404  depth=30  stage=valley       1162.4s  fixation: target (71, 6, 'Dlvl:30 ') keeps coming back after 3 recoveries (examining tile 
+  g013 seed=7013 stuck        T=18504  depth=27  stage=quest        984.1s  fixation: target (40, 7, 'Home 2 ') keeps coming back after 3 recoveries (new or desired i
+  g014 seed=7014 stuck        T=12817  depth=28  stage=castle       658.7s  fixation: target (12, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (examining tile
+  g015 seed=7015 stuck        T=19189  depth=24  stage=medusa       816.2s  death loop: 150 assisted lifesaves in 288 turns without progress (last: Medusa)
+  g016 seed=7016 stuck        T=51708  depth=45  stage=gehennom_deep 1986.9s  no novelty for 6005 turns on Dlvl:40 (last action {'act': 'repeated', 'why': ['seek going 
+  g017 seed=7017 stuck        T=39860  depth=50  stage=wizard_tower 1383.6s  no novelty for 6001 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going 
+  g018 seed=7018 limit        T=54637  depth=45  stage=gehennom_deep 3600.1s  max_seconds 3600
+  g019 seed=7019 crash_bot    T=None   depth=None stage=None         Nones  rungame exited rc=1 without result
+  g020 seed=7020 stuck        T=9210   depth=11  stage=dlvl10       351.5s  fixation: target (42, 16, 'Dlvl:5  ') keeps coming back after 3 recoveries (exploring {'x'
+  g021 seed=7021 stuck        T=25856  depth=30  stage=bell         1289.1s  action loop: farlook repeated 40 times at turn 25856 ({'act': 'farlook', 'why': ['examinin
+  g022 seed=7022 stuck        T=26137  depth=31  stage=valley       1527.7s  no novelty for 6000 turns on Dlvl:28 (last action {'act': 'takeoff', 'why': ['removing blo
+  g023 seed=7023 stuck        T=16707  depth=29  stage=valley       634.3s  fixation: target (26, 6, 'Dlvl:25 ') keeps coming back after 3 recoveries (new or desired 
+  g024 seed=7024 stuck        T=5828   depth=6   stage=oracle       287.0s  death loop: 150 assisted lifesaves in 299 turns without progress (last: balrog)
+  g025 seed=7025 stuck        T=7071   depth=9   stage=sokoban      293.1s  action loop: rub repeated 40 times at turn 7071 ({'act': 'rub', 'why': ['rubbing lamp'], '
+  g026 seed=7026 stuck        T=18768  depth=30  stage=quest        809.6s  fixation: target (22, 10, 'Home 5 ') keeps coming back after 3 recoveries (examining tile 
+  g027 seed=7027 stuck        T=13185  depth=25  stage=castle       810.6s  fixation: target (4, 9, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {
+  g028 seed=7028 stuck        T=44931  depth=48  stage=wizard_tower 1984.8s  no novelty for 6006 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['seek going 
+  g029 seed=7029 stuck        T=24545  depth=18  stage=quest        816.6s  no novelty for 6001 turns on Dlvl:4 (last action {'act': 'repeated', 'why': ['searching wa
+  g030 seed=7030 stuck        T=42297  depth=47  stage=gehennom_deep 1924.1s  no novelty for 6001 turns on Dlvl:40 (last action {'act': 'repeated', 'why': ['seek going 
+  g031 seed=7031 stuck        T=41109  depth=49  stage=gehennom_deep 1951.8s  no novelty for 6001 turns on Dlvl:39 (last action {'act': 'repeated', 'why': ['seek going 
+  g032 seed=7032 stuck        T=14046  depth=25  stage=castle       415.6s  fixation: target (15, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile
+  g033 seed=7033 stuck        T=16952  depth=36  stage=bell         909.1s  action loop: loot repeated 40 times at turn 16952 ({'act': 'loot', 'why': ['learning conte
+  g034 seed=7034 stuck        T=45782  depth=48  stage=wizard_tower 2199.7s  no novelty for 6004 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going 
+  g035 seed=7035 stuck        T=20703  depth=36  stage=bell         1029.2s  fixation: target (50, 11, 'Dlvl:36 ') keeps coming back after 3 recoveries (examining tile
+  g036 seed=7036 stuck        T=13559  depth=25  stage=castle       559.9s  fixation: target (45, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile
+  g037 seed=7037 limit        T=34057  depth=8   stage=sokoban      3600.0s  max_seconds 3600
+  g038 seed=7038 stuck        T=15554  depth=28  stage=castle       768.6s  fixation: target (22, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (new or desired
+  g039 seed=7039 stuck        T=29798  depth=23  stage=medusa       2037.8s  fixation: target (72, 17, 'Dlvl:23 ') keeps coming back after 3 recoveries (examining tile
+  g040 seed=7040 stuck        T=21807  depth=36  stage=bell         1093.9s  fixation: target (35, 12, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile
+  g041 seed=7041 stuck        T=18158  depth=29  stage=valley       620.1s  fixation: target (69, 20, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile
+  g042 seed=7042 stuck        T=53972  depth=47  stage=book         3049.4s  fixation: target (70, 6, 'Dlvl:47 ') keeps coming back after 3 recoveries (examining tile 
+  g043 seed=7043 stuck        T=35965  depth=46  stage=candelabrum  1658.5s  request storm: 3000 requests for 14 turns (turn 35965, last action {'act': 'apply', 'why':
+  g044 seed=7044 stuck        T=17028  depth=27  stage=medusa       757.8s  fixation: target (3, 6, 'Dlvl:27 ') keeps coming back after 3 recoveries (examining tile {
+  g045 seed=7045 stuck        T=38229  depth=49  stage=wizard_tower 1317.8s  no novelty for 6002 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going 
+  g046 seed=7046 stuck        T=2871   depth=8   stage=minetown     80.4s  action loop: rub repeated 40 times at turn 2871 ({'act': 'rub', 'why': ['rubbing lamp'], '
+  g047 seed=7047 stuck        T=55442  depth=51  stage=vlad         1776.9s  no novelty for 6002 turns on Dlvl:43 (last action {'act': 'repeated', 'why': ['seek going 
+  g048 seed=7048 crash_bot    T=None   depth=None stage=None         Nones  rungame exited rc=1 without result
+  g049 seed=7049 stuck        T=14046  depth=29  stage=valley       679.6s  fixation: target (69, 15, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile

@@ -1,0 +1,1918 @@
+{"r": 1, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"m": "Velkommen bot, welcome to NetHack!  You are a lawful dwarven Valkyrie."}
+{"m": "You feel yourself speed up."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 2, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 3, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None"]}
+{"a": ":"}
+{"r": 4, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"m": "There is a staircase up here."}
+{"act": "apply", "why": ["learning contents of {'label': 'an uncursed bag of holding', 'qty': 1, 'buc': 'u"], "slot": "j"}
+{"a": "a"}
+{"r": 5, "k": "yn", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 6, "k": "menu", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Do what with your bag of holding?"}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 7, "k": "menu", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Take out what?"}
+{"note": "fallback", "d": "no-answer <Request #7 menu 'Take out what?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 8, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 9, "k": "yn", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 10, "k": "menu", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Do what with your bag of holding?"}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 11, "k": "menu", "T": 1, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Take out what?"}
+{"a": [1]}
+{"r": 12, "k": "cmd", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"m": "l - a glittering spellbook."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 13, "k": "cmd", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 14, "k": "yn", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 15, "k": "menu", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 16, "k": "cmd", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "dropsingle", "why": ["dropping junk"], "slot": "l"}
+{"a": "d"}
+{"r": 17, "k": "yn", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to drop? [a-l or ?*]"}
+{"a": "1"}
+{"r": 18, "k": "key", "T": 2, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"a": "l"}
+{"r": 19, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"m": "Count: 1 l"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 20, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'sta"]}
+{"a": ":"}
+{"r": 21, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"m": "There is a staircase up here."}
+{"m": "You see here a glittering spellbook."}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 22, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 23, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 24, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 25, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 26, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 27, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 28, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 29, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 30, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 31, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 32, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 33, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 34, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 35, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 36, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 37, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 38, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 39, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 40, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 41, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 42, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 43, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 44, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 45, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 46, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 47, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 48, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 49, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 50, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 51, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 52, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 53, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 54, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 55, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 56, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 57, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 58, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 59, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 60, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 61, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 62, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 63, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 64, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 65, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 66, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 67, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 68, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 69, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 70, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 71, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 72, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 73, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 74, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 75, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 76, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 77, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 78, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 79, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 80, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 81, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 82, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 83, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 84, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 85, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 86, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 87, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 88, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 89, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 90, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 91, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 92, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 93, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 94, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 95, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 96, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 97, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 98, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 99, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 100, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 101, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 102, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 103, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 104, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 105, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 106, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 107, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 108, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 109, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 110, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 111, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 112, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 113, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 114, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 115, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 116, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 117, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 118, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 119, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 120, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 121, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 122, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 123, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 124, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 125, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 126, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 127, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 128, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 129, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 130, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 131, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 132, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 133, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 134, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 135, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 136, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 137, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 138, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 139, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 140, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 141, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 142, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 143, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 144, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 145, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 146, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 147, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 148, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 149, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 150, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 151, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 152, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 153, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 154, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 155, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 156, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 157, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 158, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 159, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 160, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 161, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 162, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 163, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 164, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 165, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 166, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 167, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 168, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 169, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 170, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 171, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 172, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 173, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 174, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 175, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 176, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 177, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 178, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 179, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 180, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 181, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 182, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 183, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 184, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 185, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 186, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 187, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 188, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 189, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 190, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 191, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 192, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 193, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 194, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 195, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 196, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 197, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 198, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 199, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 200, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 201, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 202, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 203, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 204, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 205, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 206, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 207, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 208, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 209, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 210, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 211, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 212, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 213, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 214, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 215, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 216, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 217, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 218, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 219, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "recovery", "d": "no-turn-progress: forcing a search (200 requests at turn 3)"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 220, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 221, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 222, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 223, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 224, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 225, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 226, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 227, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 228, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 229, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 230, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 231, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 232, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 233, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 234, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 235, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 236, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 237, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 238, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 239, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 240, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 241, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 242, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 243, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 244, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 245, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 246, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 247, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 248, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 249, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 250, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 251, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 252, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 253, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 254, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 255, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 256, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 257, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 258, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 259, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 260, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 261, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 262, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 263, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 264, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 265, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 266, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 267, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 268, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 269, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 270, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 271, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 272, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 273, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 274, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 275, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 276, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 277, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 278, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 279, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 280, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 281, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 282, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 283, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 284, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 285, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 286, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 287, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 288, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 289, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 290, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 291, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 292, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 293, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 294, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 295, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 296, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 297, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 298, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 299, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 300, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 301, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 302, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 303, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 304, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 305, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 306, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 307, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 308, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 309, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 310, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 311, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 312, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 313, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 314, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 315, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 316, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 317, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 318, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 319, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 320, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 321, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 322, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 323, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 324, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 325, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 326, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 327, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 328, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 329, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 330, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 331, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 332, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 333, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 334, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 335, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 336, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 337, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 338, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 339, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 340, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 341, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 342, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 343, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 344, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 345, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 346, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 347, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 348, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 349, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 350, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 351, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 352, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 353, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 354, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 355, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 356, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 357, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 358, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 359, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 360, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 361, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 362, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 363, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 364, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 365, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 366, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 367, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 368, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 369, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 370, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 371, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 372, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 373, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 374, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 375, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 376, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 377, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 378, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 379, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 380, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 381, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 382, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 383, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 384, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 385, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 386, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 387, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 388, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 389, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 390, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 391, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 392, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 393, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 394, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 395, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 396, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 397, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 398, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 399, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 400, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 401, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 402, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 403, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 404, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 405, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 406, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 407, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 408, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 409, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 410, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 411, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 412, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 413, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 414, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 415, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 416, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 417, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 418, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 419, "k": "yn", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"note": "recovery", "d": "no-turn-progress: forcing a search (400 requests at turn 3)"}
+{"a": "j"}
+{"r": 420, "k": "menu", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 421, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 422, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 423, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 424, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 425, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 426, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 427, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 428, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 429, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 430, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 431, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 432, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 433, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 434, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 435, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 436, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 437, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 438, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 439, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 440, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 441, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 442, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 443, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 444, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 445, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 446, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 447, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 448, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 449, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 450, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 451, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 452, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 453, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 454, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 455, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 456, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 457, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 458, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 459, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 460, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 461, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 462, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 463, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 464, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 465, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 466, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 467, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 468, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 469, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 470, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 471, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 472, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 473, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 474, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 475, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 476, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 477, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 478, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 479, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 480, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 481, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 482, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 483, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 484, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 485, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 486, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 487, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 488, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 489, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 490, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 491, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 492, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 493, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 494, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 495, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 496, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 497, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 498, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 499, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 500, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 501, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 502, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 503, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 504, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 505, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 506, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 507, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 508, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 509, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 510, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 511, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 512, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 513, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 514, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 515, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 516, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 517, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 518, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 519, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 520, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 521, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 522, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 523, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 524, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 525, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 526, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 527, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 528, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 529, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 530, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 531, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 532, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 533, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 534, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 535, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 536, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 537, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 538, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 539, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 540, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 541, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 542, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 543, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 544, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 545, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 546, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 547, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 548, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 549, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 550, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 551, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 552, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 553, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 554, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 555, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 556, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 557, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 558, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 559, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 560, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 561, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 562, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 563, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 564, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 565, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 566, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 567, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 568, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 569, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 570, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 571, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 572, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 573, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 574, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 575, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 576, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 577, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 578, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 579, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 580, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 581, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 582, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 583, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 584, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 585, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 586, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 587, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 588, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 589, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 590, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 591, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 592, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 593, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 594, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 595, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 596, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 597, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 598, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 599, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 600, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 601, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 602, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 603, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 604, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 605, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 606, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 607, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 608, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 609, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 610, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 611, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 612, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 613, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 614, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 615, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 616, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 617, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 618, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 619, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 620, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 621, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 622, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"note": "recovery", "d": "no-turn-progress: forcing a search (200 requests at turn 4)"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 623, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 624, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 625, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 626, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 627, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 628, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 629, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 630, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 631, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 632, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 633, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 634, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 635, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 636, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 637, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 638, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 639, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 640, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 641, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 642, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 643, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 644, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 645, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 646, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 647, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 648, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 649, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 650, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 651, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 652, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 653, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 654, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 655, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 656, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 657, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 658, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 659, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 660, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 661, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 662, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 663, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 664, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 665, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 666, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 667, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 668, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 669, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 670, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 671, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 672, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 673, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 674, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 675, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 676, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 677, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 678, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 679, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 680, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 681, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 682, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 683, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 684, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 685, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 686, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 687, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 688, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 689, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 690, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 691, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 692, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 693, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 694, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 695, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 696, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "apply", "why": ["taking {'a glittering spellbook': 1} out of container at j", "preparing item - glittering spellbook", "dropping junk"], "slot": "j"}
+{"a": "a"}
+{"r": 697, "k": "yn", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 698, "k": "menu", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18, "p": "Your bag of holding is empty.  Do what with it?"}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 699, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 700, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [40, 8], "hp": 18, "hpmax": 18}
+{"note": "abort", "d": "limit: max_requests 700"}

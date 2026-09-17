@@ -1,0 +1,8 @@
+{"kind": "depth", "turn": 1, "depth": 12, "t": 0.1, "value": 12, "dname": "The Quest"}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.1, "stage": "dlvl2"}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.1, "stage": "dlvl10"}
+{"kind": "branch", "turn": 1, "depth": 12, "t": 0.1, "dname": "The Quest", "lvl": "Home 1 "}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.1, "stage": "quest"}
+{"kind": "special", "turn": 1, "depth": 12, "t": 0.1, "name": "Val-strt", "lvl": "Home 1 "}
+{"kind": "branch", "turn": 4, "depth": 12, "t": 0.9, "dname": "The Dungeons of Doom", "lvl": "Dlvl:12 "}
+{"kind": "end", "turn": 6, "depth": 12, "t": 2.3, "outcome": "stuck", "reason": "action loop: apply repeated 40 times at turn 6 ({'act': 'apply', 'why': ['randomly use unihorn'], 'slot': 'j'})"}

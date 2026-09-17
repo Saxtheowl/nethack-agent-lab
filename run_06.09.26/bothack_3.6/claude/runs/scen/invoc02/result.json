@@ -1,0 +1,93 @@
+{
+ "game_id": "invoc02",
+ "outcome": "stuck",
+ "reason": "action loop: farlook repeated 40 times at turn 372 ({'act': 'farlook', 'why': ['examining ambiguous feature'], 'pos': '#Position{:x 56, :y 5}'})",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": -6,
+ "engine_seed": 91,
+ "turns": 372,
+ "depth": 49,
+ "max_depth": 49,
+ "xl": 25,
+ "lvl": "Dlvl:49",
+ "dname": "Gehennom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "gehennom_deep": 1
+ },
+ "last_stage": "dlvl2",
+ "assist_counts": {
+  "kit": 8
+ },
+ "counters": {
+  "compat:name:o": 1,
+  "compat:container:q": 1,
+  "menu_show:current_skills": 1
+ },
+ "notes": {
+  "scenario": 76,
+  "recovery": 3,
+  "forced-command": 3,
+  "compat": 2,
+  "abort": 1
+ },
+ "protoerrs": 0,
+ "requests": 836,
+ "actions": 645,
+ "action_hist": {
+  "move": 413,
+  "farlook": 68,
+  "inventory": 44,
+  "look": 35,
+  "wield": 30,
+  "apply": 17,
+  "autotravel": 13,
+  "attack": 7,
+  "search": 5,
+  "pickup": 5,
+  "discoveries": 2,
+  "enhance": 2,
+  "call": 1,
+  "wear": 1,
+  "takeoff": 1,
+  "dropsingle": 1
+ },
+ "elapsed_s": 25.6,
+ "turns_per_s": 14.54,
+ "last_action": {
+  "act": "farlook",
+  "why": [
+   "examining ambiguous feature"
+  ],
+  "pos": "#Position{:x 56, :y 5}"
+ },
+ "final_screen": [
+  "Pick an object.                                                                 ",
+  "                                                                                ",
+  "                                                                                ",
+  " -----------------------------------------------------------------------------  ",
+  " |       |             |       |       |     | *   |  .@.              |     |  ",
+  " |*--- --- ----- ----- - - --- --- ----- --- | --- | ---_------------- --- | |  ",
+  " |*| |     | |   | * |   |   |   $ |     |   | |   |   |     |       |     | |  ",
+  " | | --  --| | --- | --- --- |------ -----*--- | --| ------- ----- | ------| |  ",
+  " | |    ^  | |     | ) |  $| |   |   | |   |  *|   | |     |     | |   |   | |  ",
+  " | | ----- | ------| | --- | |$--- --- | --- --- | | | --- ----- ----- | | | |  ",
+  " |   |   |     |$  | |   |   |     |   | |       |   | | |     |     |   |   |  ",
+  " |- -- | | ----- | ----- |-- |- ------ | ----- ------| | ----- | --- | ----- |  ",
+  " | [   | | |  .  |   |   |   |  ^   ^^ |     |       | |   |   | |   | |   | |  ",
+  " |*----- | | ------- | ------- | ----------* |------ | | --- --- | | |-- | | |  ",
+  " |   |   | | | 8 |     |       |           | |  <  |%| | |   |   | | |  ^| | |  ",
+  " |---| --- | | --- -- -- -------- -------- | -%- | | | | | ------| | | --| --|  ",
+  " |   | |   | |     |     | |   * |         |   | |   | |^        | | |   |   |  ",
+  " | | | | --| | ----| ----- | | | ------- | ---$| |---| --------- | ----- --- |  ",
+  " | |   | | | | |   | |       | |       | |   | | |   |         | |^        | |  ",
+  " | ----- | | --- | | --------- |------ | --- | --- | --------- | ----------- |  ",
+  " |         |  *  |       *     |  ^        |    ^  |           |             |  ",
+  " -----------------------------------------------------------------------------  ",
+  "Bot the Heroine  St:18/04 Dx:11 Co:16 In:9 Wi:10 Ch:7  Lawful                   ",
+  "Dlvl:49 $:0 HP:113(163) Pw:40(40) AC:-7 Exp:25/50005681 T:372                   "
+ ]
+}

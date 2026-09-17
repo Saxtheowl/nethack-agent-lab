@@ -1,0 +1,6 @@
+{
+  "description": "Smoke test of the scenario mechanism: XL 5, a wish, level teleport to the Oracle, map; goal: reach Dlvl 10",
+  "steps": [["xl", 5], ["wish", "blessed scroll of magic mapping"], ["levelport", "oracle"], ["map"]],
+  "goal": "dlvl10",
+  "max_turns": 4000
+}

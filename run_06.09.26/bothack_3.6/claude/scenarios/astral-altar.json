@@ -1,0 +1,64 @@
+{
+ "description": "Astral offering mechanics: like 'astral' (same gear) but teleported (wizard ^T) next to the high altar of the central temple (engine (40,6)); the bot must find the co-aligned altar (maybe another temple) and offer the Amulet (engine verdict ascended)",
+ "steps": [
+  [
+   "xl",
+   30
+  ],
+  [
+   "wish",
+   "blessed rustproof +5 Excalibur"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 dwarvish iron helm"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 gauntlets of power"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 elven cloak"
+  ],
+  [
+   "identify"
+  ],
+  [
+   "wield",
+   "Excalibur"
+  ],
+  [
+   "wear",
+   "helm"
+  ],
+  [
+   "wear",
+   "gauntlets"
+  ],
+  [
+   "wear",
+   "cloak"
+  ],
+  [
+   "levelport_menu",
+   "astral"
+  ],
+  [
+   "teleport",
+   40,
+   7
+  ]
+ ],
+ "goal": "ascended",
+ "max_turns": 6000,
+ "profile": "fast",
+ "skip": [
+  "excalibur",
+  "quest-portal",
+  "quest",
+  "vlad",
+  "wiztower",
+  "dlvl20"
+ ]
+}

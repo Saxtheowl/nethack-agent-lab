@@ -1,0 +1,135 @@
+{"note": "scenario", "d": "msg: Velkommen wizard, welcome to NetHack!  You are a lawful dwarven Valkyrie."}
+{"note": "scenario", "d": "msg: You feel yourself speed up."}
+{"note": "scenario", "d": "step ['xl', 30]"}
+{"note": "scenario", "d": "ext '' -> 'levelchange'"}
+{"note": "scenario", "d": "line 'To what experience level do you want to be set?' -> 30"}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 2."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 3."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 4."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 5."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 6."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 7."}
+{"note": "scenario", "d": "msg: You feel quick!"}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 8."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 9."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 10."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 11."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 12."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 13."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 14."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 15."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 16."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 17."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 18."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 19."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 20."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 21."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 22."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 23."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 24."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 25."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 26."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 27."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 28."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 29."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 30."}
+{"note": "scenario", "d": "step ['wish', 'blessed rustproof +5 Excalibur']"}
+{"note": "scenario", "d": "line 'For what do you wish?' -> 'blessed rustproof +5 Excalibur'"}
+{"note": "scenario", "d": "msg: m - a long sword named Excalibur."}
+{"note": "scenario", "d": "step ['levelport_menu', 'astral']"}
+{"note": "scenario", "d": "line 'To what level do you want to teleport?' -> '?'"}
+{"note": "scenario", "d": "menu 'Level teleport to where:' -> 'astral'"}
+{"note": "scenario", "d": "msg: Endgame prerequisite: n - the Amulet of Yendor."}
+{"note": "scenario", "d": "msg: You arrive on the Astral Plane!"}
+{"note": "scenario", "d": "msg: Here the High Temple of Tyr is located."}
+{"note": "scenario", "d": "msg: You sense alarm, hostility, and excitement in the air!"}
+{"note": "scenario", "d": "step ['teleport', 40, 7]"}
+{"note": "scenario", "d": "pos '' -> (40, 7)"}
+{"note": "scenario", "d": "msg: The high priest intones:"}
+{"note": "scenario", "d": "msg: \"Pilgrim, you enter a sacred place!\""}
+{"note": "scenario", "d": "setup done: Astral offering mechanics: like 'astral' but teleported (wizard ^T) next to the high altar of the central temple (engine (40,6)); the bot must find the co-aligned altar (maybe another temple) and offer the Amulet (engine verdict ascended)"}
+{"r": 11, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"m": "The high priest intones:"}
+{"m": "\"Pilgrim, you enter a sacred place!\""}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 12, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 13, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 14, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"m": "You see no objects here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 7}"}
+{"a": ";"}
+{"r": 15, "k": "pos", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 6)"}
+{"r": 16, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"m": "@        a human or elf (peaceful high priest of Tyr) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 8}"}
+{"a": ";"}
+{"r": 17, "k": "pos", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 7)"}
+{"r": 18, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"m": "D        a dragon (silver dragon)"}
+{"act": "name", "why": ["naming the real amulet"], "slot": "n"}
+{"a": "#"}
+{"r": 19, "k": "ext", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"a": "name"}
+{"r": 20, "k": "menu", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266, "p": "What do you want to name?", "items": ["m a monster", "i a particular object in inventory", "o the type of an object in inventory", "f the type of an object upon the floor", "d the type of an object on discoveries list", "a record an annotation for the current level"]}
+{"note": "compat", "d": "name:i"}
+{"a": [1]}
+{"r": 21, "k": "yn", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266, "q": "What do you want to name? [a-n or ?*]"}
+{"a": "n"}
+{"r": 22, "k": "line", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266, "q": "What do you want to name this Amulet of Yendor?"}
+{"a": "REAL"}
+{"r": 23, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 24, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 7], "hp": 266, "hpmax": 266}
+{"act": "move", "why": ["seek going directly", "seeking high altar", "assisted: rushing to the high altar"], "dir": "N"}
+{"a": "k"}
+{"r": 25, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 6], "hp": 266, "hpmax": 266}
+{"m": "You hear a chugging sound."}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 26, "k": "cmd", "T": 2, "lvl": "Astral Plane", "u": [40, 6], "hp": 266, "hpmax": 266}
+{"m": "There is a high altar to Tyr (lawful) here."}
+{"act": "offer", "slot": "n"}
+{"a": "#"}
+{"r": 27, "k": "ext", "T": 2, "lvl": "Astral Plane", "u": [40, 6], "hp": 266, "hpmax": 266}
+{"a": "offer"}
+{"r": 28, "k": "yn", "T": 2, "lvl": "Astral Plane", "u": [40, 6], "hp": 266, "hpmax": 266, "q": "What do you want to sacrifice? [n or ?*]"}
+{"a": "n"}

@@ -1,0 +1,60 @@
+{
+ "game_id": "g003",
+ "series": "ca-w02",
+ "started": "2026-09-17T02:47:22+0000",
+ "host": "miniforum-worker",
+ "python": "3.12.3",
+ "engine": {
+  "nethack": "3.6.7",
+  "windowport": "bot",
+  "proto": 1
+ },
+ "code": {
+  "engine_binary_sha256": "083bc564918448d6f629b01a26860b6d1d062d196037f84e34e8089a7e77dbe9",
+  "engine_patch_sha256": "4b02581da504b5ed66ff9b669975881ee7f6fb8cea7db191247c4c9271fc3181",
+  "bot_code_hash": "cf6df3d4b83314d1",
+  "git_head": null
+ },
+ "engine_seed": 5003,
+ "bot_seed": 5003,
+ "character": "val-dwa-fem-law",
+ "assists": {
+  "invincible": true,
+  "nostarve": true,
+  "kit": [
+   "wear blessed +2 greased gray dragon scale mail",
+   "wear blessed amulet of reflection",
+   "wear blessed +2 fireproof speed boots",
+   "inv blessed ring of levitation",
+   "inv blessed unicorn horn",
+   "inv bag of holding",
+   "inv blessed +0 pick-axe",
+   "inv 2 uncursed food rations"
+  ]
+ },
+ "wizard": false,
+ "scenario": null,
+ "goal": "castle",
+ "bot_profile": "full",
+ "bot_tactics": "assisted",
+ "bot_skip": "",
+ "limits": {
+  "max_turns": 60000,
+  "max_seconds": 43200,
+  "max_requests": 3000000,
+  "prompt_loop": 40,
+  "no_turn_requests": 600,
+  "action_loop": 8,
+  "action_loop_abort": 40,
+  "stall_turns": 6000,
+  "fixation_recover": 400,
+  "fixation_abort": 1200,
+  "death_loop": 40,
+  "death_loop_turns": 300,
+  "storm_window": 3000,
+  "storm_min_turns": 30,
+  "decision_warn": 60.0,
+  "decision_kill": 600.0
+ },
+ "counted_as_full_game": true
+}

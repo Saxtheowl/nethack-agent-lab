@@ -1,0 +1,800 @@
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 35537, "k": "cmd", "T": 25793, "lvl": "Dlvl:30", "u": [60, 16], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 35538, "k": "cmd", "T": 25794, "lvl": "Dlvl:30", "u": [61, 15], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 35539, "k": "cmd", "T": 25795, "lvl": "Dlvl:30", "u": [62, 14], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 35540, "k": "cmd", "T": 25796, "lvl": "Dlvl:30", "u": [63, 13], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 35541, "k": "cmd", "T": 25797, "lvl": "Dlvl:30", "u": [64, 12], "hp": 165, "hpmax": 165}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 65, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35542, "k": "yn", "T": 25797, "lvl": "Dlvl:30", "u": [64, 12], "hp": 165, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35543, "k": "yn", "T": 25797, "lvl": "Dlvl:30", "u": [64, 12], "hp": 165, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35544, "k": "cmd", "T": 25798, "lvl": "Dlvl:30", "u": [64, 12], "hp": 165, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35545, "k": "cmd", "T": 25798, "lvl": "Dlvl:30", "u": [64, 12], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 65, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35546, "k": "cmd", "T": 25799, "lvl": "Dlvl:30", "u": [65, 11], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 66, 'y': 12, 'glyph': '*', 'color': 'yellow', 'feature': None, 'seen': "], "dir": "E"}
+{"a": "l"}
+{"r": 35547, "k": "cmd", "T": 25800, "lvl": "Dlvl:30", "u": [66, 11], "hp": 165, "hpmax": 165}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 35548, "k": "yn", "T": 25800, "lvl": "Dlvl:30", "u": [66, 11], "hp": 165, "hpmax": 165, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 35549, "k": "cmd", "T": 25801, "lvl": "Dlvl:30", "u": [66, 11], "hp": 165, "hpmax": 165}
+{"m": "You were wearing an uncursed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35550, "k": "cmd", "T": 25801, "lvl": "Dlvl:30", "u": [66, 11], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 66, 'y': 12, 'glyph': '*', 'color': 'yellow', 'feature': None, 'seen': "], "dir": "E"}
+{"a": "l"}
+{"r": 35551, "k": "cmd", "T": 25801, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165}
+{"m": "You see here a yellow gem."}
+{"act": "look", "why": ["examining tile {'x': 66, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 35552, "k": "cmd", "T": 25801, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165}
+{"m": "You see here a yellow gem."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 68, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35553, "k": "yn", "T": 25801, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35554, "k": "yn", "T": 25801, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35555, "k": "cmd", "T": 25802, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"m": "Your lantern is getting dim."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35556, "k": "cmd", "T": 25802, "lvl": "Dlvl:30", "u": [67, 11], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 68, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "SE"}
+{"a": "n"}
+{"r": 35557, "k": "cmd", "T": 25802, "lvl": "Dlvl:30", "u": [68, 12], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 67, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "S"}
+{"a": "j"}
+{"r": 35558, "k": "cmd", "T": 25803, "lvl": "Dlvl:30", "u": [68, 13], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["targetting leftover enemy {'x': 66, 'y': 17, 'known': 25803, 'first-known': 25709, 'glyph': 'u', 'co"], "dir": "S"}
+{"a": "j"}
+{"r": 35559, "k": "cmd", "T": 25804, "lvl": "Dlvl:30", "u": [68, 14], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["targetting leftover enemy {'x': 65, 'y': 18, 'known': 25804, 'first-known': 25709, 'glyph': 'u', 'co"], "dir": "SW"}
+{"a": "b"}
+{"r": 35560, "k": "cmd", "T": 25804, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 64, :y 18}"}
+{"a": ";"}
+{"r": 35561, "k": "pos", "T": 25804, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(65, 17)"}
+{"r": 35562, "k": "cmd", "T": 25804, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165}
+{"m": "^        a trap (bear trap)"}
+{"act": "move", "why": ["hitting {'x': 66, 'y': 17, 'known': 25804, 'first-known': 25709, 'glyph': 'u', 'color': None, 'type'", "targetting leftover enemy {'x': 66, 'y': 17, 'known': 25804, 'first-known': 25709, 'glyph': 'u', 'co"], "dir": "S"}
+{"a": "j"}
+{"r": 35563, "k": "cmd", "T": 25805, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165}
+{"m": "You kill the gray unicorn!"}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 35564, "k": "yn", "T": 25805, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 35565, "k": "cmd", "T": 25806, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165}
+{"m": "You were wearing an uncursed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35566, "k": "cmd", "T": 25806, "lvl": "Dlvl:30", "u": [67, 15], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 66, 'y': 17, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "S"}
+{"a": "j"}
+{"r": 35567, "k": "cmd", "T": 25806, "lvl": "Dlvl:30", "u": [67, 16], "hp": 165, "hpmax": 165}
+{"act": "look", "why": ["examining tile {'x': 66, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 35568, "k": "cmd", "T": 25806, "lvl": "Dlvl:30", "u": [67, 16], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 35569, "k": "cmd", "T": 25807, "lvl": "Dlvl:30", "u": [66, 17], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 19, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 35570, "k": "cmd", "T": 25808, "lvl": "Dlvl:30", "u": [67, 17], "hp": 165, "hpmax": 165}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 68, 'y': 19, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35571, "k": "yn", "T": 25808, "lvl": "Dlvl:30", "u": [67, 17], "hp": 165, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35572, "k": "yn", "T": 25808, "lvl": "Dlvl:30", "u": [67, 17], "hp": 165, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35573, "k": "cmd", "T": 25808, "lvl": "Dlvl:30", "u": [67, 17], "hp": 165, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35574, "k": "cmd", "T": 25808, "lvl": "Dlvl:30", "u": [67, 17], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 68, 'y': 19, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "SE"}
+{"a": "n"}
+{"r": 35575, "k": "cmd", "T": 25809, "lvl": "Dlvl:30", "u": [68, 18], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 69, 'y': 18, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35576, "k": "cmd", "T": 25809, "lvl": "Dlvl:30", "u": [69, 17], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 70, 'y': 19, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "SE"}
+{"a": "n"}
+{"r": 35577, "k": "cmd", "T": 25810, "lvl": "Dlvl:30", "u": [70, 18], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 71, 'y': 20, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "SE"}
+{"a": "n"}
+{"r": 35578, "k": "cmd", "T": 25810, "lvl": "Dlvl:30", "u": [71, 19], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 71, 'y': 18, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35579, "k": "cmd", "T": 25811, "lvl": "Dlvl:30", "u": [72, 18], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 73, 'y': 20, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "SE"}
+{"a": "n"}
+{"r": 35580, "k": "cmd", "T": 25811, "lvl": "Dlvl:30", "u": [73, 19], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 8, :y 8}"}
+{"a": ";"}
+{"r": 35581, "k": "pos", "T": 25811, "lvl": "Dlvl:30", "u": [73, 19], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(9, 7)"}
+{"r": 35582, "k": "cmd", "T": 25811, "lvl": "Dlvl:30", "u": [73, 19], "hp": 165, "hpmax": 165}
+{"m": "H        a giant humanoid (hill giant) [seen: infravision]"}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 74, 'y': 19, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35583, "k": "cmd", "T": 25812, "lvl": "Dlvl:30", "u": [74, 18], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 74, 'y': 17, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35584, "k": "cmd", "T": 25813, "lvl": "Dlvl:30", "u": [75, 17], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 75, 'y': 16, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35585, "k": "cmd", "T": 25813, "lvl": "Dlvl:30", "u": [76, 16], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 75, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35586, "k": "cmd", "T": 25814, "lvl": "Dlvl:30", "u": [76, 15], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 74, 'y': 14, 'glyph': '*', 'color': None, 'feature': None, 'seen': Fals"], "dir": "N"}
+{"a": "k"}
+{"r": 35587, "k": "cmd", "T": 25814, "lvl": "Dlvl:30", "u": [76, 14], "hp": 165, "hpmax": 165}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 35588, "k": "yn", "T": 25814, "lvl": "Dlvl:30", "u": [76, 14], "hp": 165, "hpmax": 165, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 35589, "k": "cmd", "T": 25815, "lvl": "Dlvl:30", "u": [76, 14], "hp": 165, "hpmax": 165}
+{"m": "You were wearing an uncursed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35590, "k": "cmd", "T": 25815, "lvl": "Dlvl:30", "u": [76, 14], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 74, 'y': 14, 'glyph': '*', 'color': None, 'feature': None, 'seen': True"], "dir": "NW"}
+{"a": "y"}
+{"r": 35591, "k": "cmd", "T": 25815, "lvl": "Dlvl:30", "u": [75, 13], "hp": 165, "hpmax": 165}
+{"m": "There is a web here."}
+{"m": "You see here a gray stone."}
+{"m": "You stumble into a spider web!"}
+{"m": "You tear through a web!"}
+{"act": "look", "why": ["examining tile {'x': 74, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, '"]}
+{"a": ":"}
+{"r": 35592, "k": "cmd", "T": 25815, "lvl": "Dlvl:30", "u": [75, 13], "hp": 165, "hpmax": 165}
+{"m": "You see here a gray stone."}
+{"act": "move", "why": ["exploring {'x': 76, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 35593, "k": "cmd", "T": 25816, "lvl": "Dlvl:30", "u": [76, 13], "hp": 165, "hpmax": 165}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 76, 'y': 12, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35594, "k": "yn", "T": 25816, "lvl": "Dlvl:30", "u": [76, 13], "hp": 165, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35595, "k": "yn", "T": 25816, "lvl": "Dlvl:30", "u": [76, 13], "hp": 165, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35596, "k": "cmd", "T": 25816, "lvl": "Dlvl:30", "u": [76, 13], "hp": 165, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35597, "k": "cmd", "T": 25816, "lvl": "Dlvl:30", "u": [76, 13], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 76, 'y': 12, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NE"}
+{"a": "u"}
+{"r": 35598, "k": "cmd", "T": 25817, "lvl": "Dlvl:30", "u": [77, 12], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "E"}
+{"a": "l"}
+{"r": 35599, "k": "cmd", "T": 25818, "lvl": "Dlvl:30", "u": [78, 12], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 13, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "E"}
+{"a": "l"}
+{"r": 35600, "k": "cmd", "T": 25818, "lvl": "Dlvl:30", "u": [79, 12], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 12, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35601, "k": "cmd", "T": 25819, "lvl": "Dlvl:30", "u": [79, 11], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 11, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35602, "k": "cmd", "T": 25820, "lvl": "Dlvl:30", "u": [79, 10], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 10, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': ", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35603, "k": "cmd", "T": 25820, "lvl": "Dlvl:30", "u": [79, 9], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 9, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35604, "k": "cmd", "T": 25821, "lvl": "Dlvl:30", "u": [79, 8], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 8, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35605, "k": "cmd", "T": 25821, "lvl": "Dlvl:30", "u": [79, 7], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 7, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35606, "k": "cmd", "T": 25822, "lvl": "Dlvl:30", "u": [79, 6], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 6, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35607, "k": "cmd", "T": 25822, "lvl": "Dlvl:30", "u": [79, 5], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 5, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35608, "k": "cmd", "T": 25823, "lvl": "Dlvl:30", "u": [79, 4], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 4, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35609, "k": "cmd", "T": 25823, "lvl": "Dlvl:30", "u": [79, 3], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 3, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35610, "k": "cmd", "T": 25824, "lvl": "Dlvl:30", "u": [79, 2], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 78, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "N"}
+{"a": "k"}
+{"r": 35611, "k": "cmd", "T": 25824, "lvl": "Dlvl:30", "u": [79, 1], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 75, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "W"}
+{"a": "h"}
+{"r": 35612, "k": "cmd", "T": 25825, "lvl": "Dlvl:30", "u": [78, 1], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 76, 'y': 4, 'glyph': '8', 'color': None, 'feature': None, 'seen': False, 'dug': Fals", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "S"}
+{"a": "j"}
+{"r": 35613, "k": "cmd", "T": 25825, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165}
+{"act": "wield", "why": ["exploring {'x': 76, 'y': 4, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': False", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "k"}
+{"a": "w"}
+{"r": 35614, "k": "yn", "T": 25825, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165, "q": "What do you want to wield? [- aikrD or ?*]"}
+{"a": "k"}
+{"r": 35615, "k": "cmd", "T": 25826, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35616, "k": "cmd", "T": 25826, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165}
+{"act": "apply", "why": ["exploring {'x': 76, 'y': 4, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': False", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "k"}
+{"a": "a"}
+{"r": 35617, "k": "yn", "T": 25826, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165, "q": "What do you want to use or apply? [bi-kqtuwAFHIKLTWX or ?*]"}
+{"a": "k"}
+{"r": 35618, "k": "yn", "T": 25826, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165, "q": "In what direction do you want to dig? [b<]"}
+{"a": "b"}
+{"r": 35619, "k": "cmd", "T": 25827, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "Your lantern is getting dim."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35620, "k": "cmd", "T": 25827, "lvl": "Dlvl:30", "u": [78, 2], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 76, 'y': 4, 'glyph': '*', 'color': None, 'feature': None, 'seen': True,"], "dir": "SW"}
+{"a": "b"}
+{"r": 35621, "k": "cmd", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"act": "look", "why": ["examining tile {'x': 76, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 35622, "k": "cmd", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 35623, "k": "yn", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 35624, "k": "cmd", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"m": "You were wearing an uncursed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35625, "k": "cmd", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +6 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 35626, "k": "yn", "T": 25828, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165, "q": "What do you want to wield? [- aikrD or ?*]"}
+{"a": "a"}
+{"r": 35627, "k": "cmd", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"m": "a - the blessed rustproof +6 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35628, "k": "cmd", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 35629, "k": "menu", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165, "p": "Pick up what?", "items": ["# Coins", "$ 81 gold pieces", "# Gems/Stones", "a 40 rocks"]}
+{"a": [1]}
+{"r": 35630, "k": "cmd", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"m": "$ - 81 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35631, "k": "cmd", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"act": "look", "why": ["examining tile {'x': 76, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 35632, "k": "cmd", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165}
+{"m": "You see here 40 rocks."}
+{"act": "autotravel", "why": ["exploring {'x': 67, 'y': 8, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 67, :y 8}"}
+{"a": "_"}
+{"r": 35633, "k": "pos", "T": 25829, "lvl": "Dlvl:30", "u": [77, 3], "hp": 165, "hpmax": 165, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(68, 7)"}
+{"r": 35634, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 19, :y 14}"}
+{"a": ";"}
+{"r": 35635, "k": "pos", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(20, 13)"}
+{"r": 35636, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 15}"}
+{"a": ";"}
+{"r": 35637, "k": "pos", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 14)"}
+{"r": 35638, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 14}"}
+{"a": ";"}
+{"r": 35639, "k": "pos", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 13)"}
+{"r": 35640, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 17, :y 15}"}
+{"a": ";"}
+{"r": 35641, "k": "pos", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(18, 14)"}
+{"r": 35642, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [68, 7], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "move", "why": ["targetting leftover enemy {'x': 64, 'y': 6, 'known': 25835, 'first-known': 25835, 'glyph': '2', 'col"], "dir": "NW"}
+{"a": "y"}
+{"r": 35643, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 16}"}
+{"a": ";"}
+{"r": 35644, "k": "pos", "T": 25835, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 15)"}
+{"r": 35645, "k": "cmd", "T": 25835, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 25835, 'first-known': 25835, 'glyph': 'W', 'color': 'blue', 'type", "targetting enemy {'x': 65, 'y': 7, 'known': 25835, 'first-known': 25835, 'glyph': 'W', 'color': 'blu"], "dir": "W"}
+{"a": "h"}
+{"r": 35646, "k": "cmd", "T": 25836, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165}
+{"m": "You hit the wraith!"}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 7, 'known': 25836, 'first-known': 25835, 'glyph': 'W', 'color': 'blue', 'type", "targetting enemy {'x': 65, 'y': 7, 'known': 25836, 'first-known': 25835, 'glyph': 'W', 'color': 'blu"], "dir": "W"}
+{"a": "h"}
+{"r": 35647, "k": "cmd", "T": 25836, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165}
+{"m": "You destroy the wraith!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 19, :y 14}"}
+{"a": ";"}
+{"r": 35648, "k": "pos", "T": 25836, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(20, 13)"}
+{"r": 35649, "k": "cmd", "T": 25836, "lvl": "Dlvl:30", "u": [67, 6], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "move", "why": ["targetting leftover enemy {'x': 64, 'y': 6, 'known': 25835, 'first-known': 25835, 'glyph': '2', 'col"], "dir": "W"}
+{"a": "h"}
+{"r": 35650, "k": "cmd", "T": 25837, "lvl": "Dlvl:30", "u": [66, 6], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 8, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 35651, "k": "cmd", "T": 25838, "lvl": "Dlvl:30", "u": [65, 7], "hp": 159, "hpmax": 165}
+{"m": "You feel sluggish."}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 35652, "k": "cmd", "T": 25839, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 64, :y 8}"}
+{"a": ";"}
+{"r": 35653, "k": "pos", "T": 25839, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(65, 7)"}
+{"r": 35654, "k": "cmd", "T": 25839, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165}
+{"m": "^        a trap (anti-magic field)"}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 61, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35655, "k": "yn", "T": 25839, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35656, "k": "yn", "T": 25839, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35657, "k": "cmd", "T": 25840, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35658, "k": "cmd", "T": 25840, "lvl": "Dlvl:30", "u": [64, 7], "hp": 164, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 61, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "NW"}
+{"a": "y"}
+{"r": 35659, "k": "cmd", "T": 25840, "lvl": "Dlvl:30", "u": [63, 6], "hp": 164, "hpmax": 165}
+{"act": "move", "why": ["targetting leftover enemy {'x': 60, 'y': 6, 'known': 25840, 'first-known': 25736, 'glyph': '3', 'col"], "dir": "NW"}
+{"a": "y"}
+{"r": 35660, "k": "cmd", "T": 25841, "lvl": "Dlvl:30", "u": [62, 5], "hp": 164, "hpmax": 165}
+{"act": "attack", "why": ["hitting {'x': 60, 'y': 6, 'known': 25840, 'first-known': 25736, 'glyph': '3', 'color': 'red', 'type'", "targetting leftover enemy {'x': 60, 'y': 6, 'known': 25840, 'first-known': 25736, 'glyph': '3', 'col"], "dir": "W"}
+{"a": "F"}
+{"r": 35661, "k": "cmdcont", "T": 25841, "lvl": "Dlvl:30", "u": [62, 5], "hp": 164, "hpmax": 165}
+{"a": "h"}
+{"r": 35662, "k": "cmd", "T": 25842, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"m": "You hit the giant mimic!"}
+{"m": "The giant mimic hits!"}
+{"m": "The giant mimic hits!"}
+{"m": "You find an anti-magic field."}
+{"act": "move", "why": ["hitting {'x': 60, 'y': 6, 'known': 25842, 'first-known': 25842, 'glyph': 'm', 'color': 'magenta', 't", "targetting enemy {'x': 60, 'y': 6, 'known': 25842, 'first-known': 25842, 'glyph': 'm', 'color': 'mag"], "dir": "W"}
+{"a": "h"}
+{"r": 35663, "k": "cmd", "T": 25842, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"m": "You hit the giant mimic!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 15}"}
+{"a": ";"}
+{"r": 35664, "k": "pos", "T": 25842, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 14)"}
+{"r": 35665, "k": "cmd", "T": 25842, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "move", "why": ["hitting {'x': 60, 'y': 6, 'known': 25842, 'first-known': 25842, 'glyph': 'm', 'color': 'magenta', 't", "targetting enemy {'x': 60, 'y': 6, 'known': 25842, 'first-known': 25842, 'glyph': 'm', 'color': 'mag"], "dir": "W"}
+{"a": "h"}
+{"r": 35666, "k": "cmd", "T": 25843, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"m": "You kill the giant mimic!"}
+{"act": "remove", "why": ["removing use of h", "don't want levi"], "slot": "h"}
+{"a": "R"}
+{"r": 35667, "k": "yn", "T": 25843, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 35668, "k": "cmd", "T": 25843, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"m": "You were wearing an uncursed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35669, "k": "cmd", "T": 25843, "lvl": "Dlvl:30", "u": [62, 5], "hp": 161, "hpmax": 165}
+{"act": "move", "why": ["new or desired item at {'x': 60, 'y': 6, 'glyph': '%', 'color': 'magenta', 'feature': 'fountain', 's"], "dir": "W"}
+{"a": "h"}
+{"r": 35670, "k": "cmd", "T": 25844, "lvl": "Dlvl:30", "u": [61, 5], "hp": 159, "hpmax": 165}
+{"m": "There is an anti-magic field here."}
+{"m": "You see here a giant mimic corpse."}
+{"m": "You feel sluggish."}
+{"act": "look", "why": ["examining tile {'x': 60, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'fountain', 'seen': True"]}
+{"a": ":"}
+{"r": 35671, "k": "cmd", "T": 25844, "lvl": "Dlvl:30", "u": [61, 5], "hp": 159, "hpmax": 165}
+{"m": "There is an anti-magic field here."}
+{"m": "You see here a giant mimic corpse."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 35672, "k": "cmd", "T": 25844, "lvl": "Dlvl:30", "u": [60, 5], "hp": 159, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 19, :y 16}"}
+{"a": ";"}
+{"r": 35673, "k": "pos", "T": 25844, "lvl": "Dlvl:30", "u": [60, 5], "hp": 159, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(20, 15)"}
+{"r": 35674, "k": "cmd", "T": 25844, "lvl": "Dlvl:30", "u": [60, 5], "hp": 159, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "exploring {'x': 48, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "slot": "h"}
+{"a": "P"}
+{"r": 35675, "k": "yn", "T": 25844, "lvl": "Dlvl:30", "u": [60, 5], "hp": 159, "hpmax": 165, "q": "What do you want to put on? [hyzBCTY or ?*]"}
+{"a": "h"}
+{"r": 35676, "k": "yn", "T": 25844, "lvl": "Dlvl:30", "u": [60, 5], "hp": 159, "hpmax": 165, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 35677, "k": "cmd", "T": 25845, "lvl": "Dlvl:30", "u": [60, 5], "hp": 162, "hpmax": 165}
+{"m": "You start to float in the air!"}
+{"m": "h - an uncursed ring of levitation (on left hand)."}
+{"m": "You hear water falling on coins."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 35678, "k": "cmd", "T": 25845, "lvl": "Dlvl:30", "u": [60, 5], "hp": 162, "hpmax": 165}
+{"act": "autotravel", "why": ["exploring {'x': 48, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 48, :y 2}"}
+{"a": "_"}
+{"r": 35679, "k": "pos", "T": 25845, "lvl": "Dlvl:30", "u": [60, 5], "hp": 162, "hpmax": 165, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(49, 1)"}
+{"r": 35680, "k": "cmd", "T": 25852, "lvl": "Dlvl:30", "u": [49, 1], "hp": 165, "hpmax": 165}
+{"m": "Your lantern has run out of power."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 22, :y 15}"}
+{"a": ";"}
+{"r": 35681, "k": "pos", "T": 25852, "lvl": "Dlvl:30", "u": [49, 1], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(23, 14)"}
+{"r": 35682, "k": "cmd", "T": 25852, "lvl": "Dlvl:30", "u": [49, 1], "hp": 165, "hpmax": 165}
+{"m": "B        a bat or bird (vampire bat) [seen: infravision]"}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "W"}
+{"a": "h"}
+{"r": 35683, "k": "cmd", "T": 25852, "lvl": "Dlvl:30", "u": [48, 1], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "W"}
+{"a": "h"}
+{"r": 35684, "k": "cmd", "T": 25853, "lvl": "Dlvl:30", "u": [47, 1], "hp": 165, "hpmax": 165}
+{"m": "You hear the splashing of a naiad."}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 2, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "W"}
+{"a": "h"}
+{"r": 35685, "k": "cmd", "T": 25854, "lvl": "Dlvl:30", "u": [46, 1], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 3, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "S"}
+{"a": "j"}
+{"r": 35686, "k": "cmd", "T": 25854, "lvl": "Dlvl:30", "u": [46, 2], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 14}"}
+{"a": ";"}
+{"r": 35687, "k": "pos", "T": 25854, "lvl": "Dlvl:30", "u": [46, 2], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 13)"}
+{"r": 35688, "k": "cmd", "T": 25854, "lvl": "Dlvl:30", "u": [46, 2], "hp": 165, "hpmax": 165}
+{"m": "@        a human or elf (soldier) [seen: infravision]"}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 4, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "S"}
+{"a": "j"}
+{"r": 35689, "k": "cmd", "T": 25855, "lvl": "Dlvl:30", "u": [46, 3], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["assuming levitation", "exploring {'x': 45, 'y': 5, 'glyph': '}', 'color': 'blue', 'feature': 'pool', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore"], "dir": "S"}
+{"a": "j"}
+{"r": 35690, "k": "cmd", "T": 25855, "lvl": "Dlvl:30", "u": [46, 4], "hp": 165, "hpmax": 165}
+{"act": "move", "why": ["targetting leftover enemy {'x': 43, 'y': 6, 'known': 25855, 'first-known': 25748, 'glyph': '3', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 35691, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35692, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35693, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35694, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35695, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35696, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35697, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35698, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35699, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35700, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35701, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35702, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35703, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35704, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35705, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35706, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35707, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35708, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35709, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"note": "recovery", "d": "action-loop x8 farlook: farlook target #Position{:x 43, :y 6} marked examined"}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35710, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35711, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35712, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35713, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35714, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35715, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35716, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35717, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35718, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35719, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35720, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35721, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35722, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35723, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35724, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35725, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35726, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35727, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35728, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35729, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35730, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35731, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35732, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35733, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35734, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35735, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35736, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35737, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35738, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35739, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35740, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35741, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35742, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35743, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35744, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35745, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35746, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35747, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35748, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35749, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35750, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35751, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35752, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35753, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35754, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35755, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35756, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35757, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35758, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35759, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35760, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35761, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35762, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35763, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35764, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35765, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35766, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35767, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35768, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35769, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35770, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35771, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"m": "]        a mimic or a strange object (strange object in water)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 35772, "k": "pos", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 35773, "k": "cmd", "T": 25856, "lvl": "Dlvl:30", "u": [45, 5], "hp": 165, "hpmax": 165}
+{"note": "abort", "d": "stuck: action loop: farlook repeated 40 times at turn 25856 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 43, :y 6}'})"}

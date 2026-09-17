@@ -1,0 +1,48 @@
+{
+ "description": "Default kit, XL 25, carrying the Bell of Opening, the Candelabrum, 7 blessed wax candles and the Book of the Dead (wishes: scenario only), level-teleported to the vibrating square level and mapped; goal: enter the Sanctum",
+ "steps": [
+  [
+   "xl",
+   25
+  ],
+  [
+   "wish",
+   "Bell of Opening"
+  ],
+  [
+   "wish",
+   "Candelabrum of Invocation"
+  ],
+  [
+   "wish",
+   "7 blessed wax candles"
+  ],
+  [
+   "wish",
+   "blessed Book of the Dead"
+  ],
+  [
+   "levelport",
+   "valley"
+  ],
+  [
+   "levelport_rel",
+   "sanctum",
+   -1
+  ],
+  [
+   "map"
+  ]
+ ],
+ "goal": "sanctum",
+ "max_turns": 6000,
+ "profile": "fast",
+ "skip": [
+  "quest-portal",
+  "dlvl20",
+  "excalibur",
+  "quest",
+  "vlad",
+  "wiztower"
+ ]
+}

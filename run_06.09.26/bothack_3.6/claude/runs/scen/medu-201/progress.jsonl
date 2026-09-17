@@ -1,0 +1,13 @@
+{"kind": "depth", "turn": 1, "depth": 27, "t": 0.0, "value": 27, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 1, "depth": 27, "t": 0.0, "stage": "dlvl2"}
+{"kind": "stage", "turn": 1, "depth": 27, "t": 0.0, "stage": "dlvl10"}
+{"kind": "branch", "turn": 1, "depth": 27, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:27 "}
+{"kind": "special", "turn": 1, "depth": 27, "t": 0.0, "name": "medusa", "lvl": "Dlvl:27 "}
+{"kind": "stage", "turn": 1, "depth": 27, "t": 0.0, "stage": "medusa", "variant": "medusa"}
+{"kind": "assist", "turn": 10, "depth": 27, "t": 1.1, "x_kind": "lifesave", "how": "died", "killer": "titan", "count": 1, "hpmax": 132, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 9, "x_depth": 27, "dnum": 0}
+{"kind": "assist", "turn": 15, "depth": 27, "t": 1.5, "x_kind": "lifesave", "how": "died", "killer": "ettin", "count": 2, "hpmax": 132, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 14, "x_depth": 27, "dnum": 0}
+{"kind": "assist", "turn": 48, "depth": 27, "t": 4.1, "x_kind": "lifesave", "how": "died", "killer": "blue dragon", "count": 3, "hpmax": 132, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 48, "x_depth": 27, "dnum": 0}
+{"kind": "depth", "turn": 55, "depth": 28, "t": 4.6, "value": 28, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 55, "depth": 28, "t": 4.6, "name": "castle", "lvl": "Dlvl:28 "}
+{"kind": "stage", "turn": 55, "depth": 28, "t": 4.6, "stage": "castle"}
+{"kind": "end", "turn": 55, "depth": 28, "t": 4.6, "outcome": "goal_reached", "reason": "castle"}

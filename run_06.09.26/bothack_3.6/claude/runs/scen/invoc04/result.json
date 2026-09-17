@@ -1,0 +1,98 @@
+{
+ "game_id": "invoc04",
+ "outcome": "stuck",
+ "reason": "death loop: 25 assisted lifesaves in 278 turns (last: gas cloud)",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": -6,
+ "engine_seed": 91,
+ "turns": 1003,
+ "depth": 49,
+ "max_depth": 49,
+ "xl": 25,
+ "lvl": "Dlvl:49",
+ "dname": "Gehennom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "gehennom_deep": 1
+ },
+ "last_stage": "dlvl2",
+ "assist_counts": {
+  "kit": 8,
+  "lifesave": 25
+ },
+ "counters": {
+  "compat:name:o": 1,
+  "compat:container:q": 1,
+  "menu_show:current_skills": 2,
+  "msg-rewrite:^You feel as if you need some ": 7,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 2
+ },
+ "notes": {
+  "scenario": 76,
+  "recovery": 1,
+  "compat": 2,
+  "assist": 24,
+  "abort": 1
+ },
+ "protoerrs": 0,
+ "requests": 2937,
+ "actions": 2055,
+ "action_hist": {
+  "move": 761,
+  "look": 387,
+  "search": 230,
+  "apply": 218,
+  "engrave": 129,
+  "farlook": 120,
+  "inventory": 100,
+  "wield": 70,
+  "autotravel": 13,
+  "discoveries": 9,
+  "pickup": 8,
+  "enhance": 4,
+  "call": 1,
+  "wear": 1,
+  "takeoff": 1,
+  "eat": 1,
+  "dropsingle": 1,
+  "throw": 1
+ },
+ "elapsed_s": 63.0,
+ "turns_per_s": 15.93,
+ "last_action": {
+  "act": "apply",
+  "why": [
+   "applying unihorn to recover"
+  ],
+  "slot": "i"
+ },
+ "final_screen": [
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  " -----------------------------------------------------------------------------  ",
+  " |       |             |       |       |     | *   |                   |     |  ",
+  " |*--- --- ----- ----- - - --- --- ----- --- | --- |   - ------------- --- | |  ",
+  " |*| |     | |   | * |   |   |   $ |     |   | |   |   |     |       |$    | |  ",
+  " | | --  --| | --- | --- --- |------ -----*--- | --| ------- ----- | ------| |  ",
+  " | |    ^  | |     |   |  $| |   |   | |   |  *|     |     |     | |   |   | |  ",
+  " | | ----- | ------| | --- | |$--- --- | --- ---     | --- ----- ----- | | | |  ",
+  " |   |   |     |$  | |   |   |     |   | |       |   | | |     |     |   |   |  ",
+  " |- -- | | ----- | ----- |-- |- ------ | ----- ------| | ----- | --- | ----- |  ",
+  " | [   | | |  .  |   |   |   |  ^   ^^ |  *  |       | |   |   | |   | |     |  ",
+  " |*----- | | ------- | ------- | ----------% |------ | | --- --- | | |-- |   |  ",
+  " |   |   | | | 8 |     |       |           |%|  <  | | | |   |   | | |  ^| | |  ",
+  " |---| --- | | --- -- -- -------- -------- | - -%|%| | | | ------| | | --| --|  ",
+  " |   | |   | |     | *   | |   * |         |   | |   | |^        | | |   |   |  ",
+  " | | | | --| | ----| ----- | | | ------- | ---$| |---| --------- | ----- --- |  ",
+  " | |   | | | | |   | |       | |       | |   | | |   |         | |^        | |  ",
+  " | ----- | | --- | | --------- |------ | --- | --- | --------- |   %-------- |  ",
+  " |         |  *  |             |  ^        |    ^  |           |   %@%8      |  ",
+  " -----------------------------------------------------------------------------  ",
+  "Bot the Heroine  St:18/04 Dx:11 Co:16 In:9 Wi:10 Ch:7  Lawful                   ",
+  "Dlvl:49 $:0 HP:51(163) Pw:42(42) AC:10 Exp:25/50004898 T:1002 Blind             "
+ ]
+}

@@ -1,0 +1,800 @@
+{"a": "a"}
+{"r": 678, "k": "cmd", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"m": "b - a +0 dagger (alternate weapon; not wielded)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 679, "k": "cmd", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 680, "k": "ext", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30}
+{"a": "loot"}
+{"r": 681, "k": "yn", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30, "q": "There is a broken chest here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 682, "k": "menu", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30, "p": "Do what with the chest?", "items": [": Look inside the chest", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the chest", "# ", "q do nothing"]}
+{"m": "You carefully open the chest..."}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 683, "k": "cmd", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30}
+{"m": "The chest is empty."}
+{"act": "autotravel", "why": ["exploring {'x': 42, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 42, :y 4}"}
+{"a": "_"}
+{"r": 684, "k": "pos", "T": 475, "lvl": "Dlvl:3", "u": [56, 5], "hp": 25, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 3)"}
+{"r": 685, "k": "cmd", "T": 483, "lvl": "Dlvl:3", "u": [43, 3], "hp": 25, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 3, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 686, "k": "cmd", "T": 484, "lvl": "Dlvl:3", "u": [43, 2], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 3, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 687, "k": "cmd", "T": 485, "lvl": "Dlvl:3", "u": [42, 2], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 3, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 688, "k": "cmd", "T": 485, "lvl": "Dlvl:3", "u": [41, 2], "hp": 26, "hpmax": 30}
+{"act": "autotravel", "why": ["exploring {'x': 44, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 44, :y 9}"}
+{"a": "_"}
+{"r": 689, "k": "pos", "T": 485, "lvl": "Dlvl:3", "u": [41, 2], "hp": 26, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(45, 8)"}
+{"r": 690, "k": "cmd", "T": 489, "lvl": "Dlvl:3", "u": [45, 8], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 691, "k": "cmd", "T": 490, "lvl": "Dlvl:3", "u": [46, 8], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 692, "k": "cmd", "T": 490, "lvl": "Dlvl:3", "u": [46, 9], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 693, "k": "cmd", "T": 491, "lvl": "Dlvl:3", "u": [47, 9], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 694, "k": "cmd", "T": 491, "lvl": "Dlvl:3", "u": [48, 9], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 695, "k": "cmd", "T": 492, "lvl": "Dlvl:3", "u": [48, 10], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 696, "k": "cmd", "T": 493, "lvl": "Dlvl:3", "u": [49, 10], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 697, "k": "cmd", "T": 493, "lvl": "Dlvl:3", "u": [49, 11], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 698, "k": "cmd", "T": 494, "lvl": "Dlvl:3", "u": [50, 11], "hp": 26, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 699, "k": "cmd", "T": 495, "lvl": "Dlvl:3", "u": [50, 12], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 700, "k": "cmd", "T": 495, "lvl": "Dlvl:3", "u": [51, 12], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 701, "k": "cmd", "T": 496, "lvl": "Dlvl:3", "u": [52, 12], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 702, "k": "cmd", "T": 496, "lvl": "Dlvl:3", "u": [52, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 703, "k": "cmd", "T": 497, "lvl": "Dlvl:3", "u": [53, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 704, "k": "cmd", "T": 497, "lvl": "Dlvl:3", "u": [54, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 705, "k": "cmd", "T": 498, "lvl": "Dlvl:3", "u": [55, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 706, "k": "cmd", "T": 498, "lvl": "Dlvl:3", "u": [56, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 707, "k": "cmd", "T": 499, "lvl": "Dlvl:3", "u": [57, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 708, "k": "cmd", "T": 499, "lvl": "Dlvl:3", "u": [58, 11], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 709, "k": "cmd", "T": 500, "lvl": "Dlvl:3", "u": [58, 10], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 710, "k": "cmd", "T": 500, "lvl": "Dlvl:3", "u": [59, 10], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 711, "k": "cmd", "T": 501, "lvl": "Dlvl:3", "u": [60, 10], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 712, "k": "cmd", "T": 501, "lvl": "Dlvl:3", "u": [60, 9], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 713, "k": "cmd", "T": 502, "lvl": "Dlvl:3", "u": [61, 9], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 714, "k": "cmd", "T": 502, "lvl": "Dlvl:3", "u": [62, 9], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 715, "k": "cmd", "T": 503, "lvl": "Dlvl:3", "u": [63, 9], "hp": 27, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 716, "k": "cmd", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30}
+{"act": "wield", "why": ["exploring {'x': 64, 'y': 10, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "slot": "k"}
+{"a": "w"}
+{"r": 717, "k": "yn", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30, "q": "What do you want to wield? [- abiko or ?*]"}
+{"a": "k"}
+{"r": 718, "k": "cmd", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 719, "k": "cmd", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30}
+{"act": "apply", "why": ["exploring {'x': 64, 'y': 10, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "slot": "k"}
+{"a": "a"}
+{"r": 720, "k": "yn", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30, "q": "What do you want to use or apply? [ijkmn or ?*]"}
+{"a": "k"}
+{"r": 721, "k": "yn", "T": 504, "lvl": "Dlvl:3", "u": [64, 9], "hp": 27, "hpmax": 30, "q": "In what direction do you want to dig? [ykulnjb>]"}
+{"a": "l"}
+{"r": 722, "k": "cmd", "T": 506, "lvl": "Dlvl:3", "u": [64, 9], "hp": 28, "hpmax": 30}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 723, "k": "cmd", "T": 506, "lvl": "Dlvl:3", "u": [64, 9], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["new or desired item at {'x': 64, 'y': 10, 'glyph': '*', 'color': None, 'feature': None, 'seen': True"], "dir": "E"}
+{"a": "l"}
+{"r": 724, "k": "cmd", "T": 507, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "You see here 12 rocks."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 725, "k": "cmd", "T": 507, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "You see here 12 rocks."}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - a +1 long sword"], "slot": "a"}
+{"a": "w"}
+{"r": 726, "k": "yn", "T": 507, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30, "q": "What do you want to wield? [- abiko or ?*]"}
+{"a": "a"}
+{"r": 727, "k": "cmd", "T": 507, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 728, "k": "cmd", "T": 507, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 729, "k": "cmd", "T": 508, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "q - 12 rocks."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 730, "k": "cmd", "T": 508, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 731, "k": "cmd", "T": 508, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "You see no objects here."}
+{"act": "dropsingle", "why": ["dropping rock excess"], "slot": "q"}
+{"a": "d"}
+{"r": 732, "k": "yn", "T": 508, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30, "q": "What do you want to drop? [$a-oq or ?*]"}
+{"a": "5"}
+{"r": 733, "k": "key", "T": 508, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"a": "q"}
+{"r": 734, "k": "cmd", "T": 509, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "Count: 5 q"}
+{"m": "You drop 5 rocks."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 735, "k": "cmd", "T": 509, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 736, "k": "cmd", "T": 509, "lvl": "Dlvl:3", "u": [65, 9], "hp": 28, "hpmax": 30}
+{"m": "You see here 5 rocks."}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 737, "k": "cmd", "T": 510, "lvl": "Dlvl:3", "u": [66, 9], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 738, "k": "cmd", "T": 510, "lvl": "Dlvl:3", "u": [67, 9], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 739, "k": "cmd", "T": 511, "lvl": "Dlvl:3", "u": [67, 8], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 740, "k": "cmd", "T": 512, "lvl": "Dlvl:3", "u": [68, 8], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 741, "k": "cmd", "T": 512, "lvl": "Dlvl:3", "u": [68, 9], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 742, "k": "cmd", "T": 513, "lvl": "Dlvl:3", "u": [67, 10], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 743, "k": "cmd", "T": 514, "lvl": "Dlvl:3", "u": [66, 10], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 744, "k": "cmd", "T": 514, "lvl": "Dlvl:3", "u": [66, 11], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 745, "k": "cmd", "T": 515, "lvl": "Dlvl:3", "u": [65, 11], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 746, "k": "cmd", "T": 515, "lvl": "Dlvl:3", "u": [65, 12], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 747, "k": "cmd", "T": 516, "lvl": "Dlvl:3", "u": [65, 13], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 748, "k": "cmd", "T": 516, "lvl": "Dlvl:3", "u": [65, 14], "hp": 28, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 749, "k": "cmd", "T": 517, "lvl": "Dlvl:3", "u": [65, 15], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 750, "k": "cmd", "T": 518, "lvl": "Dlvl:3", "u": [65, 16], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 18, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 751, "k": "cmd", "T": 518, "lvl": "Dlvl:3", "u": [65, 17], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 18, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 752, "k": "cmd", "T": 519, "lvl": "Dlvl:3", "u": [64, 17], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 753, "k": "cmd", "T": 519, "lvl": "Dlvl:3", "u": [63, 17], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 754, "k": "cmd", "T": 520, "lvl": "Dlvl:3", "u": [62, 16], "hp": 29, "hpmax": 30}
+{"act": "autotravel", "why": ["exploring {'x': 55, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 55, :y 17}"}
+{"a": "_"}
+{"r": 755, "k": "pos", "T": 520, "lvl": "Dlvl:3", "u": [62, 16], "hp": 29, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(56, 16)"}
+{"r": 756, "k": "cmd", "T": 524, "lvl": "Dlvl:3", "u": [56, 16], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 757, "k": "cmd", "T": 525, "lvl": "Dlvl:3", "u": [55, 15], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 758, "k": "cmd", "T": 525, "lvl": "Dlvl:3", "u": [55, 14], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 759, "k": "cmd", "T": 526, "lvl": "Dlvl:3", "u": [54, 13], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 760, "k": "cmd", "T": 526, "lvl": "Dlvl:3", "u": [53, 13], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 761, "k": "cmd", "T": 527, "lvl": "Dlvl:3", "u": [52, 13], "hp": 29, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 762, "k": "cmd", "T": 528, "lvl": "Dlvl:3", "u": [52, 14], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 763, "k": "cmd", "T": 528, "lvl": "Dlvl:3", "u": [51, 14], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 764, "k": "cmd", "T": 529, "lvl": "Dlvl:3", "u": [50, 14], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 765, "k": "cmd", "T": 530, "lvl": "Dlvl:3", "u": [49, 14], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 766, "k": "cmd", "T": 530, "lvl": "Dlvl:3", "u": [48, 14], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 767, "k": "cmd", "T": 531, "lvl": "Dlvl:3", "u": [47, 14], "hp": 30, "hpmax": 30}
+{"act": "autotravel", "why": ["exploring {'x': 67, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 67, :y 8}"}
+{"a": "_"}
+{"r": 768, "k": "pos", "T": 531, "lvl": "Dlvl:3", "u": [47, 14], "hp": 30, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(68, 7)"}
+{"r": 769, "k": "cmd", "T": 542, "lvl": "Dlvl:3", "u": [68, 7], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 770, "k": "cmd", "T": 543, "lvl": "Dlvl:3", "u": [68, 6], "hp": 30, "hpmax": 30}
+{"act": "open", "why": ["exploring {'x': 68, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 771, "k": "yn", "T": 543, "lvl": "Dlvl:3", "u": [68, 6], "hp": 30, "hpmax": 30, "q": "In what direction?"}
+{"a": "l"}
+{"r": 772, "k": "cmd", "T": 543, "lvl": "Dlvl:3", "u": [68, 6], "hp": 30, "hpmax": 30}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 7, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 773, "k": "cmd", "T": 544, "lvl": "Dlvl:3", "u": [69, 6], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 69, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 774, "k": "cmd", "T": 545, "lvl": "Dlvl:3", "u": [70, 6], "hp": 30, "hpmax": 30}
+{"act": "autotravel", "why": ["exploring {'x': 15, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 15, :y 5}"}
+{"a": "_"}
+{"r": 775, "k": "pos", "T": 545, "lvl": "Dlvl:3", "u": [70, 6], "hp": 30, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 4)"}
+{"r": 776, "k": "cmd", "T": 558, "lvl": "Dlvl:3", "u": [50, 13], "hp": 30, "hpmax": 30}
+{"m": "You hear someone cursing shoplifters."}
+{"m": "A jackal blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 48, :y 14}"}
+{"a": ";"}
+{"r": 777, "k": "pos", "T": 558, "lvl": "Dlvl:3", "u": [50, 13], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(49, 13)"}
+{"r": 778, "k": "cmd", "T": 558, "lvl": "Dlvl:3", "u": [50, 13], "hp": 30, "hpmax": 30}
+{"m": "d        a dog or other canine (jackal) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 14, 'known': 558, 'first-known': 558, 'glyph': 'd', 'color': 'brown', 'type':", "targetting enemy {'x': 48, 'y': 14, 'known': 558, 'first-known': 558, 'glyph': 'd', 'color': 'brown'"], "dir": "W"}
+{"a": "h"}
+{"r": 779, "k": "cmd", "T": 559, "lvl": "Dlvl:3", "u": [50, 13], "hp": 30, "hpmax": 30}
+{"m": "You miss the jackal."}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 14, 'known': 559, 'first-known': 558, 'glyph': 'd', 'color': 'brown', 'type':", "targetting enemy {'x': 48, 'y': 14, 'known': 559, 'first-known': 558, 'glyph': 'd', 'color': 'brown'"], "dir": "W"}
+{"a": "h"}
+{"r": 780, "k": "cmd", "T": 560, "lvl": "Dlvl:3", "u": [50, 13], "hp": 30, "hpmax": 30}
+{"m": "You kill the jackal!"}
+{"act": "move", "why": ["new or desired item at {'x': 48, 'y': 14, 'glyph': '%', 'color': None, 'feature': 'corridor', 'seen'"], "dir": "W"}
+{"a": "h"}
+{"r": 781, "k": "cmd", "T": 560, "lvl": "Dlvl:3", "u": [49, 13], "hp": 30, "hpmax": 30}
+{"m": "You see here a jackal corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 782, "k": "cmd", "T": 560, "lvl": "Dlvl:3", "u": [49, 13], "hp": 30, "hpmax": 30}
+{"m": "You see here a jackal corpse."}
+{"act": "autotravel", "why": ["exploring {'x': 15, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 15, :y 5}"}
+{"a": "_"}
+{"r": 783, "k": "pos", "T": 560, "lvl": "Dlvl:3", "u": [49, 13], "hp": 30, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 4)"}
+{"r": 784, "k": "cmd", "T": 565, "lvl": "Dlvl:3", "u": [41, 15], "hp": 30, "hpmax": 30}
+{"m": "The jackal misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 15}"}
+{"a": ";"}
+{"r": 785, "k": "pos", "T": 565, "lvl": "Dlvl:3", "u": [41, 15], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 14)"}
+{"r": 786, "k": "cmd", "T": 565, "lvl": "Dlvl:3", "u": [41, 15], "hp": 30, "hpmax": 30}
+{"m": "d        a dog or other canine (jackal) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 39, 'y': 15, 'known': 565, 'first-known': 565, 'glyph': 'd', 'color': 'brown', 'type':", "targetting enemy {'x': 39, 'y': 15, 'known': 565, 'first-known': 565, 'glyph': 'd', 'color': 'brown'"], "dir": "NW"}
+{"a": "y"}
+{"r": 787, "k": "cmd", "T": 566, "lvl": "Dlvl:3", "u": [41, 15], "hp": 30, "hpmax": 30}
+{"m": "You kill the jackal!"}
+{"act": "move", "why": ["new or desired item at {'x': 39, 'y': 15, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "NW"}
+{"a": "y"}
+{"r": 788, "k": "cmd", "T": 567, "lvl": "Dlvl:3", "u": [40, 14], "hp": 30, "hpmax": 30}
+{"m": "There is a doorway here."}
+{"m": "You see here a jackal corpse."}
+{"act": "look", "why": ["examining tile {'x': 39, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 789, "k": "cmd", "T": 567, "lvl": "Dlvl:3", "u": [40, 14], "hp": 30, "hpmax": 30}
+{"m": "There is a doorway here."}
+{"m": "You see here a jackal corpse."}
+{"act": "autotravel", "why": ["exploring {'x': 15, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "pos": "#Position{:x 15, :y 5}"}
+{"a": "_"}
+{"r": 790, "k": "pos", "T": 567, "lvl": "Dlvl:3", "u": [40, 14], "hp": 30, "hpmax": 30, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 4)"}
+{"r": 791, "k": "cmd", "T": 587, "lvl": "Dlvl:3", "u": [16, 4], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 792, "k": "cmd", "T": 588, "lvl": "Dlvl:3", "u": [15, 4], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 793, "k": "cmd", "T": 588, "lvl": "Dlvl:3", "u": [15, 5], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 794, "k": "cmd", "T": 589, "lvl": "Dlvl:3", "u": [15, 6], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 795, "k": "cmd", "T": 589, "lvl": "Dlvl:3", "u": [14, 6], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 796, "k": "cmd", "T": 590, "lvl": "Dlvl:3", "u": [13, 6], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 797, "k": "cmd", "T": 590, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 10, :y 8}"}
+{"a": ";"}
+{"r": 798, "k": "pos", "T": 590, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(11, 7)"}
+{"r": 799, "k": "cmd", "T": 590, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30}
+{"m": ":        a lizard (gecko)"}
+{"act": "move", "why": ["hitting {'x': 10, 'y': 8, 'known': 590, 'first-known': 590, 'glyph': ':', 'color': 'green', 'type': ", "targetting enemy {'x': 10, 'y': 8, 'known': 590, 'first-known': 590, 'glyph': ':', 'color': 'green',"], "dir": "SW"}
+{"a": "b"}
+{"r": 800, "k": "cmd", "T": 591, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30}
+{"m": "You miss the gecko."}
+{"act": "move", "why": ["hitting {'x': 10, 'y': 8, 'known': 591, 'first-known': 590, 'glyph': ':', 'color': 'green', 'type': ", "targetting enemy {'x': 10, 'y': 8, 'known': 591, 'first-known': 590, 'glyph': ':', 'color': 'green',"], "dir": "SW"}
+{"a": "b"}
+{"r": 801, "k": "cmd", "T": 591, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30}
+{"m": "You miss the gecko."}
+{"m": "The gecko misses!"}
+{"act": "move", "why": ["hitting {'x': 10, 'y': 8, 'known': 591, 'first-known': 590, 'glyph': ':', 'color': 'green', 'type': ", "targetting enemy {'x': 10, 'y': 8, 'known': 591, 'first-known': 590, 'glyph': ':', 'color': 'green',"], "dir": "SW"}
+{"a": "b"}
+{"r": 802, "k": "cmd", "T": 592, "lvl": "Dlvl:3", "u": [12, 6], "hp": 30, "hpmax": 30}
+{"m": "You kill the gecko!"}
+{"act": "move", "why": ["new or desired item at {'x': 10, 'y': 8, 'glyph': '%', 'color': None, 'feature': None, 'seen': True,"], "dir": "SW"}
+{"a": "b"}
+{"r": 803, "k": "cmd", "T": 593, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "You see here a gecko corpse."}
+{"m": "You hear a chugging sound."}
+{"act": "look", "why": ["examining tile {'x': 10, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 804, "k": "cmd", "T": 593, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "You see here a gecko corpse."}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 805, "k": "cmdcont", "T": 593, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"a": "0"}
+{"r": 806, "k": "cmdcont", "T": 593, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 807, "k": "cmd", "T": 595, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 808, "k": "cmd", "T": 596, "lvl": "Dlvl:3", "u": [11, 6], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 809, "k": "cmd", "T": 597, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "You see here a gecko corpse."}
+{"act": "look", "why": ["examining tile {'x': 10, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 810, "k": "cmd", "T": 597, "lvl": "Dlvl:3", "u": [11, 7], "hp": 30, "hpmax": 30}
+{"m": "You see here a gecko corpse."}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 811, "k": "cmd", "T": 598, "lvl": "Dlvl:3", "u": [11, 8], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 812, "k": "cmd", "T": 598, "lvl": "Dlvl:3", "u": [11, 9], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 813, "k": "cmd", "T": 599, "lvl": "Dlvl:3", "u": [11, 10], "hp": 30, "hpmax": 30}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 814, "k": "cmd", "T": 600, "lvl": "Dlvl:3", "u": [11, 11], "hp": 30, "hpmax": 30}
+{"m": "You feel weak!"}
+{"m": "You haven't been exercising properly."}
+{"m": "You feel wise!"}
+{"m": "You must have been very observant."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 8, :y 13}"}
+{"a": ";"}
+{"r": 815, "k": "pos", "T": 600, "lvl": "Dlvl:3", "u": [11, 11], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(9, 12)"}
+{"r": 816, "k": "cmd", "T": 600, "lvl": "Dlvl:3", "u": [11, 11], "hp": 30, "hpmax": 30}
+{"m": "@        a human or elf (peaceful Pakka Pakka) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 817, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 818, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 819, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 820, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 821, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 822, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 823, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 824, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 825, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 826, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 827, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 828, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 829, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 830, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 831, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 832, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 833, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 834, "k": "pos", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 835, "k": "cmd", "T": 601, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"note": "recovery", "d": "action-loop x8 farlook: forced search"}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 836, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 837, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 838, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 839, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 840, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 841, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 842, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 843, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 844, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 845, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 846, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 847, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 848, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 849, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 850, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 851, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 852, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"note": "recovery", "d": "action-loop x8 farlook: forced search"}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 853, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 854, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 855, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 856, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 857, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 858, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 859, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 860, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 861, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 862, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 863, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 864, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 865, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 866, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 867, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 868, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 869, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 870, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 871, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 872, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 873, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 874, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 875, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 876, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 877, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 878, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 879, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 880, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 881, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 882, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 883, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 884, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 885, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 886, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 887, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 888, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 889, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 890, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 891, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 892, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 893, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 894, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 895, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 896, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 897, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 898, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 899, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 900, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 901, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 902, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 903, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 904, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 905, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 906, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 907, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 908, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 909, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 910, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 911, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 912, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 913, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"m": "]        a mimic or a strange object (strange object)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 12}"}
+{"a": ";"}
+{"r": 914, "k": "pos", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 11)"}
+{"r": 915, "k": "cmd", "T": 602, "lvl": "Dlvl:3", "u": [11, 12], "hp": 30, "hpmax": 30}
+{"note": "abort", "d": "stuck: action loop: farlook repeated 40 times at turn 602 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 5, :y 12}'})"}

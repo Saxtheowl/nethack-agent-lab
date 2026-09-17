@@ -1,0 +1,239 @@
+{"event": "fault_injection", "elapsed": 0.046, "fault": "unanswered_direction"}
+{"event": "keys", "elapsed": 0.046, "data": "o"}
+{"event": "recovery", "elapsed": 8.08, "attempt": 1, "engine": {"event": "input", "value": 0, "turn": 1, "dnum": 0, "dlevel": 1, "x": 18, "y": 17, "hp": 18, "hunger": 900, "minetown": 0, "amulet": 0}, "screen": ["In what direction?                                                              ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "              ----------                                                        ", "              |.!......|                                                        ", "              |.....$...                                                        ", "              |........|                                                        ", "              ...@.....]                                                        ", "              ----------                                                        ", "                                                                                ", "                                                                                ", "Localbot the Stripling         St:18/04 Dx:10 Co:19 In:7 Wi:8 Ch:9 Lawful S:0   ", "Dlvl:1 $:0 HP:18(18) Pw:1(1) AC:6 Xp:1 T:1                                      "]}
+{"event": "keys", "elapsed": 8.082, "data": "\u001b"}
+{"event": "action", "elapsed": 8.303, "number": 1, "action": "inventory", "reason": ["requested inventory update"], "turn": 1, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 8.304, "data": "i"}
+{"event": "keys", "elapsed": 8.315, "data": " "}
+{"event": "keys", "elapsed": 8.328, "data": " "}
+{"event": "action", "elapsed": 8.524, "number": 2, "action": "discoveries", "reason": ["discoveries update"], "turn": 1, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 8.525, "data": "\\"}
+{"event": "keys", "elapsed": 8.533, "data": " "}
+{"event": "keys", "elapsed": 8.539, "data": " "}
+{"event": "keys", "elapsed": 8.546, "data": " "}
+{"event": "keys", "elapsed": 8.55, "data": " "}
+{"event": "action", "elapsed": 8.68, "number": 3, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': False, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': 1, 'walked': 1, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 1, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 8.681, "data": ":"}
+{"event": "action", "elapsed": 8.789, "number": 4, "action": "takeoff", "reason": ["removing blockers of c", "removing use of c", "dropping junk"], "turn": 1, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 8.79, "data": "T"}
+{"event": "recovery_succeeded", "elapsed": 8.791, "before_turn": 1, "after_turn": 2}
+{"event": "action", "elapsed": 8.887, "number": 5, "action": "inventory", "reason": ["requested inventory update"], "turn": 2, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 8.888, "data": "i"}
+{"event": "keys", "elapsed": 8.895, "data": " "}
+{"event": "keys", "elapsed": 8.903, "data": " "}
+{"event": "action", "elapsed": 9.032, "number": 6, "action": "dropsingle", "reason": ["dropping junk"], "turn": 2, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.033, "data": "d"}
+{"event": "keys", "elapsed": 9.038, "data": "1c"}
+{"event": "action", "elapsed": 9.183, "number": 7, "action": "inventory", "reason": ["requested inventory update"], "turn": 3, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.183, "data": "i"}
+{"event": "keys", "elapsed": 9.19, "data": " "}
+{"event": "keys", "elapsed": 9.197, "data": " "}
+{"event": "action", "elapsed": 9.372, "number": 8, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': 1, 'walked': 3, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 1}"], "turn": 3, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.373, "data": ":"}
+{"event": "keys", "elapsed": 9.378, "data": " "}
+{"event": "action", "elapsed": 9.504, "number": 9, "action": "dropsingle", "reason": ["dropping junk"], "turn": 3, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.505, "data": "d"}
+{"event": "keys", "elapsed": 9.508, "data": "1r"}
+{"event": "action", "elapsed": 9.628, "number": 10, "action": "inventory", "reason": ["requested inventory update"], "turn": 4, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.629, "data": "i"}
+{"event": "keys", "elapsed": 9.635, "data": " "}
+{"event": "keys", "elapsed": 9.642, "data": " "}
+{"event": "action", "elapsed": 9.818, "number": 11, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': True, 'dug': False, 'searched': 0, 'items': [{'label': 'an uncursed +3 small shield', 'qty': 1, 'buc': 'uncursed', 'enchantment': 3, 'name': 'small shield', 'erosion': 0}], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '[', 'item-color': None, 'first-walked': 1, 'walked': 4, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 3}"], "turn": 4, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.818, "data": ":"}
+{"event": "keys", "elapsed": 9.822, "data": " "}
+{"event": "action", "elapsed": 9.93, "number": 12, "action": "dropsingle", "reason": ["dropping junk"], "turn": 4, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 9.93, "data": "d"}
+{"event": "keys", "elapsed": 9.933, "data": "1t"}
+{"event": "action", "elapsed": 10.046, "number": 13, "action": "inventory", "reason": ["requested inventory update"], "turn": 5, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.047, "data": "i"}
+{"event": "keys", "elapsed": 10.053, "data": " "}
+{"event": "keys", "elapsed": 10.06, "data": " "}
+{"event": "action", "elapsed": 10.211, "number": 14, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '[', 'item-color': None, 'first-walked': 1, 'walked': 5, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 4}"], "turn": 5, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.212, "data": ":"}
+{"event": "keys", "elapsed": 10.216, "data": " "}
+{"event": "action", "elapsed": 10.33, "number": 15, "action": "wield", "reason": ["removing use of a", "dropping less useful duplicate"], "turn": 5, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.331, "data": "w"}
+{"event": "keys", "elapsed": 10.334, "data": "-"}
+{"event": "action", "elapsed": 10.428, "number": 16, "action": "inventory", "reason": ["requested inventory update"], "turn": 6, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.432, "data": "i"}
+{"event": "keys", "elapsed": 10.445, "data": " "}
+{"event": "keys", "elapsed": 10.461, "data": " "}
+{"event": "action", "elapsed": 10.686, "number": 17, "action": "dropsingle", "reason": ["dropping less useful duplicate"], "turn": 6, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.687, "data": "d"}
+{"event": "keys", "elapsed": 10.69, "data": "1a"}
+{"event": "action", "elapsed": 10.809, "number": 18, "action": "inventory", "reason": ["requested inventory update"], "turn": 7, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.809, "data": "i"}
+{"event": "keys", "elapsed": 10.816, "data": " "}
+{"event": "keys", "elapsed": 10.825, "data": " "}
+{"event": "action", "elapsed": 10.976, "number": 19, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '[', 'item-color': None, 'first-walked': 1, 'walked': 7, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 5}"], "turn": 7, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 10.976, "data": ":"}
+{"event": "keys", "elapsed": 10.98, "data": " "}
+{"event": "action", "elapsed": 11.108, "number": 20, "action": "wear", "reason": ["making use of g", "wearing better armor"], "turn": 7, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.109, "data": "W"}
+{"event": "keys", "elapsed": 11.113, "data": "g"}
+{"event": "action", "elapsed": 11.232, "number": 21, "action": "inventory", "reason": ["requested inventory update"], "turn": 8, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.233, "data": "i"}
+{"event": "keys", "elapsed": 11.24, "data": " "}
+{"event": "keys", "elapsed": 11.247, "data": " "}
+{"event": "action", "elapsed": 11.419, "number": 22, "action": "wear", "reason": ["making use of h", "wearing better armor"], "turn": 8, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.42, "data": "W"}
+{"event": "keys", "elapsed": 11.423, "data": "h"}
+{"event": "action", "elapsed": 11.516, "number": 23, "action": "inventory", "reason": ["requested inventory update"], "turn": 10, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.517, "data": "i"}
+{"event": "keys", "elapsed": 11.523, "data": " "}
+{"event": "keys", "elapsed": 11.53, "data": " "}
+{"event": "action", "elapsed": 11.681, "number": 24, "action": "wear", "reason": ["making use of f", "wearing better armor"], "turn": 10, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.682, "data": "W"}
+{"event": "keys", "elapsed": 11.684, "data": "f"}
+{"event": "action", "elapsed": 11.794, "number": 25, "action": "inventory", "reason": ["requested inventory update"], "turn": 15, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 11.794, "data": "i"}
+{"event": "keys", "elapsed": 11.804, "data": " "}
+{"event": "keys", "elapsed": 11.812, "data": " "}
+{"event": "action", "elapsed": 12.002, "number": 26, "action": "wear", "reason": ["making use of k", "wearing better armor"], "turn": 15, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.003, "data": "W"}
+{"event": "keys", "elapsed": 12.007, "data": "k"}
+{"event": "action", "elapsed": 12.118, "number": 27, "action": "inventory", "reason": ["requested inventory update"], "turn": 16, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.119, "data": "i"}
+{"event": "keys", "elapsed": 12.127, "data": " "}
+{"event": "keys", "elapsed": 12.135, "data": " "}
+{"event": "action", "elapsed": 12.35, "number": 28, "action": "wear", "reason": ["making use of j", "wearing better armor"], "turn": 16, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.352, "data": "W"}
+{"event": "keys", "elapsed": 12.356, "data": "j"}
+{"event": "action", "elapsed": 12.479, "number": 29, "action": "inventory", "reason": ["requested inventory update"], "turn": 17, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.48, "data": "i"}
+{"event": "keys", "elapsed": 12.489, "data": " "}
+{"event": "keys", "elapsed": 12.497, "data": " "}
+{"event": "action", "elapsed": 12.706, "number": 30, "action": "wear", "reason": ["making use of i", "wearing better armor"], "turn": 17, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.707, "data": "W"}
+{"event": "keys", "elapsed": 12.71, "data": "i"}
+{"event": "action", "elapsed": 12.827, "number": 31, "action": "inventory", "reason": ["requested inventory update"], "turn": 18, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 12.828, "data": "i"}
+{"event": "keys", "elapsed": 12.836, "data": " "}
+{"event": "keys", "elapsed": 12.843, "data": " "}
+{"event": "action", "elapsed": 13.047, "number": 32, "action": "apply", "reason": ["using any light source"], "turn": 18, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 13.048, "data": "a"}
+{"event": "keys", "elapsed": 13.053, "data": "e"}
+{"event": "action", "elapsed": 13.17, "number": 33, "action": "inventory", "reason": ["requested inventory update"], "turn": 19, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 13.17, "data": "i"}
+{"event": "keys", "elapsed": 13.18, "data": " "}
+{"event": "keys", "elapsed": 13.19, "data": " "}
+{"event": "action", "elapsed": 13.405, "number": 34, "action": "apply", "reason": ["learning contents of {'label': 'a blessed bag of holding', 'qty': 1, 'buc': 'blessed', 'name': 'bag of holding', 'erosion': 0}"], "turn": 19, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 13.406, "data": "a"}
+{"event": "keys", "elapsed": 13.409, "data": "m"}
+{"event": "keys", "elapsed": 13.412, "data": "o"}
+{"event": "action", "elapsed": 13.604, "number": 35, "action": "move", "reason": ["new or desired item at #Position{:x 16, :y 15}"], "turn": 20, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 13.605, "data": "y"}
+{"event": "action", "elapsed": 13.749, "number": 36, "action": "wield", "reason": ["making use of l", "wielding better weapon - a blessed +0 long sword"], "turn": 20, "dlvl": "Dlvl:1", "x": 16, "y": 17, "hp": 18}
+{"event": "keys", "elapsed": 13.751, "data": "w"}
+{"event": "keys", "elapsed": 13.755, "data": "l"}
+{"event": "action", "elapsed": 13.866, "number": 37, "action": "inventory", "reason": ["requested inventory update"], "turn": 21, "dlvl": "Dlvl:1", "x": 16, "y": 17, "hp": 18}
+{"event": "keys", "elapsed": 13.866, "data": "i"}
+{"event": "keys", "elapsed": 13.873, "data": " "}
+{"event": "keys", "elapsed": 13.88, "data": " "}
+{"event": "action", "elapsed": 14.072, "number": 38, "action": "move", "reason": ["new or desired item at #Position{:x 17, :y 18}"], "turn": 21, "dlvl": "Dlvl:1", "x": 16, "y": 17, "hp": 18}
+{"event": "keys", "elapsed": 14.073, "data": "n"}
+{"event": "keys", "elapsed": 14.079, "data": " "}
+{"event": "action", "elapsed": 14.226, "number": 39, "action": "look", "reason": ["examining tile {'x': 17, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': ')', 'item-color': 'cyan', 'first-walked': 1, 'walked': 22, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 7}"], "turn": 22, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 14.229, "data": ":"}
+{"event": "keys", "elapsed": 14.261, "data": " "}
+{"event": "action", "elapsed": 14.451, "number": 40, "action": "move", "reason": ["new or desired item at #Position{:x 16, :y 15}"], "turn": 22, "dlvl": "Dlvl:1", "x": 17, "y": 18, "hp": 18}
+{"event": "keys", "elapsed": 14.452, "data": "y"}
+{"event": "action", "elapsed": 14.624, "number": 41, "action": "move", "reason": ["new or desired item at #Position{:x 16, :y 15}"], "turn": 23, "dlvl": "Dlvl:1", "x": 16, "y": 17, "hp": 18}
+{"event": "keys", "elapsed": 14.624, "data": "k"}
+{"event": "action", "elapsed": 14.795, "number": 42, "action": "move", "reason": ["new or desired item at #Position{:x 16, :y 15}"], "turn": 24, "dlvl": "Dlvl:1", "x": 16, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 14.795, "data": "k"}
+{"event": "action", "elapsed": 14.929, "number": 43, "action": "look", "reason": ["examining tile {'x': 16, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '!', 'item-color': 'cyan', 'first-walked': 24, 'walked': 24, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 24, "dlvl": "Dlvl:1", "x": 16, "y": 15, "hp": 18}
+{"event": "keys", "elapsed": 14.93, "data": ":"}
+{"event": "action", "elapsed": 15.098, "number": 44, "action": "move", "reason": ["new or desired item at {'x': 20, 'y': 16, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': False, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 24, "dlvl": "Dlvl:1", "x": 16, "y": 15, "hp": 18}
+{"event": "keys", "elapsed": 15.099, "data": "l"}
+{"event": "action", "elapsed": 15.284, "number": 45, "action": "move", "reason": ["new or desired item at {'x': 20, 'y': 16, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': False, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 25, "dlvl": "Dlvl:1", "x": 17, "y": 15, "hp": 18}
+{"event": "keys", "elapsed": 15.284, "data": "n"}
+{"event": "action", "elapsed": 15.49, "number": 46, "action": "move", "reason": ["new or desired item at {'x': 20, 'y': 16, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': False, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 25, "dlvl": "Dlvl:1", "x": 18, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 15.491, "data": "l"}
+{"event": "action", "elapsed": 15.738, "number": 47, "action": "move", "reason": ["new or desired item at {'x': 20, 'y': 16, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 26, "dlvl": "Dlvl:1", "x": 19, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 15.739, "data": "l"}
+{"event": "action", "elapsed": 15.902, "number": 48, "action": "look", "reason": ["examining tile {'x': 20, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': 27, 'walked': 27, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 27, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 15.902, "data": ":"}
+{"event": "action", "elapsed": 16.042, "number": 49, "action": "move", "reason": ["targetting leftover enemy {'x': 23, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': None, 'friendly': False, 'peaceful': False, 'remembered': False, 'fleeing': None}"], "turn": 27, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.043, "data": "l"}
+{"event": "action", "elapsed": 16.187, "number": 50, "action": "move", "reason": ["hitting {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False}", "targetting leftover enemy {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False}"], "turn": 27, "dlvl": "Dlvl:1", "x": 21, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.188, "data": "l"}
+{"event": "action", "elapsed": 16.403, "number": 51, "action": "move", "reason": ["new or desired item at #Position{:x 20, :y 16}"], "turn": 28, "dlvl": "Dlvl:1", "x": 21, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.403, "data": "h"}
+{"event": "action", "elapsed": 16.531, "number": 52, "action": "look", "reason": ["examining tile {'x': 20, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [{'label': '5 gold pieces', 'qty': 5, 'name': 'gold piece', 'erosion': 0}], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': 'yellow', 'first-walked': 27, 'walked': 29, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 27}"], "turn": 29, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.531, "data": ":"}
+{"event": "action", "elapsed": 16.687, "number": 53, "action": "pickup", "reason": ["getting desirable items"], "turn": 29, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.689, "data": ","}
+{"event": "action", "elapsed": 16.822, "number": 54, "action": "inventory", "reason": ["requested inventory update"], "turn": 29, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 16.822, "data": "i"}
+{"event": "keys", "elapsed": 16.831, "data": " "}
+{"event": "keys", "elapsed": 16.84, "data": " "}
+{"event": "action", "elapsed": 17.008, "number": 55, "action": "look", "reason": ["examining tile {'x': 20, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [{'label': '5 gold pieces', 'qty': 5, 'name': 'gold piece', 'erosion': 0}], 'deaths': [], 'new-items': True, 'tags': frozenset(), 'item-glyph': '$', 'item-color': None, 'first-walked': 27, 'walked': 29, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 29}"], "turn": 29, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 17.009, "data": ":"}
+{"event": "action", "elapsed": 17.189, "number": 56, "action": "move", "reason": ["new or desired item at {'x': 22, 'y': 16, 'glyph': '%', 'color': 'yellow', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '%', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 29, "dlvl": "Dlvl:1", "x": 20, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 17.189, "data": "u"}
+{"event": "action", "elapsed": 17.371, "number": 57, "action": "move", "reason": ["new or desired item at {'x': 22, 'y': 16, 'glyph': '%', 'color': 'yellow', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '%', 'item-color': 'yellow', 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 30, "dlvl": "Dlvl:1", "x": 21, "y": 15, "hp": 18}
+{"event": "keys", "elapsed": 17.372, "data": "n"}
+{"event": "keys", "elapsed": 17.375, "data": " "}
+{"event": "action", "elapsed": 17.509, "number": 58, "action": "look", "reason": ["examining tile {'x': 22, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '%', 'item-color': 'yellow', 'first-walked': 30, 'walked': 30, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}"], "turn": 30, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 17.509, "data": ":"}
+{"event": "keys", "elapsed": 17.512, "data": " "}
+{"event": "action", "elapsed": 17.695, "number": 59, "action": "quaff", "reason": ["improve maxhp"], "turn": 30, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 18}
+{"event": "keys", "elapsed": 17.696, "data": "q"}
+{"event": "keys", "elapsed": 17.7, "data": "y"}
+{"event": "action", "elapsed": 17.794, "number": 60, "action": "inventory", "reason": ["requested inventory update"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 17.795, "data": "i"}
+{"event": "keys", "elapsed": 17.802, "data": " "}
+{"event": "keys", "elapsed": 17.809, "data": " "}
+{"event": "action", "elapsed": 18.027, "number": 61, "action": "apply", "reason": ["putting {'w': None, 'x': None} into bag at m", "bag items"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.027, "data": "a"}
+{"event": "keys", "elapsed": 18.03, "data": "m"}
+{"event": "keys", "elapsed": 18.034, "data": "i"}
+{"event": "keys", "elapsed": 18.042, "data": " "}
+{"event": "keys", "elapsed": 18.047, "data": "<"}
+{"event": "keys", "elapsed": 18.054, "data": "wx"}
+{"event": "keys", "elapsed": 18.055, "data": " "}
+{"event": "keys", "elapsed": 18.059, "data": "wx"}
+{"event": "keys", "elapsed": 18.06, "data": " "}
+{"event": "keys", "elapsed": 18.065, "data": " "}
+{"event": "action", "elapsed": 18.158, "number": 62, "action": "inventory", "reason": ["requested inventory update"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.159, "data": "i"}
+{"event": "keys", "elapsed": 18.166, "data": " "}
+{"event": "keys", "elapsed": 18.173, "data": " "}
+{"event": "action", "elapsed": 18.304, "number": 63, "action": "apply", "reason": ["updating content of container at m"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.305, "data": "a"}
+{"event": "keys", "elapsed": 18.308, "data": "m"}
+{"event": "keys", "elapsed": 18.312, "data": "o"}
+{"event": "keys", "elapsed": 18.317, "data": ""}
+{"event": "keys", "elapsed": 18.317, "data": " "}
+{"event": "action", "elapsed": 18.41, "number": 64, "action": "discoveries", "reason": ["discoveries update"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.411, "data": "\\"}
+{"event": "keys", "elapsed": 18.419, "data": " "}
+{"event": "keys", "elapsed": 18.424, "data": " "}
+{"event": "keys", "elapsed": 18.431, "data": " "}
+{"event": "keys", "elapsed": 18.435, "data": " "}
+{"event": "action", "elapsed": 18.541, "number": 65, "action": "dropsingle", "reason": ["dropping junk"], "turn": 31, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.541, "data": "d"}
+{"event": "keys", "elapsed": 18.545, "data": "1m"}
+{"event": "action", "elapsed": 18.673, "number": 66, "action": "inventory", "reason": ["requested inventory update"], "turn": 32, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.673, "data": "i"}
+{"event": "keys", "elapsed": 18.682, "data": " "}
+{"event": "keys", "elapsed": 18.689, "data": " "}
+{"event": "action", "elapsed": 18.853, "number": 67, "action": "look", "reason": ["examining tile {'x': 22, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '%', 'item-color': 'yellow', 'first-walked': 30, 'walked': 32, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 30}"], "turn": 32, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 18.853, "data": ":"}
+{"event": "keys", "elapsed": 18.858, "data": " "}
+{"event": "action", "elapsed": 19.053, "number": 68, "action": "move", "reason": ["exploring {'x': 23, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': False, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "turn": 32, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.054, "data": "l"}
+{"event": "action", "elapsed": 19.227, "number": 69, "action": "move", "reason": ["new or desired item at {'x': 22, 'y': 16, 'glyph': '(', 'color': 'brown', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '(', 'item-color': 'brown', 'first-walked': 30, 'walked': 32, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 32}"], "turn": 33, "dlvl": "Dlvl:1", "x": 23, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.228, "data": "h"}
+{"event": "keys", "elapsed": 19.231, "data": " "}
+{"event": "action", "elapsed": 19.365, "number": 70, "action": "look", "reason": ["examining tile {'x': 22, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [(28, {'x': 22, 'y': 16, 'known': 27, 'first-known': 27, 'glyph': ':', 'color': 'yellow', 'type': {'tags': {'swim', 'animal', 'nohands', 'hostile', 'carnivore', 'amphibious'}, 'color': 'yellow', 'ac': 8, 'speed': 6, 'difficulty': 0, 'resistances': set(), 'name': 'newt', 'alignment': 0, 'mr': 0, 'resistances-conferred': set(), 'size': 'tiny', 'weight': 10, 'glyph': ':', 'sounds': 'silent', 'attacks': [{'type': 'bite', 'damage-type': 'physical', 'dices': 1, 'sides': 2}], 'nutrition': 20, 'gen-flags': {'genocidable'}}, 'awake': True, 'friendly': False, 'peaceful': False, 'remembered': False, 'just-moved': True, 'fleeing': False})], 'new-items': True, 'tags': frozenset(), 'item-glyph': '(', 'item-color': 'brown', 'first-walked': 30, 'walked': 33, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None, 'examined': 32}"], "turn": 33, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.366, "data": ":"}
+{"event": "keys", "elapsed": 19.37, "data": " "}
+{"event": "action", "elapsed": 19.57, "number": 71, "action": "move", "reason": ["exploring {'x': 24, 'y': 16, 'glyph': '#', 'color': 'white', 'feature': 'corridor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': False, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "turn": 33, "dlvl": "Dlvl:1", "x": 22, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.57, "data": "l"}
+{"event": "action", "elapsed": 19.767, "number": 72, "action": "move", "reason": ["exploring {'x': 24, 'y': 16, 'glyph': '#', 'color': 'white', 'feature': 'corridor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': False, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "turn": 34, "dlvl": "Dlvl:1", "x": 23, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.768, "data": "l"}
+{"event": "action", "elapsed": 19.972, "number": 73, "action": "move", "reason": ["exploring {'x': 25, 'y': 16, 'glyph': '#', 'color': 'white', 'feature': 'corridor', 'seen': True, 'dug': False, 'searched': 0, 'items': [], 'deaths': [], 'new-items': False, 'tags': frozenset(), 'item-glyph': None, 'item-color': None, 'first-walked': None, 'walked': None, 'engraving': None, 'engraving-type': None, 'room': None, 'thump': None}", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown", "full-explore", "progress"], "turn": 34, "dlvl": "Dlvl:1", "x": 24, "y": 16, "hp": 26}
+{"event": "keys", "elapsed": 19.972, "data": "l"}
+{"event": "final_screen", "elapsed": 19.975, "screen": ["                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "                                                                                ", "              ----------  #                                                     ", "              |.!......|####                                                    ", "              |.......(.@###                                                    ", "              |........|#                                                       ", "             #...).....]#                                                       ", "              ----------                                                        ", "                                                                                ", "                                                                                ", "Localbot the Stripling         St:25 Dx:10 Co:19 In:7 Wi:8 Ch:9 Lawful S:9      ", "Dlvl:1 $:5 HP:26(26) Pw:1(1) AC:-20 Xp:1 T:34                                   "]}

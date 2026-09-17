@@ -1,0 +1,88 @@
+{
+ "game_id": "valley-to-vlad-02",
+ "outcome": "limit",
+ "reason": "terminated by signal 15",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": 1,
+ "engine_seed": 301,
+ "turns": 3196,
+ "depth": 29,
+ "max_depth": 29,
+ "xl": 20,
+ "lvl": "Dlvl:29",
+ "dname": "Gehennom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "valley": 1
+ },
+ "last_stage": "dlvl2",
+ "assist_counts": {
+  "kit": 8,
+  "lifesave": 1114
+ },
+ "counters": {
+  "msg-rewrite:^You feel as if you need some ": 218,
+  "menu_show:current_skills": 2,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 6
+ },
+ "notes": {
+  "scenario": 51,
+  "assist": 1114,
+  "abort": 1
+ },
+ "protoerrs": 26,
+ "requests": 8445,
+ "actions": 5263,
+ "action_hist": {
+  "apply": 2582,
+  "move": 2087,
+  "farlook": 499,
+  "discoveries": 25,
+  "inventory": 22,
+  "attack": 18,
+  "look": 8,
+  "wield": 8,
+  "search": 5,
+  "enhance": 4,
+  "engrave": 4,
+  "dropsingle": 1
+ },
+ "elapsed_s": 236.1,
+ "turns_per_s": 13.54,
+ "last_action": {
+  "act": "apply",
+  "why": [
+   "applying unihorn to recover"
+  ],
+  "slot": "j"
+ },
+ "final_screen": [
+  "                                                                                ",
+  "                                                                                ",
+  "  ----------------  -------       ------------------   ----------------- -----  ",
+  "  |>^^| |  |     |  |\\ \\ \\--      |                |   |      ^        | |   |  ",
+  "  ----|^| -- --- |  |    \\ --- ----          ----- -----    ---        --- | |  ",
+  "      | | |  | | | --\\\\\\\\   \\| |             |   |       ---| |-           |--  ",
+  "      |   |  | | | | \\     -----       ------|   |--------  ---      -------    ",
+  "  -----------| |^| |- \\ \\  | |    |   -- |   -----                ----          ",
+  "  |   ^ |    --- | |\\  \\   | |    |   |  |              -----------             ",
+  "  |     | |      | |     --- |      ---  |    ---       |                       ",
+  "  |    ^| |------| |  \\ --   --    -- --------| ----    ---------------         ",
+  "  |     ---      ---   --     |   --  |       |    |                  |         ",
+  "  |  _       --   |    --    --   |   |  \\\\\\  |    |   --             |         ",
+  "  |     |   ----  |     ------    |   |     \\ ---- |   --             --        ",
+  "  |     |--      ---   ^       --------\\  \\      | |       ---------   --       ",
+  "  |     | |      | ---       ---   |         ----- -----   I| | |  |    ---     ",
+  "  |     | |      --- ------  | -----   ^\\    |       | -------- -- |-     ----  ",
+  "  ------- |       \\|  | |    | |     ----    ---------        III---         |  ",
+  "          |       \\|  |   |  | |     |  |-             -------I@I         ----  ",
+  "          -- \\   -----------^| |    -----     ----------     |III   < ^----     ",
+  "           |  |              | | |          | |              | |        |       ",
+  "           ------------------- ----------------           I  ------------       ",
+  "Bot the Swashbuckler  St:12 Dx:17 Co:20 In:10 Wi:10 Ch:7  Lawful                ",
+  "Dlvl:29 $:0 HP:170(181) Pw:43(43) AC:10 Exp:20/5121313 T:3195 Conf Ill Blind Stu"
+ ]
+}

@@ -1,0 +1,41 @@
+[00:05:37] start g001 seed=2001
+[00:05:37] start g002 seed=2002
+[00:07:23] end   g002 stuck T=906 depth=4 stage=dlvl2 (stuck | action loop: farlook repeated N times at turn N ({..}))
+[00:07:23] start g003 seed=2003
+[00:12:37] end   g001 stuck T=3901 depth=7 stage=mines (stuck | action loop: farlook repeated N times at turn N ({..}))
+[00:12:37] start g004 seed=2004
+[00:14:48] end   g004 goal_reached T=1308 depth=5 stage=minetown (goal_reached | minetown)
+[00:14:48] start g005 seed=2005
+[00:15:13] end   g005 stuck T=254 depth=2 stage=dlvl2 (stuck | action loop: farlook repeated N times at turn N ({..}))
+[series] signature repeated 3 times: stuck | action loop: farlook repeated N times at turn N ({..}) -- not starting new games
+[00:25:25] end   g003 stuck T=8509 depth=5 stage=mines (stuck | action loop: move repeated N times at turn N ({..}))
+series mt-s04: 5 games
+outcomes: {'stuck': 4, 'goal_reached': 1}
+stage funnel: dlvl2=5, mines=3, minetown=1, oracle=1
+assists: {'kit': 40, 'feed': 3}
+STOPPED EARLY: signature repeated 3 times: stuck | action loop: farlook repeated N times at turn N ({..})
+failure signatures:
+    3  stuck | action loop: farlook repeated N times at turn N ({..})
+    1  stuck | action loop: move repeated N times at turn N ({..})
+top anomalies:
+      86  note:compat
+      55  compat:container:o
+      47  farlook-symbol
+      43  note:assist
+      36  fallback
+      36  note:fallback
+      16  compat:container:i
+      13  note:recovery
+      11  msg-rewrite:^You open (.*\.\.\.)$
+       9  compat:name:o
+       9  menu_letter_unmatched
+       7  note:forced-command
+       5  note:abort
+       5  compat:container:q
+       3  msg-rewrite:^(?:Hmmm, .* turns out to be l
+games:
+  g001 seed=2001 stuck        T=3901   depth=7   stage=mines        417.5s  action loop: farlook repeated 40 times at turn 3901 ({'act': 'farlook', 'why': ['examining
+  g002 seed=2002 stuck        T=906    depth=4   stage=dlvl2        104.6s  action loop: farlook repeated 40 times at turn 906 ({'act': 'farlook', 'why': ['examining 
+  g003 seed=2003 stuck        T=8509   depth=5   stage=mines        1079.8s  action loop: move repeated 40 times at turn 8509 ({'act': 'move', 'why': ['new or desired 
+  g004 seed=2004 goal_reached T=1308   depth=5   stage=minetown     130.2s  minetown
+  g005 seed=2005 stuck        T=254    depth=2   stage=dlvl2        23.6s  action loop: farlook repeated 40 times at turn 254 ({'act': 'farlook', 'why': ['examining 

@@ -1,0 +1,37 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an empty uncursed bag of holding", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 197, "depth": 2, "t": 20.3, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 197, "depth": 2, "t": 20.3, "stage": "dlvl2"}
+{"kind": "xl", "turn": 201, "depth": 2, "t": 21.0, "value": 2}
+{"kind": "item_lost", "turn": 281, "depth": 2, "t": 32.8, "item": "pick-axe", "messages": ["$ - 10 gold pieces.", "You see no objects here.", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Lugnaquillia) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Lugnaquillia's second-hand bookstore!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Lugnaquillia anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 72, :y 4}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 299, "depth": 2, "t": 38.9, "item": "pick-axe"}
+{"kind": "depth", "turn": 514, "depth": 3, "t": 54.4, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 524, "depth": 3, "t": 56.3, "value": 3}
+{"kind": "depth", "turn": 772, "depth": 4, "t": 79.9, "value": 4, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 875, "depth": 4, "t": 84.5, "value": 4}
+{"kind": "heartbeat", "turn": 1003, "depth": 4, "t": 98.4, "lvl": "Dlvl:4", "dname": "The Dungeons of Doom", "hp": 42, "hpmax": 42, "xl": 4, "ac": -8, "requests": 1364, "actions": 1074}
+{"kind": "branch", "turn": 1130, "depth": 4, "t": 109.9, "dname": "The Gnomish Mines", "lvl": "Dlvl:4  "}
+{"kind": "stage", "turn": 1130, "depth": 4, "t": 109.9, "stage": "mines"}
+{"kind": "xl", "turn": 1218, "depth": 4, "t": 130.5, "value": 5}
+{"kind": "depth", "turn": 1317, "depth": 5, "t": 137.0, "value": 5, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 1463, "depth": 6, "t": 152.3, "value": 6, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 1463, "depth": 6, "t": 152.3, "name": "oracle", "lvl": "Dlvl:6  "}
+{"kind": "stage", "turn": 1463, "depth": 6, "t": 152.3, "stage": "oracle"}
+{"kind": "item_gained", "turn": 1504, "depth": 6, "t": 158.7, "item": "Excalibur"}
+{"kind": "xl", "turn": 1900, "depth": 5, "t": 223.5, "value": 6}
+{"kind": "heartbeat", "turn": 2005, "depth": 5, "t": 236.4, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 54, "hpmax": 54, "xl": 6, "ac": -9, "requests": 2881, "actions": 2330}
+{"kind": "depth", "turn": 2584, "depth": 7, "t": 319.5, "value": 7, "dname": "The Gnomish Mines"}
+{"kind": "special", "turn": 2584, "depth": 7, "t": 319.5, "name": "minetn", "lvl": "Dlvl:7  "}
+{"kind": "stage", "turn": 2584, "depth": 7, "t": 319.5, "stage": "minetown", "variant": "minetn"}
+{"kind": "xl", "turn": 2638, "depth": 7, "t": 328.0, "value": 7}
+{"kind": "heartbeat", "turn": 3005, "depth": 7, "t": 387.9, "lvl": "Dlvl:7", "dname": "The Gnomish Mines", "hp": 66, "hpmax": 66, "xl": 7, "ac": -10, "requests": 4780, "actions": 3813}
+{"kind": "xl", "turn": 3016, "depth": 7, "t": 389.8, "value": 8}
+{"kind": "end", "turn": 3464, "depth": 5, "t": 426.2, "outcome": "limit", "reason": "terminated by signal 15"}

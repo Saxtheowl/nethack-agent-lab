@@ -1,0 +1,55 @@
+{
+ "game_id": "g002",
+ "series": "mt-s03",
+ "started": "2026-09-16T23:47:05+0000",
+ "host": "SandboxVibing",
+ "python": "3.12.3",
+ "engine": {
+  "nethack": "3.6.7",
+  "windowport": "bot",
+  "proto": 1
+ },
+ "code": {
+  "engine_binary_sha256": "203003f87661974c23512abfb9a18150c5e93bce08f8ded9dfaf16da98e641d2",
+  "engine_patch_sha256": "d55ff503efaf7677656fe2ddd60a46837bc5d03817c4e52806027ca09ad1ccbd",
+  "bot_code_hash": "28fe130c7e1246b1",
+  "git_head": "92b5789856c580ad3e155400fb4b901f608de88d"
+ },
+ "engine_seed": 1002,
+ "bot_seed": 1002,
+ "character": "val-dwa-fem-law",
+ "assists": {
+  "invincible": true,
+  "nostarve": true,
+  "kit": [
+   "wear blessed +2 greased gray dragon scale mail",
+   "wear blessed amulet of reflection",
+   "wear blessed +2 fireproof speed boots",
+   "inv blessed ring of levitation",
+   "inv blessed unicorn horn",
+   "inv bag of holding",
+   "inv blessed +0 pick-axe",
+   "inv 2 uncursed food rations"
+  ]
+ },
+ "wizard": false,
+ "scenario": null,
+ "goal": "minetown",
+ "limits": {
+  "max_turns": 20000,
+  "max_seconds": 43200,
+  "max_requests": 3000000,
+  "prompt_loop": 40,
+  "no_turn_requests": 600,
+  "action_loop": 8,
+  "action_loop_abort": 40,
+  "stall_turns": 6000,
+  "death_loop": 25,
+  "death_loop_turns": 300,
+  "storm_window": 3000,
+  "storm_min_turns": 30,
+  "decision_warn": 60.0,
+  "decision_kill": 600.0
+ },
+ "counted_as_full_game": true
+}

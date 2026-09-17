@@ -1,0 +1,24 @@
+Thread 0x00007ae5727ff6c0 (most recent call first):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/supervisor.py", line 66 in _watch
+  File "/usr/lib/python3.12/threading.py", line 1010 in run
+  File "/usr/lib/python3.12/threading.py", line 1073 in _bootstrap_inner
+  File "/usr/lib/python3.12/threading.py", line 1030 in _bootstrap
+
+Current thread 0x00007ae57458e080 (most recent call first):
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/player.py", line 252 in <lambda>
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/player.py", line 269 in have_all
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/bots/mainbot.py", line 535 in currently_desired
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/bots/mainbot.py", line 2901 in about_to_choose
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/delegator.py", line 223 in _invoke_event
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/bh36.py", line 34 in <lambda>
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/delegator.py", line 155 in drain
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/delegator.py", line 144 in _send
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/delegator.py", line 265 in method
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/nhbridge.py", line 662 in _choose_action
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/nhbridge.py", line 453 in handle
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/pybothack/nhbridge.py", line 418 in run
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 243 in run_game
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 361 in main
+  File "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude/nhbot/rungame.py", line 371 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main

@@ -1,0 +1,39 @@
+series ca-w01: 11 games
+outcomes: {'goal_reached': 3, 'stuck': 8}
+stage funnel: dlvl2=11, mines=11, minetown=10, oracle=11, sokoban=6, bigroom=2, dlvl10=6, medusa=3, castle=3
+assists: {'kit': 88, 'feed': 17, 'lifesave': 17}
+STOPPED EARLY: signature repeated 3 times: stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+failure signatures:
+    3  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+    2  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at #Position{..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'sin)
+    1  stuck | request storm: N requests for N turns (turn N, last action {..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'pi)
+top anomalies:
+     600  note:compat
+     386  compat:container:o
+     269  menu_empty_answer
+     122  note:assist
+     111  note:recovery
+     105  compat:container:i
+      79  msg-rewrite:^You open (.*\.\.\.)$
+      79  note:forced-command
+      69  menu_letter_unmatched
+      66  compat:name:o
+      42  msg-rewrite:^(?:Hmmm, .* turns out to be l
+      28  compat:container:q
+      21  msg-rewrite:^Your (\w+) (feels?) better\.$
+      20  menu_show:current_skills
+      15  compat:name:i
+games:
+  g001 seed=5001 goal_reached T=12156  depth=29  stage=castle       393.4s  castle
+  g002 seed=5002 stuck        T=4758   depth=7   stage=minetown     150.5s  fixation: target (46, 3, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile 
+  g003 seed=5003 goal_reached T=10766  depth=25  stage=castle       361.7s  castle
+  g004 seed=5004 stuck        T=3391   depth=7   stage=oracle       92.7s  fixation: target (13, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile
+  g005 seed=5005 stuck        T=3244   depth=9   stage=minetown     158.0s  request storm: 3000 requests for 10 turns (turn 3244, last action {'act': 'wear', 'why': [
+  g006 seed=5006 goal_reached T=13643  depth=25  stage=castle       378.4s  castle
+  g007 seed=5007 stuck        T=9429   depth=8   stage=minetown     156.3s  fixation: target (37, 18, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile
+  g008 seed=5008 stuck        T=12921  depth=20  stage=dlvl10       430.1s  fixation: target (47, 8, 'Dlvl:20 ') keeps coming back after 3 recoveries (new or desired 
+  g009 seed=5009 stuck        T=7446   depth=12  stage=dlvl10       236.3s  fixation: target (20, 4, 'Dlvl:12 ') keeps coming back after 3 recoveries (new or desired 
+  g010 seed=5010 stuck        T=3075   depth=9   stage=minetown     115.5s  fixation: target (40, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile
+  g011 seed=5011 stuck        T=6229   depth=10  stage=sokoban      181.7s  fixation: target (33, 12, 'Dlvl:9  ') keeps coming back after 3 recoveries (examining tile

@@ -1,0 +1,25 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "xl", "turn": 236, "depth": 1, "t": 33.8, "value": 2}
+{"kind": "xl", "turn": 866, "depth": 1, "t": 76.0, "value": 3}
+{"kind": "heartbeat", "turn": 1000, "depth": 1, "t": 107.3, "lvl": "Dlvl:1", "dname": "The Dungeons of Doom", "hp": 39, "hpmax": 39, "xl": 3, "ac": -9, "requests": 1542, "actions": 1439}
+{"kind": "heartbeat", "turn": 2000, "depth": 1, "t": 368.9, "lvl": "Dlvl:1", "dname": "The Dungeons of Doom", "hp": 39, "hpmax": 39, "xl": 3, "ac": -9, "requests": 4875, "actions": 4763}
+{"kind": "xl", "turn": 2299, "depth": 1, "t": 419.5, "value": 4}
+{"kind": "depth", "turn": 2663, "depth": 2, "t": 466.5, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 2663, "depth": 2, "t": 466.5, "stage": "dlvl2"}
+{"kind": "depth", "turn": 2898, "depth": 3, "t": 507.8, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 2986, "depth": 3, "t": 524.8, "value": 5}
+{"kind": "depth", "turn": 2999, "depth": 4, "t": 528.6, "value": 4, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 3000, "depth": 4, "t": 529.0, "lvl": "Dlvl:4", "dname": "The Dungeons of Doom", "hp": 61, "hpmax": 61, "xl": 5, "ac": -9, "requests": 6469, "actions": 6106}
+{"kind": "depth", "turn": 3076, "depth": 5, "t": 540.5, "value": 5, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 3076, "depth": 5, "t": 540.5, "name": "oracle", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 3076, "depth": 5, "t": 540.5, "stage": "oracle"}
+{"kind": "end", "turn": 3101, "depth": 5, "t": 551.5, "outcome": "stuck", "reason": "action loop: enhance repeated 40 times at turn 3101 ({'act': 'enhance'})"}

@@ -1,0 +1,14 @@
+{"kind": "depth", "turn": 1, "depth": 29, "t": 0.0, "value": 29, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 1, "depth": 29, "t": 0.0, "stage": "dlvl2"}
+{"kind": "stage", "turn": 1, "depth": 29, "t": 0.0, "stage": "dlvl10"}
+{"kind": "branch", "turn": 1, "depth": 29, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:29 "}
+{"kind": "special", "turn": 1, "depth": 29, "t": 0.0, "name": "castle", "lvl": "Dlvl:29 "}
+{"kind": "stage", "turn": 1, "depth": 29, "t": 0.1, "stage": "castle"}
+{"kind": "assist", "turn": 13, "depth": 29, "t": 4.0, "x_kind": "lifesave", "how": "died", "killer": "minotaur", "count": 1, "hpmax": 127, "xl": 14, "x_turn": 12, "x_depth": 29, "dnum": 0}
+{"kind": "assist", "turn": 39, "depth": 29, "t": 7.5, "x_kind": "lifesave", "how": "died", "killer": "minotaur", "count": 2, "hpmax": 127, "xl": 14, "x_turn": 38, "x_depth": 29, "dnum": 0}
+{"kind": "depth", "turn": 165, "depth": 30, "t": 50.8, "value": 30, "dname": "Gehennom"}
+{"kind": "branch", "turn": 165, "depth": 30, "t": 50.8, "dname": "Gehennom", "lvl": "Dlvl:30 "}
+{"kind": "special", "turn": 165, "depth": 30, "t": 50.8, "name": "valley", "lvl": "Dlvl:30 "}
+{"kind": "stage", "turn": 165, "depth": 30, "t": 50.8, "stage": "valley"}
+{"kind": "achievement", "turn": 165, "depth": 30, "t": 50.8, "name": "gehennom"}
+{"kind": "end", "turn": 165, "depth": 30, "t": 52.1, "outcome": "goal_reached", "reason": "valley"}

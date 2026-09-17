@@ -1,0 +1,44 @@
+series mt-w02: 20 games
+outcomes: {'goal_reached': 18, 'stuck': 2}
+stage funnel: dlvl2=20, mines=19, minetown=18, oracle=10
+assists: {'kit': 160, 'feed': 14, 'lifesave': 23}
+failure signatures:
+    1  stuck | request storm: N requests for N turns (turn N, last action {..})
+    1  stuck | no novelty for N turns on Dlvl:N (last action {..})
+top anomalies:
+     424  note:compat
+     261  compat:container:o
+     197  note:assist
+     195  fallback
+     195  note:fallback
+      96  msg-rewrite:^It is locked\.$
+      84  msg-rewrite:^You open (.*\.\.\.)$
+      71  compat:container:i
+      51  compat:name:o
+      40  compat:container:q
+      37  msg-rewrite:^(?:Hmmm, .* turns out to be l
+      33  menu_letter_unmatched
+      30  note:recovery
+      29  note:forced-command
+      20  note:abort
+games:
+  g001 seed=4001 goal_reached T=1456   depth=6   stage=minetown     41.3s  minetown
+  g002 seed=4002 goal_reached T=3204   depth=8   stage=minetown     100.7s  minetown
+  g003 seed=4003 goal_reached T=14795  depth=7   stage=minetown     287.9s  minetown
+  g004 seed=4004 goal_reached T=1848   depth=7   stage=minetown     43.6s  minetown
+  g005 seed=4005 stuck        T=10415  depth=6   stage=mines        508.9s  request storm: 3000 requests for 8 turns (turn 10415, last action {'act': 'eat', 'why': ["
+  g006 seed=4006 goal_reached T=9065   depth=7   stage=minetown     222.1s  minetown
+  g007 seed=4007 goal_reached T=1594   depth=5   stage=minetown     41.2s  minetown
+  g008 seed=4008 goal_reached T=1385   depth=6   stage=minetown     34.3s  minetown
+  g009 seed=4009 goal_reached T=9206   depth=6   stage=minetown     362.8s  minetown
+  g010 seed=4010 goal_reached T=1239   depth=5   stage=minetown     46.4s  minetown
+  g011 seed=4011 goal_reached T=2674   depth=7   stage=minetown     77.2s  minetown
+  g012 seed=4012 stuck        T=6414   depth=2   stage=dlvl2        325.0s  no novelty for 6000 turns on Dlvl:2 (last action {'act': 'move', 'why': ['new or desired i
+  g013 seed=4013 goal_reached T=936    depth=8   stage=minetown     29.3s  minetown
+  g014 seed=4014 goal_reached T=13762  depth=9   stage=minetown     624.8s  minetown
+  g015 seed=4015 goal_reached T=1153   depth=7   stage=minetown     37.3s  minetown
+  g016 seed=4016 goal_reached T=1274   depth=6   stage=minetown     40.1s  minetown
+  g017 seed=4017 goal_reached T=2178   depth=7   stage=minetown     70.5s  minetown
+  g018 seed=4018 goal_reached T=1245   depth=7   stage=minetown     36.1s  minetown
+  g019 seed=4019 goal_reached T=3422   depth=9   stage=minetown     95.9s  minetown
+  g020 seed=4020 goal_reached T=1915   depth=8   stage=minetown     44.4s  minetown

@@ -1,0 +1,283 @@
+{
+ "series": "ca-w06",
+ "games": 14,
+ "outcomes": {
+  "goal_reached": 9,
+  "stuck": 5
+ },
+ "stage_funnel": {
+  "dlvl2": 14,
+  "mines": 14,
+  "minetown": 14,
+  "oracle": 14,
+  "sokoban": 13,
+  "bigroom": 3,
+  "dlvl10": 12,
+  "medusa": 10,
+  "castle": 9,
+  "quest": 4
+ },
+ "failure_signatures": [
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S:)",
+   2
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'flo)",
+   2
+  ],
+  [
+   "stuck | no novelty for N turns on Dlvl:N (last action {..})",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 1630,
+  "compat:container:o": 1108,
+  "menu_empty_answer": 738,
+  "note:assist": 371,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 303,
+  "menu_letter_unmatched": 265,
+  "compat:container:i": 230,
+  "compat:container:q": 130,
+  "compat:name:o": 124,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 105,
+  "msg-rewrite:^Air currents pull you down in": 57,
+  "compat:name:i": 38,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 34,
+  "menu_show:current_skills": 27,
+  "note:recovery": 24,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 23,
+  "farlook-symbol": 15,
+  "note:abort": 14,
+  "msg-rewrite:^It is locked\\.$": 13,
+  "leftover_keys_dropped": 7,
+  "note:leftover": 7,
+  "note:forced-command": 1,
+  "msg-rewrite:^You feel as if you need some ": 1,
+  "farlook-trap": 1
+ },
+ "assist_totals": {
+  "kit": 112,
+  "feed": 22,
+  "lifesave": 237
+ },
+ "turns_total": 174870,
+ "turns_max": 23391,
+ "elapsed_total_s": 5371.1,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 5001,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 13578,
+   "max_depth": 29,
+   "last_stage": "castle",
+   "elapsed_s": 418.8,
+   "turns_per_s": 32.42,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 5002,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 10933,
+   "max_depth": 27,
+   "last_stage": "castle",
+   "elapsed_s": 324.8,
+   "turns_per_s": 33.66,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 3
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 5003,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 23391,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 591.1,
+   "turns_per_s": 39.57,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 5004,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 11666,
+   "max_depth": 27,
+   "last_stage": "castle",
+   "elapsed_s": 386.5,
+   "turns_per_s": 30.18,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 5005,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 11307,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 333.9,
+   "turns_per_s": 33.86,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 5006,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 12590,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 369.2,
+   "turns_per_s": 34.1,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 5007,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 12386,
+   "max_depth": 27,
+   "last_stage": "castle",
+   "elapsed_s": 384.8,
+   "turns_per_s": 32.19,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 5008,
+   "outcome": "stuck",
+   "reason": "fixation: target (73, 7, 'Dlvl:9  ') keeps coming back after 3 recoveries (new or desired item at {'x': 73, 'y': 7, 'glyph': '+', 'color': None, 'feature':)",
+   "turns": 6552,
+   "max_depth": 9,
+   "last_stage": "sokoban",
+   "elapsed_s": 232.6,
+   "turns_per_s": 28.17,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 5009,
+   "outcome": "stuck",
+   "reason": "fixation: target (73, 3, 'Dlvl:10 ') keeps coming back after 3 recoveries (examining tile {'x': 73, 'y': 3, 'glyph': '@', 'color': 'white', 'feature': 'flo)",
+   "turns": 8248,
+   "max_depth": 12,
+   "last_stage": "dlvl10",
+   "elapsed_s": 283.6,
+   "turns_per_s": 29.09,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g010",
+   "engine_seed": 5010,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 9726,
+   "max_depth": 27,
+   "last_stage": "castle",
+   "elapsed_s": 296.8,
+   "turns_per_s": 32.77,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g011",
+   "engine_seed": 5011,
+   "outcome": "stuck",
+   "reason": "fixation: target (29, 8, 'Dlvl:8  ') keeps coming back after 3 recoveries (new or desired item at {'x': 29, 'y': 8, 'glyph': '+', 'color': None, 'feature':)",
+   "turns": 4220,
+   "max_depth": 9,
+   "last_stage": "minetown",
+   "elapsed_s": 149.4,
+   "turns_per_s": 28.24,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g012",
+   "engine_seed": 5012,
+   "outcome": "stuck",
+   "reason": "no novelty for 6002 turns on Dlvl:28 (last action {'act': 'repeated', 'why': ['unstick: no action chosen, searching']})",
+   "turns": 19543,
+   "max_depth": 28,
+   "last_stage": "medusa",
+   "elapsed_s": 830.6,
+   "turns_per_s": 23.53,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 232
+   }
+  },
+  {
+   "game_id": "g013",
+   "engine_seed": 5013,
+   "outcome": "stuck",
+   "reason": "fixation: target (75, 5, 'Dlvl:24 ') keeps coming back after 3 recoveries (examining tile {'x': 75, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'flo)",
+   "turns": 16016,
+   "max_depth": 24,
+   "last_stage": "bigroom",
+   "elapsed_s": 424.7,
+   "turns_per_s": 37.71,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g014",
+   "engine_seed": 5014,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 14714,
+   "max_depth": 28,
+   "last_stage": "castle",
+   "elapsed_s": 344.3,
+   "turns_per_s": 42.73,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4
+   }
+  }
+ ]
+}

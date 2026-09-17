@@ -1,0 +1,36 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 234, "depth": 2, "t": 4.2, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 234, "depth": 2, "t": 4.2, "stage": "dlvl2"}
+{"kind": "xl", "turn": 335, "depth": 2, "t": 6.8, "value": 2}
+{"kind": "depth", "turn": 491, "depth": 3, "t": 9.2, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 718, "depth": 4, "t": 14.0, "value": 4, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 963, "depth": 4, "t": 19.0, "value": 3}
+{"kind": "depth", "turn": 991, "depth": 5, "t": 20.7, "value": 5, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 1000, "depth": 5, "t": 21.0, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 33, "hpmax": 33, "xl": 3, "ac": -8, "requests": 1362, "actions": 1137}
+{"kind": "xl", "turn": 1140, "depth": 5, "t": 24.8, "value": 4}
+{"kind": "branch", "turn": 1289, "depth": 5, "t": 27.9, "dname": "The Gnomish Mines", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 1289, "depth": 5, "t": 27.9, "stage": "mines"}
+{"kind": "depth", "turn": 1460, "depth": 6, "t": 33.5, "value": 6, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 1624, "depth": 6, "t": 40.4, "value": 5}
+{"kind": "depth", "turn": 1854, "depth": 7, "t": 43.9, "value": 7, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 1944, "depth": 7, "t": 46.3, "value": 6}
+{"kind": "heartbeat", "turn": 2004, "depth": 7, "t": 47.2, "lvl": "Dlvl:7", "dname": "The Dungeons of Doom", "hp": 67, "hpmax": 67, "xl": 6, "ac": -9, "requests": 2902, "actions": 2318}
+{"kind": "depth", "turn": 2005, "depth": 8, "t": 47.2, "value": 8, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 2281, "depth": 9, "t": 55.7, "value": 9, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 2281, "depth": 9, "t": 55.7, "name": "oracle", "lvl": "Dlvl:9  "}
+{"kind": "stage", "turn": 2281, "depth": 9, "t": 55.7, "stage": "oracle"}
+{"kind": "xl", "turn": 2357, "depth": 9, "t": 58.2, "value": 7}
+{"kind": "special", "turn": 2722, "depth": 7, "t": 66.6, "name": "minetn", "lvl": "Dlvl:7  "}
+{"kind": "stage", "turn": 2722, "depth": 7, "t": 66.6, "stage": "minetown", "variant": "minetn"}
+{"kind": "xl", "turn": 2901, "depth": 7, "t": 75.2, "value": 8}
+{"kind": "heartbeat", "turn": 3004, "depth": 7, "t": 78.9, "lvl": "Dlvl:7", "dname": "The Gnomish Mines", "hp": 83, "hpmax": 83, "xl": 8, "ac": -9, "requests": 4442, "actions": 3562}
+{"kind": "end", "turn": 3075, "depth": 7, "t": 111.4, "outcome": "stuck", "reason": "fixation: target (40, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile {'x': 40, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'al)"}

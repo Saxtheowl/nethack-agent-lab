@@ -1,0 +1,19 @@
+{
+ "description": "Default kit, XL 14, level-teleported to the Valkyrie quest home (Val-strt); goal: get the Bell of Opening (quest leader, locate, goal level, Lord Surtur)",
+ "steps": [
+  [
+   "xl",
+   14
+  ],
+  [
+   "levelport_menu",
+   "Val-strt"
+  ]
+ ],
+ "goal": "bell",
+ "max_turns": 25000,
+ "profile": "fast",
+ "skip": [
+  "excalibur"
+ ]
+}

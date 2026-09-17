@@ -1,0 +1,51 @@
+[
+  {
+    "outcome": "crash",
+    "reason": "KeyError",
+    "error": "(48, 0)",
+    "seed": 2,
+    "actions": 196,
+    "elapsed": 34.19115042098565,
+    "progression": {
+      "minetown": false,
+      "last_engine": {
+        "event": "input",
+        "value": 0,
+        "turn": 147,
+        "dnum": 0,
+        "dlevel": 1,
+        "x": 63,
+        "y": 4,
+        "hp": 26,
+        "hunger": 1014,
+        "minetown": 0,
+        "amulet": 0
+      }
+    },
+    "run": "runs/20260916-204343-minetown-validation-7e3b/seed-2-1ecf1e"
+  },
+  {
+    "outcome": "resource_limit",
+    "reason": "wall_time",
+    "seed": 3,
+    "actions": 1346,
+    "elapsed": 300.158538535994,
+    "progression": {
+      "minetown": false,
+      "last_engine": {
+        "event": "input",
+        "value": 0,
+        "turn": 755,
+        "dnum": 0,
+        "dlevel": 2,
+        "x": 51,
+        "y": 6,
+        "hp": 68,
+        "hunger": 856,
+        "minetown": 0,
+        "amulet": 0
+      }
+    },
+    "run": "runs/20260916-204343-minetown-validation-7e3b/seed-3-dcc803"
+  }
+]

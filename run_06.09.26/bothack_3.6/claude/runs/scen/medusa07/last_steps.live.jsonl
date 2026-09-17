@@ -1,0 +1,800 @@
+{"r": 1557, "k": "cmd", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 1558, "k": "cmd", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1559, "k": "cmd", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 63, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 1560, "k": "cmd", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"ElberethElbereth\"."}
+{"m": "You see here a broken chest containing 4 items."}
+{"act": "dropsingle", "why": ["dropping junk"], "slot": "v"}
+{"a": "d"}
+{"r": 1561, "k": "yn", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139, "q": "What do you want to drop? [$a-tvw or ?*]"}
+{"a": "1"}
+{"r": 1562, "k": "key", "T": 815, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"a": "v"}
+{"r": 1563, "k": "cmd", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"m": "Count: 1 v"}
+{"m": "You drop a wand of light."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1564, "k": "cmd", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 63, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 1565, "k": "cmd", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"ElberethElbereth\"."}
+{"act": "loot", "why": ["learning contents of containers on ground"]}
+{"a": "#"}
+{"r": 1566, "k": "ext", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"a": "loot"}
+{"r": 1567, "k": "yn", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139, "q": "There is a broken chest containing 4 items here, loot it?", "c": "ynq"}
+{"a": "y"}
+{"r": 1568, "k": "menu", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139, "p": "Do what with the chest?", "items": [": Look inside the chest", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the chest", "# ", "q do nothing"]}
+{"m": "You open the chest..."}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 1569, "k": "menu", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139, "p": "Take out what?", "items": ["# Comestibles", "a a slime mold", "b a tin", "# Spellbooks", "c a thin spellbook", "# Gems/Stones", "d a yellowish brown gem"]}
+{"note": "fallback", "d": "no-answer <Request #1569 menu 'Take out what?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 1570, "k": "cmd", "T": 816, "lvl": "Dlvl:19", "u": [64, 12], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["going to throne"], "dir": "NE"}
+{"a": "u"}
+{"r": 1571, "k": "cmd", "T": 817, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"act": "sit", "why": ["sitting on throne"]}
+{"a": "#"}
+{"r": 1572, "k": "ext", "T": 817, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"a": "sit"}
+{"r": 1573, "k": "pos", "T": 817, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "g": "the desired position"}
+{"m": "You sit on the opulent throne."}
+{"m": "You feel a wrenching sensation."}
+{"m": "Where do you want to be teleported?"}
+{"a": "(65, 11)"}
+{"r": 1574, "k": "cmd", "T": 817, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"m": "The throne vanishes in a puff of logic."}
+{"act": "sit", "why": ["sitting on throne"]}
+{"a": "#"}
+{"r": 1575, "k": "ext", "T": 817, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"a": "sit"}
+{"r": 1576, "k": "cmd", "T": 818, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"m": "Having fun sitting on the floor?"}
+{"act": "apply", "why": ["putting {'w': None} into bag at k", "bag items"], "slot": "k"}
+{"a": "a"}
+{"r": 1577, "k": "yn", "T": 818, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "q": "What do you want to use or apply? [ejklr or ?*]"}
+{"a": "k"}
+{"r": 1578, "k": "menu", "T": 818, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 1579, "k": "menu", "T": 818, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "p": "Put in what?", "items": ["# Coins", "$ 1120 gold pieces", "# Amulets", "g a blessed amulet of reflection (being worn)", "p a triangular amulet", "# Weapons", "a a +1 long sword (weapon in hand)", "b a +0 dagger (alternate weapon; not wielded)", "m a dagger", "q 2 orcish daggers", "# Armor", "c an uncursed +3 small shield (being worn)", "f a blessed greased +2 gray dragon scale mail (being worn)", "h a blessed fireproof +2 pair of speed boots (being worn)", "n a +0 orcish helm (being worn)", "# Comestibles"]}
+{"a": [20]}
+{"r": 1580, "k": "cmd", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"m": "You put a scroll labeled KERNOD WEL into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1581, "k": "cmd", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"act": "apply", "why": ["updating content of container at k"], "slot": "k"}
+{"a": "a"}
+{"r": 1582, "k": "yn", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "q": "What do you want to use or apply? [ejklr or ?*]"}
+{"a": "k"}
+{"r": 1583, "k": "menu", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 1584, "k": "menu", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled KERNOD WEL", "b a scroll labeled NR 9"]}
+{"note": "fallback", "d": "no-answer <Request #1584 menu 'Take out what?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 1585, "k": "cmd", "T": 819, "lvl": "Dlvl:19", "u": [65, 11], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 1586, "k": "cmd", "T": 820, "lvl": "Dlvl:19", "u": [66, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1587, "k": "cmd", "T": 820, "lvl": "Dlvl:19", "u": [66, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1588, "k": "cmd", "T": 821, "lvl": "Dlvl:19", "u": [66, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1589, "k": "cmd", "T": 821, "lvl": "Dlvl:19", "u": [65, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1590, "k": "cmd", "T": 822, "lvl": "Dlvl:19", "u": [64, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1591, "k": "cmd", "T": 822, "lvl": "Dlvl:19", "u": [63, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1592, "k": "cmd", "T": 823, "lvl": "Dlvl:19", "u": [62, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1593, "k": "cmd", "T": 823, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1594, "k": "cmdcont", "T": 823, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1595, "k": "cmdcont", "T": 823, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1596, "k": "cmd", "T": 828, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1597, "k": "cmdcont", "T": 828, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1598, "k": "cmdcont", "T": 828, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1599, "k": "cmd", "T": 834, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1600, "k": "cmdcont", "T": 834, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1601, "k": "cmdcont", "T": 834, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1602, "k": "cmd", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"act": "wield", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "slot": "l"}
+{"a": "w"}
+{"r": 1603, "k": "yn", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139, "q": "What do you want to wield? [- abjlmq or ?*]"}
+{"a": "l"}
+{"r": 1604, "k": "cmd", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"m": "l - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1605, "k": "cmd", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"act": "apply", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "slot": "l"}
+{"a": "a"}
+{"r": 1606, "k": "yn", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139, "q": "What do you want to use or apply? [ejklr or ?*]"}
+{"a": "l"}
+{"r": 1607, "k": "yn", "T": 840, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139, "q": "In what direction do you want to dig? [hykunjb>]"}
+{"a": "b"}
+{"r": 1608, "k": "cmd", "T": 843, "lvl": "Dlvl:19", "u": [61, 8], "hp": 139, "hpmax": 139}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 1609, "k": "cmd", "T": 843, "lvl": "Dlvl:19", "u": [60, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1610, "k": "cmd", "T": 844, "lvl": "Dlvl:19", "u": [59, 9], "hp": 139, "hpmax": 139}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - a +1 long sword"], "slot": "a"}
+{"a": "w"}
+{"r": 1611, "k": "yn", "T": 844, "lvl": "Dlvl:19", "u": [59, 9], "hp": 139, "hpmax": 139, "q": "What do you want to wield? [- abjlmq or ?*]"}
+{"a": "a"}
+{"r": 1612, "k": "cmd", "T": 844, "lvl": "Dlvl:19", "u": [59, 9], "hp": 139, "hpmax": 139}
+{"m": "a - a +1 long sword (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1613, "k": "cmd", "T": 844, "lvl": "Dlvl:19", "u": [59, 9], "hp": 139, "hpmax": 139}
+{"act": "autotravel", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "pos": "#Position{:x 43, :y 9}"}
+{"a": "_"}
+{"r": 1614, "k": "pos", "T": 844, "lvl": "Dlvl:19", "u": [59, 9], "hp": 139, "hpmax": 139, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(44, 8)"}
+{"r": 1615, "k": "cmd", "T": 854, "lvl": "Dlvl:19", "u": [44, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1616, "k": "cmd", "T": 855, "lvl": "Dlvl:19", "u": [43, 8], "hp": 139, "hpmax": 139}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "j"}
+{"a": "a"}
+{"r": 1617, "k": "yn", "T": 855, "lvl": "Dlvl:19", "u": [43, 8], "hp": 139, "hpmax": 139, "q": "What do you want to use or apply? [ejklr or ?*]"}
+{"a": "j"}
+{"r": 1618, "k": "cmd", "T": 855, "lvl": "Dlvl:19", "u": [43, 8], "hp": 139, "hpmax": 139}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1619, "k": "cmd", "T": 856, "lvl": "Dlvl:19", "u": [42, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1620, "k": "cmd", "T": 857, "lvl": "Dlvl:19", "u": [41, 8], "hp": 139, "hpmax": 139}
+{"m": "Your oil lamp flickers."}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1621, "k": "cmd", "T": 857, "lvl": "Dlvl:19", "u": [40, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1622, "k": "cmd", "T": 858, "lvl": "Dlvl:19", "u": [39, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1623, "k": "cmd", "T": 859, "lvl": "Dlvl:19", "u": [38, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1624, "k": "cmd", "T": 860, "lvl": "Dlvl:19", "u": [37, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1625, "k": "cmd", "T": 861, "lvl": "Dlvl:19", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1626, "k": "cmd", "T": 861, "lvl": "Dlvl:19", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1627, "k": "cmd", "T": 862, "lvl": "Dlvl:19", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1628, "k": "cmd", "T": 863, "lvl": "Dlvl:19", "u": [33, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1629, "k": "cmd", "T": 863, "lvl": "Dlvl:19", "u": [32, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1630, "k": "cmd", "T": 864, "lvl": "Dlvl:19", "u": [31, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1631, "k": "cmd", "T": 864, "lvl": "Dlvl:19", "u": [30, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1632, "k": "cmd", "T": 865, "lvl": "Dlvl:19", "u": [29, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1633, "k": "cmd", "T": 865, "lvl": "Dlvl:19", "u": [29, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1634, "k": "cmd", "T": 866, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1635, "k": "cmd", "T": 866, "lvl": "Dlvl:19", "u": [30, 6], "hp": 139, "hpmax": 139}
+{"m": "The plains centaur opens a door."}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1636, "k": "cmd", "T": 867, "lvl": "Dlvl:19", "u": [31, 6], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 7}"}
+{"a": ";"}
+{"r": 1637, "k": "pos", "T": 867, "lvl": "Dlvl:19", "u": [31, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 6)"}
+{"r": 1638, "k": "cmd", "T": 867, "lvl": "Dlvl:19", "u": [31, 6], "hp": 139, "hpmax": 139}
+{"m": "C        a centaur (plains centaur) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["targetting enemy {'x': 27, 'y': 7, 'known': 867, 'first-known': 867, 'glyph': 'C', 'color': 'brown',"], "dir": "W"}
+{"a": "h"}
+{"r": 1639, "k": "cmd", "T": 867, "lvl": "Dlvl:19", "u": [30, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 7, 'known': 867, 'first-known': 867, 'glyph': 'C', 'color': 'brown', 'type': ", "targetting enemy {'x': 28, 'y': 7, 'known': 867, 'first-known': 867, 'glyph': 'C', 'color': 'brown',"], "dir": "W"}
+{"a": "h"}
+{"r": 1640, "k": "cmd", "T": 868, "lvl": "Dlvl:19", "u": [30, 6], "hp": 139, "hpmax": 139}
+{"m": "You hit the plains centaur!"}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 7, 'known': 868, 'first-known': 867, 'glyph': 'C', 'color': 'brown', 'type': ", "targetting enemy {'x': 28, 'y': 7, 'known': 868, 'first-known': 867, 'glyph': 'C', 'color': 'brown',"], "dir": "W"}
+{"a": "h"}
+{"r": 1641, "k": "cmd", "T": 869, "lvl": "Dlvl:19", "u": [30, 6], "hp": 139, "hpmax": 139}
+{"m": "You kill the plains centaur!"}
+{"act": "move", "why": ["new or desired item at {'x': 28, 'y': 7, 'glyph': '%', 'color': None, 'feature': 'corridor', 'seen':"], "dir": "W"}
+{"a": "h"}
+{"r": 1642, "k": "cmd", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': True"]}
+{"a": ":"}
+{"r": 1643, "k": "cmd", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 1644, "k": "menu", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139, "p": "Pick up what?", "items": ["# Coins", "$ 112 gold pieces", "# Comestibles", "a a plains centaur corpse"]}
+{"a": [1]}
+{"r": 1645, "k": "cmd", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"m": "$ - 112 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1646, "k": "cmd", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': True"]}
+{"a": ":"}
+{"r": 1647, "k": "cmd", "T": 870, "lvl": "Dlvl:19", "u": [29, 6], "hp": 139, "hpmax": 139}
+{"m": "You see here a plains centaur corpse."}
+{"act": "move", "why": ["exploring {'x': 27, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1648, "k": "cmd", "T": 871, "lvl": "Dlvl:19", "u": [28, 6], "hp": 139, "hpmax": 139}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 28, :y 4}"}
+{"a": ";"}
+{"r": 1649, "k": "pos", "T": 871, "lvl": "Dlvl:19", "u": [28, 6], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(29, 3)"}
+{"r": 1650, "k": "cmd", "T": 871, "lvl": "Dlvl:19", "u": [28, 6], "hp": 139, "hpmax": 139}
+{"m": ":        a lizard (iguana)"}
+{"act": "move", "why": ["targetting enemy {'x': 28, 'y': 4, 'known': 871, 'first-known': 871, 'glyph': ':', 'color': 'brown',"], "dir": "N"}
+{"a": "k"}
+{"r": 1651, "k": "cmd", "T": 871, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 29, 'y': 5, 'known': 871, 'first-known': 871, 'glyph': ':', 'color': 'brown',"]}
+{"a": "s"}
+{"r": 1652, "k": "cmd", "T": 872, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 29, 'y': 5, 'known': 872, 'first-known': 871, 'glyph': ':', 'color': 'brown',"]}
+{"a": "s"}
+{"r": 1653, "k": "cmd", "T": 872, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 5, 'known': 872, 'first-known': 871, 'glyph': ':', 'color': 'brown', 'type': ", "targetting enemy {'x': 28, 'y': 5, 'known': 872, 'first-known': 871, 'glyph': ':', 'color': 'brown',"], "dir": "NE"}
+{"a": "u"}
+{"r": 1654, "k": "cmd", "T": 873, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the iguana!"}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 5, 'known': 873, 'first-known': 871, 'glyph': ':', 'color': 'brown', 'type': ", "targetting enemy {'x': 28, 'y': 5, 'known': 873, 'first-known': 871, 'glyph': ':', 'color': 'brown',"], "dir": "NE"}
+{"a": "u"}
+{"r": 1655, "k": "cmd", "T": 873, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"m": "You hit the iguana!"}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 5, 'known': 873, 'first-known': 871, 'glyph': ':', 'color': 'brown', 'type': ", "targetting enemy {'x': 28, 'y': 5, 'known': 873, 'first-known': 871, 'glyph': ':', 'color': 'brown',"], "dir": "NE"}
+{"a": "u"}
+{"r": 1656, "k": "cmd", "T": 874, "lvl": "Dlvl:19", "u": [28, 5], "hp": 139, "hpmax": 139}
+{"m": "You kill the iguana!"}
+{"act": "move", "why": ["new or desired item at {'x': 28, 'y': 5, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': Tr"], "dir": "N"}
+{"a": "k"}
+{"r": 1657, "k": "cmd", "T": 874, "lvl": "Dlvl:19", "u": [28, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 28, 'y': 5, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': Tr"], "dir": "E"}
+{"a": "l"}
+{"r": 1658, "k": "cmd", "T": 875, "lvl": "Dlvl:19", "u": [29, 4], "hp": 139, "hpmax": 139}
+{"m": "You see here an iguana corpse."}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 1659, "k": "cmd", "T": 875, "lvl": "Dlvl:19", "u": [29, 4], "hp": 139, "hpmax": 139}
+{"m": "You see here an iguana corpse."}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1660, "k": "cmd", "T": 876, "lvl": "Dlvl:19", "u": [30, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 5, 'glyph': '\\\\', 'color': None, 'feature': 'grave', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1661, "k": "cmd", "T": 877, "lvl": "Dlvl:19", "u": [31, 4], "hp": 139, "hpmax": 139}
+{"m": "Something is engraved here on the headstone."}
+{"m": "You read: \"This way to the crypt\"."}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'grave', 'seen': True, '"]}
+{"a": ":"}
+{"r": 1662, "k": "cmd", "T": 877, "lvl": "Dlvl:19", "u": [31, 4], "hp": 139, "hpmax": 139}
+{"m": "There is a grave here."}
+{"m": "Something is engraved here on the headstone."}
+{"m": "You read: \"This way to the crypt\"."}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 3, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 1663, "k": "cmd", "T": 878, "lvl": "Dlvl:19", "u": [32, 3], "hp": 139, "hpmax": 139}
+{"act": "autotravel", "why": ["exploring {'x': 26, 'y': 3, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "pos": "#Position{:x 26, :y 3}"}
+{"a": "_"}
+{"r": 1664, "k": "pos", "T": 878, "lvl": "Dlvl:19", "u": [32, 3], "hp": 139, "hpmax": 139, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(27, 2)"}
+{"r": 1665, "k": "cmd", "T": 881, "lvl": "Dlvl:19", "u": [27, 2], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 24, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 1666, "k": "cmd", "T": 882, "lvl": "Dlvl:19", "u": [26, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 23, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 1667, "k": "cmd", "T": 882, "lvl": "Dlvl:19", "u": [25, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 21, 'y': 5, 'glyph': '$', 'color': None, 'feature': None, 'seen': False"], "dir": "W"}
+{"a": "h"}
+{"r": 1668, "k": "cmd", "T": 883, "lvl": "Dlvl:19", "u": [24, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 21, 'y': 5, 'glyph': '$', 'color': None, 'feature': None, 'seen': False"], "dir": "NW"}
+{"a": "y"}
+{"r": 1669, "k": "cmd", "T": 884, "lvl": "Dlvl:19", "u": [23, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 21, 'y': 5, 'glyph': '$', 'color': None, 'feature': None, 'seen': True,"], "dir": "SW"}
+{"a": "b"}
+{"r": 1670, "k": "cmd", "T": 885, "lvl": "Dlvl:19", "u": [22, 4], "hp": 139, "hpmax": 139}
+{"m": "You see here 113 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 21, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 1671, "k": "cmd", "T": 885, "lvl": "Dlvl:19", "u": [22, 4], "hp": 139, "hpmax": 139}
+{"m": "You see here 113 gold pieces."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 1672, "k": "cmd", "T": 885, "lvl": "Dlvl:19", "u": [22, 4], "hp": 139, "hpmax": 139}
+{"m": "$ - 113 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 1673, "k": "cmd", "T": 885, "lvl": "Dlvl:19", "u": [22, 4], "hp": 139, "hpmax": 139}
+{"act": "look", "why": ["examining tile {'x': 21, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 1674, "k": "cmd", "T": 885, "lvl": "Dlvl:19", "u": [22, 4], "hp": 139, "hpmax": 139}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 3, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 1675, "k": "cmd", "T": 886, "lvl": "Dlvl:19", "u": [21, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 18, 'y': 3, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 1676, "k": "cmd", "T": 887, "lvl": "Dlvl:19", "u": [20, 2], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 17, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 1677, "k": "cmd", "T": 888, "lvl": "Dlvl:19", "u": [19, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 17, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1678, "k": "cmd", "T": 889, "lvl": "Dlvl:19", "u": [18, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1679, "k": "cmd", "T": 890, "lvl": "Dlvl:19", "u": [17, 3], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1680, "k": "cmd", "T": 890, "lvl": "Dlvl:19", "u": [17, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1681, "k": "cmd", "T": 891, "lvl": "Dlvl:19", "u": [16, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1682, "k": "cmd", "T": 892, "lvl": "Dlvl:19", "u": [15, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1683, "k": "cmd", "T": 893, "lvl": "Dlvl:19", "u": [14, 4], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1684, "k": "cmd", "T": 894, "lvl": "Dlvl:19", "u": [14, 5], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1685, "k": "cmd", "T": 894, "lvl": "Dlvl:19", "u": [14, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1686, "k": "cmd", "T": 895, "lvl": "Dlvl:19", "u": [14, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1687, "k": "cmd", "T": 895, "lvl": "Dlvl:19", "u": [14, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1688, "k": "cmd", "T": 896, "lvl": "Dlvl:19", "u": [14, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1689, "k": "cmd", "T": 896, "lvl": "Dlvl:19", "u": [13, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1690, "k": "cmd", "T": 897, "lvl": "Dlvl:19", "u": [12, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 1691, "k": "cmd", "T": 897, "lvl": "Dlvl:19", "u": [12, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 11, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1692, "k": "cmd", "T": 898, "lvl": "Dlvl:19", "u": [11, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1693, "k": "cmd", "T": 898, "lvl": "Dlvl:19", "u": [10, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1694, "k": "cmd", "T": 899, "lvl": "Dlvl:19", "u": [9, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 7, 'y': 10, 'glyph': '{', 'color': None, 'feature': 'sink', 'seen': True, 'dug': Fal", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 1695, "k": "cmd", "T": 900, "lvl": "Dlvl:19", "u": [8, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 7, 'glyph': '*', 'color': None, 'feature': None, 'seen': False,"], "dir": "NE"}
+{"a": "u"}
+{"r": 1696, "k": "cmd", "T": 900, "lvl": "Dlvl:19", "u": [9, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 7, 'glyph': '*', 'color': None, 'feature': None, 'seen': False,"], "dir": "NE"}
+{"a": "u"}
+{"r": 1697, "k": "cmd", "T": 901, "lvl": "Dlvl:19", "u": [10, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 7, 'glyph': '*', 'color': None, 'feature': None, 'seen': True, "], "dir": "NW"}
+{"a": "y"}
+{"r": 1698, "k": "cmd", "T": 901, "lvl": "Dlvl:19", "u": [9, 6], "hp": 139, "hpmax": 139}
+{"m": "You see here 10 rocks."}
+{"act": "look", "why": ["examining tile {'x': 8, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug'"]}
+{"a": ":"}
+{"r": 1699, "k": "cmd", "T": 901, "lvl": "Dlvl:19", "u": [9, 6], "hp": 139, "hpmax": 139}
+{"m": "You see here 10 rocks."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1700, "k": "cmd", "T": 902, "lvl": "Dlvl:19", "u": [10, 6], "hp": 139, "hpmax": 139}
+{"act": "ascend", "why": ["switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 1701, "k": "cmd", "T": 902, "lvl": "Dlvl:18", "u": [56, 8], "hp": 139, "hpmax": 139}
+{"m": "You climb up the stairs."}
+{"act": "look", "why": ["examining tile {'x': 55, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 1702, "k": "cmd", "T": 902, "lvl": "Dlvl:18", "u": [56, 8], "hp": 139, "hpmax": 139}
+{"m": "There is a staircase down here."}
+{"act": "autotravel", "why": ["exploring {'x': 60, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "pos": "#Position{:x 60, :y 8}"}
+{"a": "_"}
+{"r": 1703, "k": "pos", "T": 902, "lvl": "Dlvl:18", "u": [56, 8], "hp": 139, "hpmax": 139, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(61, 7)"}
+{"r": 1704, "k": "cmd", "T": 906, "lvl": "Dlvl:18", "u": [61, 7], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 7, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 1705, "k": "cmd", "T": 907, "lvl": "Dlvl:18", "u": [62, 7], "hp": 139, "hpmax": 139}
+{"m": "Your oil lamp flickers."}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 7, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1706, "k": "cmd", "T": 907, "lvl": "Dlvl:18", "u": [62, 6], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1707, "k": "cmd", "T": 908, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1708, "k": "cmdcont", "T": 908, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1709, "k": "cmdcont", "T": 908, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1710, "k": "cmd", "T": 913, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1711, "k": "cmdcont", "T": 913, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1712, "k": "cmdcont", "T": 913, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1713, "k": "cmd", "T": 919, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1714, "k": "cmdcont", "T": 919, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1715, "k": "cmdcont", "T": 919, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1716, "k": "cmd", "T": 924, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 1717, "k": "cmdcont", "T": 924, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"a": "0"}
+{"r": 1718, "k": "cmdcont", "T": 924, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 1719, "k": "cmd", "T": 930, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139}
+{"act": "autotravel", "why": ["exploring {'x': 50, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "pos": "#Position{:x 50, :y 11}"}
+{"a": "_"}
+{"r": 1720, "k": "pos", "T": 930, "lvl": "Dlvl:18", "u": [62, 5], "hp": 139, "hpmax": 139, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(51, 10)"}
+{"r": 1721, "k": "cmd", "T": 937, "lvl": "Dlvl:18", "u": [51, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1722, "k": "cmd", "T": 938, "lvl": "Dlvl:18", "u": [50, 10], "hp": 139, "hpmax": 139}
+{"m": "You hear mosquitoes!"}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1723, "k": "cmd", "T": 938, "lvl": "Dlvl:18", "u": [49, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1724, "k": "cmd", "T": 939, "lvl": "Dlvl:18", "u": [48, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1725, "k": "cmd", "T": 939, "lvl": "Dlvl:18", "u": [47, 10], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1726, "k": "cmd", "T": 940, "lvl": "Dlvl:18", "u": [47, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 1727, "k": "cmd", "T": 940, "lvl": "Dlvl:18", "u": [47, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1728, "k": "cmd", "T": 941, "lvl": "Dlvl:18", "u": [46, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1729, "k": "cmd", "T": 942, "lvl": "Dlvl:18", "u": [45, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1730, "k": "cmd", "T": 943, "lvl": "Dlvl:18", "u": [44, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1731, "k": "cmd", "T": 944, "lvl": "Dlvl:18", "u": [43, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1732, "k": "cmd", "T": 945, "lvl": "Dlvl:18", "u": [42, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1733, "k": "cmd", "T": 945, "lvl": "Dlvl:18", "u": [41, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1734, "k": "cmd", "T": 946, "lvl": "Dlvl:18", "u": [40, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1735, "k": "cmd", "T": 947, "lvl": "Dlvl:18", "u": [39, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1736, "k": "cmd", "T": 947, "lvl": "Dlvl:18", "u": [38, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1737, "k": "cmd", "T": 948, "lvl": "Dlvl:18", "u": [37, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 1738, "k": "cmd", "T": 948, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"act": "open", "why": ["exploring {'x': 34, 'y': 9, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:11", "trying to enter quest from Dlvl:11", "seeking branch quest ( quest )", "seeking level quest end", "full-explore", "progress"], "dir": "W"}
+{"a": "o"}
+{"r": 1739, "k": "yn", "T": 948, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139, "q": "In what direction?"}
+{"a": "h"}
+{"r": 1740, "k": "cmd", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"m": "The door opens."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 28, :y 8}"}
+{"a": ";"}
+{"r": 1741, "k": "pos", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(29, 7)"}
+{"r": 1742, "k": "cmd", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 30, :y 10}"}
+{"a": ";"}
+{"r": 1743, "k": "pos", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(31, 9)"}
+{"r": 1744, "k": "cmd", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 10}"}
+{"a": ";"}
+{"r": 1745, "k": "pos", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 9)"}
+{"r": 1746, "k": "cmd", "T": 949, "lvl": "Dlvl:18", "u": [36, 8], "hp": 139, "hpmax": 139}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "move", "why": ["targetting enemy {'x': 32, 'y': 10, 'known': 949, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "W"}
+{"a": "h"}
+{"r": 1747, "k": "cmd", "T": 950, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"m": "It looks rather muddy down here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 5}"}
+{"a": ";"}
+{"r": 1748, "k": "pos", "T": 950, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 4)"}
+{"r": 1749, "k": "cmd", "T": 950, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 10, 'known': 950, 'first-known': 949, 'glyph': 'F', 'color': 'magent"]}
+{"a": "s"}
+{"r": 1750, "k": "cmd", "T": 951, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 10, 'known': 951, 'first-known': 949, 'glyph': 'F', 'color': 'magent"]}
+{"a": "s"}
+{"r": 1751, "k": "cmd", "T": 952, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 10, 'known': 952, 'first-known': 949, 'glyph': 'F', 'color': 'magent"]}
+{"a": "s"}
+{"r": 1752, "k": "cmd", "T": 952, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 10, 'known': 952, 'first-known': 949, 'glyph': 'F', 'color': 'magent"]}
+{"a": "s"}
+{"r": 1753, "k": "cmd", "T": 953, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 32, 'y': 10, 'known': 953, 'first-known': 949, 'glyph': 'F', 'color': 'magent"]}
+{"a": "s"}
+{"r": 1754, "k": "cmd", "T": 954, "lvl": "Dlvl:18", "u": [35, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["targetting enemy {'x': 32, 'y': 10, 'known': 954, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "W"}
+{"a": "h"}
+{"r": 1755, "k": "cmd", "T": 954, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 10, 'known': 954, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type", "targetting enemy {'x': 32, 'y': 10, 'known': 954, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "SW"}
+{"a": "b"}
+{"r": 1756, "k": "cmd", "T": 955, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 10, 'known': 955, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type", "targetting enemy {'x': 32, 'y': 10, 'known': 955, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "SW"}
+{"a": "b"}
+{"r": 1757, "k": "cmd", "T": 956, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 10, 'known': 956, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type", "targetting enemy {'x': 32, 'y': 10, 'known': 956, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "SW"}
+{"a": "b"}
+{"r": 1758, "k": "cmd", "T": 956, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"m": "The violet fungus touches you!"}
+{"m": "The violet fungus misses!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 10, 'known': 956, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type", "targetting enemy {'x': 32, 'y': 10, 'known': 956, 'first-known': 949, 'glyph': 'F', 'color': 'magent"], "dir": "SW"}
+{"a": "b"}
+{"r": 1759, "k": "cmd", "T": 957, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You kill the violet fungus!"}
+{"m": "Your oil lamp flickers considerably."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 957, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1760, "k": "cmd", "T": 958, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 958, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1761, "k": "cmd", "T": 958, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 958, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1762, "k": "cmd", "T": 959, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 959, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1763, "k": "cmd", "T": 959, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 959, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1764, "k": "cmd", "T": 960, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 960, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1765, "k": "cmd", "T": 961, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 961, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1766, "k": "cmd", "T": 961, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139}
+{"m": "You find a piranha."}
+{"m": "The piranha bites!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 9}"}
+{"a": ";"}
+{"r": 1767, "k": "pos", "T": 961, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 8)"}
+{"r": 1768, "k": "cmd", "T": 961, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139}
+{"m": ";        a sea monster (piranha)"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 9, 'known': 961, 'first-known': 961, 'glyph': ';', 'color': 'red', 'type': {'", "targetting enemy {'x': 32, 'y': 9, 'known': 961, 'first-known': 961, 'glyph': ';', 'color': 'red', '"], "dir": "W"}
+{"a": "h"}
+{"r": 1769, "k": "cmd", "T": 962, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139}
+{"m": "You hit the piranha!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 9, 'known': 962, 'first-known': 961, 'glyph': ';', 'color': 'red', 'type': {'", "targetting enemy {'x': 32, 'y': 9, 'known': 962, 'first-known': 961, 'glyph': ';', 'color': 'red', '"], "dir": "W"}
+{"a": "h"}
+{"r": 1770, "k": "cmd", "T": 962, "lvl": "Dlvl:18", "u": [34, 8], "hp": 138, "hpmax": 139}
+{"m": "You hit the piranha!"}
+{"m": "The piranha misses!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 9, 'known': 962, 'first-known': 961, 'glyph': ';', 'color': 'red', 'type': {'", "targetting enemy {'x': 32, 'y': 9, 'known': 962, 'first-known': 961, 'glyph': ';', 'color': 'red', '"], "dir": "W"}
+{"a": "h"}
+{"r": 1771, "k": "cmd", "T": 963, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You hit the piranha!"}
+{"m": "The piranha turns to flee."}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 9, 'known': 963, 'first-known': 961, 'glyph': ';', 'color': 'red', 'type': {'", "targetting enemy {'x': 32, 'y': 9, 'known': 963, 'first-known': 961, 'glyph': ';', 'color': 'red', '"], "dir": "W"}
+{"a": "h"}
+{"r": 1772, "k": "cmd", "T": 964, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You kill the piranha!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 964, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1773, "k": "cmd", "T": 965, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 965, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1774, "k": "cmd", "T": 965, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 965, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1775, "k": "cmd", "T": 966, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 966, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1776, "k": "cmd", "T": 966, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 966, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1777, "k": "cmd", "T": 967, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 967, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1778, "k": "cmd", "T": 967, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 967, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1779, "k": "cmd", "T": 968, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 968, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1780, "k": "cmd", "T": 969, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 969, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1781, "k": "cmd", "T": 970, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 9, 'known': 970, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1782, "k": "cmd", "T": 970, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 8, 'known': 970, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type'", "targetting enemy {'x': 32, 'y': 8, 'known': 970, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "NW"}
+{"a": "y"}
+{"r": 1783, "k": "cmd", "T": 971, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 8, 'known': 971, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type'", "targetting enemy {'x': 32, 'y': 8, 'known': 971, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "NW"}
+{"a": "y"}
+{"r": 1784, "k": "cmd", "T": 972, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 8, 'known': 972, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type'", "targetting enemy {'x': 32, 'y': 8, 'known': 972, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "NW"}
+{"a": "y"}
+{"r": 1785, "k": "cmd", "T": 972, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You kill the violet fungus!"}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 8, 'known': 972, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "SW"}
+{"a": "b"}
+{"r": 1786, "k": "cmd", "T": 973, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet fungus corpse."}
+{"act": "look", "why": ["examining tile {'x': 32, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 1787, "k": "cmd", "T": 973, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"m": "You see here a violet fungus corpse."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 8, 'known': 973, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1788, "k": "cmd", "T": 973, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 8, 'known': 973, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1789, "k": "cmd", "T": 974, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 8, 'known': 974, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1790, "k": "cmd", "T": 975, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 8, 'known': 975, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1791, "k": "cmd", "T": 976, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 8, 'known': 976, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"]}
+{"a": "s"}
+{"r": 1792, "k": "cmd", "T": 977, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 9, 'known': 977, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type'", "targetting enemy {'x': 31, 'y': 9, 'known': 977, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "NW"}
+{"a": "y"}
+{"r": 1793, "k": "cmd", "T": 977, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 9, 'known': 977, 'first-known': 949, 'glyph': 'F', 'color': 'magenta', 'type'", "targetting enemy {'x': 31, 'y': 9, 'known': 977, 'first-known': 949, 'glyph': 'F', 'color': 'magenta"], "dir": "NW"}
+{"a": "y"}
+{"r": 1794, "k": "cmd", "T": 978, "lvl": "Dlvl:18", "u": [33, 9], "hp": 139, "hpmax": 139}
+{"m": "You kill the violet fungus!"}
+{"m": "You are beginning to feel hungry."}
+{"act": "move", "why": ["targetting enemy {'x': 31, 'y': 7, 'known': 978, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"], "dir": "NE"}
+{"a": "u"}
+{"r": 1795, "k": "cmd", "T": 978, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 978, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1796, "k": "cmd", "T": 979, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 979, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1797, "k": "cmd", "T": 980, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You smell marsh gas!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 980, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1798, "k": "cmd", "T": 980, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 980, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1799, "k": "cmd", "T": 981, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 981, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1800, "k": "cmd", "T": 982, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "Your oil lamp seems about to go out."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 982, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1801, "k": "cmd", "T": 982, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 982, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1802, "k": "cmd", "T": 983, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 31, 'y': 7, 'known': 983, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"]}
+{"a": "s"}
+{"r": 1803, "k": "cmd", "T": 983, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"act": "move", "why": ["hitting {'x': 32, 'y': 8, 'known': 983, 'first-known': 950, 'glyph': 'F', 'color': 'bright-green', '", "targetting enemy {'x': 32, 'y': 8, 'known': 983, 'first-known': 950, 'glyph': 'F', 'color': 'bright-"], "dir": "NW"}
+{"a": "y"}
+{"r": 1804, "k": "cmd", "T": 984, "lvl": "Dlvl:18", "u": [34, 8], "hp": 139, "hpmax": 139}
+{"m": "You kill the lichen!"}
+{"act": "move", "why": ["targetting leftover enemy {'x': 29, 'y': 7, 'known': 984, 'first-known': 949, 'glyph': 'F', 'color':"], "dir": "SW"}

@@ -1,0 +1,800 @@
+{"a": ";"}
+{"r": 7825, "k": "pos", "T": 5235, "lvl": "Dlvl:6", "u": [23, 8], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(26, 5)"}
+{"r": 7826, "k": "cmd", "T": 5235, "lvl": "Dlvl:6", "u": [23, 8], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome) [seen: infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 21, :y 8}"}
+{"a": ";"}
+{"r": 7827, "k": "pos", "T": 5235, "lvl": "Dlvl:6", "u": [23, 8], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(22, 7)"}
+{"r": 7828, "k": "cmd", "T": 5235, "lvl": "Dlvl:6", "u": [23, 8], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 7829, "k": "cmd", "T": 5236, "lvl": "Dlvl:6", "u": [22, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 7830, "k": "cmd", "T": 5236, "lvl": "Dlvl:6", "u": [21, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 7831, "k": "cmd", "T": 5237, "lvl": "Dlvl:6", "u": [20, 6], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "SW"}
+{"a": "b"}
+{"r": 7832, "k": "cmd", "T": 5237, "lvl": "Dlvl:6", "u": [19, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "SW"}
+{"a": "b"}
+{"r": 7833, "k": "cmd", "T": 5238, "lvl": "Dlvl:6", "u": [18, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 7834, "k": "cmd", "T": 5238, "lvl": "Dlvl:6", "u": [17, 8], "hp": 100, "hpmax": 100}
+{"act": "descend", "why": ["switching within branch to Dlvl:7", "seeking level mines Dlvl:7", "get protection"]}
+{"a": ">"}
+{"r": 7835, "k": "cmd", "T": 5239, "lvl": "Dlvl:7", "u": [9, 4], "hp": 100, "hpmax": 100}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["get protection"], "pos": "#Position{:x 51, :y 12}"}
+{"a": "_"}
+{"r": 7836, "k": "pos", "T": 5239, "lvl": "Dlvl:7", "u": [9, 4], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 11)"}
+{"r": 7837, "k": "cmd", "T": 5252, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100}
+{"m": "You hear someone beseeching Tyr."}
+{"m": "A watchman blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 7}"}
+{"a": ";"}
+{"r": 7838, "k": "pos", "T": 5252, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 6)"}
+{"r": 7839, "k": "cmd", "T": 5252, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 9}"}
+{"a": ";"}
+{"r": 7840, "k": "pos", "T": 5252, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 8)"}
+{"r": 7841, "k": "cmd", "T": 5252, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["get protection"], "dir": "N"}
+{"a": "k"}
+{"r": 7842, "k": "cmd", "T": 5252, "lvl": "Dlvl:7", "u": [26, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["targetting enemy {'x': 26, 'y': 10, 'known': 5252, 'first-known': 5252, 'glyph': 'S', 'color': 'gree"], "dir": "N"}
+{"a": "k"}
+{"r": 7843, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [26, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["targetting enemy {'x': 26, 'y': 10, 'known': 5253, 'first-known': 5252, 'glyph': 'S', 'color': 'gree"], "dir": "N"}
+{"a": "k"}
+{"r": 7844, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [26, 10], "hp": 100, "hpmax": 100}
+{"m": "The garter snake misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 5}"}
+{"a": ";"}
+{"r": 7845, "k": "pos", "T": 5253, "lvl": "Dlvl:7", "u": [26, 10], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 4)"}
+{"r": 7846, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [26, 10], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["hitting {'x': 26, 'y': 10, 'known': 5253, 'first-known': 5252, 'glyph': 'S', 'color': 'green', 'type", "targetting enemy {'x': 26, 'y': 10, 'known': 5253, 'first-known': 5252, 'glyph': 'S', 'color': 'gree"], "dir": "NE"}
+{"a": "u"}
+{"r": 7847, "k": "cmd", "T": 5254, "lvl": "Dlvl:7", "u": [26, 10], "hp": 100, "hpmax": 100}
+{"m": "You kill the garter snake!"}
+{"act": "move", "why": ["targetting enemy {'x': 28, 'y': 8, 'known': 5254, 'first-known': 5252, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7848, "k": "cmd", "T": 5254, "lvl": "Dlvl:7", "u": [27, 9], "hp": 100, "hpmax": 100}
+{"m": "You see here 6 candles."}
+{"act": "look", "why": ["examining tile {'x': 26, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7849, "k": "cmd", "T": 5254, "lvl": "Dlvl:7", "u": [27, 9], "hp": 100, "hpmax": 100}
+{"m": "You see here 6 candles."}
+{"act": "move", "why": ["hitting {'x': 27, 'y': 9, 'known': 5254, 'first-known': 5252, 'glyph': 'S', 'color': 'green', 'type'", "targetting enemy {'x': 27, 'y': 9, 'known': 5254, 'first-known': 5252, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7850, "k": "cmd", "T": 5255, "lvl": "Dlvl:7", "u": [27, 9], "hp": 100, "hpmax": 100}
+{"m": "You kill the garter snake!"}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 6, 'known': 5255, 'first-known': 5253, 'glyph': 'S', 'color': 'green"], "dir": "N"}
+{"a": "k"}
+{"r": 7851, "k": "cmd", "T": 5255, "lvl": "Dlvl:7", "u": [27, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 6, 'known': 5255, 'first-known': 5253, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7852, "k": "cmd", "T": 5256, "lvl": "Dlvl:7", "u": [28, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 6, 'known': 5256, 'first-known': 5253, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7853, "k": "cmd", "T": 5256, "lvl": "Dlvl:7", "u": [29, 6], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 5}"}
+{"a": ";"}
+{"r": 7854, "k": "pos", "T": 5256, "lvl": "Dlvl:7", "u": [29, 6], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 4)"}
+{"r": 7855, "k": "cmd", "T": 5256, "lvl": "Dlvl:7", "u": [29, 6], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["hitting {'x': 29, 'y': 7, 'known': 5256, 'first-known': 5253, 'glyph': 'S', 'color': 'green', 'type'", "targetting enemy {'x': 29, 'y': 7, 'known': 5256, 'first-known': 5253, 'glyph': 'S', 'color': 'green"], "dir": "E"}
+{"a": "l"}
+{"r": 7856, "k": "cmd", "T": 5257, "lvl": "Dlvl:7", "u": [29, 6], "hp": 100, "hpmax": 100}
+{"m": "You kill the garter snake!"}
+{"act": "move", "why": ["targetting enemy {'x': 32, 'y': 5, 'known': 5257, 'first-known': 5256, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7857, "k": "cmd", "T": 5257, "lvl": "Dlvl:7", "u": [30, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["targetting enemy {'x': 31, 'y': 5, 'known': 5257, 'first-known': 5256, 'glyph': 'S', 'color': 'green"], "dir": "E"}
+{"a": "l"}
+{"r": 7858, "k": "cmd", "T": 5258, "lvl": "Dlvl:7", "u": [31, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 5, 'known': 5258, 'first-known': 5256, 'glyph': 'S', 'color': 'green', 'type'", "targetting enemy {'x': 31, 'y': 5, 'known': 5258, 'first-known': 5256, 'glyph': 'S', 'color': 'green"], "dir": "NE"}
+{"a": "u"}
+{"r": 7859, "k": "cmd", "T": 5258, "lvl": "Dlvl:7", "u": [31, 5], "hp": 100, "hpmax": 100}
+{"m": "You kill the garter snake!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 29, :y 7}"], "dir": "SW"}
+{"a": "b"}
+{"r": 7860, "k": "cmd", "T": 5259, "lvl": "Dlvl:7", "u": [30, 6], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "look", "why": ["examining tile {'x': 29, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 7861, "k": "cmd", "T": 5259, "lvl": "Dlvl:7", "u": [30, 6], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "move", "why": ["new or desired item at {'x': 27, 'y': 9, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen':"], "dir": "SW"}
+{"a": "b"}
+{"r": 7862, "k": "cmd", "T": 5259, "lvl": "Dlvl:7", "u": [29, 7], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 15}"}
+{"a": ";"}
+{"r": 7863, "k": "pos", "T": 5259, "lvl": "Dlvl:7", "u": [29, 7], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 14)"}
+{"r": 7864, "k": "cmd", "T": 5259, "lvl": "Dlvl:7", "u": [29, 7], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful Izchak) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 26, :y 11}"}
+{"a": ";"}
+{"r": 7865, "k": "pos", "T": 5259, "lvl": "Dlvl:7", "u": [29, 7], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(27, 10)"}
+{"r": 7866, "k": "cmd", "T": 5259, "lvl": "Dlvl:7", "u": [29, 7], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 27, 'y': 9, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen':"], "dir": "SW"}
+{"a": "b"}
+{"r": 7867, "k": "cmd", "T": 5260, "lvl": "Dlvl:7", "u": [28, 8], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "look", "why": ["examining tile {'x': 27, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 7868, "k": "cmd", "T": 5260, "lvl": "Dlvl:7", "u": [28, 8], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "move", "why": ["get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 7869, "k": "cmd", "T": 5260, "lvl": "Dlvl:7", "u": [29, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "S"}
+{"a": "j"}
+{"r": 7870, "k": "cmd", "T": 5261, "lvl": "Dlvl:7", "u": [29, 9], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 7871, "k": "cmd", "T": 5261, "lvl": "Dlvl:7", "u": [30, 10], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 7872, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [31, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 7873, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [32, 12], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["get protection"], "pos": "#Position{:x 51, :y 12}"}
+{"a": "_"}
+{"r": 7874, "k": "pos", "T": 5262, "lvl": "Dlvl:7", "u": [32, 12], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 11)"}
+{"r": 7875, "k": "cmd", "T": 5264, "lvl": "Dlvl:7", "u": [35, 12], "hp": 100, "hpmax": 100}
+{"m": "A gnome lord blocks your path."}
+{"act": "move", "why": ["get protection"], "dir": "NE"}
+{"a": "u"}
+{"r": 7876, "k": "cmd", "T": 5264, "lvl": "Dlvl:7", "u": [36, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 7877, "k": "cmd", "T": 5265, "lvl": "Dlvl:7", "u": [37, 11], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["get protection"], "pos": "#Position{:x 51, :y 12}"}
+{"a": "_"}
+{"r": 7878, "k": "pos", "T": 5265, "lvl": "Dlvl:7", "u": [37, 11], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 11)"}
+{"r": 7879, "k": "cmd", "T": 5268, "lvl": "Dlvl:7", "u": [41, 12], "hp": 100, "hpmax": 100}
+{"m": "A gnomish wizard blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 11}"}
+{"a": ";"}
+{"r": 7880, "k": "pos", "T": 5268, "lvl": "Dlvl:7", "u": [41, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 10)"}
+{"r": 7881, "k": "cmd", "T": 5268, "lvl": "Dlvl:7", "u": [41, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 16}"}
+{"a": ";"}
+{"r": 7882, "k": "pos", "T": 5268, "lvl": "Dlvl:7", "u": [41, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 15)"}
+{"r": 7883, "k": "cmd", "T": 5268, "lvl": "Dlvl:7", "u": [41, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful Abitibi) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["get protection"], "dir": "NE"}
+{"a": "u"}
+{"r": 7884, "k": "cmd", "T": 5268, "lvl": "Dlvl:7", "u": [42, 11], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 13}"}
+{"a": ";"}
+{"r": 7885, "k": "pos", "T": 5268, "lvl": "Dlvl:7", "u": [42, 11], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 12)"}
+{"r": 7886, "k": "cmd", "T": 5268, "lvl": "Dlvl:7", "u": [42, 11], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["get protection"], "dir": "S"}
+{"a": "j"}
+{"r": 7887, "k": "cmd", "T": 5269, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 7888, "k": "cmd", "T": 5269, "lvl": "Dlvl:7", "u": [43, 13], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 49, :y 19}"}
+{"a": ";"}
+{"r": 7889, "k": "pos", "T": 5269, "lvl": "Dlvl:7", "u": [43, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(50, 18)"}
+{"r": 7890, "k": "cmd", "T": 5269, "lvl": "Dlvl:7", "u": [43, 13], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "autotravel", "why": ["get protection"], "pos": "#Position{:x 51, :y 12}"}
+{"a": "_"}
+{"r": 7891, "k": "pos", "T": 5269, "lvl": "Dlvl:7", "u": [43, 13], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 11)"}
+{"r": 7892, "k": "cmd", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"m": "The priest of Tyr intones:"}
+{"m": "\"Pilgrim, you enter a sacred place!\""}
+{"m": "You experience a sense of peace."}
+{"m": "The priest of Tyr blocks your path."}
+{"act": "chat", "why": ["get protection"], "dir": "SE"}
+{"a": "#"}
+{"r": 7893, "k": "ext", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"a": "chat"}
+{"r": 7894, "k": "yn", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100, "q": "Talk to whom? (in what direction)"}
+{"a": "n"}
+{"r": 7895, "k": "line", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100, "q": "How much will you offer?"}
+{"m": "The priest of Tyr asks you for a contribution for the temple."}
+{"a": "3600"}
+{"r": 7896, "k": "cmd", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"m": "You give the priest of Tyr 3600 zorkmids."}
+{"m": "\"Thou hast been rewarded for thy devotion.\""}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 12}"}
+{"a": ";"}
+{"r": 7897, "k": "pos", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 11)"}
+{"r": 7898, "k": "cmd", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful priest of Tyr) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 8, :y 5}"}
+{"a": "_"}
+{"r": 7899, "k": "pos", "T": 5274, "lvl": "Dlvl:7", "u": [50, 10], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(9, 4)"}
+{"r": 7900, "k": "cmd", "T": 5275, "lvl": "Dlvl:7", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": "A watch captain blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 47, :y 10}"}
+{"a": ";"}
+{"r": 7901, "k": "pos", "T": 5275, "lvl": "Dlvl:7", "u": [49, 10], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(48, 9)"}
+{"r": 7902, "k": "cmd", "T": 5275, "lvl": "Dlvl:7", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful watch captain) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7903, "k": "cmd", "T": 5276, "lvl": "Dlvl:7", "u": [48, 10], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 6}"}
+{"a": ";"}
+{"r": 7904, "k": "pos", "T": 5276, "lvl": "Dlvl:7", "u": [48, 10], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 5)"}
+{"r": 7905, "k": "cmd", "T": 5276, "lvl": "Dlvl:7", "u": [48, 10], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 8, :y 5}"}
+{"a": "_"}
+{"r": 7906, "k": "pos", "T": 5276, "lvl": "Dlvl:7", "u": [48, 10], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(9, 4)"}
+{"r": 7907, "k": "cmd", "T": 5278, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100}
+{"m": "A garter snake blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 47, :y 15}"}
+{"a": ";"}
+{"r": 7908, "k": "pos", "T": 5278, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(48, 14)"}
+{"r": 7909, "k": "cmd", "T": 5278, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["hitting {'x': 47, 'y': 15, 'known': 5278, 'first-known': 5278, 'glyph': 'S', 'color': 'green', 'type", "targetting enemy {'x': 47, 'y': 15, 'known': 5278, 'first-known': 5278, 'glyph': 'S', 'color': 'gree"], "dir": "SE"}
+{"a": "n"}
+{"r": 7910, "k": "cmd", "T": 5278, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100}
+{"m": "You kill the garter snake!"}
+{"act": "move", "why": ["new or desired item at {'x': 47, 'y': 15, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen'"], "dir": "SE"}
+{"a": "n"}
+{"r": 7911, "k": "cmd", "T": 5279, "lvl": "Dlvl:7", "u": [48, 14], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7912, "k": "cmd", "T": 5279, "lvl": "Dlvl:7", "u": [48, 14], "hp": 100, "hpmax": 100}
+{"m": "You see here a garter snake corpse."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7913, "k": "cmd", "T": 5279, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 8, :y 5}"}
+{"a": "_"}
+{"r": 7914, "k": "pos", "T": 5279, "lvl": "Dlvl:7", "u": [47, 13], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(9, 4)"}
+{"r": 7915, "k": "cmd", "T": 5282, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100}
+{"m": "A gnome blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 12}"}
+{"a": ";"}
+{"r": 7916, "k": "pos", "T": 5282, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 11)"}
+{"r": 7917, "k": "cmd", "T": 5282, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 15}"}
+{"a": ";"}
+{"r": 7918, "k": "pos", "T": 5282, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 14)"}
+{"r": 7919, "k": "cmd", "T": 5282, "lvl": "Dlvl:7", "u": [42, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful Abitibi) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7920, "k": "cmd", "T": 5283, "lvl": "Dlvl:7", "u": [41, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7921, "k": "cmd", "T": 5283, "lvl": "Dlvl:7", "u": [40, 10], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 7922, "k": "cmd", "T": 5284, "lvl": "Dlvl:7", "u": [40, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7923, "k": "cmd", "T": 5285, "lvl": "Dlvl:7", "u": [39, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 25, :y 13}"}
+{"a": ";"}
+{"r": 7924, "k": "pos", "T": 5285, "lvl": "Dlvl:7", "u": [39, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(26, 12)"}
+{"r": 7925, "k": "cmd", "T": 5285, "lvl": "Dlvl:7", "u": [39, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7926, "k": "cmd", "T": 5285, "lvl": "Dlvl:7", "u": [38, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7927, "k": "cmd", "T": 5286, "lvl": "Dlvl:7", "u": [37, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7928, "k": "cmd", "T": 5286, "lvl": "Dlvl:7", "u": [36, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7929, "k": "cmd", "T": 5287, "lvl": "Dlvl:7", "u": [35, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7930, "k": "cmd", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 12}"}
+{"a": ";"}
+{"r": 7931, "k": "pos", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 11)"}
+{"r": 7932, "k": "cmd", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 32, :y 11}"}
+{"a": ";"}
+{"r": 7933, "k": "pos", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(33, 10)"}
+{"r": 7934, "k": "cmd", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 12}"}
+{"a": ";"}
+{"r": 7935, "k": "pos", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 11)"}
+{"r": 7936, "k": "cmd", "T": 5287, "lvl": "Dlvl:7", "u": [34, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7937, "k": "cmd", "T": 5288, "lvl": "Dlvl:7", "u": [33, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 25, :y 11}"}
+{"a": ";"}
+{"r": 7938, "k": "pos", "T": 5288, "lvl": "Dlvl:7", "u": [33, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(26, 10)"}
+{"r": 7939, "k": "cmd", "T": 5288, "lvl": "Dlvl:7", "u": [33, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7940, "k": "cmd", "T": 5289, "lvl": "Dlvl:7", "u": [32, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 25, :y 10}"}
+{"a": ";"}
+{"r": 7941, "k": "pos", "T": 5289, "lvl": "Dlvl:7", "u": [32, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(26, 9)"}
+{"r": 7942, "k": "cmd", "T": 5289, "lvl": "Dlvl:7", "u": [32, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7943, "k": "cmd", "T": 5289, "lvl": "Dlvl:7", "u": [31, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 15}"}
+{"a": ";"}
+{"r": 7944, "k": "pos", "T": 5289, "lvl": "Dlvl:7", "u": [31, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 14)"}
+{"r": 7945, "k": "cmd", "T": 5289, "lvl": "Dlvl:7", "u": [31, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful Izchak) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7946, "k": "cmd", "T": 5290, "lvl": "Dlvl:7", "u": [30, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7947, "k": "cmd", "T": 5290, "lvl": "Dlvl:7", "u": [29, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 13}"}
+{"a": ";"}
+{"r": 7948, "k": "pos", "T": 5290, "lvl": "Dlvl:7", "u": [29, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 12)"}
+{"r": 7949, "k": "cmd", "T": 5290, "lvl": "Dlvl:7", "u": [29, 12], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 30, :y 6}"}
+{"a": ";"}
+{"r": 7950, "k": "pos", "T": 5290, "lvl": "Dlvl:7", "u": [29, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(31, 5)"}
+{"r": 7951, "k": "cmd", "T": 5290, "lvl": "Dlvl:7", "u": [29, 12], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7952, "k": "cmd", "T": 5291, "lvl": "Dlvl:7", "u": [28, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 24, :y 14}"}
+{"a": ";"}
+{"r": 7953, "k": "pos", "T": 5291, "lvl": "Dlvl:7", "u": [28, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(25, 13)"}
+{"r": 7954, "k": "cmd", "T": 5291, "lvl": "Dlvl:7", "u": [28, 12], "hp": 100, "hpmax": 100}
+{"m": "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7955, "k": "cmd", "T": 5291, "lvl": "Dlvl:7", "u": [27, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["arbitrary direction", "fidgeting to make peacefuls move", "peaceful blocker {'x': 25, 'y': 14, 'known': 5291, 'first-known': 5291, 'glyph': '@', 'color': None,", "seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban"], "dir": "N"}
+{"a": "k"}
+{"r": 7956, "k": "cmd", "T": 5292, "lvl": "Dlvl:7", "u": [27, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 7957, "k": "cmd", "T": 5292, "lvl": "Dlvl:7", "u": [27, 12], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 28, :y 8}"}
+{"a": ";"}
+{"r": 7958, "k": "pos", "T": 5292, "lvl": "Dlvl:7", "u": [27, 12], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(29, 7)"}
+{"r": 7959, "k": "cmd", "T": 5292, "lvl": "Dlvl:7", "u": [27, 12], "hp": 100, "hpmax": 100}
+{"m": "S        a snake (garter snake)"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7960, "k": "cmd", "T": 5293, "lvl": "Dlvl:7", "u": [26, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7961, "k": "cmd", "T": 5293, "lvl": "Dlvl:7", "u": [25, 13], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 11}"}
+{"a": ";"}
+{"r": 7962, "k": "pos", "T": 5293, "lvl": "Dlvl:7", "u": [25, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 10)"}
+{"r": 7963, "k": "cmd", "T": 5293, "lvl": "Dlvl:7", "u": [25, 13], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7964, "k": "cmd", "T": 5294, "lvl": "Dlvl:7", "u": [24, 13], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 23, :y 18}"}
+{"a": ";"}
+{"r": 7965, "k": "pos", "T": 5294, "lvl": "Dlvl:7", "u": [24, 13], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(24, 17)"}
+{"r": 7966, "k": "cmd", "T": 5294, "lvl": "Dlvl:7", "u": [24, 13], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome) [seen: infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7967, "k": "cmd", "T": 5294, "lvl": "Dlvl:7", "u": [24, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7968, "k": "cmd", "T": 5295, "lvl": "Dlvl:7", "u": [24, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 11, 'known': 5295, 'first-known': 5295, 'glyph': 's', 'color': 'red', 'type':", "targetting enemy {'x': 23, 'y': 11, 'known': 5295, 'first-known': 5295, 'glyph': 's', 'color': 'red'"], "dir": "N"}
+{"a": "k"}
+{"r": 7969, "k": "cmd", "T": 5296, "lvl": "Dlvl:7", "u": [24, 11], "hp": 99, "hpmax": 100}
+{"m": "You miss the scorpion."}
+{"m": "The scorpion hits!"}
+{"m": "The scorpion hits!"}
+{"m": "The scorpion just misses!"}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 11, 'known': 5296, 'first-known': 5295, 'glyph': 's', 'color': 'red', 'type':", "targetting enemy {'x': 23, 'y': 11, 'known': 5296, 'first-known': 5295, 'glyph': 's', 'color': 'red'"], "dir": "N"}
+{"a": "k"}
+{"r": 7970, "k": "cmd", "T": 5296, "lvl": "Dlvl:7", "u": [24, 11], "hp": 99, "hpmax": 100}
+{"m": "You miss the scorpion."}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 11, 'known': 5296, 'first-known': 5295, 'glyph': 's', 'color': 'red', 'type':", "targetting enemy {'x': 23, 'y': 11, 'known': 5296, 'first-known': 5295, 'glyph': 's', 'color': 'red'"], "dir": "N"}
+{"a": "k"}
+{"r": 7971, "k": "cmd", "T": 5297, "lvl": "Dlvl:7", "u": [24, 11], "hp": 99, "hpmax": 100}
+{"m": "You hit the scorpion!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 11, 'known': 5297, 'first-known': 5295, 'glyph': 's', 'color': 'red', 'type':", "targetting enemy {'x': 23, 'y': 11, 'known': 5297, 'first-known': 5295, 'glyph': 's', 'color': 'red'"], "dir": "N"}
+{"a": "k"}
+{"r": 7972, "k": "cmd", "T": 5297, "lvl": "Dlvl:7", "u": [24, 11], "hp": 99, "hpmax": 100}
+{"m": "You miss the scorpion."}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"m": "The scorpion misses!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 11, 'known': 5297, 'first-known': 5295, 'glyph': 's', 'color': 'red', 'type':", "targetting enemy {'x': 23, 'y': 11, 'known': 5297, 'first-known': 5295, 'glyph': 's', 'color': 'red'"], "dir": "N"}
+{"a": "k"}
+{"r": 7973, "k": "cmd", "T": 5298, "lvl": "Dlvl:7", "u": [24, 11], "hp": 99, "hpmax": 100}
+{"m": "You kill the scorpion!"}
+{"act": "move", "why": ["new or desired item at {'x': 23, 'y': 11, 'glyph': '%', 'color': 'red', 'feature': 'corridor', 'seen"], "dir": "N"}
+{"a": "k"}
+{"r": 7974, "k": "cmd", "T": 5298, "lvl": "Dlvl:7", "u": [24, 10], "hp": 99, "hpmax": 100}
+{"m": "You see here a scorpion corpse."}
+{"act": "look", "why": ["examining tile {'x': 23, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 7975, "k": "cmd", "T": 5298, "lvl": "Dlvl:7", "u": [24, 10], "hp": 99, "hpmax": 100}
+{"m": "You see here a scorpion corpse."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7976, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [24, 9], "hp": 99, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7977, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [24, 8], "hp": 99, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7978, "k": "cmd", "T": 5300, "lvl": "Dlvl:7", "u": [24, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 7979, "k": "cmd", "T": 5300, "lvl": "Dlvl:7", "u": [24, 6], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7980, "k": "cmd", "T": 5301, "lvl": "Dlvl:7", "u": [23, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7981, "k": "cmd", "T": 5301, "lvl": "Dlvl:7", "u": [22, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7982, "k": "cmd", "T": 5302, "lvl": "Dlvl:7", "u": [21, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7983, "k": "cmd", "T": 5303, "lvl": "Dlvl:7", "u": [20, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7984, "k": "cmd", "T": 5304, "lvl": "Dlvl:7", "u": [19, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7985, "k": "cmd", "T": 5304, "lvl": "Dlvl:7", "u": [18, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7986, "k": "cmd", "T": 5305, "lvl": "Dlvl:7", "u": [17, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7987, "k": "cmd", "T": 5305, "lvl": "Dlvl:7", "u": [16, 6], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 7988, "k": "cmd", "T": 5306, "lvl": "Dlvl:7", "u": [15, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7989, "k": "cmd", "T": 5306, "lvl": "Dlvl:7", "u": [14, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7990, "k": "cmd", "T": 5307, "lvl": "Dlvl:7", "u": [13, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7991, "k": "cmd", "T": 5308, "lvl": "Dlvl:7", "u": [12, 6], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7992, "k": "cmd", "T": 5309, "lvl": "Dlvl:7", "u": [11, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 7993, "k": "cmd", "T": 5310, "lvl": "Dlvl:7", "u": [10, 5], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 7994, "k": "cmd", "T": 5311, "lvl": "Dlvl:7", "u": [9, 4], "hp": 100, "hpmax": 100}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 7995, "k": "cmd", "T": 5311, "lvl": "Dlvl:6", "u": [17, 8], "hp": 100, "hpmax": 100}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 7996, "k": "pos", "T": 5311, "lvl": "Dlvl:6", "u": [17, 8], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 7997, "k": "cmd", "T": 5314, "lvl": "Dlvl:6", "u": [22, 8], "hp": 100, "hpmax": 100}
+{"m": "A gnome lord blocks your path."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 7998, "k": "cmd", "T": 5315, "lvl": "Dlvl:6", "u": [23, 9], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 7999, "k": "pos", "T": 5315, "lvl": "Dlvl:6", "u": [23, 9], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 8000, "k": "cmd", "T": 5326, "lvl": "Dlvl:6", "u": [43, 9], "hp": 100, "hpmax": 100}
+{"m": "A gnome blocks your path."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 8001, "k": "cmd", "T": 5327, "lvl": "Dlvl:6", "u": [44, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 8002, "k": "cmd", "T": 5327, "lvl": "Dlvl:6", "u": [45, 9], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 8003, "k": "pos", "T": 5327, "lvl": "Dlvl:6", "u": [45, 9], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 8004, "k": "cmd", "T": 5330, "lvl": "Dlvl:6", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": "The lizard misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 49, :y 11}"}
+{"a": ";"}
+{"r": 8005, "k": "pos", "T": 5330, "lvl": "Dlvl:6", "u": [49, 10], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(50, 10)"}
+{"r": 8006, "k": "cmd", "T": 5330, "lvl": "Dlvl:6", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": ":        a lizard (lizard)"}
+{"act": "move", "why": ["hitting {'x': 49, 'y': 11, 'known': 5330, 'first-known': 5330, 'glyph': ':', 'color': 'green', 'type", "targetting enemy {'x': 49, 'y': 11, 'known': 5330, 'first-known': 5330, 'glyph': ':', 'color': 'gree"], "dir": "E"}
+{"a": "l"}
+{"r": 8007, "k": "cmd", "T": 5331, "lvl": "Dlvl:6", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": "You hit the lizard!"}
+{"act": "move", "why": ["hitting {'x': 49, 'y': 11, 'known': 5331, 'first-known': 5330, 'glyph': ':', 'color': 'green', 'type", "targetting enemy {'x': 49, 'y': 11, 'known': 5331, 'first-known': 5330, 'glyph': ':', 'color': 'gree"], "dir": "E"}
+{"a": "l"}
+{"r": 8008, "k": "cmd", "T": 5331, "lvl": "Dlvl:6", "u": [49, 10], "hp": 100, "hpmax": 100}
+{"m": "You kill the lizard!"}
+{"act": "move", "why": ["new or desired item at {'x': 49, 'y': 11, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen'"], "dir": "E"}
+{"a": "l"}
+{"r": 8009, "k": "cmd", "T": 5332, "lvl": "Dlvl:6", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"m": "You see here a lizard corpse."}
+{"act": "look", "why": ["examining tile {'x': 49, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 8010, "k": "cmd", "T": 5332, "lvl": "Dlvl:6", "u": [50, 10], "hp": 100, "hpmax": 100}
+{"m": "You see here a lizard corpse."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 8011, "k": "pos", "T": 5332, "lvl": "Dlvl:6", "u": [50, 10], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 8012, "k": "cmd", "T": 5335, "lvl": "Dlvl:6", "u": [56, 15], "hp": 100, "hpmax": 100}
+{"m": "A brown mold blocks your path."}
+{"act": "move", "why": ["hitting {'x': 55, 'y': 17, 'known': 5335, 'first-known': 5335, 'glyph': 'F', 'color': 'brown', 'type", "targetting leftover enemy {'x': 55, 'y': 17, 'known': 5335, 'first-known': 5335, 'glyph': 'F', 'colo"], "dir": "S"}
+{"a": "j"}
+{"r": 8013, "k": "cmd", "T": 5335, "lvl": "Dlvl:6", "u": [56, 15], "hp": 100, "hpmax": 100}
+{"m": "You kill the brown mold!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 62, :y 8}"}
+{"a": ";"}
+{"r": 8014, "k": "pos", "T": 5335, "lvl": "Dlvl:6", "u": [56, 15], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(63, 7)"}
+{"r": 8015, "k": "cmd", "T": 5335, "lvl": "Dlvl:6", "u": [56, 15], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome) [seen: infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 55, 'y': 17, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen'"], "dir": "S"}
+{"a": "j"}
+{"r": 8016, "k": "cmd", "T": 5336, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a brown mold corpse."}
+{"act": "look", "why": ["examining tile {'x': 55, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 8017, "k": "cmd", "T": 5336, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a brown mold corpse."}
+{"act": "eat", "why": ["want to eat corpse at {'x': 55, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen':"], "slot": "a brown mold corpse"}
+{"a": "e"}
+{"r": 8018, "k": "yn", "T": 5336, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100, "q": "There is a brown mold corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 8019, "k": "cmd", "T": 5338, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100}
+{"m": "This brown mold corpse tastes okay."}
+{"m": "You finish eating the brown mold corpse."}
+{"act": "look", "why": ["examining tile {'x': 55, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 8020, "k": "cmd", "T": 5338, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 8021, "k": "pos", "T": 5338, "lvl": "Dlvl:6", "u": [56, 16], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 8022, "k": "cmd", "T": 5343, "lvl": "Dlvl:6", "u": [64, 11], "hp": 100, "hpmax": 100}
+{"m": "A gnome lord blocks your path."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 8023, "k": "cmd", "T": 5343, "lvl": "Dlvl:6", "u": [65, 10], "hp": 100, "hpmax": 100}
+{"m": "You see here a violet gem."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 8024, "k": "cmd", "T": 5343, "lvl": "Dlvl:6", "u": [65, 10], "hp": 100, "hpmax": 100}
+{"m": "You see here a violet gem."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 8025, "k": "cmd", "T": 5344, "lvl": "Dlvl:6", "u": [66, 9], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8026, "k": "cmd", "T": 5344, "lvl": "Dlvl:6", "u": [67, 9], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 8027, "k": "cmd", "T": 5345, "lvl": "Dlvl:6", "u": [68, 10], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 73, :y 15}"}
+{"a": "_"}
+{"r": 8028, "k": "pos", "T": 5345, "lvl": "Dlvl:6", "u": [68, 10], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(74, 14)"}
+{"r": 8029, "k": "cmd", "T": 5349, "lvl": "Dlvl:6", "u": [74, 14], "hp": 100, "hpmax": 100}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 8030, "k": "cmd", "T": 5349, "lvl": "Dlvl:5", "u": [54, 10], "hp": 100, "hpmax": 100}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 27, :y 9}"}
+{"a": "_"}
+{"r": 8031, "k": "pos", "T": 5349, "lvl": "Dlvl:5", "u": [54, 10], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(28, 8)"}
+{"r": 8032, "k": "cmd", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100}
+{"m": "The hobgoblin drinks a potion of speed!"}
+{"m": "The hobgoblin is suddenly moving faster."}
+{"m": "A hobgoblin blocks your path."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 8033, "k": "cmd", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 8}"}
+{"a": ";"}
+{"r": 8034, "k": "pos", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 7)"}
+{"r": 8035, "k": "cmd", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100}
+{"m": "G        a gnome (peaceful gnome lord) [seen: infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 8}"}
+{"a": ";"}
+{"r": 8036, "k": "pos", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 7)"}
+{"r": 8037, "k": "cmd", "T": 5358, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100}
+{"m": "o        an orc (hobgoblin) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 8, 'known': 5358, 'first-known': 5358, 'glyph': 'o', 'color': 'brown', 'type'", "targetting enemy {'x': 38, 'y': 8, 'known': 5358, 'first-known': 5358, 'glyph': 'o', 'color': 'brown"], "dir": "W"}
+{"a": "h"}
+{"r": 8038, "k": "cmd", "T": 5359, "lvl": "Dlvl:5", "u": [40, 7], "hp": 100, "hpmax": 100}
+{"m": "You kill the hobgoblin!"}
+{"act": "move", "why": ["new or desired item at {'x': 38, 'y': 8, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen':"], "dir": "W"}
+{"a": "h"}
+{"r": 8039, "k": "cmd", "T": 5359, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 8040, "k": "cmd", "T": 5359, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 8041, "k": "menu", "T": 5359, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "p": "Pick up what?", "items": ["# Armor", "a an orcish helm", "# Comestibles", "b a hobgoblin corpse", "# Scrolls", "c a scroll labeled DAIYEN FOOELS"]}
+{"a": [1, 5]}
+{"r": 8042, "k": "cmd", "T": 5360, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"m": "V - an orcish helm."}
+{"m": "W - a scroll labeled DAIYEN FOOELS."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8043, "k": "cmd", "T": 5360, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 8044, "k": "cmd", "T": 5360, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"m": "You see here a hobgoblin corpse."}
+{"act": "wear", "why": ["making use of V", "wearing better armor", "assisted: re-dress before fighting"], "slot": "V"}
+{"a": "W"}
+{"r": 8045, "k": "yn", "T": 5360, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "q": "What do you want to wear? [V or ?*]"}
+{"a": "V"}
+{"r": 8046, "k": "cmd", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"m": "You finish your dressing maneuver."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8047, "k": "cmd", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "apply", "why": ["putting {'W': None} into bag at j", "bag items"], "slot": "j"}
+{"a": "a"}
+{"r": 8048, "k": "yn", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "q": "What do you want to use or apply? [i-kKLP or ?*]"}
+{"a": "j"}
+{"r": 8049, "k": "menu", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 8050, "k": "menu", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "p": "Put in what?", "items": ["# Coins", "$ 485 gold pieces", "# Amulets", "f a blessed amulet of reflection (being worn)", "u a cursed hexagonal amulet", "# Weapons", "a the blessed rustproof +1 Excalibur (weapon in hand)", "b a +0 dagger (at the ready)", "n 3 uncursed daggers", "# Armor", "c an uncursed +3 small shield (being worn)", "e a blessed greased +2 gray dragon scale mail (being worn)", "g a blessed fireproof +2 pair of speed boots (being worn)", "o a +2 dwarvish cloak (being worn)", "V a +0 orcish helm (being worn)", "# Comestibles"]}
+{"a": [23]}
+{"r": 8051, "k": "cmd", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"m": "You put a scroll labeled DAIYEN FOOELS into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8052, "k": "cmd", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 8053, "k": "yn", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "q": "What do you want to use or apply? [i-kKLP or ?*]"}
+{"a": "j"}
+{"r": 8054, "k": "menu", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 8055, "k": "menu", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled DAIYEN FOOELS", "b a scroll labeled PRIRUTSENIE", "c a blessed scroll labeled STRC PRST SKRZ KRK", "d an uncursed scroll labeled ELAM EBOW", "e an uncursed scroll labeled ELBIB YLOH"]}
+{"a": []}
+{"r": 8056, "k": "cmd", "T": 5361, "lvl": "Dlvl:5", "u": [39, 7], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:7", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8057, "k": "cmd", "T": 5362, "lvl": "Dlvl:5", "u": [38, 7], "hp": 100, "hpmax": 100}
+{"note": "abort", "d": "limit: terminated by signal 15"}

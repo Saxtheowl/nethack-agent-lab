@@ -1,0 +1,42 @@
+series ca-w05: 14 games
+outcomes: {'limit': 1, 'stuck': 8, 'goal_reached': 5}
+stage funnel: dlvl2=14, mines=14, minetown=14, oracle=14, sokoban=11, bigroom=3, dlvl10=11, medusa=7, castle=5, quest=2
+assists: {'kit': 112, 'feed': 31, 'lifesave': 29}
+failure signatures:
+    3  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S:)
+    2  stuck | no novelty for N turns on Dlvl:N (last action {..})
+    1  limit | max_turns N
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'al)
+    1  stuck | action loop: farlook repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+top anomalies:
+    1102  note:compat
+     721  compat:container:o
+     510  menu_empty_answer
+     204  compat:container:i
+     172  note:assist
+     157  msg-rewrite:^You open (.*\.\.\.)$
+     124  menu_letter_unmatched
+     101  compat:name:o
+      87  msg-rewrite:^(?:Hmmm, .* turns out to be l
+      65  note:recovery
+      53  compat:container:q
+      43  msg-rewrite:^Your (\w+) (feels?) better\.$
+      28  menu_show:current_skills
+      28  note:forced-command
+      23  compat:name:i
+games:
+  g001 seed=5001 limit        T=60000  depth=19  stage=dlvl10       1722.2s  max_turns 60000
+  g002 seed=5002 stuck        T=3157   depth=7   stage=minetown     98.2s  fixation: target (76, 6, 'Dlvl:4  ') keeps coming back after 3 recoveries (new or desired 
+  g003 seed=5003 goal_reached T=10630  depth=25  stage=castle       364.2s  castle
+  g004 seed=5004 goal_reached T=12931  depth=27  stage=castle       447.2s  castle
+  g005 seed=5005 goal_reached T=13119  depth=25  stage=castle       393.1s  castle
+  g006 seed=5006 stuck        T=11127  depth=13  stage=sokoban      335.5s  fixation: target (3, 12, 'Dlvl:13 ') keeps coming back after 3 recoveries (new or desired 
+  g007 seed=5007 stuck        T=30727  depth=26  stage=medusa       812.5s  no novelty for 6000 turns on Dlvl:26 (last action {'act': 'repeated', 'why': ['unstick: no
+  g008 seed=5008 stuck        T=18105  depth=25  stage=medusa       718.2s  no novelty for 6004 turns on Dlvl:25 (last action {'act': 'repeated', 'why': ['unstick: no
+  g009 seed=5009 goal_reached T=10423  depth=29  stage=castle       337.9s  castle
+  g010 seed=5010 stuck        T=3075   depth=9   stage=minetown     108.3s  fixation: target (40, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile
+  g011 seed=5011 stuck        T=4220   depth=9   stage=minetown     151.3s  fixation: target (29, 8, 'Dlvl:8  ') keeps coming back after 3 recoveries (new or desired 
+  g012 seed=5012 stuck        T=7175   depth=10  stage=sokoban      234.6s  action loop: farlook repeated 40 times at turn 7175 ({'act': 'farlook', 'why': ['examining
+  g013 seed=5013 goal_reached T=10466  depth=28  stage=castle       362.0s  castle
+  g014 seed=5014 stuck        T=14730  depth=14  stage=dlvl10       327.5s  fixation: target (32, 15, 'Dlvl:9  ') keeps coming back after 3 recoveries (examining tile

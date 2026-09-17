@@ -1,0 +1,907 @@
+{
+ "series": "big-w01",
+ "games": 49,
+ "outcomes": {
+  "stuck": 44,
+  "crash_bot": 3,
+  "limit": 2
+ },
+ "stage_funnel": {
+  "dlvl2": 46,
+  "mines": 46,
+  "minetown": 44,
+  "oracle": 46,
+  "sokoban": 43,
+  "bigroom": 18,
+  "dlvl10": 42,
+  "medusa": 37,
+  "castle": 35,
+  "valley": 29,
+  "quest": 25,
+  "bell": 11,
+  "vlad": 14,
+  "candelabrum": 8,
+  "gehennom_deep": 14,
+  "wizard_tower": 14,
+  "book": 2
+ },
+ "failure_signatures": [
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+   12
+  ],
+  [
+   "stuck | no novelty for N turns on Dlvl:N (last action {..})",
+   12
+  ],
+  [
+   "crash_bot | rungame exited rc=N without result",
+   3
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'flo)",
+   2
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'floo)",
+   2
+  ],
+  [
+   "limit | max_seconds N",
+   2
+  ],
+  [
+   "stuck | action loop: rub repeated N times at turn N ({..})",
+   2
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S:)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'do)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at #Position{..})",
+   1
+  ],
+  [
+   "stuck | death loop: N assisted lifesaves in N turns without progress (last: Medusa)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (exploring {S: N, S: N, S: S, S: S, S: 'door-lo)",
+   1
+  ],
+  [
+   "stuck | action loop: farlook repeated N times at turn N ({..})",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: S, 'featu)",
+   1
+  ],
+  [
+   "stuck | death loop: N assisted lifesaves in N turns without progress (last: balrog)",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 12893,
+  "compat:container:o": 10352,
+  "menu_empty_answer": 6224,
+  "note:recovery": 5468,
+  "note:assist": 5108,
+  "note:forced-command": 4982,
+  "unknown_yn": 4552,
+  "fallback": 4552,
+  "note:unknown-prompt": 4552,
+  "note:fallback": 4552,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 4495,
+  "menu_letter_unmatched": 3342,
+  "compat:container:i": 1440,
+  "note:forced-escape": 933,
+  "msg-rewrite:^You feel as if you need some ": 800,
+  "compat:container:q": 595,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 482,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 364,
+  "compat:name:i": 298,
+  "msg-rewrite:^Air currents pull you down in": 228,
+  "compat:name:o": 208,
+  "farlook-symbol": 127,
+  "menu_show:current_skills": 118,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 91,
+  "msg-rewrite:^It is locked\\.$": 54,
+  "note:abort": 46,
+  "farlook-trap": 20,
+  "leftover_keys_dropped": 16,
+  "note:leftover": 16
+ },
+ "assist_totals": {
+  "kit": 368,
+  "feed": 209,
+  "brainsave": 22,
+  "lifesave": 4434,
+  "noslime": 77
+ },
+ "turns_total": 1162273,
+ "turns_max": 55442,
+ "elapsed_total_s": 54407.1,
+ "stopped_early": "signature repeated 12 times: stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 7001,
+   "outcome": "stuck",
+   "reason": "fixation: target (22, 15, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 22, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 18521,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 711.8,
+   "turns_per_s": 26.02,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "brainsave": 6,
+    "lifesave": 2
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 7002,
+   "outcome": "stuck",
+   "reason": "no novelty for 6004 turns on Dlvl:44 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:43', 'seeking level wiztower end', 'f",
+   "turns": 47177,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1537.8,
+   "turns_per_s": 30.68,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 22,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 7003,
+   "outcome": "stuck",
+   "reason": "fixation: target (8, 18, 'Dlvl:16 ') keeps coming back after 3 recoveries (new or desired item at {'x': 8, 'y': 18, 'glyph': '[', 'color': None, 'feature':)",
+   "turns": 12533,
+   "max_depth": 16,
+   "last_stage": "bigroom",
+   "elapsed_s": 475.9,
+   "turns_per_s": 26.33,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 7004,
+   "outcome": "stuck",
+   "reason": "fixation: target (56, 20, 'Dlvl:43 ') keeps coming back after 3 recoveries (examining tile {'x': 56, 'y': 20, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 23895,
+   "max_depth": 43,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1239.5,
+   "turns_per_s": 19.28,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 7005,
+   "outcome": "stuck",
+   "reason": "fixation: target (33, 16, 'Dlvl:4  ') keeps coming back after 3 recoveries (examining tile {'x': 33, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 7047,
+   "max_depth": 10,
+   "last_stage": "dlvl10",
+   "elapsed_s": 260.9,
+   "turns_per_s": 27.01,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 7006,
+   "outcome": "stuck",
+   "reason": "fixation: target (13, 9, 'Dlvl:27 ') keeps coming back after 3 recoveries (examining tile {'x': 13, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'flo)",
+   "turns": 17669,
+   "max_depth": 27,
+   "last_stage": "valley",
+   "elapsed_s": 751.6,
+   "turns_per_s": 23.51,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 5
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 7007,
+   "outcome": "crash_bot",
+   "reason": "rungame exited rc=1 without result",
+   "turns": null,
+   "max_depth": null,
+   "last_stage": null,
+   "elapsed_s": null,
+   "turns_per_s": null,
+   "assist_counts": null
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 7008,
+   "outcome": "stuck",
+   "reason": "no novelty for 6008 turns on Dlvl:24 (last action {'act': 'repeated', 'why': ['unstick: no action chosen, searching']})",
+   "turns": 24515,
+   "max_depth": 32,
+   "last_stage": "quest",
+   "elapsed_s": 956.1,
+   "turns_per_s": 25.64,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4,
+    "lifesave": 4,
+    "noslime": 1
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 7009,
+   "outcome": "stuck",
+   "reason": "fixation: target (64, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'do)",
+   "turns": 13200,
+   "max_depth": 26,
+   "last_stage": "valley",
+   "elapsed_s": 537.9,
+   "turns_per_s": 24.54,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g010",
+   "engine_seed": 7010,
+   "outcome": "stuck",
+   "reason": "fixation: target (14, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (examining tile {'x': 14, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 29480,
+   "max_depth": 28,
+   "last_stage": "castle",
+   "elapsed_s": 775.9,
+   "turns_per_s": 38.0,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5,
+    "lifesave": 14
+   }
+  },
+  {
+   "game_id": "g011",
+   "engine_seed": 7011,
+   "outcome": "stuck",
+   "reason": "fixation: target (63, 16, 'Dlvl:44 ') keeps coming back after 3 recoveries (examining tile {'x': 63, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 26504,
+   "max_depth": 44,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1333.2,
+   "turns_per_s": 19.88,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 18,
+    "noslime": 1
+   }
+  },
+  {
+   "game_id": "g012",
+   "engine_seed": 7012,
+   "outcome": "stuck",
+   "reason": "fixation: target (71, 6, 'Dlvl:30 ') keeps coming back after 3 recoveries (examining tile {'x': 71, 'y': 6, 'glyph': '/', 'color': 'cyan', 'feature': 'floo)",
+   "turns": 21404,
+   "max_depth": 30,
+   "last_stage": "valley",
+   "elapsed_s": 1162.4,
+   "turns_per_s": 18.41,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 10,
+    "lifesave": 4
+   }
+  },
+  {
+   "game_id": "g013",
+   "engine_seed": 7013,
+   "outcome": "stuck",
+   "reason": "fixation: target (40, 7, 'Home 2 ') keeps coming back after 3 recoveries (new or desired item at #Position{:x 40, :y 7})",
+   "turns": 18504,
+   "max_depth": 27,
+   "last_stage": "quest",
+   "elapsed_s": 984.1,
+   "turns_per_s": 18.8,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g014",
+   "engine_seed": 7014,
+   "outcome": "stuck",
+   "reason": "fixation: target (12, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (examining tile {'x': 12, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 12817,
+   "max_depth": 28,
+   "last_stage": "castle",
+   "elapsed_s": 658.7,
+   "turns_per_s": 19.46,
+   "assist_counts": {
+    "kit": 8,
+    "brainsave": 1,
+    "lifesave": 12
+   }
+  },
+  {
+   "game_id": "g015",
+   "engine_seed": 7015,
+   "outcome": "stuck",
+   "reason": "death loop: 150 assisted lifesaves in 288 turns without progress (last: Medusa)",
+   "turns": 19189,
+   "max_depth": 24,
+   "last_stage": "medusa",
+   "elapsed_s": 816.2,
+   "turns_per_s": 23.51,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 152,
+    "brainsave": 1
+   }
+  },
+  {
+   "game_id": "g016",
+   "engine_seed": 7016,
+   "outcome": "stuck",
+   "reason": "no novelty for 6005 turns on Dlvl:40 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:39', 'seeking level wiztower end', 'f",
+   "turns": 51708,
+   "max_depth": 45,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 1986.9,
+   "turns_per_s": 26.02,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 12
+   }
+  },
+  {
+   "game_id": "g017",
+   "engine_seed": 7017,
+   "outcome": "stuck",
+   "reason": "no novelty for 6001 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:44', 'seeking level wiztower end', 'f",
+   "turns": 39860,
+   "max_depth": 50,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1383.6,
+   "turns_per_s": 28.81,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 7,
+    "lifesave": 6
+   }
+  },
+  {
+   "game_id": "g018",
+   "engine_seed": 7018,
+   "outcome": "limit",
+   "reason": "max_seconds 3600",
+   "turns": 54637,
+   "max_depth": 45,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 3600.1,
+   "turns_per_s": 15.18,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "noslime": 11,
+    "lifesave": 97
+   }
+  },
+  {
+   "game_id": "g019",
+   "engine_seed": 7019,
+   "outcome": "crash_bot",
+   "reason": "rungame exited rc=1 without result",
+   "turns": null,
+   "max_depth": null,
+   "last_stage": null,
+   "elapsed_s": null,
+   "turns_per_s": null,
+   "assist_counts": null
+  },
+  {
+   "game_id": "g020",
+   "engine_seed": 7020,
+   "outcome": "stuck",
+   "reason": "fixation: target (42, 16, 'Dlvl:5  ') keeps coming back after 3 recoveries (exploring {'x': 42, 'y': 16, 'glyph': ']', 'color': 'brown', 'feature': 'door-lo)",
+   "turns": 9210,
+   "max_depth": 11,
+   "last_stage": "dlvl10",
+   "elapsed_s": 351.5,
+   "turns_per_s": 26.2,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g021",
+   "engine_seed": 7021,
+   "outcome": "stuck",
+   "reason": "action loop: farlook repeated 40 times at turn 25856 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 43, :y 6}'})",
+   "turns": 25856,
+   "max_depth": 30,
+   "last_stage": "bell",
+   "elapsed_s": 1289.1,
+   "turns_per_s": 20.06,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4,
+    "lifesave": 4
+   }
+  },
+  {
+   "game_id": "g022",
+   "engine_seed": 7022,
+   "outcome": "stuck",
+   "reason": "no novelty for 6000 turns on Dlvl:28 (last action {'act': 'takeoff', 'why': ['removing blockers of Y', 'removing use of Y', 'enchant armor'], 'slot': 'Y'})",
+   "turns": 26137,
+   "max_depth": 31,
+   "last_stage": "valley",
+   "elapsed_s": 1527.7,
+   "turns_per_s": 17.11,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 7,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g023",
+   "engine_seed": 7023,
+   "outcome": "stuck",
+   "reason": "fixation: target (26, 6, 'Dlvl:25 ') keeps coming back after 3 recoveries (new or desired item at {'x': 26, 'y': 6, 'glyph': '$', 'color': 'yellow', 'featu)",
+   "turns": 16707,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 634.3,
+   "turns_per_s": 26.34,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g024",
+   "engine_seed": 7024,
+   "outcome": "stuck",
+   "reason": "death loop: 150 assisted lifesaves in 299 turns without progress (last: balrog)",
+   "turns": 5828,
+   "max_depth": 6,
+   "last_stage": "oracle",
+   "elapsed_s": 287.0,
+   "turns_per_s": 20.31,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1130
+   }
+  },
+  {
+   "game_id": "g025",
+   "engine_seed": 7025,
+   "outcome": "stuck",
+   "reason": "action loop: rub repeated 40 times at turn 7071 ({'act': 'rub', 'why': ['rubbing lamp'], 'slot': 'K'})",
+   "turns": 7071,
+   "max_depth": 9,
+   "last_stage": "sokoban",
+   "elapsed_s": 293.1,
+   "turns_per_s": 24.13,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g026",
+   "engine_seed": 7026,
+   "outcome": "stuck",
+   "reason": "fixation: target (22, 10, 'Home 5 ') keeps coming back after 3 recoveries (examining tile {'x': 22, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 18768,
+   "max_depth": 30,
+   "last_stage": "quest",
+   "elapsed_s": 809.6,
+   "turns_per_s": 23.18,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 73
+   }
+  },
+  {
+   "game_id": "g027",
+   "engine_seed": 7027,
+   "outcome": "stuck",
+   "reason": "fixation: target (4, 9, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {'x': 4, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'pit')",
+   "turns": 13185,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 810.6,
+   "turns_per_s": 16.27,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 38,
+    "noslime": 12,
+    "brainsave": 2
+   }
+  },
+  {
+   "game_id": "g028",
+   "engine_seed": 7028,
+   "outcome": "stuck",
+   "reason": "no novelty for 6006 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:41', 'seeking level wiztower end', 'f",
+   "turns": 44931,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1984.8,
+   "turns_per_s": 22.64,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 7,
+    "feed": 16
+   }
+  },
+  {
+   "game_id": "g029",
+   "engine_seed": 7029,
+   "outcome": "stuck",
+   "reason": "no novelty for 6001 turns on Dlvl:4 (last action {'act': 'repeated', 'why': ['searching walls', 'searching - max-iter = 6', 'seeking', 'looking for the stairs-up', 'switching within branch to Dlvl:3',",
+   "turns": 24545,
+   "max_depth": 18,
+   "last_stage": "quest",
+   "elapsed_s": 816.6,
+   "turns_per_s": 30.06,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5
+   }
+  },
+  {
+   "game_id": "g030",
+   "engine_seed": 7030,
+   "outcome": "stuck",
+   "reason": "no novelty for 6001 turns on Dlvl:40 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:39', 'seeking level wiztower end', 'f",
+   "turns": 42297,
+   "max_depth": 47,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 1924.1,
+   "turns_per_s": 21.98,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 9,
+    "lifesave": 3
+   }
+  },
+  {
+   "game_id": "g031",
+   "engine_seed": 7031,
+   "outcome": "stuck",
+   "reason": "no novelty for 6001 turns on Dlvl:39 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:38', 'seeking level wiztower end', 'f",
+   "turns": 41109,
+   "max_depth": 49,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 1951.8,
+   "turns_per_s": 21.06,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 10,
+    "feed": 6
+   }
+  },
+  {
+   "game_id": "g032",
+   "engine_seed": 7032,
+   "outcome": "stuck",
+   "reason": "fixation: target (15, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {'x': 15, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 14046,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 415.6,
+   "turns_per_s": 33.8,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g033",
+   "engine_seed": 7033,
+   "outcome": "stuck",
+   "reason": "action loop: loot repeated 40 times at turn 16952 ({'act': 'loot', 'why': ['learning contents of containers on ground']})",
+   "turns": 16952,
+   "max_depth": 36,
+   "last_stage": "bell",
+   "elapsed_s": 909.1,
+   "turns_per_s": 18.65,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 3
+   }
+  },
+  {
+   "game_id": "g034",
+   "engine_seed": 7034,
+   "outcome": "stuck",
+   "reason": "no novelty for 6004 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:44', 'seeking level wiztower end', 'f",
+   "turns": 45782,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 2199.7,
+   "turns_per_s": 20.81,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 10,
+    "lifesave": 4
+   }
+  },
+  {
+   "game_id": "g035",
+   "engine_seed": 7035,
+   "outcome": "stuck",
+   "reason": "fixation: target (50, 11, 'Dlvl:36 ') keeps coming back after 3 recoveries (examining tile {'x': 50, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 20703,
+   "max_depth": 36,
+   "last_stage": "bell",
+   "elapsed_s": 1029.2,
+   "turns_per_s": 20.12,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 4,
+    "noslime": 1
+   }
+  },
+  {
+   "game_id": "g036",
+   "engine_seed": 7036,
+   "outcome": "stuck",
+   "reason": "fixation: target (45, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {'x': 45, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 13559,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 559.9,
+   "turns_per_s": 24.22,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g037",
+   "engine_seed": 7037,
+   "outcome": "limit",
+   "reason": "max_seconds 3600",
+   "turns": 34057,
+   "max_depth": 8,
+   "last_stage": "sokoban",
+   "elapsed_s": 3600.0,
+   "turns_per_s": 9.46,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 8
+   }
+  },
+  {
+   "game_id": "g038",
+   "engine_seed": 7038,
+   "outcome": "stuck",
+   "reason": "fixation: target (22, 12, 'Dlvl:28 ') keeps coming back after 3 recoveries (new or desired item at {'x': 22, 'y': 12, 'glyph': '/', 'color': 'yellow', 'feat)",
+   "turns": 15554,
+   "max_depth": 28,
+   "last_stage": "castle",
+   "elapsed_s": 768.6,
+   "turns_per_s": 20.24,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 24
+   }
+  },
+  {
+   "game_id": "g039",
+   "engine_seed": 7039,
+   "outcome": "stuck",
+   "reason": "fixation: target (72, 17, 'Dlvl:23 ') keeps coming back after 3 recoveries (examining tile {'x': 72, 'y': 17, 'glyph': '%', 'color': 'yellow', 'feature': 'f)",
+   "turns": 29798,
+   "max_depth": 23,
+   "last_stage": "medusa",
+   "elapsed_s": 2037.8,
+   "turns_per_s": 14.62,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 2432,
+    "brainsave": 10,
+    "noslime": 30,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g040",
+   "engine_seed": 7040,
+   "outcome": "stuck",
+   "reason": "fixation: target (35, 12, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 35, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'co)",
+   "turns": 21807,
+   "max_depth": 36,
+   "last_stage": "bell",
+   "elapsed_s": 1093.9,
+   "turns_per_s": 19.94,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5,
+    "lifesave": 2
+   }
+  },
+  {
+   "game_id": "g041",
+   "engine_seed": 7041,
+   "outcome": "stuck",
+   "reason": "fixation: target (69, 20, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 69, 'y': 20, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 18158,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 620.1,
+   "turns_per_s": 29.28,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 12,
+    "brainsave": 1
+   }
+  },
+  {
+   "game_id": "g042",
+   "engine_seed": 7042,
+   "outcome": "stuck",
+   "reason": "fixation: target (70, 6, 'Dlvl:47 ') keeps coming back after 3 recoveries (examining tile {'x': 70, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'flo)",
+   "turns": 53972,
+   "max_depth": 47,
+   "last_stage": "book",
+   "elapsed_s": 3049.4,
+   "turns_per_s": 17.7,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 6,
+    "noslime": 3
+   }
+  },
+  {
+   "game_id": "g043",
+   "engine_seed": 7043,
+   "outcome": "stuck",
+   "reason": "request storm: 3000 requests for 14 turns (turn 35965, last action {'act': 'apply', 'why': ['attaching candles to candelabrum', 'full-explore', 'progress'], 'slot': 'z'})",
+   "turns": 35965,
+   "max_depth": 46,
+   "last_stage": "candelabrum",
+   "elapsed_s": 1658.5,
+   "turns_per_s": 21.68,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 31,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g044",
+   "engine_seed": 7044,
+   "outcome": "stuck",
+   "reason": "fixation: target (3, 6, 'Dlvl:27 ') keeps coming back after 3 recoveries (examining tile {'x': 3, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floo)",
+   "turns": 17028,
+   "max_depth": 27,
+   "last_stage": "medusa",
+   "elapsed_s": 757.8,
+   "turns_per_s": 22.47,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 2,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g045",
+   "engine_seed": 7045,
+   "outcome": "stuck",
+   "reason": "no novelty for 6002 turns on Dlvl:45 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:44', 'seeking level wiztower end', 'f",
+   "turns": 38229,
+   "max_depth": 49,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 1317.8,
+   "turns_per_s": 29.01,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 2,
+    "feed": 10
+   }
+  },
+  {
+   "game_id": "g046",
+   "engine_seed": 7046,
+   "outcome": "stuck",
+   "reason": "action loop: rub repeated 40 times at turn 2871 ({'act': 'rub', 'why': ['rubbing lamp'], 'slot': 'F'})",
+   "turns": 2871,
+   "max_depth": 8,
+   "last_stage": "minetown",
+   "elapsed_s": 80.4,
+   "turns_per_s": 35.73,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g047",
+   "engine_seed": 7047,
+   "outcome": "stuck",
+   "reason": "no novelty for 6002 turns on Dlvl:43 (last action {'act': 'repeated', 'why': ['seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:42', 'seeking level wiztower end', 'f",
+   "turns": 55442,
+   "max_depth": 51,
+   "last_stage": "vlad",
+   "elapsed_s": 1776.9,
+   "turns_per_s": 31.2,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 129,
+    "feed": 24
+   }
+  },
+  {
+   "game_id": "g048",
+   "engine_seed": 7048,
+   "outcome": "crash_bot",
+   "reason": "rungame exited rc=1 without result",
+   "turns": null,
+   "max_depth": null,
+   "last_stage": null,
+   "elapsed_s": null,
+   "turns_per_s": null,
+   "assist_counts": null
+  },
+  {
+   "game_id": "g049",
+   "engine_seed": 7049,
+   "outcome": "stuck",
+   "reason": "fixation: target (69, 15, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 69, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 14046,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 679.6,
+   "turns_per_s": 20.67,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 196,
+    "noslime": 18,
+    "brainsave": 1
+   }
+  }
+ ]
+}

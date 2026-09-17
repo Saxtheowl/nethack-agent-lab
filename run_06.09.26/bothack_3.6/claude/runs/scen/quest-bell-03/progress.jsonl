@@ -1,0 +1,8 @@
+{"kind": "depth", "turn": 1, "depth": 12, "t": 0.0, "value": 12, "dname": "The Quest"}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.0, "stage": "dlvl2"}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.0, "stage": "dlvl10"}
+{"kind": "branch", "turn": 1, "depth": 12, "t": 0.0, "dname": "The Quest", "lvl": "Home 1 "}
+{"kind": "stage", "turn": 1, "depth": 12, "t": 0.0, "stage": "quest"}
+{"kind": "special", "turn": 1, "depth": 12, "t": 0.0, "name": "Val-strt", "lvl": "Home 1 "}
+{"kind": "branch", "turn": 585, "depth": 12, "t": 205.6, "dname": "The Dungeons of Doom", "lvl": "Dlvl:12 "}
+{"kind": "end", "turn": 585, "depth": 12, "t": 206.4, "outcome": "stuck", "reason": "action loop: move repeated 40 times at turn 585 ({'act': 'move', 'why': ['stepping everywhere to find portal', 'escaping subbranch quest', 'seeking branch main ( main )', 'seeking level main quest', 'reaching exploration target', 'exploring main until quest', 'full-explore', 'progress'], 'dir': 'E'})"}

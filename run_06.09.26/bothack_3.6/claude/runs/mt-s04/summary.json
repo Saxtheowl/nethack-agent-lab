@@ -1,0 +1,124 @@
+{
+ "series": "mt-s04",
+ "games": 5,
+ "outcomes": {
+  "stuck": 4,
+  "goal_reached": 1
+ },
+ "stage_funnel": {
+  "dlvl2": 5,
+  "mines": 3,
+  "minetown": 1,
+  "oracle": 1
+ },
+ "failure_signatures": [
+  [
+   "stuck | action loop: farlook repeated N times at turn N ({..})",
+   3
+  ],
+  [
+   "stuck | action loop: move repeated N times at turn N ({..})",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 86,
+  "compat:container:o": 55,
+  "farlook-symbol": 47,
+  "note:assist": 43,
+  "fallback": 36,
+  "note:fallback": 36,
+  "compat:container:i": 16,
+  "note:recovery": 13,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 11,
+  "compat:name:o": 9,
+  "menu_letter_unmatched": 9,
+  "note:forced-command": 7,
+  "note:abort": 5,
+  "compat:container:q": 5,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 3,
+  "menu_show:current_skills": 3,
+  "compat:name:i": 1
+ },
+ "assist_totals": {
+  "kit": 40,
+  "feed": 3
+ },
+ "turns_total": 14878,
+ "turns_max": 8509,
+ "elapsed_total_s": 1755.7,
+ "stopped_early": "signature repeated 3 times: stuck | action loop: farlook repeated N times at turn N ({..})",
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 2001,
+   "outcome": "stuck",
+   "reason": "action loop: farlook repeated 40 times at turn 3901 ({'act': 'farlook', 'why': ['examining ambiguous feature'], 'pos': '#Position{:x 58, :y 6}'})",
+   "turns": 3901,
+   "max_depth": 7,
+   "last_stage": "mines",
+   "elapsed_s": 417.5,
+   "turns_per_s": 9.34,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 2002,
+   "outcome": "stuck",
+   "reason": "action loop: farlook repeated 40 times at turn 906 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 15, :y 8}'})",
+   "turns": 906,
+   "max_depth": 4,
+   "last_stage": "dlvl2",
+   "elapsed_s": 104.6,
+   "turns_per_s": 8.66,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 2003,
+   "outcome": "stuck",
+   "reason": "action loop: move repeated 40 times at turn 8509 ({'act': 'move', 'why': ['new or desired item at #Position{:x 22, :y 8}'], 'dir': 'SW'})",
+   "turns": 8509,
+   "max_depth": 5,
+   "last_stage": "mines",
+   "elapsed_s": 1079.8,
+   "turns_per_s": 7.88,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 2004,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1308,
+   "max_depth": 5,
+   "last_stage": "minetown",
+   "elapsed_s": 130.2,
+   "turns_per_s": 10.05,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 2005,
+   "outcome": "stuck",
+   "reason": "action loop: farlook repeated 40 times at turn 254 ({'act': 'farlook', 'why': ['examining monster'], 'pos': '#Position{:x 10, :y 3}'})",
+   "turns": 254,
+   "max_depth": 2,
+   "last_stage": "dlvl2",
+   "elapsed_s": 23.6,
+   "turns_per_s": 10.76,
+   "assist_counts": {
+    "kit": 8
+   }
+  }
+ ]
+}

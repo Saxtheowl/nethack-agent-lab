@@ -1,0 +1,246 @@
+{
+ "series": "ca-w01",
+ "games": 11,
+ "outcomes": {
+  "goal_reached": 3,
+  "stuck": 8
+ },
+ "stage_funnel": {
+  "dlvl2": 11,
+  "mines": 11,
+  "minetown": 10,
+  "oracle": 11,
+  "sokoban": 6,
+  "bigroom": 2,
+  "dlvl10": 6,
+  "medusa": 3,
+  "castle": 3
+ },
+ "failure_signatures": [
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+   3
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at #Position{..})",
+   2
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'sin)",
+   1
+  ],
+  [
+   "stuck | request storm: N requests for N turns (turn N, last action {..})",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'pi)",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 600,
+  "compat:container:o": 386,
+  "menu_empty_answer": 269,
+  "note:assist": 122,
+  "note:recovery": 111,
+  "compat:container:i": 105,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 79,
+  "note:forced-command": 79,
+  "menu_letter_unmatched": 69,
+  "compat:name:o": 66,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 42,
+  "compat:container:q": 28,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 21,
+  "menu_show:current_skills": 20,
+  "compat:name:i": 15,
+  "note:abort": 11,
+  "farlook-symbol": 10,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 9,
+  "msg-rewrite:^It is locked\\.$": 3,
+  "leftover_keys_dropped": 2,
+  "note:leftover": 2,
+  "farlook-trap": 1,
+  "msg-rewrite:^You feel as if you need some ": 1
+ },
+ "assist_totals": {
+  "kit": 88,
+  "feed": 17,
+  "lifesave": 17
+ },
+ "turns_total": 87058,
+ "turns_max": 13643,
+ "elapsed_total_s": 2654.6,
+ "stopped_early": "signature repeated 3 times: stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 5001,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 12156,
+   "max_depth": 29,
+   "last_stage": "castle",
+   "elapsed_s": 393.4,
+   "turns_per_s": 30.9,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 5002,
+   "outcome": "stuck",
+   "reason": "fixation: target (46, 3, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile {'x': 46, 'y': 3, 'glyph': '@', 'color': 'white', 'feature': 'sin)",
+   "turns": 4758,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 150.5,
+   "turns_per_s": 31.62,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 5003,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 10766,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 361.7,
+   "turns_per_s": 29.76,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 5004,
+   "outcome": "stuck",
+   "reason": "fixation: target (13, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile {'x': 13, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 3391,
+   "max_depth": 7,
+   "last_stage": "oracle",
+   "elapsed_s": 92.7,
+   "turns_per_s": 36.6,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 5005,
+   "outcome": "stuck",
+   "reason": "request storm: 3000 requests for 10 turns (turn 3244, last action {'act': 'wear', 'why': ['making use of L', 'wearing better armor'], 'slot': 'L'})",
+   "turns": 3244,
+   "max_depth": 9,
+   "last_stage": "minetown",
+   "elapsed_s": 158.0,
+   "turns_per_s": 20.54,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 5006,
+   "outcome": "goal_reached",
+   "reason": "castle",
+   "turns": 13643,
+   "max_depth": 25,
+   "last_stage": "castle",
+   "elapsed_s": 378.4,
+   "turns_per_s": 36.05,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 5007,
+   "outcome": "stuck",
+   "reason": "fixation: target (37, 18, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile {'x': 37, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 9429,
+   "max_depth": 8,
+   "last_stage": "minetown",
+   "elapsed_s": 156.3,
+   "turns_per_s": 60.34,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 5008,
+   "outcome": "stuck",
+   "reason": "fixation: target (47, 8, 'Dlvl:20 ') keeps coming back after 3 recoveries (new or desired item at #Position{:x 47, :y 8})",
+   "turns": 12921,
+   "max_depth": 20,
+   "last_stage": "dlvl10",
+   "elapsed_s": 430.1,
+   "turns_per_s": 30.04,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 5009,
+   "outcome": "stuck",
+   "reason": "fixation: target (20, 4, 'Dlvl:12 ') keeps coming back after 3 recoveries (new or desired item at #Position{:x 20, :y 4})",
+   "turns": 7446,
+   "max_depth": 12,
+   "last_stage": "dlvl10",
+   "elapsed_s": 236.3,
+   "turns_per_s": 31.51,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4
+   }
+  },
+  {
+   "game_id": "g010",
+   "engine_seed": 5010,
+   "outcome": "stuck",
+   "reason": "fixation: target (40, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile {'x': 40, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 3075,
+   "max_depth": 9,
+   "last_stage": "minetown",
+   "elapsed_s": 115.5,
+   "turns_per_s": 26.63,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g011",
+   "engine_seed": 5011,
+   "outcome": "stuck",
+   "reason": "fixation: target (33, 12, 'Dlvl:9  ') keeps coming back after 3 recoveries (examining tile {'x': 33, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'pi)",
+   "turns": 6229,
+   "max_depth": 10,
+   "last_stage": "sokoban",
+   "elapsed_s": 181.7,
+   "turns_per_s": 34.29,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 10
+   }
+  }
+ ]
+}

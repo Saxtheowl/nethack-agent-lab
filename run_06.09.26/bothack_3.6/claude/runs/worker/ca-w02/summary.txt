@@ -1,0 +1,43 @@
+series ca-w02: 14 games
+outcomes: {'goal_reached': 6, 'stuck': 8}
+stage funnel: dlvl2=14, mines=14, minetown=14, oracle=14, sokoban=11, bigroom=2, dlvl10=8, medusa=7, castle=6
+assists: {'kit': 112, 'feed': 21, 'lifesave': 43}
+STOPPED EARLY: signature repeated 3 times: stuck | action loop: farlook repeated N times at turn N ({..})
+failure signatures:
+    3  stuck | action loop: farlook repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'pit)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S:)
+    1  stuck | action loop: repeated repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: None, S)
+top anomalies:
+     998  note:compat
+     659  compat:container:o
+     462  menu_empty_answer
+     320  msg-rewrite:^Your (\w+) (feels?) better\.$
+     291  leftover_keys_dropped
+     291  note:leftover
+     176  note:assist
+     168  compat:container:i
+     161  msg-rewrite:^You open (.*\.\.\.)$
+     122  menu_letter_unmatched
+     114  note:recovery
+      97  compat:name:o
+      94  fallback
+      94  note:fallback
+      72  msg-rewrite:^(?:Hmmm, .* turns out to be l
+games:
+  g001 seed=5001 goal_reached T=14439  depth=29  stage=castle       463.0s  castle
+  g002 seed=5002 stuck        T=5782   depth=8   stage=sokoban      174.7s  fixation: target (33, 9, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile 
+  g003 seed=5003 goal_reached T=24377  depth=25  stage=castle       893.5s  castle
+  g004 seed=5004 goal_reached T=15899  depth=27  stage=castle       448.6s  castle
+  g005 seed=5005 goal_reached T=15392  depth=25  stage=castle       395.6s  castle
+  g006 seed=5006 stuck        T=11127  depth=13  stage=sokoban      340.4s  fixation: target (3, 12, 'Dlvl:13 ') keeps coming back after 3 recoveries (new or desired 
+  g007 seed=5007 stuck        T=15889  depth=26  stage=medusa       422.3s  action loop: farlook repeated 40 times at turn 15889 ({'act': 'farlook', 'why': ['examinin
+  g008 seed=5008 stuck        T=5384   depth=8   stage=sokoban      179.0s  action loop: repeated repeated 40 times at turn 5384 ({'act': 'repeated', 'why': ['searchi
+  g009 seed=5009 goal_reached T=14953  depth=29  stage=castle       418.6s  castle
+  g010 seed=5010 stuck        T=3075   depth=9   stage=minetown     113.4s  fixation: target (40, 15, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile
+  g011 seed=5011 stuck        T=3686   depth=9   stage=minetown     118.8s  action loop: farlook repeated 40 times at turn 3686 ({'act': 'farlook', 'why': ['examining
+  g012 seed=5012 stuck        T=4552   depth=9   stage=minetown     113.5s  action loop: farlook repeated 40 times at turn 4552 ({'act': 'farlook', 'why': ['examining
+  g013 seed=5013 stuck        T=3759   depth=7   stage=sokoban      106.5s  fixation: target (36, 14, 'Dlvl:6  ') keeps coming back after 3 recoveries (new or desired
+  g014 seed=5014 goal_reached T=20599  depth=28  stage=castle       437.6s  castle

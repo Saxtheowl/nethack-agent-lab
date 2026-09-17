@@ -1,0 +1,800 @@
+{"r": 65523, "k": "cmd", "T": 36626, "lvl": "Dlvl:35", "u": [14, 4], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65524, "k": "cmd", "T": 36627, "lvl": "Dlvl:35", "u": [13, 4], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["seek going directly", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 65525, "k": "cmd", "T": 36628, "lvl": "Dlvl:35", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"act": "ascend", "why": ["trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 65526, "k": "cmd", "T": 36628, "lvl": "Dlvl:34", "u": [44, 11], "hp": 178, "hpmax": 178}
+{"m": "You climb up the stairs."}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 65527, "k": "cmd", "T": 36628, "lvl": "Dlvl:34", "u": [44, 11], "hp": 178, "hpmax": 178}
+{"m": "There is a staircase down here."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "pos": "#Position{:x 36, :y 17}"}
+{"a": "_"}
+{"r": 65528, "k": "pos", "T": 36628, "lvl": "Dlvl:34", "u": [44, 11], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 16)"}
+{"r": 65529, "k": "cmd", "T": 36630, "lvl": "Dlvl:34", "u": [40, 13], "hp": 178, "hpmax": 178}
+{"m": "A troll blocks your path."}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 15, 'known': 36630, 'first-known': 36628, 'glyph': 'T', 'color': 'brown', 'ty", "targetting enemy {'x': 38, 'y': 15, 'known': 36630, 'first-known': 36628, 'glyph': 'T', 'color': 'br"], "dir": "SW"}
+{"a": "b"}
+{"r": 65530, "k": "cmd", "T": 36631, "lvl": "Dlvl:34", "u": [40, 13], "hp": 178, "hpmax": 178}
+{"m": "You hit the troll!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 15, 'known': 36631, 'first-known': 36628, 'glyph': 'T', 'color': 'brown', 'ty", "targetting enemy {'x': 38, 'y': 15, 'known': 36631, 'first-known': 36628, 'glyph': 'T', 'color': 'br"], "dir": "SW"}
+{"a": "b"}
+{"r": 65531, "k": "cmd", "T": 36632, "lvl": "Dlvl:34", "u": [40, 13], "hp": 178, "hpmax": 178}
+{"m": "You kill the troll!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 15}"], "dir": "SW"}
+{"a": "b"}
+{"r": 65532, "k": "cmd", "T": 36633, "lvl": "Dlvl:34", "u": [39, 14], "hp": 178, "hpmax": 178}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 65533, "k": "cmd", "T": 36633, "lvl": "Dlvl:34", "u": [39, 14], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 14}"], "dir": "NE"}
+{"a": "u"}
+{"r": 65534, "k": "cmd", "T": 36633, "lvl": "Dlvl:34", "u": [40, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 14}"], "dir": "E"}
+{"a": "l"}
+{"r": 65535, "k": "cmd", "T": 36634, "lvl": "Dlvl:34", "u": [41, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a spear."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 65536, "k": "cmd", "T": 36634, "lvl": "Dlvl:34", "u": [41, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a spear."}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 14}"], "dir": "E"}
+{"a": "l"}
+{"r": 65537, "k": "cmd", "T": 36634, "lvl": "Dlvl:34", "u": [42, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 14}"], "dir": "E"}
+{"a": "l"}
+{"r": 65538, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a bag called bag1."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 65539, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a bag called bag1."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 65540, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"m": "A - a bag called bag1."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 65541, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 65542, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["learning contents of {'label': 'a bag called bag1', 'qty': 1, 'name': 'bag', 'generic': 'bag1', 'ero"], "slot": "A"}
+{"a": "a"}
+{"r": 65543, "k": "yn", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178, "q": "What do you want to use or apply? [bi-km-oq-sxzAEFIQTZ or ?*]"}
+{"a": "A"}
+{"r": 65544, "k": "menu", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178, "p": "Do what with your bag called bag1?", "items": [": Look inside the bag", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 65545, "k": "menu", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178, "p": "Take out what?", "items": ["# Coins", "$ 630 gold pieces"]}
+{"a": []}
+{"r": 65546, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 65547, "k": "cmd", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178}
+{"act": "autotravel", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "pos": "#Position{:x 36, :y 17}"}
+{"a": "_"}
+{"r": 65548, "k": "pos", "T": 36635, "lvl": "Dlvl:34", "u": [43, 13], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 16)"}
+{"r": 65549, "k": "cmd", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178}
+{"act": "wield", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "slot": "k"}
+{"a": "w"}
+{"r": 65550, "k": "yn", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "k"}
+{"r": 65551, "k": "cmd", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 65552, "k": "cmd", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178}
+{"act": "apply", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "slot": "k"}
+{"a": "a"}
+{"r": 65553, "k": "yn", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178, "q": "What do you want to use or apply? [bi-km-oq-sxzAEFIQTZ or ?*]"}
+{"a": "k"}
+{"r": 65554, "k": "yn", "T": 36639, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178, "q": "In what direction do you want to dig? [hylnb>]"}
+{"a": "b"}
+{"r": 65555, "k": "cmd", "T": 36642, "lvl": "Dlvl:34", "u": [37, 16], "hp": 178, "hpmax": 178}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "dir": "SW"}
+{"a": "b"}
+{"r": 65556, "k": "cmd", "T": 36642, "lvl": "Dlvl:34", "u": [36, 17], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "dir": "SW"}
+{"a": "b"}
+{"r": 65557, "k": "cmd", "T": 36643, "lvl": "Dlvl:34", "u": [35, 18], "hp": 178, "hpmax": 178}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +6 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 65558, "k": "yn", "T": 36643, "lvl": "Dlvl:34", "u": [35, 18], "hp": 178, "hpmax": 178, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "a"}
+{"r": 65559, "k": "cmd", "T": 36644, "lvl": "Dlvl:34", "u": [35, 18], "hp": 178, "hpmax": 178}
+{"m": "a - the blessed rustproof +6 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 65560, "k": "cmd", "T": 36644, "lvl": "Dlvl:34", "u": [35, 18], "hp": 178, "hpmax": 178}
+{"act": "autotravel", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "pos": "#Position{:x 10, :y 14}"}
+{"a": "_"}
+{"r": 65561, "k": "pos", "T": 36644, "lvl": "Dlvl:34", "u": [35, 18], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(11, 13)"}
+{"r": 65562, "k": "cmd", "T": 36653, "lvl": "Dlvl:34", "u": [22, 19], "hp": 178, "hpmax": 178}
+{"m": "A gargoyle blocks your path."}
+{"act": "move", "why": ["hitting {'x': 20, 'y': 20, 'known': 36653, 'first-known': 36653, 'glyph': 'g', 'color': 'brown', 'ty", "targetting enemy {'x': 20, 'y': 20, 'known': 36653, 'first-known': 36653, 'glyph': 'g', 'color': 'br"], "dir": "W"}
+{"a": "h"}
+{"r": 65563, "k": "cmd", "T": 36654, "lvl": "Dlvl:34", "u": [22, 19], "hp": 178, "hpmax": 178}
+{"m": "You hit the gargoyle!"}
+{"act": "move", "why": ["hitting {'x': 20, 'y': 20, 'known': 36654, 'first-known': 36653, 'glyph': 'g', 'color': 'brown', 'ty", "targetting enemy {'x': 20, 'y': 20, 'known': 36654, 'first-known': 36653, 'glyph': 'g', 'color': 'br"], "dir": "W"}
+{"a": "h"}
+{"r": 65564, "k": "cmd", "T": 36654, "lvl": "Dlvl:34", "u": [22, 19], "hp": 178, "hpmax": 178}
+{"m": "You hit the gargoyle!"}
+{"m": "The gargoyle zaps herself with a wand of teleportation!"}
+{"act": "autotravel", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "pos": "#Position{:x 10, :y 14}"}
+{"a": "_"}
+{"r": 65565, "k": "pos", "T": 36654, "lvl": "Dlvl:34", "u": [22, 19], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(11, 13)"}
+{"r": 65566, "k": "cmd", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178}
+{"act": "wield", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "slot": "k"}
+{"a": "w"}
+{"r": 65567, "k": "yn", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "k"}
+{"r": 65568, "k": "cmd", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 65569, "k": "cmd", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178}
+{"act": "apply", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "slot": "k"}
+{"a": "a"}
+{"r": 65570, "k": "yn", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178, "q": "What do you want to use or apply? [bi-km-oq-sxzAEFIQTZ or ?*]"}
+{"a": "k"}
+{"r": 65571, "k": "yn", "T": 36662, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178, "q": "In what direction do you want to dig? [hykunjb>]"}
+{"a": "h"}
+{"r": 65572, "k": "cmd", "T": 36665, "lvl": "Dlvl:34", "u": [11, 13], "hp": 178, "hpmax": 178}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "dir": "W"}
+{"a": "h"}
+{"r": 65573, "k": "cmd", "T": 36665, "lvl": "Dlvl:34", "u": [10, 13], "hp": 178, "hpmax": 178}
+{"m": "You hear a nearby zap."}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "dir": "NW"}
+{"a": "y"}
+{"r": 65574, "k": "cmd", "T": 36666, "lvl": "Dlvl:34", "u": [9, 12], "hp": 178, "hpmax": 178}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +6 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 65575, "k": "yn", "T": 36666, "lvl": "Dlvl:34", "u": [9, 12], "hp": 178, "hpmax": 178, "q": "What do you want to wield? [- aik or ?*]"}
+{"a": "a"}
+{"r": 65576, "k": "cmd", "T": 36666, "lvl": "Dlvl:34", "u": [9, 12], "hp": 178, "hpmax": 178}
+{"m": "a - the blessed rustproof +6 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 65577, "k": "cmd", "T": 36666, "lvl": "Dlvl:34", "u": [9, 12], "hp": 178, "hpmax": 178}
+{"act": "autotravel", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "pos": "#Position{:x 3, :y 6}"}
+{"a": "_"}
+{"r": 65578, "k": "pos", "T": 36666, "lvl": "Dlvl:34", "u": [9, 12], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(4, 5)"}
+{"r": 65579, "k": "cmd", "T": 36675, "lvl": "Dlvl:34", "u": [4, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 5, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': Tr"], "dir": "NW"}
+{"a": "y"}
+{"r": 65580, "k": "cmd", "T": 36675, "lvl": "Dlvl:37", "u": [12, 17], "hp": 178, "hpmax": 178}
+{"m": "A trap door opens up under you!"}
+{"m": "You fall down a deep shaft!"}
+{"m": "All the adjacent objects fall through the trap door."}
+{"m": "You see here 265 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 11, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, '"]}
+{"a": ":"}
+{"r": 65581, "k": "cmd", "T": 36675, "lvl": "Dlvl:37", "u": [12, 17], "hp": 178, "hpmax": 178}
+{"m": "You see here 265 gold pieces."}
+{"act": "move", "why": ["new or desired item at {'x': 10, 'y': 18, 'glyph': '[', 'color': 'brown', 'feature': None, 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 65582, "k": "cmd", "T": 36676, "lvl": "Dlvl:37", "u": [11, 17], "hp": 178, "hpmax": 178}
+{"m": "You see here a pair of jumping boots."}
+{"act": "look", "why": ["examining tile {'x': 10, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 65583, "k": "cmd", "T": 36676, "lvl": "Dlvl:37", "u": [11, 17], "hp": 178, "hpmax": 178}
+{"m": "You see here a pair of jumping boots."}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 19, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 65584, "k": "cmd", "T": 36676, "lvl": "Dlvl:37", "u": [11, 18], "hp": 178, "hpmax": 178}
+{"m": "You hear a C note squeak in the distance."}
+{"m": "You hear a A note squeak in the distance."}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 65585, "k": "cmd", "T": 36677, "lvl": "Dlvl:37", "u": [11, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 9, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65586, "k": "cmd", "T": 36677, "lvl": "Dlvl:37", "u": [10, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65587, "k": "cmd", "T": 36678, "lvl": "Dlvl:37", "u": [9, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 7, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65588, "k": "cmd", "T": 36678, "lvl": "Dlvl:37", "u": [8, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65589, "k": "cmd", "T": 36679, "lvl": "Dlvl:37", "u": [7, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 5, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65590, "k": "cmd", "T": 36679, "lvl": "Dlvl:37", "u": [6, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65591, "k": "cmd", "T": 36680, "lvl": "Dlvl:37", "u": [5, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 3, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65592, "k": "cmd", "T": 36681, "lvl": "Dlvl:37", "u": [4, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 2, 'y': 20, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65593, "k": "cmd", "T": 36682, "lvl": "Dlvl:37", "u": [3, 19], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 2, 'y': 19, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65594, "k": "cmd", "T": 36683, "lvl": "Dlvl:37", "u": [3, 18], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 2, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65595, "k": "cmd", "T": 36683, "lvl": "Dlvl:37", "u": [3, 17], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 3, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65596, "k": "cmd", "T": 36684, "lvl": "Dlvl:37", "u": [4, 17], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65597, "k": "cmd", "T": 36684, "lvl": "Dlvl:37", "u": [5, 17], "hp": 178, "hpmax": 178}
+{"act": "autotravel", "why": ["exploring {'x': 8, 'y': 19, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 8, :y 19}"}
+{"a": "_"}
+{"r": 65598, "k": "pos", "T": 36684, "lvl": "Dlvl:37", "u": [5, 17], "hp": 178, "hpmax": 178, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(9, 18)"}
+{"r": 65599, "k": "cmd", "T": 36689, "lvl": "Dlvl:37", "u": [9, 18], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65600, "k": "cmd", "T": 36690, "lvl": "Dlvl:37", "u": [9, 17], "hp": 178, "hpmax": 178}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "look", "why": ["examining tile {'x': 8, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 65601, "k": "cmd", "T": 36690, "lvl": "Dlvl:37", "u": [9, 17], "hp": 178, "hpmax": 178}
+{"m": "There is a sleeping gas trap here."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 7, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65602, "k": "cmd", "T": 36690, "lvl": "Dlvl:37", "u": [8, 17], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 65603, "k": "cmd", "T": 36691, "lvl": "Dlvl:37", "u": [7, 16], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65604, "k": "cmd", "T": 36692, "lvl": "Dlvl:37", "u": [7, 15], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 5, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65605, "k": "cmd", "T": 36692, "lvl": "Dlvl:37", "u": [6, 15], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 2, :y 9}"}
+{"a": ";"}
+{"r": 65606, "k": "pos", "T": 36692, "lvl": "Dlvl:37", "u": [6, 15], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(3, 8)"}
+{"r": 65607, "k": "cmd", "T": 36692, "lvl": "Dlvl:37", "u": [6, 15], "hp": 178, "hpmax": 178}
+{"m": "a        an ant or other insect (giant beetle) [seen: telepathy]"}
+{"act": "move", "why": ["new or desired item at {'x': 4, 'y': 16, 'glyph': '*', 'color': 'green', 'feature': None, 'seen': Tr"], "dir": "W"}
+{"a": "h"}
+{"r": 65608, "k": "cmd", "T": 36693, "lvl": "Dlvl:37", "u": [5, 15], "hp": 178, "hpmax": 178}
+{"m": "You see here a green gem."}
+{"act": "look", "why": ["examining tile {'x': 4, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65609, "k": "cmd", "T": 36693, "lvl": "Dlvl:37", "u": [5, 15], "hp": 178, "hpmax": 178}
+{"m": "You see here a green gem."}
+{"act": "move", "why": ["exploring {'x': 3, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65610, "k": "cmd", "T": 36693, "lvl": "Dlvl:37", "u": [4, 15], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 2, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65611, "k": "cmd", "T": 36694, "lvl": "Dlvl:37", "u": [3, 15], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 2, 'y': 15, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65612, "k": "cmd", "T": 36694, "lvl": "Dlvl:37", "u": [3, 14], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 2, 'y': 14, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': T"], "dir": "N"}
+{"a": "k"}
+{"r": 65613, "k": "cmd", "T": 36695, "lvl": "Dlvl:37", "u": [3, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here 13 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 2, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65614, "k": "cmd", "T": 36695, "lvl": "Dlvl:37", "u": [3, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here 13 gold pieces."}
+{"act": "move", "why": ["exploring {'x': 3, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65615, "k": "cmd", "T": 36695, "lvl": "Dlvl:37", "u": [4, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65616, "k": "cmd", "T": 36696, "lvl": "Dlvl:37", "u": [5, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 5, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65617, "k": "cmd", "T": 36697, "lvl": "Dlvl:37", "u": [6, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 6, 'y': 14, 'glyph': '*', 'color': 'yellow', 'feature': None, 'seen': T"], "dir": "E"}
+{"a": "l"}
+{"r": 65618, "k": "cmd", "T": 36698, "lvl": "Dlvl:37", "u": [7, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a yellow gem."}
+{"act": "look", "why": ["examining tile {'x': 6, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65619, "k": "cmd", "T": 36698, "lvl": "Dlvl:37", "u": [7, 13], "hp": 178, "hpmax": 178}
+{"m": "You see here a yellow gem."}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65620, "k": "cmd", "T": 36698, "lvl": "Dlvl:37", "u": [7, 12], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65621, "k": "cmd", "T": 36699, "lvl": "Dlvl:37", "u": [7, 11], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65622, "k": "cmd", "T": 36699, "lvl": "Dlvl:37", "u": [7, 10], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 6, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65623, "k": "cmd", "T": 36700, "lvl": "Dlvl:37", "u": [7, 9], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 7, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65624, "k": "cmd", "T": 36700, "lvl": "Dlvl:37", "u": [8, 9], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 65625, "k": "cmd", "T": 36701, "lvl": "Dlvl:37", "u": [9, 10], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 12, 'glyph': '[', 'color': 'cyan', 'feature': None, 'seen': Tru"], "dir": "S"}
+{"a": "j"}
+{"r": 65626, "k": "cmd", "T": 36702, "lvl": "Dlvl:37", "u": [9, 11], "hp": 178, "hpmax": 178}
+{"m": "You see here a banded mail."}
+{"act": "look", "why": ["examining tile {'x': 8, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65627, "k": "cmd", "T": 36702, "lvl": "Dlvl:37", "u": [9, 11], "hp": 178, "hpmax": 178}
+{"m": "You see here a banded mail."}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 65628, "k": "cmd", "T": 36702, "lvl": "Dlvl:37", "u": [9, 12], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 65629, "k": "cmd", "T": 36703, "lvl": "Dlvl:37", "u": [9, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 9, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65630, "k": "cmd", "T": 36704, "lvl": "Dlvl:37", "u": [10, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65631, "k": "cmd", "T": 36705, "lvl": "Dlvl:37", "u": [11, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65632, "k": "cmd", "T": 36705, "lvl": "Dlvl:37", "u": [12, 13], "hp": 178, "hpmax": 178}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "i"}
+{"a": "a"}
+{"r": 65633, "k": "yn", "T": 36705, "lvl": "Dlvl:37", "u": [12, 13], "hp": 178, "hpmax": 178, "q": "What do you want to use or apply? [bi-km-oq-sxzAEFIQTZ or ?*]"}
+{"a": "i"}
+{"r": 65634, "k": "cmd", "T": 36706, "lvl": "Dlvl:37", "u": [12, 13], "hp": 178, "hpmax": 178}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65635, "k": "cmd", "T": 36706, "lvl": "Dlvl:37", "u": [13, 13], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65636, "k": "cmd", "T": 36707, "lvl": "Dlvl:37", "u": [13, 12], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65637, "k": "cmd", "T": 36707, "lvl": "Dlvl:37", "u": [13, 11], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 11, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65638, "k": "cmd", "T": 36708, "lvl": "Dlvl:37", "u": [13, 10], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 10, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65639, "k": "cmd", "T": 36708, "lvl": "Dlvl:37", "u": [13, 9], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65640, "k": "cmd", "T": 36709, "lvl": "Dlvl:37", "u": [13, 8], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65641, "k": "cmd", "T": 36710, "lvl": "Dlvl:37", "u": [13, 7], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65642, "k": "cmd", "T": 36710, "lvl": "Dlvl:37", "u": [12, 7], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65643, "k": "cmd", "T": 36711, "lvl": "Dlvl:37", "u": [11, 7], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 2, :y 8}"}
+{"a": ";"}
+{"r": 65644, "k": "pos", "T": 36711, "lvl": "Dlvl:37", "u": [11, 7], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(3, 7)"}
+{"r": 65645, "k": "cmd", "T": 36711, "lvl": "Dlvl:37", "u": [11, 7], "hp": 178, "hpmax": 178}
+{"m": "a        an ant or other insect (giant beetle) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 9, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fal", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 65646, "k": "cmd", "T": 36712, "lvl": "Dlvl:37", "u": [10, 7], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 8, 'glyph': '*', 'color': 'green', 'feature': None, 'seen': Tru"], "dir": "W"}
+{"a": "h"}
+{"r": 65647, "k": "cmd", "T": 36712, "lvl": "Dlvl:37", "u": [9, 7], "hp": 178, "hpmax": 178}
+{"m": "You see here a green gem."}
+{"act": "look", "why": ["examining tile {'x': 8, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug'"]}
+{"a": ":"}
+{"r": 65648, "k": "cmd", "T": 36712, "lvl": "Dlvl:37", "u": [9, 7], "hp": 178, "hpmax": 178}
+{"m": "You see here a green gem."}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fal", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65649, "k": "cmd", "T": 36713, "lvl": "Dlvl:37", "u": [9, 6], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 8, 'y': 6, 'glyph': '[', 'color': 'cyan', 'feature': None, 'seen': True"], "dir": "N"}
+{"a": "k"}
+{"r": 65650, "k": "cmd", "T": 36714, "lvl": "Dlvl:37", "u": [9, 5], "hp": 178, "hpmax": 178}
+{"m": "You see here a plate mail."}
+{"act": "look", "why": ["examining tile {'x': 8, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug'"]}
+{"a": ":"}
+{"r": 65651, "k": "cmd", "T": 36714, "lvl": "Dlvl:37", "u": [9, 5], "hp": 178, "hpmax": 178}
+{"m": "You see here a plate mail."}
+{"act": "move", "why": ["exploring {'x': 9, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fal", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65652, "k": "cmd", "T": 36714, "lvl": "Dlvl:37", "u": [10, 5], "hp": 178, "hpmax": 178}
+{"m": "A knife misses you."}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65653, "k": "cmd", "T": 36715, "lvl": "Dlvl:37", "u": [11, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 9, 'y': 6, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 65654, "k": "cmd", "T": 36716, "lvl": "Dlvl:37", "u": [10, 5], "hp": 178, "hpmax": 178}
+{"m": "You see here a knife."}
+{"act": "look", "why": ["examining tile {'x': 9, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 65655, "k": "cmd", "T": 36716, "lvl": "Dlvl:37", "u": [10, 5], "hp": 178, "hpmax": 178}
+{"m": "You see here a knife."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 2, :y 9}"}
+{"a": ";"}
+{"r": 65656, "k": "pos", "T": 36716, "lvl": "Dlvl:37", "u": [10, 5], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(3, 8)"}
+{"r": 65657, "k": "cmd", "T": 36716, "lvl": "Dlvl:37", "u": [10, 5], "hp": 178, "hpmax": 178}
+{"m": "a        an ant or other insect (giant beetle) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65658, "k": "cmd", "T": 36716, "lvl": "Dlvl:37", "u": [11, 5], "hp": 178, "hpmax": 178}
+{"m": "The barrow wight casts a spell!"}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65659, "k": "cmd", "T": 36717, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 18, :y 7}"}
+{"a": ";"}
+{"r": 65660, "k": "pos", "T": 36717, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(19, 6)"}
+{"r": 65661, "k": "cmd", "T": 36717, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"m": "Y        an apelike creature (ape) [seen: telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 13, 'y': 6, 'known': 36717, 'first-known': 36714, 'glyph': 'W', 'color': None"]}
+{"a": "s"}
+{"r": 65662, "k": "cmd", "T": 36718, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 13, 'y': 6, 'known': 36718, 'first-known': 36714, 'glyph': 'W', 'color': None"]}
+{"a": "s"}
+{"r": 65663, "k": "cmd", "T": 36718, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["hitting {'x': 12, 'y': 6, 'known': 36718, 'first-known': 36714, 'glyph': 'W', 'color': None, 'type':", "targetting enemy {'x': 12, 'y': 6, 'known': 36718, 'first-known': 36714, 'glyph': 'W', 'color': None"], "dir": "E"}
+{"a": "l"}
+{"r": 65664, "k": "cmd", "T": 36719, "lvl": "Dlvl:37", "u": [12, 5], "hp": 178, "hpmax": 178}
+{"m": "You destroy the barrow wight!"}
+{"act": "move", "why": ["new or desired item at {'x': 12, 'y': 6, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': "], "dir": "E"}
+{"a": "l"}
+{"r": 65665, "k": "cmd", "T": 36719, "lvl": "Dlvl:37", "u": [13, 5], "hp": 178, "hpmax": 178}
+{"act": "look", "why": ["examining tile {'x': 12, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 65666, "k": "cmd", "T": 36719, "lvl": "Dlvl:37", "u": [13, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65667, "k": "cmd", "T": 36720, "lvl": "Dlvl:37", "u": [14, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65668, "k": "cmd", "T": 36720, "lvl": "Dlvl:37", "u": [15, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65669, "k": "cmd", "T": 36721, "lvl": "Dlvl:37", "u": [16, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65670, "k": "cmd", "T": 36722, "lvl": "Dlvl:37", "u": [17, 5], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65671, "k": "cmd", "T": 36722, "lvl": "Dlvl:37", "u": [17, 4], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 65672, "k": "cmd", "T": 36723, "lvl": "Dlvl:37", "u": [17, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 17, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65673, "k": "cmd", "T": 36724, "lvl": "Dlvl:37", "u": [18, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 18, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65674, "k": "cmd", "T": 36724, "lvl": "Dlvl:37", "u": [19, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 19, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65675, "k": "cmd", "T": 36725, "lvl": "Dlvl:37", "u": [20, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65676, "k": "cmd", "T": 36726, "lvl": "Dlvl:37", "u": [21, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 21, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65677, "k": "cmd", "T": 36727, "lvl": "Dlvl:37", "u": [22, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 22, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65678, "k": "cmd", "T": 36727, "lvl": "Dlvl:37", "u": [23, 3], "hp": 178, "hpmax": 178}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 21, 'y': 6, 'known': 36727, 'first-known': 36717, 'glyph': 'Y', 'color': 'bro"]}
+{"a": "s"}
+{"r": 65679, "k": "cmd", "T": 36728, "lvl": "Dlvl:37", "u": [23, 3], "hp": 178, "hpmax": 178}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 21, 'y': 6, 'known': 36728, 'first-known': 36717, 'glyph': 'Y', 'color': 'bro"]}
+{"a": "s"}
+{"r": 65680, "k": "cmd", "T": 36729, "lvl": "Dlvl:37", "u": [23, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["hitting {'x': 22, 'y': 5, 'known': 36729, 'first-known': 36717, 'glyph': 'Y', 'color': 'brown', 'typ", "targetting enemy {'x': 22, 'y': 5, 'known': 36729, 'first-known': 36717, 'glyph': 'Y', 'color': 'bro"], "dir": "S"}
+{"a": "j"}
+{"r": 65681, "k": "cmd", "T": 36730, "lvl": "Dlvl:37", "u": [23, 3], "hp": 176, "hpmax": 178}
+{"m": "You hit the ape!"}
+{"m": "The ape hits!"}
+{"m": "The ape misses!"}
+{"m": "The ape bites!"}
+{"act": "move", "why": ["hitting {'x': 22, 'y': 5, 'known': 36730, 'first-known': 36717, 'glyph': 'Y', 'color': 'brown', 'typ", "targetting enemy {'x': 22, 'y': 5, 'known': 36730, 'first-known': 36717, 'glyph': 'Y', 'color': 'bro"], "dir": "S"}
+{"a": "j"}
+{"r": 65682, "k": "cmd", "T": 36730, "lvl": "Dlvl:37", "u": [23, 3], "hp": 176, "hpmax": 178}
+{"m": "You kill the ape!"}
+{"act": "move", "why": ["new or desired item at {'x': 22, 'y': 5, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen':"], "dir": "S"}
+{"a": "j"}
+{"r": 65683, "k": "cmd", "T": 36731, "lvl": "Dlvl:37", "u": [23, 4], "hp": 176, "hpmax": 178}
+{"m": "You see here an ape corpse."}
+{"act": "look", "why": ["examining tile {'x': 22, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 65684, "k": "cmd", "T": 36731, "lvl": "Dlvl:37", "u": [23, 4], "hp": 176, "hpmax": 178}
+{"m": "You see here an ape corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 28, :y 10}"}
+{"a": ";"}
+{"r": 65685, "k": "pos", "T": 36731, "lvl": "Dlvl:37", "u": [23, 4], "hp": 176, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(29, 9)"}
+{"r": 65686, "k": "cmd", "T": 36731, "lvl": "Dlvl:37", "u": [23, 4], "hp": 176, "hpmax": 178}
+{"m": "&        a major demon (nalfeshnee) [seen: telepathy]"}
+{"act": "eat", "why": ["going to eat corpse at {'x': 22, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen':"], "slot": "an ape corpse"}
+{"a": "e"}
+{"r": 65687, "k": "yn", "T": 36731, "lvl": "Dlvl:37", "u": [23, 4], "hp": 176, "hpmax": 178, "q": "There is an ape corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 65688, "k": "cmd", "T": 36743, "lvl": "Dlvl:37", "u": [23, 4], "hp": 178, "hpmax": 178}
+{"m": "This ape corpse tastes okay."}
+{"m": "You finish eating the ape corpse."}
+{"act": "look", "why": ["examining tile {'x': 22, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 65689, "k": "cmd", "T": 36743, "lvl": "Dlvl:37", "u": [23, 4], "hp": 178, "hpmax": 178}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 23, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 65690, "k": "cmd", "T": 36744, "lvl": "Dlvl:37", "u": [24, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 30, :y 7}"}
+{"a": ";"}
+{"r": 65691, "k": "pos", "T": 36744, "lvl": "Dlvl:37", "u": [24, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(31, 6)"}
+{"r": 65692, "k": "cmd", "T": 36744, "lvl": "Dlvl:37", "u": [24, 3], "hp": 178, "hpmax": 178}
+{"m": "&        a major demon (succubus) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 24, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65693, "k": "cmd", "T": 36744, "lvl": "Dlvl:37", "u": [25, 3], "hp": 175, "hpmax": 178}
+{"m": "You fall into a pit!"}
+{"m": "You land on a set of sharp iron spikes!"}
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 65694, "k": "cmd", "T": 36744, "lvl": "Dlvl:37", "u": [25, 3], "hp": 175, "hpmax": 178}
+{"m": "There is a spiked pit here."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65695, "k": "cmd", "T": 36745, "lvl": "Dlvl:37", "u": [25, 3], "hp": 175, "hpmax": 178}
+{"m": "You are still in a pit."}
+{"act": "move", "why": ["untrap move", "untrapping self", "exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "dir": "NW"}
+{"a": "y"}
+{"r": 65696, "k": "cmd", "T": 36746, "lvl": "Dlvl:37", "u": [25, 3], "hp": 175, "hpmax": 178}
+{"act": "move", "why": ["untrap move", "untrapping self", "exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "dir": "NW"}
+{"a": "y"}
+{"r": 65697, "k": "cmd", "T": 36746, "lvl": "Dlvl:37", "u": [25, 3], "hp": 175, "hpmax": 178}
+{"act": "move", "why": ["untrap move", "untrapping self", "exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "dir": "NW"}
+{"a": "y"}
+{"r": 65698, "k": "cmd", "T": 36747, "lvl": "Dlvl:37", "u": [25, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["untrap move", "untrapping self", "exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end"], "dir": "NW"}
+{"a": "y"}
+{"r": 65699, "k": "cmd", "T": 36748, "lvl": "Dlvl:37", "u": [25, 3], "hp": 178, "hpmax": 178}
+{"m": "You crawl to the edge of the pit."}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65700, "k": "cmd", "T": 36749, "lvl": "Dlvl:37", "u": [26, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 10}"}
+{"a": ";"}
+{"r": 65701, "k": "pos", "T": 36749, "lvl": "Dlvl:37", "u": [26, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 9)"}
+{"r": 65702, "k": "cmd", "T": 36749, "lvl": "Dlvl:37", "u": [26, 3], "hp": 178, "hpmax": 178}
+{"m": "H        a giant humanoid (fire giant) [seen: telepathy]"}
+{"act": "move", "why": ["new or desired item at {'x': 26, 'y': 4, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': T"], "dir": "E"}
+{"a": "l"}
+{"r": 65703, "k": "cmd", "T": 36750, "lvl": "Dlvl:37", "u": [27, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 170 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 26, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65704, "k": "cmd", "T": 36750, "lvl": "Dlvl:37", "u": [27, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 170 gold pieces."}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 7, 'known': 36750, 'first-known': 36744, 'glyph': '&', 'color': None"], "dir": "E"}
+{"a": "l"}
+{"r": 65705, "k": "cmd", "T": 36751, "lvl": "Dlvl:37", "u": [28, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 8}"}
+{"a": ";"}
+{"r": 65706, "k": "pos", "T": 36751, "lvl": "Dlvl:37", "u": [28, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 7)"}
+{"r": 65707, "k": "cmd", "T": 36751, "lvl": "Dlvl:37", "u": [28, 3], "hp": 178, "hpmax": 178}
+{"m": "D        a dragon (red dragon) [seen: telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 7, 'known': 36751, 'first-known': 36744, 'glyph': '&', 'color': None"], "dir": "E"}
+{"a": "l"}
+{"r": 65708, "k": "cmd", "T": 36751, "lvl": "Dlvl:37", "u": [29, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 7, 'known': 36751, 'first-known': 36744, 'glyph': '&', 'color': None"], "dir": "E"}
+{"a": "l"}
+{"r": 65709, "k": "cmd", "T": 36752, "lvl": "Dlvl:37", "u": [30, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["targetting enemy {'x': 30, 'y': 7, 'known': 36752, 'first-known': 36744, 'glyph': '&', 'color': None"], "dir": "E"}
+{"a": "l"}
+{"r": 65710, "k": "cmd", "T": 36752, "lvl": "Dlvl:37", "u": [31, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65711, "k": "cmd", "T": 36753, "lvl": "Dlvl:37", "u": [32, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 7}"}
+{"a": ";"}
+{"r": 65712, "k": "pos", "T": 36753, "lvl": "Dlvl:37", "u": [32, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 6)"}
+{"r": 65713, "k": "cmd", "T": 36753, "lvl": "Dlvl:37", "u": [32, 3], "hp": 178, "hpmax": 178}
+{"m": "B        a bat or bird (vampire bat) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65714, "k": "cmd", "T": 36753, "lvl": "Dlvl:37", "u": [33, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 7}"}
+{"a": ";"}
+{"r": 65715, "k": "pos", "T": 36753, "lvl": "Dlvl:37", "u": [33, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 6)"}
+{"r": 65716, "k": "cmd", "T": 36753, "lvl": "Dlvl:37", "u": [33, 3], "hp": 178, "hpmax": 178}
+{"m": "&        a major demon (hezrou) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65717, "k": "cmd", "T": 36754, "lvl": "Dlvl:37", "u": [34, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65718, "k": "cmd", "T": 36754, "lvl": "Dlvl:37", "u": [35, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 8}"}
+{"a": ";"}
+{"r": 65719, "k": "pos", "T": 36754, "lvl": "Dlvl:37", "u": [35, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 7)"}
+{"r": 65720, "k": "cmd", "T": 36754, "lvl": "Dlvl:37", "u": [35, 3], "hp": 178, "hpmax": 178}
+{"m": "D        a dragon (blue dragon) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65721, "k": "cmd", "T": 36755, "lvl": "Dlvl:37", "u": [36, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 10}"}
+{"a": ";"}
+{"r": 65722, "k": "pos", "T": 36755, "lvl": "Dlvl:37", "u": [36, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 9)"}
+{"r": 65723, "k": "cmd", "T": 36755, "lvl": "Dlvl:37", "u": [36, 3], "hp": 178, "hpmax": 178}
+{"m": "d        a dog or other canine (hell hound) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65724, "k": "cmd", "T": 36756, "lvl": "Dlvl:37", "u": [37, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65725, "k": "cmd", "T": 36756, "lvl": "Dlvl:37", "u": [38, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 11}"}
+{"a": ";"}
+{"r": 65726, "k": "pos", "T": 36756, "lvl": "Dlvl:37", "u": [38, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 10)"}
+{"r": 65727, "k": "cmd", "T": 36756, "lvl": "Dlvl:37", "u": [38, 3], "hp": 178, "hpmax": 178}
+{"m": "@        a human or elf (Wizard of Yendor) [seen: telepathy]"}
+{"act": "move", "why": ["going to kill Wizard of Yendor"], "dir": "E"}
+{"a": "l"}
+{"r": 65728, "k": "cmd", "T": 36757, "lvl": "Dlvl:37", "u": [39, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["going to kill Wizard of Yendor"], "dir": "E"}
+{"a": "l"}
+{"r": 65729, "k": "cmd", "T": 36758, "lvl": "Dlvl:37", "u": [40, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["going to kill Wizard of Yendor"], "dir": "E"}
+{"a": "l"}
+{"r": 65730, "k": "cmd", "T": 36758, "lvl": "Dlvl:37", "u": [41, 3], "hp": 173, "hpmax": 178}
+{"m": "You feel sluggish."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 40, :y 12}"}
+{"a": ";"}
+{"r": 65731, "k": "pos", "T": 36758, "lvl": "Dlvl:37", "u": [41, 3], "hp": 173, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 11)"}
+{"r": 65732, "k": "cmd", "T": 36758, "lvl": "Dlvl:37", "u": [41, 3], "hp": 173, "hpmax": 178}
+{"m": "d        a dog or other canine (wolf) [seen: telepathy]"}
+{"act": "move", "why": ["going to kill Wizard of Yendor"], "dir": "E"}
+{"a": "l"}
+{"r": 65733, "k": "cmd", "T": 36759, "lvl": "Dlvl:37", "u": [42, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 40, :y 4}"}
+{"a": ";"}
+{"r": 65734, "k": "pos", "T": 36759, "lvl": "Dlvl:37", "u": [42, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(41, 3)"}
+{"r": 65735, "k": "cmd", "T": 36759, "lvl": "Dlvl:37", "u": [42, 3], "hp": 178, "hpmax": 178}
+{"m": "^        a trap (anti-magic field)"}
+{"act": "move", "why": ["new or desired item at {'x': 42, 'y': 4, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': T"], "dir": "E"}
+{"a": "l"}
+{"r": 65736, "k": "cmd", "T": 36759, "lvl": "Dlvl:37", "u": [43, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 50 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65737, "k": "cmd", "T": 36759, "lvl": "Dlvl:37", "u": [43, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 50 gold pieces."}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65738, "k": "cmd", "T": 36760, "lvl": "Dlvl:37", "u": [44, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65739, "k": "cmd", "T": 36761, "lvl": "Dlvl:37", "u": [45, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65740, "k": "cmd", "T": 36761, "lvl": "Dlvl:37", "u": [46, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65741, "k": "cmd", "T": 36762, "lvl": "Dlvl:37", "u": [47, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65742, "k": "cmd", "T": 36763, "lvl": "Dlvl:37", "u": [48, 3], "hp": 178, "hpmax": 178}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 7}"}
+{"a": ";"}
+{"r": 65743, "k": "pos", "T": 36763, "lvl": "Dlvl:37", "u": [48, 3], "hp": 178, "hpmax": 178, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 6)"}
+{"r": 65744, "k": "cmd", "T": 36763, "lvl": "Dlvl:37", "u": [48, 3], "hp": 178, "hpmax": 178}
+{"m": "&        a major demon (hezrou) [seen: telepathy]"}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65745, "k": "cmd", "T": 36763, "lvl": "Dlvl:37", "u": [49, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65746, "k": "cmd", "T": 36764, "lvl": "Dlvl:37", "u": [50, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65747, "k": "cmd", "T": 36765, "lvl": "Dlvl:37", "u": [51, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65748, "k": "cmd", "T": 36766, "lvl": "Dlvl:37", "u": [52, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65749, "k": "cmd", "T": 36766, "lvl": "Dlvl:37", "u": [53, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65750, "k": "cmd", "T": 36767, "lvl": "Dlvl:37", "u": [54, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["new or desired item at {'x': 54, 'y': 4, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': T"], "dir": "E"}
+{"a": "l"}
+{"r": 65751, "k": "cmd", "T": 36768, "lvl": "Dlvl:37", "u": [55, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 151 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 54, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 65752, "k": "cmd", "T": 36768, "lvl": "Dlvl:37", "u": [55, 3], "hp": 178, "hpmax": 178}
+{"m": "You see here 151 gold pieces."}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65753, "k": "cmd", "T": 36768, "lvl": "Dlvl:37", "u": [56, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65754, "k": "cmd", "T": 36769, "lvl": "Dlvl:37", "u": [57, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65755, "k": "cmd", "T": 36770, "lvl": "Dlvl:37", "u": [58, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65756, "k": "cmd", "T": 36770, "lvl": "Dlvl:37", "u": [59, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65757, "k": "cmd", "T": 36771, "lvl": "Dlvl:37", "u": [60, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65758, "k": "cmd", "T": 36771, "lvl": "Dlvl:37", "u": [61, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65759, "k": "cmd", "T": 36772, "lvl": "Dlvl:37", "u": [62, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65760, "k": "cmd", "T": 36773, "lvl": "Dlvl:37", "u": [63, 3], "hp": 178, "hpmax": 178}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-up", "switching within branch to Dlvl:35", "trying to enter vlad from Dlvl:35", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 65761, "k": "cmd", "T": 36773, "lvl": "Dlvl:37", "u": [64, 3], "hp": 178, "hpmax": 178}
+{"note": "abort", "d": "limit: terminated by signal 15"}

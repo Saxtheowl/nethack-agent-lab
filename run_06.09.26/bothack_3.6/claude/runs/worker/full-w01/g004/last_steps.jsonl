@@ -1,0 +1,800 @@
+{"a": "(43, 11)"}
+{"r": 6971, "k": "cmd", "T": 5207, "lvl": "Dlvl:7", "u": [43, 11], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 6972, "k": "cmd", "T": 5208, "lvl": "Dlvl:7", "u": [42, 12], "hp": 93, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 6973, "k": "pos", "T": 5208, "lvl": "Dlvl:7", "u": [42, 12], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 6974, "k": "cmd", "T": 5212, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6975, "k": "cmd", "T": 5212, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 6976, "k": "cmd", "T": 5213, "lvl": "Dlvl:7", "u": [36, 16], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 6977, "k": "cmd", "T": 5214, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6978, "k": "cmd", "T": 5214, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 6979, "k": "pos", "T": 5214, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 6980, "k": "cmd", "T": 5219, "lvl": "Dlvl:7", "u": [43, 11], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 6981, "k": "cmd", "T": 5219, "lvl": "Dlvl:7", "u": [42, 12], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["targetting leftover enemy {'x': 42, 'y': 10, 'known': 5219, 'first-known': 5219, 'glyph': 'e', 'colo"], "dir": "NE"}
+{"a": "u"}
+{"r": 6982, "k": "cmd", "T": 5220, "lvl": "Dlvl:7", "u": [43, 11], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["targetting leftover enemy {'x': 42, 'y': 10, 'known': 5220, 'first-known': 5219, 'glyph': 'e', 'colo"], "dir": "N"}
+{"a": "k"}
+{"r": 6983, "k": "cmd", "T": 5220, "lvl": "Dlvl:7", "u": [43, 10], "hp": 93, "hpmax": 93}
+{"act": "attack", "why": ["killing floating eye", "hitting {'x': 42, 'y': 10, 'known': 5220, 'first-known': 5219, 'glyph': 'e', 'color': 'blue', 'type'", "targetting leftover enemy {'x': 42, 'y': 10, 'known': 5220, 'first-known': 5219, 'glyph': 'e', 'colo"], "dir": "N"}
+{"a": "F"}
+{"r": 6984, "k": "cmdcont", "T": 5220, "lvl": "Dlvl:7", "u": [43, 10], "hp": 93, "hpmax": 93}
+{"a": "k"}
+{"r": 6985, "k": "cmd", "T": 5221, "lvl": "Dlvl:7", "u": [43, 10], "hp": 93, "hpmax": 93}
+{"m": "You kill the floating eye!"}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 6986, "k": "pos", "T": 5221, "lvl": "Dlvl:7", "u": [43, 10], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 6987, "k": "cmd", "T": 5226, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6988, "k": "cmd", "T": 5226, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 6989, "k": "pos", "T": 5226, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 6990, "k": "cmd", "T": 5226, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 6991, "k": "cmd", "T": 5226, "lvl": "Dlvl:7", "u": [36, 16], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 6992, "k": "cmd", "T": 5227, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 6993, "k": "cmd", "T": 5227, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 6994, "k": "pos", "T": 5227, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 6995, "k": "cmd", "T": 5227, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 6996, "k": "pos", "T": 5227, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 6997, "k": "cmd", "T": 5234, "lvl": "Dlvl:7", "u": [43, 11], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 6998, "k": "cmd", "T": 5234, "lvl": "Dlvl:7", "u": [42, 12], "hp": 93, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 6999, "k": "pos", "T": 5234, "lvl": "Dlvl:7", "u": [42, 12], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7000, "k": "cmd", "T": 5239, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7001, "k": "cmd", "T": 5239, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7002, "k": "cmd", "T": 5239, "lvl": "Dlvl:7", "u": [36, 16], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7003, "k": "cmd", "T": 5240, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7004, "k": "cmd", "T": 5240, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7005, "k": "pos", "T": 5240, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7006, "k": "cmd", "T": 5240, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7007, "k": "pos", "T": 5240, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7008, "k": "cmd", "T": 5243, "lvl": "Dlvl:7", "u": [42, 13], "hp": 93, "hpmax": 93}
+{"m": "The cave spider misses!"}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 13, 'known': 5243, 'first-known': 5243, 'glyph': 's', 'color': None, 'type': ", "targetting enemy {'x': 40, 'y': 13, 'known': 5243, 'first-known': 5243, 'glyph': 's', 'color': None,"], "dir": "NW"}
+{"a": "y"}
+{"r": 7009, "k": "cmd", "T": 5244, "lvl": "Dlvl:7", "u": [42, 13], "hp": 93, "hpmax": 93}
+{"m": "You kill the cave spider!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 40, :y 13}"], "dir": "NW"}
+{"a": "y"}
+{"r": 7010, "k": "cmd", "T": 5245, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "You see here a cave spider corpse."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7011, "k": "cmd", "T": 5245, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "You see here a cave spider corpse."}
+{"act": "eat", "why": ["want to eat corpse at {'x': 40, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen':"], "slot": "a cave spider corpse"}
+{"a": "e"}
+{"r": 7012, "k": "yn", "T": 5245, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93, "q": "There is a cave spider corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 7013, "k": "cmd", "T": 5246, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "Blecch!  Rotten food!"}
+{"m": "You feel rather light headed."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7014, "k": "cmd", "T": 5246, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["applying unihorn to recover"], "slot": "i"}
+{"a": "a"}
+{"r": 7015, "k": "yn", "T": 5246, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93, "q": "What do you want to use or apply? [i-kvEGN or ?*]"}
+{"a": "i"}
+{"r": 7016, "k": "cmd", "T": 5246, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "Nothing seems to happen."}
+{"act": "apply", "why": ["applying unihorn to recover"], "slot": "i"}
+{"a": "a"}
+{"r": 7017, "k": "yn", "T": 5246, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93, "q": "What do you want to use or apply? [i-kvEGN or ?*]"}
+{"a": "i"}
+{"r": 7018, "k": "cmd", "T": 5247, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93}
+{"m": "You feel less confused now."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7019, "k": "pos", "T": 5247, "lvl": "Dlvl:7", "u": [41, 12], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7020, "k": "cmd", "T": 5251, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7021, "k": "cmd", "T": 5251, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7022, "k": "cmd", "T": 5252, "lvl": "Dlvl:7", "u": [36, 16], "hp": 93, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7023, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7024, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7025, "k": "pos", "T": 5253, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7026, "k": "cmd", "T": 5253, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7027, "k": "pos", "T": 5253, "lvl": "Dlvl:7", "u": [35, 16], "hp": 93, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7028, "k": "cmd", "T": 5254, "lvl": "Dlvl:7", "u": [38, 15], "hp": 93, "hpmax": 93}
+{"m": "A mumak blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 16}"}
+{"a": ";"}
+{"r": 7029, "k": "pos", "T": 5254, "lvl": "Dlvl:7", "u": [38, 15], "hp": 93, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 15)"}
+{"r": 7030, "k": "cmd", "T": 5254, "lvl": "Dlvl:7", "u": [38, 15], "hp": 93, "hpmax": 93}
+{"m": "q        a quadruped (mumak) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 16, 'known': 5254, 'first-known': 5254, 'glyph': 'q', 'color': None, 'type': ", "targetting enemy {'x': 38, 'y': 16, 'known': 5254, 'first-known': 5254, 'glyph': 'q', 'color': None,"], "dir": "E"}
+{"a": "l"}
+{"r": 7031, "k": "cmd", "T": 5255, "lvl": "Dlvl:7", "u": [38, 15], "hp": 93, "hpmax": 93}
+{"m": "You hit the mumak!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 16, 'known': 5255, 'first-known': 5254, 'glyph': 'q', 'color': None, 'type': ", "targetting enemy {'x': 38, 'y': 16, 'known': 5255, 'first-known': 5254, 'glyph': 'q', 'color': None,"], "dir": "E"}
+{"a": "l"}
+{"r": 7032, "k": "cmd", "T": 5255, "lvl": "Dlvl:7", "u": [38, 15], "hp": 74, "hpmax": 93}
+{"m": "You miss the mumak."}
+{"m": "The mumak butts!"}
+{"m": "The mumak misses!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 16, 'known': 5255, 'first-known': 5254, 'glyph': 'q', 'color': None, 'type': ", "targetting enemy {'x': 38, 'y': 16, 'known': 5255, 'first-known': 5254, 'glyph': 'q', 'color': None,"], "dir": "E"}
+{"a": "l"}
+{"r": 7033, "k": "cmd", "T": 5256, "lvl": "Dlvl:7", "u": [38, 15], "hp": 74, "hpmax": 93}
+{"m": "You hit the mumak!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 16, 'known': 5256, 'first-known': 5254, 'glyph': 'q', 'color': None, 'type': ", "targetting enemy {'x': 38, 'y': 16, 'known': 5256, 'first-known': 5254, 'glyph': 'q', 'color': None,"], "dir": "E"}
+{"a": "l"}
+{"r": 7034, "k": "cmd", "T": 5256, "lvl": "Dlvl:7", "u": [38, 15], "hp": 49, "hpmax": 93}
+{"m": "You miss the mumak."}
+{"m": "The mumak butts!"}
+{"m": "The mumak bites!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 16, 'known': 5256, 'first-known': 5254, 'glyph': 'q', 'color': None, 'type': ", "targetting enemy {'x': 38, 'y': 16, 'known': 5256, 'first-known': 5254, 'glyph': 'q', 'color': None,"], "dir": "E"}
+{"a": "l"}
+{"r": 7035, "k": "cmd", "T": 5257, "lvl": "Dlvl:7", "u": [38, 15], "hp": 49, "hpmax": 93}
+{"m": "You kill the mumak!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 38, :y 16}"], "dir": "E"}
+{"a": "l"}
+{"r": 7036, "k": "cmd", "T": 5258, "lvl": "Dlvl:7", "u": [39, 15], "hp": 49, "hpmax": 93}
+{"m": "You see here a mumak corpse."}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7037, "k": "cmd", "T": 5258, "lvl": "Dlvl:7", "u": [39, 15], "hp": 49, "hpmax": 93}
+{"m": "You see here a mumak corpse."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7038, "k": "pos", "T": 5258, "lvl": "Dlvl:7", "u": [39, 15], "hp": 49, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7039, "k": "cmd", "T": 5261, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7040, "k": "cmd", "T": 5261, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7041, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [36, 16], "hp": 50, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7042, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7043, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7044, "k": "pos", "T": 5262, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7045, "k": "cmd", "T": 5262, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7046, "k": "pos", "T": 5262, "lvl": "Dlvl:7", "u": [35, 16], "hp": 50, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7047, "k": "cmd", "T": 5267, "lvl": "Dlvl:7", "u": [43, 11], "hp": 51, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7048, "k": "cmd", "T": 5267, "lvl": "Dlvl:7", "u": [42, 12], "hp": 51, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7049, "k": "pos", "T": 5267, "lvl": "Dlvl:7", "u": [42, 12], "hp": 51, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7050, "k": "cmd", "T": 5273, "lvl": "Dlvl:7", "u": [35, 16], "hp": 52, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7051, "k": "cmd", "T": 5273, "lvl": "Dlvl:7", "u": [35, 16], "hp": 52, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7052, "k": "cmd", "T": 5273, "lvl": "Dlvl:7", "u": [36, 16], "hp": 52, "hpmax": 93}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7053, "k": "pos", "T": 5273, "lvl": "Dlvl:7", "u": [36, 16], "hp": 52, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7054, "k": "cmd", "T": 5273, "lvl": "Dlvl:7", "u": [36, 16], "hp": 52, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7055, "k": "cmd", "T": 5274, "lvl": "Dlvl:7", "u": [35, 16], "hp": 52, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7056, "k": "cmd", "T": 5274, "lvl": "Dlvl:7", "u": [35, 16], "hp": 52, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7057, "k": "pos", "T": 5274, "lvl": "Dlvl:7", "u": [35, 16], "hp": 52, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7058, "k": "cmd", "T": 5279, "lvl": "Dlvl:7", "u": [43, 11], "hp": 53, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7059, "k": "cmd", "T": 5279, "lvl": "Dlvl:7", "u": [42, 12], "hp": 53, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7060, "k": "pos", "T": 5279, "lvl": "Dlvl:7", "u": [42, 12], "hp": 53, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7061, "k": "cmd", "T": 5284, "lvl": "Dlvl:7", "u": [35, 16], "hp": 54, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7062, "k": "cmd", "T": 5284, "lvl": "Dlvl:7", "u": [35, 16], "hp": 54, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7063, "k": "cmd", "T": 5285, "lvl": "Dlvl:7", "u": [36, 16], "hp": 55, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7064, "k": "cmd", "T": 5286, "lvl": "Dlvl:7", "u": [35, 16], "hp": 55, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7065, "k": "cmd", "T": 5286, "lvl": "Dlvl:7", "u": [35, 16], "hp": 55, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7066, "k": "pos", "T": 5286, "lvl": "Dlvl:7", "u": [35, 16], "hp": 55, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7067, "k": "cmd", "T": 5291, "lvl": "Dlvl:7", "u": [43, 11], "hp": 56, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7068, "k": "cmd", "T": 5292, "lvl": "Dlvl:7", "u": [42, 12], "hp": 56, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7069, "k": "pos", "T": 5292, "lvl": "Dlvl:7", "u": [42, 12], "hp": 56, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7070, "k": "cmd", "T": 5298, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7071, "k": "cmd", "T": 5298, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7072, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [36, 16], "hp": 57, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7073, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7074, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7075, "k": "pos", "T": 5299, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7076, "k": "cmd", "T": 5299, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7077, "k": "pos", "T": 5299, "lvl": "Dlvl:7", "u": [35, 16], "hp": 57, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7078, "k": "cmd", "T": 5304, "lvl": "Dlvl:7", "u": [43, 11], "hp": 58, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7079, "k": "cmd", "T": 5305, "lvl": "Dlvl:7", "u": [42, 12], "hp": 59, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7080, "k": "pos", "T": 5305, "lvl": "Dlvl:7", "u": [42, 12], "hp": 59, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7081, "k": "cmd", "T": 5309, "lvl": "Dlvl:7", "u": [35, 16], "hp": 59, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7082, "k": "cmd", "T": 5309, "lvl": "Dlvl:7", "u": [35, 16], "hp": 59, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7083, "k": "cmd", "T": 5310, "lvl": "Dlvl:7", "u": [36, 16], "hp": 60, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7084, "k": "cmd", "T": 5310, "lvl": "Dlvl:7", "u": [35, 16], "hp": 60, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7085, "k": "cmd", "T": 5310, "lvl": "Dlvl:7", "u": [35, 16], "hp": 60, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7086, "k": "pos", "T": 5310, "lvl": "Dlvl:7", "u": [35, 16], "hp": 60, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7087, "k": "cmd", "T": 5316, "lvl": "Dlvl:7", "u": [43, 11], "hp": 61, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7088, "k": "cmd", "T": 5317, "lvl": "Dlvl:7", "u": [42, 12], "hp": 61, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7089, "k": "pos", "T": 5317, "lvl": "Dlvl:7", "u": [42, 12], "hp": 61, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7090, "k": "cmd", "T": 5322, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7091, "k": "cmd", "T": 5322, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7092, "k": "pos", "T": 5322, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7093, "k": "cmd", "T": 5322, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7094, "k": "cmd", "T": 5323, "lvl": "Dlvl:7", "u": [36, 16], "hp": 62, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7095, "k": "cmd", "T": 5323, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7096, "k": "cmd", "T": 5323, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7097, "k": "pos", "T": 5323, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7098, "k": "cmd", "T": 5323, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7099, "k": "pos", "T": 5323, "lvl": "Dlvl:7", "u": [35, 16], "hp": 62, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7100, "k": "cmd", "T": 5328, "lvl": "Dlvl:7", "u": [42, 13], "hp": 63, "hpmax": 93}
+{"m": "A freezing sphere blocks your path."}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 13, 'known': 5328, 'first-known': 5328, 'glyph': 'e', 'color': 'white', 'type", "targetting enemy {'x': 40, 'y': 13, 'known': 5328, 'first-known': 5328, 'glyph': 'e', 'color': 'whit"], "dir": "NW"}
+{"a": "y"}
+{"r": 7101, "k": "cmd", "T": 5328, "lvl": "Dlvl:7", "u": [42, 13], "hp": 63, "hpmax": 93}
+{"m": "You hit the freezing sphere!"}
+{"m": "The freezing sphere explodes!"}
+{"m": "You seem unaffected by it."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7102, "k": "pos", "T": 5328, "lvl": "Dlvl:7", "u": [42, 13], "hp": 63, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7103, "k": "cmd", "T": 5332, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7104, "k": "cmd", "T": 5332, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7105, "k": "cmd", "T": 5333, "lvl": "Dlvl:7", "u": [36, 16], "hp": 64, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7106, "k": "cmd", "T": 5333, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7107, "k": "cmd", "T": 5333, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7108, "k": "pos", "T": 5333, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7109, "k": "cmd", "T": 5333, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7110, "k": "pos", "T": 5333, "lvl": "Dlvl:7", "u": [35, 16], "hp": 64, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7111, "k": "cmd", "T": 5338, "lvl": "Dlvl:7", "u": [43, 11], "hp": 65, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7112, "k": "cmd", "T": 5339, "lvl": "Dlvl:7", "u": [42, 12], "hp": 65, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7113, "k": "pos", "T": 5339, "lvl": "Dlvl:7", "u": [42, 12], "hp": 65, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7114, "k": "cmd", "T": 5344, "lvl": "Dlvl:7", "u": [35, 16], "hp": 66, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7115, "k": "cmd", "T": 5344, "lvl": "Dlvl:7", "u": [35, 16], "hp": 66, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7116, "k": "cmd", "T": 5344, "lvl": "Dlvl:7", "u": [36, 16], "hp": 66, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7117, "k": "cmd", "T": 5345, "lvl": "Dlvl:7", "u": [35, 16], "hp": 67, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7118, "k": "cmd", "T": 5345, "lvl": "Dlvl:7", "u": [35, 16], "hp": 67, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7119, "k": "pos", "T": 5345, "lvl": "Dlvl:7", "u": [35, 16], "hp": 67, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7120, "k": "cmd", "T": 5351, "lvl": "Dlvl:7", "u": [43, 11], "hp": 68, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7121, "k": "cmd", "T": 5351, "lvl": "Dlvl:7", "u": [42, 12], "hp": 68, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7122, "k": "pos", "T": 5351, "lvl": "Dlvl:7", "u": [42, 12], "hp": 68, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7123, "k": "cmd", "T": 5356, "lvl": "Dlvl:7", "u": [35, 16], "hp": 69, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7124, "k": "cmd", "T": 5356, "lvl": "Dlvl:7", "u": [35, 16], "hp": 69, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7125, "k": "cmd", "T": 5356, "lvl": "Dlvl:7", "u": [36, 16], "hp": 69, "hpmax": 93}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7126, "k": "pos", "T": 5356, "lvl": "Dlvl:7", "u": [36, 16], "hp": 69, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7127, "k": "cmd", "T": 5356, "lvl": "Dlvl:7", "u": [36, 16], "hp": 69, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7128, "k": "cmd", "T": 5357, "lvl": "Dlvl:7", "u": [35, 16], "hp": 69, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7129, "k": "cmd", "T": 5357, "lvl": "Dlvl:7", "u": [35, 16], "hp": 69, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7130, "k": "pos", "T": 5357, "lvl": "Dlvl:7", "u": [35, 16], "hp": 69, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7131, "k": "cmd", "T": 5364, "lvl": "Dlvl:7", "u": [43, 11], "hp": 70, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7132, "k": "cmd", "T": 5365, "lvl": "Dlvl:7", "u": [42, 12], "hp": 71, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7133, "k": "pos", "T": 5365, "lvl": "Dlvl:7", "u": [42, 12], "hp": 71, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7134, "k": "cmd", "T": 5370, "lvl": "Dlvl:7", "u": [35, 16], "hp": 72, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7135, "k": "cmd", "T": 5370, "lvl": "Dlvl:7", "u": [35, 16], "hp": 72, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7136, "k": "cmd", "T": 5371, "lvl": "Dlvl:7", "u": [36, 16], "hp": 72, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7137, "k": "cmd", "T": 5371, "lvl": "Dlvl:7", "u": [35, 16], "hp": 72, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7138, "k": "cmd", "T": 5371, "lvl": "Dlvl:7", "u": [35, 16], "hp": 72, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7139, "k": "pos", "T": 5371, "lvl": "Dlvl:7", "u": [35, 16], "hp": 72, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7140, "k": "cmd", "T": 5378, "lvl": "Dlvl:7", "u": [43, 11], "hp": 73, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7141, "k": "cmd", "T": 5378, "lvl": "Dlvl:7", "u": [42, 12], "hp": 73, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7142, "k": "pos", "T": 5378, "lvl": "Dlvl:7", "u": [42, 12], "hp": 73, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7143, "k": "cmd", "T": 5382, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7144, "k": "cmd", "T": 5382, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7145, "k": "pos", "T": 5382, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7146, "k": "cmd", "T": 5382, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7147, "k": "cmd", "T": 5383, "lvl": "Dlvl:7", "u": [36, 16], "hp": 74, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7148, "k": "cmd", "T": 5383, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7149, "k": "cmd", "T": 5383, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7150, "k": "pos", "T": 5383, "lvl": "Dlvl:7", "u": [35, 16], "hp": 74, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7151, "k": "cmd", "T": 5389, "lvl": "Dlvl:7", "u": [43, 11], "hp": 75, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7152, "k": "cmd", "T": 5389, "lvl": "Dlvl:7", "u": [42, 12], "hp": 75, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7153, "k": "pos", "T": 5389, "lvl": "Dlvl:7", "u": [42, 12], "hp": 75, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7154, "k": "cmd", "T": 5393, "lvl": "Dlvl:7", "u": [35, 16], "hp": 76, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7155, "k": "cmd", "T": 5393, "lvl": "Dlvl:7", "u": [35, 16], "hp": 76, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7156, "k": "cmd", "T": 5394, "lvl": "Dlvl:7", "u": [36, 16], "hp": 76, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7157, "k": "cmd", "T": 5395, "lvl": "Dlvl:7", "u": [35, 16], "hp": 77, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7158, "k": "cmd", "T": 5395, "lvl": "Dlvl:7", "u": [35, 16], "hp": 77, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7159, "k": "pos", "T": 5395, "lvl": "Dlvl:7", "u": [35, 16], "hp": 77, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7160, "k": "cmd", "T": 5395, "lvl": "Dlvl:7", "u": [35, 16], "hp": 77, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7161, "k": "pos", "T": 5395, "lvl": "Dlvl:7", "u": [35, 16], "hp": 77, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7162, "k": "cmd", "T": 5400, "lvl": "Dlvl:7", "u": [43, 11], "hp": 78, "hpmax": 93}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 12}"}
+{"a": ";"}
+{"r": 7163, "k": "pos", "T": 5400, "lvl": "Dlvl:7", "u": [43, 11], "hp": 78, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 11)"}
+{"r": 7164, "k": "cmd", "T": 5400, "lvl": "Dlvl:7", "u": [43, 11], "hp": 78, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnome king) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7165, "k": "cmd", "T": 5401, "lvl": "Dlvl:7", "u": [42, 12], "hp": 78, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7166, "k": "pos", "T": 5401, "lvl": "Dlvl:7", "u": [42, 12], "hp": 78, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7167, "k": "cmd", "T": 5406, "lvl": "Dlvl:7", "u": [35, 16], "hp": 79, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7168, "k": "cmd", "T": 5406, "lvl": "Dlvl:7", "u": [35, 16], "hp": 79, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7169, "k": "cmd", "T": 5406, "lvl": "Dlvl:7", "u": [36, 16], "hp": 79, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7170, "k": "cmd", "T": 5407, "lvl": "Dlvl:7", "u": [35, 16], "hp": 79, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7171, "k": "cmd", "T": 5407, "lvl": "Dlvl:7", "u": [35, 16], "hp": 79, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7172, "k": "pos", "T": 5407, "lvl": "Dlvl:7", "u": [35, 16], "hp": 79, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7173, "k": "cmd", "T": 5413, "lvl": "Dlvl:7", "u": [43, 11], "hp": 80, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7174, "k": "cmd", "T": 5413, "lvl": "Dlvl:7", "u": [42, 12], "hp": 80, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7175, "k": "pos", "T": 5413, "lvl": "Dlvl:7", "u": [42, 12], "hp": 80, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7176, "k": "cmd", "T": 5418, "lvl": "Dlvl:7", "u": [35, 16], "hp": 81, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7177, "k": "cmd", "T": 5418, "lvl": "Dlvl:7", "u": [35, 16], "hp": 81, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7178, "k": "cmd", "T": 5419, "lvl": "Dlvl:7", "u": [36, 16], "hp": 81, "hpmax": 93}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 13}"}
+{"a": ";"}
+{"r": 7179, "k": "pos", "T": 5419, "lvl": "Dlvl:7", "u": [36, 16], "hp": 81, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 12)"}
+{"r": 7180, "k": "cmd", "T": 5419, "lvl": "Dlvl:7", "u": [36, 16], "hp": 81, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7181, "k": "cmd", "T": 5420, "lvl": "Dlvl:7", "u": [35, 16], "hp": 82, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7182, "k": "cmd", "T": 5420, "lvl": "Dlvl:7", "u": [35, 16], "hp": 82, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7183, "k": "pos", "T": 5420, "lvl": "Dlvl:7", "u": [35, 16], "hp": 82, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7184, "k": "cmd", "T": 5425, "lvl": "Dlvl:7", "u": [43, 11], "hp": 83, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7185, "k": "cmd", "T": 5426, "lvl": "Dlvl:7", "u": [42, 12], "hp": 83, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7186, "k": "pos", "T": 5426, "lvl": "Dlvl:7", "u": [42, 12], "hp": 83, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7187, "k": "cmd", "T": 5432, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7188, "k": "cmd", "T": 5432, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 34, :y 12}"}
+{"a": ";"}
+{"r": 7189, "k": "pos", "T": 5432, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 11)"}
+{"r": 7190, "k": "cmd", "T": 5432, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 7191, "k": "cmd", "T": 5433, "lvl": "Dlvl:7", "u": [36, 16], "hp": 84, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 7192, "k": "cmd", "T": 5433, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7193, "k": "cmd", "T": 5433, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93}
+{"m": "You see here 2 scrolls labeled HAPAX LEGOMENON."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 7194, "k": "pos", "T": 5433, "lvl": "Dlvl:7", "u": [35, 16], "hp": 84, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 7195, "k": "cmd", "T": 5440, "lvl": "Dlvl:7", "u": [43, 11], "hp": 86, "hpmax": 93}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7196, "k": "cmd", "T": 5440, "lvl": "Dlvl:7", "u": [42, 12], "hp": 86, "hpmax": 93}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 16}"}
+{"a": ";"}
+{"r": 7197, "k": "pos", "T": 5440, "lvl": "Dlvl:7", "u": [42, 12], "hp": 86, "hpmax": 93, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 15)"}
+{"r": 7198, "k": "cmd", "T": 5440, "lvl": "Dlvl:7", "u": [42, 12], "hp": 86, "hpmax": 93}
+{"m": "G        a gnome (peaceful gnome king) [seen: normal vision, infravision]"}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7199, "k": "pos", "T": 5440, "lvl": "Dlvl:7", "u": [42, 12], "hp": 86, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7200, "k": "cmd", "T": 5441, "lvl": "Dlvl:7", "u": [41, 14], "hp": 86, "hpmax": 93}
+{"m": "A gnome king blocks your path."}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "SW"}
+{"a": "b"}
+{"r": 7201, "k": "cmd", "T": 5442, "lvl": "Dlvl:7", "u": [40, 15], "hp": 86, "hpmax": 93}
+{"act": "autotravel", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 7202, "k": "pos", "T": 5442, "lvl": "Dlvl:7", "u": [40, 15], "hp": 86, "hpmax": 93, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 7203, "k": "cmd", "T": 5446, "lvl": "Dlvl:7", "u": [35, 16], "hp": 87, "hpmax": 93}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 7204, "k": "cmd", "T": 5446, "lvl": "Dlvl:7", "u": [35, 16], "hp": 87, "hpmax": 93}
+{"note": "abort", "d": "stuck: fixation: target (34, 17, 'Dlvl:7  ') keeps coming back after 3 recoveries (examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'fl)"}

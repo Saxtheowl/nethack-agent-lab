@@ -1,0 +1,800 @@
+{"a": "<"}
+{"r": 18790, "k": "cmd", "T": 13001, "lvl": "Dlvl:25", "u": [76, 19], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18791, "k": "pos", "T": 13001, "lvl": "Dlvl:25", "u": [76, 19], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18792, "k": "cmd", "T": 13006, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"m": "You hear the splashing of a naiad."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18793, "k": "cmd", "T": 13007, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18794, "k": "pos", "T": 13007, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18795, "k": "cmd", "T": 13015, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18796, "k": "cmd", "T": 13015, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18797, "k": "pos", "T": 13015, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18798, "k": "cmd", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18799, "k": "cmd", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18800, "k": "yn", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18801, "k": "yn", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18802, "k": "cmd", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18803, "k": "cmd", "T": 13019, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18804, "k": "cmd", "T": 13020, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18805, "k": "yn", "T": 13020, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18806, "k": "cmd", "T": 13021, "lvl": "Dlvl:26", "u": [62, 11], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18807, "k": "cmd", "T": 13021, "lvl": "Dlvl:26", "u": [62, 11], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18808, "k": "pos", "T": 13021, "lvl": "Dlvl:26", "u": [62, 11], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18809, "k": "cmd", "T": 13028, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "You hear someone beseeching Moloch."}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18810, "k": "cmd", "T": 13029, "lvl": "Dlvl:25", "u": [73, 5], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18811, "k": "pos", "T": 13029, "lvl": "Dlvl:25", "u": [73, 5], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18812, "k": "cmd", "T": 13034, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18813, "k": "cmd", "T": 13035, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18814, "k": "pos", "T": 13035, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18815, "k": "cmd", "T": 13042, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18816, "k": "cmd", "T": 13043, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18817, "k": "pos", "T": 13043, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18818, "k": "cmd", "T": 13047, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18819, "k": "cmd", "T": 13047, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18820, "k": "yn", "T": 13047, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18821, "k": "yn", "T": 13047, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18822, "k": "cmd", "T": 13048, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18823, "k": "cmd", "T": 13048, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18824, "k": "cmd", "T": 13048, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18825, "k": "cmd", "T": 13048, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18826, "k": "yn", "T": 13048, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18827, "k": "cmd", "T": 13049, "lvl": "Dlvl:26", "u": [66, 19], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18828, "k": "cmd", "T": 13049, "lvl": "Dlvl:26", "u": [66, 19], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 18829, "k": "cmd", "T": 13050, "lvl": "Dlvl:26", "u": [67, 19], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 18830, "k": "cmd", "T": 13050, "lvl": "Dlvl:26", "u": [68, 19], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "NE"}
+{"a": "u"}
+{"r": 18831, "k": "cmd", "T": 13051, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "look", "why": ["examining tile {'x': 68, 'y': 19, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18832, "k": "cmd", "T": 13051, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "i"}
+{"a": "a"}
+{"r": 18833, "k": "yn", "T": 13051, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111, "q": "What do you want to use or apply? [di-mstxzFT or ?*]"}
+{"a": "i"}
+{"r": 18834, "k": "cmd", "T": 13051, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "Nothing happens."}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18835, "k": "cmd", "T": 13052, "lvl": "Dlvl:25", "u": [75, 19], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"m": "You see here a violet gem."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18836, "k": "pos", "T": 13052, "lvl": "Dlvl:25", "u": [75, 19], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18837, "k": "cmd", "T": 13057, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18838, "k": "cmd", "T": 13058, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18839, "k": "pos", "T": 13058, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18840, "k": "cmd", "T": 13065, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18841, "k": "cmd", "T": 13065, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18842, "k": "pos", "T": 13065, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18843, "k": "cmd", "T": 13070, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18844, "k": "cmd", "T": 13070, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18845, "k": "yn", "T": 13070, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18846, "k": "yn", "T": 13070, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18847, "k": "cmd", "T": 13071, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18848, "k": "cmd", "T": 13071, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18849, "k": "cmd", "T": 13071, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18850, "k": "cmd", "T": 13071, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "You escape a trap door."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18851, "k": "yn", "T": 13071, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18852, "k": "cmd", "T": 13072, "lvl": "Dlvl:26", "u": [67, 19], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18853, "k": "cmd", "T": 13072, "lvl": "Dlvl:26", "u": [67, 19], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 18854, "k": "cmd", "T": 13073, "lvl": "Dlvl:26", "u": [68, 19], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "NE"}
+{"a": "u"}
+{"r": 18855, "k": "cmd", "T": 13074, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "look", "why": ["examining tile {'x': 68, 'y': 19, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18856, "k": "cmd", "T": 13074, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18857, "k": "cmd", "T": 13074, "lvl": "Dlvl:25", "u": [73, 11], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18858, "k": "pos", "T": 13074, "lvl": "Dlvl:25", "u": [73, 11], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18859, "k": "cmd", "T": 13075, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18860, "k": "cmd", "T": 13076, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18861, "k": "pos", "T": 13076, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18862, "k": "cmd", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18863, "k": "cmd", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18864, "k": "yn", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18865, "k": "yn", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18866, "k": "cmd", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18867, "k": "cmd", "T": 13079, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18868, "k": "cmd", "T": 13080, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18869, "k": "yn", "T": 13080, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18870, "k": "cmd", "T": 13081, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "You escape a trap door."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18871, "k": "cmd", "T": 13081, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"act": "descend", "why": ["switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 18872, "k": "cmd", "T": 13081, "lvl": "Dlvl:26", "u": [65, 18], "hp": 111, "hpmax": 111}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18873, "k": "pos", "T": 13081, "lvl": "Dlvl:26", "u": [65, 18], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18874, "k": "cmd", "T": 13084, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18875, "k": "cmd", "T": 13084, "lvl": "Dlvl:25", "u": [73, 19], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18876, "k": "pos", "T": 13084, "lvl": "Dlvl:25", "u": [73, 19], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18877, "k": "cmd", "T": 13092, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18878, "k": "cmd", "T": 13092, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18879, "k": "pos", "T": 13092, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18880, "k": "cmd", "T": 13100, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18881, "k": "cmd", "T": 13101, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18882, "k": "pos", "T": 13101, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18883, "k": "cmd", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18884, "k": "cmd", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18885, "k": "yn", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18886, "k": "yn", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18887, "k": "cmd", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18888, "k": "cmd", "T": 13104, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18889, "k": "cmd", "T": 13105, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18890, "k": "yn", "T": 13105, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18891, "k": "cmd", "T": 13105, "lvl": "Dlvl:26", "u": [64, 12], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18892, "k": "cmd", "T": 13105, "lvl": "Dlvl:26", "u": [64, 12], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18893, "k": "pos", "T": 13105, "lvl": "Dlvl:26", "u": [64, 12], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18894, "k": "cmd", "T": 13111, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18895, "k": "cmd", "T": 13112, "lvl": "Dlvl:25", "u": [76, 11], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18896, "k": "cmd", "T": 13112, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18897, "k": "cmd", "T": 13113, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18898, "k": "pos", "T": 13113, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18899, "k": "cmd", "T": 13120, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18900, "k": "cmd", "T": 13121, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18901, "k": "pos", "T": 13121, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18902, "k": "cmd", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18903, "k": "cmd", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18904, "k": "yn", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18905, "k": "yn", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18906, "k": "cmd", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18907, "k": "cmd", "T": 13125, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18908, "k": "cmd", "T": 13126, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18909, "k": "yn", "T": 13126, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18910, "k": "cmd", "T": 13127, "lvl": "Dlvl:26", "u": [71, 18], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18911, "k": "cmd", "T": 13127, "lvl": "Dlvl:26", "u": [71, 18], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 18912, "k": "cmd", "T": 13128, "lvl": "Dlvl:26", "u": [70, 17], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "SW"}
+{"a": "b"}
+{"r": 18913, "k": "cmd", "T": 13128, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "look", "why": ["examining tile {'x': 68, 'y': 19, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18914, "k": "cmd", "T": 13128, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"m": "There is a staircase up here."}
+{"m": "You see here a dagger."}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18915, "k": "cmd", "T": 13129, "lvl": "Dlvl:25", "u": [77, 7], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18916, "k": "pos", "T": 13129, "lvl": "Dlvl:25", "u": [77, 7], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18917, "k": "cmd", "T": 13131, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18918, "k": "cmd", "T": 13132, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You are enveloped in a cloud of gas!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18919, "k": "pos", "T": 13132, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18920, "k": "cmd", "T": 13138, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18921, "k": "cmd", "T": 13139, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18922, "k": "pos", "T": 13139, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18923, "k": "cmd", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18924, "k": "cmd", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18925, "k": "yn", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18926, "k": "yn", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18927, "k": "cmd", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18928, "k": "cmd", "T": 13142, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18929, "k": "cmd", "T": 13143, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18930, "k": "yn", "T": 13143, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18931, "k": "cmd", "T": 13144, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "You escape a trap door."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18932, "k": "cmd", "T": 13144, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"act": "descend", "why": ["switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 18933, "k": "cmd", "T": 13144, "lvl": "Dlvl:26", "u": [64, 17], "hp": 111, "hpmax": 111}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18934, "k": "pos", "T": 13144, "lvl": "Dlvl:26", "u": [64, 17], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18935, "k": "cmd", "T": 13147, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18936, "k": "cmd", "T": 13148, "lvl": "Dlvl:25", "u": [73, 4], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 74, :y 13}"}
+{"a": "_"}
+{"r": 18937, "k": "pos", "T": 13148, "lvl": "Dlvl:25", "u": [73, 4], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(75, 12)"}
+{"r": 18938, "k": "cmd", "T": 13154, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18939, "k": "cmd", "T": 13155, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You escape a sleeping gas trap."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18940, "k": "pos", "T": 13155, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18941, "k": "cmd", "T": 13162, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18942, "k": "cmd", "T": 13162, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18943, "k": "pos", "T": 13162, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18944, "k": "cmd", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18945, "k": "cmd", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18946, "k": "yn", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18947, "k": "yn", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18948, "k": "cmd", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18949, "k": "cmd", "T": 13166, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18950, "k": "cmd", "T": 13167, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "You escape a trap door."}
+{"m": "You feel wise!"}
+{"m": "You must have been very observant."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18951, "k": "yn", "T": 13167, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18952, "k": "cmd", "T": 13167, "lvl": "Dlvl:26", "u": [75, 16], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18953, "k": "cmd", "T": 13167, "lvl": "Dlvl:26", "u": [75, 16], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18954, "k": "pos", "T": 13167, "lvl": "Dlvl:26", "u": [75, 16], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18955, "k": "cmd", "T": 13168, "lvl": "Dlvl:26", "u": [74, 17], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"L  e ? ?\"."}
+{"act": "look", "why": ["examining tile {'x': 73, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18956, "k": "cmd", "T": 13168, "lvl": "Dlvl:26", "u": [74, 17], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"?  e ? ?\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 18957, "k": "cmd", "T": 13169, "lvl": "Dlvl:26", "u": [73, 17], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18958, "k": "pos", "T": 13169, "lvl": "Dlvl:26", "u": [73, 17], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18959, "k": "cmd", "T": 13171, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18960, "k": "cmd", "T": 13172, "lvl": "Dlvl:25", "u": [77, 9], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18961, "k": "cmd", "T": 13172, "lvl": "Dlvl:25", "u": [77, 10], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18962, "k": "cmd", "T": 13173, "lvl": "Dlvl:25", "u": [76, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18963, "k": "cmd", "T": 13173, "lvl": "Dlvl:25", "u": [75, 12], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18964, "k": "cmd", "T": 13174, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111}
+{"m": "You escape a sleeping gas trap."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18965, "k": "pos", "T": 13174, "lvl": "Dlvl:25", "u": [75, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18966, "k": "cmd", "T": 13180, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18967, "k": "cmd", "T": 13181, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18968, "k": "pos", "T": 13181, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18969, "k": "cmd", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18970, "k": "cmd", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "There is an open door here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "puton", "why": ["making use of h", "need levi for next move", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "P"}
+{"r": 18971, "k": "yn", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "What do you want to put on? [hmwNS or ?*]"}
+{"a": "h"}
+{"r": 18972, "k": "yn", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 18973, "k": "cmd", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "You start to float in the air!"}
+{"m": "h - a blessed ring of levitation (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18974, "k": "cmd", "T": 13184, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"act": "move", "why": ["assuming levitation", "seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18975, "k": "cmd", "T": 13185, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111}
+{"m": "A trap door opens up under you!"}
+{"m": "You don't fall in."}
+{"act": "remove", "why": ["removing use of h", "action descend forbids levitation", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "slot": "h"}
+{"a": "R"}
+{"r": 18976, "k": "yn", "T": 13185, "lvl": "Dlvl:25", "u": [64, 11], "hp": 111, "hpmax": 111, "q": "What do you want to remove? [fh or ?*]"}
+{"a": "h"}
+{"r": 18977, "k": "cmd", "T": 13186, "lvl": "Dlvl:26", "u": [69, 10], "hp": 111, "hpmax": 111}
+{"m": "You were wearing a blessed ring of levitation (on left hand)."}
+{"m": "You float gently to the floor."}
+{"m": "A trap door opens up under you!"}
+{"m": "You arrive at the Valley of the Dead..."}
+{"m": "The odor of burnt flesh and decay pervades the air."}
+{"m": "You hear groans and moans everywhere."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 18978, "k": "cmd", "T": 13186, "lvl": "Dlvl:26", "u": [69, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"], "pos": "#Position{:x 68, :y 19}"}
+{"a": "_"}
+{"r": 18979, "k": "pos", "T": 13186, "lvl": "Dlvl:26", "u": [69, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(69, 18)"}
+{"r": 18980, "k": "cmd", "T": 13191, "lvl": "Dlvl:26", "u": [69, 18], "hp": 111, "hpmax": 111}
+{"act": "ascend", "why": ["switching within branch to Dlvl:15", "seeking level main Dlvl:15", "get protection"]}
+{"a": "<"}
+{"r": 18981, "k": "cmd", "T": 13192, "lvl": "Dlvl:25", "u": [73, 13], "hp": 111, "hpmax": 111}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18982, "k": "pos", "T": 13192, "lvl": "Dlvl:25", "u": [73, 13], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18983, "k": "cmd", "T": 13194, "lvl": "Dlvl:25", "u": [72, 9], "hp": 111, "hpmax": 111}
+{"m": "You stop at the edge of the water."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 18984, "k": "cmd", "T": 13194, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111}
+{"act": "autotravel", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "pos": "#Position{:x 64, :y 12}"}
+{"a": "_"}
+{"r": 18985, "k": "pos", "T": 13194, "lvl": "Dlvl:25", "u": [71, 10], "hp": 111, "hpmax": 111, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(65, 11)"}
+{"r": 18986, "k": "cmd", "T": 13197, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111}
+{"m": "The giant eel bites!"}
+{"m": "The giant eel brushes against your leg."}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 13, 'known': 13197, 'first-known': 13197, 'glyph': ';', 'color': 'cyan', 'typ", "targetting enemy {'x': 65, 'y': 13, 'known': 13197, 'first-known': 13197, 'glyph': ';', 'color': 'cy"], "dir": "S"}
+{"a": "j"}
+{"r": 18987, "k": "cmd", "T": 13198, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111}
+{"m": "You hit the giant eel!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 65, 'y': 13, 'known': 13198, 'first-known': 13197, 'glyph': ';', 'col"], "slot": "-"}
+{"a": "E"}
+{"r": 18988, "k": "yn", "T": 13198, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111, "q": "What do you want to write with? [- adhln-prswxFINT or ?*]"}
+{"a": "-"}
+{"r": 18989, "k": "line", "T": 13198, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 18990, "k": "cmd", "T": 13198, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111}
+{"m": "The giant eel turns to flee."}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18991, "k": "cmd", "T": 13198, "lvl": "Dlvl:25", "u": [66, 11], "hp": 110, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["targetting enemy {'x': 65, 'y': 14, 'known': 13198, 'first-known': 13197, 'glyph': ';', 'color': 'cy"], "dir": "SE"}
+{"a": "n"}
+{"r": 18992, "k": "cmd", "T": 13199, "lvl": "Dlvl:25", "u": [67, 12], "hp": 110, "hpmax": 111}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 14, 'known': 13199, 'first-known': 13197, 'glyph': ';', 'color': 'cyan', 'typ", "targetting enemy {'x': 65, 'y': 14, 'known': 13199, 'first-known': 13197, 'glyph': ';', 'color': 'cy"], "dir": "SW"}
+{"a": "b"}
+{"r": 18993, "k": "cmd", "T": 13199, "lvl": "Dlvl:25", "u": [67, 12], "hp": 110, "hpmax": 111}
+{"m": "You kill the giant eel!"}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18994, "k": "cmd", "T": 13200, "lvl": "Dlvl:25", "u": [66, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"El er?t?\"."}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18995, "k": "cmd", "T": 13200, "lvl": "Dlvl:25", "u": [66, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"El c?  ?\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the trapdoor", "switching within branch to Dlvl:34", "trying to enter vlad from Dlvl:34", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18996, "k": "cmd", "T": 13200, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 18997, "k": "cmd", "T": 13200, "lvl": "Dlvl:25", "u": [65, 11], "hp": 111, "hpmax": 111}
+{"note": "abort", "d": "stuck: fixation: target (64, 12, 'Dlvl:25 ') keeps coming back after 3 recoveries (examining tile {'x': 64, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'do)"}

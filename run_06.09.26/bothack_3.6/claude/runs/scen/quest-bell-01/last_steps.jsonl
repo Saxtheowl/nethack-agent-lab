@@ -1,0 +1,429 @@
+{"note": "scenario", "d": "msg: Velkommen wizard, welcome to NetHack!  You are a lawful dwarven Valkyrie."}
+{"note": "scenario", "d": "msg: You feel yourself speed up."}
+{"note": "scenario", "d": "step ['xl', 14]"}
+{"note": "scenario", "d": "ext '' -> 'levelchange'"}
+{"note": "scenario", "d": "line 'To what experience level do you want to be set?' -> 14"}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 2."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 3."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 4."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 5."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 6."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 7."}
+{"note": "scenario", "d": "msg: You feel quick!"}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 8."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 9."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 10."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 11."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 12."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 13."}
+{"note": "scenario", "d": "msg: You feel more experienced."}
+{"note": "scenario", "d": "msg: Welcome to experience level 14."}
+{"note": "scenario", "d": "step ['levelport_menu', 'Val-strt']"}
+{"note": "scenario", "d": "line 'To what level do you want to teleport?' -> '?'"}
+{"note": "scenario", "d": "menu 'Level teleport to where:' -> 'Val-strt'"}
+{"note": "scenario", "d": "msg: [You arrive below the Shrine of Destiny.  Something is wrong; there is lava present.]"}
+{"note": "scenario", "d": "setup done: Default kit, XL 14, level-teleported to the Valkyrie quest home (Val-strt); goal: get the Bell of Opening (quest leader, locate, goal level, Lord Surtur)"}
+{"r": 7, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "[You arrive below the Shrine of Destiny.  Something is wrong; there is lava present.]"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 9, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"act": "look", "why": ["examining tile {'x': 33, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 10, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "You see no objects here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 12}"}
+{"a": ";"}
+{"r": 11, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 11)"}
+{"r": 12, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful Norn) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 13}"}
+{"a": ";"}
+{"r": 13, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 12)"}
+{"r": 14, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 10}"}
+{"a": ";"}
+{"r": 15, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 9)"}
+{"r": 16, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 13}"}
+{"a": ";"}
+{"r": 17, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 12)"}
+{"r": 18, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 11}"}
+{"a": ";"}
+{"r": 19, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 10)"}
+{"r": 20, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 14}"}
+{"a": ";"}
+{"r": 21, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 13)"}
+{"r": 22, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 10}"}
+{"a": ";"}
+{"r": 23, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 9)"}
+{"r": 24, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 14}"}
+{"a": ";"}
+{"r": 25, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 13)"}
+{"r": 26, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 11}"}
+{"a": ";"}
+{"r": 27, "k": "pos", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 10)"}
+{"r": 28, "k": "cmd", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "apply", "why": ["using any light source"], "slot": "e"}
+{"a": "a"}
+{"r": 29, "k": "yn", "T": 1, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "e"}
+{"r": 30, "k": "cmd", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"m": "Your lamp is now on."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 31, "k": "cmd", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"act": "apply", "why": ["learning contents of {'label': 'an empty uncursed bag of holding', 'qty': 1, 'buc': 'uncursed', 'nam"], "slot": "k"}
+{"a": "a"}
+{"r": 32, "k": "yn", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "k"}
+{"r": 33, "k": "menu", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "p": "Your bag of holding is empty.  Do what with it?", "items": [": Look inside the bag of holding", "i put something in", "r put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 34, "k": "cmd", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133}
+{"act": "autotravel", "why": ["new or desired item at {'x': 38, 'y': 12, 'glyph': '(', 'color': None, 'feature': None, 'seen': Fals"], "pos": "#Position{:x 37, :y 13}"}
+{"a": "_"}
+{"r": 35, "k": "pos", "T": 2, "lvl": "Home 1", "u": [34, 10], "hp": 133, "hpmax": 133, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(38, 12)"}
+{"r": 36, "k": "cmd", "T": 4, "lvl": "Home 1", "u": [37, 12], "hp": 133, "hpmax": 133}
+{"m": "The Norn blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 31, :y 12}"}
+{"a": ";"}
+{"r": 37, "k": "pos", "T": 4, "lvl": "Home 1", "u": [37, 12], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(32, 11)"}
+{"r": 38, "k": "cmd", "T": 4, "lvl": "Home 1", "u": [37, 12], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 14}"}
+{"a": ";"}
+{"r": 39, "k": "pos", "T": 4, "lvl": "Home 1", "u": [37, 12], "hp": 133, "hpmax": 133, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 13)"}
+{"r": 40, "k": "cmd", "T": 4, "lvl": "Home 1", "u": [37, 12], "hp": 133, "hpmax": 133}
+{"m": "@        a human or elf (peaceful warrior) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 38, 'y': 12, 'glyph': '(', 'color': None, 'feature': None, 'seen': Fals"], "dir": "E"}
+{"a": "l"}
+{"r": 41, "k": "yn", "T": 4, "lvl": "Home 1", "u": [38, 12], "hp": 133, "hpmax": 133, "q": "adjust?"}
+{"m": "[We need your aid.  Are you ready?]"}
+{"m": "You are currently 0 and require 20."}
+{"note": "unknown-prompt", "d": "yn: adjust?"}
+{"note": "fallback", "d": "no-answer <Request #41 yn 'adjust?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 42, "k": "yn", "T": 4, "lvl": "Home 1", "u": [38, 12], "hp": 133, "hpmax": 133, "q": "adjust?"}
+{"m": "You are currently 0 and require 20."}
+{"note": "unknown-prompt", "d": "yn: adjust?"}
+{"note": "fallback", "d": "no-answer <Request #42 yn 'adjust?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 43, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"m": "[You have strayed from the lawful path.  Return after you purify yourself.]"}
+{"note": "fallback", "d": "no-answer <Request #43 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 44, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #44 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 45, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #45 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 46, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #46 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 47, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #47 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 48, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #48 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 49, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #49 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 50, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #50 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 51, "k": "cmd", "T": 4, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "recovery-error", "d": "TypeError(\"'NoneType' object is not subscriptable\")"}
+{"note": "recovery", "d": "action-loop x8 move: forced search"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 52, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #52 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 53, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #53 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 54, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #54 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 55, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #55 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 56, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #56 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 57, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #57 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 58, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #58 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 59, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #59 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 60, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "recovery-error", "d": "TypeError(\"'NoneType' object is not subscriptable\")"}
+{"note": "recovery", "d": "action-loop x8 move: forced search"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 61, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #61 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 62, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #62 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 63, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #63 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 64, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #64 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 65, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #65 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 66, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #66 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 67, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #67 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 68, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #68 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 69, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #69 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 70, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #70 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 71, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #71 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 72, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #72 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 73, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #73 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 74, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #74 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 75, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #75 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 76, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #76 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 77, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #77 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 78, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #78 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 79, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #79 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 80, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #80 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 81, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #81 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 82, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #82 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 83, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #83 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 84, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #84 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 85, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #85 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 86, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #86 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 87, "k": "cmd", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "j"}
+{"a": "a"}
+{"r": 88, "k": "yn", "T": 5, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133, "q": "What do you want to use or apply? [ejkl or ?*]"}
+{"a": "j"}
+{"r": 89, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"m": "Nothing happens."}
+{"note": "fallback", "d": "no-answer <Request #89 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 90, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #90 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 91, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #91 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 92, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #92 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 93, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #93 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 94, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #94 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 95, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #95 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 96, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #96 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 97, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "recovery", "d": "action-loop x8 apply: forced search"}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 98, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #98 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 99, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #99 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 100, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #100 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 101, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #101 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 102, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #102 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 103, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #103 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 104, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #104 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 105, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #105 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 106, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #106 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 107, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #107 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 108, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #108 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 109, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #109 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 110, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #110 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 111, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #111 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 112, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #112 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 113, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #113 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 114, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #114 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 115, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #115 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 116, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #116 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 117, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #117 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 118, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #118 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 119, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #119 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 120, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #120 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 121, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #121 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 122, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #122 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 123, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #123 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 124, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #124 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 125, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #125 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 126, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #126 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 127, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #127 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 128, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "fallback", "d": "no-answer <Request #128 cmd ''> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 129, "k": "cmd", "T": 6, "lvl": "Dlvl:12", "u": [7, 3], "hp": 133, "hpmax": 133}
+{"note": "abort", "d": "stuck: action loop: apply repeated 40 times at turn 6 ({'act': 'apply', 'why': ['randomly use unihorn'], 'slot': 'j'})"}

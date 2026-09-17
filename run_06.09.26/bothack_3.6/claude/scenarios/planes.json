@@ -1,0 +1,24 @@
+{
+ "description": "Default kit, XL 30, level-teleported to the Plane of Earth (the wizard-mode teleport adds the Amulet of Yendor); goal: reach the Astral Plane through Air, Fire and Water",
+ "steps": [
+  [
+   "xl",
+   30
+  ],
+  [
+   "levelport_menu",
+   "earth"
+  ]
+ ],
+ "goal": "astral",
+ "max_turns": 20000,
+ "profile": "fast",
+ "skip": [
+  "excalibur",
+  "quest-portal",
+  "quest",
+  "vlad",
+  "wiztower",
+  "dlvl20"
+ ]
+}

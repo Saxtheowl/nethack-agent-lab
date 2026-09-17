@@ -1,0 +1,351 @@
+{
+ "series": "mt-w02",
+ "games": 20,
+ "outcomes": {
+  "goal_reached": 18,
+  "stuck": 2
+ },
+ "stage_funnel": {
+  "dlvl2": 20,
+  "mines": 19,
+  "minetown": 18,
+  "oracle": 10
+ },
+ "failure_signatures": [
+  [
+   "stuck | request storm: N requests for N turns (turn N, last action {..})",
+   1
+  ],
+  [
+   "stuck | no novelty for N turns on Dlvl:N (last action {..})",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 424,
+  "compat:container:o": 261,
+  "note:assist": 197,
+  "fallback": 195,
+  "note:fallback": 195,
+  "msg-rewrite:^It is locked\\.$": 96,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 84,
+  "compat:container:i": 71,
+  "compat:name:o": 51,
+  "compat:container:q": 40,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 37,
+  "menu_letter_unmatched": 33,
+  "note:recovery": 30,
+  "note:forced-command": 29,
+  "note:abort": 20,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 15,
+  "menu_show:current_skills": 14,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 11,
+  "farlook-symbol": 8,
+  "leftover_keys_dropped": 5,
+  "note:leftover": 5,
+  "compat:name:i": 1
+ },
+ "assist_totals": {
+  "kit": 160,
+  "feed": 14,
+  "lifesave": 23
+ },
+ "turns_total": 89180,
+ "turns_max": 14795,
+ "elapsed_total_s": 3069.8,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 4001,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1456,
+   "max_depth": 6,
+   "last_stage": "minetown",
+   "elapsed_s": 41.3,
+   "turns_per_s": 35.27,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 4002,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 3204,
+   "max_depth": 8,
+   "last_stage": "minetown",
+   "elapsed_s": 100.7,
+   "turns_per_s": 31.81,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 4003,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 14795,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 287.9,
+   "turns_per_s": 51.38,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 4004,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1848,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 43.6,
+   "turns_per_s": 42.37,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 4005,
+   "outcome": "stuck",
+   "reason": "request storm: 3000 requests for 8 turns (turn 10415, last action {'act': 'eat', 'why': [\"want to eat corpse at {'x': 58, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'hole', 'seen': \"], 'slot'",
+   "turns": 10415,
+   "max_depth": 6,
+   "last_stage": "mines",
+   "elapsed_s": 508.9,
+   "turns_per_s": 20.46,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 17,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 4006,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 9065,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 222.1,
+   "turns_per_s": 40.81,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 4007,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1594,
+   "max_depth": 5,
+   "last_stage": "minetown",
+   "elapsed_s": 41.2,
+   "turns_per_s": 38.73,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 4008,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1385,
+   "max_depth": 6,
+   "last_stage": "minetown",
+   "elapsed_s": 34.3,
+   "turns_per_s": 40.38,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 4009,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 9206,
+   "max_depth": 6,
+   "last_stage": "minetown",
+   "elapsed_s": 362.8,
+   "turns_per_s": 25.37,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g010",
+   "engine_seed": 4010,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1239,
+   "max_depth": 5,
+   "last_stage": "minetown",
+   "elapsed_s": 46.4,
+   "turns_per_s": 26.7,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g011",
+   "engine_seed": 4011,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 2674,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 77.2,
+   "turns_per_s": 34.65,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g012",
+   "engine_seed": 4012,
+   "outcome": "stuck",
+   "reason": "no novelty for 6000 turns on Dlvl:2 (last action {'act': 'move', 'why': ['new or desired item at #Position{:x 70, :y 6}'], 'dir': 'S'})",
+   "turns": 6414,
+   "max_depth": 2,
+   "last_stage": "dlvl2",
+   "elapsed_s": 325.0,
+   "turns_per_s": 19.74,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g013",
+   "engine_seed": 4013,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 936,
+   "max_depth": 8,
+   "last_stage": "minetown",
+   "elapsed_s": 29.3,
+   "turns_per_s": 31.9,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g014",
+   "engine_seed": 4014,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 13762,
+   "max_depth": 9,
+   "last_stage": "minetown",
+   "elapsed_s": 624.8,
+   "turns_per_s": 22.03,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 5
+   }
+  },
+  {
+   "game_id": "g015",
+   "engine_seed": 4015,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1153,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 37.3,
+   "turns_per_s": 30.9,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g016",
+   "engine_seed": 4016,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1274,
+   "max_depth": 6,
+   "last_stage": "minetown",
+   "elapsed_s": 40.1,
+   "turns_per_s": 31.76,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g017",
+   "engine_seed": 4017,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 2178,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 70.5,
+   "turns_per_s": 30.89,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g018",
+   "engine_seed": 4018,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1245,
+   "max_depth": 7,
+   "last_stage": "minetown",
+   "elapsed_s": 36.1,
+   "turns_per_s": 34.49,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g019",
+   "engine_seed": 4019,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 3422,
+   "max_depth": 9,
+   "last_stage": "minetown",
+   "elapsed_s": 95.9,
+   "turns_per_s": 35.69,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g020",
+   "engine_seed": 4020,
+   "outcome": "goal_reached",
+   "reason": "minetown",
+   "turns": 1915,
+   "max_depth": 8,
+   "last_stage": "minetown",
+   "elapsed_s": 44.4,
+   "turns_per_s": 43.12,
+   "assist_counts": {
+    "kit": 8
+   }
+  }
+ ]
+}

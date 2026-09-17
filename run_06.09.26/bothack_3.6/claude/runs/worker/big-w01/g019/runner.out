@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/roro/bothack36/nhbot/rungame.py", line 404, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/roro/bothack36/nhbot/rungame.py", line 394, in main
+    res = run_game(args)
+          ^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/nhbot/rungame.py", line 257, in run_game
+    bridge.run(sup)
+  File "/home/roro/bothack36/pybothack/nhbridge.py", line 419, in run
+    self.handle(req)
+  File "/home/roro/bothack36/pybothack/nhbridge.py", line 454, in handle
+    self._choose_action(req)
+  File "/home/roro/bothack36/pybothack/nhbridge.py", line 750, in _choose_action
+    d.full_frame(self.frame)
+  File "/home/roro/bothack36/pybothack/delegator.py", line 265, in method
+    return self._send(lambda: self._invoke_event(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/delegator.py", line 144, in _send
+    self.drain()
+  File "/home/roro/bothack36/pybothack/delegator.py", line 155, in drain
+    thunk()
+  File "/home/roro/bothack36/pybothack/bh36.py", line 36, in <lambda>
+    lambda: delegator._respond_action('choose_action', game.deref()))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/delegator.py", line 258, in _respond_action
+    action = self._invoke_prompt(name, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/delegator.py", line 234, in _invoke_prompt
+    res = fn(*args)
+          ^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/bots/mainbot.py", line 476, in progress
+    res = full_explore(game)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/bots/mainbot.py", line 400, in full_explore
+    res = invocation(game)
+          ^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/behaviors.py", line 83, in invocation
+    or attach_candles(game)
+       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/roro/bothack36/pybothack/behaviors.py", line 17, in attach_candles
+    clj_assert(c, 'have game candelabrum')
+  File "/home/roro/bothack36/pybothack/clj.py", line 152, in clj_assert
+    raise CljAssertionError(msg)
+pybothack.clj.CljAssertionError: have game candelabrum

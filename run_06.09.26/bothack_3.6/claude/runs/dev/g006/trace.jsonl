@@ -1,0 +1,2024 @@
+{"r": 1, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"note": "assist", "d": {"kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "turn": 1, "depth": 1, "dnum": 0}}
+{"m": "Velkommen bot, welcome to NetHack!  You are a lawful dwarven Valkyrie."}
+{"m": "You feel yourself speed up."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 2, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 3, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': Non"]}
+{"a": ":"}
+{"r": 4, "k": "cmd", "T": 1, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"m": "There is a staircase up here."}
+{"act": "move", "why": ["hitting {'x': 63, 'y': 13, 'known': 1, 'first-known': 1, 'glyph': 'x', 'color': ", "targetting leftover enemy {'x': 63, 'y': 13, 'known': 1, 'first-known': 1, 'glyp"], "dir": "NW"}
+{"a": "y"}
+{"r": 5, "k": "cmd", "T": 2, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"m": "You kill the grid bug!"}
+{"act": "apply", "why": ["learning contents of {'label': 'an uncursed bag of holding', 'qty': 1, 'buc': 'u"], "slot": "j"}
+{"a": "a"}
+{"r": 6, "k": "yn", "T": 2, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18, "q": "What do you want to use or apply? [ijk or ?*]"}
+{"a": "j"}
+{"r": 7, "k": "menu", "T": 2, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18, "p": "Do what with your bag of holding?"}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 8, "k": "menu", "T": 2, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18, "p": "Take out what?"}
+{"note": "fallback", "d": "no-answer <Request #8 menu 'Take out what?'> -> '\\x1b'"}
+{"a": "\\x1b"}
+{"r": 9, "k": "cmd", "T": 2, "lvl": "Dlvl:1", "u": [65, 13], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 13, 'glyph': '.', 'color': None, 'feature': 'floor', 's", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 10, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [65, 12], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 12, 'glyph': '|', 'color': 'brown', 'feature': 'door-op", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 11, "k": "cmd", "T": 3, "lvl": "Dlvl:1", "u": [65, 11], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 12, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [65, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 13, "k": "cmd", "T": 4, "lvl": "Dlvl:1", "u": [64, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 14, "k": "cmd", "T": 5, "lvl": "Dlvl:1", "u": [63, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 15, "k": "cmd", "T": 5, "lvl": "Dlvl:1", "u": [62, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 16, "k": "cmd", "T": 6, "lvl": "Dlvl:1", "u": [61, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 17, "k": "cmd", "T": 6, "lvl": "Dlvl:1", "u": [61, 11], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 60, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 18, "k": "cmd", "T": 7, "lvl": "Dlvl:1", "u": [61, 12], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 19, "k": "cmd", "T": 7, "lvl": "Dlvl:1", "u": [61, 11], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 59, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "NW"}
+{"a": "y"}
+{"r": 20, "k": "cmd", "T": 8, "lvl": "Dlvl:1", "u": [60, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 21, "k": "cmd", "T": 8, "lvl": "Dlvl:1", "u": [59, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 57, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 22, "k": "cmd", "T": 9, "lvl": "Dlvl:1", "u": [58, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 23, "k": "cmd", "T": 10, "lvl": "Dlvl:1", "u": [57, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 24, "k": "cmd", "T": 11, "lvl": "Dlvl:1", "u": [57, 11], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 25, "k": "cmd", "T": 12, "lvl": "Dlvl:1", "u": [57, 12], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 26, "k": "cmd", "T": 13, "lvl": "Dlvl:1", "u": [57, 13], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 27, "k": "cmd", "T": 13, "lvl": "Dlvl:1", "u": [57, 14], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 28, "k": "cmd", "T": 14, "lvl": "Dlvl:1", "u": [57, 15], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "S"}
+{"a": "j"}
+{"r": 29, "k": "cmd", "T": 14, "lvl": "Dlvl:1", "u": [57, 16], "hp": 18, "hpmax": 18}
+{"act": "autotravel", "why": ["new or desired item at {'x': 51, 'y': 17, 'glyph': '%', 'color': None, 'feature'"], "pos": "#Position{:x 52, :y 18}"}
+{"a": "_"}
+{"r": 30, "k": "pos", "T": 14, "lvl": "Dlvl:1", "u": [57, 16], "hp": 18, "hpmax": 18, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(53, 17)"}
+{"r": 31, "k": "cmd", "T": 18, "lvl": "Dlvl:1", "u": [53, 17], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["new or desired item at {'x': 51, 'y': 17, 'glyph': '%', 'color': None, 'feature'"], "dir": "NW"}
+{"a": "y"}
+{"r": 32, "k": "cmd", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18}
+{"m": "There are several objects here."}
+{"m": "An arrow shoots out at you!"}
+{"m": "It misses."}
+{"act": "look", "why": ["examining tile {'x': 51, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': Non"]}
+{"a": ":"}
+{"r": 33, "k": "cmd", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18}
+{"m": "There is an arrow trap here."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 34, "k": "menu", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18, "p": "Pick up what?"}
+{"a": [6]}
+{"r": 35, "k": "cmd", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18}
+{"m": "l - a food ration."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 36, "k": "cmd", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 51, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'ar"]}
+{"a": ":"}
+{"r": 37, "k": "cmd", "T": 19, "lvl": "Dlvl:1", "u": [52, 16], "hp": 18, "hpmax": 18}
+{"m": "There is an arrow trap here."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 's", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 38, "k": "cmd", "T": 20, "lvl": "Dlvl:1", "u": [51, 16], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 's", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 39, "k": "cmd", "T": 20, "lvl": "Dlvl:1", "u": [50, 16], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 's", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 40, "k": "cmd", "T": 21, "lvl": "Dlvl:1", "u": [49, 16], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 's", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "NW"}
+{"a": "y"}
+{"r": 41, "k": "cmd", "T": 21, "lvl": "Dlvl:1", "u": [48, 15], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 42, "k": "cmd", "T": 22, "lvl": "Dlvl:1", "u": [48, 14], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "N"}
+{"a": "k"}
+{"r": 43, "k": "cmd", "T": 22, "lvl": "Dlvl:1", "u": [48, 13], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 44, "k": "cmd", "T": 23, "lvl": "Dlvl:1", "u": [47, 13], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor',", "using cached exploration step", "first exploring main until branch entrance", "exploring mines until minetown"], "dir": "W"}
+{"a": "h"}
+{"r": 45, "k": "cmd", "T": 24, "lvl": "Dlvl:1", "u": [46, 13], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["new or desired item at {'x': 45, 'y': 8, 'glyph': '%', 'color': None, 'feature':"], "dir": "N"}
+{"a": "k"}
+{"r": 46, "k": "cmd", "T": 25, "lvl": "Dlvl:1", "u": [46, 12], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["new or desired item at {'x': 45, 'y': 8, 'glyph': '%', 'color': None, 'feature':"], "dir": "N"}
+{"a": "k"}
+{"r": 47, "k": "cmd", "T": 25, "lvl": "Dlvl:1", "u": [46, 11], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["new or desired item at #Position{:x 45, :y 8}"], "dir": "N"}
+{"a": "k"}
+{"r": 48, "k": "cmd", "T": 26, "lvl": "Dlvl:1", "u": [46, 10], "hp": 18, "hpmax": 18}
+{"act": "move", "why": ["new or desired item at #Position{:x 46, :y 10}"], "dir": "NE"}
+{"a": "u"}
+{"r": 49, "k": "cmd", "T": 26, "lvl": "Dlvl:1", "u": [47, 9], "hp": 18, "hpmax": 18}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': Non"]}
+{"a": ":"}
+{"r": 50, "k": "cmd", "T": 26, "lvl": "Dlvl:1", "u": [47, 9], "hp": 18, "hpmax": 18}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 9}"], "dir": "NE"}
+{"a": "u"}
+{"r": 51, "k": "cmd", "T": 27, "lvl": "Dlvl:1", "u": [48, 8], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None"]}
+{"a": ":"}
+{"r": 52, "k": "cmd", "T": 27, "lvl": "Dlvl:1", "u": [48, 8], "hp": 18, "hpmax": 18}
+{"m": "There is a doorway here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 48, :y 8}"], "dir": "NE"}
+{"a": "u"}
+{"r": 53, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 7], "hp": 18, "hpmax": 18}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None"]}
+{"a": ":"}
+{"r": 54, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 7], "hp": 18, "hpmax": 18}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 48, :y 7}"], "dir": "N"}
+{"a": "k"}
+{"r": 55, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You see here 2 yellowish brown gems."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None"]}
+{"a": ":"}
+{"r": 56, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You see here 2 yellowish brown gems."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 57, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 58, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 59, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 60, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 61, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 62, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 63, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 64, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 65, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 66, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 67, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 68, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 69, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 70, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 71, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 72, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 73, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 74, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 75, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 76, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 77, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 78, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 79, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 80, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 81, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 82, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 83, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 84, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 85, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 86, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 87, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 88, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 89, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 90, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 91, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 92, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 93, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 94, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 95, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 96, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 97, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 98, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 99, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 100, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 101, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 102, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 103, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 104, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 105, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 106, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 107, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 108, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 109, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 110, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 111, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 112, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 113, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 114, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 115, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 116, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 117, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 118, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 119, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 120, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 121, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 122, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 123, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 124, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 125, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 126, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 127, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 128, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 129, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 130, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 131, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 132, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 133, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 134, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 135, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 136, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 137, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 138, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 139, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 140, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 141, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 142, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 143, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 144, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 145, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 146, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 147, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 148, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 149, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 150, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 151, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 152, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 153, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 154, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 155, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 156, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 157, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 158, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 159, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 160, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 161, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 162, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 163, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 164, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 165, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 166, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 167, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 168, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 169, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 170, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 171, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 172, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 173, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 174, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 175, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 176, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 177, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 178, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 179, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 180, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 181, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 182, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 183, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 184, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 185, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 186, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 187, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 188, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 189, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 190, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 191, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 192, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 193, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 194, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 195, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 196, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 197, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 198, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 199, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 200, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 201, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 202, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 203, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 204, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 205, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 206, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 207, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 208, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 209, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 210, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 211, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 212, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 213, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 214, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 215, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 216, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 217, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 218, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 219, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 220, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 221, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 222, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 223, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 224, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 225, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 226, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 227, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 228, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 229, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 230, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 231, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 232, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 233, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 234, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 235, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 236, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 237, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 238, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 239, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 240, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 241, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 242, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 243, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 244, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 245, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 246, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 247, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 248, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 249, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 250, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 251, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 252, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 253, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 254, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 255, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 256, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 257, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 258, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 259, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 260, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 261, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 262, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 263, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 264, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 265, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 266, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 267, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 268, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 269, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 270, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 271, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 272, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 273, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 274, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 275, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 276, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 277, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 278, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 279, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 280, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 281, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 282, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 283, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 284, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 285, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 286, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 287, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 288, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 289, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 290, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 291, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 292, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 293, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 294, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 295, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 296, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 297, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 298, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 299, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 300, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 301, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 302, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 303, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 304, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 305, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 306, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 307, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 308, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 309, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 310, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 311, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 312, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 313, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 314, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 315, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 316, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 317, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 318, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 319, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 320, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 321, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 322, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 323, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 324, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 325, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 326, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 327, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 328, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 329, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 330, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 331, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 332, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 333, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 334, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 335, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 336, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 337, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 338, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 339, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 340, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 341, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 342, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 343, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 344, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 345, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 346, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 347, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 348, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 349, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 350, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 351, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 352, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 353, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 354, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 355, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 356, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 357, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 358, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 359, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 360, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 361, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 362, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 363, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 364, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 365, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 366, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 367, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 368, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 369, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 370, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 371, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 372, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 373, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 374, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 375, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 376, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 377, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 378, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 379, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 380, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 381, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 382, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 383, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 384, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 385, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 386, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 387, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 388, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 389, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 390, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 391, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 392, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 393, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 394, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 395, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 396, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 397, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 398, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 399, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 400, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 401, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 402, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 403, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 404, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 405, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 406, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 407, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 408, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 409, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 410, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 411, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 412, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 413, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 414, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 415, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 416, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 417, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 418, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 419, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 420, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 421, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 422, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 423, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 424, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 425, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 426, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 427, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 428, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 429, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 430, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 431, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 432, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 433, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 434, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 435, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 436, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 437, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 438, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 439, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 440, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 441, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 442, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 443, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 444, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 445, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 446, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 447, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 448, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 449, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 450, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 451, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 452, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 453, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 454, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 455, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 456, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 457, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 458, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 459, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 460, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 461, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 462, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 463, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 464, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 465, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 466, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 467, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 468, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 469, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 470, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 471, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 472, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 473, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 474, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 475, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 476, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 477, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 478, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 479, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 480, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 481, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 482, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 483, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 484, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 485, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 486, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 487, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 488, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 489, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 490, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 491, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 492, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 493, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 494, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 495, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 496, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 497, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 498, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 499, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 500, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 501, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 502, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 503, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 504, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 505, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 506, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 507, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 508, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 509, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 510, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 511, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 512, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 513, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 514, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 515, "k": "cmd", "T": 28, "lvl": "Dlvl:1", "u": [49, 6], "hp": 18, "hpmax": 18}
+{"m": "You try to move the boulder, but in vain."}

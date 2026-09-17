@@ -1,0 +1,800 @@
+{"r": 8891, "k": "pos", "T": 5929, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(62, 15)"}
+{"r": 8892, "k": "cmd", "T": 5934, "lvl": "Dlvl:9", "u": [62, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8893, "k": "cmd", "T": 5935, "lvl": "Dlvl:9", "u": [63, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8894, "k": "cmd", "T": 5935, "lvl": "Dlvl:9", "u": [64, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8895, "k": "cmd", "T": 5936, "lvl": "Dlvl:9", "u": [65, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 64, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8896, "k": "cmd", "T": 5936, "lvl": "Dlvl:9", "u": [65, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 65, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8897, "k": "cmd", "T": 5937, "lvl": "Dlvl:9", "u": [66, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8898, "k": "cmd", "T": 5937, "lvl": "Dlvl:9", "u": [67, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 8899, "k": "cmd", "T": 5938, "lvl": "Dlvl:9", "u": [67, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 8900, "k": "cmd", "T": 5938, "lvl": "Dlvl:9", "u": [67, 16], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 67, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8901, "k": "cmd", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 68, :y 16}"}
+{"a": ";"}
+{"r": 8902, "k": "pos", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(69, 15)"}
+{"r": 8903, "k": "cmd", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100}
+{"m": "o        an orc (orc-captain) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 68, 'y': 16, 'known': 5939, 'first-known': 5939, 'glyph': 'o', 'color': 'magenta', 'ty", "targetting enemy {'x': 68, 'y': 16, 'known': 5939, 'first-known': 5939, 'glyph': 'o', 'color': 'mage"], "dir": "NE"}
+{"a": "u"}
+{"r": 8904, "k": "cmd", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100}
+{"m": "You hit the orc-captain!"}
+{"m": "The orc-captain zaps an ebony wand!"}
+{"m": "The orc-captain has made a hole in the floor."}
+{"m": "The orc-captain falls through..."}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 68, :y 16}"}
+{"a": ";"}
+{"r": 8905, "k": "pos", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(69, 15)"}
+{"r": 8906, "k": "cmd", "T": 5939, "lvl": "Dlvl:9", "u": [68, 16], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (hole)"}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 8907, "k": "cmd", "T": 5940, "lvl": "Dlvl:9", "u": [69, 17], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["exploring {'x': 66, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 66, :y 14}"}
+{"a": "_"}
+{"r": 8908, "k": "pos", "T": 5940, "lvl": "Dlvl:9", "u": [69, 17], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(67, 13)"}
+{"r": 8909, "k": "cmd", "T": 5942, "lvl": "Dlvl:9", "u": [67, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8910, "k": "cmd", "T": 5943, "lvl": "Dlvl:9", "u": [67, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8911, "k": "cmd", "T": 5943, "lvl": "Dlvl:9", "u": [67, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8912, "k": "cmd", "T": 5944, "lvl": "Dlvl:9", "u": [67, 10], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8913, "k": "cmd", "T": 5944, "lvl": "Dlvl:9", "u": [67, 9], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 66, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 8914, "k": "cmd", "T": 5945, "lvl": "Dlvl:9", "u": [67, 8], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["new or desired item at {'x': 55, 'y': 9, 'glyph': ')', 'color': None, 'feature': 'floor', 'seen': Tr"], "pos": "#Position{:x 55, :y 9}"}
+{"a": "_"}
+{"r": 8915, "k": "pos", "T": 5945, "lvl": "Dlvl:9", "u": [67, 8], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(56, 8)"}
+{"r": 8916, "k": "cmd", "T": 5951, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 55, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 8917, "k": "cmd", "T": 5951, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100}
+{"m": "There is a doorway here."}
+{"m": "You see here a club."}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 8918, "k": "cmdcont", "T": 5951, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100}
+{"a": "0"}
+{"r": 8919, "k": "cmdcont", "T": 5951, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 8920, "k": "cmd", "T": 5953, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100}
+{"m": "You find a hidden passage."}
+{"act": "autotravel", "why": ["exploring {'x': 61, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 61, :y 14}"}
+{"a": "_"}
+{"r": 8921, "k": "pos", "T": 5953, "lvl": "Dlvl:9", "u": [56, 8], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(62, 13)"}
+{"r": 8922, "k": "cmd", "T": 5958, "lvl": "Dlvl:9", "u": [62, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 62, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8923, "k": "cmd", "T": 5958, "lvl": "Dlvl:9", "u": [63, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 63, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8924, "k": "cmd", "T": 5959, "lvl": "Dlvl:9", "u": [64, 13], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["exploring {'x': 67, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 67, :y 14}"}
+{"a": "_"}
+{"r": 8925, "k": "pos", "T": 5959, "lvl": "Dlvl:9", "u": [64, 13], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(68, 13)"}
+{"r": 8926, "k": "cmd", "T": 5961, "lvl": "Dlvl:9", "u": [68, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8927, "k": "cmd", "T": 5962, "lvl": "Dlvl:9", "u": [69, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 69, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8928, "k": "cmd", "T": 5962, "lvl": "Dlvl:9", "u": [70, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 70, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8929, "k": "cmd", "T": 5963, "lvl": "Dlvl:9", "u": [71, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 71, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8930, "k": "cmd", "T": 5963, "lvl": "Dlvl:9", "u": [72, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 72, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8931, "k": "cmd", "T": 5964, "lvl": "Dlvl:9", "u": [73, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 73, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8932, "k": "cmd", "T": 5965, "lvl": "Dlvl:9", "u": [74, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 74, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8933, "k": "cmd", "T": 5965, "lvl": "Dlvl:9", "u": [75, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 75, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8934, "k": "cmd", "T": 5966, "lvl": "Dlvl:9", "u": [76, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 76, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 8935, "k": "cmd", "T": 5966, "lvl": "Dlvl:9", "u": [77, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 75, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 8936, "k": "cmd", "T": 5967, "lvl": "Dlvl:9", "u": [77, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 75, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 8937, "k": "cmd", "T": 5967, "lvl": "Dlvl:9", "u": [76, 15], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["exploring {'x': 53, 'y': 16, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 54, :y 16}"}
+{"a": "_"}
+{"r": 8938, "k": "pos", "T": 5967, "lvl": "Dlvl:9", "u": [76, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(55, 15)"}
+{"r": 8939, "k": "cmd", "T": 5980, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100}
+{"act": "wield", "why": ["exploring {'x': 53, 'y': 16, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "slot": "k"}
+{"a": "w"}
+{"r": 8940, "k": "yn", "T": 5980, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100, "q": "What do you want to wield? [- abikn or ?*]"}
+{"a": "k"}
+{"r": 8941, "k": "cmd", "T": 5981, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8942, "k": "cmd", "T": 5981, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100}
+{"act": "apply", "why": ["exploring {'x': 53, 'y': 16, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': Fals", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "slot": "k"}
+{"a": "a"}
+{"r": 8943, "k": "yn", "T": 5981, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100, "q": "What do you want to use or apply? [ijkQR or ?*]"}
+{"a": "k"}
+{"r": 8944, "k": "yn", "T": 5981, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100, "q": "In what direction do you want to dig? [hykunjb>]"}
+{"a": "h"}
+{"r": 8945, "k": "cmd", "T": 5984, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8946, "k": "cmd", "T": 5984, "lvl": "Dlvl:9", "u": [55, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at {'x': 53, 'y': 16, 'glyph': '*', 'color': None, 'feature': None, 'seen': True"], "dir": "W"}
+{"a": "h"}
+{"r": 8947, "k": "cmd", "T": 5984, "lvl": "Dlvl:9", "u": [54, 15], "hp": 100, "hpmax": 100}
+{"m": "You see here 23 rocks."}
+{"act": "look", "why": ["examining tile {'x': 53, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 8948, "k": "cmd", "T": 5984, "lvl": "Dlvl:9", "u": [54, 15], "hp": 100, "hpmax": 100}
+{"m": "You see here 23 rocks."}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +2 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 8949, "k": "yn", "T": 5984, "lvl": "Dlvl:9", "u": [54, 15], "hp": 100, "hpmax": 100, "q": "What do you want to wield? [- abikn or ?*]"}
+{"a": "a"}
+{"r": 8950, "k": "cmd", "T": 5985, "lvl": "Dlvl:9", "u": [54, 15], "hp": 100, "hpmax": 100}
+{"m": "a - the blessed rustproof +2 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8951, "k": "cmd", "T": 5985, "lvl": "Dlvl:9", "u": [54, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8952, "k": "cmd", "T": 5986, "lvl": "Dlvl:9", "u": [53, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8953, "k": "cmd", "T": 5986, "lvl": "Dlvl:9", "u": [52, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8954, "k": "cmd", "T": 5987, "lvl": "Dlvl:9", "u": [51, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8955, "k": "cmd", "T": 5987, "lvl": "Dlvl:9", "u": [50, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8956, "k": "cmd", "T": 5988, "lvl": "Dlvl:9", "u": [49, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8957, "k": "cmd", "T": 5988, "lvl": "Dlvl:9", "u": [48, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8958, "k": "cmd", "T": 5989, "lvl": "Dlvl:9", "u": [47, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8959, "k": "cmd", "T": 5990, "lvl": "Dlvl:9", "u": [46, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8960, "k": "cmd", "T": 5990, "lvl": "Dlvl:9", "u": [45, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 8961, "k": "cmd", "T": 5991, "lvl": "Dlvl:9", "u": [44, 15], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["seek going directly", "trying to enter sokoban from Dlvl:9", "seeking branch sokoban ( sokoban )", "seeking level main sokoban", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 18, :y 15}"}
+{"a": "_"}
+{"r": 8962, "k": "pos", "T": 5991, "lvl": "Dlvl:9", "u": [44, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(19, 14)"}
+{"r": 8963, "k": "cmd", "T": 6014, "lvl": "Dlvl:9", "u": [19, 14], "hp": 100, "hpmax": 100}
+{"act": "ascend", "why": ["trying to enter sokoban from Dlvl:9", "seeking branch sokoban ( sokoban )", "seeking level main sokoban", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 8964, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "You climb up the stairs."}
+{"m": "There is a staircase down here."}
+{"m": "You see here a glass wand."}
+{"m": "You feel agile!"}
+{"m": "You must have been working on your reflexes."}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 8965, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "There is a staircase down here."}
+{"m": "You see here a glass wand."}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 35, :y 12}"}
+{"a": ";"}
+{"r": 8966, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(36, 11)"}
+{"r": 8967, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 36, :y 12}"}
+{"a": ";"}
+{"r": 8968, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 11)"}
+{"r": 8969, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 37, :y 12}"}
+{"a": ";"}
+{"r": 8970, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 11)"}
+{"r": 8971, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 34, :y 14}"}
+{"a": ";"}
+{"r": 8972, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 13)"}
+{"r": 8973, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 34, :y 15}"}
+{"a": ";"}
+{"r": 8974, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 14)"}
+{"r": 8975, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 36, :y 16}"}
+{"a": ";"}
+{"r": 8976, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 15)"}
+{"r": 8977, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 37, :y 16}"}
+{"a": ";"}
+{"r": 8978, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 15)"}
+{"r": 8979, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 38, :y 16}"}
+{"a": ";"}
+{"r": 8980, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 15)"}
+{"r": 8981, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 39, :y 16}"}
+{"a": ";"}
+{"r": 8982, "k": "pos", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 15)"}
+{"r": 8983, "k": "cmd", "T": 6015, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "^        a trap (pit)"}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 8984, "k": "cmd", "T": 6016, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "s - a glass wand."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 8985, "k": "cmd", "T": 6016, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'stairs-down', 'seen': "]}
+{"a": ":"}
+{"r": 8986, "k": "cmd", "T": 6016, "lvl": "Dlvl:8", "u": [39, 9], "hp": 100, "hpmax": 100}
+{"m": "There is a staircase down here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 9}"], "dir": "NW"}
+{"a": "y"}
+{"r": 8987, "k": "cmd", "T": 6016, "lvl": "Dlvl:8", "u": [38, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 9}"], "dir": "W"}
+{"a": "h"}
+{"r": 8988, "k": "cmd", "T": 6017, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"m": "You see here a food ration."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 8989, "k": "cmd", "T": 6017, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"m": "You see here a food ration."}
+{"act": "move", "why": ["new or desired item at {'x': 36, 'y': 8, 'glyph': '%', 'color': None, 'feature': None, 'seen': True,"], "dir": "N"}
+{"a": "k"}
+{"r": 8990, "k": "cmd", "T": 6017, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"m": "You see here a food ration."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 8991, "k": "cmd", "T": 6017, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"m": "You see here a food ration."}
+{"act": "engrave", "why": ["engrave E", "engrave-id wand {'label': 'a glass wand', 'qty': 1, 'name': 'glass wand', 'erosion': 0}"], "slot": "-"}
+{"a": "E"}
+{"r": 8992, "k": "yn", "T": 6017, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "q": "What do you want to write with? [- abhnsQ or ?*]"}
+{"a": "-"}
+{"r": 8993, "k": "line", "T": 6017, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 8994, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 8995, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a food ration."}
+{"act": "engrave", "why": ["engrave-id wand {'label': 'a glass wand', 'qty': 1, 'name': 'glass wand', 'erosion': 0}"], "slot": "s"}
+{"a": "E"}
+{"r": 8996, "k": "yn", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "q": "What do you want to write with? [- abhnsQ or ?*]"}
+{"a": "s"}
+{"r": 8997, "k": "yn", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "y"}
+{"r": 8998, "k": "line", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "q": "What do you want to add to the writing in the dust here?"}
+{"m": "You add to the writing in the dust with a glass wand."}
+{"a": "Elbereth"}
+{"r": 8999, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"m": "The bugs on the floor stop moving!"}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 9000, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9001, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 9002, "k": "cmd", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"ElberethElbereth\"."}
+{"m": "You see here a food ration."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 40, :y 9}"}
+{"a": "_"}
+{"r": 9003, "k": "pos", "T": 6018, "lvl": "Dlvl:8", "u": [37, 7], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 8)"}
+{"r": 9004, "k": "cmd", "T": 6021, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100}
+{"m": "Valkyrie needs food, badly!"}
+{"act": "eat", "why": ["weak or worse, eating {'label': 'a food ration', 'qty': 1, 'name': 'food ration', 'erosion': 0}"], "slot": "p"}
+{"a": "e"}
+{"r": 9005, "k": "yn", "T": 6021, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100, "q": "What do you want to eat? [dpwTU or ?*]"}
+{"a": "p"}
+{"r": 9006, "k": "cmd", "T": 6025, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100}
+{"m": "This food really hits the spot!"}
+{"m": "You finish eating the food ration."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9007, "k": "cmd", "T": 6025, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 36, :y 9}"], "pos": "#Position{:x 36, :y 9}"}
+{"a": "_"}
+{"r": 9008, "k": "pos", "T": 6025, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 8)"}
+{"r": 9009, "k": "cmd", "T": 6028, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 9010, "k": "cmd", "T": 6028, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"m": "t - a food ration."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9011, "k": "cmd", "T": 6028, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 9012, "k": "cmd", "T": 6028, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 40, :y 9}"}
+{"a": "_"}
+{"r": 9013, "k": "pos", "T": 6028, "lvl": "Dlvl:8", "u": [37, 8], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 8)"}
+{"r": 9014, "k": "cmd", "T": 6030, "lvl": "Dlvl:8", "u": [41, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 9015, "k": "cmd", "T": 6031, "lvl": "Dlvl:8", "u": [42, 8], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 9016, "k": "cmd", "T": 6031, "lvl": "Dlvl:8", "u": [42, 8], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 9017, "k": "cmd", "T": 6031, "lvl": "Dlvl:8", "u": [43, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9018, "k": "cmd", "T": 6032, "lvl": "Dlvl:8", "u": [43, 9], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9019, "k": "cmd", "T": 6032, "lvl": "Dlvl:8", "u": [43, 9], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9020, "k": "cmd", "T": 6032, "lvl": "Dlvl:8", "u": [43, 10], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9021, "k": "cmd", "T": 6033, "lvl": "Dlvl:8", "u": [43, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at {'x': 44, 'y': 13, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': F"], "dir": "SE"}
+{"a": "n"}
+{"r": 9022, "k": "cmd", "T": 6034, "lvl": "Dlvl:8", "u": [44, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at {'x': 44, 'y': 13, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "E"}
+{"a": "l"}
+{"r": 9023, "k": "cmd", "T": 6034, "lvl": "Dlvl:8", "u": [45, 12], "hp": 100, "hpmax": 100}
+{"m": "You see here a pear."}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 9024, "k": "cmd", "T": 6034, "lvl": "Dlvl:8", "u": [45, 12], "hp": 100, "hpmax": 100}
+{"m": "You see here a pear."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 9025, "k": "cmd", "T": 6035, "lvl": "Dlvl:8", "u": [44, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 9026, "k": "cmd", "T": 6035, "lvl": "Dlvl:8", "u": [43, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9027, "k": "cmd", "T": 6036, "lvl": "Dlvl:8", "u": [42, 14], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9028, "k": "cmd", "T": 6036, "lvl": "Dlvl:8", "u": [42, 14], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9029, "k": "cmd", "T": 6036, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9030, "k": "cmd", "T": 6037, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9031, "k": "cmd", "T": 6037, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 9032, "k": "cmd", "T": 6037, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 9033, "k": "cmd", "T": 6038, "lvl": "Dlvl:8", "u": [43, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 9034, "k": "cmd", "T": 6038, "lvl": "Dlvl:8", "u": [44, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9035, "k": "cmd", "T": 6039, "lvl": "Dlvl:8", "u": [43, 15], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9036, "k": "cmd", "T": 6039, "lvl": "Dlvl:8", "u": [43, 15], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9037, "k": "cmd", "T": 6039, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9038, "k": "cmd", "T": 6040, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9039, "k": "cmd", "T": 6041, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 41, :y 13}"}
+{"a": "_"}
+{"r": 9040, "k": "pos", "T": 6041, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(42, 12)"}
+{"r": 9041, "k": "cmd", "T": 6044, "lvl": "Dlvl:8", "u": [42, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9042, "k": "cmd", "T": 6045, "lvl": "Dlvl:8", "u": [42, 13], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9043, "k": "cmd", "T": 6045, "lvl": "Dlvl:8", "u": [42, 13], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9044, "k": "cmd", "T": 6045, "lvl": "Dlvl:8", "u": [42, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 9045, "k": "cmd", "T": 6046, "lvl": "Dlvl:8", "u": [43, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9046, "k": "cmd", "T": 6046, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9047, "k": "cmd", "T": 6047, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9048, "k": "cmd", "T": 6048, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9049, "k": "cmd", "T": 6048, "lvl": "Dlvl:8", "u": [39, 15], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 40, :y 14}"}
+{"a": "_"}
+{"r": 9050, "k": "pos", "T": 6048, "lvl": "Dlvl:8", "u": [39, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 13)"}
+{"r": 9051, "k": "cmd", "T": 6051, "lvl": "Dlvl:8", "u": [41, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9052, "k": "cmd", "T": 6051, "lvl": "Dlvl:8", "u": [41, 14], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 9053, "k": "cmd", "T": 6052, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9054, "k": "cmd", "T": 6052, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9055, "k": "cmd", "T": 6053, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9056, "k": "cmd", "T": 6053, "lvl": "Dlvl:8", "u": [39, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9057, "k": "cmd", "T": 6054, "lvl": "Dlvl:8", "u": [38, 15], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 17, 'glyph': '?', 'color': None, 'feature': 'floor', 'seen': F"], "dir": "W"}
+{"a": "h"}
+{"r": 9058, "k": "cmd", "T": 6054, "lvl": "Dlvl:8", "u": [37, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at #Position{:x 35, :y 17}"], "dir": "SW"}
+{"a": "b"}
+{"r": 9059, "k": "cmd", "T": 6055, "lvl": "Dlvl:8", "u": [36, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a scroll labeled GARVEN DEH."}
+{"act": "look", "why": ["examining tile {'x': 35, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 9060, "k": "cmd", "T": 6055, "lvl": "Dlvl:8", "u": [36, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a scroll labeled GARVEN DEH."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 9061, "k": "cmd", "T": 6055, "lvl": "Dlvl:8", "u": [36, 16], "hp": 100, "hpmax": 100}
+{"m": "u - a scroll labeled GARVEN DEH."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9062, "k": "cmd", "T": 6055, "lvl": "Dlvl:8", "u": [36, 16], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 35, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 9063, "k": "cmd", "T": 6055, "lvl": "Dlvl:8", "u": [36, 16], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 17}"], "dir": "W"}
+{"a": "h"}
+{"r": 9064, "k": "cmd", "T": 6056, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a scroll labeled GARVEN DEH."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 9065, "k": "cmd", "T": 6056, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"m": "You see here a scroll labeled GARVEN DEH."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 9066, "k": "cmd", "T": 6056, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"m": "v - a scroll labeled GARVEN DEH."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9067, "k": "cmd", "T": 6056, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 9068, "k": "cmd", "T": 6056, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 15, 'glyph': '=', 'color': None, 'feature': 'pit', 'seen': Fal"], "dir": "NE"}
+{"a": "u"}
+{"r": 9069, "k": "cmd", "T": 6057, "lvl": "Dlvl:8", "u": [36, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["new or desired item at {'x': 34, 'y': 15, 'glyph': '=', 'color': None, 'feature': 'pit', 'seen': Tru"], "dir": "NW"}
+{"a": "y"}
+{"r": 9070, "k": "cmd", "T": 6057, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "Air currents pull you down into a pit!"}
+{"m": "There is a pit here."}
+{"m": "You see here a copper ring."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'pit', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 9071, "k": "cmd", "T": 6057, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "There is a pit here."}
+{"m": "You see here a copper ring."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 9072, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "x - a copper ring."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9073, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'pit', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 9074, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "There is a pit here."}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["putting {'u': None, 'v': None} into bag at j", "bag items"], "slot": "j"}
+{"a": "a"}
+{"r": 9075, "k": "yn", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "q": "What do you want to use or apply? [i-ksQR or ?*]"}
+{"a": "j"}
+{"r": 9076, "k": "menu", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 9077, "k": "menu", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "p": "Put in what?", "items": ["# Coins", "$ 847 gold pieces", "# Amulets", "f a blessed amulet of reflection (being worn)", "# Weapons", "a the blessed rustproof +2 Excalibur (weapon in hand)", "b a +0 dagger (at the ready)", "n 3 uncursed daggers", "# Armor", "c a blessed +5 small shield (being worn)", "e a blessed greased +2 gray dragon scale mail (being worn)", "g a blessed fireproof +2 pair of speed boots (being worn)", "o a +0 dwarvish cloak (being worn)", "F a +0 dwarvish iron helm (being worn)", "Z a +0 pair of leather gloves (being worn)", "# Comestibles"]}
+{"a": [23, 22]}
+{"r": 9078, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "You put a scroll labeled GARVEN DEH into the bag of holding."}
+{"m": "You put a scroll labeled GARVEN DEH into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 9079, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 9080, "k": "yn", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "q": "What do you want to use or apply? [i-ksQR or ?*]"}
+{"a": "j"}
+{"r": 9081, "k": "menu", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 9082, "k": "menu", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled GARVEN DEH", "b a scroll labeled GARVEN DEH", "c an uncursed scroll labeled ELAM EBOW", "d a blessed scroll of teleportation"]}
+{"a": []}
+{"r": 9083, "k": "cmd", "T": 6058, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"act": "move", "why": ["untrap move", "untrapping self", "boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 9084, "k": "cmd", "T": 6059, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "You are still in a pit."}
+{"act": "move", "why": ["untrap move", "untrapping self", "boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 9085, "k": "cmd", "T": 6059, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100}
+{"m": "You crawl to the edge of the pit."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 40, :y 12}"}
+{"a": "_"}
+{"r": 9086, "k": "pos", "T": 6059, "lvl": "Dlvl:8", "u": [35, 14], "hp": 99, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 11)"}
+{"r": 9087, "k": "cmd", "T": 6064, "lvl": "Dlvl:8", "u": [41, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9088, "k": "cmd", "T": 6065, "lvl": "Dlvl:8", "u": [41, 12], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 9089, "k": "cmd", "T": 6065, "lvl": "Dlvl:8", "u": [41, 12], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9090, "k": "cmd", "T": 6066, "lvl": "Dlvl:8", "u": [41, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9091, "k": "cmd", "T": 6066, "lvl": "Dlvl:8", "u": [41, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 9092, "k": "cmd", "T": 6067, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9093, "k": "cmd", "T": 6067, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9094, "k": "cmd", "T": 6068, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9095, "k": "cmd", "T": 6069, "lvl": "Dlvl:8", "u": [39, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9096, "k": "cmd", "T": 6069, "lvl": "Dlvl:8", "u": [38, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9097, "k": "cmd", "T": 6070, "lvl": "Dlvl:8", "u": [37, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9098, "k": "cmd", "T": 6070, "lvl": "Dlvl:8", "u": [36, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 9099, "k": "cmd", "T": 6071, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 9100, "k": "cmd", "T": 6072, "lvl": "Dlvl:8", "u": [35, 15], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 12}"}
+{"a": "_"}
+{"r": 9101, "k": "pos", "T": 6072, "lvl": "Dlvl:8", "u": [35, 15], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 11)"}
+{"r": 9102, "k": "cmd", "T": 6077, "lvl": "Dlvl:8", "u": [43, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9103, "k": "cmd", "T": 6077, "lvl": "Dlvl:8", "u": [43, 12], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9104, "k": "cmd", "T": 6078, "lvl": "Dlvl:8", "u": [43, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9105, "k": "cmd", "T": 6078, "lvl": "Dlvl:8", "u": [43, 14], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 9106, "k": "cmd", "T": 6079, "lvl": "Dlvl:8", "u": [44, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9107, "k": "cmd", "T": 6079, "lvl": "Dlvl:8", "u": [43, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9108, "k": "cmd", "T": 6080, "lvl": "Dlvl:8", "u": [42, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9109, "k": "cmd", "T": 6080, "lvl": "Dlvl:8", "u": [41, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9110, "k": "cmd", "T": 6081, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "i"}
+{"a": "a"}
+{"r": 9111, "k": "yn", "T": 6081, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100, "q": "What do you want to use or apply? [i-ksQR or ?*]"}
+{"a": "i"}
+{"r": 9112, "k": "cmd", "T": 6081, "lvl": "Dlvl:8", "u": [40, 15], "hp": 100, "hpmax": 100}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9113, "k": "cmd", "T": 6082, "lvl": "Dlvl:8", "u": [39, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9114, "k": "cmd", "T": 6082, "lvl": "Dlvl:8", "u": [38, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9115, "k": "cmd", "T": 6083, "lvl": "Dlvl:8", "u": [37, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 9116, "k": "cmd", "T": 6084, "lvl": "Dlvl:8", "u": [36, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 9117, "k": "cmd", "T": 6085, "lvl": "Dlvl:8", "u": [35, 16], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 9118, "k": "cmd", "T": 6086, "lvl": "Dlvl:8", "u": [35, 15], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 9119, "k": "cmd", "T": 6086, "lvl": "Dlvl:8", "u": [35, 14], "hp": 100, "hpmax": 100}
+{"m": "The boulder fills a pit."}
+{"act": "autotravel", "why": ["boulder start", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "pos": "#Position{:x 42, :y 7}"}
+{"a": "_"}
+{"r": 9120, "k": "pos", "T": 6086, "lvl": "Dlvl:8", "u": [35, 14], "hp": 100, "hpmax": 100, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 6)"}
+{"r": 9121, "k": "cmd", "T": 6095, "lvl": "Dlvl:8", "u": [43, 6], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9122, "k": "cmd", "T": 6096, "lvl": "Dlvl:8", "u": [43, 7], "hp": 100, "hpmax": 100}
+{"m": "With great effort you move the boulder."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 9123, "k": "cmd", "T": 6096, "lvl": "Dlvl:8", "u": [43, 7], "hp": 100, "hpmax": 100}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9124, "k": "cmd", "T": 6097, "lvl": "Dlvl:8", "u": [43, 8], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9125, "k": "cmd", "T": 6097, "lvl": "Dlvl:8", "u": [43, 9], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9126, "k": "cmd", "T": 6098, "lvl": "Dlvl:8", "u": [43, 10], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9127, "k": "cmd", "T": 6098, "lvl": "Dlvl:8", "u": [43, 11], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9128, "k": "cmd", "T": 6099, "lvl": "Dlvl:8", "u": [43, 12], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9129, "k": "cmd", "T": 6099, "lvl": "Dlvl:8", "u": [43, 13], "hp": 100, "hpmax": 100}
+{"act": "move", "why": ["push", "solving soko soko-1a", "sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 9130, "k": "cmd", "T": 6100, "lvl": "Dlvl:8", "u": [43, 14], "hp": 100, "hpmax": 100}
+{"note": "abort", "d": "limit: terminated by signal 15"}

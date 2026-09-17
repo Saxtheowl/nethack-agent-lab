@@ -1,0 +1,60 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "xl", "turn": 221, "depth": 1, "t": 5.6, "value": 2}
+{"kind": "depth", "turn": 304, "depth": 2, "t": 7.6, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 304, "depth": 2, "t": 7.6, "stage": "dlvl2"}
+{"kind": "xl", "turn": 585, "depth": 2, "t": 12.0, "value": 3}
+{"kind": "item_lost", "turn": 616, "depth": 2, "t": 12.9, "item": "pick-axe", "messages": ["You miss the lichen.", "You miss the lichen.", "You kill the lichen!", "Where do you want to travel to?", "Count: 10", "You find a hidden passage.", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Kabalebo) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Kabalebo's general store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Kabalebo anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 60, :y 8}"], "slot": "l"}}
+{"kind": "item_gained", "turn": 645, "depth": 2, "t": 15.0, "item": "pick-axe"}
+{"kind": "depth", "turn": 673, "depth": 3, "t": 15.4, "value": 3, "dname": "The Gnomish Mines"}
+{"kind": "branch", "turn": 673, "depth": 3, "t": 15.4, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 673, "depth": 3, "t": 15.4, "stage": "mines"}
+{"kind": "xl", "turn": 894, "depth": 3, "t": 23.0, "value": 4}
+{"kind": "depth", "turn": 900, "depth": 4, "t": 23.4, "value": 4, "dname": "The Gnomish Mines"}
+{"kind": "heartbeat", "turn": 1000, "depth": 4, "t": 27.3, "lvl": "Dlvl:4", "dname": "The Gnomish Mines", "hp": 35, "hpmax": 35, "xl": 4, "ac": -8, "requests": 1590, "actions": 1192}
+{"kind": "depth", "turn": 1085, "depth": 5, "t": 29.4, "value": 5, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 1095, "depth": 5, "t": 29.8, "value": 5}
+{"kind": "special", "turn": 1498, "depth": 5, "t": 41.9, "name": "oracle", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 1498, "depth": 5, "t": 41.9, "stage": "oracle"}
+{"kind": "item_gained", "turn": 1627, "depth": 5, "t": 44.9, "item": "Excalibur"}
+{"kind": "item_lost", "turn": 1730, "depth": 2, "t": 45.7, "item": "pick-axe", "messages": ["Where do you want to travel to?", "l - a blessed +0 pick-axe (weapon in hand).", "You start digging.", "You hit the rock with all your might.", "You break through a secret door!", "a - the blessed rustproof +1 Excalibur (weapon in hand).", "Where do you want to travel to?", "You climb up the stairs.", "Where do you want to travel to?", "You climb up the stairs.", "Your lamp is now off.", "Where do you want to travel to?"], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "l"}}
+{"kind": "item_gained", "turn": 1740, "depth": 2, "t": 46.5, "item": "pick-axe"}
+{"kind": "xl", "turn": 1802, "depth": 4, "t": 47.5, "value": 6}
+{"kind": "heartbeat", "turn": 2009, "depth": 5, "t": 54.9, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 41, "hpmax": 45, "xl": 6, "ac": -8, "requests": 3090, "actions": 2343}
+{"kind": "depth", "turn": 2062, "depth": 6, "t": 57.6, "value": 6, "dname": "The Gnomish Mines"}
+{"kind": "special", "turn": 2062, "depth": 6, "t": 57.6, "name": "minetn", "lvl": "Dlvl:6  "}
+{"kind": "stage", "turn": 2062, "depth": 6, "t": 57.6, "stage": "minetown", "variant": "minetn"}
+{"kind": "item_lost", "turn": 2299, "depth": 6, "t": 65.4, "item": "pick-axe", "messages": ["The door resists!", "The door opens.", "Where do you want to travel to?", "The door opens.", "Where do you want to travel to?", "The door resists!", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Sipaliwini) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Sipaliwini's general store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Sipaliwini anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 36, :y 17}"], "slot": "l"}}
+{"kind": "item_gained", "turn": 2307, "depth": 6, "t": 66.1, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 2366, "depth": 6, "t": 68.3, "item": "pick-axe", "messages": ["Pick an object.", "@        a human or elf (peaceful watch captain) [seen: normal vision, infravision]", "Pick an object.", "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]", "Pick an object.", "@        a human or elf (peaceful watch captain) [seen: normal vision, infravision]", "Where do you want to travel to?", "Pick an object.", "@        a human or elf (peaceful Izchak) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Izchak's lighting store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Izchak anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 51, :y 8}"], "slot": "l"}}
+{"kind": "item_gained", "turn": 2373, "depth": 6, "t": 68.8, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 2385, "depth": 6, "t": 69.1, "item": "pick-axe", "messages": ["Where do you want to travel to?", "Where do you want to travel to?", "A watchman blocks your path.", "Pick an object.", "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]", "Where do you want to travel to?", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Kediri) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Kediri's delicatessen!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Kediri anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 52, :y 13}"], "slot": "l"}}
+{"kind": "item_gained", "turn": 2391, "depth": 6, "t": 69.4, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 3009, "depth": 5, "t": 83.1, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 44, "hpmax": 45, "xl": 6, "ac": -9, "requests": 4623, "actions": 3540}
+{"kind": "xl", "turn": 3009, "depth": 5, "t": 83.1, "value": 7}
+{"kind": "item_lost", "turn": 3265, "depth": 6, "t": 91.7, "item": "ring of levitation", "messages": ["You read: \"Ha! I NEVER pay income tax!\".", "There is a grave here.", "Something is engraved here on the headstone.", "You read: \"Ha! I NEVER pay income tax!\".", "There is a staircase up here.", "You see here a small glob of brown pudding.", "There is a staircase up here.", "You see here a small glob of brown pudding.", "Where do you want to travel to?", "The dagger hits the mountain nymph.", "The elven dagger hits the mountain nymph.", "You write in the dust with your fingertip."], "last_action": {"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 4, 'y': 10, 'known': 3264, 'first-known': 3255, 'glyph': 'n', 'color'"], "slot": "-"}}
+{"kind": "item_gained", "turn": 3297, "depth": 6, "t": 92.5, "item": "ring of levitation"}
+{"kind": "xl", "turn": 3430, "depth": 6, "t": 95.0, "value": 8}
+{"kind": "branch", "turn": 3461, "depth": 5, "t": 95.4, "dname": "Sokoban", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 3461, "depth": 5, "t": 95.4, "stage": "sokoban"}
+{"kind": "special", "turn": 3461, "depth": 5, "t": 95.4, "name": "soko4", "lvl": "Dlvl:5  "}
+{"kind": "special", "turn": 3619, "depth": 4, "t": 103.6, "name": "soko3", "lvl": "Dlvl:4  "}
+{"kind": "heartbeat", "turn": 4009, "depth": 4, "t": 120.7, "lvl": "Dlvl:4", "dname": "Sokoban", "hp": 67, "hpmax": 67, "xl": 8, "ac": -9, "requests": 6105, "actions": 4725}
+{"kind": "special", "turn": 4047, "depth": 3, "t": 122.1, "name": "soko2", "lvl": "Dlvl:3  "}
+{"kind": "special", "turn": 4280, "depth": 2, "t": 132.6, "name": "soko1", "lvl": "Dlvl:2  "}
+{"kind": "assist", "turn": 4988, "depth": 2, "t": 166.6, "x_kind": "feed", "nutrition_before": 49, "count": 1, "x_turn": 4988, "x_depth": 2, "dnum": 4}
+{"kind": "heartbeat", "turn": 5009, "depth": 2, "t": 167.9, "lvl": "Dlvl:2", "dname": "Sokoban", "hp": 61, "hpmax": 67, "xl": 8, "ac": -10, "requests": 7633, "actions": 6048}
+{"kind": "xl", "turn": 5502, "depth": 2, "t": 185.3, "value": 9}
+{"kind": "heartbeat", "turn": 6009, "depth": 2, "t": 194.8, "lvl": "Dlvl:2", "dname": "Sokoban", "hp": 73, "hpmax": 73, "xl": 9, "ac": -9, "requests": 8693, "actions": 6763}
+{"kind": "heartbeat", "turn": 7009, "depth": 3, "t": 357.6, "lvl": "Dlvl:3", "dname": "Sokoban", "hp": 73, "hpmax": 73, "xl": 9, "ac": -9, "requests": 10326, "actions": 8383}
+{"kind": "heartbeat", "turn": 8009, "depth": 2, "t": 511.7, "lvl": "Dlvl:2", "dname": "Sokoban", "hp": 73, "hpmax": 73, "xl": 9, "ac": -8, "requests": 12129, "actions": 10102}
+{"kind": "heartbeat", "turn": 9009, "depth": 3, "t": 669.2, "lvl": "Dlvl:3", "dname": "Sokoban", "hp": 73, "hpmax": 73, "xl": 9, "ac": -8, "requests": 13795, "actions": 11750}
+{"kind": "end", "turn": 9635, "depth": 3, "t": 750.9, "outcome": "limit", "reason": "terminated by signal 15"}

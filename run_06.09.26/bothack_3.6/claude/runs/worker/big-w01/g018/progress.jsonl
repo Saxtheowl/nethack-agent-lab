@@ -1,0 +1,305 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an empty uncursed bag of holding", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 235, "depth": 2, "t": 3.2, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 235, "depth": 2, "t": 3.2, "stage": "dlvl2"}
+{"kind": "item_lost", "turn": 595, "depth": 2, "t": 9.8, "item": "pick-axe", "messages": ["k - a blessed +0 pick-axe (weapon in hand).", "You start digging.", "This wall seems too hard to dig into.", "a - a +1 long sword (weapon in hand).", "k - a blessed +0 pick-axe (weapon in hand).", "You start digging.", "You hit the rock with all your might.", "You succeed in cutting away some rock.", "a - a +1 long sword (weapon in hand).", "\"Velkommen, bot!  Welcome to Kyzyl's liquor emporium!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Kyzyl anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 65, :y 7}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 613, "depth": 2, "t": 10.7, "item": "pick-axe"}
+{"kind": "depth", "turn": 635, "depth": 3, "t": 10.9, "value": 3, "dname": "The Gnomish Mines"}
+{"kind": "branch", "turn": 635, "depth": 3, "t": 10.9, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 635, "depth": 3, "t": 10.9, "stage": "mines"}
+{"kind": "depth", "turn": 723, "depth": 4, "t": 13.5, "value": 4, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 733, "depth": 4, "t": 13.9, "value": 2}
+{"kind": "xl", "turn": 809, "depth": 4, "t": 16.3, "value": 3}
+{"kind": "heartbeat", "turn": 1001, "depth": 3, "t": 20.7, "lvl": "Dlvl:3", "dname": "The Gnomish Mines", "hp": 34, "hpmax": 35, "xl": 3, "ac": -8, "requests": 1492, "actions": 1206}
+{"kind": "xl", "turn": 1256, "depth": 4, "t": 26.6, "value": 4}
+{"kind": "depth", "turn": 1297, "depth": 5, "t": 27.5, "value": 5, "dname": "The Gnomish Mines"}
+{"kind": "depth", "turn": 1355, "depth": 6, "t": 29.2, "value": 6, "dname": "The Gnomish Mines"}
+{"kind": "special", "turn": 1355, "depth": 6, "t": 29.2, "name": "minetn", "lvl": "Dlvl:6  "}
+{"kind": "stage", "turn": 1355, "depth": 6, "t": 29.2, "stage": "minetown", "variant": "minetn"}
+{"kind": "item_lost", "turn": 1439, "depth": 6, "t": 32.3, "item": "pick-axe", "messages": ["Pick an object.", "@        a human or elf (peaceful watchman) [seen: normal vision, infravision]", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Izchak) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Izchak's lighting store!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "G        a gnome (peaceful gnome) [seen: normal vision, infravision]", "Pick an object.", "G        a gnome (peaceful gnome) [seen: normal vision, infravision]", "You do not owe Izchak anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 32, :y 16}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 1446, "depth": 6, "t": 32.7, "item": "pick-axe"}
+{"kind": "xl", "turn": 1777, "depth": 6, "t": 42.7, "value": 5}
+{"kind": "heartbeat", "turn": 2001, "depth": 5, "t": 47.8, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 57, "hpmax": 57, "xl": 5, "ac": -9, "requests": 3225, "actions": 2596}
+{"kind": "depth", "turn": 2342, "depth": 7, "t": 53.8, "value": 7, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 2443, "depth": 8, "t": 56.5, "value": 8, "dname": "The Dungeons of Doom"}
+{"kind": "item_lost", "turn": 2510, "depth": 8, "t": 58.3, "item": "pick-axe", "messages": ["You find a hidden passage.", "Nothing happens.", "You hear a slow drip.", "Count: 10", "You find a hidden passage.", "You are beginning to feel hungry.", "You hear a chugging sound.", "Pick an object.", "@        a human or elf (peaceful Chicoutimi) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Chicoutimi's general store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Chicoutimi anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 71, :y 17}"], "slot": "k"}}
+{"kind": "xl", "turn": 2520, "depth": 8, "t": 58.7, "value": 6}
+{"kind": "item_gained", "turn": 2550, "depth": 8, "t": 60.4, "item": "pick-axe"}
+{"kind": "depth", "turn": 2610, "depth": 9, "t": 61.2, "value": 9, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 2610, "depth": 9, "t": 61.2, "name": "oracle", "lvl": "Dlvl:9  "}
+{"kind": "stage", "turn": 2610, "depth": 9, "t": 61.2, "stage": "oracle"}
+{"kind": "item_gained", "turn": 2664, "depth": 9, "t": 62.4, "item": "Excalibur"}
+{"kind": "xl", "turn": 2914, "depth": 6, "t": 67.1, "value": 7}
+{"kind": "item_lost", "turn": 2965, "depth": 6, "t": 70.5, "item": "pick-axe", "messages": ["G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]", "Pick an object.", "o        an orc (orc shaman) [seen: normal vision, infravision]", "Pick an object.", "G        a gnome (peaceful gnome king) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Djasinga's delicatessen!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Djasinga) [seen: normal vision, infravision]", "You do not owe Djasinga anything.", "Pick an object.", "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 45, :y 11}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 2971, "depth": 6, "t": 71.3, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 3009, "depth": 6, "t": 73.2, "lvl": "Dlvl:6", "dname": "The Gnomish Mines", "hp": 72, "hpmax": 73, "xl": 7, "ac": -10, "requests": 4749, "actions": 3752}
+{"kind": "item_lost", "turn": 3473, "depth": 3, "t": 84.7, "item": "pick-axe", "messages": ["y - a scroll labeled ZELGO MER.", "As you read the scroll, it disappears.", "y - an uncursed scroll of magic mapping.", "Count: 1 y", "You drop an uncursed scroll of magic mapping.", "You see here an uncursed scroll of magic mapping.", "You hear a chugging sound.", "Pick an object.", "@        a human or elf (peaceful Nenilukah) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Nenilukah's hardware store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Nenilukah anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 14, :y 19}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 3482, "depth": 3, "t": 85.6, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 3853, "depth": 5, "t": 93.8, "item": "pick-axe", "messages": ["The door opens.", "Pick an object.", "]        a mimic or a strange object (strange object)", "Pick an object.", "@        a human or elf (peaceful Aklavik) [seen: normal vision, infravision]", "k - a blessed +0 pick-axe (weapon in hand).", "\"Velkommen, bot!  Welcome to Aklavik's general store!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Aklavik) [seen: normal vision, infravision]", "a - the blessed rustproof +2 Excalibur (weapon in hand).", "You do not owe Aklavik anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 10, :y 7}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 3884, "depth": 5, "t": 96.1, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 4009, "depth": 6, "t": 97.3, "lvl": "Dlvl:6", "dname": "The Dungeons of Doom", "hp": 73, "hpmax": 73, "xl": 7, "ac": -10, "requests": 5918, "actions": 4641}
+{"kind": "item_lost", "turn": 4173, "depth": 7, "t": 100.4, "item": "pick-axe", "messages": ["The owlbear grabs you!", "You kill the owlbear!", "You see here an owlbear corpse.", "You see here an owlbear corpse.", "Pick an object.", "@        a human or elf (peaceful Gliwice) [seen: normal vision, infravision]", "This owlbear corpse tastes okay.", "You finish eating the owlbear corpse.", "You see no objects here.", "\"Velkommen, bot!  Welcome to Gliwice's liquor emporium!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Gliwice anything."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 59, :y 15}"], "slot": "k"}}
+{"kind": "xl", "turn": 4180, "depth": 7, "t": 100.9, "value": 8}
+{"kind": "item_gained", "turn": 4219, "depth": 7, "t": 104.2, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 4261, "depth": 8, "t": 104.6, "item": "pick-axe", "messages": ["You see here a yellow potion (for sale, 267 zorkmids).", "You see here a yellow potion (for sale, 267 zorkmids).", "You do not owe Gliwice anything.", "You see here a blessed +0 pick-axe.", "You see here a blessed +0 pick-axe.", "k - a blessed +0 pick-axe.", "You see no objects here.", "Where do you want to travel to?", "You hear someone cursing shoplifters.", "You descend the stairs.", "Where do you want to travel to?", "You hear a slow drip."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 4269, "depth": 8, "t": 105.7, "item": "pick-axe"}
+{"kind": "depth", "turn": 4637, "depth": 10, "t": 119.2, "value": 10, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 4637, "depth": 10, "t": 119.2, "stage": "dlvl10"}
+{"kind": "branch", "turn": 4898, "depth": 9, "t": 133.2, "dname": "Sokoban", "lvl": "Dlvl:9  "}
+{"kind": "stage", "turn": 4898, "depth": 9, "t": 133.2, "stage": "sokoban"}
+{"kind": "special", "turn": 4898, "depth": 9, "t": 133.2, "name": "soko4", "lvl": "Dlvl:9  "}
+{"kind": "heartbeat", "turn": 5013, "depth": 9, "t": 139.2, "lvl": "Dlvl:9", "dname": "Sokoban", "hp": 88, "hpmax": 88, "xl": 8, "ac": -10, "requests": 7327, "actions": 5782}
+{"kind": "special", "turn": 5092, "depth": 8, "t": 143.0, "name": "soko3", "lvl": "Dlvl:8  "}
+{"kind": "special", "turn": 5489, "depth": 7, "t": 155.8, "name": "soko2", "lvl": "Dlvl:7  "}
+{"kind": "special", "turn": 5746, "depth": 6, "t": 162.8, "name": "soko1", "lvl": "Dlvl:6  "}
+{"kind": "heartbeat", "turn": 6019, "depth": 6, "t": 174.4, "lvl": "Dlvl:6", "dname": "Sokoban", "hp": 88, "hpmax": 88, "xl": 8, "ac": -13, "requests": 8830, "actions": 7056}
+{"kind": "xl", "turn": 6329, "depth": 6, "t": 199.6, "value": 9}
+{"kind": "item_lost", "turn": 6450, "depth": 6, "t": 207.7, "item": "amulet of reflection", "messages": ["f        a cat or other feline (housecat) [seen: normal vision, infravision, telepathy]", "Pick an object.", "w        a worm (long worm) [seen: normal vision, telepathy]", "Pick an object.", "i        an imp or minor demon (peaceful tengu) [seen: normal vision, infravision, telepathy]", "Pick an object.", "Y        an apelike creature (sasquatch) [seen: normal vision, infravision, telepathy]", "You write in the dust with your fingertip.", "The housecat turns to flee.", "A mysterious force prevents the tengu from teleporting!", "Something is written here in the dust.", "You read: \"Elbereth\"."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 46, 'y': 18, 'known': 6450, 'first-known': 6449, 'glyph': 'n', 'color': 'blue"], "dir": "W"}}
+{"kind": "item_gained", "turn": 6486, "depth": 6, "t": 209.7, "item": "amulet of reflection"}
+{"kind": "item_lost", "turn": 6936, "depth": 8, "t": 224.1, "item": "pick-axe", "messages": ["Something is written here in the dust.", "You read: \"?? c c r\".", "Something is written here in the dust.", "You read: \"?? c c r\".", "You see no objects here.", "Where do you want to travel to?", "You climb up the stairs.", "Where do you want to travel to?", "You hear a jackal howling at the moon.", "You are beginning to feel hungry.", "You climb up the stairs.", "Where do you want to travel to?"], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 6951, "depth": 8, "t": 225.8, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 7023, "depth": 7, "t": 226.6, "lvl": "Dlvl:7", "dname": "The Dungeons of Doom", "hp": 96, "hpmax": 96, "xl": 9, "ac": -13, "requests": 10299, "actions": 8325}
+{"kind": "item_lost", "turn": 7163, "depth": 5, "t": 230.2, "item": "pick-axe", "messages": ["You see here an orcish cloak.", "Where do you want to travel to?", "You see here a poisoned orcish arrow.", "You see here 2 poisoned orcish arrows.", "You see here 2 poisoned orcish arrows.", "Your lamp is now off.", "Where do you want to travel to?", "You kill the gas spore!", "You are caught in the gas spore's explosion!", "You climb up the stairs.", "You hear the chime of a cash register.", "Where do you want to travel to?"], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 7168, "depth": 5, "t": 230.7, "item": "pick-axe"}
+{"kind": "depth", "turn": 7751, "depth": 11, "t": 241.5, "value": 11, "dname": "The Dungeons of Doom"}
+{"kind": "assist", "turn": 7764, "depth": 11, "t": 242.2, "x_kind": "feed", "nutrition_before": 49, "count": 1, "x_turn": 7764, "x_depth": 11, "dnum": 0}
+{"kind": "depth", "turn": 7826, "depth": 13, "t": 244.2, "value": 13, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 7941, "depth": 12, "t": 249.2, "name": "bigrm", "lvl": "Dlvl:12 "}
+{"kind": "stage", "turn": 7941, "depth": 12, "t": 249.2, "stage": "bigroom", "variant": "bigrm"}
+{"kind": "xl", "turn": 7948, "depth": 12, "t": 249.9, "value": 10}
+{"kind": "heartbeat", "turn": 8023, "depth": 12, "t": 253.1, "lvl": "Dlvl:12", "dname": "The Dungeons of Doom", "hp": 76, "hpmax": 107, "xl": 10, "ac": -17, "requests": 11631, "actions": 9364}
+{"kind": "depth", "turn": 8532, "depth": 14, "t": 274.3, "value": 14, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 8866, "depth": 15, "t": 286.3, "value": 15, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 8866, "depth": 15, "t": 286.3, "name": "rogue", "lvl": "Dlvl:15 "}
+{"kind": "heartbeat", "turn": 9030, "depth": 15, "t": 291.6, "lvl": "Dlvl:15", "dname": "The Dungeons of Doom", "hp": 107, "hpmax": 107, "xl": 10, "ac": -17, "requests": 13015, "actions": 10460}
+{"kind": "depth", "turn": 9099, "depth": 16, "t": 294.2, "value": 16, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 9330, "depth": 19, "t": 301.2, "value": 19, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 9403, "depth": 21, "t": 304.7, "value": 21, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 9573, "depth": 20, "t": 313.0, "value": 11}
+{"kind": "heartbeat", "turn": 10031, "depth": 19, "t": 329.0, "lvl": "Dlvl:19", "dname": "The Dungeons of Doom", "hp": 115, "hpmax": 115, "xl": 11, "ac": -18, "requests": 14603, "actions": 11738}
+{"kind": "assist", "turn": 10713, "depth": 17, "t": 358.8, "x_kind": "feed", "nutrition_before": 49, "count": 2, "x_turn": 10713, "x_depth": 17, "dnum": 0}
+{"kind": "heartbeat", "turn": 11031, "depth": 18, "t": 370.7, "lvl": "Dlvl:18", "dname": "The Dungeons of Doom", "hp": 115, "hpmax": 115, "xl": 11, "ac": -18, "requests": 16163, "actions": 13036}
+{"kind": "depth", "turn": 11825, "depth": 22, "t": 382.3, "value": 22, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 11981, "depth": 23, "t": 386.6, "value": 23, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 11981, "depth": 23, "t": 386.6, "name": "medusa", "lvl": "Dlvl:23 "}
+{"kind": "stage", "turn": 11981, "depth": 23, "t": 386.6, "stage": "medusa", "variant": "medusa"}
+{"kind": "heartbeat", "turn": 12032, "depth": 23, "t": 389.1, "lvl": "Dlvl:23", "dname": "The Dungeons of Doom", "hp": 115, "hpmax": 115, "xl": 11, "ac": -18, "requests": 17515, "actions": 13929}
+{"kind": "depth", "turn": 12092, "depth": 24, "t": 391.8, "value": 24, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 12102, "depth": 25, "t": 392.0, "value": 25, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 12102, "depth": 25, "t": 392.0, "name": "castle", "lvl": "Dlvl:25 "}
+{"kind": "stage", "turn": 12102, "depth": 25, "t": 392.0, "stage": "castle"}
+{"kind": "xl", "turn": 12415, "depth": 25, "t": 409.4, "value": 12}
+{"kind": "heartbeat", "turn": 13033, "depth": 25, "t": 441.1, "lvl": "Dlvl:25", "dname": "The Dungeons of Doom", "hp": 128, "hpmax": 128, "xl": 12, "ac": -25, "requests": 21042, "actions": 16336}
+{"kind": "item_gained", "turn": 13041, "depth": 25, "t": 441.7, "item": "levitation boots"}
+{"kind": "item_lost", "turn": 13078, "depth": 25, "t": 442.8, "item": "levitation boots", "messages": ["The ogre lord swings his club.", "The ogre lord misses!", "Pick an object.", "O        an ogre (ogre lord) [seen: normal vision, infravision, telepathy]", "Pick an object.", "N        a naga (peaceful black naga)", "You hit the ogre lord!", "You kill the ogre lord!", "This ogre lord corpse tastes okay.", "You finish eating the ogre lord corpse.", "$ - 79 gold pieces.", "You see here a club."], "last_action": {"act": "dropsingle", "why": ["dropping junk"], "slot": "d"}}
+{"kind": "depth", "turn": 13283, "depth": 26, "t": 453.3, "value": 26, "dname": "Gehennom"}
+{"kind": "branch", "turn": 13283, "depth": 26, "t": 453.3, "dname": "Gehennom", "lvl": "Dlvl:26 "}
+{"kind": "special", "turn": 13283, "depth": 26, "t": 453.3, "name": "valley", "lvl": "Dlvl:26 "}
+{"kind": "stage", "turn": 13283, "depth": 26, "t": 453.3, "stage": "valley"}
+{"kind": "achievement", "turn": 13283, "depth": 26, "t": 453.3, "name": "gehennom"}
+{"kind": "xl", "turn": 13612, "depth": 26, "t": 473.1, "value": 13}
+{"kind": "heartbeat", "turn": 14033, "depth": 26, "t": 500.6, "lvl": "Dlvl:26", "dname": "Gehennom", "hp": 144, "hpmax": 144, "xl": 13, "ac": -25, "requests": 23117, "actions": 18011}
+{"kind": "depth", "turn": 14476, "depth": 27, "t": 524.2, "value": 27, "dname": "Gehennom"}
+{"kind": "depth", "turn": 14632, "depth": 28, "t": 532.9, "value": 28, "dname": "Gehennom"}
+{"kind": "special", "turn": 14632, "depth": 28, "t": 532.9, "name": "asmodeus", "lvl": "Dlvl:28 "}
+{"kind": "heartbeat", "turn": 15043, "depth": 28, "t": 551.3, "lvl": "Dlvl:28", "dname": "Gehennom", "hp": 148, "hpmax": 148, "xl": 13, "ac": -25, "requests": 24734, "actions": 19371}
+{"kind": "depth", "turn": 15353, "depth": 29, "t": 567.9, "value": 29, "dname": "Gehennom"}
+{"kind": "depth", "turn": 15708, "depth": 30, "t": 591.1, "value": 30, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 16043, "depth": 30, "t": 608.5, "lvl": "Dlvl:30", "dname": "Gehennom", "hp": 148, "hpmax": 148, "xl": 13, "ac": -20, "requests": 26425, "actions": 20886}
+{"kind": "depth", "turn": 16140, "depth": 33, "t": 617.5, "value": 33, "dname": "Gehennom"}
+{"kind": "special", "turn": 16140, "depth": 33, "t": 617.5, "name": "baalz", "lvl": "Dlvl:33 "}
+{"kind": "depth", "turn": 16436, "depth": 35, "t": 636.8, "value": 35, "dname": "Gehennom"}
+{"kind": "xl", "turn": 16674, "depth": 35, "t": 654.6, "value": 14}
+{"kind": "heartbeat", "turn": 17043, "depth": 34, "t": 679.0, "lvl": "Dlvl:34", "dname": "Gehennom", "hp": 156, "hpmax": 156, "xl": 14, "ac": -20, "requests": 28308, "actions": 22559}
+{"kind": "item_gained", "turn": 17334, "depth": 34, "t": 695.8, "item": "water walking boots"}
+{"kind": "item_lost", "turn": 17335, "depth": 34, "t": 695.8, "item": "water walking boots", "messages": ["a - the blessed rustproof +6 Excalibur (weapon in hand).", "Pick an object.", "&        a major demon (hezrou) [seen: telepathy]", "Pick an object.", "a        an ant or other insect (giant beetle) [seen: telepathy]", "Where do you want to travel to?", "You hit the giant beetle!", "You kill the giant beetle!", "W - a scroll of identify.", "You see here a giant beetle corpse.", "As you read the scroll, it disappears.", "C - an uncursed +0 pair of water walking boots."], "last_action": {"act": "dropsingle", "why": ["dropping junk"], "slot": "C"}}
+{"kind": "special", "turn": 17557, "depth": 32, "t": 704.1, "name": "juiblex", "lvl": "Dlvl:32 "}
+{"kind": "heartbeat", "turn": 18043, "depth": 31, "t": 744.5, "lvl": "Dlvl:31", "dname": "Gehennom", "hp": 148, "hpmax": 156, "xl": 14, "ac": -20, "requests": 30058, "actions": 24059}
+{"kind": "achievement", "turn": 18771, "depth": 23, "t": 774.6, "name": "medusa"}
+{"kind": "heartbeat", "turn": 19069, "depth": 17, "t": 788.8, "lvl": "Dlvl:17", "dname": "The Dungeons of Doom", "hp": 156, "hpmax": 156, "xl": 14, "ac": -26, "requests": 31436, "actions": 25076}
+{"kind": "branch", "turn": 19082, "depth": 16, "t": 789.3, "dname": "The Quest", "lvl": "Home 1 "}
+{"kind": "stage", "turn": 19082, "depth": 16, "t": 789.3, "stage": "quest"}
+{"kind": "special", "turn": 19082, "depth": 16, "t": 789.3, "name": "Val-strt", "lvl": "Home 1 "}
+{"kind": "special", "turn": 19267, "depth": 18, "t": 843.4, "name": "Val-loca", "lvl": "Home 3 "}
+{"kind": "special", "turn": 19603, "depth": 21, "t": 913.5, "name": "Val-goal", "lvl": "Home 6 "}
+{"kind": "achievement", "turn": 19849, "depth": 19, "t": 981.6, "name": "bell"}
+{"kind": "stage", "turn": 19849, "depth": 19, "t": 981.6, "stage": "bell"}
+{"kind": "heartbeat", "turn": 20071, "depth": 16, "t": 1020.8, "lvl": "Home 1", "dname": "The Quest", "hp": 158, "hpmax": 158, "xl": 14, "ac": -26, "requests": 33300, "actions": 26470}
+{"kind": "heartbeat", "turn": 21073, "depth": 34, "t": 1093.5, "lvl": "Dlvl:34", "dname": "Gehennom", "hp": 158, "hpmax": 158, "xl": 14, "ac": -26, "requests": 34411, "actions": 27319}
+{"kind": "depth", "turn": 21335, "depth": 36, "t": 1108.0, "value": 36, "dname": "Gehennom"}
+{"kind": "special", "turn": 21335, "depth": 36, "t": 1108.0, "name": "orcus", "lvl": "Dlvl:36 "}
+{"kind": "heartbeat", "turn": 22081, "depth": 36, "t": 1200.5, "lvl": "Dlvl:36", "dname": "Gehennom", "hp": 158, "hpmax": 158, "xl": 14, "ac": -26, "requests": 36109, "actions": 28685}
+{"kind": "assist", "turn": 22347, "depth": 36, "t": 1236.8, "x_kind": "noslime", "count": 1, "x_turn": 22346, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22407, "depth": 36, "t": 1244.4, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 1, "hpmax": 158, "xl": 14, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22407, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22420, "depth": 36, "t": 1245.5, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 2, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22420, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22437, "depth": 36, "t": 1246.3, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 3, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22437, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22444, "depth": 36, "t": 1247.0, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 4, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22444, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22472, "depth": 36, "t": 1249.4, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 5, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22472, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22487, "depth": 36, "t": 1250.8, "x_kind": "noslime", "count": 2, "x_turn": 22487, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22490, "depth": 36, "t": 1251.0, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 6, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22490, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22509, "depth": 36, "t": 1251.9, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 7, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22509, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22529, "depth": 36, "t": 1253.2, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 8, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22529, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22553, "depth": 36, "t": 1256.2, "x_kind": "lifesave", "how": "died", "killer": "bone devil", "count": 9, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22553, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22557, "depth": 36, "t": 1256.9, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 10, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22557, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22572, "depth": 36, "t": 1260.9, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 11, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22572, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22596, "depth": 36, "t": 1265.7, "x_kind": "lifesave", "how": "died", "killer": "bone devil", "count": 12, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22595, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22608, "depth": 36, "t": 1268.4, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 13, "hpmax": 158, "xl": 14, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22608, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22613, "depth": 36, "t": 1269.1, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 14, "hpmax": 158, "xl": 14, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22613, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22621, "depth": 36, "t": 1269.6, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 15, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22621, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22638, "depth": 36, "t": 1272.9, "x_kind": "lifesave", "how": "died", "killer": "pit viper", "count": 16, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22637, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22640, "depth": 36, "t": 1273.2, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 17, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22640, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22671, "depth": 36, "t": 1277.9, "x_kind": "lifesave", "how": "died", "killer": "yellow dragon", "count": 18, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22670, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22691, "depth": 36, "t": 1280.2, "x_kind": "lifesave", "how": "died", "killer": "invisible Demogorgon", "count": 19, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22691, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22717, "depth": 36, "t": 1283.6, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 20, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22717, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22733, "depth": 36, "t": 1285.6, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 21, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22733, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22746, "depth": 36, "t": 1286.0, "x_kind": "lifesave", "how": "died", "killer": "baluchitherium", "count": 22, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22745, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22752, "depth": 36, "t": 1286.3, "x_kind": "lifesave", "how": "died", "killer": "Olog-hai", "count": 23, "hpmax": 158, "xl": 14, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22751, "x_depth": 36, "dnum": 1}
+{"kind": "xl", "turn": 22753, "depth": 36, "t": 1286.5, "value": 15}
+{"kind": "assist", "turn": 22754, "depth": 36, "t": 1286.6, "x_kind": "lifesave", "how": "died", "killer": "incubus", "count": 24, "hpmax": 166, "xl": 15, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22754, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22761, "depth": 36, "t": 1286.9, "x_kind": "lifesave", "how": "died", "killer": "yellow dragon", "count": 25, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22760, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22770, "depth": 36, "t": 1288.1, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 26, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22770, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22780, "depth": 36, "t": 1288.8, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 27, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22780, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22790, "depth": 36, "t": 1289.9, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 28, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22790, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22816, "depth": 36, "t": 1294.5, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 29, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22816, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22846, "depth": 36, "t": 1295.9, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 30, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22846, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22865, "depth": 36, "t": 1299.4, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 31, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22865, "x_depth": 36, "dnum": 1}
+{"kind": "item_lost", "turn": 22883, "depth": 36, "t": 1302.4, "item": "Excalibur", "messages": ["The Elvenking misses!", "The Uruk-hai swings her bullwhip.", "The rust monster misses!", "The quasit misses!", "The homunculus misses!", "The monkey picks up an arrow.", "The small mimic misses!", "The mock role hits!", "The earthquake beast misses!", "The freezing sphere misses!", "The chickatrice misses!", "You hit the flaming sphere!"], "last_action": {"act": "move", "why": ["hitting {'x': 72, 'y': 7, 'known': 22882, 'first-known': 22882, 'glyph': 'E', 'color': 'brown', 'typ", "targetting enemy {'x': 72, 'y': 7, 'known': 22882, 'first-known': 22882, 'glyph': 'E', 'color': 'bro"], "dir": "N"}}
+{"kind": "assist", "turn": 22897, "depth": 36, "t": 1304.0, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted Yeenoghu", "count": 32, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22897, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22905, "depth": 36, "t": 1304.2, "x_kind": "lifesave", "how": "poisoned", "killer": "Demogorgon", "count": 33, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 1, "restored_hpmax": 0, "x_turn": 22905, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22918, "depth": 36, "t": 1305.9, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted titanothere", "count": 34, "hpmax": 166, "xl": 15, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22918, "x_depth": 36, "dnum": 1}
+{"kind": "xl", "turn": 22920, "depth": 36, "t": 1305.9, "value": 16}
+{"kind": "assist", "turn": 22922, "depth": 36, "t": 1306.1, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted elf-lord", "count": 35, "hpmax": 174, "xl": 16, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22921, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22933, "depth": 36, "t": 1306.8, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted green dragon", "count": 36, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22933, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22941, "depth": 36, "t": 1307.3, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted fire giant", "count": 37, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22940, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22945, "depth": 36, "t": 1307.5, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted fire giant", "count": 38, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22945, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22968, "depth": 36, "t": 1310.8, "x_kind": "lifesave", "how": "died", "killer": "Woodland-elf", "count": 39, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22968, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 22991, "depth": 36, "t": 1313.9, "x_kind": "lifesave", "how": "died", "killer": "fire giant", "count": 40, "hpmax": 174, "xl": 16, "restored_attrs": 2, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 22991, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23015, "depth": 36, "t": 1316.4, "x_kind": "lifesave", "how": "died", "killer": "yellow dragon", "count": 41, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23015, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23036, "depth": 36, "t": 1321.3, "x_kind": "lifesave", "how": "died", "killer": "ettin zombie", "count": 42, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23036, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23054, "depth": 36, "t": 1325.4, "x_kind": "lifesave", "how": "died", "killer": "storm giant", "count": 43, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23053, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23071, "depth": 36, "t": 1329.6, "x_kind": "lifesave", "how": "died", "killer": "red dragon", "count": 44, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23071, "x_depth": 36, "dnum": 1}
+{"kind": "heartbeat", "turn": 23081, "depth": 36, "t": 1332.3, "lvl": "Dlvl:36", "dname": "Gehennom", "hp": 123, "hpmax": 174, "xl": 16, "ac": -26, "requests": 40953, "actions": 31747}
+{"kind": "assist", "turn": 23096, "depth": 36, "t": 1335.8, "x_kind": "lifesave", "how": "died", "killer": "ice devil", "count": 45, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23095, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23125, "depth": 36, "t": 1341.2, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 46, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23124, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23141, "depth": 36, "t": 1344.5, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 47, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 1, "restored_hpmax": 0, "x_turn": 23141, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23165, "depth": 36, "t": 1346.5, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 48, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23161, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23202, "depth": 36, "t": 1354.8, "x_kind": "lifesave", "how": "died", "killer": "green dragon", "count": 49, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23202, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23224, "depth": 36, "t": 1359.4, "x_kind": "lifesave", "how": "died", "killer": "green dragon", "count": 50, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23224, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23253, "depth": 36, "t": 1365.5, "x_kind": "lifesave", "how": "died", "killer": "orange dragon", "count": 51, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23252, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23276, "depth": 36, "t": 1368.2, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 52, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23275, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23294, "depth": 36, "t": 1371.6, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 53, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23293, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23308, "depth": 36, "t": 1374.2, "x_kind": "lifesave", "how": "died", "killer": "yeti", "count": 54, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23308, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23327, "depth": 36, "t": 1376.9, "x_kind": "lifesave", "how": "died", "killer": "vampire lord", "count": 55, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 3, "restored_hpmax": 0, "x_turn": 23326, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23329, "depth": 36, "t": 1377.4, "x_kind": "noslime", "count": 3, "x_turn": 23329, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23340, "depth": 36, "t": 1379.6, "x_kind": "noslime", "count": 4, "x_turn": 23340, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23341, "depth": 36, "t": 1379.9, "x_kind": "lifesave", "how": "died", "killer": "baluchitherium", "count": 56, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 3, "restored_hpmax": 0, "x_turn": 23341, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23350, "depth": 36, "t": 1381.2, "x_kind": "noslime", "count": 5, "x_turn": 23350, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23360, "depth": 36, "t": 1382.5, "x_kind": "lifesave", "how": "died", "killer": "baluchitherium", "count": 57, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23360, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23374, "depth": 36, "t": 1384.4, "x_kind": "lifesave", "how": "died", "killer": "invisible Orcus", "count": 58, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23374, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23375, "depth": 36, "t": 1384.5, "x_kind": "noslime", "count": 6, "x_turn": 23375, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23387, "depth": 36, "t": 1386.0, "x_kind": "noslime", "count": 7, "x_turn": 23387, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23398, "depth": 36, "t": 1387.0, "x_kind": "lifesave", "how": "died", "killer": "purple worm", "count": 59, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23398, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23421, "depth": 36, "t": 1390.4, "x_kind": "lifesave", "how": "died", "killer": "orange dragon", "count": 60, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23420, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23435, "depth": 36, "t": 1391.8, "x_kind": "noslime", "count": 8, "x_turn": 23435, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23435, "depth": 36, "t": 1391.9, "x_kind": "lifesave", "how": "died", "killer": "iron golem", "count": 61, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23435, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23447, "depth": 36, "t": 1393.2, "x_kind": "noslime", "count": 9, "x_turn": 23447, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23449, "depth": 36, "t": 1393.4, "x_kind": "lifesave", "how": "died", "killer": "iron golem", "count": 62, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 1, "restored_hpmax": 0, "x_turn": 23449, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23466, "depth": 36, "t": 1396.0, "x_kind": "lifesave", "how": "died", "killer": "invisible Orcus", "count": 63, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 1, "restored_hpmax": 0, "x_turn": 23466, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23485, "depth": 36, "t": 1398.8, "x_kind": "lifesave", "how": "died", "killer": "Olog-hai", "count": 64, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23485, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23507, "depth": 36, "t": 1401.5, "x_kind": "lifesave", "how": "died", "killer": "leocrotta", "count": 65, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 1, "restored_hpmax": 0, "x_turn": 23507, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23537, "depth": 36, "t": 1406.0, "x_kind": "lifesave", "how": "died", "killer": "red dragon", "count": 66, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23537, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23580, "depth": 36, "t": 1412.7, "x_kind": "lifesave", "how": "died", "killer": "leocrotta", "count": 67, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23580, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23621, "depth": 36, "t": 1423.3, "x_kind": "lifesave", "how": "died", "killer": "leocrotta", "count": 68, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23620, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23660, "depth": 36, "t": 1429.6, "x_kind": "lifesave", "how": "died", "killer": "orange dragon", "count": 69, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23660, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23680, "depth": 36, "t": 1432.6, "x_kind": "noslime", "count": 10, "x_turn": 23680, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23716, "depth": 36, "t": 1437.6, "x_kind": "lifesave", "how": "died", "killer": "red dragon", "count": 70, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23716, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23765, "depth": 36, "t": 1443.5, "x_kind": "lifesave", "how": "died", "killer": "silver dragon", "count": 71, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23765, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23810, "depth": 36, "t": 1447.9, "x_kind": "lifesave", "how": "died", "killer": "ochre jelly", "count": 72, "hpmax": 174, "xl": 16, "restored_attrs": 2, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23810, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23848, "depth": 36, "t": 1450.3, "x_kind": "lifesave", "how": "died", "killer": "hallucinogen-distorted zruty", "count": 73, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23848, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23886, "depth": 36, "t": 1452.7, "x_kind": "lifesave", "how": "died", "killer": "vampire lord in bat form", "count": 74, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23886, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23924, "depth": 36, "t": 1455.5, "x_kind": "lifesave", "how": "died", "killer": "green slime", "count": 75, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23924, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23965, "depth": 36, "t": 1459.0, "x_kind": "lifesave", "how": "died", "killer": "leocrotta", "count": 76, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23965, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 23990, "depth": 36, "t": 1461.4, "x_kind": "lifesave", "how": "died", "killer": "vampire lord in bat form", "count": 77, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 23989, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24021, "depth": 36, "t": 1464.8, "x_kind": "lifesave", "how": "died", "killer": "green dragon", "count": 78, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 2, "restored_hpmax": 0, "x_turn": 24021, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24042, "depth": 36, "t": 1466.8, "x_kind": "lifesave", "how": "died", "killer": "red dragon", "count": 79, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24041, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24062, "depth": 36, "t": 1468.7, "x_kind": "lifesave", "how": "died", "killer": "black dragon", "count": 80, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24062, "x_depth": 36, "dnum": 1}
+{"kind": "heartbeat", "turn": 24081, "depth": 36, "t": 1470.7, "lvl": "Dlvl:36", "dname": "Gehennom", "hp": 33, "hpmax": 174, "xl": 16, "ac": -26, "requests": 46139, "actions": 35147}
+{"kind": "assist", "turn": 24087, "depth": 36, "t": 1471.1, "x_kind": "lifesave", "how": "died", "killer": "xorn", "count": 81, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24086, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24107, "depth": 36, "t": 1472.3, "x_kind": "lifesave", "how": "died", "killer": "storm giant", "count": 82, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 2, "restored_hpmax": 0, "x_turn": 24106, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24134, "depth": 36, "t": 1473.0, "x_kind": "lifesave", "how": "died", "killer": "silver dragon", "count": 83, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24133, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24145, "depth": 36, "t": 1473.3, "x_kind": "lifesave", "how": "died", "killer": "jabberwock", "count": 84, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24145, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24159, "depth": 36, "t": 1473.9, "x_kind": "lifesave", "how": "died", "killer": "jabberwock", "count": 85, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24159, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24176, "depth": 36, "t": 1475.3, "x_kind": "lifesave", "how": "died", "killer": "ettin", "count": 86, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24176, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24190, "depth": 36, "t": 1476.2, "x_kind": "lifesave", "how": "died", "killer": "winged gargoyle", "count": 87, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24189, "x_depth": 36, "dnum": 1}
+{"kind": "assist", "turn": 24204, "depth": 36, "t": 1477.2, "x_kind": "lifesave", "how": "died", "killer": "jabberwock", "count": 88, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 24204, "x_depth": 36, "dnum": 1}
+{"kind": "depth", "turn": 24224, "depth": 38, "t": 1478.2, "value": 38, "dname": "Gehennom"}
+{"kind": "special", "turn": 24224, "depth": 38, "t": 1478.2, "name": "wizard1", "lvl": "Dlvl:38 "}
+{"kind": "stage", "turn": 24224, "depth": 38, "t": 1478.2, "stage": "wizard_tower"}
+{"kind": "item_lost", "turn": 24230, "depth": 38, "t": 1478.4, "item": "bag of holding", "messages": ["You see here a stalker corpse.", "Pick an object.", "u        a unicorn or horse (warhorse) [seen: telepathy]", "Count: 10", "You hear a A note squeak in the distance.", "You hear a D note squeak in the distance.", "You feel less confused now.", "You stop waiting.", "Count: 3 A", "You drop 3 cursed pancakes.", "Count: 1 E", "You drop a cursed partly eaten lizard corpse."], "last_action": {"act": "dropsingle", "why": ["dropping junk"], "slot": "j"}}
+{"kind": "branch", "turn": 24246, "depth": 37, "t": 1479.7, "dname": "Vlad's Tower", "lvl": "Dlvl:37 "}
+{"kind": "stage", "turn": 24246, "depth": 37, "t": 1479.7, "stage": "vlad"}
+{"kind": "special", "turn": 24246, "depth": 37, "t": 1479.7, "name": "tower3", "lvl": "Dlvl:37 "}
+{"kind": "special", "turn": 24366, "depth": 36, "t": 1485.9, "name": "tower2", "lvl": "Dlvl:36 "}
+{"kind": "special", "turn": 24389, "depth": 35, "t": 1487.8, "name": "tower1", "lvl": "Dlvl:35 "}
+{"kind": "assist", "turn": 24471, "depth": 35, "t": 1493.2, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 89, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 7, "restored_hpmax": 3, "x_turn": 24471, "x_depth": 35, "dnum": 6}
+{"kind": "assist", "turn": 24483, "depth": 35, "t": 1493.7, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 90, "hpmax": 174, "xl": 16, "restored_attrs": 0, "restored_levels": 7, "restored_hpmax": 2, "x_turn": 24482, "x_depth": 35, "dnum": 6}
+{"kind": "assist", "turn": 24590, "depth": 36, "t": 1498.5, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 91, "hpmax": 178, "xl": 16, "restored_attrs": 0, "restored_levels": 7, "restored_hpmax": 0, "x_turn": 24589, "x_depth": 36, "dnum": 6}
+{"kind": "assist", "turn": 24716, "depth": 38, "t": 1504.4, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 92, "hpmax": 178, "xl": 16, "restored_attrs": 0, "restored_levels": 5, "restored_hpmax": 0, "x_turn": 24715, "x_depth": 38, "dnum": 1}
+{"kind": "assist", "turn": 24789, "depth": 38, "t": 1506.8, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 93, "hpmax": 178, "xl": 16, "restored_attrs": 0, "restored_levels": 7, "restored_hpmax": 0, "x_turn": 24788, "x_depth": 38, "dnum": 1}
+{"kind": "assist", "turn": 24890, "depth": 38, "t": 1510.9, "x_kind": "lifesave", "how": "died", "killer": "Vlad the Impaler", "count": 94, "hpmax": 188, "xl": 16, "restored_attrs": 0, "restored_levels": 8, "restored_hpmax": 0, "x_turn": 24889, "x_depth": 38, "dnum": 1}
+{"kind": "depth", "turn": 24990, "depth": 39, "t": 1515.8, "value": 39, "dname": "Gehennom"}
+{"kind": "special", "turn": 24990, "depth": 39, "t": 1515.8, "name": "wizard2", "lvl": "Dlvl:39 "}
+{"kind": "heartbeat", "turn": 25081, "depth": 39, "t": 1520.8, "lvl": "Dlvl:39", "dname": "Gehennom", "hp": 119, "hpmax": 140, "xl": 10, "ac": -26, "requests": 48226, "actions": 36887}
+{"kind": "heartbeat", "turn": 26081, "depth": 39, "t": 1583.7, "lvl": "Dlvl:39", "dname": "Gehennom", "hp": 147, "hpmax": 148, "xl": 11, "ac": -26, "requests": 50259, "actions": 38765}
+{"kind": "depth", "turn": 26633, "depth": 40, "t": 1633.5, "value": 40, "dname": "Gehennom"}
+{"kind": "special", "turn": 26633, "depth": 40, "t": 1633.5, "name": "wizard3", "lvl": "Dlvl:40 "}
+{"kind": "stage", "turn": 26633, "depth": 40, "t": 1633.5, "stage": "gehennom_deep"}
+{"kind": "depth", "turn": 26756, "depth": 41, "t": 1640.3, "value": 41, "dname": "Gehennom"}
+{"kind": "special", "turn": 26756, "depth": 41, "t": 1640.3, "name": "fakewiz2", "lvl": "Dlvl:41 "}
+{"kind": "depth", "turn": 27035, "depth": 42, "t": 1655.9, "value": 42, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 27081, "depth": 42, "t": 1657.2, "lvl": "Dlvl:42", "dname": "Gehennom", "hp": 105, "hpmax": 156, "xl": 12, "ac": -26, "requests": 52396, "actions": 40692}
+{"kind": "depth", "turn": 27433, "depth": 43, "t": 1672.5, "value": 43, "dname": "Gehennom"}
+{"kind": "depth", "turn": 28001, "depth": 44, "t": 1703.9, "value": 44, "dname": "Gehennom"}
+{"kind": "special", "turn": 28001, "depth": 44, "t": 1703.9, "name": "fakewiz1", "lvl": "Dlvl:44 "}
+{"kind": "heartbeat", "turn": 28081, "depth": 44, "t": 1708.9, "lvl": "Dlvl:44", "dname": "Gehennom", "hp": 156, "hpmax": 156, "xl": 12, "ac": -26, "requests": 54325, "actions": 42456}
+{"kind": "depth", "turn": 28113, "depth": 45, "t": 1711.3, "value": 45, "dname": "Gehennom"}
+{"kind": "assist", "turn": 28929, "depth": 45, "t": 1755.9, "x_kind": "lifesave", "how": "stoned", "killer": "cockatrice", "count": 95, "hpmax": 188, "xl": 16, "restored_attrs": 0, "restored_levels": 4, "restored_hpmax": 0, "x_turn": 28929, "x_depth": 45, "dnum": 1}
+{"kind": "assist", "turn": 28934, "depth": 45, "t": 1756.1, "x_kind": "lifesave", "how": "stoned", "killer": "cockatrice", "count": 96, "hpmax": 188, "xl": 16, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 28934, "x_depth": 45, "dnum": 1}
+{"kind": "heartbeat", "turn": 29081, "depth": 44, "t": 1761.9, "lvl": "Dlvl:44", "dname": "Gehennom", "hp": 188, "hpmax": 188, "xl": 16, "ac": -26, "requests": 56093, "actions": 44070}
+{"kind": "xl", "turn": 29228, "depth": 41, "t": 1779.7, "value": 17}
+{"kind": "heartbeat", "turn": 30082, "depth": 41, "t": 1835.7, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 57719, "actions": 45467}
+{"kind": "heartbeat", "turn": 31083, "depth": 41, "t": 1874.0, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 58649, "actions": 46044}
+{"kind": "heartbeat", "turn": 32086, "depth": 41, "t": 1920.3, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 59507, "actions": 46562}
+{"kind": "heartbeat", "turn": 33091, "depth": 41, "t": 1960.2, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 60203, "actions": 46883}
+{"kind": "heartbeat", "turn": 34091, "depth": 42, "t": 2006.2, "lvl": "Dlvl:42", "dname": "Gehennom", "hp": 167, "hpmax": 196, "xl": 17, "ac": -26, "requests": 61553, "actions": 47840}
+{"kind": "assist", "turn": 34105, "depth": 42, "t": 2007.2, "x_kind": "noslime", "count": 11, "x_turn": 34105, "x_depth": 42, "dnum": 1}
+{"kind": "heartbeat", "turn": 35091, "depth": 41, "t": 2057.1, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 180, "hpmax": 180, "xl": 15, "ac": -26, "requests": 62940, "actions": 48782}
+{"kind": "heartbeat", "turn": 36092, "depth": 41, "t": 2109.5, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 180, "hpmax": 180, "xl": 15, "ac": -26, "requests": 63650, "actions": 49156}
+{"kind": "heartbeat", "turn": 37093, "depth": 41, "t": 2163.2, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 180, "hpmax": 180, "xl": 15, "ac": -26, "requests": 64469, "actions": 49654}
+{"kind": "heartbeat", "turn": 38093, "depth": 41, "t": 2216.7, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 180, "hpmax": 180, "xl": 15, "ac": -26, "requests": 65346, "actions": 50196}
+{"kind": "heartbeat", "turn": 39095, "depth": 41, "t": 2267.8, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 180, "hpmax": 180, "xl": 15, "ac": -26, "requests": 65970, "actions": 50493}
+{"kind": "assist", "turn": 39440, "depth": 42, "t": 2281.1, "x_kind": "lifesave", "how": "died", "killer": "horse", "count": 97, "hpmax": 196, "xl": 17, "restored_attrs": 0, "restored_levels": 2, "restored_hpmax": 0, "x_turn": 39439, "x_depth": 42, "dnum": 1}
+{"kind": "heartbeat", "turn": 40100, "depth": 43, "t": 2303.0, "lvl": "Dlvl:43", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 67242, "actions": 51534}
+{"kind": "heartbeat", "turn": 41101, "depth": 41, "t": 2375.0, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 67864, "actions": 51853}
+{"kind": "heartbeat", "turn": 42105, "depth": 41, "t": 2426.6, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 68746, "actions": 52389}
+{"kind": "heartbeat", "turn": 43108, "depth": 41, "t": 2486.0, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 69674, "actions": 52984}
+{"kind": "heartbeat", "turn": 44108, "depth": 41, "t": 2539.7, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 70603, "actions": 53614}
+{"kind": "heartbeat", "turn": 45124, "depth": 43, "t": 2590.5, "lvl": "Dlvl:43", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 71631, "actions": 54351}
+{"kind": "heartbeat", "turn": 46125, "depth": 41, "t": 2639.0, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 72592, "actions": 55053}
+{"kind": "heartbeat", "turn": 47125, "depth": 41, "t": 2808.0, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 73589, "actions": 55774}
+{"kind": "heartbeat", "turn": 48125, "depth": 41, "t": 2928.1, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 74452, "actions": 56409}
+{"kind": "heartbeat", "turn": 49131, "depth": 41, "t": 3001.9, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 75240, "actions": 56899}
+{"kind": "heartbeat", "turn": 50131, "depth": 41, "t": 3071.2, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 76094, "actions": 57464}
+{"kind": "heartbeat", "turn": 51131, "depth": 41, "t": 3181.9, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 76867, "actions": 57934}
+{"kind": "heartbeat", "turn": 52131, "depth": 41, "t": 3311.3, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 77505, "actions": 58268}
+{"kind": "heartbeat", "turn": 53144, "depth": 41, "t": 3437.1, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 78395, "actions": 58845}
+{"kind": "heartbeat", "turn": 54144, "depth": 41, "t": 3536.2, "lvl": "Dlvl:41", "dname": "Gehennom", "hp": 196, "hpmax": 196, "xl": 17, "ac": -26, "requests": 79136, "actions": 59272}
+{"kind": "end", "turn": 54637, "depth": 41, "t": 3600.1, "outcome": "limit", "reason": "max_seconds 3600"}

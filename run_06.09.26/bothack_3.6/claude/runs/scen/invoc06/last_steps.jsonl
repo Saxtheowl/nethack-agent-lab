@@ -1,0 +1,800 @@
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 36, :y 12}"}
+{"a": ";"}
+{"r": 29, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 11)"}
+{"r": 30, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (dart trap)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 37, :y 12}"}
+{"a": ";"}
+{"r": 31, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 11)"}
+{"r": 32, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (rust trap)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 72, :y 14}"}
+{"a": ";"}
+{"r": 33, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(73, 13)"}
+{"r": 34, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (magic trap)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 56, :y 16}"}
+{"a": ";"}
+{"r": 35, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(57, 15)"}
+{"r": 36, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (rolling boulder trap)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 66, :y 18}"}
+{"a": ";"}
+{"r": 37, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(67, 17)"}
+{"r": 38, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (fire trap)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 34, :y 20}"}
+{"a": ";"}
+{"r": 39, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(35, 19)"}
+{"r": 40, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"note": "recovery", "d": "action-loop x8 farlook: farlook target #Position{:x 34, :y 20} marked examined"}
+{"m": "^        a trap (level teleporter)"}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 48, :y 20}"}
+{"a": ";"}
+{"r": 41, "k": "pos", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(49, 19)"}
+{"r": 42, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "^        a trap (fire trap)"}
+{"act": "call", "why": ["call item to disambiguate"], "slot": "n"}
+{"a": "#"}
+{"r": 43, "k": "ext", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"a": "call"}
+{"r": 44, "k": "menu", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "p": "What do you want to name?", "items": ["m a monster", "i a particular object in inventory", "o the type of an object in inventory", "f the type of an object upon the floor", "d the type of an object on discoveries list", "a record an annotation for the current level"]}
+{"note": "compat", "d": "name:o"}
+{"a": [2]}
+{"r": 45, "k": "yn", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "q": "What do you want to call? [f-hjl-o or ?*]"}
+{"a": "n"}
+{"r": 46, "k": "line", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "q": "Call a candle:"}
+{"a": "candle1"}
+{"r": 47, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 48, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 49, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 50, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["learning contents of {'label': 'an empty uncursed bag of holding', 'qty': 1, 'buc': 'uncursed', 'nam"], "slot": "j"}
+{"a": "a"}
+{"r": 51, "k": "yn", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "q": "What do you want to use or apply? [i-n or ?*]"}
+{"a": "j"}
+{"r": 52, "k": "menu", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163, "p": "Your bag of holding is empty.  Do what with it?", "items": [": Look inside the bag of holding", "i put something in", "r put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 53, "k": "cmd", "T": 1, "lvl": "Dlvl:49", "u": [31, 15], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["new or desired item at {'x': 31, 'y': 16, 'glyph': '*', 'color': None, 'feature': None, 'seen': True"], "dir": "E"}
+{"a": "l"}
+{"r": 54, "k": "cmd", "T": 2, "lvl": "Dlvl:49", "u": [32, 15], "hp": 163, "hpmax": 163}
+{"m": "You see here an orange gem."}
+{"act": "look", "why": ["examining tile {'x': 31, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 55, "k": "cmd", "T": 2, "lvl": "Dlvl:49", "u": [32, 15], "hp": 163, "hpmax": 163}
+{"m": "You see here an orange gem."}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 56, "k": "cmd", "T": 2, "lvl": "Dlvl:49", "u": [33, 16], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 57, "k": "cmd", "T": 3, "lvl": "Dlvl:49", "u": [34, 17], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 58, "k": "cmd", "T": 4, "lvl": "Dlvl:49", "u": [35, 17], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 59, "k": "cmd", "T": 5, "lvl": "Dlvl:49", "u": [36, 17], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 60, "k": "cmd", "T": 6, "lvl": "Dlvl:49", "u": [37, 17], "hp": 163, "hpmax": 163}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:50", "seeking level main end", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 61, "k": "cmd", "T": 6, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "Something casts a spell at you!"}
+{"m": "A field of force surrounds you!"}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 6, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 6, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 62, "k": "cmdcont", "T": 6, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"a": "n"}
+{"r": 63, "k": "cmd", "T": 7, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"m": "You hit it."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 7, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 7, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 64, "k": "cmdcont", "T": 7, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"a": "n"}
+{"r": 65, "k": "cmd", "T": 7, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"m": "You hit it."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 7, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 7, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 66, "k": "cmdcont", "T": 7, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"a": "n"}
+{"r": 67, "k": "cmd", "T": 8, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"m": "You hit it."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 8, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 8, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 68, "k": "cmdcont", "T": 8, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"a": "n"}
+{"r": 69, "k": "cmd", "T": 8, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"m": "You hit it."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 8, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 8, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 70, "k": "cmdcont", "T": 8, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"a": "n"}
+{"r": 71, "k": "cmd", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"m": "You hit it."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 19, 'known': 9, 'first-known': 6, 'glyph': 'I', 'color': None, 'type': None, ", "targetting leftover enemy {'x': 38, 'y': 19, 'known': 9, 'first-known': 6, 'glyph': 'I', 'color': No"], "dir": "SE"}
+{"a": "F"}
+{"r": 72, "k": "cmdcont", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"a": "n"}
+{"r": 73, "k": "cmd", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163}
+{"m": "You hit it."}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "Monsters appear from nowhere!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 18}"}
+{"a": ";"}
+{"r": 74, "k": "pos", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 17)"}
+{"r": 75, "k": "cmd", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163}
+{"m": "H        a giant humanoid (minotaur) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 18}"}
+{"a": ";"}
+{"r": 76, "k": "pos", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 17)"}
+{"r": 77, "k": "cmd", "T": 9, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163}
+{"m": "h        a humanoid (master mind flayer) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 9, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'t"], "dir": "W"}
+{"a": "h"}
+{"r": 78, "k": "cmd", "T": 10, "lvl": "Dlvl:49", "u": [38, 17], "hp": 159, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 10, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 79, "k": "cmd", "T": 11, "lvl": "Dlvl:49", "u": [38, 17], "hp": 110, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "The master mind flayer drinks a murky potion!"}
+{"m": "Suddenly you cannot see the master mind flayer."}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn misses!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 80, "k": "cmd", "T": 11, "lvl": "Dlvl:49", "u": [38, 17], "hp": 110, "hpmax": 163}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 11, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 81, "k": "cmd", "T": 12, "lvl": "Dlvl:49", "u": [38, 17], "hp": 91, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "A wave of psychic energy pours over you!"}
+{"m": "It hurls a black potion!"}
+{"m": "The carafe crashes on your head and breaks into shards."}
+{"m": "The black potion evaporates."}
+{"m": "You feel rather tired."}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "You can move again."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 12, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 82, "k": "cmd", "T": 13, "lvl": "Dlvl:49", "u": [38, 17], "hp": 102, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 1, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 12, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 83, "k": "cmd", "T": 13, "lvl": "Dlvl:49", "u": [38, 17], "hp": 102, "hpmax": 163}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 13, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 84, "k": "cmd", "T": 14, "lvl": "Dlvl:49", "u": [38, 17], "hp": 114, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 2, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 13, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 3, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 13, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 4, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 13, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 85, "k": "cmd", "T": 14, "lvl": "Dlvl:49", "u": [38, 17], "hp": 114, "hpmax": 163}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 14, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 86, "k": "cmd", "T": 15, "lvl": "Dlvl:49", "u": [38, 17], "hp": 97, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 5, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 14, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 6, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 14, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 7, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 14, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 87, "k": "cmd", "T": 15, "lvl": "Dlvl:49", "u": [38, 17], "hp": 97, "hpmax": 163}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 15, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 88, "k": "cmd", "T": 16, "lvl": "Dlvl:49", "u": [38, 17], "hp": 105, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 8, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 15, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 9, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 15, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "It misses!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 89, "k": "cmd", "T": 16, "lvl": "Dlvl:49", "u": [38, 17], "hp": 105, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 16, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 90, "k": "cmd", "T": 17, "lvl": "Dlvl:49", "u": [38, 17], "hp": 102, "hpmax": 163}
+{"m": "You hit the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 10, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 16, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 11, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 16, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 12, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 16, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 13, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 16, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn misses!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur hits!"}
+{"m": "The minotaur butts!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 91, "k": "cmd", "T": 17, "lvl": "Dlvl:49", "u": [38, 17], "hp": 102, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 18, 'known': 17, 'first-known': 9, 'glyph': 'H', 'color': 'brown', 'type': {'"], "dir": "W"}
+{"a": "h"}
+{"r": 92, "k": "cmd", "T": 18, "lvl": "Dlvl:49", "u": [38, 17], "hp": 157, "hpmax": 163}
+{"m": "You kill the minotaur!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 14, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 17, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 15, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 17, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 16, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 17, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 17, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 17, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 93, "k": "cmd", "T": 18, "lvl": "Dlvl:49", "u": [38, 17], "hp": 157, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 17, 'known': 18, 'first-known': 9, 'glyph': 'X', 'color': 'brown', 'type': {'", "targetting enemy {'x': 36, 'y': 17, 'known': 18, 'first-known': 9, 'glyph': 'X', 'color': 'brown', '"], "dir": "NW"}
+{"a": "y"}
+{"r": 94, "k": "cmd", "T": 19, "lvl": "Dlvl:49", "u": [38, 17], "hp": 149, "hpmax": 163}
+{"m": "You hit the xorn!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 18, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 18, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 19, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 18, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 20, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 18, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 95, "k": "cmd", "T": 19, "lvl": "Dlvl:49", "u": [38, 17], "hp": 149, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 17, 'known': 19, 'first-known': 9, 'glyph': 'X', 'color': 'brown', 'type': {'", "targetting enemy {'x': 36, 'y': 17, 'known': 19, 'first-known': 9, 'glyph': 'X', 'color': 'brown', '"], "dir": "NW"}
+{"a": "y"}
+{"r": 96, "k": "cmd", "T": 20, "lvl": "Dlvl:49", "u": [38, 17], "hp": 147, "hpmax": 163}
+{"m": "You hit the xorn!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 21, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 19, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 22, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 19, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 23, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 19, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "Something casts a spell at you!"}
+{"m": "You feel momentarily weakened."}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 97, "k": "cmd", "T": 20, "lvl": "Dlvl:49", "u": [38, 17], "hp": 147, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 17, 'known': 20, 'first-known': 9, 'glyph': 'X', 'color': 'brown', 'type': {'", "targetting enemy {'x': 36, 'y': 17, 'known': 20, 'first-known': 9, 'glyph': 'X', 'color': 'brown', '"], "dir": "NW"}
+{"a": "y"}
+{"r": 98, "k": "cmd", "T": 21, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"m": "You hit the xorn!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 24, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 20, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 25, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 20, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 26, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 20, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 99, "k": "cmd", "T": 21, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 17, 'known': 21, 'first-known': 9, 'glyph': 'X', 'color': 'brown', 'type': {'", "targetting enemy {'x': 36, 'y': 17, 'known': 21, 'first-known': 9, 'glyph': 'X', 'color': 'brown', '"], "dir": "NW"}
+{"a": "y"}
+{"r": 100, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"m": "You hit the xorn!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 27, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 21, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 28, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 21, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "It just misses!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn hits!"}
+{"m": "The xorn bites!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "Something casts a spell at you!"}
+{"m": "You feel as if you need some help."}
+{"m": "You feel a malignant aura surround you."}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 101, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 102, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "call", "why": ["call item to disambiguate"], "slot": "j"}
+{"a": "#"}
+{"r": 103, "k": "ext", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"a": "call"}
+{"r": 104, "k": "menu", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "p": "What do you want to name?", "items": ["m a monster", "i a particular object in inventory", "o the type of an object in inventory", "f the type of an object upon the floor", "d the type of an object on discoveries list", "a record an annotation for the current level"]}
+{"note": "compat", "d": "name:o"}
+{"a": [2]}
+{"r": 105, "k": "yn", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "q": "What do you want to call? [f-hjl-o or ?*]"}
+{"a": "j"}
+{"r": 106, "k": "line", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "q": "Call a bag:"}
+{"a": "bag1"}
+{"r": 107, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 108, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 109, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 110, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"m": "You see no objects here."}
+{"act": "call", "why": ["call item to disambiguate"], "slot": "n"}
+{"a": "#"}
+{"r": 111, "k": "ext", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"a": "call"}
+{"r": 112, "k": "menu", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "p": "What do you want to name?", "items": ["m a monster", "i a particular object in inventory", "o the type of an object in inventory", "f the type of an object upon the floor", "d the type of an object on discoveries list", "a record an annotation for the current level"]}
+{"note": "compat", "d": "name:o"}
+{"a": [2]}
+{"r": 113, "k": "yn", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "q": "What do you want to call? [f-hjl-o or ?*]"}
+{"a": "n"}
+{"r": 114, "k": "line", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163, "q": "Call a candle:"}
+{"a": "candle2"}
+{"r": 115, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 116, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 117, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 118, "k": "cmd", "T": 22, "lvl": "Dlvl:49", "u": [38, 17], "hp": 137, "hpmax": 163}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 17, 'known': 22, 'first-known': 9, 'glyph': 'X', 'color': 'brown', 'type': {'", "targetting enemy {'x': 36, 'y': 17, 'known': 22, 'first-known': 9, 'glyph': 'X', 'color': 'brown', '"], "dir": "NW"}
+{"a": "y"}
+{"r": 119, "k": "cmd", "T": 23, "lvl": "Dlvl:49", "u": [38, 17], "hp": 158, "hpmax": 163}
+{"m": "You kill the xorn!"}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 29, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 22, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 30, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 22, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "It just misses!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 31, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 22, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "You hear a mumbled curse."}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 120, "k": "cmd", "T": 23, "lvl": "Dlvl:49", "u": [38, 17], "hp": 158, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 18, 'known': 23, 'first-known': 11, 'glyph': 'I', 'color': None, 'type': None", "targetting leftover enemy {'x': 38, 'y': 18, 'known': 23, 'first-known': 11, 'glyph': 'I', 'color': "], "dir": "E"}
+{"a": "F"}
+{"r": 121, "k": "cmdcont", "T": 23, "lvl": "Dlvl:49", "u": [38, 17], "hp": 158, "hpmax": 163}
+{"a": "l"}
+{"r": 122, "k": "cmd", "T": 24, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"m": "You hit it."}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 32, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 23, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 33, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 23, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 34, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 23, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 123, "k": "cmd", "T": 24, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 18, 'known': 24, 'first-known': 11, 'glyph': 'I', 'color': None, 'type': None", "targetting leftover enemy {'x': 38, 'y': 18, 'known': 24, 'first-known': 11, 'glyph': 'I', 'color': "], "dir": "E"}
+{"a": "F"}
+{"r": 124, "k": "cmdcont", "T": 24, "lvl": "Dlvl:49", "u": [38, 17], "hp": 163, "hpmax": 163}
+{"a": "l"}
+{"r": 125, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"m": "You hit it."}
+{"m": "It hits!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 35, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 24, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "You feel stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 36, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 24, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 37, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 24, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "Its tentacles suck you!"}
+{"m": "Your brain is eaten!"}
+{"m": "Your last thought fades away."}
+{"note": "assist", "d": {"kind": "lifesave", "how": "died", "killer": "brainlessness", "count": 38, "hpmax": 163, "xl": 25, "restored_attrs": 1, "turn": 24, "depth": 49, "dnum": 1}}
+{"m": "You feel like a scarecrow."}
+{"m": "You feel very stupid!"}
+{"m": "It hits!"}
+{"m": "It hits!"}
+{"m": "It bites!"}
+{"m": "Something casts a spell at you!"}
+{"m": "You feel as if you need some help."}
+{"m": "You feel a malignant aura surround you."}
+{"m": "You survived that attempt on your life."}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 126, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"m": "You haven't discovered anything yet..."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 127, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"act": "call", "why": ["call item to disambiguate"], "slot": "j"}
+{"a": "#"}
+{"r": 128, "k": "ext", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"a": "call"}
+{"r": 129, "k": "menu", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163, "p": "What do you want to name?", "items": ["m a monster", "i a particular object in inventory", "o the type of an object in inventory", "f the type of an object upon the floor", "d the type of an object on discoveries list", "a record an annotation for the current level"]}
+{"note": "compat", "d": "name:o"}
+{"a": [2]}
+{"r": 130, "k": "yn", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163, "q": "What do you want to call? [f-hjl-o or ?*]"}
+{"a": "j"}
+{"r": 131, "k": "line", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163, "q": "Call a bag:"}
+{"a": "bag2"}
+{"r": 132, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 133, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 134, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 18, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 135, "k": "cmd", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"m": "You see no objects here."}
+{"act": "attack", "why": ["hitting {'x': 38, 'y': 18, 'known': 25, 'first-known': 11, 'glyph': 'I', 'color': None, 'type': None", "targetting leftover enemy {'x': 38, 'y': 18, 'known': 25, 'first-known': 11, 'glyph': 'I', 'color': "], "dir": "E"}
+{"a": "F"}
+{"r": 136, "k": "cmdcont", "T": 25, "lvl": "Dlvl:49", "u": [38, 17], "hp": 160, "hpmax": 163}
+{"a": "l"}
+{"r": 137, "k": "cmd", "T": 26, "lvl": "Dlvl:49", "u": [38, 17], "hp": 156, "hpmax": 163}
+{"note": "abort", "d": "stuck: death loop: 40 assisted lifesaves in 12 turns without progress (last: brainlessness)"}

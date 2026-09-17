@@ -1,0 +1,37 @@
+[23:47:04] start g001 seed=1001
+[23:47:04] start g002 seed=1002
+[23:49:11] end   g002 goal_reached T=968 depth=6 stage=minetown (goal_reached | minetown)
+[23:49:11] start g003 seed=1003
+[23:58:10] end   g001 stuck T=3153 depth=5 stage=oracle (stuck | request storm: N requests for N turns (turn N, last action {..}))
+[23:58:10] start g004 seed=1004
+[23:58:11] end   g004 crash_bot T=None depth=None stage=None (crash_bot | rungame exited rc=N without result)
+[00:05:22] end   g003 crash_bot T=None depth=None stage=None (crash_bot | rungame exited rc=-N without result)
+series mt-s03: 4 games
+outcomes: {'stuck': 1, 'goal_reached': 1, 'crash_bot': 2}
+stage funnel: dlvl2=2, mines=1, minetown=1, oracle=1
+assists: {'kit': 16}
+failure signatures:
+    1  stuck | request storm: N requests for N turns (turn N, last action {..})
+    1  crash_bot | rungame exited rc=-N without result
+    1  crash_bot | rungame exited rc=N without result
+top anomalies:
+    1061  fallback
+    1061  note:fallback
+    1050  unknown_yn
+    1050  note:unknown-prompt
+      26  note:recovery
+      26  note:forced-command
+      18  note:compat
+      16  note:assist
+      13  compat:container:o
+       5  compat:container:i
+       4  msg-rewrite:^You open (.*\.\.\.)$
+       2  msg-rewrite:^(?:Hmmm, .* turns out to be l
+       2  note:abort
+       1  menu_show:current_skills
+       1  msg-rewrite:^Your (\w+) (feels?) better\.$
+games:
+  g001 seed=1001 stuck        T=3153   depth=5   stage=oracle       663.8s  request storm: 3000 requests for 10 turns (turn 3153, last action {'act': 'dip', 'why': ['
+  g002 seed=1002 goal_reached T=968    depth=6   stage=minetown     125.8s  minetown
+  g003 seed=1003 crash_bot    T=None   depth=None stage=None         Nones  rungame exited rc=-15 without result
+  g004 seed=1004 crash_bot    T=None   depth=None stage=None         Nones  rungame exited rc=1 without result

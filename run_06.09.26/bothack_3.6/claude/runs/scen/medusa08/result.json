@@ -1,0 +1,103 @@
+{
+ "game_id": "medusa08",
+ "outcome": "goal_reached",
+ "reason": "castle",
+ "assisted": true,
+ "engine_verdict": null,
+ "xlogfile": null,
+ "engine_rc": -6,
+ "engine_seed": 77,
+ "turns": 413,
+ "depth": 29,
+ "max_depth": 29,
+ "xl": 14,
+ "lvl": "Dlvl:29",
+ "dname": "The Dungeons of Doom",
+ "stages": {
+  "dlvl2": 1,
+  "dlvl10": 1,
+  "medusa": 1,
+  "castle": 413
+ },
+ "last_stage": "castle",
+ "assist_counts": {
+  "kit": 8,
+  "lifesave": 23
+ },
+ "counters": {
+  "compat:container:q": 1,
+  "menu_show:current_skills": 1,
+  "compat:name:o": 1
+ },
+ "notes": {
+  "scenario": 36,
+  "recovery": 5,
+  "forced-command": 5,
+  "compat": 2,
+  "assist": 23,
+  "abort": 1
+ },
+ "protoerrs": 0,
+ "requests": 1812,
+ "actions": 992,
+ "action_hist": {
+  "apply": 458,
+  "farlook": 309,
+  "move": 164,
+  "inventory": 18,
+  "look": 17,
+  "wield": 5,
+  "attack": 4,
+  "autotravel": 3,
+  "pickup": 3,
+  "discoveries": 2,
+  "puton": 2,
+  "enhance": 2,
+  "remove": 2,
+  "search": 1,
+  "call": 1,
+  "dropsingle": 1
+ },
+ "elapsed_s": 104.3,
+ "turns_per_s": 3.96,
+ "last_action": {
+  "act": "apply",
+  "why": [
+   "digging down",
+   "dive",
+   "switching within branch to Dlvl:34",
+   "trying to enter vlad from Dlvl:34",
+   "seeking branch vlad ( vlad )",
+   "seeking level vlad end",
+   "full-explore",
+   "progress"
+  ],
+  "slot": "l"
+ },
+ "final_screen": [
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "    #                                                                           ",
+  "    #                                                                           ",
+  "  ##@###                                                                        ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "                                                                                ",
+  "Bot the Warrior  St:16 Dx:11 Co:19 In:9 Wi:9 Ch:9  Lawful                       ",
+  "Dlvl:28 $:109 HP:70(139) Pw:23(23) AC:-8 Exp:14/83163 T:410                     "
+ ]
+}

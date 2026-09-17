@@ -1,0 +1,800 @@
+{"m": "You find a hidden door."}
+{"act": "open", "why": ["exploring {'x': 21, 'y': 17, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 14348, "k": "yn", "T": 10699, "lvl": "Dlvl:19", "u": [21, 16], "hp": 96, "hpmax": 96, "q": "In what direction?"}
+{"a": "l"}
+{"r": 14349, "k": "cmd", "T": 10699, "lvl": "Dlvl:19", "u": [21, 16], "hp": 96, "hpmax": 96}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 21, 'y': 17, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14350, "k": "cmd", "T": 10700, "lvl": "Dlvl:19", "u": [22, 16], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 22, 'y': 18, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14351, "k": "cmd", "T": 10700, "lvl": "Dlvl:19", "u": [23, 16], "hp": 96, "hpmax": 96}
+{"act": "autotravel", "why": ["exploring {'x': 26, 'y': 17, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 26, :y 17}"}
+{"a": "_"}
+{"r": 14352, "k": "pos", "T": 10700, "lvl": "Dlvl:19", "u": [23, 16], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(27, 16)"}
+{"r": 14353, "k": "cmd", "T": 10703, "lvl": "Dlvl:19", "u": [27, 16], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 27, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14354, "k": "cmd", "T": 10704, "lvl": "Dlvl:19", "u": [28, 16], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14355, "k": "cmd", "T": 10704, "lvl": "Dlvl:19", "u": [29, 16], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14356, "k": "cmd", "T": 10705, "lvl": "Dlvl:19", "u": [29, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14357, "k": "cmd", "T": 10705, "lvl": "Dlvl:19", "u": [30, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14358, "k": "cmd", "T": 10706, "lvl": "Dlvl:19", "u": [31, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14359, "k": "cmd", "T": 10707, "lvl": "Dlvl:19", "u": [32, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14360, "k": "cmd", "T": 10707, "lvl": "Dlvl:19", "u": [33, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14361, "k": "cmd", "T": 10708, "lvl": "Dlvl:19", "u": [34, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14362, "k": "cmd", "T": 10708, "lvl": "Dlvl:19", "u": [34, 14], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14363, "k": "cmd", "T": 10709, "lvl": "Dlvl:19", "u": [34, 13], "hp": 96, "hpmax": 96}
+{"act": "autotravel", "why": ["new or desired item at {'x': 41, 'y': 15, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': "], "pos": "#Position{:x 40, :y 15}"}
+{"a": "_"}
+{"r": 14364, "k": "pos", "T": 10709, "lvl": "Dlvl:19", "u": [34, 13], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(41, 14)"}
+{"r": 14365, "k": "cmd", "T": 10714, "lvl": "Dlvl:19", "u": [41, 14], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["new or desired item at {'x': 41, 'y': 15, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': "], "dir": "E"}
+{"a": "l"}
+{"r": 14366, "k": "cmd", "T": 10714, "lvl": "Dlvl:19", "u": [42, 14], "hp": 96, "hpmax": 96}
+{"m": "You see here 55 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 14367, "k": "cmd", "T": 10714, "lvl": "Dlvl:19", "u": [42, 14], "hp": 96, "hpmax": 96}
+{"m": "You see here 55 gold pieces."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 14368, "k": "cmd", "T": 10715, "lvl": "Dlvl:19", "u": [42, 14], "hp": 96, "hpmax": 96}
+{"m": "$ - 55 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14369, "k": "cmd", "T": 10715, "lvl": "Dlvl:19", "u": [42, 14], "hp": 96, "hpmax": 96}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14370, "k": "cmd", "T": 10715, "lvl": "Dlvl:19", "u": [42, 14], "hp": 96, "hpmax": 96}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 14371, "k": "cmd", "T": 10715, "lvl": "Dlvl:19", "u": [43, 13], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14372, "k": "cmd", "T": 10716, "lvl": "Dlvl:19", "u": [43, 12], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14373, "k": "cmd", "T": 10716, "lvl": "Dlvl:19", "u": [43, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 11, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14374, "k": "cmd", "T": 10717, "lvl": "Dlvl:19", "u": [44, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 11, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, '", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14375, "k": "cmd", "T": 10717, "lvl": "Dlvl:19", "u": [44, 10], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 43, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14376, "k": "cmd", "T": 10718, "lvl": "Dlvl:19", "u": [44, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14377, "k": "cmd", "T": 10718, "lvl": "Dlvl:19", "u": [43, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14378, "k": "cmd", "T": 10719, "lvl": "Dlvl:19", "u": [42, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14379, "k": "cmd", "T": 10720, "lvl": "Dlvl:19", "u": [41, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14380, "k": "cmd", "T": 10720, "lvl": "Dlvl:19", "u": [40, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14381, "k": "cmd", "T": 10721, "lvl": "Dlvl:19", "u": [39, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14382, "k": "cmd", "T": 10722, "lvl": "Dlvl:19", "u": [38, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14383, "k": "cmd", "T": 10722, "lvl": "Dlvl:19", "u": [37, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14384, "k": "cmd", "T": 10723, "lvl": "Dlvl:19", "u": [36, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14385, "k": "cmd", "T": 10723, "lvl": "Dlvl:19", "u": [36, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14386, "k": "cmd", "T": 10724, "lvl": "Dlvl:19", "u": [35, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14387, "k": "cmd", "T": 10724, "lvl": "Dlvl:19", "u": [34, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14388, "k": "cmd", "T": 10725, "lvl": "Dlvl:19", "u": [33, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14389, "k": "cmd", "T": 10725, "lvl": "Dlvl:19", "u": [33, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14390, "k": "cmd", "T": 10726, "lvl": "Dlvl:19", "u": [32, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14391, "k": "cmd", "T": 10726, "lvl": "Dlvl:19", "u": [31, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14392, "k": "cmd", "T": 10727, "lvl": "Dlvl:19", "u": [31, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14393, "k": "cmd", "T": 10727, "lvl": "Dlvl:19", "u": [30, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14394, "k": "cmd", "T": 10728, "lvl": "Dlvl:19", "u": [29, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14395, "k": "cmd", "T": 10729, "lvl": "Dlvl:19", "u": [29, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 27, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14396, "k": "cmd", "T": 10729, "lvl": "Dlvl:19", "u": [28, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14397, "k": "cmd", "T": 10730, "lvl": "Dlvl:19", "u": [27, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14398, "k": "cmd", "T": 10730, "lvl": "Dlvl:19", "u": [27, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14399, "k": "cmd", "T": 10731, "lvl": "Dlvl:19", "u": [26, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 24, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14400, "k": "cmd", "T": 10731, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 14401, "k": "cmd", "T": 10732, "lvl": "Dlvl:19", "u": [26, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 23, 'y': 9, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': False", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 14402, "k": "cmd", "T": 10732, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"act": "wield", "why": ["exploring {'x': 23, 'y': 9, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': False", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "k"}
+{"a": "w"}
+{"r": 14403, "k": "yn", "T": 10732, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96, "q": "What do you want to wield? [- aikqxD or ?*]"}
+{"a": "k"}
+{"r": 14404, "k": "cmd", "T": 10733, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"m": "k - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14405, "k": "cmd", "T": 10733, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"act": "apply", "why": ["exploring {'x': 23, 'y': 9, 'glyph': '8', 'color': None, 'feature': None, 'seen': None, 'dug': False", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "k"}
+{"a": "a"}
+{"r": 14406, "k": "yn", "T": 10733, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96, "q": "What do you want to use or apply? [i-knyFMNY or ?*]"}
+{"a": "k"}
+{"r": 14407, "k": "yn", "T": 10733, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96, "q": "In what direction do you want to dig? [hykujb>]"}
+{"a": "h"}
+{"r": 14408, "k": "cmd", "T": 10736, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"m": "You start hitting the boulder."}
+{"m": "You hit the boulder with all your might."}
+{"m": "The boulder falls apart."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14409, "k": "cmd", "T": 10736, "lvl": "Dlvl:19", "u": [25, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["new or desired item at {'x': 23, 'y': 9, 'glyph': '*', 'color': None, 'feature': None, 'seen': True,"], "dir": "W"}
+{"a": "h"}
+{"r": 14410, "k": "cmd", "T": 10736, "lvl": "Dlvl:19", "u": [24, 8], "hp": 96, "hpmax": 96}
+{"m": "You see here 33 rocks."}
+{"act": "look", "why": ["examining tile {'x': 23, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 14411, "k": "cmd", "T": 10736, "lvl": "Dlvl:19", "u": [24, 8], "hp": 96, "hpmax": 96}
+{"m": "You see here 33 rocks."}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +3 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 14412, "k": "yn", "T": 10736, "lvl": "Dlvl:19", "u": [24, 8], "hp": 96, "hpmax": 96, "q": "What do you want to wield? [- aikqxD or ?*]"}
+{"a": "a"}
+{"r": 14413, "k": "cmd", "T": 10737, "lvl": "Dlvl:19", "u": [24, 8], "hp": 96, "hpmax": 96}
+{"m": "a - the blessed rustproof +3 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14414, "k": "cmd", "T": 10737, "lvl": "Dlvl:19", "u": [24, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14415, "k": "cmd", "T": 10738, "lvl": "Dlvl:19", "u": [23, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 14416, "k": "cmd", "T": 10738, "lvl": "Dlvl:19", "u": [22, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 14417, "k": "cmd", "T": 10739, "lvl": "Dlvl:19", "u": [21, 7], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 20, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14418, "k": "cmd", "T": 10739, "lvl": "Dlvl:19", "u": [21, 6], "hp": 96, "hpmax": 96}
+{"act": "autotravel", "why": ["exploring {'x': 36, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 36, :y 9}"}
+{"a": "_"}
+{"r": 14419, "k": "pos", "T": 10739, "lvl": "Dlvl:19", "u": [21, 6], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 8)"}
+{"r": 14420, "k": "cmd", "T": 10749, "lvl": "Dlvl:19", "u": [37, 8], "hp": 96, "hpmax": 96}
+{"m": "You hear bubbling water."}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14421, "k": "cmd", "T": 10749, "lvl": "Dlvl:19", "u": [38, 8], "hp": 96, "hpmax": 96}
+{"act": "autotravel", "why": ["exploring {'x': 46, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 46, :y 16}"}
+{"a": "_"}
+{"r": 14422, "k": "pos", "T": 10749, "lvl": "Dlvl:19", "u": [38, 8], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(47, 15)"}
+{"r": 14423, "k": "cmd", "T": 10751, "lvl": "Dlvl:19", "u": [42, 9], "hp": 96, "hpmax": 96}
+{"m": "You stop in front of the door."}
+{"act": "move", "why": ["exploring {'x': 46, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14424, "k": "cmd", "T": 10752, "lvl": "Dlvl:19", "u": [43, 9], "hp": 96, "hpmax": 96}
+{"act": "autotravel", "why": ["exploring {'x': 46, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': F", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 46, :y 16}"}
+{"a": "_"}
+{"r": 14425, "k": "pos", "T": 10752, "lvl": "Dlvl:19", "u": [43, 9], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(47, 15)"}
+{"r": 14426, "k": "cmd", "T": 10757, "lvl": "Dlvl:19", "u": [47, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14427, "k": "cmd", "T": 10758, "lvl": "Dlvl:19", "u": [48, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14428, "k": "cmd", "T": 10759, "lvl": "Dlvl:19", "u": [48, 14], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14429, "k": "cmd", "T": 10760, "lvl": "Dlvl:19", "u": [48, 13], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14430, "k": "cmd", "T": 10760, "lvl": "Dlvl:19", "u": [48, 12], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14431, "k": "cmd", "T": 10761, "lvl": "Dlvl:19", "u": [48, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14432, "k": "cmd", "T": 10761, "lvl": "Dlvl:19", "u": [49, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14433, "k": "cmd", "T": 10762, "lvl": "Dlvl:19", "u": [50, 11], "hp": 96, "hpmax": 96}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 14434, "k": "cmdcont", "T": 10762, "lvl": "Dlvl:19", "u": [50, 11], "hp": 96, "hpmax": 96}
+{"a": "0"}
+{"r": 14435, "k": "cmdcont", "T": 10762, "lvl": "Dlvl:19", "u": [50, 11], "hp": 96, "hpmax": 96}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 14436, "k": "cmd", "T": 10763, "lvl": "Dlvl:19", "u": [50, 11], "hp": 96, "hpmax": 96}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14437, "k": "cmd", "T": 10764, "lvl": "Dlvl:19", "u": [51, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14438, "k": "cmd", "T": 10764, "lvl": "Dlvl:19", "u": [52, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14439, "k": "cmd", "T": 10765, "lvl": "Dlvl:19", "u": [52, 10], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14440, "k": "cmd", "T": 10765, "lvl": "Dlvl:19", "u": [53, 10], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14441, "k": "cmd", "T": 10766, "lvl": "Dlvl:19", "u": [53, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14442, "k": "cmd", "T": 10767, "lvl": "Dlvl:19", "u": [53, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14443, "k": "cmd", "T": 10767, "lvl": "Dlvl:19", "u": [54, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14444, "k": "cmd", "T": 10768, "lvl": "Dlvl:19", "u": [55, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14445, "k": "cmd", "T": 10769, "lvl": "Dlvl:19", "u": [55, 7], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14446, "k": "cmd", "T": 10769, "lvl": "Dlvl:19", "u": [55, 6], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14447, "k": "cmd", "T": 10770, "lvl": "Dlvl:19", "u": [55, 5], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14448, "k": "cmd", "T": 10770, "lvl": "Dlvl:19", "u": [55, 4], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 14449, "k": "cmd", "T": 10771, "lvl": "Dlvl:19", "u": [55, 3], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14450, "k": "cmd", "T": 10771, "lvl": "Dlvl:19", "u": [56, 3], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14451, "k": "cmd", "T": 10772, "lvl": "Dlvl:19", "u": [57, 3], "hp": 96, "hpmax": 96}
+{"act": "open", "why": ["exploring {'x': 57, 'y': 4, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 14452, "k": "yn", "T": 10772, "lvl": "Dlvl:19", "u": [57, 3], "hp": 96, "hpmax": 96, "q": "In what direction?"}
+{"a": "l"}
+{"r": 14453, "k": "cmd", "T": 10772, "lvl": "Dlvl:19", "u": [57, 3], "hp": 96, "hpmax": 96}
+{"m": "The door opens."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 63, 'y': 6, 'glyph': '*', 'color': None, 'feature': None, 'seen': False"], "pos": "#Position{:x 62, :y 6}"}
+{"a": "_"}
+{"r": 14454, "k": "pos", "T": 10772, "lvl": "Dlvl:19", "u": [57, 3], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(63, 5)"}
+{"r": 14455, "k": "cmd", "T": 10776, "lvl": "Dlvl:19", "u": [63, 5], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["new or desired item at {'x': 63, 'y': 6, 'glyph': '*', 'color': None, 'feature': None, 'seen': True,"], "dir": "E"}
+{"a": "l"}
+{"r": 14456, "k": "cmd", "T": 10776, "lvl": "Dlvl:19", "u": [64, 5], "hp": 96, "hpmax": 96}
+{"m": "You see here 8 rocks."}
+{"act": "look", "why": ["examining tile {'x': 63, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 14457, "k": "cmd", "T": 10776, "lvl": "Dlvl:19", "u": [64, 5], "hp": 96, "hpmax": 96}
+{"m": "You see here 8 rocks."}
+{"act": "autotravel", "why": ["exploring {'x': 67, 'y': 5, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 67, :y 5}"}
+{"a": "_"}
+{"r": 14458, "k": "pos", "T": 10776, "lvl": "Dlvl:19", "u": [64, 5], "hp": 96, "hpmax": 96, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(68, 4)"}
+{"r": 14459, "k": "cmd", "T": 10779, "lvl": "Dlvl:19", "u": [68, 4], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 5, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 14460, "k": "cmd", "T": 10780, "lvl": "Dlvl:19", "u": [69, 4], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14461, "k": "cmd", "T": 10781, "lvl": "Dlvl:19", "u": [69, 5], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14462, "k": "cmd", "T": 10782, "lvl": "Dlvl:19", "u": [69, 6], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14463, "k": "cmd", "T": 10782, "lvl": "Dlvl:19", "u": [69, 7], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14464, "k": "cmd", "T": 10783, "lvl": "Dlvl:19", "u": [69, 8], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14465, "k": "cmd", "T": 10783, "lvl": "Dlvl:19", "u": [69, 9], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14466, "k": "cmd", "T": 10784, "lvl": "Dlvl:19", "u": [69, 10], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14467, "k": "cmd", "T": 10785, "lvl": "Dlvl:19", "u": [69, 11], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14468, "k": "cmd", "T": 10785, "lvl": "Dlvl:19", "u": [69, 12], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14469, "k": "cmd", "T": 10786, "lvl": "Dlvl:19", "u": [69, 13], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14470, "k": "cmd", "T": 10786, "lvl": "Dlvl:19", "u": [69, 14], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14471, "k": "cmd", "T": 10787, "lvl": "Dlvl:19", "u": [69, 15], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 17, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14472, "k": "cmd", "T": 10788, "lvl": "Dlvl:19", "u": [69, 16], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 18, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14473, "k": "cmd", "T": 10788, "lvl": "Dlvl:19", "u": [69, 17], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["exploring {'x': 68, 'y': 19, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 14474, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 76, :y 17}"}
+{"a": ";"}
+{"r": 14475, "k": "pos", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(77, 16)"}
+{"r": 14476, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96}
+{"m": "E        an elemental (water elemental)"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 73, :y 18}"}
+{"a": ";"}
+{"r": 14477, "k": "pos", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(74, 17)"}
+{"r": 14478, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96}
+{"m": "Y        an apelike creature (monkey) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 76, :y 19}"}
+{"a": ";"}
+{"r": 14479, "k": "pos", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(77, 18)"}
+{"r": 14480, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96}
+{"m": "i        an imp or minor demon (homunculus) [seen: normal vision, infravision]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 72, :y 19}"}
+{"a": ";"}
+{"r": 14481, "k": "pos", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(73, 18)"}
+{"r": 14482, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [69, 18], "hp": 96, "hpmax": 96}
+{"m": "i        an imp or minor demon (peaceful tengu) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["targetting enemy {'x': 71, 'y': 18, 'known': 10789, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "dir": "E"}
+{"a": "l"}
+{"r": 14483, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "Welcome to David's treasure zoo!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 71, :y 17}"}
+{"a": ";"}
+{"r": 14484, "k": "pos", "T": 10789, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(72, 16)"}
+{"r": 14485, "k": "cmd", "T": 10789, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "H        a giant humanoid (ettin) [seen: normal vision, infravision]"}
+{"act": "puton", "why": ["making use of S", "invis for combat", "targetting enemy {'x': 71, 'y': 18, 'known': 10789, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "slot": "S"}
+{"a": "P"}
+{"r": 14486, "k": "yn", "T": 10789, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96, "q": "What do you want to put on? [hmFJLS or ?*]"}
+{"a": "S"}
+{"r": 14487, "k": "yn", "T": 10789, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 14488, "k": "cmd", "T": 10790, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "Gee!  All of a sudden, you can't see yourself."}
+{"m": "S - a ring of invisibility (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14489, "k": "cmd", "T": 10790, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 71, 'y': 18, 'known': 10790, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"]}
+{"a": "s"}
+{"r": 14490, "k": "cmd", "T": 10791, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 71, 'y': 18, 'known': 10791, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"]}
+{"a": "s"}
+{"r": 14491, "k": "cmd", "T": 10791, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "The ettin strikes at thin air!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 71, 'y': 18, 'known': 10791, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"]}
+{"a": "s"}
+{"r": 14492, "k": "cmd", "T": 10792, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 71, 'y': 18, 'known': 10792, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"]}
+{"a": "s"}
+{"r": 14493, "k": "cmd", "T": 10793, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["hitting {'x': 70, 'y': 18, 'known': 10793, 'first-known': 10789, 'glyph': 'H', 'color': 'brown', 'ty"], "dir": "NE"}
+{"a": "u"}
+{"r": 14494, "k": "cmd", "T": 10793, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "You hit the ettin!"}
+{"m": "The ettin misses!"}
+{"m": "The ettin misses!"}
+{"act": "move", "why": ["hitting {'x': 70, 'y': 18, 'known': 10793, 'first-known': 10789, 'glyph': 'H', 'color': 'brown', 'ty"], "dir": "NE"}
+{"a": "u"}
+{"r": 14495, "k": "cmd", "T": 10794, "lvl": "Dlvl:19", "u": [70, 18], "hp": 96, "hpmax": 96}
+{"m": "You hit the ettin!"}
+{"act": "move", "why": ["hitting {'x': 70, 'y': 18, 'known': 10794, 'first-known': 10789, 'glyph': 'H', 'color': 'brown', 'ty"], "dir": "NE"}
+{"a": "u"}
+{"r": 14496, "k": "cmd", "T": 10794, "lvl": "Dlvl:19", "u": [70, 18], "hp": 90, "hpmax": 96}
+{"m": "You hit the ettin!"}
+{"m": "The ettin hits!"}
+{"m": "The ettin misses!"}
+{"act": "move", "why": ["hitting {'x': 70, 'y': 18, 'known': 10794, 'first-known': 10789, 'glyph': 'H', 'color': 'brown', 'ty"], "dir": "NE"}
+{"a": "u"}
+{"r": 14497, "k": "cmd", "T": 10795, "lvl": "Dlvl:19", "u": [70, 18], "hp": 90, "hpmax": 96}
+{"m": "You kill the ettin!"}
+{"act": "move", "why": ["targetting enemy {'x': 71, 'y': 18, 'known': 10795, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "dir": "E"}
+{"a": "l"}
+{"r": 14498, "k": "cmd", "T": 10796, "lvl": "Dlvl:19", "u": [71, 18], "hp": 90, "hpmax": 96}
+{"act": "move", "why": ["hitting {'x': 71, 'y': 18, 'known': 10796, 'first-known': 10789, 'glyph': 'b', 'color': 'white', 'ty", "targetting enemy {'x': 71, 'y': 18, 'known': 10796, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "dir": "NE"}
+{"a": "u"}
+{"r": 14499, "k": "cmd", "T": 10796, "lvl": "Dlvl:19", "u": [71, 18], "hp": 90, "hpmax": 96}
+{"m": "You hit the quivering blob!"}
+{"m": "The quivering blob misses!"}
+{"act": "move", "why": ["hitting {'x': 71, 'y': 18, 'known': 10796, 'first-known': 10789, 'glyph': 'b', 'color': 'white', 'ty", "targetting enemy {'x': 71, 'y': 18, 'known': 10796, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "dir": "NE"}
+{"a": "u"}
+{"r": 14500, "k": "cmd", "T": 10797, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"m": "You hit the quivering blob!"}
+{"act": "move", "why": ["hitting {'x': 71, 'y': 18, 'known': 10797, 'first-known': 10789, 'glyph': 'b', 'color': 'white', 'ty", "targetting enemy {'x': 71, 'y': 18, 'known': 10797, 'first-known': 10789, 'glyph': 'b', 'color': 'wh"], "dir": "NE"}
+{"a": "u"}
+{"r": 14501, "k": "cmd", "T": 10797, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"m": "You kill the quivering blob!"}
+{"act": "attack", "why": ["killing floating eye", "hitting {'x': 71, 'y': 19, 'known': 10797, 'first-known': 10789, 'glyph': 'e', 'color': 'blue', 'typ", "targetting leftover enemy {'x': 71, 'y': 19, 'known': 10797, 'first-known': 10789, 'glyph': 'e', 'co"], "dir": "E"}
+{"a": "F"}
+{"r": 14502, "k": "cmdcont", "T": 10797, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"a": "l"}
+{"r": 14503, "k": "cmd", "T": 10798, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"m": "You kill the floating eye!"}
+{"act": "remove", "why": ["removing use of S", "don't need ring"], "slot": "S"}
+{"a": "R"}
+{"r": 14504, "k": "yn", "T": 10798, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96, "q": "What do you want to remove? [fS or ?*]"}
+{"a": "S"}
+{"r": 14505, "k": "cmd", "T": 10799, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"m": "You were wearing a ring of invisibility (on left hand)."}
+{"m": "Your body seems to unfade..."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14506, "k": "cmd", "T": 10799, "lvl": "Dlvl:19", "u": [71, 18], "hp": 93, "hpmax": 96}
+{"act": "move", "why": ["new or desired item at #Position{:x 71, :y 19}"], "dir": "E"}
+{"a": "l"}
+{"r": 14507, "k": "cmd", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 14508, "k": "cmd", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "puton", "why": ["making use of S", "invis for combat", "targetting enemy {'x': 73, 'y': 17, 'known': 10800, 'first-known': 10789, 'glyph': 'k', 'color': 'ma"], "slot": "S"}
+{"a": "P"}
+{"r": 14509, "k": "yn", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96, "q": "What do you want to put on? [hmFJLS or ?*]"}
+{"a": "S"}
+{"r": 14510, "k": "yn", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96, "q": "Which ring-finger, Right or Left?", "c": "rl"}
+{"a": "l"}
+{"r": 14511, "k": "cmd", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "Gee!  All of a sudden, you can't see yourself."}
+{"m": "S - a ring of invisibility (on left hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 14512, "k": "cmd", "T": 10800, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"act": "move", "why": ["targetting enemy {'x': 73, 'y': 17, 'known': 10800, 'first-known': 10789, 'glyph': 'k', 'color': 'ma"], "dir": "NE"}
+{"a": "u"}
+{"r": 14513, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "Wait!  There's something there you can't see!"}
+{"m": "It explodes!"}
+{"m": "You are caught in a blast of kaleidoscopic light!"}
+{"m": "You are freaked out."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14514, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14515, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '\"', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14516, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14517, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14518, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14519, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14520, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'blue', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14521, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '!', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14522, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"note": "recovery", "d": "action-loop x8 look: forced search"}
+{"m": "You see here 24 gold pieces."}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 14523, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14524, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14525, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14526, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '?', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14527, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14528, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14529, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14530, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '?', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14531, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '*', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14532, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14533, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14534, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14535, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14536, "k": "cmd", "T": 10801, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "move", "why": ["hitting {'x': 71, 'y': 18, 'known': 10801, 'first-known': 10801, 'glyph': ':', 'color': 'yellow', 't", "targetting leftover enemy {'x': 71, 'y': 18, 'known': 10801, 'first-known': 10801, 'glyph': ':', 'co"], "dir": "N"}
+{"a": "k"}
+{"r": 14537, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "The shrieker coos!"}
+{"m": "You hit the jackal!"}
+{"m": "The attorney scratches your left boot!"}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14538, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '=', 'color': 'yellow', 'feature': 'floor', 'seen': True,"]}
+{"a": ":"}
+{"r": 14539, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14540, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '/', 'color': 'bright-cyan', 'feature': 'floor', 'seen': "]}
+{"a": ":"}
+{"r": 14541, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14542, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '?', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14543, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14544, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '*', 'color': None, 'feature': 'floor', 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 14545, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '\"', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14546, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 96, "hpmax": 96}
+{"note": "recovery", "d": "action-loop x8 look: forced search"}
+{"m": "You see here 24 gold pieces."}
+{"note": "forced-command", "d": "s"}
+{"a": "s"}
+{"r": 14547, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "The wraith scratches your left boot!"}
+{"m": "The lurker above bites!"}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'orange', 'feature': 'floor', 'seen': True,"]}
+{"a": ":"}
+{"r": 14548, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14549, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'yellow', 'feature': 'floor', 'seen': True,"]}
+{"a": ":"}
+{"r": 14550, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'magenta', 'feature': 'floor', 'seen': True"]}
+{"a": ":"}
+{"r": 14551, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '\"', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14552, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'yellow', 'feature': 'floor', 'seen': True,"]}
+{"a": ":"}
+{"r": 14553, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14554, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14555, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '?', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14556, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'magenta', 'feature': 'floor', 'seen': True"]}
+{"a": ":"}
+{"r": 14557, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14558, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14559, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '=', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14560, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'blue', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14561, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'blue', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14562, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'yellow', 'feature': 'floor', 'seen': True,"]}
+{"a": ":"}
+{"r": 14563, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14564, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'bright-green', 'feature': 'floor', 'seen':"]}
+{"a": ":"}
+{"r": 14565, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '/', 'color': 'bright-cyan', 'feature': 'floor', 'seen': "]}
+{"a": ":"}
+{"r": 14566, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '[', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14567, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14568, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14569, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '/', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14570, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '*', 'color': 'magenta', 'feature': 'floor', 'seen': True"]}
+{"a": ":"}
+{"r": 14571, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '?', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14572, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14573, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14574, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': ')', 'color': 'brown', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14575, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '(', 'color': 'cyan', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 14576, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '*', 'color': None, 'feature': 'floor', 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 14577, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"m": "You see here 24 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 14578, "k": "cmd", "T": 10802, "lvl": "Dlvl:19", "u": [72, 18], "hp": 95, "hpmax": 96}
+{"note": "abort", "d": "stuck: action loop: look repeated 40 times at turn 10802 ({'act': 'look', 'why': [\"examining tile {'x': 71, 'y': 19, 'glyph': '+', 'color': 'white', 'feature': 'floor', 'seen': True, \"]})"}
