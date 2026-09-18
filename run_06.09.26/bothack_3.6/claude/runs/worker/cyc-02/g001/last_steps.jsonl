@@ -1,0 +1,800 @@
+{"a": ";"}
+{"r": 19965, "k": "pos", "T": 14828, "lvl": "Dlvl:5", "u": [48, 11], "hp": 137, "hpmax": 137, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(48, 12)"}
+{"r": 19966, "k": "cmd", "T": 14828, "lvl": "Dlvl:5", "u": [48, 11], "hp": 137, "hpmax": 137}
+{"m": "d        a dog or other canine (jackal) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 47, 'y': 13, 'known': 14828, 'first-known': 14828, 'glyph': 'd', 'color': 'brown', 'ty", "targetting enemy {'x': 47, 'y': 13, 'known': 14828, 'first-known': 14828, 'glyph': 'd', 'color': 'br"], "dir": "S"}
+{"a": "j"}
+{"r": 19967, "k": "cmd", "T": 14829, "lvl": "Dlvl:5", "u": [48, 11], "hp": 137, "hpmax": 137}
+{"m": "You kill the jackal!"}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 70, :y 6}"}
+{"a": "_"}
+{"r": 19968, "k": "pos", "T": 14829, "lvl": "Dlvl:5", "u": [48, 11], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(71, 5)"}
+{"r": 19969, "k": "cmd", "T": 14830, "lvl": "Dlvl:5", "u": [46, 14], "hp": 137, "hpmax": 137}
+{"m": "A gnome lord blocks your path."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 19970, "k": "cmd", "T": 14831, "lvl": "Dlvl:5", "u": [45, 15], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 70, :y 6}"}
+{"a": "_"}
+{"r": 19971, "k": "pos", "T": 14831, "lvl": "Dlvl:5", "u": [45, 15], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(71, 5)"}
+{"r": 19972, "k": "cmd", "T": 14843, "lvl": "Dlvl:5", "u": [57, 8], "hp": 137, "hpmax": 137}
+{"m": "A gnomish wizard blocks your path."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 19973, "k": "cmd", "T": 14844, "lvl": "Dlvl:5", "u": [58, 7], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 19974, "k": "cmd", "T": 14844, "lvl": "Dlvl:5", "u": [59, 6], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 70, :y 6}"}
+{"a": "_"}
+{"r": 19975, "k": "pos", "T": 14844, "lvl": "Dlvl:5", "u": [59, 6], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(71, 5)"}
+{"r": 19976, "k": "cmd", "T": 14848, "lvl": "Dlvl:5", "u": [66, 5], "hp": 137, "hpmax": 137}
+{"m": "A gnome blocks your path."}
+{"act": "move", "why": ["targetting enemy {'x': 64, 'y': 9, 'known': 14848, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"], "dir": "SW"}
+{"a": "b"}
+{"r": 19977, "k": "cmd", "T": 14848, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 9, 'known': 14848, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 19978, "k": "yn", "T": 14848, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 19979, "k": "line", "T": 14848, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 19980, "k": "cmd", "T": 14849, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "You hear bubbling water."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19981, "k": "cmd", "T": 14849, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 64, 'y': 9, 'known': 14849, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"]}
+{"a": "s"}
+{"r": 19982, "k": "cmd", "T": 14849, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 64, 'y': 9, 'known': 14849, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"]}
+{"a": "s"}
+{"r": 19983, "k": "cmd", "T": 14850, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19984, "k": "cmd", "T": 14850, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 64, 'y': 9, 'known': 14850, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"]}
+{"a": "s"}
+{"r": 19985, "k": "cmd", "T": 14850, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 64, 'y': 9, 'known': 14850, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"]}
+{"a": "s"}
+{"r": 19986, "k": "cmd", "T": 14851, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "You hear someone praising Tyr."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19987, "k": "cmd", "T": 14851, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["targetting enemy {'x': 64, 'y': 9, 'known': 14851, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"], "dir": "S"}
+{"a": "j"}
+{"r": 19988, "k": "cmd", "T": 14852, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "You see here a pink potion."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19989, "k": "cmd", "T": 14852, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "You see here a pink potion."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 9, 'known': 14852, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 19990, "k": "yn", "T": 14852, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 19991, "k": "line", "T": 14852, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 19992, "k": "cmd", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19993, "k": "cmd", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbere[h\"."}
+{"m": "You see here a pink potion."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 9, 'known': 14853, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 19994, "k": "yn", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 19995, "k": "yn", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 19996, "k": "line", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 19997, "k": "cmd", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 19998, "k": "cmd", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elberet$\"."}
+{"m": "You see here a pink potion."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 9, 'known': 14853, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 19999, "k": "yn", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 20000, "k": "yn", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 20001, "k": "line", "T": 14853, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 20002, "k": "cmd", "T": 14854, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20003, "k": "cmd", "T": 14854, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a pink potion."}
+{"act": "move", "why": ["new or desired item at {'x': 65, 'y': 5, 'glyph': '[', 'color': 'blue', 'feature': 'floor', 'seen': "], "dir": "N"}
+{"a": "k"}
+{"r": 20004, "k": "cmd", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elberet?\"."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20005, "k": "cmd", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"El|??et\"."}
+{"m": "You see no objects here."}
+{"act": "throw", "why": ["ranged combat", "keep-away monster {'x': 64, 'y': 9, 'known': 14855, 'first-known': 14848, 'glyph': 'n', 'color': 'bl"], "dir": "S", "slot": "M"}
+{"a": "t"}
+{"r": 20006, "k": "yn", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "What do you want to throw? [$arMST or ?*]"}
+{"a": "M"}
+{"r": 20007, "k": "yn", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "In what direction?"}
+{"a": "j"}
+{"r": 20008, "k": "cmd", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "The elven dagger hits the water nymph."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 20009, "k": "cmd", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 8, 'known': 14855, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 20010, "k": "yn", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 20011, "k": "yn", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 20012, "k": "line", "T": 14855, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 20013, "k": "cmd", "T": 14856, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20014, "k": "cmd", "T": 14856, "lvl": "Dlvl:5", "u": [65, 6], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 64, :y 5}"], "dir": "N"}
+{"a": "k"}
+{"r": 20015, "k": "cmd", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "You see here a scimitar."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20016, "k": "cmd", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "You see here a scimitar."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 64, 'y': 7, 'known': 14857, 'first-known': 14848, 'glyph': 'n', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 20017, "k": "yn", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137, "q": "What do you want to write with? [- abdhrsxMPSTWZ or ?*]"}
+{"a": "-"}
+{"r": 20018, "k": "line", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 20019, "k": "cmd", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "The water nymph turns to flee."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20020, "k": "cmd", "T": 14857, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a scimitar."}
+{"act": "move", "why": ["targetting enemy {'x': 65, 'y': 8, 'known': 14857, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"], "dir": "SE"}
+{"a": "n"}
+{"r": 20021, "k": "cmd", "T": 14858, "lvl": "Dlvl:5", "u": [66, 6], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["hitting {'x': 65, 'y': 8, 'known': 14858, 'first-known': 14848, 'glyph': 'n', 'color': 'blue', 'type", "targetting enemy {'x': 65, 'y': 8, 'known': 14858, 'first-known': 14848, 'glyph': 'n', 'color': 'blu"], "dir": "S"}
+{"a": "j"}
+{"r": 20022, "k": "cmd", "T": 14859, "lvl": "Dlvl:5", "u": [66, 6], "hp": 137, "hpmax": 137}
+{"m": "You kill the water nymph!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 64, :y 8}"], "dir": "SW"}
+{"a": "b"}
+{"r": 20023, "k": "cmd", "T": 14859, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"?||e?e?n\"."}
+{"m": "You see here a pink potion."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20024, "k": "cmd", "T": 14859, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"| e?e?n\"."}
+{"m": "You see here a pink potion."}
+{"act": "move", "why": ["new or desired item at #Position{:x 64, :y 9}"], "dir": "S"}
+{"a": "j"}
+{"r": 20025, "k": "cmd", "T": 14860, "lvl": "Dlvl:5", "u": [65, 8], "hp": 137, "hpmax": 137}
+{"m": "There is an open door here."}
+{"m": "You see here an uncursed elven dagger."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tru"]}
+{"a": ":"}
+{"r": 20026, "k": "cmd", "T": 14860, "lvl": "Dlvl:5", "u": [65, 8], "hp": 137, "hpmax": 137}
+{"m": "There is an open door here."}
+{"m": "You see here an uncursed elven dagger."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 20027, "k": "cmd", "T": 14861, "lvl": "Dlvl:5", "u": [65, 8], "hp": 137, "hpmax": 137}
+{"m": "M - an uncursed elven dagger."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 20028, "k": "cmd", "T": 14861, "lvl": "Dlvl:5", "u": [65, 8], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tru"]}
+{"a": ":"}
+{"r": 20029, "k": "cmd", "T": 14861, "lvl": "Dlvl:5", "u": [65, 8], "hp": 137, "hpmax": 137}
+{"m": "There is an open door here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 65, :y 8}"], "dir": "N"}
+{"a": "k"}
+{"r": 20030, "k": "cmd", "T": 14861, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"???n\"."}
+{"m": "You see here a pink potion."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20031, "k": "cmd", "T": 14861, "lvl": "Dlvl:5", "u": [65, 7], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"? ?r\"."}
+{"m": "You see here a pink potion."}
+{"act": "move", "why": ["new or desired item at #Position{:x 65, :y 8}"], "dir": "E"}
+{"a": "l"}
+{"r": 20032, "k": "cmd", "T": 14862, "lvl": "Dlvl:5", "u": [66, 7], "hp": 137, "hpmax": 137}
+{"m": "You see here a water nymph corpse."}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20033, "k": "cmd", "T": 14862, "lvl": "Dlvl:5", "u": [66, 7], "hp": 137, "hpmax": 137}
+{"m": "You see here a water nymph corpse."}
+{"act": "move", "why": ["new or desired item at #Position{:x 65, :y 5}"], "dir": "N"}
+{"a": "k"}
+{"r": 20034, "k": "cmd", "T": 14862, "lvl": "Dlvl:5", "u": [66, 6], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["new or desired item at #Position{:x 65, :y 5}"], "dir": "N"}
+{"a": "k"}
+{"r": 20035, "k": "cmd", "T": 14863, "lvl": "Dlvl:5", "u": [66, 5], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["new or desired item at #Position{:x 65, :y 5}"], "dir": "N"}
+{"a": "k"}
+{"r": 20036, "k": "cmd", "T": 14863, "lvl": "Dlvl:5", "u": [66, 4], "hp": 137, "hpmax": 137}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20037, "k": "cmd", "T": 14863, "lvl": "Dlvl:5", "u": [66, 4], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["new or desired item at #Position{:x 64, :y 5}"], "dir": "W"}
+{"a": "h"}
+{"r": 20038, "k": "cmd", "T": 14864, "lvl": "Dlvl:5", "u": [65, 4], "hp": 137, "hpmax": 137}
+{"m": "There are several objects here."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 20039, "k": "menu", "T": 14864, "lvl": "Dlvl:5", "u": [65, 4], "hp": 137, "hpmax": 137, "p": "Pick up what?", "items": ["# Coins", "$ 16 gold pieces", "# Weapons", "a a scimitar", "# Armor", "b an orcish helm", "c an orcish shield", "d an orcish shield", "e an orcish chain mail"]}
+{"a": [1]}
+{"r": 20040, "k": "cmd", "T": 14865, "lvl": "Dlvl:5", "u": [65, 4], "hp": 137, "hpmax": 137}
+{"m": "$ - 16 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 20041, "k": "cmd", "T": 14865, "lvl": "Dlvl:5", "u": [65, 4], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20042, "k": "cmd", "T": 14865, "lvl": "Dlvl:5", "u": [65, 4], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["new or desired item at {'x': 63, 'y': 5, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': "], "dir": "W"}
+{"a": "h"}
+{"r": 20043, "k": "cmd", "T": 14865, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 20044, "k": "menu", "T": 14865, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137, "p": "Pick up what?", "items": ["# Coins", "$ 17 gold pieces", "# Weapons", "a a knife", "# Armor", "b an orcish chain mail"]}
+{"a": [1]}
+{"r": 20045, "k": "cmd", "T": 14866, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137}
+{"m": "$ - 17 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 20046, "k": "cmd", "T": 14866, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 63, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20047, "k": "cmd", "T": 14866, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 70, :y 6}"}
+{"a": "_"}
+{"r": 20048, "k": "pos", "T": 14866, "lvl": "Dlvl:5", "u": [64, 4], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(71, 5)"}
+{"r": 20049, "k": "cmd", "T": 14867, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbe?e?h\"."}
+{"m": "You hear someone cursing shoplifters."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 20050, "k": "cmd", "T": 14867, "lvl": "Dlvl:5", "u": [65, 5], "hp": 137, "hpmax": 137}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"|lbe???h\"."}
+{"m": "You see here a scimitar."}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 20051, "k": "cmd", "T": 14868, "lvl": "Dlvl:5", "u": [66, 6], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 20052, "k": "cmd", "T": 14869, "lvl": "Dlvl:5", "u": [67, 7], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 70, :y 6}"}
+{"a": "_"}
+{"r": 20053, "k": "pos", "T": 14869, "lvl": "Dlvl:5", "u": [67, 7], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(71, 5)"}
+{"r": 20054, "k": "cmd", "T": 14871, "lvl": "Dlvl:5", "u": [71, 5], "hp": 137, "hpmax": 137}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 20055, "k": "cmd", "T": 14872, "lvl": "Dlvl:4", "u": [76, 17], "hp": 137, "hpmax": 137}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 71, :y 3}"}
+{"a": "_"}
+{"r": 20056, "k": "pos", "T": 14872, "lvl": "Dlvl:4", "u": [76, 17], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(72, 2)"}
+{"r": 20057, "k": "cmd", "T": 14882, "lvl": "Dlvl:4", "u": [72, 2], "hp": 137, "hpmax": 137}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 20058, "k": "cmd", "T": 14883, "lvl": "Dlvl:3", "u": [72, 4], "hp": 137, "hpmax": 137}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 6, :y 3}"}
+{"a": "_"}
+{"r": 20059, "k": "pos", "T": 14883, "lvl": "Dlvl:3", "u": [72, 4], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(7, 2)"}
+{"r": 20060, "k": "cmd", "T": 14889, "lvl": "Dlvl:3", "u": [63, 7], "hp": 133, "hpmax": 137}
+{"m": "The rothe misses!"}
+{"m": "The rothe misses!"}
+{"m": "The rothe bites!"}
+{"act": "move", "why": ["hitting {'x': 62, 'y': 9, 'known': 14889, 'first-known': 14889, 'glyph': 'q', 'color': 'brown', 'typ", "targetting enemy {'x': 62, 'y': 9, 'known': 14889, 'first-known': 14889, 'glyph': 'q', 'color': 'bro"], "dir": "S"}
+{"a": "j"}
+{"r": 20061, "k": "cmd", "T": 14890, "lvl": "Dlvl:3", "u": [63, 7], "hp": 133, "hpmax": 137}
+{"m": "You kill the rothe!"}
+{"act": "move", "why": ["new or desired item at {'x': 62, 'y': 9, 'glyph': '%', 'color': 'brown', 'feature': 'rusttrap', 'see"], "dir": "S"}
+{"a": "j"}
+{"r": 20062, "k": "cmd", "T": 14890, "lvl": "Dlvl:3", "u": [63, 8], "hp": 133, "hpmax": 137}
+{"m": "There is a rust trap here."}
+{"m": "You see here a rothe corpse."}
+{"m": "A gush of water hits your right arm!"}
+{"act": "look", "why": ["examining tile {'x': 62, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'rusttrap', 'seen': True"]}
+{"a": ":"}
+{"r": 20063, "k": "cmd", "T": 14890, "lvl": "Dlvl:3", "u": [63, 8], "hp": 133, "hpmax": 137}
+{"m": "There is a rust trap here."}
+{"m": "You see here a rothe corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 60, :y 20}"}
+{"a": ";"}
+{"r": 20064, "k": "pos", "T": 14890, "lvl": "Dlvl:3", "u": [63, 8], "hp": 133, "hpmax": 137, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(61, 19)"}
+{"r": 20065, "k": "cmd", "T": 14890, "lvl": "Dlvl:3", "u": [63, 8], "hp": 133, "hpmax": 137}
+{"m": "G        a gnome (peaceful gnome) [seen: infravision]"}
+{"act": "eat", "why": ["going to eat corpse at {'x': 62, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'rusttrap', 'see"], "slot": "a rothe corpse"}
+{"a": "e"}
+{"r": 20066, "k": "yn", "T": 14890, "lvl": "Dlvl:3", "u": [63, 8], "hp": 133, "hpmax": 137, "q": "There is a rothe corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 20067, "k": "cmd", "T": 14893, "lvl": "Dlvl:3", "u": [63, 8], "hp": 136, "hpmax": 137}
+{"m": "Blecch!  Rotten food!"}
+{"m": "You finish eating the rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 62, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'rusttrap', 'seen': True"]}
+{"a": ":"}
+{"r": 20068, "k": "cmd", "T": 14893, "lvl": "Dlvl:3", "u": [63, 8], "hp": 136, "hpmax": 137}
+{"m": "There is a rust trap here."}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 6, :y 3}"}
+{"a": "_"}
+{"r": 20069, "k": "pos", "T": 14893, "lvl": "Dlvl:3", "u": [63, 8], "hp": 136, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(7, 2)"}
+{"r": 20070, "k": "cmd", "T": 14894, "lvl": "Dlvl:3", "u": [61, 9], "hp": 136, "hpmax": 137}
+{"m": "A rothe blocks your path."}
+{"act": "move", "why": ["hitting {'x': 59, 'y': 10, 'known': 14894, 'first-known': 14894, 'glyph': 'q', 'color': 'brown', 'ty", "targetting enemy {'x': 59, 'y': 10, 'known': 14894, 'first-known': 14894, 'glyph': 'q', 'color': 'br"], "dir": "W"}
+{"a": "h"}
+{"r": 20071, "k": "cmd", "T": 14894, "lvl": "Dlvl:3", "u": [61, 9], "hp": 136, "hpmax": 137}
+{"m": "You kill the rothe!"}
+{"act": "move", "why": ["new or desired item at {'x': 59, 'y': 10, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen'"], "dir": "W"}
+{"a": "h"}
+{"r": 20072, "k": "cmd", "T": 14895, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137}
+{"m": "You see here a rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 59, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20073, "k": "cmd", "T": 14895, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137}
+{"m": "You see here a rothe corpse."}
+{"act": "eat", "why": ["going to eat corpse at {'x': 59, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen'"], "slot": "a rothe corpse"}
+{"a": "e"}
+{"r": 20074, "k": "yn", "T": 14895, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137, "q": "There is a rothe corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 20075, "k": "cmd", "T": 14900, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137}
+{"m": "This rothe corpse tastes okay."}
+{"m": "You finish eating the rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 59, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20076, "k": "cmd", "T": 14900, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137}
+{"m": "You see no objects here."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 62, :y 18}"}
+{"a": ";"}
+{"r": 20077, "k": "pos", "T": 14900, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(63, 17)"}
+{"r": 20078, "k": "cmd", "T": 14900, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137}
+{"m": "G        a gnome (peaceful gnome) [seen: infravision]"}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 6, :y 3}"}
+{"a": "_"}
+{"r": 20079, "k": "pos", "T": 14900, "lvl": "Dlvl:3", "u": [60, 9], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(7, 2)"}
+{"r": 20080, "k": "cmd", "T": 14937, "lvl": "Dlvl:3", "u": [7, 2], "hp": 137, "hpmax": 137}
+{"act": "ascend", "why": ["using stairs", "escaping subbranch mines", "seeking branch main ( main )", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 20081, "k": "cmd", "T": 14938, "lvl": "Dlvl:2", "u": [22, 4], "hp": 137, "hpmax": 137}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 23, :y 18}"}
+{"a": "_"}
+{"r": 20082, "k": "pos", "T": 14938, "lvl": "Dlvl:2", "u": [22, 4], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(24, 17)"}
+{"r": 20083, "k": "cmd", "T": 14939, "lvl": "Dlvl:2", "u": [22, 7], "hp": 137, "hpmax": 137}
+{"m": "You stop in front of the door."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 20084, "k": "cmd", "T": 14940, "lvl": "Dlvl:2", "u": [23, 8], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 23, :y 18}"}
+{"a": "_"}
+{"r": 20085, "k": "pos", "T": 14940, "lvl": "Dlvl:2", "u": [23, 8], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(24, 17)"}
+{"r": 20086, "k": "cmd", "T": 14945, "lvl": "Dlvl:2", "u": [24, 17], "hp": 137, "hpmax": 137}
+{"act": "descend", "why": ["switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20087, "k": "cmd", "T": 14946, "lvl": "Dlvl:3", "u": [40, 3], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 15, :y 15}"}
+{"a": "_"}
+{"r": 20088, "k": "pos", "T": 14946, "lvl": "Dlvl:3", "u": [40, 3], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 14)"}
+{"r": 20089, "k": "cmd", "T": 14953, "lvl": "Dlvl:3", "u": [36, 9], "hp": 137, "hpmax": 137}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 20090, "k": "cmd", "T": 14954, "lvl": "Dlvl:3", "u": [36, 10], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 15, :y 15}"}
+{"a": "_"}
+{"r": 20091, "k": "pos", "T": 14954, "lvl": "Dlvl:3", "u": [36, 10], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 14)"}
+{"r": 20092, "k": "cmd", "T": 14970, "lvl": "Dlvl:3", "u": [16, 14], "hp": 137, "hpmax": 137}
+{"act": "descend", "why": ["switching within branch to Dlvl:4", "seeking level main Dlvl:4", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20093, "k": "cmd", "T": 14970, "lvl": "Dlvl:4", "u": [46, 5], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"m": "There is a staircase up here."}
+{"m": "You see here an empty unlocked chest."}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 20094, "k": "cmd", "T": 14971, "lvl": "Dlvl:4", "u": [47, 5], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 20095, "k": "cmd", "T": 14972, "lvl": "Dlvl:4", "u": [48, 5], "hp": 137, "hpmax": 137}
+{"act": "open", "why": ["exploring {'x': 47, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "o"}
+{"r": 20096, "k": "yn", "T": 14972, "lvl": "Dlvl:4", "u": [48, 5], "hp": 137, "hpmax": 137, "q": "In what direction?"}
+{"a": "j"}
+{"r": 20097, "k": "cmd", "T": 14972, "lvl": "Dlvl:4", "u": [48, 5], "hp": 137, "hpmax": 137}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 7, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 20098, "k": "cmd", "T": 14973, "lvl": "Dlvl:4", "u": [48, 6], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["exploring {'x': 47, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 20099, "k": "cmd", "T": 14973, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 20100, "k": "cmdcont", "T": 14973, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"a": "0"}
+{"r": 20101, "k": "cmdcont", "T": 14973, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 20102, "k": "cmd", "T": 14979, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 20103, "k": "cmdcont", "T": 14979, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"a": "0"}
+{"r": 20104, "k": "cmdcont", "T": 14979, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 20105, "k": "cmd", "T": 14985, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "first exploring previous levels of branch", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 20106, "k": "cmdcont", "T": 14985, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"a": "0"}
+{"r": 20107, "k": "cmdcont", "T": 14985, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 20108, "k": "cmd", "T": 14991, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 5, :y 4}"}
+{"a": "_"}
+{"r": 20109, "k": "pos", "T": 14991, "lvl": "Dlvl:4", "u": [48, 7], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(6, 3)"}
+{"r": 20110, "k": "cmd", "T": 15006, "lvl": "Dlvl:4", "u": [31, 11], "hp": 137, "hpmax": 137}
+{"m": "A rothe blocks your path."}
+{"act": "move", "why": ["hitting {'x': 30, 'y': 13, 'known': 15006, 'first-known': 15006, 'glyph': 'q', 'color': 'brown', 'ty", "targetting enemy {'x': 30, 'y': 13, 'known': 15006, 'first-known': 15006, 'glyph': 'q', 'color': 'br"], "dir": "S"}
+{"a": "j"}
+{"r": 20111, "k": "cmd", "T": 15006, "lvl": "Dlvl:4", "u": [31, 11], "hp": 137, "hpmax": 137}
+{"m": "You kill the rothe!"}
+{"act": "move", "why": ["new or desired item at {'x': 30, 'y': 13, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen'"], "dir": "S"}
+{"a": "j"}
+{"r": 20112, "k": "cmd", "T": 15007, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20113, "k": "cmd", "T": 15007, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"act": "eat", "why": ["going to eat corpse at {'x': 30, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen'"], "slot": "a rothe corpse"}
+{"a": "e"}
+{"r": 20114, "k": "yn", "T": 15007, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137, "q": "There is a rothe corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 20115, "k": "cmd", "T": 15008, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"m": "This rothe corpse tastes okay."}
+{"m": "You stop eating the rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20116, "k": "cmd", "T": 15008, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 16}"}
+{"a": ";"}
+{"r": 20117, "k": "pos", "T": 15008, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 15)"}
+{"r": 20118, "k": "cmd", "T": 15008, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"m": "i        an imp or minor demon (homunculus) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["targetting enemy {'x': 29, 'y': 16, 'known': 15008, 'first-known': 15008, 'glyph': 'i', 'color': 'gr"], "dir": "SE"}
+{"a": "n"}
+{"r": 20119, "k": "cmd", "T": 15008, "lvl": "Dlvl:4", "u": [32, 13], "hp": 137, "hpmax": 137}
+{"act": "move", "why": ["hitting {'x': 30, 'y': 15, 'known': 15008, 'first-known': 15008, 'glyph': 'i', 'color': 'green', 'ty", "targetting enemy {'x': 30, 'y': 15, 'known': 15008, 'first-known': 15008, 'glyph': 'i', 'color': 'gr"], "dir": "SW"}
+{"a": "b"}
+{"r": 20120, "k": "cmd", "T": 15009, "lvl": "Dlvl:4", "u": [32, 13], "hp": 137, "hpmax": 137}
+{"m": "You kill the homunculus!"}
+{"act": "move", "why": ["going to eat corpse at {'x': 30, 'y': 13, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen'"], "dir": "NW"}
+{"a": "y"}
+{"r": 20121, "k": "cmd", "T": 15010, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"act": "eat", "why": ["going to eat corpse at {'x': 30, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen'"], "slot": "a partly eaten rothe corpse"}
+{"a": "e"}
+{"r": 20122, "k": "yn", "T": 15010, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137, "q": "There is a partly eaten rothe corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 20123, "k": "cmd", "T": 15015, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"m": "You resume your meal."}
+{"m": "You finish eating the rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20124, "k": "cmd", "T": 15015, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 5, :y 4}"}
+{"a": "_"}
+{"r": 20125, "k": "pos", "T": 15015, "lvl": "Dlvl:4", "u": [31, 12], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(6, 3)"}
+{"r": 20126, "k": "cmd", "T": 15037, "lvl": "Dlvl:4", "u": [6, 3], "hp": 137, "hpmax": 137}
+{"act": "descend", "why": ["switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20127, "k": "cmd", "T": 15037, "lvl": "Dlvl:5", "u": [67, 9], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 4, :y 9}"}
+{"a": "_"}
+{"r": 20128, "k": "pos", "T": 15037, "lvl": "Dlvl:5", "u": [67, 9], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(5, 8)"}
+{"r": 20129, "k": "cmd", "T": 15075, "lvl": "Dlvl:5", "u": [5, 8], "hp": 137, "hpmax": 137}
+{"m": "You hear snoring snakes."}
+{"act": "descend", "why": ["switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20130, "k": "cmd", "T": 15076, "lvl": "Dlvl:6", "u": [38, 17], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 46, :y 5}"}
+{"a": "_"}
+{"r": 20131, "k": "pos", "T": 15076, "lvl": "Dlvl:6", "u": [38, 17], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(47, 4)"}
+{"r": 20132, "k": "cmd", "T": 15089, "lvl": "Dlvl:6", "u": [47, 4], "hp": 137, "hpmax": 137}
+{"act": "descend", "why": ["switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20133, "k": "cmd", "T": 15090, "lvl": "Dlvl:7", "u": [29, 3], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 51, :y 6}"}
+{"a": "_"}
+{"r": 20134, "k": "pos", "T": 15090, "lvl": "Dlvl:7", "u": [29, 3], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 5)"}
+{"r": 20135, "k": "cmd", "T": 15095, "lvl": "Dlvl:7", "u": [36, 12], "hp": 137, "hpmax": 137}
+{"m": "You stop in front of the door."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 20136, "k": "cmd", "T": 15095, "lvl": "Dlvl:7", "u": [37, 12], "hp": 137, "hpmax": 137}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 51, :y 6}"}
+{"a": "_"}
+{"r": 20137, "k": "pos", "T": 15095, "lvl": "Dlvl:7", "u": [37, 12], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(52, 5)"}
+{"r": 20138, "k": "cmd", "T": 15105, "lvl": "Dlvl:7", "u": [52, 5], "hp": 137, "hpmax": 137}
+{"act": "descend", "why": ["switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 20139, "k": "cmd", "T": 15106, "lvl": "Dlvl:8", "u": [12, 3], "hp": 137, "hpmax": 137}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:9", "seeking level main Dlvl:9", "first exploring previous levels of branch", "exploring main until quest", "full-explore", "progress"], "pos": "#Position{:x 36, :y 5}"}
+{"a": "_"}
+{"r": 20140, "k": "pos", "T": 15106, "lvl": "Dlvl:8", "u": [12, 3], "hp": 137, "hpmax": 137, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 4)"}
+{"r": 20141, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "It explodes!"}
+{"m": "You are caught in a blast of kaleidoscopic light!"}
+{"m": "You are freaked out."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'T', 'color': 'magenta', 't"], "dir": "SW"}
+{"a": "b"}
+{"r": 20142, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'f', 'color': 'blue', 'type", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'f', 'color': 'blu"], "dir": "SW"}
+{"a": "b"}
+{"r": 20143, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'o', 'color': 'blue', 'type", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'o', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20144, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'red', 'type'", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20145, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20146, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'v', 'color': 'blue', 'type", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'v', 'color': 'blu"], "dir": "SW"}
+{"a": "b"}
+{"r": 20147, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'k', 'color': 'bright-blue'", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'k', 'color': 'bri"], "dir": "SW"}
+{"a": "b"}
+{"r": 20148, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20149, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'color': 'magenta', 't", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20150, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"note": "recovery", "d": "action-loop x8 move: blocked #Position{:x 15, :y 5} and forgot its items"}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'S', 'color': 'magenta', 't", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'S', 'color': 'mag"], "dir": "SW"}
+{"a": "b"}
+{"r": 20151, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'color': 'orange', 'ty", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20152, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20153, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'color': None, 'type':", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20154, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20155, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20156, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': ':', 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': ':', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20157, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20158, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'color': None, 'type':", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20159, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'bright-green", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20160, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'd', 'color': 'yellow', 'ty", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'd', 'color': 'yel"], "dir": "SW"}
+{"a": "b"}
+{"r": 20161, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'color': 'red', 'type'", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'color': 'red"], "dir": "SW"}
+{"a": "b"}
+{"r": 20162, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'O', 'color': 'brown', 'typ", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'O', 'color': 'bro"], "dir": "SW"}
+{"a": "b"}
+{"r": 20163, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'y', 'color': 'yellow', 'ty", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'y', 'color': 'yel"], "dir": "SW"}
+{"a": "b"}
+{"r": 20164, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '&', 'color': 'magenta', 't", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '&', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20165, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'C', 'color': 'brown', 'typ", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'C', 'color': 'bro"], "dir": "SW"}
+{"a": "b"}
+{"r": 20166, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'g', 'color': 'brown', 'typ", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'g', 'color': 'bro"], "dir": "SW"}
+{"a": "b"}
+{"r": 20167, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'V', 'color': 'blue', 'type"], "dir": "SW"}
+{"a": "b"}
+{"r": 20168, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'color': 'magenta', 't", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'H', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20169, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'color': 'red', 'type'", "targetting enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': \"'\", 'color': 'red"], "dir": "SW"}
+{"a": "b"}
+{"r": 20170, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Z', 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Z', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20171, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20172, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20173, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'color': 'red', 'type'", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'D', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20174, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20175, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Z', 'color': 'brown', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Z', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20176, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'd', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'd', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20177, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'blue', 'type", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20178, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'white', 'typ", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20179, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'V', 'color': 'blue', 'type"], "dir": "SW"}
+{"a": "b"}
+{"r": 20180, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'color': None, 'type':", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': 'Y', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20181, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"m": "You can't move diagonally out of an intact doorway."}
+{"act": "move", "why": ["hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'bright-blue'", "targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 20182, "k": "cmd", "T": 15109, "lvl": "Dlvl:8", "u": [17, 3], "hp": 137, "hpmax": 137}
+{"note": "abort", "d": "stuck: action loop: move repeated 40 times at turn 15109 ({'act': 'move', 'why': [\"hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'bright-blue'\", \"targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col\"], 'dir': 'SW'})"}
+{"note": "perf", "d": "explorable versions=12266 calls=20910486 misses=1121347"}

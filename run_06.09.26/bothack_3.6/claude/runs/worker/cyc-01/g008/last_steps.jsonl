@@ -1,0 +1,800 @@
+{"r": 10832, "k": "cmd", "T": 7246, "lvl": "Dlvl:12", "u": [66, 16], "hp": 108, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10833, "k": "cmd", "T": 7246, "lvl": "Dlvl:12", "u": [66, 16], "hp": 108, "hpmax": 113}
+{"m": "You see here 4615 gold pieces."}
+{"act": "move", "why": ["hitting {'x': 64, 'y': 17, 'known': 7246, 'first-known': 7242, 'glyph': 'l', 'color': 'green', 'type", "targetting leftover enemy {'x': 64, 'y': 17, 'known': 7246, 'first-known': 7242, 'glyph': 'l', 'colo"], "dir": "W"}
+{"a": "h"}
+{"r": 10834, "k": "cmd", "T": 7247, "lvl": "Dlvl:12", "u": [66, 16], "hp": 108, "hpmax": 113}
+{"m": "You kill the leprechaun!"}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 10835, "k": "cmd", "T": 7248, "lvl": "Dlvl:12", "u": [66, 16], "hp": 109, "hpmax": 113}
+{"m": "$ - 4615 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10836, "k": "cmd", "T": 7248, "lvl": "Dlvl:12", "u": [66, 16], "hp": 109, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 65, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10837, "k": "cmd", "T": 7248, "lvl": "Dlvl:12", "u": [66, 16], "hp": 109, "hpmax": 113}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 64, :y 17}"], "dir": "W"}
+{"a": "h"}
+{"r": 10838, "k": "cmd", "T": 7248, "lvl": "Dlvl:12", "u": [65, 16], "hp": 109, "hpmax": 113}
+{"m": "You see here 167 gold pieces."}
+{"act": "look", "why": ["examining tile {'x': 64, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10839, "k": "cmd", "T": 7248, "lvl": "Dlvl:12", "u": [65, 16], "hp": 109, "hpmax": 113}
+{"m": "You see here 167 gold pieces."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 50, :y 5}"], "pos": "#Position{:x 56, :y 11}"}
+{"a": "_"}
+{"r": 10840, "k": "pos", "T": 7248, "lvl": "Dlvl:12", "u": [65, 16], "hp": 109, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(57, 10)"}
+{"r": 10841, "k": "cmd", "T": 7250, "lvl": "Dlvl:12", "u": [63, 16], "hp": 109, "hpmax": 113}
+{"m": "It misses!"}
+{"act": "attack", "why": ["hitting {'x': 62, 'y': 16, 'known': 7250, 'first-known': 7250, 'glyph': 'I', 'color': None, 'type': ", "targetting leftover enemy {'x': 62, 'y': 16, 'known': 7250, 'first-known': 7250, 'glyph': 'I', 'colo"], "dir": "N"}
+{"a": "F"}
+{"r": 10842, "k": "cmdcont", "T": 7250, "lvl": "Dlvl:12", "u": [63, 16], "hp": 109, "hpmax": 113}
+{"a": "k"}
+{"r": 10843, "k": "cmd", "T": 7250, "lvl": "Dlvl:12", "u": [63, 16], "hp": 109, "hpmax": 113}
+{"m": "You kill the cave spider!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 62, :y 16}"], "dir": "N"}
+{"a": "k"}
+{"r": 10844, "k": "cmd", "T": 7251, "lvl": "Dlvl:12", "u": [63, 15], "hp": 110, "hpmax": 113}
+{"m": "You see here a leprechaun corpse."}
+{"act": "look", "why": ["examining tile {'x': 62, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 10845, "k": "cmd", "T": 7251, "lvl": "Dlvl:12", "u": [63, 15], "hp": 110, "hpmax": 113}
+{"m": "You see here a leprechaun corpse."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 50, :y 5}"], "pos": "#Position{:x 56, :y 11}"}
+{"a": "_"}
+{"r": 10846, "k": "pos", "T": 7251, "lvl": "Dlvl:12", "u": [63, 15], "hp": 110, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(57, 10)"}
+{"r": 10847, "k": "cmd", "T": 7251, "lvl": "Dlvl:12", "u": [62, 14], "hp": 108, "hpmax": 113}
+{"m": "The kobold mummy hits!"}
+{"act": "move", "why": ["hitting {'x': 61, 'y': 14, 'known': 7251, 'first-known': 7251, 'glyph': 'M', 'color': 'brown', 'type", "targetting enemy {'x': 61, 'y': 14, 'known': 7251, 'first-known': 7251, 'glyph': 'M', 'color': 'brow"], "dir": "N"}
+{"a": "k"}
+{"r": 10848, "k": "cmd", "T": 7252, "lvl": "Dlvl:12", "u": [62, 14], "hp": 108, "hpmax": 113}
+{"m": "You hit the kobold mummy!"}
+{"act": "move", "why": ["hitting {'x': 61, 'y': 14, 'known': 7252, 'first-known': 7251, 'glyph': 'M', 'color': 'brown', 'type", "targetting enemy {'x': 61, 'y': 14, 'known': 7252, 'first-known': 7251, 'glyph': 'M', 'color': 'brow"], "dir": "N"}
+{"a": "k"}
+{"r": 10849, "k": "cmd", "T": 7252, "lvl": "Dlvl:12", "u": [62, 14], "hp": 108, "hpmax": 113}
+{"m": "You destroy the kobold mummy!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 61, :y 14}"], "dir": "N"}
+{"a": "k"}
+{"r": 10850, "k": "cmd", "T": 7253, "lvl": "Dlvl:12", "u": [62, 13], "hp": 108, "hpmax": 113}
+{"m": "You see here a mummy wrapping."}
+{"act": "look", "why": ["examining tile {'x': 61, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 10851, "k": "cmd", "T": 7253, "lvl": "Dlvl:12", "u": [62, 13], "hp": 108, "hpmax": 113}
+{"m": "You see here a mummy wrapping."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 50, :y 5}"], "pos": "#Position{:x 56, :y 11}"}
+{"a": "_"}
+{"r": 10852, "k": "pos", "T": 7253, "lvl": "Dlvl:12", "u": [62, 13], "hp": 108, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(57, 10)"}
+{"r": 10853, "k": "cmd", "T": 7256, "lvl": "Dlvl:12", "u": [57, 10], "hp": 109, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 50, :y 5}"], "dir": "W"}
+{"a": "h"}
+{"r": 10854, "k": "cmd", "T": 7257, "lvl": "Dlvl:12", "u": [56, 10], "hp": 110, "hpmax": 113}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 50, :y 5}"], "pos": "#Position{:x 50, :y 5}"}
+{"a": "_"}
+{"r": 10855, "k": "pos", "T": 7257, "lvl": "Dlvl:12", "u": [56, 10], "hp": 110, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(51, 4)"}
+{"r": 10856, "k": "cmd", "T": 7259, "lvl": "Dlvl:12", "u": [52, 6], "hp": 103, "hpmax": 113}
+{"m": "Wait!  There's a cave spider hiding under a pair of low boots!"}
+{"m": "The cave spider misses!"}
+{"m": "The pyrolisk attacks you with a fiery gaze!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 11}"}
+{"a": ";"}
+{"r": 10857, "k": "pos", "T": 7259, "lvl": "Dlvl:12", "u": [52, 6], "hp": 103, "hpmax": 113, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 10)"}
+{"r": 10858, "k": "cmd", "T": 7259, "lvl": "Dlvl:12", "u": [52, 6], "hp": 103, "hpmax": 113}
+{"m": "i        an imp or minor demon (homunculus) [seen: infravision]"}
+{"act": "move", "why": ["hitting {'x': 50, 'y': 6, 'known': 7259, 'first-known': 7177, 'glyph': 's', 'color': None, 'type': {", "targetting enemy {'x': 50, 'y': 6, 'known': 7259, 'first-known': 7177, 'glyph': 's', 'color': None, "], "dir": "NW"}
+{"a": "y"}
+{"r": 10859, "k": "cmd", "T": 7260, "lvl": "Dlvl:12", "u": [52, 6], "hp": 104, "hpmax": 113}
+{"m": "You kill the cave spider!"}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 11, 'known': 7260, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "SE"}
+{"a": "n"}
+{"r": 10860, "k": "cmd", "T": 7260, "lvl": "Dlvl:12", "u": [53, 7], "hp": 104, "hpmax": 113}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 52, 'y': 10, 'known': 7260, 'first-known': 7259, 'glyph': 'i', 'color"], "slot": "-"}
+{"a": "E"}
+{"r": 10861, "k": "yn", "T": 7260, "lvl": "Dlvl:12", "u": [53, 7], "hp": 104, "hpmax": 113, "q": "What do you want to write with? [- abimwBCFKS or ?*]"}
+{"a": "-"}
+{"r": 10862, "k": "line", "T": 7260, "lvl": "Dlvl:12", "u": [53, 7], "hp": 104, "hpmax": 113, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 10863, "k": "cmd", "T": 7261, "lvl": "Dlvl:12", "u": [53, 7], "hp": 104, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10864, "k": "cmd", "T": 7261, "lvl": "Dlvl:12", "u": [53, 7], "hp": 104, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 52, 'y': 10, 'known': 7261, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"]}
+{"a": "s"}
+{"r": 10865, "k": "cmd", "T": 7262, "lvl": "Dlvl:12", "u": [53, 7], "hp": 95, "hpmax": 113}
+{"m": "The homunculus turns to flee."}
+{"m": "The pyrolisk attacks you with a fiery gaze!"}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10866, "k": "cmd", "T": 7262, "lvl": "Dlvl:12", "u": [53, 7], "hp": 95, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 50, :y 6}"], "dir": "NW"}
+{"a": "y"}
+{"r": 10867, "k": "cmd", "T": 7263, "lvl": "Dlvl:12", "u": [52, 6], "hp": 96, "hpmax": 113}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 10, 'known': 7263, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "SE"}
+{"a": "n"}
+{"r": 10868, "k": "cmd", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E||e cth\"."}
+{"m": "The pyrolisk attacks you with a fiery gaze!"}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10869, "k": "cmd", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E||e ?th\"."}
+{"m": "You see no objects here."}
+{"act": "throw", "why": ["ranged combat", "keep-away monster {'x': 52, 'y': 11, 'known': 7264, 'first-known': 7259, 'glyph': 'i', 'color': 'gre"], "dir": "S", "slot": "B"}
+{"a": "t"}
+{"r": 10870, "k": "yn", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113, "q": "What do you want to throw? [$abmBK or ?*]"}
+{"a": "B"}
+{"r": 10871, "k": "yn", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113, "q": "In what direction?"}
+{"a": "j"}
+{"r": 10872, "k": "cmd", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113}
+{"m": "The dagger hits the homunculus."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10873, "k": "cmd", "T": 7264, "lvl": "Dlvl:12", "u": [53, 7], "hp": 91, "hpmax": 113}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 11, 'known': 7264, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "S"}
+{"a": "j"}
+{"r": 10874, "k": "cmd", "T": 7265, "lvl": "Dlvl:12", "u": [53, 8], "hp": 91, "hpmax": 113}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 11, 'known': 7264, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "S"}
+{"a": "j"}
+{"r": 10875, "k": "cmd", "T": 7266, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10876, "k": "cmd", "T": 7266, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"m": "There is a doorway here."}
+{"act": "move", "why": ["hitting {'x': 52, 'y': 11, 'known': 7266, 'first-known': 7259, 'glyph': 'c', 'color': 'red', 'type':", "targetting enemy {'x': 52, 'y': 11, 'known': 7266, 'first-known': 7259, 'glyph': 'c', 'color': 'red'"], "dir": "S"}
+{"a": "j"}
+{"r": 10877, "k": "cmd", "T": 7267, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"m": "You hit the pyrolisk!"}
+{"act": "move", "why": ["hitting {'x': 52, 'y': 11, 'known': 7267, 'first-known': 7259, 'glyph': 'c', 'color': 'red', 'type':", "targetting enemy {'x': 52, 'y': 11, 'known': 7267, 'first-known': 7259, 'glyph': 'c', 'color': 'red'"], "dir": "S"}
+{"a": "j"}
+{"r": 10878, "k": "cmd", "T": 7267, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"m": "You kill the pyrolisk!"}
+{"act": "throw", "why": ["ranged combat", "keep-away monster {'x': 52, 'y': 13, 'known': 7267, 'first-known': 7259, 'glyph': 'i', 'color': 'gre"], "dir": "S", "slot": "b"}
+{"a": "t"}
+{"r": 10879, "k": "yn", "T": 7267, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113, "q": "What do you want to throw? [$abmK or ?*]"}
+{"a": "b"}
+{"r": 10880, "k": "yn", "T": 7267, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113, "q": "In what direction?"}
+{"a": "j"}
+{"r": 10881, "k": "cmd", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"m": "The dagger misses the homunculus."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10882, "k": "cmd", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"act": "throw", "why": ["ranged combat", "keep-away monster {'x': 52, 'y': 13, 'known': 7268, 'first-known': 7259, 'glyph': 'i', 'color': 'gre"], "dir": "S", "slot": "K"}
+{"a": "t"}
+{"r": 10883, "k": "yn", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113, "q": "What do you want to throw? [$amK or ?*]"}
+{"a": "K"}
+{"r": 10884, "k": "yn", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113, "q": "In what direction?"}
+{"a": "j"}
+{"r": 10885, "k": "cmd", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"m": "You kill the homunculus!"}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10886, "k": "cmd", "T": 7268, "lvl": "Dlvl:12", "u": [53, 9], "hp": 92, "hpmax": 113}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 13, 'known': 7268, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "S"}
+{"a": "j"}
+{"r": 10887, "k": "cmd", "T": 7269, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 10888, "k": "cmd", "T": 7269, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"act": "move", "why": ["targetting enemy {'x': 52, 'y': 13, 'known': 7268, 'first-known': 7259, 'glyph': 'i', 'color': 'gree"], "dir": "S"}
+{"a": "j"}
+{"r": 10889, "k": "cmd", "T": 7270, "lvl": "Dlvl:12", "u": [53, 11], "hp": 93, "hpmax": 113}
+{"act": "move", "why": ["targetting leftover enemy {'x': 52, 'y': 10, 'known': 7270, 'first-known': 7268, 'glyph': 'l', 'colo"], "dir": "N"}
+{"a": "k"}
+{"r": 10890, "k": "cmd", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"m": "The leprechaun misses!"}
+{"act": "dropsingle", "why": ["hitting {'x': 52, 'y': 10, 'known': 7270, 'first-known': 7268, 'glyph': 'l', 'color': 'green', 'type", "targetting leftover enemy {'x': 52, 'y': 10, 'known': 7270, 'first-known': 7268, 'glyph': 'l', 'colo"], "slot": "$"}
+{"a": "d"}
+{"r": 10891, "k": "yn", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113, "q": "What do you want to drop? [$acdf-mu-wACEFHSZ or ?*]"}
+{"a": "4"}
+{"r": 10892, "k": "key", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"a": "6"}
+{"r": 10893, "k": "key", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"m": "Count: 46"}
+{"a": "1"}
+{"r": 10894, "k": "key", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"m": "Count: 461"}
+{"a": "5"}
+{"r": 10895, "k": "key", "T": 7270, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"m": "Count: 4615"}
+{"a": "$"}
+{"r": 10896, "k": "cmd", "T": 7271, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"m": "Count: 4615 $"}
+{"m": "You drop 4615 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10897, "k": "cmd", "T": 7271, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10898, "k": "cmd", "T": 7271, "lvl": "Dlvl:12", "u": [53, 10], "hp": 93, "hpmax": 113}
+{"act": "move", "why": ["hitting {'x': 52, 'y': 10, 'known': 7271, 'first-known': 7268, 'glyph': 'l', 'color': 'green', 'type", "targetting leftover enemy {'x': 52, 'y': 10, 'known': 7271, 'first-known': 7268, 'glyph': 'l', 'colo"], "dir": "N"}
+{"a": "k"}
+{"r": 10899, "k": "cmd", "T": 7271, "lvl": "Dlvl:12", "u": [53, 9], "hp": 93, "hpmax": 113}
+{"m": "You miss wildly and stumble forwards."}
+{"act": "move", "why": ["targetting leftover enemy {'x': 50, 'y': 8, 'known': 7271, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "NW"}
+{"a": "y"}
+{"r": 10900, "k": "cmd", "T": 7272, "lvl": "Dlvl:12", "u": [52, 8], "hp": 94, "hpmax": 113}
+{"act": "move", "why": ["targetting leftover enemy {'x': 50, 'y': 7, 'known': 7272, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "N"}
+{"a": "k"}
+{"r": 10901, "k": "cmd", "T": 7272, "lvl": "Dlvl:12", "u": [52, 7], "hp": 94, "hpmax": 113}
+{"act": "move", "why": ["targetting leftover enemy {'x': 50, 'y': 6, 'known': 7272, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "N"}
+{"a": "k"}
+{"r": 10902, "k": "cmd", "T": 7273, "lvl": "Dlvl:12", "u": [52, 6], "hp": 94, "hpmax": 113}
+{"act": "move", "why": ["hitting {'x': 50, 'y': 6, 'known': 7273, 'first-known': 7268, 'glyph': 'l', 'color': 'green', 'type'", "targetting leftover enemy {'x': 50, 'y': 6, 'known': 7273, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "NW"}
+{"a": "y"}
+{"r": 10903, "k": "cmd", "T": 7273, "lvl": "Dlvl:12", "u": [52, 6], "hp": 94, "hpmax": 113}
+{"m": "You hit the leprechaun!"}
+{"act": "move", "why": ["targetting leftover enemy {'x': 50, 'y': 5, 'known': 7273, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "N"}
+{"a": "k"}
+{"r": 10904, "k": "cmd", "T": 7274, "lvl": "Dlvl:12", "u": [52, 5], "hp": 94, "hpmax": 113}
+{"act": "move", "why": ["hitting {'x': 50, 'y': 5, 'known': 7274, 'first-known': 7268, 'glyph': 'l', 'color': 'green', 'type'", "targetting leftover enemy {'x': 50, 'y': 5, 'known': 7274, 'first-known': 7268, 'glyph': 'l', 'color"], "dir": "NW"}
+{"a": "y"}
+{"r": 10905, "k": "cmd", "T": 7274, "lvl": "Dlvl:12", "u": [52, 5], "hp": 94, "hpmax": 113}
+{"m": "You kill the leprechaun!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 50, :y 6}"], "dir": "W"}
+{"a": "h"}
+{"r": 10906, "k": "cmd", "T": 7275, "lvl": "Dlvl:12", "u": [51, 5], "hp": 95, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 50, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10907, "k": "cmd", "T": 7275, "lvl": "Dlvl:12", "u": [51, 5], "hp": 95, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 50, :y 5}"], "dir": "N"}
+{"a": "k"}
+{"r": 10908, "k": "cmd", "T": 7275, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 50, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10909, "k": "cmd", "T": 7275, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 10910, "k": "menu", "T": 7275, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113, "p": "Pick up what?", "items": ["# Coins", "$ 1139 gold pieces", "# Spellbooks", "a a dark green spellbook"]}
+{"a": [1]}
+{"r": 10911, "k": "cmd", "T": 7276, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113}
+{"m": "$ - 1139 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10912, "k": "cmd", "T": 7276, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 50, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10913, "k": "cmd", "T": 7276, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113}
+{"m": "You see here a dark green spellbook."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 52, :y 11}"], "pos": "#Position{:x 52, :y 11}"}
+{"a": "_"}
+{"r": 10914, "k": "pos", "T": 7276, "lvl": "Dlvl:12", "u": [51, 4], "hp": 95, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(53, 10)"}
+{"r": 10915, "k": "cmd", "T": 7279, "lvl": "Dlvl:12", "u": [53, 7], "hp": 96, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"e ?th\"."}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10916, "k": "cmd", "T": 7279, "lvl": "Dlvl:12", "u": [53, 7], "hp": 96, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"e ?th\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["targetting leftover enemy {'x': 55, 'y': 11, 'known': 7270, 'first-known': 7270, 'glyph': 'l', 'colo"], "dir": "SE"}
+{"a": "n"}
+{"r": 10917, "k": "cmd", "T": 7279, "lvl": "Dlvl:12", "u": [54, 8], "hp": 96, "hpmax": 113}
+{"act": "move", "why": ["targetting leftover enemy {'x': 55, 'y': 11, 'known': 7270, 'first-known': 7270, 'glyph': 'l', 'colo"], "dir": "SE"}
+{"a": "n"}
+{"r": 10918, "k": "cmd", "T": 7280, "lvl": "Dlvl:12", "u": [55, 9], "hp": 96, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 52, :y 11}"], "dir": "NW"}
+{"a": "y"}
+{"r": 10919, "k": "cmd", "T": 7280, "lvl": "Dlvl:12", "u": [54, 8], "hp": 96, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 52, :y 11}"], "dir": "SW"}
+{"a": "b"}
+{"r": 10920, "k": "cmd", "T": 7281, "lvl": "Dlvl:12", "u": [53, 9], "hp": 97, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 52, :y 11}"], "dir": "S"}
+{"a": "j"}
+{"r": 10921, "k": "cmd", "T": 7282, "lvl": "Dlvl:12", "u": [53, 10], "hp": 97, "hpmax": 113}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 10922, "k": "menu", "T": 7282, "lvl": "Dlvl:12", "u": [53, 10], "hp": 97, "hpmax": 113, "p": "Pick up what?", "items": ["# Coins", "$ 4615 gold pieces", "# Weapons", "a a +1 dagger", "# Comestibles", "b a pyrolisk corpse"]}
+{"a": [3, 1]}
+{"r": 10923, "k": "cmd", "T": 7282, "lvl": "Dlvl:12", "u": [53, 10], "hp": 97, "hpmax": 113}
+{"m": "B - a +1 dagger (at the ready)."}
+{"m": "$ - 4615 gold pieces."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10924, "k": "cmd", "T": 7282, "lvl": "Dlvl:12", "u": [53, 10], "hp": 97, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10925, "k": "cmd", "T": 7282, "lvl": "Dlvl:12", "u": [53, 10], "hp": 97, "hpmax": 113}
+{"m": "You see here a pyrolisk corpse."}
+{"act": "move", "why": ["new or desired item at #Position{:x 52, :y 13}"], "dir": "S"}
+{"a": "j"}
+{"r": 10926, "k": "cmd", "T": 7283, "lvl": "Dlvl:12", "u": [53, 11], "hp": 97, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at #Position{:x 52, :y 13}"], "dir": "S"}
+{"a": "j"}
+{"r": 10927, "k": "cmd", "T": 7283, "lvl": "Dlvl:12", "u": [53, 12], "hp": 97, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'du"]}
+{"a": ":"}
+{"r": 10928, "k": "cmd", "T": 7283, "lvl": "Dlvl:12", "u": [53, 12], "hp": 97, "hpmax": 113}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 10929, "k": "menu", "T": 7283, "lvl": "Dlvl:12", "u": [53, 12], "hp": 97, "hpmax": 113, "p": "Pick up what?", "items": ["# Weapons", "a a +0 orcish dagger", "b a +0 dagger", "# Comestibles", "c a homunculus corpse"]}
+{"a": [1, 2]}
+{"r": 10930, "k": "cmd", "T": 7284, "lvl": "Dlvl:12", "u": [53, 12], "hp": 98, "hpmax": 113}
+{"m": "K - a +0 orcish dagger."}
+{"m": "b - a +0 dagger."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10931, "k": "cmd", "T": 7284, "lvl": "Dlvl:12", "u": [53, 12], "hp": 98, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 10932, "k": "cmd", "T": 7284, "lvl": "Dlvl:12", "u": [53, 12], "hp": 98, "hpmax": 113}
+{"m": "You see here a homunculus corpse."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 38, 'y': 6, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': "], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 10933, "k": "pos", "T": 7284, "lvl": "Dlvl:12", "u": [53, 12], "hp": 98, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 10934, "k": "cmd", "T": 7288, "lvl": "Dlvl:12", "u": [50, 5], "hp": 99, "hpmax": 113}
+{"act": "move", "why": ["new or desired item at {'x': 38, 'y': 6, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': "], "dir": "W"}
+{"a": "h"}
+{"r": 10935, "k": "cmd", "T": 7289, "lvl": "Dlvl:12", "u": [49, 5], "hp": 99, "hpmax": 113}
+{"act": "autotravel", "why": ["new or desired item at {'x': 38, 'y': 6, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen': "], "pos": "#Position{:x 38, :y 6}"}
+{"a": "_"}
+{"r": 10936, "k": "pos", "T": 7289, "lvl": "Dlvl:12", "u": [49, 5], "hp": 99, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(39, 5)"}
+{"r": 10937, "k": "cmd", "T": 7294, "lvl": "Dlvl:12", "u": [40, 5], "hp": 101, "hpmax": 113}
+{"m": "Wait!  That's a giant mimic!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 6, 'known': 7294, 'first-known': 7294, 'glyph': 'm', 'color': 'magenta', 'typ", "targetting enemy {'x': 38, 'y': 6, 'known': 7294, 'first-known': 7294, 'glyph': 'm', 'color': 'magen"], "dir": "W"}
+{"a": "h"}
+{"r": 10938, "k": "cmd", "T": 7295, "lvl": "Dlvl:12", "u": [40, 5], "hp": 101, "hpmax": 113}
+{"m": "You hit the giant mimic!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 6, 'known': 7295, 'first-known': 7294, 'glyph': 'm', 'color': 'magenta', 'typ", "targetting enemy {'x': 38, 'y': 6, 'known': 7295, 'first-known': 7294, 'glyph': 'm', 'color': 'magen"], "dir": "W"}
+{"a": "h"}
+{"r": 10939, "k": "cmd", "T": 7295, "lvl": "Dlvl:12", "u": [40, 5], "hp": 101, "hpmax": 113}
+{"m": "You hit the giant mimic!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 6, 'known': 7295, 'first-known': 7294, 'glyph': 'm', 'color': 'magenta', 'typ", "targetting enemy {'x': 38, 'y': 6, 'known': 7295, 'first-known': 7294, 'glyph': 'm', 'color': 'magen"], "dir": "W"}
+{"a": "h"}
+{"r": 10940, "k": "cmd", "T": 7296, "lvl": "Dlvl:12", "u": [40, 5], "hp": 102, "hpmax": 113}
+{"m": "You hit the giant mimic!"}
+{"act": "move", "why": ["hitting {'x': 38, 'y': 6, 'known': 7296, 'first-known': 7294, 'glyph': 'm', 'color': 'magenta', 'typ", "targetting enemy {'x': 38, 'y': 6, 'known': 7296, 'first-known': 7294, 'glyph': 'm', 'color': 'magen"], "dir": "W"}
+{"a": "h"}
+{"r": 10941, "k": "cmd", "T": 7296, "lvl": "Dlvl:12", "u": [40, 5], "hp": 102, "hpmax": 113}
+{"m": "You kill the giant mimic!"}
+{"act": "move", "why": ["new or desired item at {'x': 38, 'y': 6, 'glyph': '%', 'color': 'magenta', 'feature': None, 'seen': "], "dir": "W"}
+{"a": "h"}
+{"r": 10942, "k": "cmd", "T": 7297, "lvl": "Dlvl:12", "u": [39, 5], "hp": 102, "hpmax": 113}
+{"m": "You see here a giant mimic corpse."}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 10943, "k": "cmd", "T": 7297, "lvl": "Dlvl:12", "u": [39, 5], "hp": 102, "hpmax": 113}
+{"m": "You see here a giant mimic corpse."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 54, :y 9}"}
+{"a": "_"}
+{"r": 10944, "k": "pos", "T": 7297, "lvl": "Dlvl:12", "u": [39, 5], "hp": 102, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(55, 8)"}
+{"r": 10945, "k": "cmd", "T": 7305, "lvl": "Dlvl:12", "u": [53, 7], "hp": 105, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"e ?th\"."}
+{"act": "look", "why": ["examining tile {'x': 52, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 10946, "k": "cmd", "T": 7305, "lvl": "Dlvl:12", "u": [53, 7], "hp": 105, "hpmax": 113}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"e ?th\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 10947, "k": "cmd", "T": 7306, "lvl": "Dlvl:12", "u": [54, 8], "hp": 105, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 10948, "k": "cmd", "T": 7307, "lvl": "Dlvl:12", "u": [55, 8], "hp": 105, "hpmax": 113}
+{"act": "ascend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"]}
+{"a": "<"}
+{"r": 10949, "k": "cmd", "T": 7308, "lvl": "Dlvl:11", "u": [73, 5], "hp": 106, "hpmax": 113}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 59, :y 4}"}
+{"a": "_"}
+{"r": 10950, "k": "pos", "T": 7308, "lvl": "Dlvl:11", "u": [73, 5], "hp": 106, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(60, 3)"}
+{"r": 10951, "k": "cmd", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113}
+{"act": "open", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "o"}
+{"r": 10952, "k": "yn", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113, "q": "In what direction?"}
+{"a": "h"}
+{"r": 10953, "k": "cmd", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113}
+{"m": "This door is locked."}
+{"act": "apply", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "Z"}
+{"a": "a"}
+{"r": 10954, "k": "yn", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "Z"}
+{"r": 10955, "k": "yn", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113, "q": "In what direction?"}
+{"a": "h"}
+{"r": 10956, "k": "yn", "T": 7317, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113, "q": "Unlock it?", "c": "yn"}
+{"a": "y"}
+{"r": 10957, "k": "cmd", "T": 7318, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113}
+{"m": "You succeed in unlocking the door."}
+{"act": "open", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "o"}
+{"r": 10958, "k": "yn", "T": 7318, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113, "q": "In what direction?"}
+{"a": "h"}
+{"r": 10959, "k": "cmd", "T": 7319, "lvl": "Dlvl:11", "u": [60, 3], "hp": 109, "hpmax": 113}
+{"m": "The door opens."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 10960, "k": "cmd", "T": 7320, "lvl": "Dlvl:11", "u": [59, 3], "hp": 110, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 10961, "k": "cmd", "T": 7321, "lvl": "Dlvl:11", "u": [58, 3], "hp": 110, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "N"}
+{"a": "k"}
+{"r": 10962, "k": "cmd", "T": 7322, "lvl": "Dlvl:11", "u": [58, 2], "hp": 110, "hpmax": 113}
+{"act": "ascend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"]}
+{"a": "<"}
+{"r": 10963, "k": "cmd", "T": 7323, "lvl": "Dlvl:10", "u": [75, 4], "hp": 111, "hpmax": 113}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 13, :y 7}"}
+{"a": "_"}
+{"r": 10964, "k": "pos", "T": 7323, "lvl": "Dlvl:10", "u": [75, 4], "hp": 111, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(14, 6)"}
+{"r": 10965, "k": "cmd", "T": 7329, "lvl": "Dlvl:10", "u": [65, 7], "hp": 113, "hpmax": 113}
+{"m": "A ghoul blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 63, :y 8}"}
+{"a": ";"}
+{"r": 10966, "k": "pos", "T": 7329, "lvl": "Dlvl:10", "u": [65, 7], "hp": 113, "hpmax": 113, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(64, 7)"}
+{"r": 10967, "k": "cmd", "T": 7329, "lvl": "Dlvl:10", "u": [65, 7], "hp": 113, "hpmax": 113}
+{"m": "Z        a zombie (ghoul)"}
+{"act": "move", "why": ["hitting {'x': 63, 'y': 8, 'known': 7329, 'first-known': 7329, 'glyph': 'Z', 'color': 'blue', 'type':", "targetting enemy {'x': 63, 'y': 8, 'known': 7329, 'first-known': 7329, 'glyph': 'Z', 'color': 'blue'"], "dir": "W"}
+{"a": "h"}
+{"r": 10968, "k": "cmd", "T": 7330, "lvl": "Dlvl:10", "u": [65, 7], "hp": 112, "hpmax": 113}
+{"m": "You hit the ghoul!"}
+{"m": "The ghoul hits!"}
+{"m": "The ghoul misses!"}
+{"act": "move", "why": ["hitting {'x': 63, 'y': 8, 'known': 7330, 'first-known': 7329, 'glyph': 'Z', 'color': 'blue', 'type':", "targetting enemy {'x': 63, 'y': 8, 'known': 7330, 'first-known': 7329, 'glyph': 'Z', 'color': 'blue'"], "dir": "W"}
+{"a": "h"}
+{"r": 10969, "k": "cmd", "T": 7330, "lvl": "Dlvl:10", "u": [65, 7], "hp": 112, "hpmax": 113}
+{"m": "You destroy the ghoul!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 13, :y 7}"}
+{"a": "_"}
+{"r": 10970, "k": "pos", "T": 7330, "lvl": "Dlvl:10", "u": [65, 7], "hp": 112, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(14, 6)"}
+{"r": 10971, "k": "cmd", "T": 7352, "lvl": "Dlvl:10", "u": [27, 9], "hp": 112, "hpmax": 113}
+{"m": "You hear someone counting money."}
+{"m": "The chickatrice bites!"}
+{"m": "The chickatrice touches you!"}
+{"act": "move", "why": ["hitting {'x': 25, 'y': 9, 'known': 7352, 'first-known': 7352, 'glyph': 'c', 'color': 'brown', 'type'", "targetting enemy {'x': 25, 'y': 9, 'known': 7352, 'first-known': 7352, 'glyph': 'c', 'color': 'brown"], "dir": "NW"}
+{"a": "y"}
+{"r": 10972, "k": "cmd", "T": 7353, "lvl": "Dlvl:10", "u": [27, 9], "hp": 113, "hpmax": 113}
+{"m": "You hit the chickatrice!"}
+{"act": "move", "why": ["hitting {'x': 25, 'y': 9, 'known': 7353, 'first-known': 7352, 'glyph': 'c', 'color': 'brown', 'type'", "targetting enemy {'x': 25, 'y': 9, 'known': 7353, 'first-known': 7352, 'glyph': 'c', 'color': 'brown"], "dir": "NW"}
+{"a": "y"}
+{"r": 10973, "k": "cmd", "T": 7353, "lvl": "Dlvl:10", "u": [27, 9], "hp": 113, "hpmax": 113}
+{"m": "You hit the chickatrice!"}
+{"m": "The chickatrice misses!"}
+{"m": "The chickatrice touches you!"}
+{"m": "You hear the chickatrice's hissing!"}
+{"act": "move", "why": ["hitting {'x': 25, 'y': 9, 'known': 7353, 'first-known': 7352, 'glyph': 'c', 'color': 'brown', 'type'", "targetting enemy {'x': 25, 'y': 9, 'known': 7353, 'first-known': 7352, 'glyph': 'c', 'color': 'brown"], "dir": "NW"}
+{"a": "y"}
+{"r": 10974, "k": "cmd", "T": 7354, "lvl": "Dlvl:10", "u": [27, 9], "hp": 113, "hpmax": 113}
+{"m": "You kill the chickatrice!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 13, :y 7}"}
+{"a": "_"}
+{"r": 10975, "k": "pos", "T": 7354, "lvl": "Dlvl:10", "u": [27, 9], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(14, 6)"}
+{"r": 10976, "k": "cmd", "T": 7355, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"m": "A chickatrice blocks your path."}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 9, 'known': 7355, 'first-known': 7355, 'glyph': 'c', 'color': 'brown', 'type'", "targetting enemy {'x': 23, 'y': 9, 'known': 7355, 'first-known': 7355, 'glyph': 'c', 'color': 'brown"], "dir": "NW"}
+{"a": "y"}
+{"r": 10977, "k": "cmd", "T": 7356, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"m": "You hit the chickatrice!"}
+{"m": "You find a hidden door."}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 9, 'known': 7356, 'first-known': 7355, 'glyph': 'c', 'color': 'brown', 'type'", "targetting enemy {'x': 23, 'y': 9, 'known': 7356, 'first-known': 7355, 'glyph': 'c', 'color': 'brown"], "dir": "NW"}
+{"a": "y"}
+{"r": 10978, "k": "cmd", "T": 7356, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"m": "You kill the chickatrice!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 22, 'y': 10, 'known': 7356, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"]}
+{"a": "s"}
+{"r": 10979, "k": "cmd", "T": 7357, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 22, 'y': 10, 'known': 7357, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"]}
+{"a": "s"}
+{"r": 10980, "k": "cmd", "T": 7358, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 22, 'y': 10, 'known': 7358, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"]}
+{"a": "s"}
+{"r": 10981, "k": "cmd", "T": 7359, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 22, 'y': 10, 'known': 7359, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"]}
+{"a": "s"}
+{"r": 10982, "k": "cmd", "T": 7360, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 10, 'known': 7360, 'first-known': 7355, 'glyph': 'c', 'color': 'brown', 'type", "targetting enemy {'x': 23, 'y': 10, 'known': 7360, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"], "dir": "W"}
+{"a": "h"}
+{"r": 10983, "k": "cmd", "T": 7361, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"m": "You hit the chickatrice!"}
+{"m": "The chickatrice misses!"}
+{"m": "The chickatrice misses!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 10, 'known': 7361, 'first-known': 7355, 'glyph': 'c', 'color': 'brown', 'type", "targetting enemy {'x': 23, 'y': 10, 'known': 7361, 'first-known': 7355, 'glyph': 'c', 'color': 'brow"], "dir": "W"}
+{"a": "h"}
+{"r": 10984, "k": "cmd", "T": 7362, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113}
+{"m": "You kill the chickatrice!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 13, :y 7}"}
+{"a": "_"}
+{"r": 10985, "k": "pos", "T": 7362, "lvl": "Dlvl:10", "u": [25, 9], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(14, 6)"}
+{"r": 10986, "k": "cmd", "T": 7369, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113}
+{"act": "wield", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "l"}
+{"a": "w"}
+{"r": 10987, "k": "yn", "T": 7369, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113, "q": "What do you want to wield? [- abjlmBK or ?*]"}
+{"a": "l"}
+{"r": 10988, "k": "cmd", "T": 7370, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113}
+{"m": "l - a blessed +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 10989, "k": "cmd", "T": 7370, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113}
+{"act": "apply", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "l"}
+{"a": "a"}
+{"r": 10990, "k": "yn", "T": 7370, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "l"}
+{"r": 10991, "k": "yn", "T": 7370, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113, "q": "In what direction do you want to dig? [hyulb>]"}
+{"a": "h"}
+{"r": 10992, "k": "cmd", "T": 7372, "lvl": "Dlvl:10", "u": [14, 6], "hp": 113, "hpmax": 113}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 10993, "k": "cmd", "T": 7373, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113}
+{"act": "apply", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "l"}
+{"a": "a"}
+{"r": 10994, "k": "yn", "T": 7373, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "l"}
+{"r": 10995, "k": "yn", "T": 7373, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113, "q": "In what direction do you want to dig? [hykjb>]"}
+{"a": "y"}
+{"r": 10996, "k": "cmd", "T": 7375, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 10997, "k": "cmd", "T": 7375, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113}
+{"m": "You are carrying too much to get through."}
+{"act": "apply", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "l"}
+{"a": "a"}
+{"r": 10998, "k": "yn", "T": 7375, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "l"}
+{"r": 10999, "k": "yn", "T": 7375, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113, "q": "In what direction do you want to dig? [hkjb>]"}
+{"a": "h"}
+{"r": 11000, "k": "cmd", "T": 7377, "lvl": "Dlvl:10", "u": [13, 6], "hp": 113, "hpmax": 113}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 11001, "k": "cmd", "T": 7378, "lvl": "Dlvl:10", "u": [12, 5], "hp": 113, "hpmax": 113}
+{"act": "apply", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "slot": "l"}
+{"a": "a"}
+{"r": 11002, "k": "yn", "T": 7378, "lvl": "Dlvl:10", "u": [12, 5], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "l"}
+{"r": 11003, "k": "yn", "T": 7378, "lvl": "Dlvl:10", "u": [12, 5], "hp": 113, "hpmax": 113, "q": "In what direction do you want to dig? [hykulb>]"}
+{"a": "h"}
+{"r": 11004, "k": "cmd", "T": 7380, "lvl": "Dlvl:10", "u": [12, 5], "hp": 113, "hpmax": 113}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "W"}
+{"a": "h"}
+{"r": 11005, "k": "cmd", "T": 7381, "lvl": "Dlvl:10", "u": [11, 5], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 11006, "k": "cmd", "T": 7381, "lvl": "Dlvl:10", "u": [10, 4], "hp": 113, "hpmax": 113}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +2 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 11007, "k": "yn", "T": 7381, "lvl": "Dlvl:10", "u": [10, 4], "hp": 113, "hpmax": 113, "q": "What do you want to wield? [- abjlmBK or ?*]"}
+{"a": "a"}
+{"r": 11008, "k": "cmd", "T": 7382, "lvl": "Dlvl:10", "u": [10, 4], "hp": 113, "hpmax": 113}
+{"m": "a - the blessed rustproof +2 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11009, "k": "cmd", "T": 7382, "lvl": "Dlvl:10", "u": [10, 4], "hp": 113, "hpmax": 113}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 6, :y 5}"}
+{"a": "_"}
+{"r": 11010, "k": "pos", "T": 7382, "lvl": "Dlvl:10", "u": [10, 4], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(7, 4)"}
+{"r": 11011, "k": "cmd", "T": 7384, "lvl": "Dlvl:10", "u": [7, 4], "hp": 113, "hpmax": 113}
+{"act": "ascend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"]}
+{"a": "<"}
+{"r": 11012, "k": "cmd", "T": 7385, "lvl": "Dlvl:9", "u": [25, 4], "hp": 113, "hpmax": 113}
+{"m": "You climb up the stairs."}
+{"act": "move", "why": ["arbitrary direction", "fidgeting to make peacefuls move", "peaceful blocker {'x': 24, 'y': 6, 'known': 7385, 'first-known': 6387, 'glyph': 'G', 'color': 'brown", "going to altar"], "dir": "NW"}
+{"a": "y"}
+{"r": 11013, "k": "cmd", "T": 7385, "lvl": "Dlvl:9", "u": [24, 3], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["going to altar"], "dir": "SE"}
+{"a": "n"}
+{"r": 11014, "k": "cmd", "T": 7386, "lvl": "Dlvl:9", "u": [25, 4], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["going to altar"], "dir": "S"}
+{"a": "j"}
+{"r": 11015, "k": "cmd", "T": 7386, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "F"}
+{"a": "d"}
+{"r": 11016, "k": "yn", "T": 7386, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to drop? [$a-df-mu-wA-CEFHKSZ or ?*]"}
+{"a": "1"}
+{"r": 11017, "k": "key", "T": 7386, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"a": "F"}
+{"r": 11018, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "Count: 1 F"}
+{"m": "A curved wand lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11019, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 11020, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "There is an altar to Tyr (lawful) here."}
+{"m": "You see here an uncursed curved wand."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 11021, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "F - an uncursed curved wand."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11022, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 11023, "k": "cmd", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "There is an altar to Tyr (lawful) here."}
+{"act": "apply", "why": ["taking {'a scroll labeled THARR': 1} out of container at k", "preparing item - scroll labeled THARR", "dropping things on altar"], "slot": "k"}
+{"a": "a"}
+{"r": 11024, "k": "yn", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "k"}
+{"r": 11025, "k": "menu", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 11026, "k": "menu", "T": 7387, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled THARR", "b an uncursed scroll of teleportation", "c 3 uncursed scrolls of earth"]}
+{"a": [1]}
+{"r": 11027, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "G - a scroll labeled THARR."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11028, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "apply", "why": ["updating content of container at k"], "slot": "k"}
+{"a": "a"}
+{"r": 11029, "k": "yn", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "k"}
+{"r": 11030, "k": "menu", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 11031, "k": "menu", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Take out what?", "items": ["# Scrolls", "a an uncursed scroll of teleportation", "b 3 uncursed scrolls of earth"]}
+{"a": []}
+{"r": 11032, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "G"}
+{"a": "d"}
+{"r": 11033, "k": "yn", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to drop? [$a-df-mu-wA-CE-HKSZ or ?*]"}
+{"a": "1"}
+{"r": 11034, "k": "key", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"a": "G"}
+{"r": 11035, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "Count: 1 G"}
+{"m": "There is an amber flash as a scroll labeled THARR hits the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11036, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 11037, "k": "cmd", "T": 7388, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "There is an altar to Tyr (lawful) here."}
+{"m": "You see here a blessed scroll labeled THARR."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 11038, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "G - a blessed scroll labeled THARR."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11039, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, '"]}
+{"a": ":"}
+{"r": 11040, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "There is an altar to Tyr (lawful) here."}
+{"act": "apply", "why": ["putting {'G': None} into bag at k", "bag items"], "slot": "k"}
+{"a": "a"}
+{"r": 11041, "k": "yn", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "k"}
+{"r": 11042, "k": "menu", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 11043, "k": "menu", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Put in what?", "items": ["# Coins", "$ 5754 gold pieces", "# Amulets", "g a blessed amulet of reflection (being worn)", "# Weapons", "a the blessed rustproof +2 Excalibur (weapon in hand)", "b a +0 dagger", "m 7 +0 darts", "B a +1 dagger (at the ready)", "K a +0 orcish dagger", "# Armor", "c an uncursed +3 small shield (being worn)", "f a blessed greased +2 gray dragon scale mail (being worn)", "h a blessed fireproof +2 pair of speed boots (being worn)", "v an uncursed +0 dwarvish iron helm (being worn)", "E a -1 faded pall (being worn)", "# Comestibles", "d 4 uncursed food rations", "u 2 uncursed pancakes", "A an uncursed partly eaten food ration", "# Scrolls", "G a blessed scroll labeled THARR", "# Rings", "i a blessed ring of levitation", "# Wands", "C a wand of fire (0:6)", "F an uncursed curved wand", "S a wand of striking (0:4)", "# Tools", "j a blessed +0 unicorn horn", "k an uncursed bag of holding containing 2 items", "l a blessed +0 pick-axe", "H an uncursed blindfold", "Z an uncursed skeleton key", "# Gems/Stones", "w 7 uncursed rocks"]}
+{"a": [21]}
+{"r": 11044, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"m": "You put a blessed scroll labeled THARR into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 11045, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "apply", "why": ["updating content of container at k"], "slot": "k"}
+{"a": "a"}
+{"r": 11046, "k": "yn", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "q": "What do you want to use or apply? [j-lCFHSZ or ?*]"}
+{"a": "k"}
+{"r": 11047, "k": "menu", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 11048, "k": "menu", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113, "p": "Take out what?", "items": ["# Scrolls", "a a blessed scroll labeled THARR", "b an uncursed scroll of teleportation", "c 3 uncursed scrolls of earth"]}
+{"a": []}
+{"r": 11049, "k": "cmd", "T": 7389, "lvl": "Dlvl:9", "u": [25, 5], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "NW"}
+{"a": "y"}
+{"r": 11050, "k": "cmd", "T": 7390, "lvl": "Dlvl:9", "u": [24, 4], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "SW"}
+{"a": "b"}
+{"r": 11051, "k": "cmd", "T": 7390, "lvl": "Dlvl:9", "u": [23, 5], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "SW"}
+{"a": "b"}
+{"r": 11052, "k": "cmd", "T": 7391, "lvl": "Dlvl:9", "u": [22, 6], "hp": 113, "hpmax": 113}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 11, :y 6}"}
+{"a": "_"}
+{"r": 11053, "k": "pos", "T": 7391, "lvl": "Dlvl:9", "u": [22, 6], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(12, 5)"}
+{"r": 11054, "k": "cmd", "T": 7398, "lvl": "Dlvl:9", "u": [12, 5], "hp": 113, "hpmax": 113}
+{"act": "ascend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"]}
+{"a": "<"}
+{"r": 11055, "k": "cmd", "T": 7398, "lvl": "Dlvl:8", "u": [8, 2], "hp": 113, "hpmax": 113}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 22, :y 18}"}
+{"a": "_"}
+{"r": 11056, "k": "pos", "T": 7398, "lvl": "Dlvl:8", "u": [8, 2], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(23, 17)"}
+{"r": 11057, "k": "cmd", "T": 7405, "lvl": "Dlvl:8", "u": [10, 15], "hp": 113, "hpmax": 113}
+{"m": "A tengu blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 10, :y 16}"}
+{"a": ";"}
+{"r": 11058, "k": "pos", "T": 7405, "lvl": "Dlvl:8", "u": [10, 15], "hp": 113, "hpmax": 113, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(11, 15)"}
+{"r": 11059, "k": "cmd", "T": 7405, "lvl": "Dlvl:8", "u": [10, 15], "hp": 113, "hpmax": 113}
+{"m": "i        an imp or minor demon (peaceful tengu) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "SE"}
+{"a": "n"}
+{"r": 11060, "k": "cmd", "T": 7406, "lvl": "Dlvl:8", "u": [11, 16], "hp": 113, "hpmax": 113}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 17, :y 16}"}
+{"a": "_"}
+{"r": 11061, "k": "pos", "T": 7406, "lvl": "Dlvl:8", "u": [11, 16], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(18, 15)"}
+{"r": 11062, "k": "cmd", "T": 7411, "lvl": "Dlvl:8", "u": [18, 15], "hp": 113, "hpmax": 113}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "dir": "E"}
+{"a": "l"}
+{"r": 11063, "k": "cmd", "T": 7411, "lvl": "Dlvl:8", "u": [19, 15], "hp": 113, "hpmax": 113}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 22, :y 18}"}
+{"a": "_"}
+{"r": 11064, "k": "pos", "T": 7411, "lvl": "Dlvl:8", "u": [19, 15], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(23, 17)"}
+{"r": 11065, "k": "cmd", "T": 7413, "lvl": "Dlvl:8", "u": [23, 17], "hp": 113, "hpmax": 113}
+{"act": "ascend", "why": ["switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"]}
+{"a": "<"}
+{"r": 11066, "k": "cmd", "T": 7414, "lvl": "Dlvl:7", "u": [14, 10], "hp": 113, "hpmax": 113}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:2", "trying to enter mines from Dlvl:2", "seeking branch mines ( mines )", "seeking level mines Dlvl:5", "get protection"], "pos": "#Position{:x 53, :y 15}"}
+{"a": "_"}
+{"r": 11067, "k": "pos", "T": 7414, "lvl": "Dlvl:7", "u": [14, 10], "hp": 113, "hpmax": 113, "g": "the desired destination"}
+{"note": "abort", "d": "limit: terminated by signal 15"}

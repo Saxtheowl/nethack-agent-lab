@@ -389,7 +389,7 @@ def full_explore(game):
     if res is None and 'quest' not in skip:
         if (have_levi(game) and game['player']['xplvl'] >= 14
                 and _have_dsm(game)):
-            res = explore_level(game, 'quest', 'end')
+            res = explore_level(game, 'quest', 'end') or quest_bell(game)
     if res is None and 'vlad' not in skip:
         res = explore_level(game, 'vlad', 'end')
     if res is None:
@@ -901,6 +901,52 @@ def consider_items_here(game):
                                               PickUp(list(dict.fromkeys(
                                                   to_get)))))
     log.debug("no desired items here")
+    return None
+
+
+_BH = [None]
+
+
+def _set_bell_hopeless(game, turn):
+    """`game` here is a value, not the atom: record on the bot's atom."""
+    bh = _BH[0]
+    if bh is not None:
+        bh.game.swap(assoc, 'bell-hopeless', turn)
+
+
+def quest_bell(game):
+    """The Bell of Opening is carried by the quest nemesis.  BotHack only
+    explored the goal level and left without it, so the invocation was
+    impossible thousands of turns later (cyc-03 g002, big-w02 g007)."""
+    if have(game, BELL, {'bagged'}):
+        return None
+    goal = get_level(game, 'quest', 'end')
+    if goal is None:
+        return None
+    turn = game.get('turn') or 0
+    # give up for a while when the goal level has nothing left to offer,
+    # else this alternates with "leaving the quest" on the stairs
+    # (cyc-04 g002 went up and down 50 times)
+    hopeless = game.get('bell-hopeless')
+    if hopeless is not None and turn - hopeless < 5000:
+        return None
+    if branch_key(game) != 'quest' or game['dlvl'] != goal['dlvl']:
+        return with_reason("going back for the Bell of Opening",
+                           seek_level(game, 'quest', 'end'))
+    targets = [position(m) for m in curlvl_monsters(game)
+               if m.get('peaceful') is False and not m.get('friendly')]
+    if targets:
+        r = seek(game, set(targets))
+        if r:
+            return with_reason("hunting the quest nemesis for the Bell", r)
+    r = search_level(game, 1)
+    if r:
+        return with_reason("looking for the Bell of Opening", r)
+    mons = [(m.get('type') or {}).get('name') or m.get('glyph')
+            for m in curlvl_monsters(game)]
+    log.warning("no way to get the Bell on the quest goal level, giving up "
+                "until turn %d (monsters seen: %s)", turn + 5000, mons[:12])
+    _set_bell_hopeless(game, turn)
     return None
 
 
@@ -3093,6 +3139,7 @@ def _desired(game):
 
 
 def init(bh):
+    _BH[0] = bh
     _desired_cache['value'] = None
     game = bh.game
 

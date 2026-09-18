@@ -1,0 +1,227 @@
+{
+ "series": "cyc-02",
+ "games": 9,
+ "outcomes": {
+  "stuck": 3,
+  "limit": 6
+ },
+ "stage_funnel": {
+  "dlvl2": 9,
+  "mines": 9,
+  "minetown": 9,
+  "oracle": 9,
+  "sokoban": 9,
+  "bigroom": 5,
+  "dlvl10": 8,
+  "medusa": 7,
+  "castle": 7,
+  "valley": 7,
+  "quest": 7,
+  "bell": 3,
+  "vlad": 5,
+  "candelabrum": 4,
+  "gehennom_deep": 5,
+  "wizard_tower": 5
+ },
+ "failure_signatures": [
+  [
+   "limit | max_seconds N",
+   6
+  ],
+  [
+   "stuck | action loop: move repeated N times at turn N ({..})",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'pit)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 4339,
+  "leftover_keys_dropped": 4279,
+  "note:leftover": 4279,
+  "note:compat": 2033,
+  "compat:container:o": 1530,
+  "menu_empty_answer": 982,
+  "menu_letter_unmatched": 464,
+  "compat:container:i": 317,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 250,
+  "note:assist": 171,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 99,
+  "compat:container:q": 88,
+  "compat:name:i": 60,
+  "msg-rewrite:^You feel as if you need some ": 47,
+  "compat:name:o": 38,
+  "msg-rewrite:^Air currents pull you down in": 38,
+  "note:recovery": 22,
+  "menu_show:current_skills": 19,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 19,
+  "farlook-symbol": 10,
+  "note:abort": 9,
+  "action_veto": 8,
+  "msg-rewrite:^It is locked\\.$": 8,
+  "note:veto": 8,
+  "farlook-trap": 7,
+  "note:forced-command": 4,
+  "unknown_yn": 1,
+  "fallback": 1,
+  "note:unknown-prompt": 1,
+  "note:fallback": 1
+ },
+ "assist_totals": {
+  "kit": 72,
+  "lifesave": 70,
+  "feed": 28,
+  "noslime": 1
+ },
+ "turns_total": 266629,
+ "turns_max": 42916,
+ "elapsed_total_s": 48626.2,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 7003,
+   "outcome": "stuck",
+   "reason": "action loop: move repeated 40 times at turn 15109 ({'act': 'move', 'why': [\"hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'bright-blue'\", \"targetting leftover ",
+   "turns": 15109,
+   "max_depth": 22,
+   "last_stage": "bigroom",
+   "elapsed_s": 1671.6,
+   "turns_per_s": 9.04,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 7007,
+   "outcome": "stuck",
+   "reason": "fixation: target (42, 6, 'Home 2 ') keeps coming back after 3 recoveries (examining tile {'x': 42, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'pit)",
+   "turns": 18129,
+   "max_depth": 30,
+   "last_stage": "quest",
+   "elapsed_s": 2808.0,
+   "turns_per_s": 6.46,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 7012,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 33611,
+   "max_depth": 46,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 7200.6,
+   "turns_per_s": 4.67,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 40,
+    "noslime": 1
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 7047,
+   "outcome": "stuck",
+   "reason": "fixation: target (50, 17, 'Dlvl:2  ') keeps coming back after 3 recoveries (examining tile {'x': 50, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 6899,
+   "max_depth": 7,
+   "last_stage": "sokoban",
+   "elapsed_s": 944.5,
+   "turns_per_s": 7.3,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 7011,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 35906,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 7200.1,
+   "turns_per_s": 4.99,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 7013,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 38480,
+   "max_depth": 44,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 7200.1,
+   "turns_per_s": 5.34,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 1,
+    "feed": 13
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 7014,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 39804,
+   "max_depth": 47,
+   "last_stage": "candelabrum",
+   "elapsed_s": 7200.1,
+   "turns_per_s": 5.53,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 14
+   }
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 7043,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 42916,
+   "max_depth": 33,
+   "last_stage": "valley",
+   "elapsed_s": 7200.9,
+   "turns_per_s": 5.96,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 7,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 7034,
+   "outcome": "limit",
+   "reason": "max_seconds 7200",
+   "turns": 35775,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 7200.3,
+   "turns_per_s": 4.97,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 7
+   }
+  }
+ ]
+}

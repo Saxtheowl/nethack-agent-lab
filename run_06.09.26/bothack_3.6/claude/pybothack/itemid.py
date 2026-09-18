@@ -437,11 +437,26 @@ def initial_ids(item, n=None):
     return _possibilities(_INITIAL_GAME, appearance_of(item), n)
 
 
+_ID_CACHE = {'key': None, 'by_label': {}}
+
+
 def item_id(game_or_item, item=None):
-    if item is None:
+    single = item is None
+    if single:
         item, game = game_or_item, _INITIAL_GAME
     else:
         game = game_or_item
+    # one cache per discoveries version ('_poss_cache' is replaced whenever
+    # the discoveries change); 9.3M calls in a 4000 turn profile
+    label = (item.get('label') if (item is not None and isinstance(item, dict)
+                                   and game is not _INITIAL_GAME) else None)
+    if label is not None:
+        ck = id(game.get('_poss_cache'))
+        c = _ID_CACHE
+        if c['key'] != ck:
+            c['key'], c['by_label'] = ck, {}
+        if label in c['by_label']:
+            return c['by_label'][label]
     poss = possible_ids(game, item)
     if not poss:
         return None
@@ -449,11 +464,14 @@ def item_id(game_or_item, item=None):
     if cache is not None:
         key = tuple(p['name'] for p in poss)
         if key in cache:
-            return cache[key]
+            r = cache[key]
+        else:
+            r = cache[key] = _merge_records(poss)
+    else:
         r = _merge_records(poss)
-        cache[key] = r
-        return r
-    return _merge_records(poss)
+    if label is not None:
+        _ID_CACHE['by_label'][label] = r
+    return r
 
 
 def item_type(item):

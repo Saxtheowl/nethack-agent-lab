@@ -283,9 +283,11 @@ def _blocked_door(level, pos):
 
 
 def _kickable_door(level, tile, opts):
+    # 'no-kick': kicking it only hurt the hero's leg (actions.Kick)
     return bool(door(tile) and 'rogue' not in level['tags']
                 and not opts.get('walking') and dare_destroy(level, tile)
-                and not tile_item(tile))
+                and not tile_item(tile)
+                and tile.get('no-kick') is None)
 
 
 def _kick_door(game, level, tile, dir_):
@@ -645,32 +647,66 @@ def _explorable_tile(level, tile):
 
 _EXPLORABLE_MEMO = {}
 _MEMO_CHECK = os.environ.get('BOTHACK_MEMO_CHECK') == '1'
+# one cache per level *version*: tiles and monsters are persistent (any
+# change builds new objects), so their identity dates the cache.  Profiling
+# on the worker: explorable_tile was 6.2M calls and 45% of the bot's time.
+_EXPL_CACHE = {'tiles': None, 'mons': None, 'key': None, 'by_xy': {}}
+_EXPL_STATS = [0, 0, 0]   # versions, calls, recomputes
+
+
+def _expl_invalidate(tiles, mons, level):
+    """Drop the cached results whose neighbourhood changed since the last
+    version.  Tiles, rows and the monster map are persistent, so identity
+    comparison finds the few cells that moved (profiling: a full level scan
+    per turn was ~45% of the bot's time)."""
+    c = _EXPL_CACHE
+    key = (level.get('branch-id'), level.get('dlvl'))
+    if c['key'] != key or c['tiles'] is None:
+        c['by_xy'] = {}
+    else:
+        dirty = []
+        for r, (orow, nrow) in enumerate(zip(c['tiles'], tiles)):
+            if orow is nrow:
+                continue
+            for x, (oc, nc) in enumerate(zip(orow, nrow)):
+                if oc is not nc:
+                    dirty.append((x, r + 1))
+        om = c['mons'] or {}
+        nm = mons or {}
+        if om is not nm:
+            for p in set(om) | set(nm):
+                if om.get(p) is not nm.get(p):
+                    dirty.append((p.x, p.y))
+        res = c['by_xy']
+        for (x, y) in dirty:
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    res.pop((x + dx, y + dy), None)
+    c['tiles'], c['mons'], c['key'] = tiles, mons, key
 
 
 def explorable_tile(level, tile):
-    """Memoized `_explorable_tile`.  Its result depends only on the tile, its
-    eight neighbours and the monsters standing on those neighbours; tiles are
-    persistent (every update makes a new dict), so identity of those objects
-    is a sound cache key.  The entry keeps references to the objects, so an
-    id can never be reused while the entry exists."""
-    xy = (tile['x'], tile['y'])
-    npos = _NEIGHBORS[xy]
+    """Memoized `_explorable_tile` (depends on the tile, its eight
+    neighbours and the monsters standing on them)."""
     tiles = level['tiles']
-    nbrs = tuple(tiles[p.y - 1][p.x] for p in npos)
-    mons = level.get('monsters') or {}
-    mkey = tuple((m['glyph'] if m is not None else None)
-                 for m in (mons.get(p) for p in npos)) if mons else ()
-    ent = _EXPLORABLE_MEMO.get(xy)
-    if (ent is not None and ent[0] is tile and ent[3] == mkey
-            and all(a is b for a, b in zip(ent[1], nbrs))):
+    mons = level.get('monsters')
+    c = _EXPL_CACHE
+    _EXPL_STATS[1] += 1
+    if c['tiles'] is not tiles or c['mons'] is not mons:
+        _EXPL_STATS[0] += 1
+        _expl_invalidate(tiles, mons, level)
+    xy = (tile['x'], tile['y'])
+    r = c['by_xy'].get(xy)
+    if r is None:
+        r = c['by_xy'][xy] = _explorable_tile(level, tile)
+        _EXPL_STATS[2] += 1
         if _MEMO_CHECK:
-            real = _explorable_tile(level, tile)
-            if real != ent[2]:
-                log.error("explorable_tile memo mismatch at %s", xy)
-            return real
-        return ent[2]
-    r = _explorable_tile(level, tile)
-    _EXPLORABLE_MEMO[xy] = (tile, nbrs, r, mkey)
+            return r
+    elif _MEMO_CHECK:
+        real = _explorable_tile(level, tile)
+        if real != r:
+            log.error("explorable_tile cache mismatch at %s", xy)
+        return real
     return r
 
 

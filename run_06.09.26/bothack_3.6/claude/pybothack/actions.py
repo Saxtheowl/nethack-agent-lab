@@ -464,6 +464,13 @@ def Kick(dir_):
             elif re_seq(r"Thump!", msg):
                 game.swap(update_from_player, dir_,
                           lambda t: assoc(t, 'thump', True))
+            elif re_seq(r"^Ouch!  That hurts!|^Dumb move!", msg):
+                # kicking a wall/iron bars wounds the leg again: the bot
+                # kicked, waited for the leg, kicked... for 6000 turns
+                # (cyc-03 g001).  Stop kicking that square.
+                turn = game.deref().get('turn')
+                game.swap(update_from_player, dir_,
+                          lambda t: assoc(t, 'no-kick', turn))
         return Handler(message=message)
     return action('kick', lambda a: ctrl('d') + direction_trigger(dir_), hnd,
                   dir=dir_)

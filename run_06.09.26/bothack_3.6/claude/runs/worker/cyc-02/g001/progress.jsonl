@@ -1,0 +1,88 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.1, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.1, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "an empty uncursed bag of holding", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 269, "depth": 2, "t": 18.3, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 269, "depth": 2, "t": 18.3, "stage": "dlvl2"}
+{"kind": "xl", "turn": 465, "depth": 2, "t": 29.2, "value": 2}
+{"kind": "depth", "turn": 611, "depth": 3, "t": 39.7, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 724, "depth": 3, "t": 49.9, "value": 3}
+{"kind": "heartbeat", "turn": 1016, "depth": 3, "t": 72.5, "lvl": "Dlvl:3", "dname": "The Dungeons of Doom", "hp": 41, "hpmax": 41, "xl": 3, "ac": -8, "requests": 1490, "actions": 1122}
+{"kind": "xl", "turn": 1107, "depth": 3, "t": 86.4, "value": 4}
+{"kind": "xl", "turn": 1145, "depth": 3, "t": 90.1, "value": 5}
+{"kind": "depth", "turn": 1153, "depth": 4, "t": 90.3, "value": 4, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 1200, "depth": 5, "t": 95.5, "value": 5, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 1200, "depth": 5, "t": 95.5, "name": "oracle", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 1200, "depth": 5, "t": 95.5, "stage": "oracle"}
+{"kind": "item_gained", "turn": 1275, "depth": 5, "t": 105.0, "item": "Excalibur"}
+{"kind": "xl", "turn": 1536, "depth": 4, "t": 131.9, "value": 6}
+{"kind": "branch", "turn": 1652, "depth": 3, "t": 139.3, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 1652, "depth": 3, "t": 139.3, "stage": "mines"}
+{"kind": "heartbeat", "turn": 2016, "depth": 4, "t": 203.9, "lvl": "Dlvl:4", "dname": "The Gnomish Mines", "hp": 34, "hpmax": 80, "xl": 6, "ac": -8, "requests": 3232, "actions": 2520}
+{"kind": "xl", "turn": 2598, "depth": 4, "t": 293.5, "value": 7}
+{"kind": "special", "turn": 2619, "depth": 5, "t": 298.8, "name": "minetn", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 2619, "depth": 5, "t": 298.8, "stage": "minetown", "variant": "minetn"}
+{"kind": "item_lost", "turn": 2836, "depth": 5, "t": 329.7, "item": "pick-axe", "messages": ["@        a human or elf (peaceful Regien) [seen: normal vision, infravision]", "Pick an object.", "]        a mimic or a strange object (strange object)", "\"Velkommen, bot!  Welcome to Regien's hardware store!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Regien) [seen: normal vision, infravision]", "You do not owe Regien anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "targetting leftover enemy {'x': 28, 'y': 16, 'known': 2835, 'first-known': 2833, 'glyph': 'm', 'colo"], "slot": "k"}}
+{"kind": "item_gained", "turn": 2847, "depth": 5, "t": 332.4, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 2864, "depth": 5, "t": 336.2, "item": "pick-axe", "messages": ["@        a human or elf (peaceful watchman) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Izchak's lighting store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Izchak anything.", "Pick an object.", "G        a gnome (peaceful gnome) [seen: normal vision, infravision]", "Pick an object.", "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 30, :y 16}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 2878, "depth": 5, "t": 340.2, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 2884, "depth": 5, "t": 341.2, "item": "pick-axe", "messages": ["G        a gnome (peaceful gnome) [seen: normal vision, infravision]", "k - a blessed +0 pick-axe.", "You see no objects here.", "Where do you want to travel to?", "A gnome blocks your path.", "Where do you want to travel to?", "Pick an object.", "G        a gnome (peaceful gnome) [seen: normal vision, infravision]", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop for items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 2891, "depth": 5, "t": 344.1, "item": "pick-axe"}
+{"kind": "xl", "turn": 2988, "depth": 5, "t": 359.7, "value": 8}
+{"kind": "heartbeat", "turn": 3016, "depth": 5, "t": 362.6, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 105, "hpmax": 105, "xl": 8, "ac": -4, "requests": 4999, "actions": 3950}
+{"kind": "heartbeat", "turn": 4020, "depth": 5, "t": 431.8, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 105, "hpmax": 105, "xl": 8, "ac": -9, "requests": 5864, "actions": 4517}
+{"kind": "depth", "turn": 4689, "depth": 6, "t": 482.5, "value": 6, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 4776, "depth": 7, "t": 495.3, "value": 7, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 5020, "depth": 6, "t": 525.1, "lvl": "Dlvl:6", "dname": "The Dungeons of Doom", "hp": 105, "hpmax": 105, "xl": 8, "ac": -9, "requests": 7020, "actions": 5364}
+{"kind": "branch", "turn": 5207, "depth": 5, "t": 540.6, "dname": "Sokoban", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 5207, "depth": 5, "t": 540.6, "stage": "sokoban"}
+{"kind": "special", "turn": 5207, "depth": 5, "t": 540.6, "name": "soko4", "lvl": "Dlvl:5  "}
+{"kind": "special", "turn": 5389, "depth": 4, "t": 576.9, "name": "soko3", "lvl": "Dlvl:4  "}
+{"kind": "special", "turn": 5808, "depth": 3, "t": 647.7, "name": "soko2", "lvl": "Dlvl:3  "}
+{"kind": "xl", "turn": 5888, "depth": 3, "t": 660.4, "value": 9}
+{"kind": "heartbeat", "turn": 6020, "depth": 3, "t": 680.3, "lvl": "Dlvl:3", "dname": "Sokoban", "hp": 118, "hpmax": 118, "xl": 9, "ac": -9, "requests": 8319, "actions": 6499}
+{"kind": "special", "turn": 6109, "depth": 2, "t": 694.4, "name": "soko1", "lvl": "Dlvl:2  "}
+{"kind": "heartbeat", "turn": 7020, "depth": 2, "t": 873.0, "lvl": "Dlvl:2", "dname": "Sokoban", "hp": 109, "hpmax": 118, "xl": 9, "ac": -9, "requests": 10049, "actions": 7958}
+{"kind": "depth", "turn": 7171, "depth": 8, "t": 889.5, "value": 8, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 8020, "depth": 7, "t": 954.2, "lvl": "Dlvl:7", "dname": "The Dungeons of Doom", "hp": 118, "hpmax": 118, "xl": 9, "ac": -13, "requests": 11060, "actions": 8693}
+{"kind": "heartbeat", "turn": 9020, "depth": 7, "t": 1000.4, "lvl": "Dlvl:7", "dname": "The Dungeons of Doom", "hp": 118, "hpmax": 118, "xl": 9, "ac": -13, "requests": 11760, "actions": 9053}
+{"kind": "xl", "turn": 9138, "depth": 7, "t": 1006.6, "value": 10}
+{"kind": "item_lost", "turn": 9162, "depth": 7, "t": 1010.4, "item": "pick-axe", "messages": ["Pick an object.", "@        a human or elf (peaceful Weliki Oestjoeg) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Weliki Oestjoeg's liquor emporium!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", ":        a lizard (lizard)", "You kill the lizard!", "You do not owe Weliki Oestjoeg anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 6, :y 14}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 9176, "depth": 7, "t": 1015.6, "item": "pick-axe"}
+{"kind": "depth", "turn": 9414, "depth": 9, "t": 1043.2, "value": 9, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 9631, "depth": 10, "t": 1067.9, "value": 10, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 9631, "depth": 10, "t": 1067.9, "stage": "dlvl10"}
+{"kind": "heartbeat", "turn": 10026, "depth": 10, "t": 1086.9, "lvl": "Dlvl:10", "dname": "The Dungeons of Doom", "hp": 121, "hpmax": 121, "xl": 10, "ac": -12, "requests": 12855, "actions": 9862}
+{"kind": "depth", "turn": 10327, "depth": 11, "t": 1121.6, "value": 11, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 10689, "depth": 12, "t": 1156.3, "value": 12, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 10689, "depth": 12, "t": 1156.3, "name": "bigrm", "lvl": "Dlvl:12 "}
+{"kind": "stage", "turn": 10689, "depth": 12, "t": 1156.3, "stage": "bigroom", "variant": "bigrm"}
+{"kind": "heartbeat", "turn": 11049, "depth": 12, "t": 1199.2, "lvl": "Dlvl:12", "dname": "The Dungeons of Doom", "hp": 121, "hpmax": 121, "xl": 10, "ac": -12, "requests": 14228, "actions": 10929}
+{"kind": "depth", "turn": 11050, "depth": 13, "t": 1199.3, "value": 13, "dname": "The Dungeons of Doom"}
+{"kind": "item_lost", "turn": 11236, "depth": 13, "t": 1230.1, "item": "pick-axe", "messages": ["@        a human or elf (peaceful Ballingeary) [seen: normal vision, infravision]", "k - a blessed +0 pick-axe (weapon in hand).", "\"Velkommen, bot!  Welcome to Ballingeary's second-hand bookstore!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Ballingeary) [seen: normal vision, infravision]", "a - the blessed rustproof +1 Excalibur (weapon in hand).", "You do not owe Ballingeary anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 8, :y 8}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 11304, "depth": 13, "t": 1252.0, "item": "pick-axe"}
+{"kind": "depth", "turn": 11359, "depth": 14, "t": 1260.6, "value": 14, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 11367, "depth": 14, "t": 1262.1, "value": 11}
+{"kind": "depth", "turn": 11754, "depth": 15, "t": 1309.4, "value": 15, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 12049, "depth": 15, "t": 1340.6, "lvl": "Dlvl:15", "dname": "The Dungeons of Doom", "hp": 129, "hpmax": 129, "xl": 11, "ac": -21, "requests": 16020, "actions": 12273}
+{"kind": "depth", "turn": 12092, "depth": 16, "t": 1342.2, "value": 16, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 12092, "depth": 16, "t": 1342.2, "name": "rogue", "lvl": "Dlvl:16 "}
+{"kind": "depth", "turn": 12223, "depth": 17, "t": 1355.9, "value": 17, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 12864, "depth": 18, "t": 1454.6, "value": 18, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 13054, "depth": 18, "t": 1476.5, "lvl": "Dlvl:18", "dname": "The Dungeons of Doom", "hp": 129, "hpmax": 129, "xl": 11, "ac": -20, "requests": 17521, "actions": 13477}
+{"kind": "depth", "turn": 13171, "depth": 19, "t": 1487.7, "value": 19, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 13601, "depth": 20, "t": 1529.8, "value": 20, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 13971, "depth": 21, "t": 1578.4, "value": 21, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 13999, "depth": 22, "t": 1583.3, "value": 22, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 14054, "depth": 22, "t": 1591.8, "lvl": "Dlvl:22", "dname": "The Dungeons of Doom", "hp": 114, "hpmax": 129, "xl": 11, "ac": -21, "requests": 19035, "actions": 14711}
+{"kind": "xl", "turn": 14063, "depth": 22, "t": 1593.9, "value": 12}
+{"kind": "item_lost", "turn": 14351, "depth": 13, "t": 1617.5, "item": "pick-axe", "messages": ["Where do you want to travel to?", "Something is written here in the dust.", "You read: \"Elbc?cthElbc??th\".", "Something is written here in the dust.", "You read: \"Elbc?cthElbc??th\".", "You see no objects here.", "Pick an object.", "@        a human or elf (peaceful Ballingeary) [seen: normal vision, infravision]", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 6, :y 9}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 14367, "depth": 13, "t": 1622.7, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 15075, "depth": 5, "t": 1668.0, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 137, "hpmax": 137, "xl": 12, "ac": -24, "requests": 20129, "actions": 15483}
+{"kind": "end", "turn": 15109, "depth": 8, "t": 1671.6, "outcome": "stuck", "reason": "action loop: move repeated 40 times at turn 15109 ({'act': 'move', 'why': [\"hitting {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'color': 'bright-blue'\", \"targetting leftover enemy {'x': 15, 'y': 5, 'known': 15109, 'first-known': 15109, 'glyph': '@', 'col\"], 'dir': 'SW'})"}

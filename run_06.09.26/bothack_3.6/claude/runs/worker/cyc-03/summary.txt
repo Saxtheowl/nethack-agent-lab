@@ -1,0 +1,31 @@
+series cyc-03: 6 games
+outcomes: {'stuck': 6}
+stage funnel: dlvl2=6, mines=6, minetown=6, oracle=6, sokoban=6, bigroom=4, dlvl10=6, medusa=6, castle=6, valley=6, quest=6, bell=3, vlad=5, candelabrum=2, gehennom_deep=5, wizard_tower=5, book=1
+assists: {'kit': 48, 'feed': 66, 'lifesave': 1155, 'noslime': 7, 'brainsave': 28}
+failure signatures:
+    4  stuck | no novelty for N turns on Dlvl:N (last action {..})
+    1  stuck | action loop: inventory repeated N times at turn N ({..})
+    1  stuck | death loop: N assisted lifesaves in N turns without progress (last: Olog-hai)
+top anomalies:
+    9137  msg-rewrite:^Your (\w+) (feels?) better\.$
+    9070  leftover_keys_dropped
+    9070  note:leftover
+    1627  note:compat
+    1301  note:assist
+    1226  compat:container:o
+     795  menu_empty_answer
+     382  menu_letter_unmatched
+     233  compat:container:i
+     216  msg-rewrite:^You open (.*\.\.\.)$
+      74  msg-rewrite:^You feel as if you need some 
+      69  compat:container:q
+      69  msg-rewrite:^(?:Hmmm, .* turns out to be l
+      66  compat:name:i
+      62  fallback
+games:
+  g001 seed=7011 stuck        T=41071  depth=48  stage=wizard_tower 7941.8s  no novelty for 6003 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['wait out le
+  g002 seed=7013 stuck        T=64964  depth=44  stage=book         12815.1s  action loop: inventory repeated 40 times at turn 64964 ({'act': 'inventory', 'why': ['requ
+  g003 seed=7043 stuck        T=49122  depth=46  stage=gehennom_deep 11574.1s  no novelty for 6000 turns on Dlvl:41 (last action {'act': 'repeated', 'why': ['wait out le
+  g004 seed=7034 stuck        T=21381  depth=29  stage=valley       2492.4s  death loop: 150 assisted lifesaves in 265 turns without progress (last: Olog-hai)
+  g005 seed=7047 stuck        T=50602  depth=51  stage=vlad         11302.9s  no novelty for 6003 turns on Dlvl:43 (last action {'act': 'repeated', 'why': ['wait out le
+  g006 seed=7007 stuck        T=46728  depth=48  stage=wizard_tower 8489.6s  no novelty for 6003 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['wait out le

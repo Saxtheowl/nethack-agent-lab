@@ -314,6 +314,12 @@ def run_game(args):
         rec.stage('ascended')
         result['stages'] = dict(rec.reached)
         result['last_stage'] = 'ascended'
+    try:
+        from pybothack.pathing import _EXPL_STATS
+        rec.note('perf', 'explorable versions=%d calls=%d misses=%d'
+                 % tuple(_EXPL_STATS))
+    except Exception:                      # noqa: BLE001
+        pass
     rec.milestone('end', outcome=outcome, reason=reason)
     rec.dump_ring()
     rec.close()

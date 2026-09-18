@@ -227,6 +227,7 @@ class Delegator(object):
                                   name)
 
     def _invoke_prompt(self, name, *args):
+        vetoed = []
         for h in self._handler_list():
             fn = getattr(h, name, None)
             if fn is None:
@@ -239,8 +240,15 @@ class Delegator(object):
             if res is not None:
                 if (name == 'choose_action' and self.action_veto is not None
                         and self.action_veto(res)):
+                    vetoed.append(res)
                     continue
                 return res
+        if vetoed:
+            # every handler proposed a refused action: better to retry one
+            # than to answer nothing at all (cyc-03 g002 escaped forever)
+            log.warning("all %d proposed actions are vetoed, retrying one",
+                        len(vetoed))
+            return vetoed[0]
         raise RuntimeError("No handler responded to prompt of " + name)
 
     def _respond_escapable(self, kind, name, *args):

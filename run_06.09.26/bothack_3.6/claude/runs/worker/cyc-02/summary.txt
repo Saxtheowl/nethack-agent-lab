@@ -1,0 +1,35 @@
+series cyc-02: 9 games
+outcomes: {'stuck': 3, 'limit': 6}
+stage funnel: dlvl2=9, mines=9, minetown=9, oracle=9, sokoban=9, bigroom=5, dlvl10=8, medusa=7, castle=7, valley=7, quest=7, bell=3, vlad=5, candelabrum=4, gehennom_deep=5, wizard_tower=5
+assists: {'kit': 72, 'lifesave': 70, 'feed': 28, 'noslime': 1}
+failure signatures:
+    6  limit | max_seconds N
+    1  stuck | action loop: move repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'pit)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+top anomalies:
+    4339  msg-rewrite:^Your (\w+) (feels?) better\.$
+    4279  leftover_keys_dropped
+    4279  note:leftover
+    2033  note:compat
+    1530  compat:container:o
+     982  menu_empty_answer
+     464  menu_letter_unmatched
+     317  compat:container:i
+     250  msg-rewrite:^You open (.*\.\.\.)$
+     171  note:assist
+      99  msg-rewrite:^(?:Hmmm, .* turns out to be l
+      88  compat:container:q
+      60  compat:name:i
+      47  msg-rewrite:^You feel as if you need some 
+      38  compat:name:o
+games:
+  g001 seed=7003 stuck        T=15109  depth=22  stage=bigroom      1671.6s  action loop: move repeated 40 times at turn 15109 ({'act': 'move', 'why': ["hitting {'x': 
+  g002 seed=7007 stuck        T=18129  depth=30  stage=quest        2808.0s  fixation: target (42, 6, 'Home 2 ') keeps coming back after 3 recoveries (examining tile {
+  g003 seed=7012 limit        T=33611  depth=46  stage=wizard_tower 7200.6s  max_seconds 7200
+  g004 seed=7047 stuck        T=6899   depth=7   stage=sokoban      944.5s  fixation: target (50, 17, 'Dlvl:2  ') keeps coming back after 3 recoveries (examining tile
+  g005 seed=7011 limit        T=35906  depth=48  stage=wizard_tower 7200.1s  max_seconds 7200
+  g006 seed=7013 limit        T=38480  depth=44  stage=gehennom_deep 7200.1s  max_seconds 7200
+  g007 seed=7014 limit        T=39804  depth=47  stage=candelabrum  7200.1s  max_seconds 7200
+  g008 seed=7043 limit        T=42916  depth=33  stage=valley       7200.9s  max_seconds 7200
+  g009 seed=7034 limit        T=35775  depth=48  stage=wizard_tower 7200.3s  max_seconds 7200

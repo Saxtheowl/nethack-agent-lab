@@ -1,0 +1,800 @@
+{"m": "H        a giant humanoid (ettin) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80191, "k": "pos", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80192, "k": "cmd", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80193, "k": "pos", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80194, "k": "cmd", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80195, "k": "yn", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80196, "k": "cmd", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 9}"}
+{"a": ";"}
+{"r": 80197, "k": "pos", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 8)"}
+{"r": 80198, "k": "cmd", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 17}"}
+{"a": ";"}
+{"r": 80199, "k": "pos", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 16)"}
+{"r": 80200, "k": "cmd", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "&        a major demon (invisible bone devil) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80201, "k": "yn", "T": 41039, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80202, "k": "cmd", "T": 41040, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80203, "k": "cmd", "T": 41040, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80204, "k": "cmdcont", "T": 41040, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80205, "k": "cmdcont", "T": 41040, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80206, "k": "cmd", "T": 41047, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80207, "k": "cmdcont", "T": 41047, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80208, "k": "cmdcont", "T": 41047, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80209, "k": "cmd", "T": 41048, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80210, "k": "yn", "T": 41048, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80211, "k": "cmd", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80212, "k": "pos", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80213, "k": "cmd", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 20}"}
+{"a": ";"}
+{"r": 80214, "k": "pos", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 19)"}
+{"r": 80215, "k": "cmd", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Y        an apelike creature (owlbear) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80216, "k": "cmd", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80217, "k": "cmdcont", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80218, "k": "cmdcont", "T": 41049, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80219, "k": "cmd", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80220, "k": "pos", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80221, "k": "cmd", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80222, "k": "pos", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80223, "k": "cmd", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 17}"}
+{"a": ";"}
+{"r": 80224, "k": "pos", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 16)"}
+{"r": 80225, "k": "cmd", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "H        a giant humanoid (ettin) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80226, "k": "cmdcont", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80227, "k": "cmdcont", "T": 41054, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80228, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80229, "k": "pos", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80230, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80231, "k": "yn", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80232, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 10}"}
+{"a": ";"}
+{"r": 80233, "k": "pos", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 9)"}
+{"r": 80234, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 17}"}
+{"a": ";"}
+{"r": 80235, "k": "pos", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 16)"}
+{"r": 80236, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "&        a major demon (invisible bone devil) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80237, "k": "cmd", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80238, "k": "cmdcont", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"a": "0"}
+{"r": 80239, "k": "cmdcont", "T": 41056, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80240, "k": "cmd", "T": 41058, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80241, "k": "cmdcont", "T": 41058, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80242, "k": "cmdcont", "T": 41058, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80243, "k": "cmd", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80244, "k": "pos", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80245, "k": "cmd", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "D        a dragon (black dragon) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 10}"}
+{"a": ";"}
+{"r": 80246, "k": "pos", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 9)"}
+{"r": 80247, "k": "cmd", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 19}"}
+{"a": ";"}
+{"r": 80248, "k": "pos", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 18)"}
+{"r": 80249, "k": "cmd", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (bone devil) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80250, "k": "cmdcont", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80251, "k": "cmdcont", "T": 41063, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80252, "k": "cmd", "T": 41065, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80253, "k": "pos", "T": 41065, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80254, "k": "cmd", "T": 41065, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80255, "k": "yn", "T": 41065, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80256, "k": "cmd", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80257, "k": "pos", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80258, "k": "cmd", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Y        an apelike creature (owlbear) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 19}"}
+{"a": ";"}
+{"r": 80259, "k": "pos", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 18)"}
+{"r": 80260, "k": "cmd", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 10}"}
+{"a": ";"}
+{"r": 80261, "k": "pos", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 9)"}
+{"r": 80262, "k": "cmd", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80263, "k": "cmd", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80264, "k": "cmdcont", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"a": "0"}
+{"r": 80265, "k": "cmdcont", "T": 41066, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80266, "k": "cmd", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80267, "k": "pos", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80268, "k": "cmd", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 10}"}
+{"a": ";"}
+{"r": 80269, "k": "pos", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 9)"}
+{"r": 80270, "k": "cmd", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80271, "k": "cmdcont", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80272, "k": "cmdcont", "T": 41067, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80273, "k": "cmd", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80274, "k": "pos", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80275, "k": "cmd", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 10}"}
+{"a": ";"}
+{"r": 80276, "k": "pos", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 9)"}
+{"r": 80277, "k": "cmd", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80278, "k": "pos", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80279, "k": "cmd", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "d        a dog or other canine (warg) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 9}"}
+{"a": ";"}
+{"r": 80280, "k": "pos", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 8)"}
+{"r": 80281, "k": "cmd", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80282, "k": "yn", "T": 41072, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80283, "k": "cmd", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80284, "k": "yn", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80285, "k": "cmd", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 47, :y 10}"}
+{"a": ";"}
+{"r": 80286, "k": "pos", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(48, 9)"}
+{"r": 80287, "k": "cmd", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80288, "k": "cmd", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80289, "k": "cmdcont", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"a": "0"}
+{"r": 80290, "k": "cmdcont", "T": 41073, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80291, "k": "cmd", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80292, "k": "pos", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80293, "k": "cmd", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 10}"}
+{"a": ";"}
+{"r": 80294, "k": "pos", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 9)"}
+{"r": 80295, "k": "cmd", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80296, "k": "pos", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80297, "k": "cmd", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "d        a dog or other canine (large dog) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80298, "k": "cmdcont", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80299, "k": "cmdcont", "T": 41077, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80300, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"m": "You are beginning to feel hungry."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 47, :y 19}"}
+{"a": ";"}
+{"r": 80301, "k": "pos", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(48, 18)"}
+{"r": 80302, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "d        a dog or other canine (large dog) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 50, :y 20}"}
+{"a": ";"}
+{"r": 80303, "k": "pos", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(51, 19)"}
+{"r": 80304, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80305, "k": "pos", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80306, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (marilith) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80307, "k": "pos", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80308, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80309, "k": "yn", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80310, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80311, "k": "cmd", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80312, "k": "cmdcont", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"a": "0"}
+{"r": 80313, "k": "cmdcont", "T": 41081, "lvl": "Dlvl:44", "u": [45, 16], "hp": 186, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80314, "k": "cmd", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80315, "k": "pos", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80316, "k": "cmd", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "O        an ogre (ogre king) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 10}"}
+{"a": ";"}
+{"r": 80317, "k": "pos", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 9)"}
+{"r": 80318, "k": "cmd", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80319, "k": "cmdcont", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80320, "k": "cmdcont", "T": 41082, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80321, "k": "cmd", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 52, :y 17}"}
+{"a": ";"}
+{"r": 80322, "k": "pos", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(53, 16)"}
+{"r": 80323, "k": "cmd", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "i        an imp or minor demon (quasit) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 10}"}
+{"a": ";"}
+{"r": 80324, "k": "pos", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 9)"}
+{"r": 80325, "k": "cmd", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80326, "k": "yn", "T": 41089, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80327, "k": "cmd", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80328, "k": "yn", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80329, "k": "cmd", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80330, "k": "pos", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80331, "k": "cmd", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 50, :y 20}"}
+{"a": ";"}
+{"r": 80332, "k": "pos", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(51, 19)"}
+{"r": 80333, "k": "cmd", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80334, "k": "yn", "T": 41090, "lvl": "Dlvl:44", "u": [45, 16], "hp": 185, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80335, "k": "cmd", "T": 41091, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80336, "k": "cmd", "T": 41091, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80337, "k": "cmdcont", "T": 41091, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80338, "k": "cmdcont", "T": 41091, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80339, "k": "cmd", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 20}"}
+{"a": ";"}
+{"r": 80340, "k": "pos", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 19)"}
+{"r": 80341, "k": "cmd", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 17}"}
+{"a": ";"}
+{"r": 80342, "k": "pos", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 16)"}
+{"r": 80343, "k": "cmd", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "H        a giant humanoid (ettin) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80344, "k": "cmdcont", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80345, "k": "cmdcont", "T": 41097, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80346, "k": "cmd", "T": 41098, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80347, "k": "pos", "T": 41098, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80348, "k": "cmd", "T": 41098, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "D        a dragon (silver dragon) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80349, "k": "yn", "T": 41098, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80350, "k": "cmd", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"note": "recovery", "d": "stall: 3000 turns without novelty, resetting exploration state"}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 10}"}
+{"a": ";"}
+{"r": 80351, "k": "pos", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 9)"}
+{"r": 80352, "k": "cmd", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80353, "k": "pos", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80354, "k": "cmd", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "O        an ogre (ogre king) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80355, "k": "yn", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80356, "k": "cmd", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 10}"}
+{"a": ";"}
+{"r": 80357, "k": "pos", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 9)"}
+{"r": 80358, "k": "cmd", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "&        a major demon (marilith) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80359, "k": "yn", "T": 41099, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80360, "k": "cmd", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 10}"}
+{"a": ";"}
+{"r": 80361, "k": "pos", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 9)"}
+{"r": 80362, "k": "cmd", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "s        an arachnid or centipede (giant spider) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80363, "k": "yn", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80364, "k": "cmd", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80365, "k": "cmd", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80366, "k": "cmdcont", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"a": "0"}
+{"r": 80367, "k": "cmdcont", "T": 41100, "lvl": "Dlvl:44", "u": [45, 16], "hp": 188, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80368, "k": "cmd", "T": 41104, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80369, "k": "pos", "T": 41104, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80370, "k": "cmd", "T": 41104, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80371, "k": "cmdcont", "T": 41104, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80372, "k": "cmdcont", "T": 41104, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80373, "k": "cmd", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80374, "k": "yn", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80375, "k": "cmd", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 44, :y 10}"}
+{"a": ";"}
+{"r": 80376, "k": "pos", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(45, 9)"}
+{"r": 80377, "k": "cmd", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "&        a major demon (marilith) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80378, "k": "cmd", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80379, "k": "cmdcont", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"a": "0"}
+{"r": 80380, "k": "cmdcont", "T": 41107, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80381, "k": "cmd", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 20}"}
+{"a": ";"}
+{"r": 80382, "k": "pos", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 19)"}
+{"r": 80383, "k": "cmd", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (bone devil) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 19}"}
+{"a": ";"}
+{"r": 80384, "k": "pos", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 18)"}
+{"r": 80385, "k": "cmd", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (bone devil) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80386, "k": "pos", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80387, "k": "cmd", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "d        a dog or other canine (warg) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80388, "k": "cmdcont", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80389, "k": "cmdcont", "T": 41110, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80390, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 10}"}
+{"a": ";"}
+{"r": 80391, "k": "pos", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 9)"}
+{"r": 80392, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 19}"}
+{"a": ";"}
+{"r": 80393, "k": "pos", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 18)"}
+{"r": 80394, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "d        a dog or other canine (large dog) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 50, :y 20}"}
+{"a": ";"}
+{"r": 80395, "k": "pos", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(51, 19)"}
+{"r": 80396, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80397, "k": "yn", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80398, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80399, "k": "pos", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80400, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80401, "k": "cmd", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Your right leg is in no shape for kicking."}
+{"note": "leftover", "d": "h"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80402, "k": "cmdcont", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"a": "0"}
+{"r": 80403, "k": "cmdcont", "T": 41115, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80404, "k": "cmd", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "You are in full health."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 20}"}
+{"a": ";"}
+{"r": 80405, "k": "pos", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 19)"}
+{"r": 80406, "k": "cmd", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (bone devil) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 51, :y 19}"}
+{"a": ";"}
+{"r": 80407, "k": "pos", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(52, 18)"}
+{"r": 80408, "k": "cmd", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "O        an ogre (ogre king) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80409, "k": "cmdcont", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80410, "k": "cmdcont", "T": 41118, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80411, "k": "cmd", "T": 41124, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 37, :y 19}"}
+{"a": ";"}
+{"r": 80412, "k": "pos", "T": 41124, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(38, 18)"}
+{"r": 80413, "k": "cmd", "T": 41124, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "&        a major demon (vrock) [seen: telepathy]"}
+{"act": "repeated", "why": ["wait out leg hurt", "kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 80414, "k": "cmdcont", "T": 41124, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"a": "0"}
+{"r": 80415, "k": "cmdcont", "T": 41124, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 80416, "k": "cmd", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "Your leg feels better."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 10}"}
+{"a": ";"}
+{"r": 80417, "k": "pos", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 9)"}
+{"r": 80418, "k": "cmd", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 36, :y 17}"}
+{"a": ";"}
+{"r": 80419, "k": "pos", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(37, 16)"}
+{"r": 80420, "k": "cmd", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189}
+{"m": "D        a dragon (red dragon) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80421, "k": "yn", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 189, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80422, "k": "cmd", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 10}"}
+{"a": ";"}
+{"r": 80423, "k": "pos", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 9)"}
+{"r": 80424, "k": "cmd", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80425, "k": "yn", "T": 41125, "lvl": "Dlvl:44", "u": [45, 16], "hp": 187, "hpmax": 189, "q": "In what direction?"}
+{"a": "h"}
+{"r": 80426, "k": "cmd", "T": 41126, "lvl": "Dlvl:44", "u": [45, 16], "hp": 184, "hpmax": 189}
+{"m": "Ouch!  That hurts!"}
+{"act": "kick", "why": ["kick", "seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:43", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "\\x04"}
+{"r": 80427, "k": "yn", "T": 41126, "lvl": "Dlvl:44", "u": [45, 16], "hp": 184, "hpmax": 189, "q": "In what direction?"}
+{"note": "abort", "d": "limit: max_seconds 6600"}

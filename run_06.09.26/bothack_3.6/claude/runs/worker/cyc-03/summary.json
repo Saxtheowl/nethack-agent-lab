@@ -1,0 +1,184 @@
+{
+ "series": "cyc-03",
+ "games": 6,
+ "outcomes": {
+  "stuck": 6
+ },
+ "stage_funnel": {
+  "dlvl2": 6,
+  "mines": 6,
+  "minetown": 6,
+  "oracle": 6,
+  "sokoban": 6,
+  "bigroom": 4,
+  "dlvl10": 6,
+  "medusa": 6,
+  "castle": 6,
+  "valley": 6,
+  "quest": 6,
+  "bell": 3,
+  "vlad": 5,
+  "candelabrum": 2,
+  "gehennom_deep": 5,
+  "wizard_tower": 5,
+  "book": 1
+ },
+ "failure_signatures": [
+  [
+   "stuck | no novelty for N turns on Dlvl:N (last action {..})",
+   4
+  ],
+  [
+   "stuck | action loop: inventory repeated N times at turn N ({..})",
+   1
+  ],
+  [
+   "stuck | death loop: N assisted lifesaves in N turns without progress (last: Olog-hai)",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 9137,
+  "leftover_keys_dropped": 9070,
+  "note:leftover": 9070,
+  "note:compat": 1627,
+  "note:assist": 1301,
+  "compat:container:o": 1226,
+  "menu_empty_answer": 795,
+  "menu_letter_unmatched": 382,
+  "compat:container:i": 233,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 216,
+  "msg-rewrite:^You feel as if you need some ": 74,
+  "compat:container:q": 69,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 69,
+  "compat:name:i": 66,
+  "fallback": 62,
+  "note:fallback": 62,
+  "action_veto": 51,
+  "note:veto": 51,
+  "note:recovery": 43,
+  "compat:name:o": 33,
+  "msg-rewrite:^Air currents pull you down in": 30,
+  "note:forced-command": 25,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 20,
+  "menu_show:current_skills": 18,
+  "farlook-symbol": 8,
+  "farlook-trap": 6,
+  "note:abort": 6,
+  "msg-rewrite:^It is locked\\.$": 3
+ },
+ "assist_totals": {
+  "kit": 48,
+  "feed": 66,
+  "lifesave": 1155,
+  "noslime": 7,
+  "brainsave": 28
+ },
+ "turns_total": 273868,
+ "turns_max": 64964,
+ "elapsed_total_s": 54615.9,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 7011,
+   "outcome": "stuck",
+   "reason": "no novelty for 6003 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['wait out leg hurt', 'kick', 'seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:41', 'se",
+   "turns": 41071,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 7941.8,
+   "turns_per_s": 5.17,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 6
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 7013,
+   "outcome": "stuck",
+   "reason": "action loop: inventory repeated 40 times at turn 64964 ({'act': 'inventory', 'why': ['requested inventory update']})",
+   "turns": 64964,
+   "max_depth": 44,
+   "last_stage": "book",
+   "elapsed_s": 12815.1,
+   "turns_per_s": 5.07,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 168,
+    "feed": 24,
+    "noslime": 1
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 7043,
+   "outcome": "stuck",
+   "reason": "no novelty for 6000 turns on Dlvl:41 (last action {'act': 'repeated', 'why': ['wait out leg hurt', 'kick', 'seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:40', 'se",
+   "turns": 49122,
+   "max_depth": 46,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 11574.1,
+   "turns_per_s": 4.24,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5,
+    "lifesave": 10
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 7034,
+   "outcome": "stuck",
+   "reason": "death loop: 150 assisted lifesaves in 265 turns without progress (last: Olog-hai)",
+   "turns": 21381,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 2492.4,
+   "turns_per_s": 8.58,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 932,
+    "noslime": 4,
+    "brainsave": 16
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 7047,
+   "outcome": "stuck",
+   "reason": "no novelty for 6003 turns on Dlvl:43 (last action {'act': 'repeated', 'why': ['wait out leg hurt', 'kick', 'seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:42', 'se",
+   "turns": 50602,
+   "max_depth": 51,
+   "last_stage": "vlad",
+   "elapsed_s": 11302.9,
+   "turns_per_s": 4.48,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 5,
+    "noslime": 1,
+    "feed": 15
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 7007,
+   "outcome": "stuck",
+   "reason": "no novelty for 6003 turns on Dlvl:42 (last action {'act': 'repeated', 'why': ['wait out leg hurt', 'kick', 'seek going directly', 'looking for the stairs-up', 'switching within branch to Dlvl:41', 'se",
+   "turns": 46728,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 8489.6,
+   "turns_per_s": 5.5,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 40,
+    "noslime": 1,
+    "brainsave": 12,
+    "feed": 14
+   }
+  }
+ ]
+}

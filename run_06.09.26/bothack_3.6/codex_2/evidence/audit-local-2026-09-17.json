@@ -1,0 +1,189 @@
+{
+  "read_at_utc": "2026-09-17T18:26:22.692529+00:00",
+  "source_root": "/home/roro/work/projects/super_nethack/run_06.09.26/bothack_3.6/claude",
+  "scope": "Local read-only audit. No remote worker inspection. No games launched.",
+  "files": {
+    "README.md": {
+      "sha256": "4a9613cc8fdfe43674d025ac4986697f28ad99611b5dad4c3fe97d01da86edd5",
+      "bytes": 9921,
+      "lines": 182
+    },
+    "docs/HANDOFF.md": {
+      "sha256": "cb84c44507685bad385f1f429c369a011a95abb7bd79cf871ffede511ce9ced5",
+      "bytes": 19635,
+      "lines": 406
+    },
+    "docs/PROGRESS.md": {
+      "sha256": "f870755fa99a5b331654048247ac784f0de37fa7d6346f7f7adfe70040e61760",
+      "bytes": 5810,
+      "lines": 116
+    },
+    "docs/DEVLOG.md": {
+      "sha256": "ef9a379d8bf83ae4b4bbdad9bd5e3949fade498e644549f3bd144adc5956140c",
+      "bytes": 10142,
+      "lines": 175
+    },
+    "nhbot/engine.py": {
+      "sha256": "5bd470a7e2037cf286f9284c81cd1ff6fea33a8e2ec7c76a3439470c05b4c429",
+      "bytes": 12918,
+      "lines": 368
+    },
+    "nhbot/rungame.py": {
+      "sha256": "7377e062f14f27f6ae6e7f469e4a7b48bf3ee8cc4f58c4a69348648b19352632",
+      "bytes": 15490,
+      "lines": 404
+    },
+    "nhbot/series.py": {
+      "sha256": "ac7c00f56304dc9cc0199f8efdc3fa4e0b8aa5175f2a75df00af565c695a9d48",
+      "bytes": 10044,
+      "lines": 243
+    },
+    "nhbot/recorder.py": {
+      "sha256": "2e9bf283e8bc413ea96aab9bba0466bdfa676cc85246c4fd81dea76c8e823069",
+      "bytes": 9975,
+      "lines": 248
+    },
+    "nhbot/supervisor.py": {
+      "sha256": "fb727b10310893f72203110ac291bf586725df805d32a840ed72ab4311285775",
+      "bytes": 15441,
+      "lines": 356
+    },
+    "pybothack/nhbridge.py": {
+      "sha256": "918f796099e742559ea37040b01dcdc4c3e1f364a915cde1af19d11a49db57dc",
+      "bytes": 38728,
+      "lines": 983
+    },
+    "pybothack/behaviors.py": {
+      "sha256": "8dc91b26646110667877abb1d3e2ab4e77dc7536137c1bee4a910d004c2bd767",
+      "bytes": 4280,
+      "lines": 134
+    },
+    "engine/build.sh": {
+      "sha256": "30668832db1f29ef9a5406ba603f0ab987bc5d81f50c92ad322b5bbcbc527a91",
+      "bytes": 2727,
+      "lines": 47
+    },
+    "engine/nethack-3.6.7/win/bot/winbot.c": {
+      "sha256": "0f44be07720329f48048920600b9924ae9d5436aa4ad308def775930d5bac237",
+      "bytes": 34350,
+      "lines": 1380
+    },
+    "engine/nethack-3.6.7/src/spell.c": {
+      "sha256": "14f9b1381cb17241456edb6634723e560148843ad9487f0d2facc589c99feb50",
+      "bytes": 65176,
+      "lines": 1897
+    }
+  },
+  "campaigns": {
+    "mt-w02": {
+      "result_count": 20,
+      "unique_engine_seeds": 20,
+      "outcomes": {
+        "goal_reached": 18,
+        "stuck": 2
+      },
+      "stages_from_result_json": {
+        "dlvl2": 20,
+        "mines": 19,
+        "minetown": 18,
+        "oracle": 10
+      },
+      "bot_hashes": {
+        "33e8b23e53d9a3b0": 20
+      },
+      "limit_reasons": {}
+    },
+    "ca-w06": {
+      "result_count": 14,
+      "unique_engine_seeds": 14,
+      "outcomes": {
+        "goal_reached": 9,
+        "stuck": 5
+      },
+      "stages_from_result_json": {
+        "dlvl2": 14,
+        "mines": 14,
+        "oracle": 14,
+        "minetown": 14,
+        "sokoban": 13,
+        "dlvl10": 12,
+        "quest": 4,
+        "medusa": 10,
+        "castle": 9,
+        "bigroom": 3
+      },
+      "bot_hashes": {
+        "29d4ebc255a5dcdc": 14
+      },
+      "limit_reasons": {}
+    },
+    "big-w01": {
+      "result_count": 49,
+      "unique_engine_seeds": 49,
+      "outcomes": {
+        "stuck": 44,
+        "crash_bot": 3,
+        "limit": 2
+      },
+      "stages_from_result_json": {
+        "dlvl2": 46,
+        "mines": 46,
+        "minetown": 44,
+        "oracle": 46,
+        "sokoban": 43,
+        "dlvl10": 42,
+        "bigroom": 18,
+        "medusa": 37,
+        "castle": 35,
+        "valley": 29,
+        "quest": 25,
+        "vlad": 14,
+        "candelabrum": 8,
+        "gehennom_deep": 14,
+        "wizard_tower": 14,
+        "bell": 11,
+        "book": 2
+      },
+      "bot_hashes": {
+        "659ba0474facb883": 49
+      },
+      "limit_reasons": {
+        "max_seconds 3600": 2
+      }
+    },
+    "big-w02": {
+      "result_count": 62,
+      "unique_engine_seeds": 62,
+      "outcomes": {
+        "stuck": 37,
+        "limit": 25
+      },
+      "stages_from_result_json": {
+        "dlvl2": 62,
+        "mines": 62,
+        "minetown": 59,
+        "oracle": 62,
+        "sokoban": 56,
+        "dlvl10": 52,
+        "bigroom": 21,
+        "medusa": 48,
+        "castle": 46,
+        "valley": 41,
+        "quest": 38,
+        "wizard_tower": 30,
+        "gehennom_deep": 30,
+        "vlad": 30,
+        "bell": 26,
+        "candelabrum": 14,
+        "book": 13
+      },
+      "bot_hashes": {
+        "ad2230eedd99f48e": 62
+      },
+      "limit_reasons": {
+        "max_seconds 3600": 17,
+        "terminated by signal 15": 8
+      }
+    }
+  }
+}

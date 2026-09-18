@@ -1,0 +1,800 @@
+{"r": 49043, "k": "cmd", "T": 33385, "lvl": "Dlvl:45", "u": [45, 12], "hp": 188, "hpmax": 188}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49044, "k": "cmd", "T": 33385, "lvl": "Dlvl:45", "u": [45, 12], "hp": 188, "hpmax": 188}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 12}"], "dir": "NE"}
+{"a": "u"}
+{"r": 49045, "k": "cmd", "T": 33385, "lvl": "Dlvl:45", "u": [46, 11], "hp": 188, "hpmax": 188}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 12}"], "dir": "E"}
+{"a": "l"}
+{"r": 49046, "k": "cmd", "T": 33386, "lvl": "Dlvl:45", "u": [47, 11], "hp": 188, "hpmax": 188}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 12}"], "dir": "E"}
+{"a": "l"}
+{"r": 49047, "k": "cmd", "T": 33387, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188}
+{"m": "You see here a potion of extra healing."}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49048, "k": "cmd", "T": 33387, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188}
+{"m": "You see here a potion of extra healing."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 49049, "k": "cmd", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188}
+{"m": "J - a potion of extra healing."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 49050, "k": "cmd", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49051, "k": "cmd", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188}
+{"m": "You see no objects here."}
+{"act": "quaff", "why": ["improve maxhp"], "slot": "J"}
+{"a": "q"}
+{"r": 49052, "k": "yn", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 188, "hpmax": 188, "q": "What do you want to drink? [J or ?*]"}
+{"a": "J"}
+{"r": 49053, "k": "cmd", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "You feel much better."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 49054, "k": "cmd", "T": 33388, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 49055, "k": "cmd", "T": 33389, "lvl": "Dlvl:45", "u": [49, 10], "hp": 190, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49056, "k": "cmd", "T": 33389, "lvl": "Dlvl:45", "u": [49, 10], "hp": 190, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 49057, "k": "cmd", "T": 33390, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49058, "k": "cmdcont", "T": 33390, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49059, "k": "cmdcont", "T": 33390, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49060, "k": "cmd", "T": 33396, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49061, "k": "cmdcont", "T": 33396, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49062, "k": "cmdcont", "T": 33396, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49063, "k": "cmd", "T": 33402, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49064, "k": "cmdcont", "T": 33402, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49065, "k": "cmdcont", "T": 33402, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49066, "k": "cmd", "T": 33408, "lvl": "Dlvl:45", "u": [49, 9], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 49067, "k": "cmd", "T": 33409, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49068, "k": "cmdcont", "T": 33409, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49069, "k": "cmdcont", "T": 33409, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49070, "k": "cmd", "T": 33415, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49071, "k": "cmdcont", "T": 33415, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49072, "k": "cmdcont", "T": 33415, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49073, "k": "cmd", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 42, :y 9}"}
+{"a": ";"}
+{"r": 49074, "k": "pos", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(43, 8)"}
+{"r": 49075, "k": "cmd", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 41, :y 8}"}
+{"a": ";"}
+{"r": 49076, "k": "pos", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(42, 7)"}
+{"r": 49077, "k": "cmd", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49078, "k": "cmdcont", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49079, "k": "cmdcont", "T": 33420, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49080, "k": "cmd", "T": 33424, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "The Grey-elf throws an elven dagger!"}
+{"m": "An elven dagger misses you."}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 13}"}
+{"a": ";"}
+{"r": 49081, "k": "pos", "T": 33424, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 12)"}
+{"r": 49082, "k": "cmd", "T": 33424, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 10, 'known': 33424, 'first-known': 33420, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49083, "k": "cmd", "T": 33424, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "The Grey-elf wields an elven broadsword!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 10, 'known': 33424, 'first-known': 33420, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49084, "k": "cmd", "T": 33425, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 10, 'known': 33425, 'first-known': 33420, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49085, "k": "cmd", "T": 33426, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "You hear a nearby zap."}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 10, 'known': 33426, 'first-known': 33420, 'glyph': '@', 'color': None, 'type'"], "dir": "W"}
+{"a": "h"}
+{"r": 49086, "k": "cmd", "T": 33427, "lvl": "Dlvl:45", "u": [48, 9], "hp": 189, "hpmax": 190}
+{"m": "You hit the Grey-elf!"}
+{"m": "The Grey-elf swings his elven broadsword."}
+{"m": "The Grey-elf hits!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 10, 'known': 33427, 'first-known': 33420, 'glyph': '@', 'color': None, 'type'"], "dir": "W"}
+{"a": "h"}
+{"r": 49087, "k": "cmd", "T": 33428, "lvl": "Dlvl:45", "u": [48, 9], "hp": 189, "hpmax": 190}
+{"m": "You kill the Grey-elf!"}
+{"act": "move", "why": ["targetting enemy {'x': 44, 'y': 13, 'known': 33428, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "SE"}
+{"a": "n"}
+{"r": 49088, "k": "cmd", "T": 33428, "lvl": "Dlvl:45", "u": [49, 10], "hp": 189, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49089, "k": "cmd", "T": 33428, "lvl": "Dlvl:45", "u": [49, 10], "hp": 189, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "move", "why": ["targetting enemy {'x': 44, 'y': 13, 'known': 33428, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "SW"}
+{"a": "b"}
+{"r": 49090, "k": "cmd", "T": 33429, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "The Grey-elf shoots 2 elven arrows!"}
+{"m": "The 1st elven arrow misses you."}
+{"m": "The 2nd elven arrow misses you."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 12, 'known': 33429, 'first-known': 33424, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49091, "k": "cmd", "T": 33429, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "The Grey-elf tries to wield an elven short sword."}
+{"m": "The Grey-elf's elven bow is welded to her hand!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 12, 'known': 33429, 'first-known': 33424, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49092, "k": "cmd", "T": 33430, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 12, 'known': 33430, 'first-known': 33424, 'glyph': '@', 'color': Non"]}
+{"a": "s"}
+{"r": 49093, "k": "cmd", "T": 33430, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 12, 'known': 33430, 'first-known': 33424, 'glyph': '@', 'color': None, 'type'"], "dir": "W"}
+{"a": "h"}
+{"r": 49094, "k": "cmd", "T": 33431, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "You hit the Grey-elf!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 12, 'known': 33431, 'first-known': 33424, 'glyph': '@', 'color': None, 'type'"], "dir": "W"}
+{"a": "h"}
+{"r": 49095, "k": "cmd", "T": 33432, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "You hit the Grey-elf!"}
+{"m": "The Grey-elf turns to flee."}
+{"act": "move", "why": ["targetting enemy {'x': 44, 'y': 13, 'known': 33432, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "W"}
+{"a": "h"}
+{"r": 49096, "k": "cmd", "T": 33432, "lvl": "Dlvl:45", "u": [47, 11], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 12}"}
+{"a": ";"}
+{"r": 49097, "k": "pos", "T": 33432, "lvl": "Dlvl:45", "u": [47, 11], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 11)"}
+{"r": 49098, "k": "cmd", "T": 33432, "lvl": "Dlvl:45", "u": [47, 11], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (nurse) [seen: telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 43, 'y': 13, 'known': 33432, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "W"}
+{"a": "h"}
+{"r": 49099, "k": "cmd", "T": 33433, "lvl": "Dlvl:45", "u": [46, 11], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 43, 'y': 13, 'known': 33433, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "W"}
+{"a": "h"}
+{"r": 49100, "k": "cmd", "T": 33433, "lvl": "Dlvl:45", "u": [45, 11], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 42, 'y': 14, 'known': 33433, 'first-known': 33424, 'glyph': '@', 'color': Non"], "dir": "SW"}
+{"a": "b"}
+{"r": 49101, "k": "cmd", "T": 33434, "lvl": "Dlvl:45", "u": [44, 12], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 14, 'known': 33434, 'first-known': 33424, 'glyph': '@', 'color': None, 'type'"], "dir": "SW"}
+{"a": "b"}
+{"r": 49102, "k": "cmd", "T": 33435, "lvl": "Dlvl:45", "u": [44, 12], "hp": 190, "hpmax": 190}
+{"m": "You kill the Grey-elf!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 14}"], "dir": "SW"}
+{"a": "b"}
+{"r": 49103, "k": "cmd", "T": 33435, "lvl": "Dlvl:45", "u": [43, 13], "hp": 190, "hpmax": 190}
+{"m": "There are many objects here."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49104, "k": "cmd", "T": 33435, "lvl": "Dlvl:45", "u": [43, 13], "hp": 190, "hpmax": 190}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 47, :y 12}"], "pos": "#Position{:x 47, :y 12}"}
+{"a": "_"}
+{"r": 49105, "k": "pos", "T": 33435, "lvl": "Dlvl:45", "u": [43, 13], "hp": 190, "hpmax": 190, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(48, 11)"}
+{"r": 49106, "k": "cmd", "T": 33438, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49107, "k": "cmd", "T": 33438, "lvl": "Dlvl:45", "u": [48, 11], "hp": 190, "hpmax": 190}
+{"m": "You see here 2 elven arrows."}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 10}"], "dir": "NE"}
+{"a": "u"}
+{"r": 49108, "k": "cmd", "T": 33438, "lvl": "Dlvl:45", "u": [49, 10], "hp": 190, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49109, "k": "cmd", "T": 33438, "lvl": "Dlvl:45", "u": [49, 10], "hp": 190, "hpmax": 190}
+{"m": "You see here a stalker corpse."}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 10}"], "dir": "NW"}
+{"a": "y"}
+{"r": 49110, "k": "cmd", "T": 33439, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "You see here an elven dagger."}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49111, "k": "cmd", "T": 33439, "lvl": "Dlvl:45", "u": [48, 9], "hp": 190, "hpmax": 190}
+{"m": "You see here an elven dagger."}
+{"act": "move", "why": ["new or desired item at #Position{:x 46, :y 10}"], "dir": "W"}
+{"a": "h"}
+{"r": 49112, "k": "cmd", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49113, "k": "cmd", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 12}"}
+{"a": ";"}
+{"r": 49114, "k": "pos", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 11)"}
+{"r": 49115, "k": "cmd", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"m": "B        a bat or bird (vampire bat) [seen: telepathy]"}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49116, "k": "cmdcont", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49117, "k": "cmdcont", "T": 33439, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49118, "k": "cmd", "T": 33445, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49119, "k": "cmdcont", "T": 33445, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49120, "k": "cmdcont", "T": 33445, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49121, "k": "cmd", "T": 33450, "lvl": "Dlvl:45", "u": [47, 9], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 49122, "k": "cmd", "T": 33451, "lvl": "Dlvl:45", "u": [46, 9], "hp": 190, "hpmax": 190}
+{"m": "You see here a human corpse."}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 49123, "k": "cmd", "T": 33451, "lvl": "Dlvl:45", "u": [46, 9], "hp": 190, "hpmax": 190}
+{"m": "You see here a human corpse."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 12}"}
+{"a": ";"}
+{"r": 49124, "k": "pos", "T": 33451, "lvl": "Dlvl:45", "u": [46, 9], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 11)"}
+{"r": 49125, "k": "cmd", "T": 33451, "lvl": "Dlvl:45", "u": [46, 9], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (nurse) [seen: telepathy]"}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 49126, "k": "cmd", "T": 33451, "lvl": "Dlvl:45", "u": [45, 8], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 49127, "k": "cmd", "T": 33452, "lvl": "Dlvl:45", "u": [45, 7], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33452, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "E"}
+{"a": "l"}
+{"r": 49128, "k": "cmd", "T": 33453, "lvl": "Dlvl:45", "u": [46, 7], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33453, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "NE"}
+{"a": "u"}
+{"r": 49129, "k": "cmd", "T": 33453, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33453, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "N"}
+{"a": "k"}
+{"r": 49130, "k": "cmd", "T": 33454, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33454, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "N"}
+{"a": "k"}
+{"r": 49131, "k": "cmd", "T": 33454, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 4, 'known': 33454, 'first-known': 33438, 'glyph': 't', 'color': 'green', 'typ", "targetting enemy {'x': 45, 'y': 4, 'known': 33454, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "NW"}
+{"a": "y"}
+{"r": 49132, "k": "cmd", "T": 33455, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the trapper!"}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 4, 'known': 33455, 'first-known': 33438, 'glyph': 't', 'color': 'green', 'typ", "targetting enemy {'x': 45, 'y': 4, 'known': 33455, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "NW"}
+{"a": "y"}
+{"r": 49133, "k": "cmd", "T": 33455, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the trapper!"}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 4, 'known': 33455, 'first-known': 33438, 'glyph': 't', 'color': 'green', 'typ", "targetting enemy {'x': 45, 'y': 4, 'known': 33455, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "NW"}
+{"a": "y"}
+{"r": 49134, "k": "cmd", "T": 33456, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the trapper!"}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 4, 'known': 33456, 'first-known': 33438, 'glyph': 't', 'color': 'green', 'typ", "targetting enemy {'x': 45, 'y': 4, 'known': 33456, 'first-known': 33438, 'glyph': 't', 'color': 'gre"], "dir": "NW"}
+{"a": "y"}
+{"r": 49135, "k": "cmd", "T": 33456, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "You kill the trapper!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 45, :y 4}"], "dir": "NW"}
+{"a": "y"}
+{"r": 49136, "k": "cmd", "T": 33457, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You see here a trapper corpse."}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49137, "k": "cmd", "T": 33457, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You see here a trapper corpse."}
+{"act": "move", "why": ["targetting enemy {'x': 41, 'y': 4, 'known': 33457, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49138, "k": "cmd", "T": 33458, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 42, 'y': 5, 'known': 33458, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"]}
+{"a": "s"}
+{"r": 49139, "k": "cmd", "T": 33458, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 43, 'y': 6, 'known': 33458, 'first-known': 33445, 'glyph': 'E', 'color': 'white', 'typ", "targetting enemy {'x': 43, 'y': 6, 'known': 33458, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49140, "k": "cmd", "T": 33459, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the invisible stalker."}
+{"act": "move", "why": ["hitting {'x': 43, 'y': 6, 'known': 33459, 'first-known': 33445, 'glyph': 'E', 'color': 'white', 'typ", "targetting enemy {'x': 43, 'y': 6, 'known': 33459, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49141, "k": "cmd", "T": 33460, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the invisible stalker."}
+{"act": "move", "why": ["targetting enemy {'x': 42, 'y': 6, 'known': 33460, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49142, "k": "cmd", "T": 33460, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 39, :y 12}"}
+{"a": ";"}
+{"r": 49143, "k": "pos", "T": 33460, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(40, 11)"}
+{"r": 49144, "k": "cmd", "T": 33460, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "B        a bat or bird (vampire bat) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 12}"}
+{"a": ";"}
+{"r": 49145, "k": "pos", "T": 33460, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 11)"}
+{"r": 49146, "k": "cmd", "T": 33460, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (nurse) [seen: telepathy]"}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 5, 'known': 33460, 'first-known': 33445, 'glyph': 'E', 'color': 'white', 'typ", "targetting enemy {'x': 42, 'y': 5, 'known': 33460, 'first-known': 33445, 'glyph': 'E', 'color': 'whi"], "dir": "NW"}
+{"a": "y"}
+{"r": 49147, "k": "cmd", "T": 33461, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "You kill the invisible stalker!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 4, 'known': 33461, 'first-known': 33288, 'glyph': '&', 'color': 'red"]}
+{"a": "s"}
+{"r": 49148, "k": "cmd", "T": 33461, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 5, 'known': 33461, 'first-known': 33288, 'glyph': '&', 'color': 'red', 'type'"], "dir": "NW"}
+{"a": "y"}
+{"r": 49149, "k": "cmd", "T": 33462, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "You kill the vrock!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 5}"], "dir": "NW"}
+{"a": "y"}
+{"r": 49150, "k": "cmd", "T": 33462, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49151, "k": "cmd", "T": 33462, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49152, "k": "cmdcont", "T": 33462, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49153, "k": "cmdcont", "T": 33462, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49154, "k": "cmd", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "You stop searching."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 12}"}
+{"a": ";"}
+{"r": 49155, "k": "pos", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 11)"}
+{"r": 49156, "k": "cmd", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 43, :y 6}"}
+{"a": ";"}
+{"r": 49157, "k": "pos", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(44, 5)"}
+{"r": 49158, "k": "cmd", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "E        an elemental (fire elemental) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 43, 'y': 6, 'known': 33469, 'first-known': 33469, 'glyph': 'E', 'color': 'yellow', 'ty", "targetting enemy {'x': 43, 'y': 6, 'known': 33469, 'first-known': 33469, 'glyph': 'E', 'color': 'yel"], "dir": "SE"}
+{"a": "n"}
+{"r": 49159, "k": "cmd", "T": 33469, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the fire elemental!"}
+{"m": "The fire elemental misses!"}
+{"act": "move", "why": ["hitting {'x': 43, 'y': 6, 'known': 33469, 'first-known': 33469, 'glyph': 'E', 'color': 'yellow', 'ty", "targetting enemy {'x': 43, 'y': 6, 'known': 33469, 'first-known': 33469, 'glyph': 'E', 'color': 'yel"], "dir": "SE"}
+{"a": "n"}
+{"r": 49160, "k": "cmd", "T": 33470, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "You hit the fire elemental!"}
+{"act": "move", "why": ["hitting {'x': 43, 'y': 6, 'known': 33470, 'first-known': 33469, 'glyph': 'E', 'color': 'yellow', 'ty", "targetting enemy {'x': 43, 'y': 6, 'known': 33470, 'first-known': 33469, 'glyph': 'E', 'color': 'yel"], "dir": "SE"}
+{"a": "n"}
+{"r": 49161, "k": "cmd", "T": 33470, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "You kill the fire elemental!"}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49162, "k": "cmdcont", "T": 33470, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49163, "k": "cmdcont", "T": 33470, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49164, "k": "cmd", "T": 33477, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 8}"}
+{"a": ";"}
+{"r": 49165, "k": "pos", "T": 33477, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 7)"}
+{"r": 49166, "k": "cmd", "T": 33477, "lvl": "Dlvl:45", "u": [43, 4], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (Grey-elf) [seen: telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 46, 'y': 5, 'known': 33477, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"], "dir": "SE"}
+{"a": "n"}
+{"r": 49167, "k": "cmd", "T": 33477, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 38, :y 12}"}
+{"a": ";"}
+{"r": 49168, "k": "pos", "T": 33477, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(39, 11)"}
+{"r": 49169, "k": "cmd", "T": 33477, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "@        a human or elf (nurse) [seen: telepathy]"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 50, :y 8}"}
+{"a": ";"}
+{"r": 49170, "k": "pos", "T": 33477, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(51, 7)"}
+{"r": 49171, "k": "cmd", "T": 33477, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "D        a dragon (white dragon) [seen: telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 4, 'known': 33477, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"]}
+{"a": "s"}
+{"r": 49172, "k": "cmd", "T": 33478, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 4, 'known': 33478, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"]}
+{"a": "s"}
+{"r": 49173, "k": "cmd", "T": 33479, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 44, 'y': 5, 'known': 33479, 'first-known': 33477, 'glyph': 'f', 'color': 'yellow', 'ty", "targetting enemy {'x': 44, 'y': 5, 'known': 33479, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"], "dir": "NE"}
+{"a": "u"}
+{"r": 49174, "k": "cmd", "T": 33480, "lvl": "Dlvl:45", "u": [44, 5], "hp": 190, "hpmax": 190}
+{"m": "You hit the tiger!"}
+{"m": "The tiger hits!"}
+{"m": "The tiger hits!"}
+{"m": "The tiger bites!"}
+{"act": "move", "why": ["hitting {'x': 44, 'y': 5, 'known': 33480, 'first-known': 33477, 'glyph': 'f', 'color': 'yellow', 'ty", "targetting enemy {'x': 44, 'y': 5, 'known': 33480, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"], "dir": "NE"}
+{"a": "u"}
+{"r": 49175, "k": "cmd", "T": 33481, "lvl": "Dlvl:45", "u": [44, 5], "hp": 188, "hpmax": 190}
+{"m": "You hit the tiger!"}
+{"m": "The tiger hits!"}
+{"m": "The tiger hits!"}
+{"m": "The tiger misses!"}
+{"act": "move", "why": ["hitting {'x': 44, 'y': 5, 'known': 33481, 'first-known': 33477, 'glyph': 'f', 'color': 'yellow', 'ty", "targetting enemy {'x': 44, 'y': 5, 'known': 33481, 'first-known': 33477, 'glyph': 'f', 'color': 'yel"], "dir": "NE"}
+{"a": "u"}
+{"r": 49176, "k": "cmd", "T": 33482, "lvl": "Dlvl:45", "u": [44, 5], "hp": 188, "hpmax": 190}
+{"m": "You kill the tiger!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 44, :y 5}"], "dir": "NE"}
+{"a": "u"}
+{"r": 49177, "k": "cmd", "T": 33483, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"m": "You see here a tiger corpse."}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49178, "k": "cmd", "T": 33483, "lvl": "Dlvl:45", "u": [45, 4], "hp": 190, "hpmax": 190}
+{"m": "You see here a tiger corpse."}
+{"act": "move", "why": ["targetting enemy {'x': 48, 'y': 5, 'known': 33483, 'first-known': 33477, 'glyph': 'D', 'color': 'whi"], "dir": "NE"}
+{"a": "u"}
+{"r": 49179, "k": "cmd", "T": 33484, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You see here a trapper corpse."}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49180, "k": "cmd", "T": 33484, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You see here a trapper corpse."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 47, 'y': 4, 'known': 33484, 'first-known': 33477, 'glyph': 'D', 'color': 'whi"]}
+{"a": "s"}
+{"r": 49181, "k": "cmd", "T": 33484, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33484, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49182, "k": "cmd", "T": 33485, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33485, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49183, "k": "cmd", "T": 33486, "lvl": "Dlvl:45", "u": [46, 3], "hp": 190, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33486, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49184, "k": "cmd", "T": 33487, "lvl": "Dlvl:45", "u": [46, 3], "hp": 185, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"m": "The white dragon bites!"}
+{"m": "The white dragon hits!"}
+{"m": "The white dragon hits!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33487, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49185, "k": "cmd", "T": 33488, "lvl": "Dlvl:45", "u": [46, 3], "hp": 182, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"m": "The white dragon bites!"}
+{"m": "The white dragon hits!"}
+{"m": "The white dragon hits!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33488, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49186, "k": "cmd", "T": 33489, "lvl": "Dlvl:45", "u": [46, 3], "hp": 185, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"m": "The white dragon bites!"}
+{"m": "The white dragon hits!"}
+{"m": "The white dragon hits!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33489, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49187, "k": "cmd", "T": 33490, "lvl": "Dlvl:45", "u": [46, 3], "hp": 177, "hpmax": 190}
+{"m": "You hit the white dragon!"}
+{"m": "The white dragon bites!"}
+{"m": "The white dragon hits!"}
+{"m": "The white dragon hits!"}
+{"m": "The Grey-elf wields an elven broadsword!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33490, 'first-known': 33477, 'glyph': 'D', 'color': 'white', 'typ"], "dir": "E"}
+{"a": "l"}
+{"r": 49188, "k": "cmd", "T": 33491, "lvl": "Dlvl:45", "u": [46, 3], "hp": 177, "hpmax": 190}
+{"m": "You kill the white dragon!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 5, 'known': 33491, 'first-known': 33477, 'glyph': '@', 'color': None, 'type':"], "dir": "SE"}
+{"a": "n"}
+{"r": 49189, "k": "cmd", "T": 33491, "lvl": "Dlvl:45", "u": [46, 3], "hp": 173, "hpmax": 190}
+{"m": "You hit the Grey-elf!"}
+{"m": "The Grey-elf swings his elven broadsword."}
+{"m": "The Grey-elf hits!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 5, 'known': 33491, 'first-known': 33477, 'glyph': '@', 'color': None, 'type':"], "dir": "SE"}
+{"a": "n"}
+{"r": 49190, "k": "cmd", "T": 33492, "lvl": "Dlvl:45", "u": [46, 3], "hp": 175, "hpmax": 190}
+{"m": "You kill the Grey-elf!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 46, :y 4}"], "dir": "E"}
+{"a": "l"}
+{"r": 49191, "k": "cmd", "T": 33493, "lvl": "Dlvl:45", "u": [47, 3], "hp": 175, "hpmax": 190}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49192, "k": "cmd", "T": 33493, "lvl": "Dlvl:45", "u": [47, 3], "hp": 175, "hpmax": 190}
+{"act": "move", "why": ["new or desired item at #Position{:x 46, :y 5}"], "dir": "S"}
+{"a": "j"}
+{"r": 49193, "k": "cmd", "T": 33493, "lvl": "Dlvl:45", "u": [47, 4], "hp": 175, "hpmax": 190}
+{"m": "There are many objects here."}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49194, "k": "cmd", "T": 33493, "lvl": "Dlvl:45", "u": [47, 4], "hp": 175, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49195, "k": "cmdcont", "T": 33493, "lvl": "Dlvl:45", "u": [47, 4], "hp": 175, "hpmax": 190}
+{"a": "0"}
+{"r": 49196, "k": "cmdcont", "T": 33493, "lvl": "Dlvl:45", "u": [47, 4], "hp": 175, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49197, "k": "cmd", "T": 33499, "lvl": "Dlvl:45", "u": [47, 4], "hp": 187, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49198, "k": "cmdcont", "T": 33499, "lvl": "Dlvl:45", "u": [47, 4], "hp": 187, "hpmax": 190}
+{"a": "0"}
+{"r": 49199, "k": "cmdcont", "T": 33499, "lvl": "Dlvl:45", "u": [47, 4], "hp": 187, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49200, "k": "cmd", "T": 33501, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "You are in full health."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49201, "k": "cmdcont", "T": 33501, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49202, "k": "cmdcont", "T": 33501, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49203, "k": "cmd", "T": 33508, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49204, "k": "cmdcont", "T": 33508, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49205, "k": "cmdcont", "T": 33508, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49206, "k": "cmd", "T": 33515, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49207, "k": "cmdcont", "T": 33515, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49208, "k": "cmdcont", "T": 33515, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49209, "k": "cmd", "T": 33520, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49210, "k": "cmdcont", "T": 33520, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49211, "k": "cmdcont", "T": 33520, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49212, "k": "cmd", "T": 33525, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49213, "k": "cmdcont", "T": 33525, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49214, "k": "cmdcont", "T": 33525, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49215, "k": "cmd", "T": 33532, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 49216, "k": "cmd", "T": 33532, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49217, "k": "cmdcont", "T": 33532, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49218, "k": "cmdcont", "T": 33532, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49219, "k": "cmd", "T": 33538, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting leftover enemy {'x': 49, 'y': 4, 'known': 33538, 'first-known': 33532, 'glyph': '2', 'col"], "dir": "N"}
+{"a": "k"}
+{"r": 49220, "k": "cmd", "T": 33538, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "There are many objects here."}
+{"act": "move", "why": ["targetting leftover enemy {'x': 49, 'y': 4, 'known': 33538, 'first-known': 33532, 'glyph': '2', 'col"], "dir": "NE"}
+{"a": "u"}
+{"r": 49221, "k": "cmd", "T": 33539, "lvl": "Dlvl:45", "u": [48, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting leftover enemy {'x': 49, 'y': 4, 'known': 33539, 'first-known': 33532, 'glyph': '2', 'col"], "dir": "E"}
+{"a": "l"}
+{"r": 49222, "k": "cmd", "T": 33540, "lvl": "Dlvl:45", "u": [49, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting corrosive monster {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'col", "hitting {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'color': 'brown', 'typ", "targetting enemy {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'color': 'bro"], "dir": "E"}
+{"a": "l"}
+{"r": 49223, "k": "cmd", "T": 33540, "lvl": "Dlvl:45", "u": [49, 3], "hp": 185, "hpmax": 190}
+{"m": "You hit the ochre jelly!"}
+{"m": "You are splashed by the ochre jelly's acid!"}
+{"act": "move", "why": ["hitting corrosive monster {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'col", "hitting {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'color': 'brown', 'typ", "targetting enemy {'x': 49, 'y': 4, 'known': 33540, 'first-known': 33540, 'glyph': 'j', 'color': 'bro"], "dir": "E"}
+{"a": "l"}
+{"r": 49224, "k": "cmd", "T": 33541, "lvl": "Dlvl:45", "u": [49, 3], "hp": 185, "hpmax": 190}
+{"m": "You hit the ochre jelly!"}
+{"act": "move", "why": ["hitting corrosive monster {'x': 49, 'y': 4, 'known': 33541, 'first-known': 33540, 'glyph': 'j', 'col", "hitting {'x': 49, 'y': 4, 'known': 33541, 'first-known': 33540, 'glyph': 'j', 'color': 'brown', 'typ", "targetting enemy {'x': 49, 'y': 4, 'known': 33541, 'first-known': 33540, 'glyph': 'j', 'color': 'bro"], "dir": "E"}
+{"a": "l"}
+{"r": 49225, "k": "cmd", "T": 33541, "lvl": "Dlvl:45", "u": [49, 3], "hp": 175, "hpmax": 190}
+{"m": "You kill the ochre jelly!"}
+{"m": "You are splashed by the ochre jelly's acid!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 4}"], "dir": "E"}
+{"a": "l"}
+{"r": 49226, "k": "cmd", "T": 33542, "lvl": "Dlvl:45", "u": [50, 3], "hp": 175, "hpmax": 190}
+{"m": "You see here an ochre jelly corpse."}
+{"act": "look", "why": ["examining tile {'x': 49, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49227, "k": "cmd", "T": 33542, "lvl": "Dlvl:45", "u": [50, 3], "hp": 175, "hpmax": 190}
+{"m": "You see here an ochre jelly corpse."}
+{"act": "eat", "why": ["going to eat corpse at {'x': 49, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen':"], "slot": "an ochre jelly corpse"}
+{"a": "e"}
+{"r": 49228, "k": "yn", "T": 33542, "lvl": "Dlvl:45", "u": [50, 3], "hp": 175, "hpmax": 190, "q": "There is an ochre jelly corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 49229, "k": "cmd", "T": 33544, "lvl": "Dlvl:45", "u": [50, 3], "hp": 178, "hpmax": 190}
+{"m": "You have a very bad case of stomach acid."}
+{"m": "This ochre jelly corpse tastes okay."}
+{"m": "You finish eating the ochre jelly corpse."}
+{"act": "look", "why": ["examining tile {'x': 49, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49230, "k": "cmd", "T": 33544, "lvl": "Dlvl:45", "u": [50, 3], "hp": 178, "hpmax": 190}
+{"m": "You see no objects here."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49231, "k": "cmdcont", "T": 33544, "lvl": "Dlvl:45", "u": [50, 3], "hp": 178, "hpmax": 190}
+{"a": "0"}
+{"r": 49232, "k": "cmdcont", "T": 33544, "lvl": "Dlvl:45", "u": [50, 3], "hp": 178, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49233, "k": "cmd", "T": 33550, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190}
+{"m": "You are in full health."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49234, "k": "cmdcont", "T": 33550, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49235, "k": "cmdcont", "T": 33550, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49236, "k": "cmd", "T": 33556, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 45, :y 4}"}
+{"a": ";"}
+{"r": 49237, "k": "pos", "T": 33556, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(46, 3)"}
+{"r": 49238, "k": "cmd", "T": 33556, "lvl": "Dlvl:45", "u": [50, 3], "hp": 190, "hpmax": 190}
+{"m": "g        a gremlin (gremlin) [seen: infravision, telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33556, 'first-known': 33556, 'glyph': 'g', 'color': 'gre"], "dir": "W"}
+{"a": "h"}
+{"r": 49239, "k": "cmd", "T": 33557, "lvl": "Dlvl:45", "u": [49, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 45, 'y': 4, 'known': 33557, 'first-known': 33556, 'glyph': 'g', 'color': 'gre"], "dir": "W"}
+{"a": "h"}
+{"r": 49240, "k": "cmd", "T": 33557, "lvl": "Dlvl:45", "u": [48, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33557, 'first-known': 33556, 'glyph': 'g', 'color': 'green', 'typ", "targetting enemy {'x': 46, 'y': 4, 'known': 33557, 'first-known': 33556, 'glyph': 'g', 'color': 'gre"], "dir": "W"}
+{"a": "h"}
+{"r": 49241, "k": "cmd", "T": 33558, "lvl": "Dlvl:45", "u": [48, 3], "hp": 190, "hpmax": 190}
+{"m": "You hit the gremlin!"}
+{"act": "move", "why": ["hitting {'x': 46, 'y': 4, 'known': 33558, 'first-known': 33556, 'glyph': 'g', 'color': 'green', 'typ", "targetting enemy {'x': 46, 'y': 4, 'known': 33558, 'first-known': 33556, 'glyph': 'g', 'color': 'gre"], "dir": "W"}
+{"a": "h"}
+{"r": 49242, "k": "cmd", "T": 33559, "lvl": "Dlvl:45", "u": [48, 3], "hp": 190, "hpmax": 190}
+{"m": "You kill the gremlin!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 46, :y 4}"], "dir": "W"}
+{"a": "h"}
+{"r": 49243, "k": "cmd", "T": 33559, "lvl": "Dlvl:45", "u": [47, 3], "hp": 190, "hpmax": 190}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 49244, "k": "cmd", "T": 33559, "lvl": "Dlvl:45", "u": [47, 3], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 49245, "k": "cmd", "T": 33560, "lvl": "Dlvl:45", "u": [47, 4], "hp": 190, "hpmax": 190}
+{"m": "There are many objects here."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 49246, "k": "cmd", "T": 33560, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49247, "k": "cmdcont", "T": 33560, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49248, "k": "cmdcont", "T": 33560, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49249, "k": "cmd", "T": 33567, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49250, "k": "cmdcont", "T": 33567, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49251, "k": "cmdcont", "T": 33567, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49252, "k": "cmd", "T": 33572, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49253, "k": "cmdcont", "T": 33572, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49254, "k": "cmdcont", "T": 33572, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49255, "k": "cmd", "T": 33579, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49256, "k": "cmdcont", "T": 33579, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49257, "k": "cmdcont", "T": 33579, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49258, "k": "cmd", "T": 33587, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 46, :y 12}"}
+{"a": ";"}
+{"r": 49259, "k": "pos", "T": 33587, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(47, 11)"}
+{"r": 49260, "k": "cmd", "T": 33587, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "f        a cat or other feline (large cat) [seen: telepathy]"}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49261, "k": "cmdcont", "T": 33587, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49262, "k": "cmdcont", "T": 33587, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49263, "k": "cmd", "T": 33592, "lvl": "Dlvl:45", "u": [47, 5], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["targetting enemy {'x': 44, 'y': 9, 'known': 33592, 'first-known': 33587, 'glyph': 'f', 'color': 'whi"], "dir": "S"}
+{"a": "j"}
+{"r": 49264, "k": "cmd", "T": 33593, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 44, 'y': 9, 'known': 33593, 'first-known': 33587, 'glyph': 'f', 'color': 'whi"]}
+{"a": "s"}
+{"r": 49265, "k": "cmd", "T": 33594, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 8, 'known': 33594, 'first-known': 33587, 'glyph': 'f', 'color': 'white', 'typ", "targetting enemy {'x': 45, 'y': 8, 'known': 33594, 'first-known': 33587, 'glyph': 'f', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49266, "k": "cmd", "T": 33594, "lvl": "Dlvl:45", "u": [47, 6], "hp": 189, "hpmax": 190}
+{"m": "You hit the large cat!"}
+{"m": "The large cat bites!"}
+{"act": "move", "why": ["hitting {'x': 45, 'y': 8, 'known': 33594, 'first-known': 33587, 'glyph': 'f', 'color': 'white', 'typ", "targetting enemy {'x': 45, 'y': 8, 'known': 33594, 'first-known': 33587, 'glyph': 'f', 'color': 'whi"], "dir": "SW"}
+{"a": "b"}
+{"r": 49267, "k": "cmd", "T": 33595, "lvl": "Dlvl:45", "u": [47, 6], "hp": 189, "hpmax": 190}
+{"m": "You kill the large cat!"}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49268, "k": "cmdcont", "T": 33595, "lvl": "Dlvl:45", "u": [47, 6], "hp": 189, "hpmax": 190}
+{"a": "0"}
+{"r": 49269, "k": "cmdcont", "T": 33595, "lvl": "Dlvl:45", "u": [47, 6], "hp": 189, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49270, "k": "cmd", "T": 33597, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"m": "You are in full health."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49271, "k": "cmdcont", "T": 33597, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49272, "k": "cmdcont", "T": 33597, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49273, "k": "cmd", "T": 33605, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49274, "k": "cmdcont", "T": 33605, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"a": "0"}
+{"r": 49275, "k": "cmdcont", "T": 33605, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 49276, "k": "cmd", "T": 33611, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "trying to enter wiztower from Dlvl:45", "seeking branch wiztower ( wiztower )", "seeking level wiztower end", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 49277, "k": "cmdcont", "T": 33611, "lvl": "Dlvl:45", "u": [47, 6], "hp": 190, "hpmax": 190}
+{"note": "abort", "d": "limit: max_seconds 7200"}
+{"note": "perf", "d": "explorable versions=28892 calls=51693249 misses=5864818"}

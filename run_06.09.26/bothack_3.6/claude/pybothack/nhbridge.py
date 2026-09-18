@@ -946,11 +946,18 @@ class Bridge(object):
         r"^You can't\.\s+(?:It is|They are) cursed\.|^You have no free hand|"
         r"^You cannot free your weapon hand|welded to your hand|"
         r"^You cannot drop something you are wearing|"
-        r"^You are already wearing|^You can't take that off")
+        r"^You are already wearing|^You can't take that off|"
+        r"^You can't move diagonally (?:out of|into) an intact doorway|"
+        r"^Never mind\.$")
     VETO_TURNS = 300
 
     def _action_key(self, a):
-        return (a.get('type'), str(a.get('slot')), str(a.get('dir')))
+        # a refused move/attack depends on where the hero stands, a refused
+        # item action does not
+        pos = (tuple(self.engine.u) if (a.get('dir') or a.get('pos'))
+               else None)
+        return (a.get('type'), str(a.get('slot')), str(a.get('dir')),
+                str(a.get('pos')), pos)
 
     def _check_refusal(self, req):
         a = self.last_action
