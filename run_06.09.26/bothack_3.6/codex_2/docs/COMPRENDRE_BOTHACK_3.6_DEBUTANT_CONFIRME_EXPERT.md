@@ -31,6 +31,36 @@ Les trois niveaux désignent des profondeurs d'explication, pas trois versions d
 - **Confirmé** : les mécanismes de décision, les choix et les limitations.
 - **Expert** : les processus, fonctions, protocoles, garanties et angles morts.
 
+## Sommaire détaillé
+
+- [1. Présentations prêtes à dire](#1-présentations-prêtes-à-dire)
+- [2. De quoi parle-t-on exactement ?](#2-de-quoi-parle-t-on-exactement-)
+- [3. NetHack expliqué à quelqu'un qui n'y a jamais joué](#3-nethack-expliqué-à-quelquun-qui-ny-a-jamais-joué)
+- [4. Gagner : une aventure avec des dépendances](#4-gagner--une-aventure-avec-des-dépendances)
+- [5. Quel personnage joue l'application actuelle ?](#5-quel-personnage-joue-lapplication-actuelle-)
+- [6. Les aides : à quoi elles servent vraiment](#6-les-aides--à-quoi-elles-servent-vraiment)
+- [7. Comment il observe et mémorise le monde](#7-comment-il-observe-et-mémorise-le-monde)
+- [8. Comment il choisit son action](#8-comment-il-choisit-son-action)
+- [9. Explorer, se déplacer et revenir en arrière](#9-explorer-se-déplacer-et-revenir-en-arrière)
+- [10. Combattre et gérer son personnage](#10-combattre-et-gérer-son-personnage)
+- [11. Objets, identification et logistique](#11-objets-identification-et-logistique)
+- [12. Architecture réelle : du lanceur au moteur](#12-architecture-réelle--du-lanceur-au-moteur)
+- [13. Le window port : comment le jeu parle au bot](#13-le-window-port--comment-le-jeu-parle-au-bot)
+- [14. La passerelle : pourquoi un écran existe encore à l'intérieur](#14-la-passerelle--pourquoi-un-écran-existe-encore-à-lintérieur)
+- [15. Une décision suivie de bout en bout](#15-une-décision-suivie-de-bout-en-bout)
+- [16. Les données secrètes et la question de la triche](#16-les-données-secrètes-et-la-question-de-la-triche)
+- [17. Pourquoi le portage de Clojure laisse des traces dans Python](#17-pourquoi-le-portage-de-clojure-laisse-des-traces-dans-python)
+- [18. Le superviseur : le gardien contre les parties sans fin](#18-le-superviseur--le-gardien-contre-les-parties-sans-fin)
+- [19. Lancer une partie, lancer une série, tester une situation](#19-lancer-une-partie-lancer-une-série-tester-une-situation)
+- [20. État réellement observé le 18 septembre 2026](#20-état-réellement-observé-le-18-septembre-2026)
+- [21. Lire les fichiers sans être développeur](#21-lire-les-fichiers-sans-être-développeur)
+- [22. Résultats, vitesse et coûts : comment en parler correctement](#22-résultats-vitesse-et-coûts--comment-en-parler-correctement)
+- [23. Points forts, limites et difficultés profondes](#23-points-forts-limites-et-difficultés-profondes)
+- [24. Questions fréquentes et réponses faciles à reprendre](#24-questions-fréquentes-et-réponses-faciles-à-reprendre)
+- [25. Kits de présentation selon le public](#25-kits-de-présentation-selon-le-public)
+- [26. Glossaire à trois niveaux](#26-glossaire-à-trois-niveaux)
+- [27. Sources, preuves et périmètre](#27-sources-preuves-et-périmètre)
+
 ---
 
 ## 1. Présentations prêtes à dire
@@ -580,3 +610,731 @@ La passerelle envoie ensuite la réponse correspondant à la direction choisie. 
 Le moteur expose explicitement son attente, ce qui réduit les problèmes de synchronisation d'écran. Cependant les réponses actuelles ne reprennent pas le numéro `seq` : il n'existe pas encore le protocole v2 corrélé décrit dans la refonte.
 
 L'ordre synchrone des pipes est utile, mais il ne garantit pas qu'une erreur de sélection, une traduction incorrecte ou une reprise mal gérée soit impossible.
+
+---
+
+## 14. La passerelle : pourquoi un écran existe encore à l'intérieur
+
+### 14.1 Le problème de compatibilité
+
+L'ancien BotHack s'attendait à recevoir certaines représentations d'écran et certains textes. La nouvelle interface fournit des données structurées. Réécrire toutes les règles en une seule fois aurait été un chantier considérable.
+
+`nhbridge.py` sert donc d'interprète entre le moteur récent et les habitudes du joueur historique.
+
+### 14.2 Dans le sens jeu vers bot
+
+La passerelle :
+
+1. reçoit les données accumulées par `Engine` ;
+2. transforme les glyphes, caractères et couleurs selon les conventions attendues ;
+3. reconstruit un objet `Frame` ;
+4. transmet messages, statut, inventaire et autres événements ;
+5. laisse les handlers mettre à jour la mémoire et choisir une action.
+
+Le `Frame` est une représentation en mémoire. Ce chemin n'est pas une capture d'écran suivie d'OCR.
+
+### 14.3 Dans le sens bot vers jeu
+
+Les actions héritées produisent encore des commandes et des réponses sous forme de touches. La passerelle conserve une file, compare ce qu'elle a à envoyer avec ce que le moteur demande et convertit la réponse.
+
+Par exemple, les lettres sélectionnées dans un menu doivent être traduites vers les identifiants des entrées fournies par le moteur. Les menus volumineux peuvent réutiliser des lettres ; le code contient des traitements spécifiques pour éviter de les confondre.
+
+### 14.4 Le rôle de `compat36.py`
+
+Certaines formulations et certains menus ont changé entre NetHack 3.4.3 et 3.6.7. Le module adapte des textes ou structures pour les handlers existants.
+
+Le cas « Continue eating? » versus « Stop eating? » montre pourquoi remplacer des mots ne suffit pas : la réponse attendue peut s'inverser. La compatibilité est parfois sémantique, pas seulement typographique.
+
+### 14.5 Ce qu'elle fait quand elle ne comprend pas
+
+La passerelle compte et journalise les prompts inconnus. En repli, elle répond généralement non si ce choix est proposé ou envoie Échap. Au prompt de commande sans action, elle peut également envoyer Échap ; le superviseur compte ces absences de progression.
+
+Le mot « conservateur » décrit l'intention du fallback. Il ne garantit pas que refuser une question inconnue soit toujours la meilleure décision stratégique.
+
+### 14.6 Le veto sur une action refusée
+
+Le code observe certaines actions refusées sans progression de tour et peut les bloquer temporairement pendant 300 tours. Cela permet au handler suivant de proposer autre chose.
+
+C'est une protection contre les répétitions, pas un diagnostic universel. Si une action devient possible avant l'expiration ou reste impossible après, un simple délai ne représente pas parfaitement sa cause. Ce mécanisme explique néanmoins une partie des compteurs `veto` observés.
+
+---
+
+## 15. Une décision suivie de bout en bout
+
+### 15.1 Exemple : ramasser un objet utile
+
+| Étape | Ce qui se passe | Module typique |
+| --- | --- | --- |
+| Perception | Le jeu annonce des objets sur la case | Moteur / window port |
+| Transmission | Le client lit la requête et ses événements | `engine.py` |
+| Interprétation | Les textes et l'inventaire deviennent des événements du bot | `nhbridge.py` |
+| Mémoire | La case et les objets connus sont mis à jour | `game.py`, `actions.py` |
+| Décision | Une règle juge l'objet intéressant | `mainbot.py` |
+| Construction | Une action `PickUp` est créée avec une raison | `actions.py` |
+| Dialogue | La commande ouvre un menu, le bot sélectionne | Bridge et handlers |
+| Effet | NetHack effectue ou refuse le ramassage | Moteur C |
+| Observation suivante | Le bot reçoit le nouvel état | Même boucle |
+| Trace | Action, réponse, message et éventuelles anomalies sont conservés | `recorder.py` |
+
+La réussite n'est pas décidée par la simple création de l'action. Le jeu peut refuser parce que l'objet est inaccessible ou que l'état du héros a changé.
+
+### 15.2 Exemple : utiliser une baguette vers un ennemi
+
+Version « joueur » :
+
+> « Je choisis cette baguette pour agir sur cet ennemi. Le jeu me demande quel objet, puis quelle direction. J'observe ensuite le résultat. »
+
+Version « programme » :
+
+```text
+état du jeu
+→ règle tactique
+→ action ZapWand / cible
+→ commande mise en file
+→ demande d'objet par le moteur
+→ réponse du handler et de la passerelle
+→ demande de direction
+→ réponse adaptée
+→ messages et état suivants
+```
+
+La version actuelle réalise cet enchaînement avec des actions, handlers et une file de commandes hérités. Elle ne possède pas encore partout les machines à états explicitement typées et les postconditions unifiées proposées dans la refonte.
+
+### 15.3 Exemple : une erreur se transforme en boucle
+
+Le bot croit avoir un objet à la lettre `a`. Le moteur dit qu'il n'a pas cet objet. Si le bot conserve la même croyance, il peut proposer à nouveau `a`.
+
+Le tour ne bouge pas, mais le nombre de requêtes explose. Le problème n'est pas une lenteur de combat ; c'est une incohérence d'inventaire et de dialogue. La passerelle et le superviseur disposent de traitements pour interrompre ce type de répétition.
+
+Cet exemple permet d'expliquer pourquoi les compteurs « requêtes », « actions » et « tours » doivent être séparés.
+
+---
+
+## 16. Les données secrètes et la question de la triche
+
+### 16.1 Trois notions différentes
+
+| Notion | Exemple | Statut |
+| --- | --- | --- |
+| Connaissance des règles | Savoir qu'un type d'objet peut léviter | Connaissance générale intégrée au programme |
+| Information sur cette partie | Savoir quel objet précis est identifié | Doit venir des observations autorisées |
+| Modification des règles | Annuler une mort | Assistance déclarée |
+
+Un bot peut connaître beaucoup de règles sans connaître la carte cachée de la partie. Il peut aussi recevoir une aide moteur tout en ignorant certaines informations cachées. Ces deux axes doivent être décrits séparément.
+
+### 16.2 Ce que fait l'interface actuelle
+
+Le window port masque les glyphes d'objets non identifiés qui révéleraient autrement leur vraie identité numérique. Il envoie aussi un bloc `priv`, destiné aux diagnostics et à l'évaluation, contenant des informations internes.
+
+Le recorder utilise ces diagnostics pour certains jalons. La documentation indique que la politique ne doit pas les lire. La passerelle examinée ne montre pas de lecture directe de ce bloc pour choisir les actions ; cela ne remplace pas un audit exhaustif de tous les flux.
+
+### 16.3 Limite technique à expliquer à un expert
+
+Le champ privé et la politique vivent dans le même environnement Python, et la passerelle possède un objet moteur complet. La séparation est donc principalement une convention de programmation, pas une barrière forte imposée par des processus distincts.
+
+Certains champs de statut, comme les identifiants de branche/niveau, méritent également une définition précise de ce qui est considéré public. Il serait trop fort d'affirmer sans cet audit que l'interface expose exactement et seulement ce qu'un humain pourrait connaître au même instant.
+
+### 16.4 Réponse courte à « est-ce qu'il triche ? »
+
+> « Les parties actuelles sont explicitement assistées : certaines règles de survie sont modifiées et le personnage reçoit un kit. Le bot doit toutefois jouer le parcours. Pour comparer avec un humain ou un autre bot, il faut aussi préciser quelles informations l'interface expose et quelles connaissances de cartes sont autorisées. »
+
+---
+
+## 17. Pourquoi le portage de Clojure laisse des traces dans Python
+
+### 17.1 L'héritage
+
+BotHack est à l'origine un projet Clojure. Le répertoire `pybothack` contient un port Python de ses structures et comportements, puis des adaptations à NetHack 3.6.7. Le projet original fournit le contexte de cette architecture. [BotHack original](https://github.com/krajj7/BotHack).
+
+### 17.2 Une traduction doit préserver davantage que les formules
+
+Quand deux monstres sont aussi prioritaires, quel est le premier parcouru ? Quand deux chemins coûtent la même chose, lequel est choisi ? Quand un handler s'enregistre pendant un événement, quand devient-il actif ?
+
+Ces détails dépendent des structures de données et de l'ordre d'exécution. Changer l'ordre peut modifier une action, puis toute la partie.
+
+### 17.3 Ce que contiennent les modules de compatibilité internes
+
+`clj.py`, `atom.py`, certaines fonctions de `position.py` et les données générées reproduisent des conventions du programme original. Des commentaires mentionnent notamment l'ordre de collections hashées et les règles d'égalité ou de sélection.
+
+Cela explique pourquoi le Python peut paraître moins idiomatique qu'un programme écrit de zéro. Une partie de cette complexité protège la fidélité au programme qui a servi de référence.
+
+### 17.4 Ce que cela ne prouve pas
+
+Une fidélité excellente à l'ancien bot ne garantit pas une bonne décision dans les nouvelles règles. Le portage a deux tâches : conserver les comportements encore valables et changer explicitement ceux qui ne le sont plus.
+
+Les victoires historiques en 3.4.3 constituent un patrimoine utile. Elles ne doivent pas être annoncées comme des victoires de la campagne actuelle 3.6.7.
+
+---
+
+## 18. Le superviseur : le gardien contre les parties sans fin
+
+### 18.1 Débutant
+
+Un joueur humain voit qu'il tourne en rond et décide de faire autre chose. Un programme peut répéter éternellement la même erreur. Le superviseur surveille donc les répétitions, essaie certaines récupérations et finit par arrêter l'essai si nécessaire.
+
+### 18.2 Les situations surveillées
+
+| Situation | Exemple simple | Réaction générale |
+| --- | --- | --- |
+| Prompt répété | Même question sans issue | Tentative d'annulation puis arrêt |
+| Action répétée sans tour | Retirer un anneau impossible à retirer | Récupération ou veto |
+| Fixation de cible | Retour permanent sur la même case | Oubli temporaire/correction de cible |
+| Tempête de requêtes | Des milliers d'échanges pour quelques tours | Arrêt de blocage |
+| Absence de nouveauté | Long parcours sans nouveau progrès détecté | Réinitialisation d'exploration puis arrêt |
+| Morts annulées en boucle | Foule qui tue constamment le héros assisté | Arrêt si la situation ne progresse pas |
+| Décision trop longue | Calcul Python qui ne rend pas la main | Capture de piles puis intervention |
+| Budget dépassé | Temps ou nombre de tours maximum | Fin classée comme limite |
+
+### 18.3 Seuils représentatifs réellement configurés
+
+Dans les manifestes de `cyc-04` relevés :
+
+- 200 000 tours maximum ;
+- 14 400 secondes, soit quatre heures, maximum par partie ;
+- 3 000 000 de requêtes maximum ;
+- seuil d'action répétée à 8, avec arrêt à 40 selon le détecteur ;
+- absence de nouveauté surveillée sur 6 000 tours ;
+- tempête : fenêtre de 3 000 requêtes pour moins de 30 tours ;
+- décision lente : diagnostic à 60 secondes, intervention à 600 secondes ;
+- boucle de mort : seuil de 150 interventions sur une fenêtre de 300 tours, avec les conditions de progression du détecteur.
+
+Ce sont des seuils techniques propres à cette configuration. Ils ne définissent pas une règle de NetHack et peuvent changer dans d'autres campagnes.
+
+### 18.4 Expert : deux protections différentes
+
+`Supervisor` travaille dans le processus Python de la partie et utilise un thread de surveillance. Le lanceur de série dispose aussi d'une limite extérieure : il peut terminer un runner qui dépasse largement son budget.
+
+La surveillance interne aide à expliquer le problème ; la surveillance extérieure protège contre un runner qui ne s'arrête plus normalement. Le montage actuel n'est pas une garantie démontrée de fermeture parfaite de tous les descendants dans toutes les pannes possibles.
+
+### 18.5 Le superviseur peut aussi se tromper
+
+Une longue recherche peut être légitime. Une boucle subtile peut changer assez de détails pour éviter le détecteur. Les seuils sont des heuristiques, pas une preuve de progression.
+
+Une récupération qui fait seulement passer un tour peut également donner l'apparence d'un progrès. C'est pourquoi plusieurs détecteurs existent : le nombre de tours seul ne suffit pas.
+
+---
+
+## 19. Lancer une partie, lancer une série, tester une situation
+
+### 19.1 Une partie
+
+`nhbot.rungame` prépare le répertoire, la configuration, les aides et les graines, démarre NetHack, construit le bot, lance la boucle puis écrit les résultats.
+
+Le répertoire de partie contient ses propres fichiers de jeu et journaux. Cette isolation évite de mélanger inventaires, niveaux temporaires et résultats de plusieurs essais.
+
+### 19.2 Une série
+
+`nhbot.series` possède une liste de seeds et un nombre de jobs. Il démarre autant de parties que la capacité autorisée le permet. Quand une partie finit, il peut lancer la suivante.
+
+Dans `cyc-04`, six seeds sont prévues et deux parties peuvent tourner en parallèle. Cela ne signifie pas six jeux simultanés.
+
+### 19.3 L'arrêt sur répétition d'erreur
+
+Le lanceur peut regrouper les résultats en signatures d'échec et arrêter de démarrer de nouvelles parties si la même signature revient trop souvent. C'est utile pour ne pas dépenser des heures sur un bug déjà dominant.
+
+En revanche, une campagne arrêtée de cette façon n'est pas une estimation neutre du taux de réussite sur toute la liste initiale. Il faut publier combien de parties étaient prévues, commencées et terminées.
+
+### 19.4 Les scénarios préparés
+
+Un scénario peut donner un niveau d'expérience, des objets, révéler une carte ou téléporter le personnage pour tester un morceau difficile du jeu. Ces préparations passent par le mode wizard et sont journalisées.
+
+Le manifeste indique qu'un scénario ne compte pas comme partie complète. C'est la différence entre tester l'atterrissage d'un avion et démontrer un voyage complet depuis le décollage.
+
+### 19.5 La seed
+
+La seed initialise l'aléatoire. Elle aide à retrouver des conditions de départ et à comparer des versions.
+
+Mais une seed seule n'est pas une vidéo de la partie : le build, les options, les décisions et d'autres sources d'état peuvent changer le déroulement. Une vraie reproduction doit conserver davantage de contexte.
+
+### 19.6 Où se déroule le travail
+
+La documentation du projet réserve les runs au worker et utilise la machine locale pour l'édition, les tests unitaires et la lecture de résultats rapatriés.
+
+Deux répertoires distants sont prévus : l'un pour les séries, l'autre pour les essais de développement. Les scripts cherchent à éviter de synchroniser une série en cours. Pour comprendre une partie précise, son manifeste est plus fiable que l'état actuel du répertoire local.
+
+---
+
+## 20. État réellement observé le 18 septembre 2026
+
+### 20.1 Ce qui a été vérifié
+
+Une lecture des processus distants et des artefacts a confirmé, autour de **14 h 08 UTC**, la campagne `cyc-04` dans `/home/roro/bothack36`.
+
+| Paramètre | Valeur observée |
+| --- | --- |
+| Démarrage de la série | 18 septembre, 10:04:25 UTC |
+| Seeds prévues | 7013, 7011, 7034, 7043, 7047, 7007 |
+| Parallélisme | 2 |
+| Limite par partie | 200 000 tours ou 14 400 secondes |
+| Arrêt sur signature répétée | Seuil 25 |
+| Personnage | Valkyrie naine, femme, loyale |
+| Moteur | NetHack 3.6.7, window port `bot`, protocole 1 |
+| Python indiqué par les manifestes | 3.12.3 |
+| Profil / tactique | `full` / `assisted` |
+| Aides | Invincibilité, anti-faim et kit |
+| Scénario / wizard | Aucun scénario, wizard désactivé |
+| Hash bot déclaré | `b93f36983c4b5f80` |
+
+Deux résultats étaient terminés et classés `limit`. Deux parties suivantes étaient actives ; les dernières seeds attendaient encore leur tour. Il s'agit d'une photographie datée, pas d'un tableau de bord continu.
+
+### 20.2 Ce que racontaient les parties déjà terminées
+
+`g001`, seed 7013, avait notamment des jalons de Cloche et de Livre, mais pas de Chandelier enregistré dans l'état relevé. Son dernier état de suivi se situait en Gehennom. L'absence d'un jalon ne suffit pas à prouver l'histoire complète d'un objet.
+
+`g002`, seed 7011, avait une dernière raison d'action indiquant un retour vers le niveau de quête pour la Cloche. C'est une indication d'intention utile ; à elle seule, elle ne démontre pas combien de fois une boucle s'est répétée.
+
+### 20.3 Cycles précédents disponibles sur le worker
+
+| Campagne | Résultats présents | Répartition observée |
+| --- | ---: | --- |
+| `cyc-01` | 9 | 8 limites, 1 blocage |
+| `cyc-02` | 9 | 6 limites, 3 blocages |
+| `cyc-03` | 6 | 6 blocages |
+| `cyc-04`, partiel | 2 | 2 limites |
+
+Ces chiffres décrivent ces cycles précis. Ils ne constituent pas une comparaison contrôlée entre versions ni un recensement exhaustif de tous les résultats historiques du projet.
+
+### 20.4 Une différence importante entre local et worker
+
+Huit fichiers ciblés ont été comparés. Sept étaient identiques entre la copie locale et le worker au relevé : passerelle, comportements de rituel, lanceur de partie, superviseur, client moteur, lanceur de série et kit.
+
+`pybothack/bots/mainbot.py` différait. Le local contenait un état `bell-hopeless` et un délai de 5 000 tours pour éviter certains retours sans issue vers la Cloche. Ce traitement supplémentaire n'était pas dans la copie distante examinée.
+
+La source distante sur disque et les hashes du manifeste ont été conservés comme éléments de traçabilité ; cela n'équivaut pas à extraire tous les modules déjà chargés en mémoire d'un processus. La comparaison suffit en revanche à montrer qu'il ne faut pas attribuer automatiquement le dernier correctif local à la campagne active.
+
+### 20.5 Ce qu'on peut annoncer sur la victoire
+
+Les cycles examinés ici ne fournissent pas d'ascension complète. Le précédent audit local rapportait également des campagnes allant jusqu'au Livre sans invocation enregistrée. La documentation mentionne des succès d'offrande en scénario préparé.
+
+La formulation correcte est donc :
+
+> « Le bot joue de longues parties assistées et atteint des étapes profondes. Des morceaux de fin de partie ont été testés séparément. Dans les campagnes examinées pour ce guide, la victoire complète n'est pas encore attestée. »
+
+Cela évite de transformer une absence de preuve dans ce périmètre en affirmation absolue sur tout ce qui pourrait avoir été exécuté ailleurs ou plus tard.
+
+### 20.6 Preuve conservée
+
+Le fichier [application-worker-2026-09-18.json](../evidence/application-worker-2026-09-18.json) conserve l'horodatage exact de sa collecte, les sources ciblées du worker, leurs empreintes et les artefacts relevés. Aucune partie n'a été démarrée, arrêtée ou modifiée pour cette lecture.
+
+---
+
+## 21. Lire les fichiers sans être développeur
+
+### 21.1 Le dossier d'une partie est son dossier d'enquête
+
+| Fichier | Question à laquelle il répond |
+| --- | --- |
+| `manifest.json` | Avec quelle version et quelles conditions a-t-on joué ? |
+| `live.json` | Quel était le dernier état de suivi écrit ? |
+| `result.json` | Comment la tentative s'est-elle terminée ? |
+| `progress.jsonl` | Quelles étapes et événements importants ont été enregistrés ? |
+| `last_steps.jsonl` | Que s'est-il passé juste avant la fin ? |
+| `bot.log` | Quelles erreurs et anomalies Python ont été signalées ? |
+| `assist.jsonl` | Quelles interventions d'aide le moteur a-t-il faites ? |
+| `engine.stderr` | Qu'a signalé le processus moteur ? |
+| `stacks.txt` | Où le Python passait-il du temps lors d'un diagnostic ? |
+| `nhdir/xlogfile` | Quel résultat le jeu lui-même a-t-il écrit ? |
+| `nhdir/dumplog.txt` | Quel était l'état final détaillé, lorsqu'il existe ? |
+| `trace.jsonl` | Trace plus complète si l'option correspondante était active |
+| `protocol.trace` | Échanges bruts si leur enregistrement était activé |
+
+JSON est un format de données avec des noms de champs. JSONL signifie qu'une ligne contient un enregistrement JSON : pratique pour écrire des événements successifs.
+
+### 21.2 Exemple pédagogique de manifeste
+
+```json
+{
+  "engine_seed": 7034,
+  "character": "val-dwa-fem-law",
+  "bot_profile": "full",
+  "bot_tactics": "assisted",
+  "wizard": false,
+  "scenario": null,
+  "counted_as_full_game": true
+}
+```
+
+Cette sélection de champs montre que « partie complète » et « assistée » sont compatibles : complète décrit le parcours depuis le départ ; assistée décrit les règles d'aide.
+
+### 21.3 Lire un état de suivi
+
+```text
+turn=2127   lvl=Dlvl:4   xl=6   hp=70/70
+```
+
+Cela signifie : compteur de tours 2 127, étiquette de niveau `Dlvl:4`, expérience 6, 70 points de vie sur 70. Il faut lire aussi `dname` : une profondeur affichée ne dit pas toujours à elle seule dans quelle branche se trouve le héros.
+
+`max_depth` est un maximum atteint, pas nécessairement la position actuelle. `stages` raconte des étapes atteintes au moins une fois, pas les objets possédés maintenant.
+
+### 21.4 Lire les résultats
+
+| `outcome` | Interprétation |
+| --- | --- |
+| `ascended` | Ascension validée selon le classificateur |
+| `died` | Mort reconnue du personnage |
+| `quit` | Partie quittée |
+| `escaped` | Sortie du donjon, distincte de l'ascension |
+| `goal_reached` | Objectif intermédiaire configuré atteint |
+| `stuck` | Blocage ou watchdog classé comme tel |
+| `limit` | Budget ou interruption classée comme limite |
+| `crash_bot` | Erreur du programme Python |
+| `crash_engine` | Arrêt anormal ou fin non reconnue du moteur |
+| `unknown` | Résultat non certifiable avec les preuves reçues |
+
+Le champ `reason` est indispensable. Deux résultats `limit` peuvent correspondre à une durée maximale et à une interruption par signal ; ce ne sont pas nécessairement les mêmes problèmes.
+
+### 21.5 L'anneau des dernières étapes
+
+Par défaut, le recorder conserve un anneau de 800 entrées. Quand il est plein, les entrées les plus anciennes sont remplacées. Cela donne du contexte autour de l'échec sans stocker tous les détails de toute la partie.
+
+Ce n'est pas un enregistrement complet depuis le départ. Pour expliquer un objet perdu très tôt, il faut les jalons pertinents ou une trace plus complète. Dire « tout est rejouable parce qu'on a les dernières actions » serait faux.
+
+### 21.6 Les commandes de consultation
+
+Depuis le répertoire local `claude`, ces commandes lisent des artefacts déjà présents :
+
+```bash
+python3 -m nhbot.analyze runs/worker/big-w02/g007 --steps 80
+python3 tools/live.py runs/worker/big-w02
+```
+
+Le second exemple lit des copies locales : il n'interroge pas magiquement une partie distante. Pour les essais de développement distants, le script existant propose :
+
+```bash
+tools/worker_dev.sh status
+```
+
+Ce guide ne demande pas de lancer une nouvelle campagne. Les commandes de lancement, de synchronisation et de build ont des effets ; pour une démonstration, commencer par les outils de consultation.
+
+---
+
+## 22. Résultats, vitesse et coûts : comment en parler correctement
+
+### 22.1 Quatre mesures différentes
+
+| Mesure | Ce qu'elle apprend | Ce qu'elle ne prouve pas |
+| --- | --- | --- |
+| Tours par seconde | Vitesse d'exécution d'un parcours | Qualité des décisions |
+| Profondeur maximale | Jusqu'où le personnage est descendu | Proximité certaine de la victoire |
+| Jalons | Étapes enregistrées | Conservation actuelle des ressources |
+| Taux d'ascension | Réussite dans une configuration et un budget | Résultat universel sur tous les rôles et machines |
+
+Un bot peut être rapide mais tourner en rond. Un bot peut être très profond mais manquer la Cloche. Une campagne peut avoir zéro crash et uniquement des blocages.
+
+### 22.2 Le coût vient de plusieurs endroits
+
+Le moteur calcule les règles et les actions des créatures. Python met à jour la mémoire, cherche des chemins, examine l'inventaire et choisit une action. Les échanges et les traces ajoutent aussi du travail.
+
+Sur une machine partagée, un ralentissement peut venir du processeur indisponible plutôt que du code. Le taux de CPU volé par l'hyperviseur, souvent appelé *steal time*, explique certains écarts possibles sur une VM.
+
+### 22.3 Pourquoi plusieurs processus ?
+
+Une partie indépendante peut utiliser un autre cœur. Le lanceur peut donc améliorer le nombre de parties terminées par heure en faisant jouer plusieurs personnages à la fois.
+
+Cela n'accélère pas nécessairement une partie individuelle. Trop de parties simultanées peuvent se gêner sur le CPU, la mémoire ou les écritures disque.
+
+### 22.4 Pourquoi pas forcément un GPU ?
+
+Le bot actuel exécute surtout des règles et des recherches classiques, pas un grand réseau neuronal. Le CPU et la qualité des algorithmes sont donc les sujets immédiats. Un GPU ne supprime pas une boucle logique ni une erreur de menu.
+
+### 22.5 Pourquoi le score n'est pas l'objectif principal
+
+Le projet veut accomplir le parcours et certifier l'ascension. Accumuler de l'expérience ou des points peut être utile, mais ce n'est pas une preuve que l'agent résout les étapes indispensables.
+
+L'ancienne stratégie de farming illustre cette distinction : son comportement et sa rentabilité dépendaient des règles historiques. La version 3.6.7 a désactivé cette voie plutôt que de supposer qu'un score élevé résoudrait la fin de partie.
+
+---
+
+## 23. Points forts, limites et difficultés profondes
+
+### 23.1 Les points forts actuels
+
+Le projet réutilise un joueur historique riche en règles plutôt qu'un agent minimal. Il utilise le moteur NetHack réel, possède une interface explicite pour les dialogues et des outils d'expérimentation déjà fonctionnels.
+
+Ses raisons d'action, traces et résultats permettent de discuter de cas précis. Les parties indépendantes et les scénarios préparent un développement progressif.
+
+### 23.2 Les limites actuelles
+
+| Limite | Conséquence observable |
+| --- | --- |
+| Traductions entre plusieurs représentations | Texte ou menu mal compris malgré le protocole structuré |
+| Priorités locales | Combat ou inspection pouvant retarder indéfiniment un objectif |
+| Mémoire imparfaite | Objet, terrain ou monstre considéré dans un état périmé |
+| Règles héritées | Hypothèse 3.4.3 encore inadaptée à 3.6.7 |
+| Récupérations heuristiques | Blocage retardé plutôt que résolu |
+| Traces complètes optionnelles | Origine ancienne d'une anomalie parfois perdue |
+| Code local différent du worker | Correctif attribué à tort à une campagne |
+| Aides importantes | Résultats non comparables à une partie normale sans précisions |
+
+### 23.3 Pourquoi le problème est difficile, même sans mortalité
+
+Les décisions forment une très longue chaîne. Une mauvaise lecture de nom peut faire ignorer un objet ; cet objet peut manquer beaucoup plus tard ; la fin de partie peut alors échouer sans erreur évidente au moment de la mauvaise lecture.
+
+La difficulté n'est donc pas seulement la force d'un ennemi. C'est la cohérence des connaissances et des décisions pendant des dizaines de milliers de tours.
+
+### 23.4 Ce qui est proposé mais pas déjà installé partout
+
+La méga documentation de refonte propose une mémoire mieux typée, des compétences à préconditions et postconditions, un protocole corrélé et une séparation publique/privée renforcée.
+
+Dans la version ici décrite, le cœur reste le modèle et les handlers hérités, avec des correctifs de compatibilité, des veto et une supervision. Il faut dire « nous proposons de renforcer » et non « l'application garantit déjà ».
+
+### 23.5 Ce qu'un bon diagnostic doit distinguer
+
+Avant de dire « le bot est mauvais », déterminer la couche :
+
+- il n'a pas reçu l'information ;
+- il l'a reçue mais mal interprétée ;
+- il l'a comprise puis oubliée ou écrasée ;
+- il a choisi une mauvaise action avec un état correct ;
+- il a choisi une bonne intention mais mal répondu au dialogue ;
+- le moteur a refusé et le bot n'a pas intégré ce refus ;
+- l'environnement a interrompu une partie qui avançait encore.
+
+Ces causes demandent des corrections très différentes.
+
+---
+
+## 24. Questions fréquentes et réponses faciles à reprendre
+
+### « Est-ce qu'il apprend tout seul ? »
+
+Il met à jour ses connaissances pendant la partie. Mais les essais examinés ne réentraînent pas automatiquement sa stratégie entre parties. Les développeurs analysent les échecs et modifient le code.
+
+### « Pourquoi ne pas demander à ChatGPT ou Claude de jouer chaque tour ? »
+
+L'application a été construite autour de règles rapides et inspectables. Un modèle de langage dans chaque décision ajouterait une autre architecture, un coût et de nouvelles incertitudes. Ce n'est pas le fonctionnement actuel.
+
+### « Est-ce simplement une macro ? »
+
+Non. Une macro rejoue généralement une suite prédéfinie. Ici, le bot examine l'état, gère une mémoire et choisit des actions différentes selon les circonstances. Certaines séquences et connaissances de cartes sont toutefois codées explicitement.
+
+### « Est-ce qu'il voit tout le donjon ? »
+
+Le bot est conçu pour jouer avec une mémoire de ce qu'il perçoit et sait. L'interface possède aussi des diagnostics internes pour l'analyse. Une équivalence parfaite avec l'information d'un humain demanderait un audit plus strict des champs exposés.
+
+### « Si le moteur donne les données, pourquoi reste-t-il des erreurs de perception ? »
+
+Les données doivent encore être traduites vers l'ancien modèle et interprétées. Un texte d'objet, une superposition sur la carte ou un état périmé peuvent toujours être mal traités.
+
+### « Pourquoi ne suffit-il pas de descendre tout droit ? »
+
+La victoire dépend d'objets et de passages préparés. Il faut parfois visiter une autre branche, revenir, se rééquiper ou chercher un objet manquant.
+
+### « Pourquoi retourne-t-il dans une zone déjà visitée ? »
+
+Il peut poursuivre un but légitime : quête, objet, ressource ou exploration incomplète. Si ce retour se répète sans progrès, c'est possiblement une fixation de sa mémoire ou de ses priorités.
+
+### « Pourquoi le bot peut-il rester bloqué avec tous ses points de vie ? »
+
+La survie n'implique pas la progression. Un anneau maudit, une mauvaise cible ou une séquence de dialogue incorrecte suffit à bloquer un personnage en pleine santé.
+
+### « À quoi sert de sauver les dernières actions ? »
+
+Elles montrent le contexte immédiat de l'échec : question reçue, réponse envoyée, raison de l'action. Elles ne remplacent pas une trace depuis le début pour une cause ancienne.
+
+### « Une seed permet-elle de rejouer exactement ? »
+
+Elle aide, mais il faut aussi retrouver la version du moteur, du bot, les options et les entrées. Sans cela, la partie peut diverger.
+
+### « Pourquoi Python et C ? »
+
+C exécute le jeu existant. Python facilite la programmation et l'analyse du joueur automatique. Il n'est pas nécessaire de réécrire les règles du moteur pour modifier la stratégie.
+
+### « Où intervient Rust ? »
+
+Dans la version décrite, il n'intervient pas comme composant principal. Son usage éventuel reste une proposition d'optimisation fondée sur des mesures futures.
+
+### « Est-ce que le bot joue comme un humain ? »
+
+Il accomplit des actions comparables, mais son organisation est différente : règles explicites, tables et calculs de chemin. La comparaison est limitée aussi par les aides et le contrat d'information.
+
+### « Est-ce que les développeurs lui disent quoi faire pendant la partie ? »
+
+La boucle joue automatiquement selon sa configuration. Les opérateurs lancent les campagnes, lisent les résultats et préparent les correctifs. Un scénario préparé est une intervention initiale de test, explicitement distincte d'une partie complète.
+
+### « Peut-on lancer mille parties ? »
+
+Oui en organisant un ensemble de tâches et un nombre limité de parties simultanées. Il faut dimensionner les ressources et garder des versions et résultats cohérents. Mille parties ne veulent pas dire mille processus de jeu au même moment.
+
+### « Est-il déjà meilleur qu'un humain ? »
+
+Les données présentées ne permettent pas cette conclusion. Il faut définir le personnage, les aides, l'information disponible, les budgets et la population de parties avant toute comparaison.
+
+### « Comment sait-on qu'il a vraiment gagné ? »
+
+Le classificateur cherche un verdict d'ascension du moteur et une entrée cohérente dans le `xlogfile`. Il faut ensuite vérifier que le manifeste décrit bien une partie complète et quelles aides étaient actives.
+
+### « Un scénario gagné compte-t-il comme une victoire ? »
+
+Il prouve que la situation préparée a été résolue. Il ne prouve pas que le bot aurait su atteindre cette situation depuis le début.
+
+### « Pourquoi la documentation dit autre chose que les derniers logs ? »
+
+Le code et les campagnes évoluent. Une page peut décrire une ancienne étape. Toujours rattacher une affirmation à une date, un build, un manifeste et des résultats.
+
+### « Quel est le prochain progrès le plus utile ? »
+
+Pour les blocages observés, comprendre et fiabiliser les objets indispensables, les refus et l'enchaînement de fin de partie a une valeur immédiate. C'est un avis de développement, pas une fonction déjà réalisée intégralement.
+
+---
+
+## 25. Kits de présentation selon le public
+
+### 25.1 Pour un ami qui ne programme pas — deux minutes
+
+**Message à faire passer :** un joueur automatique doit garder une histoire cohérente de son aventure.
+
+1. Présenter NetHack comme un jeu d'exploration en cases.
+2. Montrer le but : objets clés, rituel et victoire.
+3. Expliquer le carnet, les règles et les priorités.
+4. Donner l'exemple de l'anneau maudit qui empêche une action.
+5. Expliquer les aides et la différence entre survivre et progresser.
+
+**Phrase de fin possible :** « Le plus intéressant est de comprendre comment une petite erreur peut compromettre une aventure très longue. »
+
+### 25.2 Pour un joueur de NetHack — cinq minutes
+
+**Message :** le bot possède beaucoup de connaissances, mais leur coordination reste difficile.
+
+Présenter le personnage, le kit, `full` et `assisted`, les changements Elbereth/farming, les branches, les objets rituels et les conditions de victoire. Illustrer avec la différence entre « quête explorée » et « Cloche possédée ».
+
+Ne pas cacher les aides. Ne pas promettre une maîtrise de tous les rôles. Préciser que les chiffres portent sur des campagnes identifiées.
+
+### 25.3 Pour un développeur — dix minutes
+
+**Message :** la frontière entre observation, mémoire, décision et saisie est le sujet technique central.
+
+Présenter les deux processus, le window port, `Engine`, `Bridge`, le délégateur et le recorder. Montrer le trajet d'un `PickUp`, puis un refus dû à un inventaire périmé. Expliquer les priorités et pourquoi une règle locale peut empêcher l'objectif global.
+
+Terminer par les garanties existantes et celles encore proposées : réponses non corrélées au `seq`, diagnostic privé par convention et traces complètes optionnelles.
+
+### 25.4 Pour un expert systèmes ou IA — quinze minutes
+
+**Message :** c'est un agent symbolique partiellement informé, à longue durée, dont les défauts se situent souvent aux interfaces et dans l'état mémorisé.
+
+Points de discussion :
+
+- sémantique événementielle et ordre des handlers ;
+- héritage des collections Clojure et déterminisme ;
+- actions à plusieurs interactions et absence de postconditions unifiées ;
+- différences entre état moteur et croyances du bot ;
+- séparation connaissance des règles, données cachées et assistance ;
+- isolation des tentatives et limites du watchdog ;
+- protocole expérimental, interruptions et population de seeds ;
+- coût CPU réel par parcours utile.
+
+Ne pas présenter ce logiciel comme un planificateur optimal, un système bayésien complet ou un environnement à garantie de replay exacte. Ces qualificatifs nécessiteraient des propriétés qui n'ont pas été démontrées ici.
+
+### 25.5 Pour un décideur ou financeur — cinq minutes
+
+**Message :** le projet construit un système autonome vérifiable, et chaque échec utile doit faire progresser le produit.
+
+Montrer une carte des responsabilités, un exemple d'échec expliqué et un tableau des résultats par catégorie. Discuter du coût par partie, de la stabilité et de la prochaine preuve attendue.
+
+Éviter de vendre des « milliers de parties » comme résultat en soi. Une campagne très répétitive peut coûter beaucoup sans apporter de nouvelles informations.
+
+### 25.6 Démonstration sans perturber les runs
+
+Préparer une copie de quelques artefacts : manifeste, capture textuelle, derniers événements, résultat et journal moteur. Ne pas dépendre d'une victoire en direct pour expliquer le système.
+
+Déroulé :
+
+1. Lire le manifeste : personnage, aides et seed.
+2. Montrer un état de suivi : niveau, points de vie, tour.
+3. Lire une raison d'action compréhensible.
+4. Relier la décision à une commande et au résultat du moteur.
+5. Montrer un incident et sa classification.
+6. Expliquer la correction ou la question encore ouverte.
+
+Si une partie est en cours, présenter son état comme provisoire et daté. Un fichier `live.json` ancien ne prouve pas que le processus est encore vivant.
+
+---
+
+## 26. Glossaire à trois niveaux
+
+| Terme | Débutant | Confirmé / expert |
+| --- | --- | --- |
+| Agent | Joueur automatique | Système qui observe et agit vers un objectif |
+| Agent symbolique | Joueur à règles | Décisions sur représentations explicites, sans réseau neuronal requis |
+| Moteur | Le jeu qui applique les règles | Exécutable C NetHack |
+| Window port | Façon dont le jeu communique | Implémentation des callbacks d'interface NetHack |
+| Bridge | Interprète | Adaptateur entre protocole structuré et conventions BotHack |
+| Handler | Petite règle ou réaction | Fonction enregistrée pour un événement ou une demande |
+| Délégateur | Distributeur des questions | Ordonne et invoque les handlers |
+| Heuristique | Règle pratique | Choix utile sans garantie d'optimalité générale |
+| A* | Calcul de chemin | Recherche avec coût et estimation de distance |
+| Glyphe | Symbole du jeu | Identifiant de représentation, différent d'un simple caractère |
+| Frame | Écran mémorisé | Objet reconstitué avec lignes, couleurs et curseur |
+| Prompt | Question du jeu | État demandant une saisie précise |
+| Pipe | Canal entre programmes | Flux local lu et écrit par des processus |
+| JSON | Fichier de données lisible | Objets, tableaux et valeurs structurées |
+| JSONL | Liste d'événements | Un document JSON par ligne |
+| Seed | Graine du hasard | Initialisation d'un générateur pseudo-aléatoire |
+| RNG | Source de hasard | Générateur pseudo-aléatoire moteur ou bot |
+| Manifest | Fiche d'identité d'une partie | Configuration et empreintes d'exécution |
+| Hash | Empreinte | Résumé numérique permettant de comparer des contenus |
+| Worker | Machine ou unité qui joue | Exécute des tentatives indépendantes |
+| Job | Partie confiée à l'exécution | Emplacement ou tâche dans le parallélisme |
+| Run | Essai | Exécution d'une partie avec ses artefacts |
+| Campagne / série | Lot de parties | Population planifiée et règles de lancement |
+| Watchdog | Gardien contre le blocage | Surveillance de délais et intervention |
+| Stack trace | Où le programme était | Pile des appels pour diagnostiquer un calcul ou une erreur |
+| Fallback | Réponse de secours | Traitement quand le cas normal échoue |
+| Veto | Action temporairement refusée | Filtre empêchant de resélectionner un échec connu |
+| Stuck | Bloqué | Catégorie liée aux détecteurs de non-progression |
+| Crash | Erreur du programme | Arrêt anormal bot ou moteur |
+| Timeout / limite | Budget épuisé | Temps, tours ou requêtes autorisés dépassés |
+| BUC | État magique d'un objet | Blessed, Uncursed, Cursed : béni, non maudit, maudit |
+| XL | Expérience du héros | Niveau d'expérience, distinct de la profondeur |
+| Dlvl | Étage du donjon | Étiquette de niveau, à contextualiser avec la branche |
+| Gehennom | Région profonde | Ensemble de lieux de fin de parcours avant les Plans |
+| Invocation | Rituel d'accès | Suite soumise à des préconditions de lieu et d'objets |
+| Ascension | Victoire | Issue finale certifiée par le moteur |
+| Wizard mode | Mode de préparation | Commandes de débogage, notamment pour les scénarios |
+| xlogfile | Journal du jeu | Enregistrement moteur utilisé pour recouper le résultat |
+| Replay | Reproduction | Peut viser les entrées, les décisions ou la trajectoire moteur |
+
+---
+
+## 27. Sources, preuves et périmètre
+
+### 27.1 Ce qui a été examiné
+
+Le travail a combiné la lecture du dépôt local, une interrogation en lecture seule du worker actif, la comparaison de huit fichiers ciblés et la lecture d'artefacts de campagnes.
+
+Aucune partie, aide, configuration ou source du bot actif n'a été modifiée. Aucun test de victoire n'a été lancé pour rédiger ce guide. Les exemples inventés sont indiqués comme pédagogiques ; les états d'exécution sont datés.
+
+### 27.2 Les fichiers à ouvrir selon la question
+
+| Question | Source principale |
+| --- | --- |
+| Comment est lancé le moteur ? | [engine.py](../../claude/nhbot/engine.py) |
+| Comment se déroule une tentative ? | [rungame.py](../../claude/nhbot/rungame.py) |
+| Comment fonctionne une série ? | [series.py](../../claude/nhbot/series.py) |
+| Comment les blocages sont-ils détectés ? | [supervisor.py](../../claude/nhbot/supervisor.py) |
+| Qu'est-ce qui est enregistré ? | [recorder.py](../../claude/nhbot/recorder.py) |
+| Comment lire les résultats ? | [analyze.py](../../claude/nhbot/analyze.py) |
+| Comment les scénarios sont-ils préparés ? | [scenarios.py](../../claude/nhbot/scenarios.py) |
+| Qui décide quoi faire ? | [mainbot.py, copie locale](../../claude/pybothack/bots/mainbot.py) |
+| Comment les priorités fonctionnent-elles ? | [delegator.py](../../claude/pybothack/delegator.py) |
+| Comment l'état est-il mémorisé ? | [game.py](../../claude/pybothack/game.py), [dungeon.py](../../claude/pybothack/dungeon.py) |
+| Comment les objets sont-ils identifiés ? | [itemid.py](../../claude/pybothack/itemid.py) |
+| Comment calcule-t-il les déplacements ? | [pathing.py](../../claude/pybothack/pathing.py) |
+| Comment joue-t-il le rituel ? | [behaviors.py](../../claude/pybothack/behaviors.py) |
+| Comment les dialogues sont-ils adaptés ? | [nhbridge.py](../../claude/pybothack/nhbridge.py), [compat36.py](../../claude/pybothack/compat36.py) |
+| Quelles règles 3.6 sont adaptées ? | [rules36.py](../../claude/pybothack/rules36.py) |
+| Comment le jeu produit-il les requêtes ? | [winbot.c](../../claude/engine/nethack-3.6.7/win/bot/winbot.c) |
+| Où sont les aides ? | [botassist.c](../../claude/engine/nethack-3.6.7/src/botassist.c) |
+| Quel équipement est fourni ? | [kit-default.txt](../../claude/config/kit-default.txt) |
+| Quel est le contexte du projet ? | [README](../../claude/README.md), [HANDOFF](../../claude/docs/HANDOFF.md), [DEVLOG](../../claude/docs/DEVLOG.md) |
+| Qu'a-t-on réellement lu sur le worker ? | [Snapshot du 18 septembre](../evidence/application-worker-2026-09-18.json) |
+
+Les liens vers `claude` désignent des fichiers vivants, qui peuvent évoluer après la rédaction. Pour `mainbot.py`, la différence local/worker décrite plus haut doit être gardée à l'esprit ; le snapshot contient la source distante relevée.
+
+### 27.3 Références externes
+
+Le [Guidebook officiel 3.6.7](https://www.nethack.org/v367/Guidebook.html) sert de référence générale pour découvrir le jeu. Le [dépôt BotHack original](https://github.com/krajj7/BotHack) situe l'origine du joueur automatique. Les comportements précis de l'application décrite proviennent principalement du code local et de la copie distante relevée, pas d'une promesse générale de ces projets.
+
+### 27.4 La phrase la plus sûre pour présenter l'ensemble
+
+> « Nous adaptons un joueur automatique symbolique à NetHack 3.6.7. Il joue des parties longues avec une mémoire, des règles et une interface structurée. Les campagnes actuelles sont assistées et surveillées, et nous évaluons séparément ce qu'il sait accomplir, pourquoi il se bloque et quelles preuves attestent une réussite. »

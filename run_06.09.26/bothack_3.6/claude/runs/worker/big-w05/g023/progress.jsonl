@@ -1,0 +1,257 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an empty uncursed bag of holding", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "4 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 262, "depth": 2, "t": 10.1, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 262, "depth": 2, "t": 10.1, "stage": "dlvl2"}
+{"kind": "depth", "turn": 491, "depth": 3, "t": 20.6, "value": 3, "dname": "The Gnomish Mines"}
+{"kind": "branch", "turn": 491, "depth": 3, "t": 20.6, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 491, "depth": 3, "t": 20.6, "stage": "mines"}
+{"kind": "xl", "turn": 494, "depth": 3, "t": 20.9, "value": 2}
+{"kind": "xl", "turn": 498, "depth": 3, "t": 21.3, "value": 3}
+{"kind": "depth", "turn": 659, "depth": 4, "t": 27.5, "value": 4, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 668, "depth": 4, "t": 28.1, "value": 4}
+{"kind": "depth", "turn": 897, "depth": 5, "t": 41.2, "value": 5, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 905, "depth": 5, "t": 41.8, "value": 5}
+{"kind": "heartbeat", "turn": 1000, "depth": 4, "t": 45.8, "lvl": "Dlvl:4", "dname": "The Dungeons of Doom", "hp": 67, "hpmax": 67, "xl": 5, "ac": -9, "requests": 1526, "actions": 1184}
+{"kind": "special", "turn": 1016, "depth": 5, "t": 46.4, "name": "oracle", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 1016, "depth": 5, "t": 46.4, "stage": "oracle"}
+{"kind": "assist", "turn": 1034, "depth": 5, "t": 47.8, "x_kind": "feed", "nutrition_before": 49, "count": 1, "x_turn": 1034, "x_depth": 5, "dnum": 0}
+{"kind": "item_gained", "turn": 1062, "depth": 5, "t": 49.3, "item": "Excalibur"}
+{"kind": "depth", "turn": 1167, "depth": 7, "t": 53.3, "value": 7, "dname": "The Gnomish Mines"}
+{"kind": "xl", "turn": 1238, "depth": 7, "t": 58.2, "value": 6}
+{"kind": "special", "turn": 1252, "depth": 6, "t": 59.2, "name": "minetn", "lvl": "Dlvl:6  "}
+{"kind": "stage", "turn": 1252, "depth": 6, "t": 59.2, "stage": "minetown", "variant": "minetn"}
+{"kind": "item_lost", "turn": 1537, "depth": 6, "t": 77.8, "item": "pick-axe", "messages": ["You see here an ape corpse.", "You see here an ape corpse.", "Where do you want to travel to?", "Pick an object.", "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Pengalengan's delicatessen!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Pengalengan anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 44, :y 11}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 1545, "depth": 6, "t": 79.0, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 1842, "depth": 6, "t": 98.0, "item": "pick-axe", "messages": ["\"Velkommen, bot!  Welcome to Izchak's lighting store!\"", "\"Will you please leave your pick-axe outside?\"", "A watch captain blocks your path.", "Pick an object.", "@        a human or elf (peaceful watch captain) [seen: normal vision, infravision]", "Pick an object.", "@        a human or elf (peaceful Izchak) [seen: normal vision, infravision]", "You do not owe Izchak anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 30, :y 16}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 1849, "depth": 6, "t": 98.9, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 1935, "depth": 6, "t": 105.2, "item": "pick-axe", "messages": ["@        a human or elf (peaceful watchman) [seen: normal vision, infravision]", "Pick an object.", "@        a human or elf (peaceful Aned) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Aned's hardware store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Aned anything.", "Pick an object.", "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 27, :y 16}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 1943, "depth": 6, "t": 106.6, "item": "pick-axe"}
+{"kind": "xl", "turn": 1984, "depth": 5, "t": 112.1, "value": 7}
+{"kind": "heartbeat", "turn": 2000, "depth": 5, "t": 113.3, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 88, "hpmax": 88, "xl": 7, "ac": -10, "requests": 3277, "actions": 2488}
+{"kind": "item_lost", "turn": 2653, "depth": 4, "t": 142.2, "item": "pick-axe", "messages": ["Something is written here in the dust.", "You read: \"Closed for invcntory\".", "You see no objects here.", "This door is locked.", "You succeed in picking the lock.", "The door opens.", "Pick an object.", "]        a mimic or a strange object (strange object)", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 5, :y 4}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 2682, "depth": 4, "t": 147.5, "item": "pick-axe"}
+{"kind": "xl", "turn": 2937, "depth": 4, "t": 160.8, "value": 8}
+{"kind": "heartbeat", "turn": 3003, "depth": 5, "t": 164.3, "lvl": "Dlvl:5", "dname": "The Dungeons of Doom", "hp": 96, "hpmax": 96, "xl": 8, "ac": -9, "requests": 4686, "actions": 3551}
+{"kind": "item_lost", "turn": 3617, "depth": 7, "t": 191.1, "item": "pick-axe", "messages": ["The door resists!", "The door opens.", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Angmagssalik) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Angmagssalik's general store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Angmagssalik anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 13, :y 7}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 3663, "depth": 7, "t": 197.8, "item": "pick-axe"}
+{"kind": "xl", "turn": 3940, "depth": 6, "t": 209.3, "value": 9}
+{"kind": "heartbeat", "turn": 4007, "depth": 6, "t": 213.2, "lvl": "Dlvl:6", "dname": "The Dungeons of Doom", "hp": 103, "hpmax": 103, "xl": 9, "ac": -9, "requests": 6073, "actions": 4670}
+{"kind": "branch", "turn": 4008, "depth": 5, "t": 213.3, "dname": "Sokoban", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 4008, "depth": 5, "t": 213.3, "stage": "sokoban"}
+{"kind": "special", "turn": 4008, "depth": 5, "t": 213.3, "name": "soko4", "lvl": "Dlvl:5  "}
+{"kind": "special", "turn": 4664, "depth": 4, "t": 244.8, "name": "soko3", "lvl": "Dlvl:4  "}
+{"kind": "heartbeat", "turn": 5011, "depth": 4, "t": 268.1, "lvl": "Dlvl:4", "dname": "Sokoban", "hp": 103, "hpmax": 103, "xl": 9, "ac": -14, "requests": 7245, "actions": 5633}
+{"kind": "special", "turn": 5126, "depth": 3, "t": 277.7, "name": "soko2", "lvl": "Dlvl:3  "}
+{"kind": "special", "turn": 5365, "depth": 2, "t": 298.3, "name": "soko1", "lvl": "Dlvl:2  "}
+{"kind": "assist", "turn": 5957, "depth": 2, "t": 347.3, "x_kind": "feed", "nutrition_before": 49, "count": 2, "x_turn": 5957, "x_depth": 2, "dnum": 4}
+{"kind": "heartbeat", "turn": 6011, "depth": 2, "t": 351.4, "lvl": "Dlvl:2", "dname": "Sokoban", "hp": 103, "hpmax": 103, "xl": 9, "ac": -14, "requests": 8817, "actions": 7019}
+{"kind": "xl", "turn": 6122, "depth": 2, "t": 359.3, "value": 10}
+{"kind": "item_lost", "turn": 6443, "depth": 7, "t": 370.7, "item": "pick-axe", "messages": ["a - the blessed rustproof +3 Excalibur (weapon in hand).", "Where do you want to travel to?", "Something is written here in the dust.", "You read: \"??a  vas ?\".", "Something is written here in the dust.", "You read: \"??a  vas ?\".", "You see no objects here.", "Where do you want to travel to?", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 6456, "depth": 7, "t": 374.1, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 6607, "depth": 7, "t": 381.4, "item": "pick-axe", "messages": ["Where do you want to travel to?", "The yellow light explodes!", "You are blinded by a blast of light!", "You can see again.", "You kill the rothe!", "You see here a rothe corpse.", "You see here a rothe corpse.", "Where do you want to travel to?", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 6614, "depth": 7, "t": 382.9, "item": "pick-axe"}
+{"kind": "depth", "turn": 6632, "depth": 8, "t": 383.2, "value": 8, "dname": "The Dungeons of Doom"}
+{"kind": "item_lost", "turn": 6720, "depth": 7, "t": 387.6, "item": "pick-axe", "messages": ["You see here a rothe corpse.", "Where do you want to travel to?", "\"Velkommen, bot!  Welcome again to Angmagssalik's general store!\"", "\"Will you please leave your pick-axe outside?\"", "Angmagssalik blocks your path.", "Pick an object.", "@        a human or elf (peaceful Angmagssalik) [seen: normal vision, infravision]", "You do not owe Angmagssalik anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 13, :y 7}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 6753, "depth": 7, "t": 392.4, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 6976, "depth": 8, "t": 406.6, "item": "pick-axe", "messages": ["You see here a scroll of teleportation.", "You hear a chugging sound.", "The door opens.", "\"Velkommen, bot!  Welcome to Baliga's delicatessen!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Baliga) [seen: normal vision, infravision]", "You do not owe Baliga anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 63, :y 11}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 6989, "depth": 8, "t": 408.1, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 7012, "depth": 8, "t": 409.4, "lvl": "Dlvl:8", "dname": "The Dungeons of Doom", "hp": 113, "hpmax": 113, "xl": 10, "ac": -14, "requests": 10247, "actions": 8126}
+{"kind": "depth", "turn": 7067, "depth": 9, "t": 411.8, "value": 9, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 7404, "depth": 10, "t": 433.7, "value": 10, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 7404, "depth": 10, "t": 433.7, "stage": "dlvl10"}
+{"kind": "special", "turn": 7404, "depth": 10, "t": 433.7, "name": "bigrm", "lvl": "Dlvl:10 "}
+{"kind": "stage", "turn": 7404, "depth": 10, "t": 433.7, "stage": "bigroom", "variant": "bigrm"}
+{"kind": "xl", "turn": 7570, "depth": 10, "t": 443.7, "value": 11}
+{"kind": "depth", "turn": 7612, "depth": 12, "t": 449.0, "value": 12, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 8013, "depth": 10, "t": 481.6, "lvl": "Dlvl:10", "dname": "The Dungeons of Doom", "hp": 120, "hpmax": 120, "xl": 11, "ac": -16, "requests": 12096, "actions": 9517}
+{"kind": "heartbeat", "turn": 9016, "depth": 10, "t": 541.2, "lvl": "Dlvl:10", "dname": "The Dungeons of Doom", "hp": 116, "hpmax": 120, "xl": 11, "ac": -17, "requests": 13161, "actions": 10360}
+{"kind": "item_lost", "turn": 9545, "depth": 7, "t": 562.1, "item": "pick-axe", "messages": ["Something is written here in the dust.", "You read: \"??    ? ?\".", "Something is written here in the dust.", "You read: \"??    ? ?\".", "You see no objects here.", "Where do you want to travel to?", "Pick an object.", "@        a human or elf (peaceful Angmagssalik) [seen: normal vision, infravision]", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 9557, "depth": 7, "t": 563.4, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 10022, "depth": 11, "t": 575.4, "lvl": "Dlvl:11", "dname": "The Dungeons of Doom", "hp": 120, "hpmax": 120, "xl": 11, "ac": -18, "requests": 13950, "actions": 10949}
+{"kind": "assist", "turn": 10128, "depth": 11, "t": 577.9, "x_kind": "feed", "nutrition_before": 49, "count": 3, "x_turn": 10128, "x_depth": 11, "dnum": 0}
+{"kind": "depth", "turn": 10483, "depth": 13, "t": 597.0, "value": 13, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 10683, "depth": 14, "t": 609.6, "value": 14, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 11032, "depth": 14, "t": 628.7, "lvl": "Dlvl:14", "dname": "The Dungeons of Doom", "hp": 120, "hpmax": 120, "xl": 11, "ac": -16, "requests": 15378, "actions": 12052}
+{"kind": "item_lost", "turn": 11284, "depth": 7, "t": 645.3, "item": "pick-axe", "messages": ["You kill the cave spider!", "Where do you want to travel to?", "Something is written here in the dust.", "You read: \" ??    ?\".", "Something is written here in the dust.", "You read: \" ??    ?\".", "You see no objects here.", "Where do you want to travel to?", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 11296, "depth": 7, "t": 647.5, "item": "pick-axe"}
+{"kind": "depth", "turn": 11892, "depth": 15, "t": 664.3, "value": 15, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 12032, "depth": 15, "t": 676.7, "lvl": "Dlvl:15", "dname": "The Dungeons of Doom", "hp": 120, "hpmax": 120, "xl": 11, "ac": -20, "requests": 16325, "actions": 12775}
+{"kind": "depth", "turn": 12154, "depth": 16, "t": 681.1, "value": 16, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 12154, "depth": 16, "t": 681.1, "name": "rogue", "lvl": "Dlvl:16 "}
+{"kind": "xl", "turn": 12156, "depth": 16, "t": 681.2, "value": 12}
+{"kind": "depth", "turn": 12276, "depth": 17, "t": 693.2, "value": 17, "dname": "The Dungeons of Doom"}
+{"kind": "item_lost", "turn": 12330, "depth": 17, "t": 697.7, "item": "pick-axe", "messages": ["You find a hidden door.", "The door resists!", "The door opens.", "\"Velkommen, bot!  Welcome to Abitibi's general store!\"", "\"Will you please leave your pick-axe outside?\"", "Pick an object.", "@        a human or elf (peaceful Abitibi) [seen: normal vision, infravision]", "You do not owe Abitibi anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 69, :y 10}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 12355, "depth": 17, "t": 701.0, "item": "pick-axe"}
+{"kind": "depth", "turn": 12769, "depth": 18, "t": 718.2, "value": 18, "dname": "The Dungeons of Doom"}
+{"kind": "assist", "turn": 12934, "depth": 18, "t": 730.0, "x_kind": "feed", "nutrition_before": 49, "count": 4, "x_turn": 12934, "x_depth": 18, "dnum": 0}
+{"kind": "heartbeat", "turn": 13033, "depth": 18, "t": 735.5, "lvl": "Dlvl:18", "dname": "The Dungeons of Doom", "hp": 127, "hpmax": 127, "xl": 12, "ac": -20, "requests": 17710, "actions": 13966}
+{"kind": "depth", "turn": 13209, "depth": 19, "t": 747.4, "value": 19, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 13730, "depth": 20, "t": 777.1, "value": 20, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 13990, "depth": 21, "t": 797.6, "value": 21, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14021, "depth": 22, "t": 801.2, "value": 22, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 14033, "depth": 22, "t": 802.5, "lvl": "Dlvl:22", "dname": "The Dungeons of Doom", "hp": 123, "hpmax": 123, "xl": 12, "ac": -21, "requests": 19225, "actions": 15196}
+{"kind": "depth", "turn": 14042, "depth": 23, "t": 803.4, "value": 23, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14226, "depth": 24, "t": 819.3, "value": 24, "dname": "The Dungeons of Doom"}
+{"kind": "item_lost", "turn": 14251, "depth": 24, "t": 822.2, "item": "pick-axe", "messages": ["There is a staircase up here.", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Zum Loch) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Zum Loch's liquor emporium!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Zum Loch anything.", "You hear a door open.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 8, :y 18}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 14276, "depth": 24, "t": 824.9, "item": "pick-axe"}
+{"kind": "depth", "turn": 14408, "depth": 25, "t": 837.1, "value": 25, "dname": "The Dungeons of Doom"}
+{"kind": "assist", "turn": 14669, "depth": 25, "t": 856.3, "x_kind": "feed", "nutrition_before": 49, "count": 5, "x_turn": 14668, "x_depth": 25, "dnum": 0}
+{"kind": "depth", "turn": 14760, "depth": 26, "t": 862.8, "value": 26, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14803, "depth": 27, "t": 867.1, "value": 27, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 14803, "depth": 27, "t": 867.1, "name": "medusa", "lvl": "Dlvl:27 "}
+{"kind": "stage", "turn": 14803, "depth": 27, "t": 867.1, "stage": "medusa", "variant": "medusa"}
+{"kind": "depth", "turn": 14837, "depth": 28, "t": 869.8, "value": 28, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14858, "depth": 29, "t": 871.2, "value": 29, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 14858, "depth": 29, "t": 871.2, "name": "castle", "lvl": "Dlvl:29 "}
+{"kind": "stage", "turn": 14858, "depth": 29, "t": 871.2, "stage": "castle"}
+{"kind": "xl", "turn": 14890, "depth": 29, "t": 873.8, "value": 13}
+{"kind": "heartbeat", "turn": 15037, "depth": 29, "t": 883.6, "lvl": "Dlvl:29", "dname": "The Dungeons of Doom", "hp": 130, "hpmax": 130, "xl": 13, "ac": -20, "requests": 21132, "actions": 16809}
+{"kind": "heartbeat", "turn": 16037, "depth": 29, "t": 1093.3, "lvl": "Dlvl:29", "dname": "The Dungeons of Doom", "hp": 133, "hpmax": 133, "xl": 13, "ac": -19, "requests": 23989, "actions": 18880}
+{"kind": "depth", "turn": 16184, "depth": 30, "t": 1115.7, "value": 30, "dname": "Gehennom"}
+{"kind": "branch", "turn": 16184, "depth": 30, "t": 1115.7, "dname": "Gehennom", "lvl": "Dlvl:30 "}
+{"kind": "special", "turn": 16184, "depth": 30, "t": 1115.7, "name": "valley", "lvl": "Dlvl:30 "}
+{"kind": "stage", "turn": 16184, "depth": 30, "t": 1115.7, "stage": "valley"}
+{"kind": "achievement", "turn": 16184, "depth": 30, "t": 1115.7, "name": "gehennom"}
+{"kind": "xl", "turn": 16677, "depth": 30, "t": 1152.1, "value": 14}
+{"kind": "achievement", "turn": 16928, "depth": 27, "t": 1173.5, "name": "medusa"}
+{"kind": "heartbeat", "turn": 17039, "depth": 27, "t": 1184.8, "lvl": "Dlvl:27", "dname": "The Dungeons of Doom", "hp": 140, "hpmax": 140, "xl": 14, "ac": -20, "requests": 25761, "actions": 20350}
+{"kind": "item_lost", "turn": 17503, "depth": 17, "t": 1208.8, "item": "pick-axe", "messages": ["You kill the Elvenking!", "Your lamp is now on.", "There is a staircase up here.", "There are several objects here.", "Your lamp is now off.", "You climb up the stairs.", "Where do you want to travel to?", "Your lamp is now on.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at {'x': 73, 'y': 10, 'glyph': ')', 'color': 'cyan', 'feature': 'floor', 'seen':"], "slot": "k"}}
+{"kind": "item_gained", "turn": 17528, "depth": 17, "t": 1212.7, "item": "pick-axe"}
+{"kind": "heartbeat", "turn": 18056, "depth": 5, "t": 1225.0, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 140, "hpmax": 140, "xl": 14, "ac": -21, "requests": 26631, "actions": 20960}
+{"kind": "branch", "turn": 18299, "depth": 11, "t": 1230.6, "dname": "The Quest", "lvl": "Home 1 "}
+{"kind": "stage", "turn": 18299, "depth": 11, "t": 1230.6, "stage": "quest"}
+{"kind": "special", "turn": 18299, "depth": 11, "t": 1230.6, "name": "Val-strt", "lvl": "Home 1 "}
+{"kind": "special", "turn": 18516, "depth": 13, "t": 1302.9, "name": "Val-loca", "lvl": "Home 3 "}
+{"kind": "special", "turn": 18975, "depth": 16, "t": 1404.5, "name": "Val-goal", "lvl": "Home 6 "}
+{"kind": "heartbeat", "turn": 19056, "depth": 15, "t": 1417.5, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 28178, "actions": 22153}
+{"kind": "heartbeat", "turn": 20063, "depth": 15, "t": 1592.1, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 29528, "actions": 23102}
+{"kind": "heartbeat", "turn": 21066, "depth": 15, "t": 1628.8, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 30394, "actions": 23541}
+{"kind": "heartbeat", "turn": 22066, "depth": 15, "t": 1711.0, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 31357, "actions": 24065}
+{"kind": "assist", "turn": 22548, "depth": 15, "t": 1733.8, "x_kind": "feed", "nutrition_before": 49, "count": 6, "x_turn": 22548, "x_depth": 15, "dnum": 3}
+{"kind": "heartbeat", "turn": 23073, "depth": 15, "t": 1757.1, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 32324, "actions": 24558}
+{"kind": "heartbeat", "turn": 24074, "depth": 15, "t": 1850.5, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 33325, "actions": 25136}
+{"kind": "heartbeat", "turn": 25079, "depth": 15, "t": 1895.8, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 34405, "actions": 25704}
+{"kind": "heartbeat", "turn": 26084, "depth": 15, "t": 1991.0, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 35618, "actions": 26404}
+{"kind": "heartbeat", "turn": 27090, "depth": 15, "t": 2071.1, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 36741, "actions": 26990}
+{"kind": "heartbeat", "turn": 28093, "depth": 15, "t": 2106.9, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 37682, "actions": 27453}
+{"kind": "heartbeat", "turn": 29093, "depth": 15, "t": 2150.9, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 38755, "actions": 27991}
+{"kind": "heartbeat", "turn": 30096, "depth": 15, "t": 2229.0, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 40140, "actions": 28709}
+{"kind": "heartbeat", "turn": 31102, "depth": 15, "t": 2395.8, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -19, "requests": 41871, "actions": 29710}
+{"kind": "heartbeat", "turn": 32106, "depth": 15, "t": 2500.3, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -20, "requests": 43748, "actions": 30726}
+{"kind": "heartbeat", "turn": 33109, "depth": 15, "t": 2588.8, "lvl": "Home 5", "dname": "The Quest", "hp": 145, "hpmax": 145, "xl": 14, "ac": -21, "requests": 45574, "actions": 31683}
+{"kind": "heartbeat", "turn": 34109, "depth": 15, "t": 2674.1, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -21, "requests": 47542, "actions": 32716}
+{"kind": "item_gained", "turn": 34756, "depth": 15, "t": 2753.8, "item": "water walking boots"}
+{"kind": "item_lost", "turn": 34759, "depth": 15, "t": 2754.2, "item": "water walking boots", "messages": ["Count: 1 n", "You drop an uncursed +0 pair of jumping boots.", "Count: 1 S", "You drop a wand of nothing (0:3).", "Pick an object.", "H        a giant humanoid (peaceful fire giant) [seen: normal vision, infravision]", "Pick an object.", "H        a giant humanoid (peaceful fire giant) [seen: normal vision, infravision]", "Count: 1 U", "You drop an uncursed +0 pair of water walking boots."], "last_action": {"act": "dropsingle", "why": ["dropping junk"], "slot": "U"}}
+{"kind": "heartbeat", "turn": 35117, "depth": 15, "t": 2767.6, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -21, "requests": 49904, "actions": 33956}
+{"kind": "assist", "turn": 35892, "depth": 15, "t": 2845.2, "x_kind": "feed", "nutrition_before": 49, "count": 7, "x_turn": 35888, "x_depth": 15, "dnum": 3}
+{"kind": "heartbeat", "turn": 36118, "depth": 15, "t": 2877.7, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -21, "requests": 52324, "actions": 35263}
+{"kind": "heartbeat", "turn": 37124, "depth": 15, "t": 2955.9, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 54663, "actions": 36496}
+{"kind": "heartbeat", "turn": 38131, "depth": 15, "t": 3048.9, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 56928, "actions": 37654}
+{"kind": "heartbeat", "turn": 39136, "depth": 15, "t": 3166.3, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 59691, "actions": 39128}
+{"kind": "heartbeat", "turn": 40139, "depth": 15, "t": 3286.4, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 62707, "actions": 40748}
+{"kind": "heartbeat", "turn": 41142, "depth": 15, "t": 3385.2, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 65645, "actions": 42291}
+{"kind": "heartbeat", "turn": 42142, "depth": 15, "t": 3570.8, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 69550, "actions": 44510}
+{"kind": "heartbeat", "turn": 43147, "depth": 15, "t": 3639.1, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 70416, "actions": 45025}
+{"kind": "heartbeat", "turn": 44151, "depth": 15, "t": 3673.1, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 70914, "actions": 45273}
+{"kind": "heartbeat", "turn": 45153, "depth": 15, "t": 3712.5, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 71514, "actions": 45572}
+{"kind": "heartbeat", "turn": 46153, "depth": 15, "t": 3752.1, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 72174, "actions": 45897}
+{"kind": "heartbeat", "turn": 47154, "depth": 15, "t": 3817.6, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 73087, "actions": 46396}
+{"kind": "heartbeat", "turn": 48156, "depth": 15, "t": 3866.3, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 74061, "actions": 46911}
+{"kind": "assist", "turn": 48225, "depth": 15, "t": 3871.8, "x_kind": "feed", "nutrition_before": 49, "count": 8, "x_turn": 48222, "x_depth": 15, "dnum": 3}
+{"kind": "heartbeat", "turn": 49161, "depth": 15, "t": 3945.4, "lvl": "Home 5", "dname": "The Quest", "hp": 147, "hpmax": 147, "xl": 14, "ac": -20, "requests": 75542, "actions": 47703}
+{"kind": "heartbeat", "turn": 50166, "depth": 15, "t": 4052.2, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 76954, "actions": 48580}
+{"kind": "heartbeat", "turn": 51171, "depth": 15, "t": 4115.2, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 77663, "actions": 48969}
+{"kind": "heartbeat", "turn": 52172, "depth": 15, "t": 4238.9, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 78606, "actions": 49582}
+{"kind": "heartbeat", "turn": 53172, "depth": 15, "t": 4307.2, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 79431, "actions": 50054}
+{"kind": "heartbeat", "turn": 54178, "depth": 15, "t": 4384.5, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 80230, "actions": 50475}
+{"kind": "heartbeat", "turn": 55182, "depth": 15, "t": 4445.7, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 81157, "actions": 50968}
+{"kind": "assist", "turn": 55950, "depth": 15, "t": 4489.6, "x_kind": "feed", "nutrition_before": 49, "count": 9, "x_turn": 55943, "x_depth": 15, "dnum": 3}
+{"kind": "heartbeat", "turn": 56191, "depth": 15, "t": 4504.4, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 82103, "actions": 51482}
+{"kind": "heartbeat", "turn": 57192, "depth": 15, "t": 4556.9, "lvl": "Home 5", "dname": "The Quest", "hp": 155, "hpmax": 155, "xl": 14, "ac": -20, "requests": 83020, "actions": 51985}
+{"kind": "achievement", "turn": 57680, "depth": 16, "t": 4612.7, "name": "bell"}
+{"kind": "stage", "turn": 57680, "depth": 16, "t": 4612.7, "stage": "bell"}
+{"kind": "item_gained", "turn": 57680, "depth": 16, "t": 4612.7, "item": "silver bell"}
+{"kind": "heartbeat", "turn": 58198, "depth": 13, "t": 4688.6, "lvl": "Dlvl:13", "dname": "The Dungeons of Doom", "hp": 159, "hpmax": 159, "xl": 14, "ac": -19, "requests": 84483, "actions": 52941}
+{"kind": "item_lost", "turn": 58306, "depth": 17, "t": 4689.8, "item": "pick-axe", "messages": ["You kill the raven!", "Where do you want to travel to?", "A gnome lord blocks your path.", "Pick an object.", "G        a gnome (peaceful gnome lord) [seen: normal vision, infravision]", "Where do you want to travel to?", "You descend the stairs.", "Where do you want to travel to?", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "visit shop general to price id items"], "slot": "k"}}
+{"kind": "item_gained", "turn": 58311, "depth": 17, "t": 4690.6, "item": "pick-axe"}
+{"kind": "item_lost", "turn": 58358, "depth": 19, "t": 4692.1, "item": "silver bell", "messages": ["Count: 1 I", "There is a black flash as a crested helmet hits the altar.", "Count: 1 J", "A candy bar lands on the altar.", "J - an uncursed candy bar.", "Count: 1 L", "A wand of teleportation lands on the altar.", "L - an uncursed wand of teleportation.", "Count: 1 N", "A silver bell lands on the altar."], "last_action": {"act": "dropsingle", "why": ["dropping things on altar"], "slot": "N"}}
+{"kind": "item_gained", "turn": 58359, "depth": 19, "t": 4692.1, "item": "silver bell"}
+{"kind": "depth", "turn": 58921, "depth": 31, "t": 4733.1, "value": 31, "dname": "Gehennom"}
+{"kind": "depth", "turn": 58991, "depth": 32, "t": 4742.9, "value": 32, "dname": "Gehennom"}
+{"kind": "depth", "turn": 59194, "depth": 33, "t": 4766.3, "value": 33, "dname": "Gehennom"}
+{"kind": "special", "turn": 59194, "depth": 33, "t": 4766.3, "name": "asmodeus", "lvl": "Dlvl:33 "}
+{"kind": "heartbeat", "turn": 59198, "depth": 33, "t": 4766.6, "lvl": "Dlvl:33", "dname": "Gehennom", "hp": 159, "hpmax": 159, "xl": 14, "ac": -21, "requests": 86033, "actions": 54191}
+{"kind": "xl", "turn": 59477, "depth": 33, "t": 4798.8, "value": 15}
+{"kind": "depth", "turn": 59583, "depth": 34, "t": 4808.0, "value": 34, "dname": "Gehennom"}
+{"kind": "special", "turn": 59583, "depth": 34, "t": 4808.0, "name": "juiblex", "lvl": "Dlvl:34 "}
+{"kind": "depth", "turn": 59857, "depth": 35, "t": 4855.4, "value": 35, "dname": "Gehennom"}
+{"kind": "special", "turn": 59857, "depth": 35, "t": 4855.4, "name": "baalz", "lvl": "Dlvl:35 "}
+{"kind": "depth", "turn": 59862, "depth": 36, "t": 4856.0, "value": 36, "dname": "Gehennom"}
+{"kind": "depth", "turn": 60140, "depth": 37, "t": 4884.2, "value": 37, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 60198, "depth": 37, "t": 4890.4, "lvl": "Dlvl:37", "dname": "Gehennom", "hp": 170, "hpmax": 170, "xl": 15, "ac": -19, "requests": 88116, "actions": 55996}
+{"kind": "depth", "turn": 60292, "depth": 38, "t": 4902.3, "value": 38, "dname": "Gehennom"}
+{"kind": "depth", "turn": 60767, "depth": 39, "t": 4948.3, "value": 39, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 61201, "depth": 39, "t": 4994.4, "lvl": "Dlvl:39", "dname": "Gehennom", "hp": 170, "hpmax": 170, "xl": 15, "ac": -23, "requests": 89786, "actions": 57482}
+{"kind": "depth", "turn": 61292, "depth": 40, "t": 5003.2, "value": 40, "dname": "Gehennom"}
+{"kind": "special", "turn": 61292, "depth": 40, "t": 5003.2, "name": "orcus", "lvl": "Dlvl:40 "}
+{"kind": "stage", "turn": 61292, "depth": 40, "t": 5003.2, "stage": "gehennom_deep"}
+{"kind": "heartbeat", "turn": 62202, "depth": 40, "t": 5088.8, "lvl": "Dlvl:40", "dname": "Gehennom", "hp": 170, "hpmax": 170, "xl": 15, "ac": -23, "requests": 91759, "actions": 59032}
+{"kind": "depth", "turn": 62279, "depth": 41, "t": 5094.0, "value": 41, "dname": "Gehennom"}
+{"kind": "branch", "turn": 62953, "depth": 40, "t": 5174.0, "dname": "Vlad's Tower", "lvl": "Dlvl:40 "}
+{"kind": "stage", "turn": 62953, "depth": 40, "t": 5174.0, "stage": "vlad"}
+{"kind": "special", "turn": 62953, "depth": 40, "t": 5174.0, "name": "tower3", "lvl": "Dlvl:40 "}
+{"kind": "special", "turn": 63010, "depth": 39, "t": 5179.1, "name": "tower2", "lvl": "Dlvl:39 "}
+{"kind": "special", "turn": 63034, "depth": 38, "t": 5182.4, "name": "tower1", "lvl": "Dlvl:38 "}
+{"kind": "achievement", "turn": 63088, "depth": 38, "t": 5188.2, "name": "menorah"}
+{"kind": "stage", "turn": 63088, "depth": 38, "t": 5188.2, "stage": "candelabrum"}
+{"kind": "item_gained", "turn": 63088, "depth": 38, "t": 5188.2, "item": "candelabrum"}
+{"kind": "heartbeat", "turn": 63202, "depth": 39, "t": 5193.9, "lvl": "Dlvl:39", "dname": "Vlad's Tower", "hp": 170, "hpmax": 170, "xl": 15, "ac": -23, "requests": 93685, "actions": 60549}
+{"kind": "depth", "turn": 63246, "depth": 42, "t": 5197.9, "value": 42, "dname": "Gehennom"}
+{"kind": "special", "turn": 63246, "depth": 42, "t": 5197.9, "name": "wizard1", "lvl": "Dlvl:42 "}
+{"kind": "stage", "turn": 63246, "depth": 42, "t": 5197.9, "stage": "wizard_tower"}
+{"kind": "depth", "turn": 63336, "depth": 43, "t": 5208.7, "value": 43, "dname": "Gehennom"}
+{"kind": "special", "turn": 63336, "depth": 43, "t": 5208.7, "name": "wizard2", "lvl": "Dlvl:43 "}
+{"kind": "depth", "turn": 63493, "depth": 44, "t": 5229.3, "value": 44, "dname": "Gehennom"}
+{"kind": "special", "turn": 63493, "depth": 44, "t": 5229.3, "name": "wizard3", "lvl": "Dlvl:44 "}
+{"kind": "depth", "turn": 63693, "depth": 45, "t": 5259.7, "value": 45, "dname": "Gehennom"}
+{"kind": "depth", "turn": 63711, "depth": 46, "t": 5262.6, "value": 46, "dname": "Gehennom"}
+{"kind": "depth", "turn": 63732, "depth": 47, "t": 5265.1, "value": 47, "dname": "Gehennom"}
+{"kind": "special", "turn": 63732, "depth": 47, "t": 5265.1, "name": "fakewiz1", "lvl": "Dlvl:47 "}
+{"kind": "depth", "turn": 63851, "depth": 48, "t": 5281.0, "value": 48, "dname": "Gehennom"}
+{"kind": "depth", "turn": 63929, "depth": 49, "t": 5291.3, "value": 49, "dname": "Gehennom"}
+{"kind": "depth", "turn": 64000, "depth": 50, "t": 5295.1, "value": 50, "dname": "Gehennom"}
+{"kind": "special", "turn": 64000, "depth": 50, "t": 5295.1, "name": "fakewiz2", "lvl": "Dlvl:50 "}
+{"kind": "heartbeat", "turn": 64202, "depth": 50, "t": 5324.6, "lvl": "Dlvl:50", "dname": "Gehennom", "hp": 170, "hpmax": 170, "xl": 15, "ac": -25, "requests": 95860, "actions": 62411}
+{"kind": "depth", "turn": 64395, "depth": 51, "t": 5347.4, "value": 51, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 65202, "depth": 50, "t": 5441.4, "lvl": "Dlvl:50", "dname": "Gehennom", "hp": 170, "hpmax": 170, "xl": 15, "ac": -24, "requests": 97475, "actions": 63774}
+{"kind": "xl", "turn": 65699, "depth": 43, "t": 5499.9, "value": 16}
+{"kind": "assist", "turn": 65983, "depth": 42, "t": 5551.4, "x_kind": "lifesave", "how": "died", "killer": "Yeenoghu", "count": 1, "hpmax": 183, "xl": 16, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 65983, "x_depth": 42, "dnum": 1}
+{"kind": "xl", "turn": 65993, "depth": 42, "t": 5552.8, "value": 17}
+{"kind": "assist", "turn": 66000, "depth": 42, "t": 5553.2, "x_kind": "lifesave", "how": "died", "killer": "pit fiend", "count": 2, "hpmax": 190, "xl": 17, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 65999, "x_depth": 42, "dnum": 1}
+{"kind": "assist", "turn": 66012, "depth": 42, "t": 5554.1, "x_kind": "lifesave", "how": "died", "killer": "invisible incubus", "count": 3, "hpmax": 190, "xl": 17, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 66011, "x_depth": 42, "dnum": 1}
+{"kind": "assist", "turn": 66039, "depth": 42, "t": 5556.9, "x_kind": "lifesave", "how": "died", "killer": "iron golem", "count": 4, "hpmax": 190, "xl": 17, "restored_attrs": 1, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 66039, "x_depth": 42, "dnum": 1}
+{"kind": "assist", "turn": 66065, "depth": 42, "t": 5559.1, "x_kind": "lifesave", "how": "died", "killer": "vampire lord", "count": 5, "hpmax": 190, "xl": 17, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 66064, "x_depth": 42, "dnum": 1}
+{"kind": "assist", "turn": 66089, "depth": 42, "t": 5560.6, "x_kind": "lifesave", "how": "died", "killer": "pit fiend", "count": 6, "hpmax": 190, "xl": 17, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 66089, "x_depth": 42, "dnum": 1}
+{"kind": "assist", "turn": 66112, "depth": 42, "t": 5562.9, "x_kind": "lifesave", "how": "died", "killer": "iron golem", "count": 7, "hpmax": 190, "xl": 17, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 66112, "x_depth": 42, "dnum": 1}
+{"kind": "heartbeat", "turn": 66211, "depth": 42, "t": 5569.8, "lvl": "Dlvl:42", "dname": "Gehennom", "hp": 190, "hpmax": 190, "xl": 17, "ac": -24, "requests": 100050, "actions": 65639}
+{"kind": "achievement", "turn": 66280, "depth": 42, "t": 5575.3, "name": "book"}
+{"kind": "stage", "turn": 66280, "depth": 42, "t": 5575.3, "stage": "book"}
+{"kind": "item_gained", "turn": 66280, "depth": 42, "t": 5575.3, "item": "papyrus spellbook"}
+{"kind": "heartbeat", "turn": 67211, "depth": 51, "t": 5892.5, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 190, "hpmax": 190, "xl": 17, "ac": -24, "requests": 104207, "actions": 68282}
+{"kind": "heartbeat", "turn": 68211, "depth": 51, "t": 6081.0, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 192, "hpmax": 192, "xl": 17, "ac": -25, "requests": 107306, "actions": 70240}
+{"kind": "heartbeat", "turn": 69211, "depth": 51, "t": 6204.5, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 197, "hpmax": 197, "xl": 17, "ac": -25, "requests": 109711, "actions": 71775}
+{"kind": "xl", "turn": 69680, "depth": 51, "t": 6273.2, "value": 18}
+{"kind": "heartbeat", "turn": 70211, "depth": 51, "t": 6357.1, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 209, "hpmax": 209, "xl": 18, "ac": -25, "requests": 112416, "actions": 73460}
+{"kind": "heartbeat", "turn": 71211, "depth": 51, "t": 6520.9, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 209, "hpmax": 209, "xl": 18, "ac": -25, "requests": 115104, "actions": 75111}
+{"kind": "heartbeat", "turn": 72211, "depth": 51, "t": 6699.0, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 209, "hpmax": 209, "xl": 18, "ac": -23, "requests": 117862, "actions": 76739}
+{"kind": "heartbeat", "turn": 73211, "depth": 51, "t": 6860.4, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 208, "hpmax": 209, "xl": 18, "ac": -23, "requests": 120450, "actions": 78390}
+{"kind": "heartbeat", "turn": 74212, "depth": 51, "t": 7026.6, "lvl": "Dlvl:51", "dname": "Gehennom", "hp": 209, "hpmax": 209, "xl": 18, "ac": -23, "requests": 123000, "actions": 80094}
+{"kind": "assist", "turn": 74357, "depth": 51, "t": 7055.5, "x_kind": "feed", "nutrition_before": 49, "count": 10, "x_turn": 74357, "x_depth": 51, "dnum": 1}

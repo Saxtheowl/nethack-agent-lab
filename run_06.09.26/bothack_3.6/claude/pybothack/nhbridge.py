@@ -948,6 +948,7 @@ class Bridge(object):
         r"^You cannot drop something you are wearing|"
         r"^You are already wearing|^You can't take that off|"
         r"^You can't move diagonally (?:out of|into) an intact doorway|"
+        r"free hand, you cannot loot|^You can't reach over the edge|"
         r"^Never mind\.$")
     VETO_TURNS = 300
 

@@ -141,17 +141,28 @@ def _can_pray(game):
     return can_pray(game)
 
 
+_CURSED_LEVI = [None]
+
+
 def cursed_levi(game):
     if (have(game, {"boots of levitation", "ring of levitation"},
              {'cursed', 'worn'})
             and not have(game, holy_water, {'bagged'})
             and not have(game, "scroll of remove curse",
                          {'bagged', 'noncursed'})):
-        return with_reason("cursed levitation",
-                           pray(game)
-                           or (seek_level(game, 'main', 'castle')
-                               if in_gehennom(game) else None)
-                           or search(10))
+        r = (pray(game)
+             or (seek_level(game, 'main', 'castle')
+                 if in_gehennom(game) else None))
+        if r is None:
+            # port: waiting for a prayer that never comes blocked the bot for
+            # 6000 turns (big-w04 g001); wait a while, then play on and hope
+            # to find holy water or a scroll of remove curse
+            turn = game.get('turn') or 0
+            if _CURSED_LEVI[0] is None or turn - _CURSED_LEVI[0] > 6000:
+                _CURSED_LEVI[0] = turn
+            if turn - _CURSED_LEVI[0] < 2000:
+                r = search(10)
+        return with_reason("cursed levitation", r)
     return None
 
 
@@ -391,7 +402,7 @@ def full_explore(game):
                 and _have_dsm(game)):
             res = explore_level(game, 'quest', 'end') or quest_bell(game)
     if res is None and 'vlad' not in skip:
-        res = explore_level(game, 'vlad', 'end')
+        res = explore_level(game, 'vlad', 'end') or vlad_candelabrum(game)
     if res is None:
         res = explore_level(game, 'main', 'end')
     if res is None and 'wiztower' not in skip:
@@ -907,46 +918,96 @@ def consider_items_here(game):
 _BH = [None]
 
 
-def _set_bell_hopeless(game, turn):
+def _bell_note(game, key, turn):
     """`game` here is a value, not the atom: record on the bot's atom."""
     bh = _BH[0]
     if bh is not None:
-        bh.game.swap(assoc, 'bell-hopeless', turn)
+        bh.game.swap(assoc, key, turn)
+
+
+def _set_bell_hopeless(game, turn):
+    _bell_note(game, 'bell-hopeless', turn)
 
 
 def quest_bell(game):
-    """The Bell of Opening is carried by the quest nemesis.  BotHack only
-    explored the goal level and left without it, so the invocation was
-    impossible thousands of turns later (cyc-03 g002, big-w02 g007)."""
-    if have(game, BELL, {'bagged'}):
+    """The Bell of Opening is carried by the quest nemesis."""
+    return fetch_invocation_item(game, BELL, 'quest', 'the Bell of Opening')
+
+
+def vlad_candelabrum(game):
+    """The Candelabrum of Invocation is carried by Vlad the Impaler, at the
+    top of his tower (big-w06: 8 of the 12 most advanced games were only
+    missing the Candelabrum)."""
+    return fetch_invocation_item(game, CANDELABRUM, 'vlad',
+                                 'the Candelabrum of Invocation')
+
+
+def fetch_invocation_item(game, item, branch, what):
+    """Go back to the level where the item's owner lives, hunt it, walk the
+    level if nothing is known there; bounded, because the bot must carry on
+    when the item cannot be reached.  BotHack only explored those levels and
+    left without the item, making the invocation impossible thousands of
+    turns later (cyc-03 g002, big-w06)."""
+    if have(game, item, {'bagged'}):
         return None
-    goal = get_level(game, 'quest', 'end')
+    goal = get_level(game, branch, 'end')
     if goal is None:
         return None
     turn = game.get('turn') or 0
     # give up for a while when the goal level has nothing left to offer,
     # else this alternates with "leaving the quest" on the stairs
     # (cyc-04 g002 went up and down 50 times)
-    hopeless = game.get('bell-hopeless')
+    hkey, skey = 'fetch-hopeless-' + branch, 'fetch-start-' + branch
+    hopeless = game.get(hkey)
     if hopeless is not None and turn - hopeless < 5000:
         return None
-    if branch_key(game) != 'quest' or game['dlvl'] != goal['dlvl']:
-        return with_reason("going back for the Bell of Opening",
-                           seek_level(game, 'quest', 'end'))
+    started = game.get(skey)
+    if started is None:
+        _bell_note(game, skey, turn)
+    elif turn - started > 3000:
+        # the nemesis is not where we can reach it (big-w05 g022, g024
+        # hunted for thousands of turns on a quest level)
+        log.warning("gave up on %s after %d turns", what, turn - started)
+        _bell_note(game, hkey, turn)
+        _bell_note(game, skey, None)
+        return None
+    if branch_key(game) != branch or game['dlvl'] != goal['dlvl']:
+        return with_reason("going back for " + what,
+                           seek_level(game, branch, 'end'))
     targets = [position(m) for m in curlvl_monsters(game)
                if m.get('peaceful') is False and not m.get('friendly')]
     if targets:
         r = seek(game, set(targets))
         if r:
-            return with_reason("hunting the quest nemesis for the Bell", r)
+            return with_reason("hunting the owner of " + what, r)
+    # monsters are forgotten when the level is left: walk the level again to
+    # find the nemesis (big-w04: "monsters seen: []" on arrival)
+    r = seek(game, lambda t: (walkable(t) and not t.get('walked')
+                              and not trap(t)), {'no-explore'})
+    if r:
+        return with_reason("touring the level for " + what, r)
+    # the owner is often behind a closed or locked door (Vlad's room)
+    r = seek(game, lambda t: t.get('feature') in ('door-closed',
+                                                  'door-locked'),
+             {'no-explore'})
+    if r:
+        return with_reason("opening the way to " + what, r)
     r = search_level(game, 1)
     if r:
-        return with_reason("looking for the Bell of Opening", r)
+        return with_reason("looking for " + what, r)
     mons = [(m.get('type') or {}).get('name') or m.get('glyph')
             for m in curlvl_monsters(game)]
-    log.warning("no way to get the Bell on the quest goal level, giving up "
-                "until turn %d (monsters seen: %s)", turn + 5000, mons[:12])
-    _set_bell_hopeless(game, turn)
+    lvl = curlvl(game)
+    tiles = list(tile_seq(lvl))
+    unwalked = sum(1 for t in tiles if walkable(t) and not t.get('walked'))
+    doors = sum(1 for t in tiles
+                if t.get('feature') in ('door-closed', 'door-locked'))
+    unknown_t = sum(1 for t in tiles if t.get('feature') is None)
+    log.warning("no way to get %s on %s here, giving up until turn %d "
+                "(monsters=%s unwalked=%d closed-doors=%d unknown=%d)",
+                what, game.get('dlvl'), turn + 5000, mons[:10], unwalked,
+                doors, unknown_t)
+    _bell_note(game, hkey, turn)
     return None
 
 
@@ -1018,6 +1079,16 @@ def unstick_handler(bh):
             if r:
                 log.warning("unstick: leaving hopeless level %s", key)
                 return with_reason("unstick: level hopeless, leaving it", r)
+            if branch_key(game) not in ('main',):
+                # cannot dig here (quest, Vlad...): use the stairs instead of
+                # searching for 6000 turns (big-w05 g022 on Home 5)
+                from ..actions import Ascend
+                from ..tile import stairs_up_p
+                r = (Ascend() if stairs_up_p(at_player(game))
+                     else seek(game, stairs_up_p, {'no-explore'}))
+                if r:
+                    log.warning("unstick: leaving %s by the stairs", key)
+                    return with_reason("unstick: leaving the level", r)
         if key not in last_reset or turn - last_reset[key] >= 300:
             last_reset[key] = turn
             log.warning("unstick: resetting search counts on %s", key)
