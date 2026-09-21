@@ -1,0 +1,800 @@
+{"r": 20994, "k": "cmd", "T": 16043, "lvl": "Dlvl:5", "u": [48, 10], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["targetting enemy {'x': 48, 'y': 14, 'known': 16043, 'first-known': 16042, 'glyph': 'o', 'color': 'bl"], "dir": "S"}
+{"a": "j"}
+{"r": 20995, "k": "cmd", "T": 16044, "lvl": "Dlvl:5", "u": [48, 11], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 13, 'known': 16044, 'first-known': 16042, 'glyph': 'o', 'color': 'blue', 'typ", "targetting enemy {'x': 48, 'y': 13, 'known': 16044, 'first-known': 16042, 'glyph': 'o', 'color': 'bl"], "dir": "SE"}
+{"a": "n"}
+{"r": 20996, "k": "cmd", "T": 16044, "lvl": "Dlvl:5", "u": [48, 11], "hp": 125, "hpmax": 125}
+{"m": "You hit the Uruk-hai!"}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 13, 'known': 16044, 'first-known': 16042, 'glyph': 'o', 'color': 'blue', 'typ", "targetting enemy {'x': 48, 'y': 13, 'known': 16044, 'first-known': 16042, 'glyph': 'o', 'color': 'bl"], "dir": "SE"}
+{"a": "n"}
+{"r": 20997, "k": "cmd", "T": 16045, "lvl": "Dlvl:5", "u": [48, 11], "hp": 125, "hpmax": 125}
+{"m": "You kill the Uruk-hai!"}
+{"act": "move", "why": ["new or desired item at {'x': 48, 'y': 13, 'glyph': '[', 'color': 'blue', 'feature': 'floor', 'seen':"], "dir": "SE"}
+{"a": "n"}
+{"r": 20998, "k": "cmd", "T": 16045, "lvl": "Dlvl:5", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 20999, "k": "cmd", "T": 16045, "lvl": "Dlvl:5", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 36, :y 16}"}
+{"a": "_"}
+{"r": 21000, "k": "pos", "T": 16045, "lvl": "Dlvl:5", "u": [49, 12], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 15)"}
+{"r": 21001, "k": "cmd", "T": 16053, "lvl": "Dlvl:5", "u": [38, 14], "hp": 125, "hpmax": 125}
+{"m": "A gas spore blocks your path."}
+{"act": "move", "why": ["hitting {'x': 36, 'y': 14, 'known': 16053, 'first-known': 16053, 'glyph': 'e', 'color': None, 'type'", "targetting enemy {'x': 36, 'y': 14, 'known': 16053, 'first-known': 16053, 'glyph': 'e', 'color': Non"], "dir": "NW"}
+{"a": "y"}
+{"r": 21002, "k": "cmd", "T": 16053, "lvl": "Dlvl:5", "u": [38, 14], "hp": 113, "hpmax": 125}
+{"m": "You kill the gas spore!"}
+{"m": "You are caught in the gas spore's explosion!"}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 31, :y 15}"], "pos": "#Position{:x 31, :y 15}"}
+{"a": "_"}
+{"r": 21003, "k": "pos", "T": 16053, "lvl": "Dlvl:5", "u": [38, 14], "hp": 113, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(32, 14)"}
+{"r": 21004, "k": "cmd", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 31, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21005, "k": "cmd", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125}
+{"m": "You see here a slime mold."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21006, "k": "cmd", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125}
+{"m": "s - a slime mold."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21007, "k": "cmd", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 31, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21008, "k": "cmd", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["new or desired item at {'x': 43, 'y': 15, 'glyph': '*', 'color': None, 'feature': 'floor', 'seen': T"], "pos": "#Position{:x 43, :y 15}"}
+{"a": "_"}
+{"r": 21009, "k": "pos", "T": 16057, "lvl": "Dlvl:5", "u": [32, 14], "hp": 116, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(44, 14)"}
+{"r": 21010, "k": "cmd", "T": 16064, "lvl": "Dlvl:5", "u": [44, 14], "hp": 122, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21011, "k": "cmd", "T": 16064, "lvl": "Dlvl:5", "u": [44, 14], "hp": 122, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 21012, "k": "cmd", "T": 16064, "lvl": "Dlvl:5", "u": [43, 14], "hp": 122, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 36, :y 16}"}
+{"a": "_"}
+{"r": 21013, "k": "pos", "T": 16064, "lvl": "Dlvl:5", "u": [43, 14], "hp": 122, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 15)"}
+{"r": 21014, "k": "cmd", "T": 16069, "lvl": "Dlvl:5", "u": [37, 15], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["using stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21015, "k": "cmd", "T": 16069, "lvl": "Dlvl:6", "u": [48, 9], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 35, :y 8}"}
+{"a": "_"}
+{"r": 21016, "k": "pos", "T": 16069, "lvl": "Dlvl:6", "u": [48, 9], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(36, 7)"}
+{"r": 21017, "k": "cmd", "T": 16085, "lvl": "Dlvl:6", "u": [29, 12], "hp": 125, "hpmax": 125}
+{"m": "A gnomish wizard blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 14}"}
+{"a": ";"}
+{"r": 21018, "k": "pos", "T": 16085, "lvl": "Dlvl:6", "u": [29, 12], "hp": 125, "hpmax": 125, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 13)"}
+{"r": 21019, "k": "cmd", "T": 16085, "lvl": "Dlvl:6", "u": [29, 12], "hp": 125, "hpmax": 125}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 21020, "k": "cmd", "T": 16086, "lvl": "Dlvl:6", "u": [28, 12], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21021, "k": "cmd", "T": 16086, "lvl": "Dlvl:6", "u": [27, 11], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 21022, "k": "cmd", "T": 16087, "lvl": "Dlvl:6", "u": [27, 10], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21023, "k": "cmd", "T": 16087, "lvl": "Dlvl:6", "u": [28, 9], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21024, "k": "cmd", "T": 16088, "lvl": "Dlvl:6", "u": [29, 9], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21025, "k": "cmd", "T": 16088, "lvl": "Dlvl:6", "u": [30, 8], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21026, "k": "cmd", "T": 16089, "lvl": "Dlvl:6", "u": [31, 8], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21027, "k": "cmd", "T": 16090, "lvl": "Dlvl:6", "u": [32, 7], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21028, "k": "cmd", "T": 16091, "lvl": "Dlvl:6", "u": [33, 6], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21029, "k": "cmd", "T": 16091, "lvl": "Dlvl:6", "u": [34, 6], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21030, "k": "cmd", "T": 16092, "lvl": "Dlvl:6", "u": [35, 7], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21031, "k": "cmd", "T": 16093, "lvl": "Dlvl:6", "u": [36, 7], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["using stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21032, "k": "cmd", "T": 16094, "lvl": "Dlvl:7", "u": [34, 6], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"m": "There is a staircase up here."}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"    ?  r l    ?\"."}
+{"m": "You see here a wand of create monster."}
+{"act": "autotravel", "why": ["seek going directly", "seeking stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 35, :y 7}"}
+{"a": "_"}
+{"r": 21033, "k": "pos", "T": 16094, "lvl": "Dlvl:7", "u": [34, 6], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(36, 6)"}
+{"r": 21034, "k": "cmd", "T": 16109, "lvl": "Dlvl:7", "u": [36, 6], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["using stairs", "escaping subbranch sokoban", "seeking branch main ( main )", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21035, "k": "cmd", "T": 16110, "lvl": "Dlvl:8", "u": [55, 9], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 23, :y 3}"}
+{"a": "_"}
+{"r": 21036, "k": "pos", "T": 16110, "lvl": "Dlvl:8", "u": [55, 9], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(24, 2)"}
+{"r": 21037, "k": "cmd", "T": 16127, "lvl": "Dlvl:8", "u": [24, 2], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["new or desired item at {'x': 42, 'y': 11, 'glyph': '(', 'color': 'blue', 'feature': 'corridor', 'see"], "dir": "SE"}
+{"a": "n"}
+{"r": 21038, "k": "cmd", "T": 16128, "lvl": "Dlvl:8", "u": [25, 3], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["new or desired item at {'x': 42, 'y': 11, 'glyph': '(', 'color': 'blue', 'feature': 'corridor', 'see"], "pos": "#Position{:x 42, :y 11}"}
+{"a": "_"}
+{"r": 21039, "k": "pos", "T": 16128, "lvl": "Dlvl:8", "u": [25, 3], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 10)"}
+{"r": 21040, "k": "cmd", "T": 16134, "lvl": "Dlvl:8", "u": [34, 9], "hp": 125, "hpmax": 125}
+{"m": "A stone giant blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 33, :y 11}"}
+{"a": ";"}
+{"r": 21041, "k": "pos", "T": 16134, "lvl": "Dlvl:8", "u": [34, 9], "hp": 125, "hpmax": 125, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(34, 10)"}
+{"r": 21042, "k": "cmd", "T": 16134, "lvl": "Dlvl:8", "u": [34, 9], "hp": 125, "hpmax": 125}
+{"m": "H        a giant humanoid (stone giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 33, 'y': 11, 'known': 16134, 'first-known': 16134, 'glyph': 'H', 'color': None, 'type'"], "dir": "S"}
+{"a": "j"}
+{"r": 21043, "k": "cmd", "T": 16134, "lvl": "Dlvl:8", "u": [34, 9], "hp": 121, "hpmax": 125}
+{"m": "You hit the stone giant!"}
+{"m": "The stone giant hits!"}
+{"act": "move", "why": ["hitting {'x': 33, 'y': 11, 'known': 16134, 'first-known': 16134, 'glyph': 'H', 'color': None, 'type'"], "dir": "S"}
+{"a": "j"}
+{"r": 21044, "k": "cmd", "T": 16135, "lvl": "Dlvl:8", "u": [34, 9], "hp": 121, "hpmax": 125}
+{"m": "You kill the stone giant!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 33, :y 11}"], "dir": "S"}
+{"a": "j"}
+{"r": 21045, "k": "cmd", "T": 16135, "lvl": "Dlvl:8", "u": [34, 10], "hp": 121, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 33, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21046, "k": "cmd", "T": 16135, "lvl": "Dlvl:8", "u": [34, 10], "hp": 121, "hpmax": 125}
+{"act": "autotravel", "why": ["new or desired item at {'x': 42, 'y': 11, 'glyph': '(', 'color': 'blue', 'feature': 'corridor', 'see"], "pos": "#Position{:x 42, :y 11}"}
+{"a": "_"}
+{"r": 21047, "k": "pos", "T": 16135, "lvl": "Dlvl:8", "u": [34, 10], "hp": 121, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 10)"}
+{"r": 21048, "k": "cmd", "T": 16140, "lvl": "Dlvl:8", "u": [43, 10], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21049, "k": "cmd", "T": 16140, "lvl": "Dlvl:8", "u": [43, 10], "hp": 125, "hpmax": 125}
+{"m": "You see here an expensive camera."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21050, "k": "cmd", "T": 16141, "lvl": "Dlvl:8", "u": [42, 9], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 23, :y 3}"}
+{"a": "_"}
+{"r": 21051, "k": "pos", "T": 16141, "lvl": "Dlvl:8", "u": [42, 9], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(24, 2)"}
+{"r": 21052, "k": "cmd", "T": 16152, "lvl": "Dlvl:8", "u": [24, 2], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21053, "k": "cmd", "T": 16152, "lvl": "Dlvl:9", "u": [29, 13], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 14, :y 16}"}
+{"a": "_"}
+{"r": 21054, "k": "pos", "T": 16152, "lvl": "Dlvl:9", "u": [29, 13], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(15, 15)"}
+{"r": 21055, "k": "cmd", "T": 16160, "lvl": "Dlvl:9", "u": [15, 15], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21056, "k": "cmd", "T": 16161, "lvl": "Dlvl:10", "u": [10, 3], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 30, :y 14}"}
+{"a": "_"}
+{"r": 21057, "k": "pos", "T": 16161, "lvl": "Dlvl:10", "u": [10, 3], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(31, 13)"}
+{"r": 21058, "k": "cmd", "T": 16175, "lvl": "Dlvl:10", "u": [28, 13], "hp": 125, "hpmax": 125}
+{"m": "A stone giant blocks your path."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21059, "k": "cmd", "T": 16176, "lvl": "Dlvl:10", "u": [29, 14], "hp": 125, "hpmax": 125}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 29, :y 11}"}
+{"a": ";"}
+{"r": 21060, "k": "pos", "T": 16176, "lvl": "Dlvl:10", "u": [29, 14], "hp": 125, "hpmax": 125, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(30, 10)"}
+{"r": 21061, "k": "cmd", "T": 16176, "lvl": "Dlvl:10", "u": [29, 14], "hp": 125, "hpmax": 125}
+{"m": "h        a humanoid (peaceful dwarf) [seen: infravision]"}
+{"act": "move", "why": ["robbing a poor peaceful dorf"], "dir": "NW"}
+{"a": "y"}
+{"r": 21062, "k": "cmd", "T": 16176, "lvl": "Dlvl:10", "u": [28, 13], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["robbing a poor peaceful dorf"], "pos": "#Position{:x 28, :y 12}"}
+{"a": "_"}
+{"r": 21063, "k": "pos", "T": 16176, "lvl": "Dlvl:10", "u": [28, 13], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(29, 11)"}
+{"r": 21064, "k": "cmd", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"act": "attack", "why": ["robbing a poor peaceful dorf"], "dir": "N"}
+{"a": "F"}
+{"r": 21065, "k": "cmdcont", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"a": "k"}
+{"r": 21066, "k": "cmd", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 28, :y 11}"}
+{"a": ";"}
+{"r": 21067, "k": "pos", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(29, 10)"}
+{"r": 21068, "k": "cmd", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"m": "h        a humanoid (peaceful dwarf) [seen: normal vision, infravision]"}
+{"act": "attack", "why": ["robbing a poor peaceful dorf"], "dir": "N"}
+{"a": "F"}
+{"r": 21069, "k": "cmdcont", "T": 16180, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"a": "k"}
+{"r": 21070, "k": "cmd", "T": 16181, "lvl": "Dlvl:10", "u": [29, 11], "hp": 125, "hpmax": 125}
+{"m": "The dwarf gets angry!"}
+{"m": "You kill the dwarf!"}
+{"act": "move", "why": ["new or desired item at {'x': 28, 'y': 11, 'glyph': '[', 'color': 'brown', 'feature': 'corridor', 'se"], "dir": "N"}
+{"a": "k"}
+{"r": 21071, "k": "cmd", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"m": "There are several objects here."}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21072, "k": "cmd", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21073, "k": "menu", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a a dwarvish short sword", "b an axe", "# Armor", "c a dwarvish iron helm", "d a pair of iron shoes", "e a dwarvish roundshield", "f a dwarvish cloak"]}
+{"a": [4]}
+{"r": 21074, "k": "cmd", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"m": "u - a dwarvish iron helm."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21075, "k": "cmd", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21076, "k": "cmd", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "takeoff", "why": ["removing blockers of u", "making use of u", "wearing better armor", "assisted: re-dress before fighting"], "slot": "q"}
+{"a": "T"}
+{"r": 21077, "k": "yn", "T": 16182, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125, "q": "What do you want to take off? [cgnqN or ?*]"}
+{"a": "q"}
+{"r": 21078, "k": "cmd", "T": 16183, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"m": "You finish taking off your helm."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21079, "k": "cmd", "T": 16183, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping junk"], "slot": "q"}
+{"a": "d"}
+{"r": 21080, "k": "yn", "T": 16183, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-oqs-uwzABFIJL-NPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21081, "k": "key", "T": 16183, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"a": "q"}
+{"r": 21082, "k": "cmd", "T": 16184, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 q"}
+{"m": "You drop a +0 orcish helm."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21083, "k": "cmd", "T": 16184, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 11, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21084, "k": "cmd", "T": 16184, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "wear", "why": ["making use of u", "wearing better armor", "assisted: re-dress before fighting"], "slot": "u"}
+{"a": "W"}
+{"r": 21085, "k": "yn", "T": 16184, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125, "q": "What do you want to wear? [u or ?*]"}
+{"a": "u"}
+{"r": 21086, "k": "cmd", "T": 16185, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"m": "You finish your dressing maneuver."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21087, "k": "cmd", "T": 16185, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 30, :y 14}"}
+{"a": "_"}
+{"r": 21088, "k": "pos", "T": 16185, "lvl": "Dlvl:10", "u": [29, 10], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(31, 13)"}
+{"r": 21089, "k": "cmd", "T": 16187, "lvl": "Dlvl:10", "u": [31, 13], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21090, "k": "cmd", "T": 16188, "lvl": "Dlvl:11", "u": [34, 15], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["going to altar"], "pos": "#Position{:x 15, :y 16}"}
+{"a": "_"}
+{"r": 21091, "k": "pos", "T": 16188, "lvl": "Dlvl:11", "u": [34, 15], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(16, 15)"}
+{"r": 21092, "k": "cmd", "T": 16205, "lvl": "Dlvl:11", "u": [18, 13], "hp": 125, "hpmax": 125}
+{"m": "A hobbit blocks your path."}
+{"act": "move", "why": ["going to altar"], "dir": "W"}
+{"a": "h"}
+{"r": 21093, "k": "cmd", "T": 16206, "lvl": "Dlvl:11", "u": [17, 13], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["going to altar"], "dir": "SW"}
+{"a": "b"}
+{"r": 21094, "k": "cmd", "T": 16206, "lvl": "Dlvl:11", "u": [16, 14], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["going to altar"], "dir": "S"}
+{"a": "j"}
+{"r": 21095, "k": "cmd", "T": 16207, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "I"}
+{"a": "d"}
+{"r": 21096, "k": "yn", "T": 16207, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFIJL-NPQSTV-Y or ?*]"}
+{"a": "2"}
+{"r": 21097, "k": "key", "T": 16207, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "I"}
+{"r": 21098, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 2 I"}
+{"m": "2 daggers land on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21099, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21100, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "J"}
+{"a": "d"}
+{"r": 21101, "k": "yn", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFJL-NPQSTV-Y or ?*]"}
+{"a": "3"}
+{"r": 21102, "k": "key", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "J"}
+{"r": 21103, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 3 J"}
+{"m": "3 elven daggers land on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21104, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21105, "k": "cmd", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "L"}
+{"a": "d"}
+{"r": 21106, "k": "yn", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFL-NPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21107, "k": "key", "T": 16208, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "L"}
+{"r": 21108, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 L"}
+{"m": "A candy bar lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21109, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21110, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "M"}
+{"a": "d"}
+{"r": 21111, "k": "yn", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFMNPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21112, "k": "key", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "M"}
+{"r": 21113, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 M"}
+{"m": "A food ration lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21114, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21115, "k": "cmd", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21116, "k": "menu", "T": 16209, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a 3 uncursed elven daggers", "b 2 uncursed daggers", "c a cursed orcish dagger", "# Armor", "d a cursed pair of hiking boots", "e an uncursed +0 dwarvish cloak", "# Comestibles", "f an uncursed food ration", "g an uncursed candy bar"]}
+{"a": [8, 9]}
+{"r": 21117, "k": "cmd", "T": 16210, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "d - an uncursed food ration."}
+{"m": "L - an uncursed candy bar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21118, "k": "cmd", "T": 16210, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21119, "k": "cmd", "T": 16210, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "o"}
+{"a": "d"}
+{"r": 21120, "k": "yn", "T": 16210, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFLNPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21121, "k": "key", "T": 16210, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "o"}
+{"r": 21122, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 o"}
+{"m": "A silver wand lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21123, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21124, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21125, "k": "menu", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a 3 uncursed elven daggers", "b 2 uncursed daggers", "c a cursed orcish dagger", "# Armor", "d a cursed pair of hiking boots", "e an uncursed +0 dwarvish cloak", "# Wands", "f an uncursed silver wand"]}
+{"a": [8]}
+{"r": 21126, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "o - an uncursed silver wand."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21127, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21128, "k": "cmd", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "S"}
+{"a": "d"}
+{"r": 21129, "k": "yn", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFLNPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21130, "k": "key", "T": 16211, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "S"}
+{"r": 21131, "k": "cmd", "T": 16212, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 S"}
+{"m": "An empty bag called bag2 lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21132, "k": "cmd", "T": 16212, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21133, "k": "cmd", "T": 16212, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21134, "k": "menu", "T": 16212, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a 3 uncursed elven daggers", "b 2 uncursed daggers", "c a cursed orcish dagger", "# Armor", "d a cursed pair of hiking boots", "e an uncursed +0 dwarvish cloak", "# Tools", "f an empty uncursed bag called bag2"]}
+{"a": [8]}
+{"r": 21135, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "S - an empty uncursed bag called bag2."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21136, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21137, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "apply", "why": ["learning contents of {'label': 'an empty uncursed bag called bag2', 'qty': 1, 'buc': 'uncursed', 'na"], "slot": "S"}
+{"a": "a"}
+{"r": 21138, "k": "yn", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to use or apply? [bi-kowzFQSV or ?*]"}
+{"a": "S"}
+{"r": 21139, "k": "menu", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Your bag called bag2 is empty.  Do what with it?", "items": [": Look inside the bag", "i put something in", "r put in, then take out", "s stash one item into the bag", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:q"}
+{"a": [5]}
+{"r": 21140, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "discoveries", "why": ["discoveries update"]}
+{"a": "\\"}
+{"r": 21141, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "s"}
+{"a": "d"}
+{"r": 21142, "k": "yn", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-os-uwzABFLNPQSTV-Y or ?*]"}
+{"a": "2"}
+{"r": 21143, "k": "key", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "s"}
+{"r": 21144, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 2 s"}
+{"m": "2 slime molds land on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21145, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21146, "k": "cmd", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "T"}
+{"a": "d"}
+{"r": 21147, "k": "yn", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-otuwzABFLNPQSTV-Y or ?*]"}
+{"a": "1"}
+{"r": 21148, "k": "key", "T": 16213, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "T"}
+{"r": 21149, "k": "cmd", "T": 16214, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 T"}
+{"m": "There is a black flash as a pair of buckled boots hits the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21150, "k": "cmd", "T": 16214, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21151, "k": "cmd", "T": 16214, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "X"}
+{"a": "d"}
+{"r": 21152, "k": "yn", "T": 16214, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-otuwzABFLNPQSV-Y or ?*]"}
+{"a": "1"}
+{"r": 21153, "k": "key", "T": 16214, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "X"}
+{"r": 21154, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 X"}
+{"m": "There is a black flash as an elven dagger hits the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21155, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21156, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "Y"}
+{"a": "d"}
+{"r": 21157, "k": "yn", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-otuwzABFLNPQSVWY or ?*]"}
+{"a": "1"}
+{"r": 21158, "k": "key", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "Y"}
+{"r": 21159, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 Y"}
+{"m": "An orcish dagger lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21160, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21161, "k": "cmd", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21162, "k": "menu", "T": 16215, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a an uncursed orcish dagger", "b a cursed elven dagger", "c 3 uncursed elven daggers", "d 2 uncursed daggers", "e a cursed orcish dagger", "# Armor", "f a cursed pair of buckled boots", "g a cursed pair of hiking boots", "h an uncursed +0 dwarvish cloak", "# Comestibles", "i 2 uncursed slime molds"]}
+{"a": [1, 3, 4]}
+{"r": 21163, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Y - an uncursed orcish dagger."}
+{"m": "J - 3 uncursed elven daggers."}
+{"m": "I - 2 uncursed daggers."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21164, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21165, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "apply", "why": ["taking {'a scroll labeled KIRJE': 1} out of container at j", "preparing item - scroll labeled KIRJE", "dropping things on altar"], "slot": "j"}
+{"a": "a"}
+{"r": 21166, "k": "yn", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to use or apply? [bi-kowzFQSV or ?*]"}
+{"a": "j"}
+{"r": 21167, "k": "menu", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 21168, "k": "menu", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Take out what?", "items": ["# Scrolls", "a an uncursed scroll labeled LOREM IPSUM", "b a scroll labeled KIRJE", "c an uncursed scroll labeled HAPAX LEGOMENON", "d an uncursed scroll labeled ZLORFIK", "e a blessed scroll labeled KIRJE", "f an uncursed scroll labeled KIRJE", "g a blessed scroll of teleportation"]}
+{"a": [2]}
+{"r": 21169, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "U - a scroll labeled KIRJE."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21170, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 21171, "k": "yn", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to use or apply? [bi-kowzFQSV or ?*]"}
+{"a": "j"}
+{"r": 21172, "k": "menu", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 21173, "k": "menu", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Take out what?", "items": ["# Scrolls", "a an uncursed scroll labeled LOREM IPSUM", "b an uncursed scroll labeled HAPAX LEGOMENON", "c an uncursed scroll labeled ZLORFIK", "d a blessed scroll labeled KIRJE", "e an uncursed scroll labeled KIRJE", "f a blessed scroll of teleportation"]}
+{"a": []}
+{"r": 21174, "k": "cmd", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "dropsingle", "why": ["dropping things on altar"], "slot": "U"}
+{"a": "d"}
+{"r": 21175, "k": "yn", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to drop? [$a-otuwzABFIJLNPQSU-WY or ?*]"}
+{"a": "1"}
+{"r": 21176, "k": "key", "T": 16216, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "U"}
+{"r": 21177, "k": "cmd", "T": 16217, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "Count: 1 U"}
+{"m": "A scroll labeled KIRJE lands on the altar."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21178, "k": "cmd", "T": 16217, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21179, "k": "cmd", "T": 16217, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21180, "k": "menu", "T": 16217, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Pick up what?", "items": ["# Weapons", "a a cursed elven dagger", "b a cursed orcish dagger", "# Armor", "c a cursed pair of buckled boots", "d a cursed pair of hiking boots", "e an uncursed +0 dwarvish cloak", "# Comestibles", "f 2 uncursed slime molds", "# Scrolls", "g an uncursed scroll labeled KIRJE"]}
+{"a": [10]}
+{"r": 21181, "k": "cmd", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "U - an uncursed scroll labeled KIRJE."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21182, "k": "cmd", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 15, 'y': 16, 'glyph': '@', 'color': 'white', 'feature': 'altar', 'seen': True, "]}
+{"a": ":"}
+{"r": 21183, "k": "cmd", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "apply", "why": ["putting {'U': None} into bag at j", "bag items"], "slot": "j"}
+{"a": "a"}
+{"r": 21184, "k": "yn", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to use or apply? [bi-kowzFQSV or ?*]"}
+{"a": "j"}
+{"r": 21185, "k": "menu", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 21186, "k": "menu", "T": 16218, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Put in what?", "items": ["# Coins", "$ 1673 gold pieces", "# Amulets", "f a blessed amulet of reflection (being worn)", "A an uncursed spherical amulet", "# Weapons", "a the blessed rustproof +2 Excalibur (weapon in hand)", "l 2 uncursed orcish daggers", "B 9 uncursed darts", "I 2 uncursed daggers", "J 3 uncursed elven daggers", "W a +0 dagger (at the ready)", "Y an uncursed orcish dagger", "# Armor", "c an uncursed +3 small shield (being worn)", "e a blessed greased +2 gray dragon scale mail (being worn)", "g a blessed fireproof +2 pair of speed boots (being worn)", "n a +0 pair of leather gloves (being worn)", "u a +1 dwarvish iron helm (being worn)", "N a +3 faded pall (being worn)", "# Comestibles", "d 3 uncursed food rations", "m an uncursed lizard corpse", "t an uncursed slime mold", "L an uncursed candy bar", "# Scrolls", "U an uncursed scroll labeled KIRJE", "# Rings", "h a blessed ring of levitation", "P an uncursed black onyx ring", "# Wands", "o an uncursed silver wand", "w an uncursed wand of fire", "z an uncursed wand of striking", "F an uncursed brass wand", "Q an uncursed wand of death", "V an uncursed copper wand", "# Tools", "b an uncursed key", "i a blessed +0 unicorn horn", "j an uncursed bag of holding containing 6 items", "k a blessed +0 pick-axe", "S an empty uncursed bag called bag2"]}
+{"a": [26]}
+{"r": 21187, "k": "cmd", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "You put an uncursed scroll labeled KIRJE into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21188, "k": "cmd", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 21189, "k": "yn", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "q": "What do you want to use or apply? [bi-kowzFQSV or ?*]"}
+{"a": "j"}
+{"r": 21190, "k": "menu", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 21191, "k": "menu", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125, "p": "Take out what?", "items": ["# Scrolls", "a an uncursed scroll labeled LOREM IPSUM", "b an uncursed scroll labeled HAPAX LEGOMENON", "c an uncursed scroll labeled ZLORFIK", "d a blessed scroll labeled KIRJE", "e 2 uncursed scrolls labeled KIRJE", "f a blessed scroll of teleportation"]}
+{"a": []}
+{"r": 21192, "k": "cmd", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"act": "attack", "why": ["robbing a poor peaceful dorf"], "dir": "NE"}
+{"a": "F"}
+{"r": 21193, "k": "cmdcont", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"a": "u"}
+{"r": 21194, "k": "cmd", "T": 16219, "lvl": "Dlvl:11", "u": [16, 15], "hp": 125, "hpmax": 125}
+{"m": "The hobbit gets angry!"}
+{"m": "You kill the hobbit!"}
+{"act": "move", "why": ["new or desired item at {'x': 16, 'y': 15, 'glyph': '%', 'color': 'green', 'feature': 'floor', 'seen'"], "dir": "NE"}
+{"a": "u"}
+{"r": 21195, "k": "cmd", "T": 16220, "lvl": "Dlvl:11", "u": [17, 14], "hp": 125, "hpmax": 125}
+{"act": "look", "why": ["examining tile {'x': 16, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21196, "k": "cmd", "T": 16220, "lvl": "Dlvl:11", "u": [17, 14], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 22, :y 4}"}
+{"a": "_"}
+{"r": 21197, "k": "pos", "T": 16220, "lvl": "Dlvl:11", "u": [17, 14], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(23, 3)"}
+{"r": 21198, "k": "cmd", "T": 16228, "lvl": "Dlvl:11", "u": [23, 3], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21199, "k": "cmd", "T": 16229, "lvl": "Dlvl:12", "u": [11, 15], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 49, :y 5}"}
+{"a": "_"}
+{"r": 21200, "k": "pos", "T": 16229, "lvl": "Dlvl:12", "u": [11, 15], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 4)"}
+{"r": 21201, "k": "cmd", "T": 16254, "lvl": "Dlvl:12", "u": [50, 4], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21202, "k": "cmd", "T": 16255, "lvl": "Dlvl:13", "u": [21, 7], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 76, :y 13}"}
+{"a": "_"}
+{"r": 21203, "k": "pos", "T": 16255, "lvl": "Dlvl:13", "u": [21, 7], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(77, 12)"}
+{"r": 21204, "k": "cmd", "T": 16260, "lvl": "Dlvl:13", "u": [30, 9], "hp": 125, "hpmax": 125}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"     ?\"."}
+{"act": "look", "why": ["examining tile {'x': 29, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 21205, "k": "cmd", "T": 16260, "lvl": "Dlvl:13", "u": [30, 9], "hp": 125, "hpmax": 125}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"     ?\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21206, "k": "cmd", "T": 16261, "lvl": "Dlvl:13", "u": [31, 10], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 76, :y 13}"}
+{"a": "_"}
+{"r": 21207, "k": "pos", "T": 16261, "lvl": "Dlvl:13", "u": [31, 10], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(77, 12)"}
+{"r": 21208, "k": "cmd", "T": 16269, "lvl": "Dlvl:13", "u": [43, 15], "hp": 125, "hpmax": 125}
+{"m": "You stop in front of the door."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21209, "k": "cmd", "T": 16270, "lvl": "Dlvl:13", "u": [44, 16], "hp": 125, "hpmax": 125}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 76, :y 13}"}
+{"a": "_"}
+{"r": 21210, "k": "pos", "T": 16270, "lvl": "Dlvl:13", "u": [44, 16], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(77, 12)"}
+{"r": 21211, "k": "cmd", "T": 16289, "lvl": "Dlvl:13", "u": [77, 12], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21212, "k": "cmd", "T": 16289, "lvl": "Dlvl:14", "u": [49, 5], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"m": "You again sense the Norn pleading for help."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 19, :y 17}"}
+{"a": "_"}
+{"r": 21213, "k": "pos", "T": 16289, "lvl": "Dlvl:14", "u": [49, 5], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(20, 16)"}
+{"r": 21214, "k": "cmd", "T": 16310, "lvl": "Dlvl:14", "u": [20, 16], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21215, "k": "cmd", "T": 16311, "lvl": "Dlvl:15", "u": [15, 8], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 44, :y 9}"}
+{"a": "_"}
+{"r": 21216, "k": "pos", "T": 16311, "lvl": "Dlvl:15", "u": [15, 8], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(45, 8)"}
+{"r": 21217, "k": "cmd", "T": 16332, "lvl": "Dlvl:15", "u": [43, 12], "hp": 121, "hpmax": 125}
+{"m": "The troll hits!"}
+{"m": "The troll hits!"}
+{"m": "The troll bites!"}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 12, 'known': 16332, 'first-known': 16332, 'glyph': 'T', 'color': 'brown', 'ty", "targetting enemy {'x': 42, 'y': 12, 'known': 16332, 'first-known': 16332, 'glyph': 'T', 'color': 'br"], "dir": "N"}
+{"a": "k"}
+{"r": 21218, "k": "cmd", "T": 16333, "lvl": "Dlvl:15", "u": [43, 12], "hp": 121, "hpmax": 125}
+{"m": "You hit the troll!"}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 12, 'known': 16333, 'first-known': 16332, 'glyph': 'T', 'color': 'brown', 'ty", "targetting enemy {'x': 42, 'y': 12, 'known': 16333, 'first-known': 16332, 'glyph': 'T', 'color': 'br"], "dir": "N"}
+{"a": "k"}
+{"r": 21219, "k": "cmd", "T": 16333, "lvl": "Dlvl:15", "u": [43, 12], "hp": 120, "hpmax": 125}
+{"m": "You hit the troll!"}
+{"m": "The troll hits!"}
+{"m": "The troll misses!"}
+{"m": "The troll misses!"}
+{"act": "move", "why": ["hitting {'x': 42, 'y': 12, 'known': 16333, 'first-known': 16332, 'glyph': 'T', 'color': 'brown', 'ty", "targetting enemy {'x': 42, 'y': 12, 'known': 16333, 'first-known': 16332, 'glyph': 'T', 'color': 'br"], "dir": "N"}
+{"a": "k"}
+{"r": 21220, "k": "cmd", "T": 16334, "lvl": "Dlvl:15", "u": [43, 12], "hp": 120, "hpmax": 125}
+{"m": "You kill the troll!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 44, :y 9}"}
+{"a": "_"}
+{"r": 21221, "k": "pos", "T": 16334, "lvl": "Dlvl:15", "u": [43, 12], "hp": 120, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(45, 8)"}
+{"r": 21222, "k": "cmd", "T": 16337, "lvl": "Dlvl:15", "u": [45, 8], "hp": 123, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21223, "k": "cmd", "T": 16337, "lvl": "Dlvl:16", "u": [76, 6], "hp": 123, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"m": "There is a staircase up here."}
+{"m": "You see here a stiletto."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 46, :y 14}"}
+{"a": "_"}
+{"r": 21224, "k": "pos", "T": 16337, "lvl": "Dlvl:16", "u": [76, 6], "hp": 123, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(47, 13)"}
+{"r": 21225, "k": "cmd", "T": 16353, "lvl": "Dlvl:16", "u": [50, 13], "hp": 125, "hpmax": 125}
+{"m": "The gnome king misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 48, :y 13}"}
+{"a": ";"}
+{"r": 21226, "k": "pos", "T": 16353, "lvl": "Dlvl:16", "u": [50, 13], "hp": 125, "hpmax": 125, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(49, 12)"}
+{"r": 21227, "k": "cmd", "T": 16353, "lvl": "Dlvl:16", "u": [50, 13], "hp": 125, "hpmax": 125}
+{"m": "G        a gnome (gnome king) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 48, 'y': 13, 'known': 16353, 'first-known': 16353, 'glyph': 'G', 'color': 'magenta', '", "targetting enemy {'x': 48, 'y': 13, 'known': 16353, 'first-known': 16353, 'glyph': 'G', 'color': 'ma"], "dir": "NW"}
+{"a": "y"}
+{"r": 21228, "k": "cmd", "T": 16354, "lvl": "Dlvl:16", "u": [50, 13], "hp": 125, "hpmax": 125}
+{"m": "You kill the gnome king!"}
+{"act": "move", "why": ["new or desired item at {'x': 48, 'y': 13, 'glyph': '%', 'color': 'magenta', 'feature': 'floor', 'see"], "dir": "NW"}
+{"a": "y"}
+{"r": 21229, "k": "cmd", "T": 16354, "lvl": "Dlvl:16", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"m": "You see here a gnome king corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21230, "k": "cmd", "T": 16354, "lvl": "Dlvl:16", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"m": "You see here a gnome king corpse."}
+{"act": "eat", "why": ["going to eat corpse at {'x': 48, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen'"], "slot": "a gnome king corpse"}
+{"a": "e"}
+{"r": 21231, "k": "yn", "T": 16354, "lvl": "Dlvl:16", "u": [49, 12], "hp": 125, "hpmax": 125, "q": "There is a gnome king corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 21232, "k": "cmd", "T": 16356, "lvl": "Dlvl:16", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"m": "Blecch!  Rotten food!"}
+{"m": "You finish eating the gnome king corpse."}
+{"act": "look", "why": ["examining tile {'x': 48, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 21233, "k": "cmd", "T": 16356, "lvl": "Dlvl:16", "u": [49, 12], "hp": 125, "hpmax": 125}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 21234, "k": "cmd", "T": 16357, "lvl": "Dlvl:16", "u": [48, 13], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-down", "switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 21235, "k": "cmd", "T": 16357, "lvl": "Dlvl:16", "u": [47, 13], "hp": 125, "hpmax": 125}
+{"act": "descend", "why": ["switching within branch to Dlvl:17", "seeking level main Dlvl:17", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": ">"}
+{"r": 21236, "k": "cmd", "T": 16358, "lvl": "Dlvl:17", "u": [7, 8], "hp": 125, "hpmax": 125}
+{"m": "You descend the stairs."}
+{"act": "autotravel", "why": ["exploring {'x': 45, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 45, :y 10}"}
+{"a": "_"}
+{"r": 21237, "k": "pos", "T": 16358, "lvl": "Dlvl:17", "u": [7, 8], "hp": 125, "hpmax": 125, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(46, 9)"}
+{"r": 21238, "k": "cmd", "T": 16364, "lvl": "Dlvl:17", "u": [17, 9], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 21239, "k": "cmd", "T": 16365, "lvl": "Dlvl:17", "u": [16, 9], "hp": 125, "hpmax": 125}
+{"act": "move", "why": ["exploring {'x': 45, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "first exploring previous levels of branch", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21240, "k": "cmd", "T": 16366, "lvl": "Dlvl:17", "u": [15, 8], "hp": 125, "hpmax": 125}
+{"note": "abort", "d": "limit: max_seconds 14400"}
+{"note": "perf", "d": "explorable versions=13096 calls=22427133 misses=1320156"}

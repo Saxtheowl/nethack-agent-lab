@@ -769,7 +769,9 @@ class Bridge(object):
 
     def _yn(self, req):
         d = self.bh.delegator
-        q = req.query or ''
+        # 3.6 puts two spaces after a sentence ("...lifting a coat.  Continue?");
+        # BotHack's prompt regexes were written with one
+        q = re.sub(r"([.!])  +", r"\1 ", req.query or '')
         if q == "adjust?":
             # wizard mode only (quest.c chat_with_leader: "You are currently
             # N and require 20." adjust?): a prepared scenario character has
@@ -863,6 +865,14 @@ class Bridge(object):
     def _pos(self, req):
         d = self.bh.delegator
         context = " ".join(req.messages()[-2:]) + " " + (req.goal or '')
+        if 'anything of interest' in context:
+            # clairvoyance (do_vicinity_map) lets the player browse the
+            # revealed area; nothing to answer (186 unknown prompts, big-w09)
+            self.counters['clairvoyance_browse'] += 1
+            self.engine.escape()
+            self._record_answer(req, ESC)
+            self._answered = True
+            return
         name = None
         for pat, n in LOCATION_GOALS:
             if re.search(pat, context):
@@ -949,6 +959,7 @@ class Bridge(object):
         r"^You are already wearing|^You can't take that off|"
         r"^You can't move diagonally (?:out of|into) an intact doorway|"
         r"free hand, you cannot loot|^You can't reach over the edge|"
+        r"cannot be confined in such trappings|"
         r"^Never mind\.$")
     VETO_TURNS = 300
 

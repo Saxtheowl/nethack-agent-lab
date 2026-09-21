@@ -1,0 +1,60 @@
+series big-w08: 32 games
+outcomes: {'limit': 26, 'stuck': 6}
+stage funnel: dlvl2=32, mines=32, minetown=31, oracle=32, sokoban=31, bigroom=12, dlvl10=29, medusa=22, castle=21, valley=19, quest=21, bell=11, vlad=10, candelabrum=5, gehennom_deep=9, wizard_tower=9, book=5
+assists: {'kit': 256, 'feed': 56, 'lifesave': 1635, 'noslime': 24, 'brainsave': 14}
+failure signatures:
+   26  limit | max_seconds N
+    2  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)
+    1  stuck | action loop: repeated repeated N times at turn N ({..})
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'flo)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (hitting {S: N, S: N, S: N, S: N, S: S, 'c)
+    1  stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: S, 'fea)
+top anomalies:
+    7008  note:compat
+    5300  compat:container:o
+    3663  fallback
+    3663  note:fallback
+    3608  unknown_yn
+    3608  note:unknown-prompt
+    3414  menu_empty_answer
+    1985  note:assist
+    1617  menu_letter_unmatched
+    1087  compat:container:i
+    1011  msg-rewrite:^Your (\w+) (feels?) better\.$
+     793  msg-rewrite:^You open (.*\.\.\.)$
+     765  leftover_keys_dropped
+     765  note:leftover
+     606  msg-rewrite:^You feel as if you need some 
+games:
+  g001 seed=7013 limit        T=31664  depth=44  stage=gehennom_deep 14401.4s  max_seconds 14400
+  g002 seed=7011 limit        T=35672  depth=48  stage=wizard_tower 14419.2s  max_seconds 14400
+  g003 seed=7003 limit        T=44219  depth=52  stage=book         14402.4s  max_seconds 14400
+  g004 seed=7007 stuck        T=38960  depth=48  stage=book         5864.6s  action loop: repeated repeated 40 times at turn 38960 ({'act': 'repeated', 'why': ['search
+  g005 seed=7012 limit        T=32368  depth=46  stage=book         14402.1s  max_seconds 14400
+  g006 seed=7014 limit        T=33224  depth=45  stage=wizard_tower 14400.9s  max_seconds 14400
+  g007 seed=7034 limit        T=36216  depth=48  stage=book         14402.5s  max_seconds 14400
+  g008 seed=7043 stuck        T=21952  depth=33  stage=valley       1482.9s  fixation: target (59, 4, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile 
+  g009 seed=7047 limit        T=38185  depth=51  stage=book         14400.9s  max_seconds 14400
+  g010 seed=7101 stuck        T=18251  depth=39  stage=valley       1536.9s  fixation: target (50, 9, 'Dlvl:39 ') keeps coming back after 3 recoveries (hitting {'x': 5
+  g011 seed=7102 limit        T=40595  depth=38  stage=quest        14402.8s  max_seconds 14400
+  g012 seed=7103 limit        T=28279  depth=29  stage=quest        14401.7s  max_seconds 14400
+  g013 seed=7104 limit        T=28854  depth=38  stage=bell         14403.0s  max_seconds 14400
+  g014 seed=7105 limit        T=16366  depth=20  stage=quest        14400.9s  max_seconds 14400
+  g015 seed=7106 limit        T=12784  depth=12  stage=sokoban      14401.2s  max_seconds 14400
+  g016 seed=7107 limit        T=15005  depth=12  stage=quest        14400.9s  max_seconds 14400
+  g017 seed=7108 limit        T=15676  depth=21  stage=quest        14400.9s  max_seconds 14400
+  g018 seed=7109 limit        T=15287  depth=27  stage=castle       14400.6s  max_seconds 14400
+  g019 seed=7110 stuck        T=13017  depth=7   stage=sokoban      9736.3s  fixation: target (40, 10, 'Dlvl:4  ') keeps coming back after 3 recoveries (examining tile
+  g020 seed=7111 limit        T=14303  depth=28  stage=medusa       14400.2s  max_seconds 14400
+  g021 seed=7112 limit        T=12050  depth=29  stage=castle       14401.1s  max_seconds 14400
+  g022 seed=7113 limit        T=13348  depth=16  stage=dlvl10       14400.7s  max_seconds 14400
+  g023 seed=7114 limit        T=13110  depth=15  stage=dlvl10       14400.4s  max_seconds 14400
+  g024 seed=7115 limit        T=16264  depth=20  stage=quest        14402.3s  max_seconds 14400
+  g025 seed=7116 limit        T=10433  depth=6   stage=oracle       14400.5s  max_seconds 14400
+  g026 seed=7117 limit        T=17649  depth=26  stage=valley       14400.4s  max_seconds 14400
+  g027 seed=7118 stuck        T=13769  depth=29  stage=valley       9925.7s  fixation: target (54, 17, 'Home 3 ') keeps coming back after 3 recoveries (new or desired 
+  g028 seed=7119 stuck        T=11325  depth=9   stage=sokoban      6661.6s  fixation: target (48, 13, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile
+  g029 seed=7120 limit        T=25300  depth=37  stage=vlad         14400.6s  max_seconds 14400
+  g030 seed=7121 limit        T=20396  depth=36  stage=valley       14400.1s  max_seconds 14400
+  g031 seed=7122 limit        T=30010  depth=34  stage=valley       14400.4s  max_seconds 14400
+  g032 seed=7123 limit        T=27234  depth=48  stage=wizard_tower 14400.1s  max_seconds 14400

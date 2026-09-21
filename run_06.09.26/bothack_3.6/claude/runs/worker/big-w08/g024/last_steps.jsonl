@@ -1,0 +1,800 @@
+{"r": 21630, "k": "cmd", "T": 16177, "lvl": "Dlvl:20", "u": [43, 7], "hp": 128, "hpmax": 129}
+{"m": "F        a fungus or mold (violet fungus)"}
+{"act": "eat", "why": ["want to eat corpse at {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': "], "slot": "a red mold corpse"}
+{"a": "e"}
+{"r": 21631, "k": "yn", "T": 16177, "lvl": "Dlvl:20", "u": [43, 7], "hp": 128, "hpmax": 129, "q": "There is a red mold corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 21632, "k": "cmd", "T": 16179, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "This red mold corpse tastes okay."}
+{"m": "You finish eating the red mold corpse."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21633, "k": "cmd", "T": 16179, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a brown potion."}
+{"act": "move", "why": ["exploring {'x': 41, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 21634, "k": "cmd", "T": 16180, "lvl": "Dlvl:20", "u": [42, 8], "hp": 129, "hpmax": 129}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 7, 'known': 16179, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"]}
+{"a": "s"}
+{"r": 21635, "k": "cmd", "T": 16181, "lvl": "Dlvl:20", "u": [42, 8], "hp": 129, "hpmax": 129}
+{"m": "You find a giant eel."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 7, 'known': 16179, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"]}
+{"a": "s"}
+{"r": 21636, "k": "cmd", "T": 16181, "lvl": "Dlvl:20", "u": [42, 8], "hp": 129, "hpmax": 129}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 7, 'known': 16179, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"]}
+{"a": "s"}
+{"r": 21637, "k": "cmd", "T": 16182, "lvl": "Dlvl:20", "u": [42, 8], "hp": 129, "hpmax": 129}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 41, 'y': 7, 'known': 16179, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"]}
+{"a": "s"}
+{"r": 21638, "k": "cmd", "T": 16183, "lvl": "Dlvl:20", "u": [42, 8], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["targetting enemy {'x': 41, 'y': 7, 'known': 16179, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"], "dir": "NE"}
+{"a": "u"}
+{"r": 21639, "k": "cmd", "T": 16184, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"El|ere n\"."}
+{"m": "You see here a brown potion."}
+{"m": "The violet fungus misses!"}
+{"m": "The violet fungus misses!"}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21640, "k": "cmd", "T": 16184, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"_l|e ? n\"."}
+{"m": "You see here a brown potion."}
+{"act": "move", "why": ["hitting {'x': 41, 'y': 7, 'known': 16184, 'first-known': 16177, 'glyph': 'F', 'color': 'magenta', 't", "targetting enemy {'x': 41, 'y': 7, 'known': 16184, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"], "dir": "NW"}
+{"a": "y"}
+{"r": 21641, "k": "cmd", "T": 16185, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "You hit the violet fungus!"}
+{"act": "move", "why": ["hitting {'x': 41, 'y': 7, 'known': 16185, 'first-known': 16177, 'glyph': 'F', 'color': 'magenta', 't", "targetting enemy {'x': 41, 'y': 7, 'known': 16185, 'first-known': 16177, 'glyph': 'F', 'color': 'mag"], "dir": "NW"}
+{"a": "y"}
+{"r": 21642, "k": "cmd", "T": 16185, "lvl": "Dlvl:20", "u": [43, 7], "hp": 129, "hpmax": 129}
+{"m": "You kill the violet fungus!"}
+{"act": "move", "why": ["targetting enemy {'x': 46, 'y': 7, 'known': 16181, 'first-known': 16177, 'glyph': ';', 'color': 'cya"], "dir": "SE"}
+{"a": "n"}
+{"r": 21643, "k": "cmd", "T": 16186, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["targetting enemy {'x': 46, 'y': 7, 'known': 16181, 'first-known': 16177, 'glyph': ';', 'color': 'cya"], "dir": "NE"}
+{"a": "u"}
+{"r": 21644, "k": "cmd", "T": 16186, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"m": "You see here a lichen corpse."}
+{"m": "It misses!"}
+{"m": "It misses!"}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21645, "k": "cmd", "T": 16186, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"m": "You see here a lichen corpse."}
+{"act": "move", "why": ["targetting enemy {'x': 46, 'y': 7, 'known': 16181, 'first-known': 16177, 'glyph': ';', 'color': 'cya"], "dir": "NE"}
+{"a": "u"}
+{"r": 21646, "k": "cmd", "T": 16187, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"act": "attack", "why": ["hitting {'x': 45, 'y': 8, 'known': 16187, 'first-known': 16186, 'glyph': 'I', 'color': None, 'type':", "targetting leftover enemy {'x': 45, 'y': 8, 'known': 16187, 'first-known': 16186, 'glyph': 'I', 'col"], "dir": "S"}
+{"a": "F"}
+{"r": 21647, "k": "cmdcont", "T": 16187, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"a": "j"}
+{"r": 21648, "k": "cmd", "T": 16188, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"m": "You hit the giant eel!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16188, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21649, "k": "yn", "T": 16188, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21650, "k": "line", "T": 16188, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21651, "k": "cmd", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"m": "The giant eel bites!"}
+{"m": "The giant eel misses!"}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21652, "k": "cmd", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"}lbereth\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16189, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21653, "k": "yn", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21654, "k": "yn", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21655, "k": "line", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21656, "k": "cmd", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"m": "The giant eel misses!"}
+{"m": "The giant eel misses!"}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21657, "k": "cmd", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elqereth\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16189, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21658, "k": "yn", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21659, "k": "yn", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21660, "k": "line", "T": 16189, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21661, "k": "cmd", "T": 16190, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21662, "k": "cmd", "T": 16190, "lvl": "Dlvl:20", "u": [46, 6], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 7}"], "dir": "SW"}
+{"a": "b"}
+{"r": 21663, "k": "cmd", "T": 16190, "lvl": "Dlvl:20", "u": [45, 7], "hp": 128, "hpmax": 129}
+{"m": "You see here a lichen corpse."}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21664, "k": "cmd", "T": 16190, "lvl": "Dlvl:20", "u": [45, 7], "hp": 128, "hpmax": 129}
+{"m": "You see here a lichen corpse."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16190, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21665, "k": "yn", "T": 16190, "lvl": "Dlvl:20", "u": [45, 7], "hp": 128, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21666, "k": "line", "T": 16190, "lvl": "Dlvl:20", "u": [45, 7], "hp": 128, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21667, "k": "cmd", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21668, "k": "cmd", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"ElZereth\"."}
+{"m": "You see here a lichen corpse."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16191, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21669, "k": "yn", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21670, "k": "yn", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21671, "k": "line", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21672, "k": "cmd", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21673, "k": "cmd", "T": 16191, "lvl": "Dlvl:20", "u": [45, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a lichen corpse."}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 7}"], "dir": "SW"}
+{"a": "b"}
+{"r": 21674, "k": "cmd", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 8, 'known': 16192, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21675, "k": "yn", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21676, "k": "line", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21677, "k": "cmd", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"m": "It misses!"}
+{"m": "The giant eel brushes against your leg."}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21678, "k": "cmd", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbe$eth\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 42, 'y': 9, 'known': 16192, 'first-known': 16188, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21679, "k": "yn", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21680, "k": "yn", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21681, "k": "line", "T": 16192, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21682, "k": "cmd", "T": 16193, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21683, "k": "cmd", "T": 16193, "lvl": "Dlvl:20", "u": [44, 8], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 7}"], "dir": "NW"}
+{"a": "y"}
+{"r": 21684, "k": "cmd", "T": 16194, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"| e ? r\"."}
+{"m": "You see here a brown potion."}
+{"m": "It misses!"}
+{"m": "It misses!"}
+{"m": "It misses!"}
+{"m": "A giant eel was hidden under the water!"}
+{"m": "The giant eel brushes against your leg."}
+{"m": "The giant eel bites!"}
+{"m": "The giant eel misses!"}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21685, "k": "cmd", "T": 16194, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"? ? r\"."}
+{"m": "You see here a brown potion."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 41, 'y': 8, 'known': 16194, 'first-known': 16194, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21686, "k": "yn", "T": 16194, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21687, "k": "yn", "T": 16194, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21688, "k": "line", "T": 16194, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21689, "k": "cmd", "T": 16195, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "The giant eel turns to flee."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21690, "k": "cmd", "T": 16195, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see here a brown potion."}
+{"act": "move", "why": ["targetting enemy {'x': 40, 'y': 9, 'known': 16195, 'first-known': 16194, 'glyph': ';', 'color': 'cya"], "dir": "SW"}
+{"a": "b"}
+{"r": 21691, "k": "cmd", "T": 16196, "lvl": "Dlvl:20", "u": [42, 8], "hp": 122, "hpmax": 129}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 7}"], "dir": "NE"}
+{"a": "u"}
+{"r": 21692, "k": "cmd", "T": 16196, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"?lbereth\"."}
+{"m": "You see here a brown potion."}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21693, "k": "cmd", "T": 16196, "lvl": "Dlvl:20", "u": [43, 7], "hp": 122, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"|b?r th\"."}
+{"m": "You see here a brown potion."}
+{"act": "move", "why": ["new or desired item at #Position{:x 41, :y 7}"], "dir": "NW"}
+{"a": "y"}
+{"r": 21694, "k": "cmd", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "You see here a scroll labeled GHOTI."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 21695, "k": "cmd", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "You see here a scroll labeled GHOTI."}
+{"act": "pickup", "why": ["getting desirable items"]}
+{"a": ","}
+{"r": 21696, "k": "cmd", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "S - a scroll labeled GHOTI."}
+{"m": "It misses!"}
+{"m": "The giant eel brushes against your leg."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21697, "k": "cmd", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21698, "k": "cmd", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 40, 'y': 7, 'known': 16197, 'first-known': 16197, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21699, "k": "yn", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21700, "k": "line", "T": 16197, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21701, "k": "cmd", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21702, "k": "cmd", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["putting {'S': None} into bag at k", "bag items"], "slot": "k"}
+{"a": "a"}
+{"r": 21703, "k": "yn", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "k"}
+{"r": 21704, "k": "menu", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 21705, "k": "menu", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "p": "Put in what?", "items": ["# Coins", "$ 3801 gold pieces", "# Amulets", "g a blessed amulet of reflection (being worn)", "o a blessed oval amulet", "R an oval amulet", "# Weapons", "a the blessed rustproof +3 Excalibur (weapon in hand)", "x an uncursed dagger (at the ready)", "F 2 uncursed rusty orcish daggers", "K an uncursed orcish dagger", "# Armor", "c a blessed very burnt +5 small shield (being worn)", "f a blessed +2 gray dragon scale mail (being worn)", "h a blessed fireproof +3 pair of speed boots (being worn)", "I a rusty corroded +0 dwarvish iron helm (being worn)", "P a +0 faded pall (being worn)", "Y a +1 pair of leather gloves (being worn)", "# Comestibles", "s 11 uncursed lumps of royal jelly", "G 2 uncursed slime molds", "M an uncursed lizard corpse", "N 2 lumps of royal jelly", "# Scrolls", "S a scroll labeled GHOTI", "# Wands", "B an uncursed wand of teleportation", "Q an aluminum wand", "# Tools", "j a blessed +0 unicorn horn", "k an uncursed bag of holding containing 5 items", "l a blessed rusty +0 pick-axe", "p an uncursed lock pick", "# Gems/Stones", "E 7 uncursed rocks"]}
+{"a": [24]}
+{"r": 21706, "k": "cmd", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"m": "You put a scroll labeled GHOTI into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21707, "k": "cmd", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"act": "apply", "why": ["updating content of container at k"], "slot": "k"}
+{"a": "a"}
+{"r": 21708, "k": "yn", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "k"}
+{"r": 21709, "k": "menu", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 21710, "k": "menu", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129, "p": "Take out what?", "items": ["# Scrolls", "a a scroll labeled GHOTI", "b an uncursed scroll labeled KERNOD WEL", "c an uncursed scroll labeled HAPAX LEGOMENON", "d an uncursed scroll labeled MAPIRO MAHAMA DIROMAT", "e an uncursed scroll labeled DAIYEN FOOELS", "f an uncursed scroll of teleportation"]}
+{"a": []}
+{"r": 21711, "k": "cmd", "T": 16198, "lvl": "Dlvl:20", "u": [42, 6], "hp": 123, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 40, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21712, "k": "cmd", "T": 16199, "lvl": "Dlvl:20", "u": [41, 5], "hp": 123, "hpmax": 129}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 7, 'known': 16199, 'first-known': 16197, 'glyph': ';', 'color': 'cyan', 'type", "targetting enemy {'x': 40, 'y': 7, 'known': 16199, 'first-known': 16197, 'glyph': ';', 'color': 'cya"], "dir": "S"}
+{"a": "j"}
+{"r": 21713, "k": "cmd", "T": 16200, "lvl": "Dlvl:20", "u": [41, 5], "hp": 126, "hpmax": 129}
+{"m": "You hit the giant eel!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 40, 'y': 7, 'known': 16200, 'first-known': 16197, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21714, "k": "yn", "T": 16200, "lvl": "Dlvl:20", "u": [41, 5], "hp": 126, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21715, "k": "line", "T": 16200, "lvl": "Dlvl:20", "u": [41, 5], "hp": 126, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21716, "k": "cmd", "T": 16200, "lvl": "Dlvl:20", "u": [41, 5], "hp": 126, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21717, "k": "cmd", "T": 16200, "lvl": "Dlvl:20", "u": [41, 5], "hp": 126, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 39, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 21718, "k": "cmd", "T": 16201, "lvl": "Dlvl:20", "u": [40, 6], "hp": 126, "hpmax": 129}
+{"act": "move", "why": ["hitting {'x': 40, 'y': 7, 'known': 16201, 'first-known': 16197, 'glyph': ';', 'color': 'cyan', 'type", "targetting enemy {'x': 40, 'y': 7, 'known': 16201, 'first-known': 16197, 'glyph': ';', 'color': 'cya"], "dir": "E"}
+{"a": "l"}
+{"r": 21719, "k": "cmd", "T": 16202, "lvl": "Dlvl:20", "u": [40, 6], "hp": 126, "hpmax": 129}
+{"m": "You kill the giant eel!"}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21720, "k": "cmd", "T": 16202, "lvl": "Dlvl:20", "u": [39, 5], "hp": 126, "hpmax": 129}
+{"act": "move", "why": ["hitting corrosive monster {'x': 37, 'y': 7, 'known': 16202, 'first-known': 16202, 'glyph': 'F', 'col", "hitting {'x': 37, 'y': 7, 'known': 16202, 'first-known': 16202, 'glyph': 'F', 'color': 'green', 'typ", "targetting leftover enemy {'x': 37, 'y': 7, 'known': 16202, 'first-known': 16202, 'glyph': 'F', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 21721, "k": "cmd", "T": 16203, "lvl": "Dlvl:20", "u": [39, 5], "hp": 123, "hpmax": 129}
+{"m": "You kill the green mold!"}
+{"m": "You are splashed by the green mold's acid!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 37, :y 7}"], "dir": "SW"}
+{"a": "b"}
+{"r": 21722, "k": "cmd", "T": 16203, "lvl": "Dlvl:20", "u": [38, 6], "hp": 123, "hpmax": 129}
+{"m": "You see here a green mold corpse."}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 21723, "k": "cmd", "T": 16203, "lvl": "Dlvl:20", "u": [38, 6], "hp": 123, "hpmax": 129}
+{"m": "You see here a green mold corpse."}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21724, "k": "cmd", "T": 16204, "lvl": "Dlvl:20", "u": [37, 5], "hp": 123, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 7, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 21725, "k": "cmd", "T": 16205, "lvl": "Dlvl:20", "u": [36, 6], "hp": 123, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21726, "k": "cmd", "T": 16205, "lvl": "Dlvl:20", "u": [37, 7], "hp": 123, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SW"}
+{"a": "b"}
+{"r": 21727, "k": "cmd", "T": 16206, "lvl": "Dlvl:20", "u": [36, 8], "hp": 126, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 21728, "k": "cmd", "T": 16207, "lvl": "Dlvl:20", "u": [35, 8], "hp": 126, "hpmax": 129}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "j"}
+{"a": "a"}
+{"r": 21729, "k": "yn", "T": 16207, "lvl": "Dlvl:20", "u": [35, 8], "hp": 126, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "j"}
+{"r": 21730, "k": "cmd", "T": 16208, "lvl": "Dlvl:20", "u": [35, 8], "hp": 126, "hpmax": 129}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 21731, "k": "cmd", "T": 16208, "lvl": "Dlvl:20", "u": [35, 7], "hp": 126, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21732, "k": "cmd", "T": 16209, "lvl": "Dlvl:20", "u": [36, 6], "hp": 127, "hpmax": 129}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "j"}
+{"a": "a"}
+{"r": 21733, "k": "yn", "T": 16209, "lvl": "Dlvl:20", "u": [36, 6], "hp": 127, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "j"}
+{"r": 21734, "k": "cmd", "T": 16210, "lvl": "Dlvl:20", "u": [36, 6], "hp": 127, "hpmax": 129}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 21735, "k": "cmd", "T": 16211, "lvl": "Dlvl:20", "u": [35, 5], "hp": 127, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21736, "k": "cmd", "T": 16211, "lvl": "Dlvl:20", "u": [36, 6], "hp": 127, "hpmax": 129}
+{"m": "It misses!"}
+{"m": "It misses!"}
+{"act": "attack", "why": ["hitting {'x': 36, 'y': 7, 'known': 16211, 'first-known': 16211, 'glyph': 'I', 'color': None, 'type':", "targetting leftover enemy {'x': 36, 'y': 7, 'known': 16211, 'first-known': 16211, 'glyph': 'I', 'col"], "dir": "E"}
+{"a": "F"}
+{"r": 21737, "k": "cmdcont", "T": 16211, "lvl": "Dlvl:20", "u": [36, 6], "hp": 127, "hpmax": 129}
+{"a": "l"}
+{"r": 21738, "k": "cmd", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 129, "hpmax": 129}
+{"m": "You hit the giant eel!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 36, 'y': 7, 'known': 16212, 'first-known': 16212, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21739, "k": "yn", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21740, "k": "line", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21741, "k": "cmd", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129}
+{"m": "The giant eel bites!"}
+{"m": "The giant eel just misses!"}
+{"act": "look", "why": ["examining tile {'x': 35, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21742, "k": "cmd", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elberet^\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 36, 'y': 7, 'known': 16212, 'first-known': 16212, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21743, "k": "yn", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21744, "k": "yn", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21745, "k": "line", "T": 16212, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21746, "k": "cmd", "T": 16213, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 35, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21747, "k": "cmd", "T": 16213, "lvl": "Dlvl:20", "u": [36, 6], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21748, "k": "cmd", "T": 16214, "lvl": "Dlvl:20", "u": [37, 7], "hp": 128, "hpmax": 129}
+{"m": "The giant eel just misses!"}
+{"m": "The giant eel misses!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 36, 'y': 7, 'known': 16214, 'first-known': 16212, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21749, "k": "yn", "T": 16214, "lvl": "Dlvl:20", "u": [37, 7], "hp": 128, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21750, "k": "line", "T": 16214, "lvl": "Dlvl:20", "u": [37, 7], "hp": 128, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21751, "k": "cmd", "T": 16214, "lvl": "Dlvl:20", "u": [37, 7], "hp": 128, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21752, "k": "cmd", "T": 16214, "lvl": "Dlvl:20", "u": [37, 7], "hp": 128, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 37, 'y': 9, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21753, "k": "cmd", "T": 16215, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 36, 'y': 7, 'known': 16215, 'first-known': 16212, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21754, "k": "yn", "T": 16215, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21755, "k": "line", "T": 16215, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21756, "k": "cmd", "T": 16216, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21757, "k": "cmd", "T": 16216, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 36, 'y': 7, 'known': 16215, 'first-known': 16212, 'glyph': ';', 'color': 'cya"]}
+{"a": "s"}
+{"r": 21758, "k": "cmd", "T": 16216, "lvl": "Dlvl:20", "u": [38, 8], "hp": 129, "hpmax": 129}
+{"m": "You find a giant eel."}
+{"act": "move", "why": ["exploring {'x': 38, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21759, "k": "cmd", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 38, 'y': 9, 'known': 16217, 'first-known': 16212, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21760, "k": "yn", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21761, "k": "line", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21762, "k": "cmd", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21763, "k": "cmd", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["exploring {'x': 42, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "pos": "#Position{:x 42, :y 6}"}
+{"a": "_"}
+{"r": 21764, "k": "pos", "T": 16217, "lvl": "Dlvl:20", "u": [39, 7], "hp": 129, "hpmax": 129, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(43, 5)"}
+{"r": 21765, "k": "cmd", "T": 16218, "lvl": "Dlvl:20", "u": [41, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E|bc?etn\"."}
+{"act": "look", "why": ["examining tile {'x': 40, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21766, "k": "cmd", "T": 16218, "lvl": "Dlvl:20", "u": [41, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E|bc?etn\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21767, "k": "cmd", "T": 16219, "lvl": "Dlvl:20", "u": [42, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E||eret\"."}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21768, "k": "cmd", "T": 16219, "lvl": "Dlvl:20", "u": [42, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E||erc?\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 42, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21769, "k": "cmd", "T": 16220, "lvl": "Dlvl:20", "u": [43, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 6, 'glyph': ' ', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21770, "k": "cmd", "T": 16221, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"m": "It misses!"}
+{"m": "It misses!"}
+{"act": "attack", "why": ["hitting {'x': 44, 'y': 7, 'known': 16221, 'first-known': 16221, 'glyph': 'I', 'color': None, 'type':", "targetting leftover enemy {'x': 44, 'y': 7, 'known': 16221, 'first-known': 16221, 'glyph': 'I', 'col"], "dir": "E"}
+{"a": "F"}
+{"r": 21771, "k": "cmdcont", "T": 16221, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"a": "l"}
+{"r": 21772, "k": "cmd", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"m": "You hit the giant eel!"}
+{"m": "The giant eel misses!"}
+{"m": "The giant eel misses!"}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 44, 'y': 7, 'known': 16222, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21773, "k": "yn", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21774, "k": "line", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21775, "k": "cmd", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21776, "k": "cmd", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E>bereth\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 44, 'y': 7, 'known': 16222, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21777, "k": "yn", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21778, "k": "yn", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21779, "k": "line", "T": 16222, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21780, "k": "cmd", "T": 16223, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 43, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21781, "k": "cmd", "T": 16223, "lvl": "Dlvl:20", "u": [44, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 44, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21782, "k": "cmd", "T": 16223, "lvl": "Dlvl:20", "u": [45, 5], "hp": 129, "hpmax": 129}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 44, 'y': 7, 'known': 16223, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21783, "k": "yn", "T": 16223, "lvl": "Dlvl:20", "u": [45, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21784, "k": "line", "T": 16223, "lvl": "Dlvl:20", "u": [45, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21785, "k": "cmd", "T": 16224, "lvl": "Dlvl:20", "u": [45, 5], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 44, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21786, "k": "cmd", "T": 16224, "lvl": "Dlvl:20", "u": [45, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21787, "k": "cmd", "T": 16224, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbe?eth\"."}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21788, "k": "cmd", "T": 16224, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbc?et?\"."}
+{"m": "You see no objects here."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 44, 'y': 7, 'known': 16224, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21789, "k": "yn", "T": 16224, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21790, "k": "yn", "T": 16224, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129, "q": "Do you want to add to the current engraving?", "c": "ynq"}
+{"a": "n"}
+{"r": 21791, "k": "line", "T": 16224, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You wipe out the message that was written in the dust here."}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21792, "k": "cmd", "T": 16225, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 45, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21793, "k": "cmd", "T": 16225, "lvl": "Dlvl:20", "u": [46, 6], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 21794, "k": "cmd", "T": 16225, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 44, 'y': 7, 'known': 16225, 'first-known': 16222, 'glyph': ';', 'color': 'cya"]}
+{"a": "s"}
+{"r": 21795, "k": "cmd", "T": 16226, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129}
+{"m": "You find a giant eel."}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 6, 'known': 16226, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21796, "k": "yn", "T": 16226, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21797, "k": "line", "T": 16226, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21798, "k": "cmd", "T": 16226, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 46, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21799, "k": "cmd", "T": 16226, "lvl": "Dlvl:20", "u": [47, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21800, "k": "cmd", "T": 16227, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129}
+{"act": "engrave", "why": ["engrave E", "trying to keep away from {'x': 45, 'y': 6, 'known': 16227, 'first-known': 16222, 'glyph': ';', 'colo"], "slot": "-"}
+{"a": "E"}
+{"r": 21801, "k": "yn", "T": 16227, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write with? [- axBEFKQ or ?*]"}
+{"a": "-"}
+{"r": 21802, "k": "line", "T": 16227, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129, "q": "What do you want to write in the dust here?"}
+{"m": "You write in the dust with your fingertip."}
+{"a": "Elbereth"}
+{"r": 21803, "k": "cmd", "T": 16227, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21804, "k": "cmd", "T": 16227, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 45, 'y': 6, 'known': 16227, 'first-known': 16222, 'glyph': ';', 'color': 'cya"]}
+{"a": "s"}
+{"r": 21805, "k": "cmd", "T": 16228, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129}
+{"m": "You find a giant eel."}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 21806, "k": "cmd", "T": 16228, "lvl": "Dlvl:20", "u": [48, 5], "hp": 129, "hpmax": 129}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"Elbereth\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 48, 'y': 6, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21807, "k": "cmd", "T": 16228, "lvl": "Dlvl:20", "u": [49, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 49, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21808, "k": "cmd", "T": 16229, "lvl": "Dlvl:20", "u": [50, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 50, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21809, "k": "cmd", "T": 16229, "lvl": "Dlvl:20", "u": [51, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 51, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21810, "k": "cmd", "T": 16230, "lvl": "Dlvl:20", "u": [52, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 6, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21811, "k": "cmd", "T": 16230, "lvl": "Dlvl:20", "u": [53, 5], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 52, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 21812, "k": "cmd", "T": 16231, "lvl": "Dlvl:20", "u": [53, 6], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 53, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21813, "k": "cmd", "T": 16231, "lvl": "Dlvl:20", "u": [54, 6], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 54, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21814, "k": "cmd", "T": 16232, "lvl": "Dlvl:20", "u": [55, 6], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 55, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21815, "k": "cmd", "T": 16232, "lvl": "Dlvl:20", "u": [56, 6], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 56, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21816, "k": "cmd", "T": 16233, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 21817, "k": "cmdcont", "T": 16233, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"a": "0"}
+{"r": 21818, "k": "cmdcont", "T": 16233, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 21819, "k": "cmd", "T": 16239, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 21820, "k": "cmdcont", "T": 16239, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"a": "0"}
+{"r": 21821, "k": "cmdcont", "T": 16239, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 21822, "k": "cmd", "T": 16244, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 21823, "k": "cmdcont", "T": 16244, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"a": "0"}
+{"r": 21824, "k": "cmdcont", "T": 16244, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 21825, "k": "cmd", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "wield", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "l"}
+{"a": "w"}
+{"r": 21826, "k": "yn", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "What do you want to wield? [- ajlxFK or ?*]"}
+{"a": "l"}
+{"r": 21827, "k": "cmd", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "l - a blessed rusty +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21828, "k": "cmd", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "apply", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "l"}
+{"a": "a"}
+{"r": 21829, "k": "yn", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "l"}
+{"r": 21830, "k": "yn", "T": 16251, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "In what direction do you want to dig? [ykulnjb>]"}
+{"a": "n"}
+{"r": 21831, "k": "cmd", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 8, 'glyph': ' ', 'color': None, 'feature': None, 'seen': False, 'dug': Fals", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21832, "k": "cmd", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "You are carrying too much to get through."}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +3 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 21833, "k": "yn", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "What do you want to wield? [- ajlxFK or ?*]"}
+{"a": "a"}
+{"r": 21834, "k": "cmd", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "a - the blessed rustproof +3 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21835, "k": "cmd", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "wield", "why": ["exploring {'x': 58, 'y': 7, 'glyph': ' ', 'color': None, 'feature': None, 'seen': False, 'dug': Fals", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "l"}
+{"a": "w"}
+{"r": 21836, "k": "yn", "T": 16254, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "What do you want to wield? [- ajlxFK or ?*]"}
+{"a": "l"}
+{"r": 21837, "k": "cmd", "T": 16255, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "l - a blessed rusty +0 pick-axe (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21838, "k": "cmd", "T": 16255, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"act": "apply", "why": ["exploring {'x': 58, 'y': 7, 'glyph': ' ', 'color': None, 'feature': None, 'seen': False, 'dug': Fals", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "l"}
+{"a": "a"}
+{"r": 21839, "k": "yn", "T": 16255, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "l"}
+{"r": 21840, "k": "yn", "T": 16255, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129, "q": "In what direction do you want to dig? [ykuljb>]"}
+{"a": "l"}
+{"r": 21841, "k": "cmd", "T": 16258, "lvl": "Dlvl:20", "u": [57, 6], "hp": 129, "hpmax": 129}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You succeed in cutting away some rock."}
+{"act": "move", "why": ["exploring {'x': 58, 'y': 7, 'glyph': ' ', 'color': None, 'feature': None, 'seen': False, 'dug': Fals", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 21842, "k": "cmd", "T": 16258, "lvl": "Dlvl:20", "u": [58, 6], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 21843, "k": "cmd", "T": 16259, "lvl": "Dlvl:20", "u": [58, 7], "hp": 129, "hpmax": 129}
+{"act": "apply", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "slot": "l"}
+{"a": "a"}
+{"r": 21844, "k": "yn", "T": 16259, "lvl": "Dlvl:20", "u": [58, 7], "hp": 129, "hpmax": 129, "q": "What do you want to use or apply? [j-lpBQ or ?*]"}
+{"a": "l"}
+{"r": 21845, "k": "yn", "T": 16259, "lvl": "Dlvl:20", "u": [58, 7], "hp": 129, "hpmax": 129, "q": "In what direction do you want to dig? [hulnjb>]"}
+{"a": "j"}
+{"r": 21846, "k": "cmd", "T": 16261, "lvl": "Dlvl:20", "u": [58, 7], "hp": 129, "hpmax": 129}
+{"m": "You start digging."}
+{"m": "You hit the rock with all your might."}
+{"m": "You make an opening in the wall."}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 21847, "k": "cmd", "T": 16262, "lvl": "Dlvl:20", "u": [58, 8], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21848, "k": "cmd", "T": 16263, "lvl": "Dlvl:20", "u": [59, 9], "hp": 129, "hpmax": 129}
+{"act": "wield", "why": ["making use of a", "wielding better weapon - the blessed rustproof +3 Excalibur"], "slot": "a"}
+{"a": "w"}
+{"r": 21849, "k": "yn", "T": 16263, "lvl": "Dlvl:20", "u": [59, 9], "hp": 129, "hpmax": 129, "q": "What do you want to wield? [- ajlxFK or ?*]"}
+{"a": "a"}
+{"r": 21850, "k": "cmd", "T": 16263, "lvl": "Dlvl:20", "u": [59, 9], "hp": 129, "hpmax": 129}
+{"m": "a - the blessed rustproof +3 Excalibur (weapon in hand)."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 21851, "k": "cmd", "T": 16263, "lvl": "Dlvl:20", "u": [59, 9], "hp": 129, "hpmax": 129}
+{"act": "move", "why": ["exploring {'x': 61, 'y': 13, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True,", "using cached exploration step", "reaching exploration target", "exploring main until Dlvl:20", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 21852, "k": "cmd", "T": 16264, "lvl": "Dlvl:20", "u": [60, 10], "hp": 129, "hpmax": 129}
+{"note": "abort", "d": "limit: max_seconds 14400"}
+{"note": "perf", "d": "explorable versions=13169 calls=22747562 misses=1895376"}

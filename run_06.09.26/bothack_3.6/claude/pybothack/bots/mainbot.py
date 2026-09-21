@@ -286,7 +286,7 @@ def real_amulet(item):
 
 
 def get_amulet(game):
-    if not have(game, real_amulet):
+    if not have(game, real_amulet, {'bagged'}):
         return with_reason("searching for the amulet",
                            explore(game) or search_level(game, 1)
                            or seek(game, stairs_up_p))
@@ -416,6 +416,37 @@ def endgame(game):
     return get_level(game, 'main', 'sanctum')
 
 
+def amulet_safekeeping(game):
+    """3.6.7 steal.c stealamulet() and the "mysterious force" of do.c only
+    look at the Amulet carried directly (u.uhave.amulet): in a bag it can be
+    neither stolen by the Wizard of Yendor nor send the hero back down.  The
+    Wizard stole it in big-w09 g007/g009 and the bot spent tens of thousands
+    of turns recovering it.  It must be out on Dlvl 1 (the up stairs ask to
+    leave the dungeon without it) and in the Planes (offering, portals)."""
+    found = have(game, real_amulet, {'bagged'})
+    if not found:
+        return None
+    slot, item = found
+    bagged = item is not inventory_slot(game, slot) and \
+        item != inventory_slot(game, slot)
+    out_needed = (at_planes(game)
+                  or (branch_key(game) == 'main'
+                      and game.get('dlvl') == "Dlvl:1"))
+    if out_needed:
+        if bagged:
+            return with_reason("taking the Amulet out for the endgame",
+                               unbag(game, slot, item))
+        return None
+    if not bagged:
+        b = have(game, lambda i: i.get('name') in ("bag of holding",
+                                                   "oilskin sack", "sack"),
+                 {'noncursed'})
+        if b:
+            return with_reason("bagging the Amulet against theft",
+                               put_in(b[0], slot))
+    return None
+
+
 _ASTRAL_UNIHORN = [-10]
 
 
@@ -426,7 +457,7 @@ def assisted_astral_rush(game):
     Angels and player monsters)."""
     if not rules36.assisted_tactics() or branch_key(game) != 'astral':
         return None
-    if not have(game, real_amulet):
+    if not have(game, real_amulet, {'bagged'}):
         return None
     player = game['player']
     if has_hands(player) and 'ext-blind' in player['state']:
@@ -655,7 +686,7 @@ def currently_desired(game):
     res.update(desired_food(game))
     res.update(desired_throwables(game))
     sanctum = get_level(game, 'main', 'sanctum')
-    if sanctum and not have(game, real_amulet) and at(sanctum, 20,
+    if sanctum and not have(game, real_amulet, {'bagged'}) and at(sanctum, 20,
                                                       11).get('seen'):
         res.add("Amulet of Yendor")
     if not fast(game['player']):
@@ -1124,8 +1155,8 @@ def remove_levi(game, path=None):
 
 
 def consider_items(game):
-    if (have(game, real_amulet) and have(game, set(desired_weapons))
-            and at_planes(game)):
+    if (have(game, real_amulet, {'bagged'})
+            and have(game, set(desired_weapons)) and at_planes(game)):
         return None
     to_take = take_selector(game)
     sanctum = 'sanctum' in curlvl_tags(game)
@@ -2127,9 +2158,9 @@ def offer_amulet(game):
         if found:
             return unbag(game, found[0], found[1]) or make_use(game, found[0])
     if player['alignment'] == tile.get('alignment'):
-        found = have(game, real_amulet)
+        found = have(game, real_amulet, {'bagged'})
         if found:
-            return Offer(found[0])
+            return (unbag(game, found[0], found[1]) or Offer(found[0]))
     return None
 
 
@@ -3254,6 +3285,9 @@ def init(bh):
     reg(-99, offer_amulet)
     reg(-16, enhance)
     reg(-20, assisted_astral_rush)
+    # NB: no "bag the Amulet against theft": 3.6.7 pickup.c refuses the
+    # Amulet, Bell, Candelabrum and Book in containers ("cannot be confined
+    # in such trappings"); tried in big-w10, it only wasted turns
     register_handler(bh, -15, name_first_amulet(bh))
     reg(-13, handle_drowning)
     reg(-11, handle_starvation)

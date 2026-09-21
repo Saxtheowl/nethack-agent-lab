@@ -252,7 +252,7 @@ _CHOICE_FNS = [
     (r"^Drink from .*\?", 'drink_here'),
     (r"^What do you want to zap\?", 'zap_what'),
     (r"^Which .*, [Rr]ight or [Ll]eft\?", 'which_finger'),
-    (r"^\"Cad!  You did [0-9]+ zorkmids worth of damage!\"  Pay\?",
+    (r"^\"(?:Cad|Minx)! +You did [0-9]+ zorkmids worth of damage!\" +Pay\?",
      'pay_damage'),
     (r"^There (?:is|are) ([^;]+) here; eat (?:it|one)\?", ('eat_it', 1)),
     (r"^There (?:is|are) ([^;]+) here; sacrifice (?:it|one)\?",
@@ -260,11 +260,14 @@ _CHOICE_FNS = [
     (r"^What do you want to eat\?", 'eat_what'),
     (r"^Do you wish to teleport", 'do_teleport'),
     (r"^What do you want to sacrifice\?", 'sacrifice_what'),
-    (r"^Attach the .*to .*\?", 'attach_candelabrum_candles'),
+    # 3.6 apply.c uses yname(): "Attach your wax candles to your
+    # candelabrum?" - with "the" only, BotHack answered no forever and never
+    # completed the Candelabrum (big-w08: 2400 refusals)
+    (r"^Attach (?:the|your) .*to .*\?", 'attach_candelabrum_candles'),
     (r"^Beware, there will be no return! Still climb\?", 'still_climb'),
-    (r"^You have a little trouble lifting ([^.]+)\. Continue\?",
+    (r"^You have a little trouble (?:lifting|removing) ([^.]+)\. Continue\?",
      ('lift_burden', 'light')),
-    (r"^You have much trouble lifting ([^.]+)\. Continue\?",
+    (r"^You have much trouble (?:lifting|removing) ([^.]+)\. Continue\?",
      ('lift_burden', 'heavy')),
     (r"^You have extreme difficulty lifting ([^.]+)\. Continue\?",
      ('lift_burden', 'extreme')),

@@ -1,0 +1,24 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.0, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.0, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.0, "x_kind": "kit", "item": "4 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 279, "depth": 2, "t": 9.2, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 279, "depth": 2, "t": 9.2, "stage": "dlvl2"}
+{"kind": "item_lost", "turn": 588, "depth": 2, "t": 24.2, "item": "pick-axe", "messages": ["A little dart misses you.", "There is a dart trap here.", "The door opens.", "Pick an object.", "@        a human or elf (peaceful Wonotobo) [seen: normal vision, infravision]", "\"Velkommen, bot!  Welcome to Wonotobo's general store!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Wonotobo anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 67, :y 5}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 605, "depth": 2, "t": 26.7, "item": "pick-axe"}
+{"kind": "depth", "turn": 636, "depth": 3, "t": 26.9, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 748, "depth": 3, "t": 32.6, "value": 2}
+{"kind": "item_lost", "turn": 908, "depth": 3, "t": 39.2, "item": "pick-axe", "messages": ["The door opens.", "Pick an object.", "@        a human or elf (peaceful Gweebarra) [seen: normal vision, infravision]", "Pick an object.", "]        a mimic or a strange object (strange object)", "\"Velkommen, bot!  Welcome to Gweebarra's second-hand bookstore!\"", "\"Will you please leave your pick-axe outside?\"", "You do not owe Gweebarra anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 75, :y 16}"], "slot": "k"}}
+{"kind": "xl", "turn": 912, "depth": 3, "t": 39.5, "value": 3}
+{"kind": "item_gained", "turn": 918, "depth": 3, "t": 40.5, "item": "pick-axe"}
+{"kind": "xl", "turn": 942, "depth": 3, "t": 40.9, "value": 4}
+{"kind": "depth", "turn": 960, "depth": 4, "t": 41.7, "value": 4, "dname": "The Gnomish Mines"}
+{"kind": "branch", "turn": 960, "depth": 4, "t": 41.7, "dname": "The Gnomish Mines", "lvl": "Dlvl:4  "}
+{"kind": "stage", "turn": 960, "depth": 4, "t": 41.7, "stage": "mines"}
+{"kind": "heartbeat", "turn": 1000, "depth": 4, "t": 45.8, "lvl": "Dlvl:4", "dname": "The Gnomish Mines", "hp": 42, "hpmax": 45, "xl": 4, "ac": -7, "requests": 1418, "actions": 1100}

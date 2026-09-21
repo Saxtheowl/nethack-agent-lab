@@ -1,0 +1,599 @@
+{
+ "series": "big-w08",
+ "games": 32,
+ "outcomes": {
+  "limit": 26,
+  "stuck": 6
+ },
+ "stage_funnel": {
+  "dlvl2": 32,
+  "mines": 32,
+  "minetown": 31,
+  "oracle": 32,
+  "sokoban": 31,
+  "bigroom": 12,
+  "dlvl10": 29,
+  "medusa": 22,
+  "castle": 21,
+  "valley": 19,
+  "quest": 21,
+  "bell": 11,
+  "vlad": 10,
+  "candelabrum": 5,
+  "gehennom_deep": 9,
+  "wizard_tower": 9,
+  "book": 5
+ },
+ "failure_signatures": [
+  [
+   "limit | max_seconds N",
+   26
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'fl)",
+   2
+  ],
+  [
+   "stuck | action loop: repeated repeated N times at turn N ({..})",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (examining tile {S: N, S: N, S: S, S: S, S: 'flo)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (hitting {S: N, S: N, S: N, S: N, S: S, 'c)",
+   1
+  ],
+  [
+   "stuck | fixation: target (N, N, S) keeps coming back after N recoveries (new or desired item at {S: N, S: N, S: S, S: S, 'fea)",
+   1
+  ]
+ ],
+ "anomaly_totals": {
+  "note:compat": 7008,
+  "compat:container:o": 5300,
+  "fallback": 3663,
+  "note:fallback": 3663,
+  "unknown_yn": 3608,
+  "note:unknown-prompt": 3608,
+  "menu_empty_answer": 3414,
+  "note:assist": 1985,
+  "menu_letter_unmatched": 1617,
+  "compat:container:i": 1087,
+  "msg-rewrite:^Your (\\w+) (feels?) better\\.$": 1011,
+  "msg-rewrite:^You open (.*\\.\\.\\.)$": 793,
+  "leftover_keys_dropped": 765,
+  "note:leftover": 765,
+  "msg-rewrite:^You feel as if you need some ": 606,
+  "msg-rewrite:^(?:Hmmm, .* turns out to be l": 324,
+  "compat:container:q": 269,
+  "action_veto": 223,
+  "note:veto": 223,
+  "compat:name:i": 222,
+  "msg-rewrite:^Air currents pull you down in": 172,
+  "compat:name:o": 130,
+  "menu_show:current_skills": 90,
+  "msg-rewrite:^It's (?:solid stone|a tree)\\.": 86,
+  "farlook-symbol": 69,
+  "note:recovery": 58,
+  "msg-rewrite:^It is locked\\.$": 37,
+  "note:abort": 32,
+  "note:forced-command": 22,
+  "farlook-trap": 17
+ },
+ "assist_totals": {
+  "kit": 256,
+  "feed": 56,
+  "lifesave": 1635,
+  "noslime": 24,
+  "brainsave": 14
+ },
+ "turns_total": 741765,
+ "turns_max": 44219,
+ "elapsed_total_s": 409656.2,
+ "stopped_early": null,
+ "games_detail": [
+  {
+   "game_id": "g001",
+   "engine_seed": 7013,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 31664,
+   "max_depth": 44,
+   "last_stage": "gehennom_deep",
+   "elapsed_s": 14401.4,
+   "turns_per_s": 2.2,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 122,
+    "noslime": 7
+   }
+  },
+  {
+   "game_id": "g002",
+   "engine_seed": 7011,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 35672,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 14419.2,
+   "turns_per_s": 2.47,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4,
+    "lifesave": 5
+   }
+  },
+  {
+   "game_id": "g003",
+   "engine_seed": 7003,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 44219,
+   "max_depth": 52,
+   "last_stage": "book",
+   "elapsed_s": 14402.4,
+   "turns_per_s": 3.07,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g004",
+   "engine_seed": 7007,
+   "outcome": "stuck",
+   "reason": "action loop: repeated repeated 40 times at turn 38960 ({'act': 'repeated', 'why': ['searching walls', 'searching - max-iter = 6', 'seeking', 'unstick: leaving the level']})",
+   "turns": 38960,
+   "max_depth": 48,
+   "last_stage": "book",
+   "elapsed_s": 5864.6,
+   "turns_per_s": 6.64,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 45,
+    "noslime": 1,
+    "brainsave": 12
+   }
+  },
+  {
+   "game_id": "g005",
+   "engine_seed": 7012,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 32368,
+   "max_depth": 46,
+   "last_stage": "book",
+   "elapsed_s": 14402.1,
+   "turns_per_s": 2.25,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4,
+    "lifesave": 25
+   }
+  },
+  {
+   "game_id": "g006",
+   "engine_seed": 7014,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 33224,
+   "max_depth": 45,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 14400.9,
+   "turns_per_s": 2.31,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 17
+   }
+  },
+  {
+   "game_id": "g007",
+   "engine_seed": 7034,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 36216,
+   "max_depth": 48,
+   "last_stage": "book",
+   "elapsed_s": 14402.5,
+   "turns_per_s": 2.51,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4,
+    "lifesave": 174
+   }
+  },
+  {
+   "game_id": "g008",
+   "engine_seed": 7043,
+   "outcome": "stuck",
+   "reason": "fixation: target (59, 4, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 59, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'flo)",
+   "turns": 21952,
+   "max_depth": 33,
+   "last_stage": "valley",
+   "elapsed_s": 1482.9,
+   "turns_per_s": 14.8,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 22,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g009",
+   "engine_seed": 7047,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 38185,
+   "max_depth": 51,
+   "last_stage": "book",
+   "elapsed_s": 14400.9,
+   "turns_per_s": 2.65,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 35,
+    "noslime": 4
+   }
+  },
+  {
+   "game_id": "g010",
+   "engine_seed": 7101,
+   "outcome": "stuck",
+   "reason": "fixation: target (50, 9, 'Dlvl:39 ') keeps coming back after 3 recoveries (hitting {'x': 50, 'y': 9, 'known': 18251, 'first-known': 17800, 'glyph': 'X', 'c)",
+   "turns": 18251,
+   "max_depth": 39,
+   "last_stage": "valley",
+   "elapsed_s": 1536.9,
+   "turns_per_s": 11.87,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 184,
+    "noslime": 11
+   }
+  },
+  {
+   "game_id": "g011",
+   "engine_seed": 7102,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 40595,
+   "max_depth": 38,
+   "last_stage": "quest",
+   "elapsed_s": 14402.8,
+   "turns_per_s": 2.82,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 5,
+    "lifesave": 2
+   }
+  },
+  {
+   "game_id": "g012",
+   "engine_seed": 7103,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 28279,
+   "max_depth": 29,
+   "last_stage": "quest",
+   "elapsed_s": 14401.7,
+   "turns_per_s": 1.96,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g013",
+   "engine_seed": 7104,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 28854,
+   "max_depth": 38,
+   "last_stage": "bell",
+   "elapsed_s": 14403.0,
+   "turns_per_s": 2.0,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "lifesave": 3
+   }
+  },
+  {
+   "game_id": "g014",
+   "engine_seed": 7105,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 16366,
+   "max_depth": 20,
+   "last_stage": "quest",
+   "elapsed_s": 14400.9,
+   "turns_per_s": 1.14,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g015",
+   "engine_seed": 7106,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 12784,
+   "max_depth": 12,
+   "last_stage": "sokoban",
+   "elapsed_s": 14401.2,
+   "turns_per_s": 0.89,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 2,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g016",
+   "engine_seed": 7107,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 15005,
+   "max_depth": 12,
+   "last_stage": "quest",
+   "elapsed_s": 14400.9,
+   "turns_per_s": 1.04,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 7,
+    "feed": 3
+   }
+  },
+  {
+   "game_id": "g017",
+   "engine_seed": 7108,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 15676,
+   "max_depth": 21,
+   "last_stage": "quest",
+   "elapsed_s": 14400.9,
+   "turns_per_s": 1.09,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 4
+   }
+  },
+  {
+   "game_id": "g018",
+   "engine_seed": 7109,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 15287,
+   "max_depth": 27,
+   "last_stage": "castle",
+   "elapsed_s": 14400.6,
+   "turns_per_s": 1.06,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 2
+   }
+  },
+  {
+   "game_id": "g019",
+   "engine_seed": 7110,
+   "outcome": "stuck",
+   "reason": "fixation: target (40, 10, 'Dlvl:4  ') keeps coming back after 3 recoveries (examining tile {'x': 40, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 13017,
+   "max_depth": 7,
+   "last_stage": "sokoban",
+   "elapsed_s": 9736.3,
+   "turns_per_s": 1.34,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g020",
+   "engine_seed": 7111,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 14303,
+   "max_depth": 28,
+   "last_stage": "medusa",
+   "elapsed_s": 14400.2,
+   "turns_per_s": 0.99,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g021",
+   "engine_seed": 7112,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 12050,
+   "max_depth": 29,
+   "last_stage": "castle",
+   "elapsed_s": 14401.1,
+   "turns_per_s": 0.84,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 60
+   }
+  },
+  {
+   "game_id": "g022",
+   "engine_seed": 7113,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 13348,
+   "max_depth": 16,
+   "last_stage": "dlvl10",
+   "elapsed_s": 14400.7,
+   "turns_per_s": 0.93,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g023",
+   "engine_seed": 7114,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 13110,
+   "max_depth": 15,
+   "last_stage": "dlvl10",
+   "elapsed_s": 14400.4,
+   "turns_per_s": 0.91,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g024",
+   "engine_seed": 7115,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 16264,
+   "max_depth": 20,
+   "last_stage": "quest",
+   "elapsed_s": 14402.3,
+   "turns_per_s": 1.13,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 126,
+    "feed": 1
+   }
+  },
+  {
+   "game_id": "g025",
+   "engine_seed": 7116,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 10433,
+   "max_depth": 6,
+   "last_stage": "oracle",
+   "elapsed_s": 14400.5,
+   "turns_per_s": 0.72,
+   "assist_counts": {
+    "kit": 8,
+    "lifesave": 787,
+    "feed": 1,
+    "brainsave": 2
+   }
+  },
+  {
+   "game_id": "g026",
+   "engine_seed": 7117,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 17649,
+   "max_depth": 26,
+   "last_stage": "valley",
+   "elapsed_s": 14400.4,
+   "turns_per_s": 1.23,
+   "assist_counts": {
+    "kit": 8
+   }
+  },
+  {
+   "game_id": "g027",
+   "engine_seed": 7118,
+   "outcome": "stuck",
+   "reason": "fixation: target (54, 17, 'Home 3 ') keeps coming back after 3 recoveries (new or desired item at {'x': 54, 'y': 17, 'glyph': '(', 'color': 'magenta', 'fea)",
+   "turns": 13769,
+   "max_depth": 29,
+   "last_stage": "valley",
+   "elapsed_s": 9925.7,
+   "turns_per_s": 1.39,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g028",
+   "engine_seed": 7119,
+   "outcome": "stuck",
+   "reason": "fixation: target (48, 13, 'Dlvl:5  ') keeps coming back after 3 recoveries (examining tile {'x': 48, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'fl)",
+   "turns": 11325,
+   "max_depth": 9,
+   "last_stage": "sokoban",
+   "elapsed_s": 6661.6,
+   "turns_per_s": 1.7,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 8
+   }
+  },
+  {
+   "game_id": "g029",
+   "engine_seed": 7120,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 25300,
+   "max_depth": 37,
+   "last_stage": "vlad",
+   "elapsed_s": 14400.6,
+   "turns_per_s": 1.76,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2
+   }
+  },
+  {
+   "game_id": "g030",
+   "engine_seed": 7121,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 20396,
+   "max_depth": 36,
+   "last_stage": "valley",
+   "elapsed_s": 14400.1,
+   "turns_per_s": 1.42,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 1,
+    "lifesave": 1
+   }
+  },
+  {
+   "game_id": "g031",
+   "engine_seed": 7122,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 30010,
+   "max_depth": 34,
+   "last_stage": "valley",
+   "elapsed_s": 14400.4,
+   "turns_per_s": 2.08,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 3,
+    "lifesave": 6
+   }
+  },
+  {
+   "game_id": "g032",
+   "engine_seed": 7123,
+   "outcome": "limit",
+   "reason": "max_seconds 14400",
+   "turns": 27234,
+   "max_depth": 48,
+   "last_stage": "wizard_tower",
+   "elapsed_s": 14400.1,
+   "turns_per_s": 1.89,
+   "assist_counts": {
+    "kit": 8,
+    "feed": 2,
+    "noslime": 1
+   }
+  }
+ ]
+}

@@ -1,0 +1,800 @@
+{"r": 39147, "k": "cmd", "T": 24898, "lvl": "Dlvl:34", "u": [21, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["new or desired item at {'x': 18, 'y': 13, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 39148, "k": "cmd", "T": 24898, "lvl": "Dlvl:34", "u": [20, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["new or desired item at {'x': 18, 'y': 13, 'glyph': '%', 'color': None, 'feature': 'floor', 'seen': T"], "dir": "W"}
+{"a": "h"}
+{"r": 39149, "k": "cmd", "T": 24899, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149}
+{"m": "You see here a lurker above corpse."}
+{"act": "look", "why": ["examining tile {'x': 18, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 39150, "k": "cmd", "T": 24899, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149}
+{"m": "You see here a lurker above corpse."}
+{"act": "eat", "why": ["going to eat corpse at {'x': 18, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen'"], "slot": "a lurker above corpse"}
+{"a": "e"}
+{"r": 39151, "k": "yn", "T": 24899, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149, "q": "There is a lurker above corpse here; eat it?", "c": "ynq"}
+{"a": "y"}
+{"r": 39152, "k": "cmd", "T": 24908, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149}
+{"m": "This lurker above corpse tastes okay."}
+{"m": "You finish eating the lurker above corpse."}
+{"act": "look", "why": ["examining tile {'x': 18, 'y': 13, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 39153, "k": "cmd", "T": 24908, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149}
+{"m": "You see no objects here."}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 23, :y 7}"}
+{"a": "_"}
+{"r": 39154, "k": "pos", "T": 24908, "lvl": "Dlvl:34", "u": [19, 12], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(24, 6)"}
+{"r": 39155, "k": "cmd", "T": 24914, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39156, "k": "cmdcont", "T": 24914, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39157, "k": "cmdcont", "T": 24914, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39158, "k": "cmd", "T": 24920, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39159, "k": "cmdcont", "T": 24920, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39160, "k": "cmdcont", "T": 24920, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39161, "k": "cmd", "T": 24926, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39162, "k": "cmd", "T": 24927, "lvl": "Dlvl:34", "u": [24, 7], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39163, "k": "cmd", "T": 24927, "lvl": "Dlvl:34", "u": [24, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39164, "k": "cmd", "T": 24928, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39165, "k": "cmdcont", "T": 24928, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39166, "k": "cmdcont", "T": 24928, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39167, "k": "cmd", "T": 24934, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 26, :y 11}"}
+{"a": "_"}
+{"r": 39168, "k": "pos", "T": 24934, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(27, 10)"}
+{"r": 39169, "k": "cmd", "T": 24936, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching corridors", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39170, "k": "cmdcont", "T": 24936, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39171, "k": "cmdcont", "T": 24936, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39172, "k": "cmd", "T": 24942, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "i"}
+{"a": "a"}
+{"r": 39173, "k": "yn", "T": 24942, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149, "q": "What do you want to use or apply? [i-kot-vyCDFJLNORUX or ?*]"}
+{"a": "i"}
+{"r": 39174, "k": "cmd", "T": 24942, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"m": "Nothing happens."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39175, "k": "cmd", "T": 24943, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39176, "k": "cmdcont", "T": 24943, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39177, "k": "cmdcont", "T": 24943, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39178, "k": "cmd", "T": 24949, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39179, "k": "cmdcont", "T": 24949, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39180, "k": "cmdcont", "T": 24949, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39181, "k": "cmd", "T": 24955, "lvl": "Dlvl:34", "u": [28, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39182, "k": "cmd", "T": 24955, "lvl": "Dlvl:34", "u": [27, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39183, "k": "cmd", "T": 24956, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39184, "k": "cmdcont", "T": 24956, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39185, "k": "cmdcont", "T": 24956, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39186, "k": "cmd", "T": 24961, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39187, "k": "cmdcont", "T": 24961, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39188, "k": "cmdcont", "T": 24961, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39189, "k": "cmd", "T": 24966, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39190, "k": "cmdcont", "T": 24966, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39191, "k": "cmdcont", "T": 24966, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39192, "k": "cmd", "T": 24973, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39193, "k": "cmdcont", "T": 24973, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39194, "k": "cmdcont", "T": 24973, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39195, "k": "cmd", "T": 24979, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39196, "k": "cmdcont", "T": 24979, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39197, "k": "cmdcont", "T": 24979, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39198, "k": "cmd", "T": 24985, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39199, "k": "cmdcont", "T": 24985, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39200, "k": "cmdcont", "T": 24985, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39201, "k": "cmd", "T": 24992, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39202, "k": "cmdcont", "T": 24992, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39203, "k": "cmdcont", "T": 24992, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39204, "k": "cmd", "T": 24998, "lvl": "Dlvl:34", "u": [26, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39205, "k": "cmd", "T": 24998, "lvl": "Dlvl:34", "u": [26, 11], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39206, "k": "cmd", "T": 24999, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39207, "k": "cmdcont", "T": 24999, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39208, "k": "cmdcont", "T": 24999, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39209, "k": "cmd", "T": 25005, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39210, "k": "cmdcont", "T": 25005, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39211, "k": "cmdcont", "T": 25005, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39212, "k": "cmd", "T": 25012, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39213, "k": "cmd", "T": 25013, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39214, "k": "cmdcont", "T": 25013, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39215, "k": "cmdcont", "T": 25013, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39216, "k": "cmd", "T": 25018, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["targetting leftover enemy {'x': 27, 'y': 14, 'known': 25018, 'first-known': 25018, 'glyph': 'm', 'co"], "dir": "E"}
+{"a": "l"}
+{"r": 39217, "k": "cmd", "T": 25019, "lvl": "Dlvl:34", "u": [26, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["targetting leftover enemy {'x': 27, 'y': 14, 'known': 25019, 'first-known': 25018, 'glyph': 'm', 'co"], "dir": "E"}
+{"a": "l"}
+{"r": 39218, "k": "cmd", "T": 25019, "lvl": "Dlvl:34", "u": [27, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["hitting {'x': 27, 'y': 14, 'known': 25019, 'first-known': 25018, 'glyph': 'm', 'color': 'red', 'type", "targetting enemy {'x': 27, 'y': 14, 'known': 25019, 'first-known': 25018, 'glyph': 'm', 'color': 're"], "dir": "SE"}
+{"a": "n"}
+{"r": 39219, "k": "cmd", "T": 25020, "lvl": "Dlvl:34", "u": [27, 12], "hp": 149, "hpmax": 149}
+{"m": "You hit the large mimic!"}
+{"act": "move", "why": ["hitting {'x': 27, 'y': 14, 'known': 25020, 'first-known': 25018, 'glyph': 'm', 'color': 'red', 'type", "targetting enemy {'x': 27, 'y': 14, 'known': 25020, 'first-known': 25018, 'glyph': 'm', 'color': 're"], "dir": "SE"}
+{"a": "n"}
+{"r": 39220, "k": "cmd", "T": 25020, "lvl": "Dlvl:34", "u": [27, 12], "hp": 149, "hpmax": 149}
+{"m": "You kill the large mimic!"}
+{"act": "move", "why": ["new or desired item at {'x': 27, 'y': 14, 'glyph': '%', 'color': 'red', 'feature': 'door-open', 'see"], "dir": "E"}
+{"a": "l"}
+{"r": 39221, "k": "cmd", "T": 25021, "lvl": "Dlvl:34", "u": [28, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["new or desired item at {'x': 27, 'y': 14, 'glyph': '%', 'color': 'red', 'feature': 'door-open', 'see"], "dir": "S"}
+{"a": "j"}
+{"r": 39222, "k": "cmd", "T": 25021, "lvl": "Dlvl:34", "u": [28, 13], "hp": 149, "hpmax": 149}
+{"act": "look", "why": ["examining tile {'x': 27, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 39223, "k": "cmd", "T": 25021, "lvl": "Dlvl:34", "u": [28, 13], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39224, "k": "cmd", "T": 25022, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "look", "why": ["examining tile {'x': 27, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 39225, "k": "cmd", "T": 25022, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39226, "k": "cmdcont", "T": 25022, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39227, "k": "cmdcont", "T": 25022, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39228, "k": "cmd", "T": 25029, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39229, "k": "cmdcont", "T": 25029, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39230, "k": "cmdcont", "T": 25029, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39231, "k": "cmd", "T": 25034, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 29, :y 13}"}
+{"a": "_"}
+{"r": 39232, "k": "pos", "T": 25034, "lvl": "Dlvl:34", "u": [28, 14], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(30, 12)"}
+{"r": 39233, "k": "cmd", "T": 25036, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39234, "k": "cmdcont", "T": 25036, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39235, "k": "cmdcont", "T": 25036, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39236, "k": "cmd", "T": 25042, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39237, "k": "cmdcont", "T": 25042, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39238, "k": "cmdcont", "T": 25042, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39239, "k": "cmd", "T": 25047, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 24, :y 13}"}
+{"a": "_"}
+{"r": 39240, "k": "pos", "T": 25047, "lvl": "Dlvl:34", "u": [30, 12], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(25, 12)"}
+{"r": 39241, "k": "cmd", "T": 25050, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39242, "k": "cmdcont", "T": 25050, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39243, "k": "cmdcont", "T": 25050, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39244, "k": "cmd", "T": 25055, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39245, "k": "cmdcont", "T": 25055, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39246, "k": "cmdcont", "T": 25055, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39247, "k": "cmd", "T": 25061, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 20, :y 13}"}
+{"a": ";"}
+{"r": 39248, "k": "pos", "T": 25061, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(21, 12)"}
+{"r": 39249, "k": "cmd", "T": 25061, "lvl": "Dlvl:34", "u": [25, 12], "hp": 149, "hpmax": 149}
+{"m": "o        an orc (Uruk-hai) [seen: infravision, telepathy]"}
+{"act": "move", "why": ["targetting enemy {'x': 20, 'y': 13, 'known': 25061, 'first-known': 25061, 'glyph': 'o', 'color': 'bl"], "dir": "W"}
+{"a": "h"}
+{"r": 39250, "k": "cmd", "T": 25061, "lvl": "Dlvl:34", "u": [24, 12], "hp": 149, "hpmax": 149}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 21, 'y': 13, 'known': 25061, 'first-known': 25061, 'glyph': 'o', 'color': 'bl"]}
+{"a": "s"}
+{"r": 39251, "k": "cmd", "T": 25062, "lvl": "Dlvl:34", "u": [24, 12], "hp": 149, "hpmax": 149}
+{"m": "The Uruk-hai disappears!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 21, 'y': 13, 'known': 25062, 'first-known': 25061, 'glyph': '3', 'color': 're"]}
+{"a": "s"}
+{"r": 39252, "k": "cmd", "T": 25063, "lvl": "Dlvl:34", "u": [24, 12], "hp": 140, "hpmax": 149}
+{"m": "The air elemental engulfs you!"}
+{"m": "You are pummeled with debris!"}
+{"m": "You are pummeled with debris!"}
+{"act": "move", "why": ["killing engulfer"], "dir": "E"}
+{"a": "l"}
+{"r": 39253, "k": "cmd", "T": 25064, "lvl": "Dlvl:34", "u": [24, 12], "hp": 129, "hpmax": 149}
+{"m": "You hit the air elemental."}
+{"m": "You are pummeled with debris!"}
+{"m": "You are pummeled with debris!"}
+{"m": "You are pummeled with debris!"}
+{"act": "move", "why": ["killing engulfer"], "dir": "E"}
+{"a": "l"}
+{"r": 39254, "k": "cmd", "T": 25065, "lvl": "Dlvl:34", "u": [24, 12], "hp": 122, "hpmax": 149}
+{"m": "You hit the air elemental."}
+{"m": "You are pummeled with debris!"}
+{"m": "You are pummeled with debris!"}
+{"m": "You are pummeled with debris!"}
+{"act": "move", "why": ["killing engulfer"], "dir": "E"}
+{"a": "l"}
+{"r": 39255, "k": "cmd", "T": 25066, "lvl": "Dlvl:34", "u": [24, 12], "hp": 121, "hpmax": 149}
+{"m": "You hit the air elemental."}
+{"m": "You are pummeled with debris!"}
+{"m": "You get expelled!"}
+{"m": "The air elemental misses!"}
+{"m": "The air elemental misses!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 23, :y 14}"}
+{"a": ";"}
+{"r": 39256, "k": "pos", "T": 25066, "lvl": "Dlvl:34", "u": [24, 12], "hp": 121, "hpmax": 149, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(24, 13)"}
+{"r": 39257, "k": "cmd", "T": 25066, "lvl": "Dlvl:34", "u": [24, 12], "hp": 121, "hpmax": 149}
+{"m": "E        an elemental (air elemental)"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 14, 'known': 25066, 'first-known': 25066, 'glyph': 'E', 'color': 'cyan', 'typ", "targetting enemy {'x': 23, 'y': 14, 'known': 25066, 'first-known': 25066, 'glyph': 'E', 'color': 'cy"], "dir": "S"}
+{"a": "j"}
+{"r": 39258, "k": "cmd", "T": 25066, "lvl": "Dlvl:34", "u": [24, 12], "hp": 121, "hpmax": 149}
+{"m": "You kill the air elemental!"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 21, 'y': 13, 'known': 25062, 'first-known': 25061, 'glyph': '3', 'color': 're"]}
+{"a": "s"}
+{"r": 39259, "k": "cmd", "T": 25067, "lvl": "Dlvl:34", "u": [24, 12], "hp": 121, "hpmax": 149}
+{"act": "move", "why": ["targetting enemy {'x': 21, 'y': 13, 'known': 25062, 'first-known': 25061, 'glyph': '3', 'color': 're"], "dir": "W"}
+{"a": "h"}
+{"r": 39260, "k": "cmd", "T": 25068, "lvl": "Dlvl:34", "u": [23, 12], "hp": 127, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39261, "k": "cmdcont", "T": 25068, "lvl": "Dlvl:34", "u": [23, 12], "hp": 127, "hpmax": 149}
+{"a": "0"}
+{"r": 39262, "k": "cmdcont", "T": 25068, "lvl": "Dlvl:34", "u": [23, 12], "hp": 127, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39263, "k": "cmd", "T": 25073, "lvl": "Dlvl:34", "u": [23, 12], "hp": 134, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39264, "k": "cmdcont", "T": 25073, "lvl": "Dlvl:34", "u": [23, 12], "hp": 134, "hpmax": 149}
+{"a": "0"}
+{"r": 39265, "k": "cmdcont", "T": 25073, "lvl": "Dlvl:34", "u": [23, 12], "hp": 134, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39266, "k": "cmd", "T": 25080, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39267, "k": "cmdcont", "T": 25080, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39268, "k": "cmdcont", "T": 25080, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39269, "k": "cmd", "T": 25086, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39270, "k": "cmdcont", "T": 25086, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39271, "k": "cmdcont", "T": 25086, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39272, "k": "cmd", "T": 25092, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39273, "k": "cmdcont", "T": 25092, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39274, "k": "cmdcont", "T": 25092, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39275, "k": "cmd", "T": 25097, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39276, "k": "cmdcont", "T": 25097, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39277, "k": "cmdcont", "T": 25097, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39278, "k": "cmd", "T": 25104, "lvl": "Dlvl:34", "u": [23, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39279, "k": "cmd", "T": 25104, "lvl": "Dlvl:34", "u": [24, 12], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39280, "k": "cmd", "T": 25105, "lvl": "Dlvl:34", "u": [24, 13], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39281, "k": "cmd", "T": 25105, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "look", "why": ["examining tile {'x': 23, 'y': 15, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 39282, "k": "cmd", "T": 25105, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39283, "k": "cmdcont", "T": 25105, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39284, "k": "cmdcont", "T": 25105, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39285, "k": "cmd", "T": 25113, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39286, "k": "cmdcont", "T": 25113, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39287, "k": "cmdcont", "T": 25113, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39288, "k": "cmd", "T": 25118, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 19, :y 12}"}
+{"a": "_"}
+{"r": 39289, "k": "pos", "T": 25118, "lvl": "Dlvl:34", "u": [24, 14], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(20, 11)"}
+{"r": 39290, "k": "cmd", "T": 25122, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39291, "k": "cmdcont", "T": 25122, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39292, "k": "cmdcont", "T": 25122, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39293, "k": "cmd", "T": 25127, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39294, "k": "cmdcont", "T": 25127, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39295, "k": "cmdcont", "T": 25127, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39296, "k": "cmd", "T": 25133, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39297, "k": "cmdcont", "T": 25133, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39298, "k": "cmdcont", "T": 25133, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39299, "k": "cmd", "T": 25140, "lvl": "Dlvl:34", "u": [20, 11], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39300, "k": "cmd", "T": 25140, "lvl": "Dlvl:34", "u": [20, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["new or desired item at {'x': 19, 'y': 10, 'glyph': ')', 'color': 'cyan', 'feature': 'door-open', 'se"], "dir": "N"}
+{"a": "k"}
+{"r": 39301, "k": "cmd", "T": 25141, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "look", "why": ["examining tile {'x': 19, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 39302, "k": "cmd", "T": 25141, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 39303, "k": "cmd", "T": 25141, "lvl": "Dlvl:34", "u": [20, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39304, "k": "cmd", "T": 25142, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39305, "k": "cmdcont", "T": 25142, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39306, "k": "cmdcont", "T": 25142, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39307, "k": "cmd", "T": 25150, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39308, "k": "cmdcont", "T": 25150, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39309, "k": "cmdcont", "T": 25150, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39310, "k": "cmd", "T": 25156, "lvl": "Dlvl:34", "u": [21, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39311, "k": "cmd", "T": 25157, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39312, "k": "cmdcont", "T": 25157, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39313, "k": "cmdcont", "T": 25157, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39314, "k": "cmd", "T": 25164, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39315, "k": "cmdcont", "T": 25164, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39316, "k": "cmdcont", "T": 25164, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39317, "k": "cmd", "T": 25171, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39318, "k": "cmdcont", "T": 25171, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39319, "k": "cmdcont", "T": 25171, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39320, "k": "cmd", "T": 25177, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39321, "k": "cmdcont", "T": 25177, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39322, "k": "cmdcont", "T": 25177, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39323, "k": "cmd", "T": 25182, "lvl": "Dlvl:34", "u": [22, 10], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39324, "k": "cmd", "T": 25183, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39325, "k": "cmdcont", "T": 25183, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39326, "k": "cmdcont", "T": 25183, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39327, "k": "cmd", "T": 25189, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39328, "k": "cmdcont", "T": 25189, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39329, "k": "cmdcont", "T": 25189, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39330, "k": "cmd", "T": 25195, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39331, "k": "cmdcont", "T": 25195, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39332, "k": "cmdcont", "T": 25195, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39333, "k": "cmd", "T": 25200, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39334, "k": "cmdcont", "T": 25200, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39335, "k": "cmdcont", "T": 25200, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39336, "k": "cmd", "T": 25206, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"act": "apply", "why": ["randomly use unihorn"], "slot": "i"}
+{"a": "a"}
+{"r": 39337, "k": "yn", "T": 25206, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149, "q": "What do you want to use or apply? [i-kot-vyCDFJLNORUX or ?*]"}
+{"a": "i"}
+{"r": 39338, "k": "cmd", "T": 25207, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149}
+{"m": "Nothing happens."}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 20, :y 9}"}
+{"a": "_"}
+{"r": 39339, "k": "pos", "T": 25207, "lvl": "Dlvl:34", "u": [23, 10], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(21, 8)"}
+{"r": 39340, "k": "cmd", "T": 25211, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39341, "k": "cmdcont", "T": 25211, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39342, "k": "cmdcont", "T": 25211, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39343, "k": "cmd", "T": 25216, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["targetting leftover enemy {'x': 20, 'y': 13, 'known': 25216, 'first-known': 25216, 'glyph': '2', 'co"], "dir": "W"}
+{"a": "h"}
+{"r": 39344, "k": "cmd", "T": 25216, "lvl": "Dlvl:34", "u": [20, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["targetting leftover enemy {'x': 19, 'y': 13, 'known': 25216, 'first-known': 25216, 'glyph': '2', 'co"], "dir": "S"}
+{"a": "j"}
+{"r": 39345, "k": "cmd", "T": 25217, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "look", "why": ["examining tile {'x': 19, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 39346, "k": "cmd", "T": 25217, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "move", "why": ["targetting leftover enemy {'x': 19, 'y': 12, 'known': 25217, 'first-known': 25216, 'glyph': '2', 'co"], "dir": "S"}
+{"a": "j"}
+{"r": 39347, "k": "cmd", "T": 25218, "lvl": "Dlvl:34", "u": [20, 10], "hp": 149, "hpmax": 149}
+{"m": "The energy vortex misses!"}
+{"m": "The energy vortex just misses!"}
+{"act": "move", "why": ["hitting {'x': 19, 'y': 12, 'known': 25218, 'first-known': 25218, 'glyph': 'v', 'color': 'bright-blue", "targetting enemy {'x': 19, 'y': 12, 'known': 25218, 'first-known': 25218, 'glyph': 'v', 'color': 'br"], "dir": "S"}
+{"a": "j"}
+{"r": 39348, "k": "cmd", "T": 25218, "lvl": "Dlvl:34", "u": [20, 10], "hp": 149, "hpmax": 149}
+{"m": "You hit the energy vortex!"}
+{"m": "The energy vortex engulfs you!"}
+{"m": "The air around you crackles with electricity."}
+{"m": "You seem unhurt."}
+{"act": "move", "why": ["killing engulfer"], "dir": "E"}
+{"a": "l"}
+{"r": 39349, "k": "cmd", "T": 25219, "lvl": "Dlvl:34", "u": [20, 10], "hp": 149, "hpmax": 149}
+{"m": "You destroy the energy vortex!"}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39350, "k": "cmd", "T": 25219, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "look", "why": ["examining tile {'x': 19, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tr"]}
+{"a": ":"}
+{"r": 39351, "k": "cmd", "T": 25219, "lvl": "Dlvl:34", "u": [20, 9], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a battle-axe."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39352, "k": "cmd", "T": 25220, "lvl": "Dlvl:34", "u": [20, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 39353, "k": "cmd", "T": 25221, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39354, "k": "cmdcont", "T": 25221, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39355, "k": "cmdcont", "T": 25221, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39356, "k": "cmd", "T": 25226, "lvl": "Dlvl:34", "u": [21, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39357, "k": "cmd", "T": 25227, "lvl": "Dlvl:34", "u": [20, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39358, "k": "cmd", "T": 25227, "lvl": "Dlvl:34", "u": [20, 7], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a mummy wrapping."}
+{"act": "look", "why": ["examining tile {'x': 19, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tru"]}
+{"a": ":"}
+{"r": 39359, "k": "cmd", "T": 25227, "lvl": "Dlvl:34", "u": [20, 7], "hp": 149, "hpmax": 149}
+{"m": "There is an open door here."}
+{"m": "You see here a mummy wrapping."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39360, "k": "cmd", "T": 25228, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "look", "why": ["examining tile {'x': 19, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 39361, "k": "cmd", "T": 25228, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39362, "k": "cmdcont", "T": 25228, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39363, "k": "cmdcont", "T": 25228, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39364, "k": "cmd", "T": 25233, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39365, "k": "cmdcont", "T": 25233, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39366, "k": "cmdcont", "T": 25233, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39367, "k": "cmd", "T": 25239, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 17, :y 9}"}
+{"a": "_"}
+{"r": 39368, "k": "pos", "T": 25239, "lvl": "Dlvl:34", "u": [20, 6], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(18, 8)"}
+{"r": 39369, "k": "cmd", "T": 25242, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39370, "k": "cmdcont", "T": 25242, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39371, "k": "cmdcont", "T": 25242, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39372, "k": "cmd", "T": 25248, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39373, "k": "cmdcont", "T": 25248, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39374, "k": "cmdcont", "T": 25248, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39375, "k": "cmd", "T": 25255, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 24, :y 9}"}
+{"a": "_"}
+{"r": 39376, "k": "pos", "T": 25255, "lvl": "Dlvl:34", "u": [18, 8], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(25, 8)"}
+{"r": 39377, "k": "cmd", "T": 25259, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39378, "k": "cmdcont", "T": 25259, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39379, "k": "cmdcont", "T": 25259, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39380, "k": "cmd", "T": 25264, "lvl": "Dlvl:34", "u": [25, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39381, "k": "cmd", "T": 25264, "lvl": "Dlvl:34", "u": [24, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39382, "k": "cmd", "T": 25265, "lvl": "Dlvl:34", "u": [24, 7], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 39383, "k": "cmd", "T": 25265, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "look", "why": ["examining tile {'x': 23, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 39384, "k": "cmd", "T": 25265, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "You see here a chest."}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39385, "k": "cmdcont", "T": 25265, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39386, "k": "cmdcont", "T": 25265, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39387, "k": "cmd", "T": 25271, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39388, "k": "cmdcont", "T": 25271, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39389, "k": "cmdcont", "T": 25271, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39390, "k": "cmd", "T": 25277, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149}
+{"act": "autotravel", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "pos": "#Position{:x 29, :y 9}"}
+{"a": "_"}
+{"r": 39391, "k": "pos", "T": 25277, "lvl": "Dlvl:34", "u": [24, 6], "hp": 149, "hpmax": 149, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(30, 8)"}
+{"r": 39392, "k": "cmd", "T": 25283, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39393, "k": "cmdcont", "T": 25283, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39394, "k": "cmdcont", "T": 25283, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39395, "k": "cmd", "T": 25289, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"act": "repeated", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 39396, "k": "cmdcont", "T": 25289, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"a": "0"}
+{"r": 39397, "k": "cmdcont", "T": 25289, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 39398, "k": "cmd", "T": 25294, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 9}"}
+{"a": ";"}
+{"r": 39399, "k": "pos", "T": 25294, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 8)"}
+{"r": 39400, "k": "cmd", "T": 25294, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"m": "d        a dog or other canine (large dog) [seen: infravision, telepathy]"}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 27, 'y': 9, 'known': 25294, 'first-known': 25294, 'glyph': 'd', 'color': 'whi"]}
+{"a": "s"}
+{"r": 39401, "k": "cmd", "T": 25295, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"m": "You feel clumsy!"}
+{"m": "You haven't been working on reflexes lately."}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 27, 'y': 9, 'known': 25295, 'first-known': 25294, 'glyph': 'd', 'color': 'whi"]}
+{"a": "s"}
+{"r": 39402, "k": "cmd", "T": 25296, "lvl": "Dlvl:34", "u": [30, 8], "hp": 149, "hpmax": 149}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 9, 'known': 25296, 'first-known': 25294, 'glyph': 'd', 'color': 'white', 'typ", "targetting enemy {'x': 28, 'y': 9, 'known': 25296, 'first-known': 25294, 'glyph': 'd', 'color': 'whi"], "dir": "W"}
+{"a": "h"}
+{"r": 39403, "k": "cmd", "T": 25297, "lvl": "Dlvl:34", "u": [30, 8], "hp": 148, "hpmax": 149}
+{"m": "You hit the large dog!"}
+{"m": "The large dog just misses!"}
+{"m": "The large dog bites!"}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 9, 'known': 25297, 'first-known': 25294, 'glyph': 'd', 'color': 'white', 'typ", "targetting enemy {'x': 28, 'y': 9, 'known': 25297, 'first-known': 25294, 'glyph': 'd', 'color': 'whi"], "dir": "W"}
+{"a": "h"}
+{"r": 39404, "k": "cmd", "T": 25297, "lvl": "Dlvl:34", "u": [30, 8], "hp": 148, "hpmax": 149}
+{"m": "You hit the large dog!"}
+{"m": "The large dog just misses!"}
+{"act": "move", "why": ["hitting {'x': 28, 'y': 9, 'known': 25297, 'first-known': 25294, 'glyph': 'd', 'color': 'white', 'typ", "targetting enemy {'x': 28, 'y': 9, 'known': 25297, 'first-known': 25294, 'glyph': 'd', 'color': 'whi"], "dir": "W"}
+{"a": "h"}
+{"r": 39405, "k": "cmd", "T": 25298, "lvl": "Dlvl:34", "u": [30, 8], "hp": 148, "hpmax": 149}
+{"m": "You kill the large dog!"}
+{"act": "move", "why": ["new or desired item at {'x': 28, 'y': 9, 'glyph': '%', 'color': 'white', 'feature': 'floor', 'seen':"], "dir": "W"}
+{"a": "h"}
+{"r": 39406, "k": "cmd", "T": 25299, "lvl": "Dlvl:34", "u": [29, 8], "hp": 149, "hpmax": 149}
+{"m": "You see here a large dog corpse."}
+{"act": "look", "why": ["examining tile {'x': 28, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 39407, "k": "cmd", "T": 25299, "lvl": "Dlvl:34", "u": [29, 8], "hp": 149, "hpmax": 149}
+{"m": "You see here a large dog corpse."}
+{"act": "move", "why": ["searching walls", "searching - max-iter = 3", "seeking", "touring the level for the Candelabrum of Invocation", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 39408, "k": "cmd", "T": 25300, "lvl": "Dlvl:34", "u": [28, 8], "hp": 149, "hpmax": 149}
+{"note": "abort", "d": "limit: max_seconds 14400"}
+{"note": "perf", "d": "explorable versions=23934 calls=40957896 misses=3149631"}

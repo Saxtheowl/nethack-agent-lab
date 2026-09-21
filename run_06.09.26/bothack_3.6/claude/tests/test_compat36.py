@@ -318,3 +318,12 @@ def test_contradictory_facts_do_not_make_items_unknown():
     g = itemid.add_observed_cost(g, 'sky blue potion', 7)   # impossible
     it = itemid.item_id(g, label_to_item('a sky blue potion'))
     assert (it or {}).get('glyph') == '!'
+
+
+def test_36_prompts_candles_and_burden():
+    # big-w08: "Attach your ... candelabrum?" was answered no 2400 times
+    from pybothack.nhbridge import _choice_call
+    assert _choice_call("Attach your wax candles to your candelabrum? [yn] "
+                        "(n)")[0] == 'attach_candelabrum_candles'
+    assert _choice_call("You have a little trouble lifting a pick-axe. "
+                        "Continue? [ynq] (q)")[0] == 'lift_burden'

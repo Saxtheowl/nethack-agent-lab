@@ -1,0 +1,146 @@
+{"kind": "depth", "turn": 1, "depth": 1, "t": 0.1, "value": 1, "dname": "The Dungeons of Doom"}
+{"kind": "branch", "turn": 1, "depth": 1, "t": 0.1, "dname": "The Dungeons of Doom", "lvl": "Dlvl:1  "}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed greased +2 gray dragon scale mail (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed amulet of reflection (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed fireproof +2 pair of speed boots (being worn)", "mode": "wear", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed ring of levitation", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed +0 unicorn horn", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "an uncursed bag of holding containing 1 item", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "a blessed +0 pick-axe", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "assist", "turn": 1, "depth": 1, "t": 0.1, "x_kind": "kit", "item": "3 uncursed food rations", "mode": "inv", "x_turn": 1, "x_depth": 1, "dnum": 0}
+{"kind": "depth", "turn": 191, "depth": 2, "t": 7.1, "value": 2, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 191, "depth": 2, "t": 7.1, "stage": "dlvl2"}
+{"kind": "xl", "turn": 312, "depth": 2, "t": 13.8, "value": 2}
+{"kind": "depth", "turn": 505, "depth": 3, "t": 22.3, "value": 3, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 537, "depth": 3, "t": 24.4, "value": 3}
+{"kind": "branch", "turn": 908, "depth": 3, "t": 37.9, "dname": "The Gnomish Mines", "lvl": "Dlvl:3  "}
+{"kind": "stage", "turn": 908, "depth": 3, "t": 37.9, "stage": "mines"}
+{"kind": "heartbeat", "turn": 1000, "depth": 3, "t": 44.1, "lvl": "Dlvl:3", "dname": "The Gnomish Mines", "hp": 38, "hpmax": 38, "xl": 3, "ac": -8, "requests": 1384, "actions": 1070}
+{"kind": "xl", "turn": 1002, "depth": 3, "t": 44.2, "value": 4}
+{"kind": "depth", "turn": 1095, "depth": 5, "t": 48.5, "value": 5, "dname": "The Gnomish Mines"}
+{"kind": "special", "turn": 1095, "depth": 5, "t": 48.5, "name": "minetn", "lvl": "Dlvl:5  "}
+{"kind": "stage", "turn": 1095, "depth": 5, "t": 48.5, "stage": "minetown", "variant": "minetn"}
+{"kind": "xl", "turn": 1226, "depth": 5, "t": 57.6, "value": 5}
+{"kind": "xl", "turn": 1256, "depth": 5, "t": 59.8, "value": 6}
+{"kind": "depth", "turn": 1695, "depth": 6, "t": 84.1, "value": 6, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 2005, "depth": 6, "t": 90.2, "lvl": "Dlvl:6", "dname": "The Dungeons of Doom", "hp": 75, "hpmax": 75, "xl": 6, "ac": -10, "requests": 2862, "actions": 2159}
+{"kind": "xl", "turn": 2369, "depth": 6, "t": 96.6, "value": 7}
+{"kind": "depth", "turn": 2469, "depth": 7, "t": 102.2, "value": 7, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 2561, "depth": 8, "t": 107.2, "value": 8, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 2654, "depth": 9, "t": 111.4, "value": 9, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 2654, "depth": 9, "t": 111.4, "name": "oracle", "lvl": "Dlvl:9  "}
+{"kind": "stage", "turn": 2654, "depth": 9, "t": 111.4, "stage": "oracle"}
+{"kind": "item_lost", "turn": 2861, "depth": 9, "t": 124.5, "item": "amulet of reflection", "messages": ["There is a fountain here.", "Your long sword rusts completely!", "There is a fountain here.", "There is a fountain here.", "There is a fountain here.", "You attract a water nymph!", "There is a fountain here.", "You hit the water nymph!", "You hit the water nymph!", "The water nymph pretends to be friendly.", "The water nymph charms you.  You gladly start removing your boots.", "You feel yourself slow down a bit.", "The water nymph pretends to be friendly.", "The water nymph stole a blessed amulet of reflection.", "You can move again.", "The water nymph steals a blessed fireproof +2 pair of speed boots!"], "last_action": {"act": "move", "why": ["hitting {'x': 40, 'y': 10, 'known': 2859, 'first-known': 2858, 'glyph': 'n', 'color': 'blue', 'type'", "targetting enemy {'x': 40, 'y': 10, 'known': 2859, 'first-known': 2858, 'glyph': 'n', 'color': 'blue"], "dir": "NE"}}
+{"kind": "item_lost", "turn": 2861, "depth": 9, "t": 124.5, "item": "speed boots", "messages": ["There is a fountain here.", "Your long sword rusts completely!", "There is a fountain here.", "There is a fountain here.", "There is a fountain here.", "You attract a water nymph!", "There is a fountain here.", "You hit the water nymph!", "You hit the water nymph!", "The water nymph pretends to be friendly.", "The water nymph charms you.  You gladly start removing your boots.", "You feel yourself slow down a bit.", "The water nymph pretends to be friendly.", "The water nymph stole a blessed amulet of reflection.", "You can move again.", "The water nymph steals a blessed fireproof +2 pair of speed boots!"], "last_action": {"act": "move", "why": ["hitting {'x': 40, 'y': 10, 'known': 2859, 'first-known': 2858, 'glyph': 'n', 'color': 'blue', 'type'", "targetting enemy {'x': 40, 'y': 10, 'known': 2859, 'first-known': 2858, 'glyph': 'n', 'color': 'blue"], "dir": "NE"}}
+{"kind": "heartbeat", "turn": 3005, "depth": 9, "t": 126.8, "lvl": "Dlvl:9", "dname": "The Dungeons of Doom", "hp": 89, "hpmax": 89, "xl": 7, "ac": -7, "requests": 4050, "actions": 3029}
+{"kind": "heartbeat", "turn": 4005, "depth": 9, "t": 141.7, "lvl": "Dlvl:9", "dname": "The Dungeons of Doom", "hp": 89, "hpmax": 89, "xl": 7, "ac": -7, "requests": 4587, "actions": 3309}
+{"kind": "xl", "turn": 4090, "depth": 9, "t": 143.0, "value": 8}
+{"kind": "heartbeat", "turn": 5011, "depth": 9, "t": 189.1, "lvl": "Dlvl:9", "dname": "The Dungeons of Doom", "hp": 98, "hpmax": 98, "xl": 8, "ac": -7, "requests": 5637, "actions": 4201}
+{"kind": "item_gained", "turn": 5870, "depth": 9, "t": 230.9, "item": "Excalibur"}
+{"kind": "item_gained", "turn": 5947, "depth": 8, "t": 234.4, "item": "amulet of reflection"}
+{"kind": "item_gained", "turn": 5947, "depth": 8, "t": 234.4, "item": "speed boots"}
+{"kind": "heartbeat", "turn": 6011, "depth": 6, "t": 236.1, "lvl": "Dlvl:6", "dname": "The Dungeons of Doom", "hp": 98, "hpmax": 98, "xl": 8, "ac": -10, "requests": 6661, "actions": 5017}
+{"kind": "heartbeat", "turn": 7012, "depth": 5, "t": 308.2, "lvl": "Dlvl:5", "dname": "The Gnomish Mines", "hp": 98, "hpmax": 98, "xl": 8, "ac": -11, "requests": 8368, "actions": 6345}
+{"kind": "xl", "turn": 7252, "depth": 4, "t": 322.7, "value": 9}
+{"kind": "heartbeat", "turn": 8012, "depth": 7, "t": 359.5, "lvl": "Dlvl:7", "dname": "The Dungeons of Doom", "hp": 108, "hpmax": 108, "xl": 9, "ac": -11, "requests": 9650, "actions": 7251}
+{"kind": "item_lost", "turn": 8031, "depth": 7, "t": 361.4, "item": "pick-axe", "messages": ["You hit the rock with all your might.", "You succeed in cutting away some rock.", "You start digging.", "This wall is too hard to dig into.", "a - the blessed rustproof +1 Excalibur (weapon in hand).", "Inuvik senses your presence.", "\"Invisible customers are not welcome!\"", "You do not owe Inuvik anything.", "Count: 1 k", "You drop a blessed +0 pick-axe."], "last_action": {"act": "dropsingle", "why": ["dropping pick to enter shop", "new or desired item at #Position{:x 73, :y 15}"], "slot": "k"}}
+{"kind": "item_gained", "turn": 8063, "depth": 7, "t": 367.7, "item": "pick-axe"}
+{"kind": "depth", "turn": 8281, "depth": 10, "t": 377.9, "value": 10, "dname": "The Dungeons of Doom"}
+{"kind": "stage", "turn": 8281, "depth": 10, "t": 377.9, "stage": "dlvl10"}
+{"kind": "branch", "turn": 8450, "depth": 9, "t": 387.9, "dname": "Sokoban", "lvl": "Dlvl:9  "}
+{"kind": "stage", "turn": 8450, "depth": 9, "t": 387.9, "stage": "sokoban"}
+{"kind": "special", "turn": 8450, "depth": 9, "t": 387.9, "name": "soko4", "lvl": "Dlvl:9  "}
+{"kind": "special", "turn": 8570, "depth": 8, "t": 399.4, "name": "soko3", "lvl": "Dlvl:8  "}
+{"kind": "special", "turn": 8973, "depth": 7, "t": 432.1, "name": "soko2", "lvl": "Dlvl:7  "}
+{"kind": "heartbeat", "turn": 9012, "depth": 7, "t": 435.8, "lvl": "Dlvl:7", "dname": "Sokoban", "hp": 108, "hpmax": 108, "xl": 9, "ac": -12, "requests": 11240, "actions": 8511}
+{"kind": "special", "turn": 9446, "depth": 6, "t": 481.7, "name": "soko1", "lvl": "Dlvl:6  "}
+{"kind": "heartbeat", "turn": 10027, "depth": 6, "t": 541.5, "lvl": "Dlvl:6", "dname": "Sokoban", "hp": 108, "hpmax": 108, "xl": 9, "ac": -15, "requests": 13291, "actions": 10131}
+{"kind": "xl", "turn": 10138, "depth": 6, "t": 554.7, "value": 10}
+{"kind": "item_lost", "turn": 10147, "depth": 6, "t": 555.5, "item": "Excalibur", "messages": ["You kill the gray ooze!", "You hit the jaguar!", "You kill the jaguar!", "You hit the rock mole!", "You kill the rock mole!", "You turn into a werewolf!", "You break out of your armor!", "Your cloak tears apart!", "Suddenly you can see yourself.", "You drop your gloves and weapon!", "Your movements are slowed slightly because of your load.", "You can no longer hold your shield!", "Your helm falls to the floor!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit.", "Use the command #monster to summon help."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 48, 'y': 14, 'known': 10146, 'first-known': 10100, 'glyph': 'Y', 'color': 'br"], "dir": "E"}}
+{"kind": "item_lost", "turn": 10147, "depth": 6, "t": 555.5, "item": "dragon scale mail", "messages": ["You kill the gray ooze!", "You hit the jaguar!", "You kill the jaguar!", "You hit the rock mole!", "You kill the rock mole!", "You turn into a werewolf!", "You break out of your armor!", "Your cloak tears apart!", "Suddenly you can see yourself.", "You drop your gloves and weapon!", "Your movements are slowed slightly because of your load.", "You can no longer hold your shield!", "Your helm falls to the floor!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit.", "Use the command #monster to summon help."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 48, 'y': 14, 'known': 10146, 'first-known': 10100, 'glyph': 'Y', 'color': 'br"], "dir": "E"}}
+{"kind": "item_lost", "turn": 10147, "depth": 6, "t": 555.5, "item": "speed boots", "messages": ["You kill the gray ooze!", "You hit the jaguar!", "You kill the jaguar!", "You hit the rock mole!", "You kill the rock mole!", "You turn into a werewolf!", "You break out of your armor!", "Your cloak tears apart!", "Suddenly you can see yourself.", "You drop your gloves and weapon!", "Your movements are slowed slightly because of your load.", "You can no longer hold your shield!", "Your helm falls to the floor!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit.", "Use the command #monster to summon help."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 48, 'y': 14, 'known': 10146, 'first-known': 10100, 'glyph': 'Y', 'color': 'br"], "dir": "E"}}
+{"kind": "item_gained", "turn": 10153, "depth": 6, "t": 555.7, "item": "Excalibur"}
+{"kind": "item_lost", "turn": 10160, "depth": 6, "t": 556.1, "item": "Excalibur", "messages": ["The ape hits!", "The ape hits!", "The ape bites!", "You kill the ape!", "There are several objects here.", "You hit the water elemental!", "The water elemental hits!", "You hit the water elemental!", "You kill the water elemental!", "You turn into a werewolf!", "You find you must drop your sword!", "Use the command #monster to summon help.", "Your movements are slowed slightly because of your load."], "last_action": {"act": "move", "why": ["hitting {'x': 44, 'y': 16, 'known': 10159, 'first-known': 10108, 'glyph': 'E', 'color': 'blue', 'typ", "targetting enemy {'x': 44, 'y': 16, 'known': 10159, 'first-known': 10108, 'glyph': 'E', 'color': 'bl"], "dir": "SW"}}
+{"kind": "assist", "turn": 10172, "depth": 6, "t": 556.7, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 1, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10171, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10176, "depth": 6, "t": 557.0, "x_kind": "lifesave", "how": "died", "killer": "wolf", "count": 2, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10175, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10179, "depth": 6, "t": 557.2, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 3, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10178, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10181, "depth": 6, "t": 557.3, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 4, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10181, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10186, "depth": 6, "t": 557.5, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 5, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10185, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10190, "depth": 6, "t": 557.6, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 6, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10189, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10195, "depth": 6, "t": 557.9, "x_kind": "lifesave", "how": "died", "killer": "wolf", "count": 7, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10194, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10198, "depth": 6, "t": 558.1, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 8, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10198, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10204, "depth": 6, "t": 558.4, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 9, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10203, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10209, "depth": 6, "t": 558.6, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 10, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10208, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10215, "depth": 6, "t": 558.9, "x_kind": "lifesave", "how": "died", "killer": "warg", "count": 11, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10214, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10227, "depth": 6, "t": 559.4, "x_kind": "lifesave", "how": "died", "killer": "wolf", "count": 12, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10226, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10258, "depth": 6, "t": 560.8, "x_kind": "lifesave", "how": "died", "killer": "panther", "count": 13, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10257, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10262, "depth": 6, "t": 561.0, "x_kind": "lifesave", "how": "died", "killer": "panther", "count": 14, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10261, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10265, "depth": 6, "t": 561.1, "x_kind": "lifesave", "how": "died", "killer": "panther", "count": 15, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10264, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10268, "depth": 6, "t": 561.2, "x_kind": "lifesave", "how": "died", "killer": "panther", "count": 16, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10268, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10355, "depth": 6, "t": 563.0, "x_kind": "lifesave", "how": "died", "killer": "zruty", "count": 17, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10355, "x_depth": 6, "dnum": 4}
+{"kind": "item_gained", "turn": 10384, "depth": 6, "t": 565.1, "item": "speed boots"}
+{"kind": "item_lost", "turn": 10419, "depth": 6, "t": 567.4, "item": "speed boots", "messages": ["You see no objects here.", "You see here 2 food rations.", "You see here 2 food rations.", "There is an open door here.", "You see here a zruty corpse.", "There is an open door here.", "You see here a zruty corpse.", "You turn into a werewolf!", "You break out of your armor!", "You drop your gloves!", "Your movements are slowed slightly because of your load.", "You can no longer hold your shield!", "Your helm falls to the floor!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit.", "Use the command #monster to summon help."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 32, 'y': 9, 'known': 10404, 'first-known': 10401, 'glyph': 'n', 'color': 'blu"], "dir": "W"}}
+{"kind": "assist", "turn": 10453, "depth": 6, "t": 569.8, "x_kind": "lifesave", "how": "died", "killer": "raven", "count": 18, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10452, "x_depth": 6, "dnum": 4}
+{"kind": "assist", "turn": 10757, "depth": 6, "t": 575.3, "x_kind": "lifesave", "how": "died", "killer": "large mimic", "count": 19, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10756, "x_depth": 6, "dnum": 4}
+{"kind": "item_gained", "turn": 10811, "depth": 6, "t": 577.1, "item": "speed boots"}
+{"kind": "assist", "turn": 10828, "depth": 6, "t": 577.6, "x_kind": "lifesave", "how": "died", "killer": "fire elemental", "count": 20, "hpmax": 122, "xl": 10, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 10828, "x_depth": 6, "dnum": 4}
+{"kind": "item_gained", "turn": 10852, "depth": 6, "t": 579.5, "item": "Excalibur"}
+{"kind": "heartbeat", "turn": 11027, "depth": 9, "t": 590.0, "lvl": "Dlvl:9", "dname": "Sokoban", "hp": 35, "hpmax": 122, "xl": 10, "ac": -2, "requests": 14728, "actions": 11286}
+{"kind": "depth", "turn": 11072, "depth": 11, "t": 592.1, "value": 11, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 11435, "depth": 12, "t": 619.6, "value": 12, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 11731, "depth": 13, "t": 641.7, "value": 13, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 12028, "depth": 13, "t": 664.7, "lvl": "Dlvl:13", "dname": "The Dungeons of Doom", "hp": 122, "hpmax": 122, "xl": 10, "ac": -3, "requests": 16384, "actions": 12670}
+{"kind": "depth", "turn": 12141, "depth": 14, "t": 669.6, "value": 14, "dname": "The Dungeons of Doom"}
+{"kind": "assist", "turn": 12172, "depth": 14, "t": 672.3, "x_kind": "feed", "nutrition_before": 49, "count": 1, "x_turn": 12172, "x_depth": 14, "dnum": 0}
+{"kind": "depth", "turn": 12367, "depth": 15, "t": 684.8, "value": 15, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 12486, "depth": 15, "t": 694.6, "value": 11}
+{"kind": "heartbeat", "turn": 13034, "depth": 12, "t": 731.8, "lvl": "Dlvl:12", "dname": "The Dungeons of Doom", "hp": 130, "hpmax": 130, "xl": 11, "ac": -6, "requests": 17812, "actions": 13722}
+{"kind": "depth", "turn": 13497, "depth": 16, "t": 743.4, "value": 16, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 13497, "depth": 16, "t": 743.4, "name": "rogue", "lvl": "Dlvl:16 "}
+{"kind": "depth", "turn": 13870, "depth": 17, "t": 767.8, "value": 17, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 14034, "depth": 17, "t": 780.9, "lvl": "Dlvl:17", "dname": "The Dungeons of Doom", "hp": 130, "hpmax": 130, "xl": 11, "ac": -10, "requests": 18754, "actions": 14539}
+{"kind": "depth", "turn": 14161, "depth": 18, "t": 787.6, "value": 18, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14515, "depth": 19, "t": 810.5, "value": 19, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 14781, "depth": 20, "t": 831.2, "value": 20, "dname": "The Dungeons of Doom"}
+{"kind": "xl", "turn": 15024, "depth": 20, "t": 849.6, "value": 12}
+{"kind": "heartbeat", "turn": 15034, "depth": 20, "t": 850.7, "lvl": "Dlvl:20", "dname": "The Dungeons of Doom", "hp": 50, "hpmax": 140, "xl": 12, "ac": -10, "requests": 20316, "actions": 15841}
+{"kind": "depth", "turn": 15180, "depth": 21, "t": 860.2, "value": 21, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 15532, "depth": 22, "t": 886.6, "value": 22, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 15803, "depth": 23, "t": 908.0, "value": 23, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 15962, "depth": 24, "t": 922.6, "value": 24, "dname": "The Dungeons of Doom"}
+{"kind": "heartbeat", "turn": 16034, "depth": 24, "t": 928.7, "lvl": "Dlvl:24", "dname": "The Dungeons of Doom", "hp": 140, "hpmax": 140, "xl": 12, "ac": -12, "requests": 22068, "actions": 17240}
+{"kind": "depth", "turn": 16045, "depth": 25, "t": 930.1, "value": 25, "dname": "The Dungeons of Doom"}
+{"kind": "depth", "turn": 16561, "depth": 26, "t": 964.2, "value": 26, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 16561, "depth": 26, "t": 964.2, "name": "medusa", "lvl": "Dlvl:26 "}
+{"kind": "stage", "turn": 16561, "depth": 26, "t": 964.2, "stage": "medusa", "variant": "medusa"}
+{"kind": "depth", "turn": 16632, "depth": 27, "t": 977.8, "value": 27, "dname": "The Dungeons of Doom"}
+{"kind": "special", "turn": 16632, "depth": 27, "t": 977.8, "name": "castle", "lvl": "Dlvl:27 "}
+{"kind": "stage", "turn": 16632, "depth": 27, "t": 977.8, "stage": "castle"}
+{"kind": "assist", "turn": 16893, "depth": 27, "t": 1035.7, "x_kind": "lifesave", "how": "died", "killer": "gray dragon", "count": 21, "hpmax": 140, "xl": 12, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 16893, "x_depth": 27, "dnum": 0}
+{"kind": "depth", "turn": 16958, "depth": 28, "t": 1054.0, "value": 28, "dname": "Gehennom"}
+{"kind": "branch", "turn": 16958, "depth": 28, "t": 1054.0, "dname": "Gehennom", "lvl": "Dlvl:28 "}
+{"kind": "special", "turn": 16958, "depth": 28, "t": 1054.0, "name": "valley", "lvl": "Dlvl:28 "}
+{"kind": "stage", "turn": 16958, "depth": 28, "t": 1054.0, "stage": "valley"}
+{"kind": "achievement", "turn": 16958, "depth": 28, "t": 1054.0, "name": "gehennom"}
+{"kind": "heartbeat", "turn": 17034, "depth": 28, "t": 1061.4, "lvl": "Dlvl:28", "dname": "Gehennom", "hp": 78, "hpmax": 140, "xl": 12, "ac": -13, "requests": 24254, "actions": 18925}
+{"kind": "xl", "turn": 17383, "depth": 28, "t": 1092.6, "value": 13}
+{"kind": "assist", "turn": 17435, "depth": 28, "t": 1097.8, "x_kind": "lifesave", "how": "died", "killer": "blue dragon", "count": 22, "hpmax": 148, "xl": 13, "restored_attrs": 0, "restored_levels": 0, "restored_hpmax": 0, "x_turn": 17434, "x_depth": 28, "dnum": 1}
+{"kind": "depth", "turn": 17913, "depth": 29, "t": 1139.5, "value": 29, "dname": "Gehennom"}
+{"kind": "item_lost", "turn": 17925, "depth": 29, "t": 1140.5, "item": "Excalibur", "messages": ["There is a sleeping gas trap here.", "You see no objects here.", "You are standing at the gate to Gehennom.", "Unspeakable cruelty and harm lurk down there.", "So be it.", "You descend the stairs.", "There is a staircase up here.", "Where do you want to travel to?", "The mountain nymph stole the blessed rustproof +1 Excalibur."], "last_action": {"act": "move", "why": ["targetting enemy {'x': 40, 'y': 11, 'known': 17925, 'first-known': 17913, 'glyph': 'n', 'color': 'br"], "dir": "NW"}}
+{"kind": "item_gained", "turn": 17977, "depth": 29, "t": 1144.1, "item": "Excalibur"}
+{"kind": "heartbeat", "turn": 18034, "depth": 29, "t": 1149.7, "lvl": "Dlvl:29", "dname": "Gehennom", "hp": 148, "hpmax": 148, "xl": 13, "ac": -13, "requests": 26274, "actions": 20588}
+{"kind": "item_lost", "turn": 18042, "depth": 29, "t": 1150.7, "item": "speed boots", "messages": ["There is a spiked pit here.", "You see no objects here.", "You are still in a pit.", "You crawl to the edge of the pit.", "You see here a dagger.", "You see here a dagger.", "Pick an object.", "S        a snake (pit viper) [seen: telepathy]", "You step onto a polymorph trap!", "You feel a change coming over you.", "You turn into a forest centaur!", "You break out of your armor!", "Your cloak tears apart!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit."], "last_action": {"act": "move", "why": ["exploring {'x': 48, 'y': 4, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "seeking", "looking for the stairs-down", "switching within branch to Dlvl:36", "trying to enter vlad from Dlvl:36", "seeking branch vlad ( vlad )", "seeking level vlad end", "full-explore", "progress"], "dir": "W"}}
+{"kind": "assist", "turn": 18644, "depth": 29, "t": 1155.7, "x_kind": "feed", "nutrition_before": 49, "count": 2, "x_turn": 18644, "x_depth": 29, "dnum": 1}
+{"kind": "item_gained", "turn": 18648, "depth": 29, "t": 1155.9, "item": "speed boots"}
+{"kind": "heartbeat", "turn": 19036, "depth": 29, "t": 1198.5, "lvl": "Dlvl:29", "dname": "Gehennom", "hp": 146, "hpmax": 146, "xl": 13, "ac": -12, "requests": 27452, "actions": 21398}
+{"kind": "depth", "turn": 19134, "depth": 30, "t": 1208.4, "value": 30, "dname": "Gehennom"}
+{"kind": "special", "turn": 19134, "depth": 30, "t": 1208.4, "name": "asmodeus", "lvl": "Dlvl:30 "}
+{"kind": "depth", "turn": 19749, "depth": 31, "t": 1281.8, "value": 31, "dname": "Gehennom"}
+{"kind": "depth", "turn": 19964, "depth": 32, "t": 1306.8, "value": 32, "dname": "Gehennom"}
+{"kind": "heartbeat", "turn": 20036, "depth": 32, "t": 1313.9, "lvl": "Dlvl:32", "dname": "Gehennom", "hp": 137, "hpmax": 146, "xl": 13, "ac": -10, "requests": 29747, "actions": 23206}
+{"kind": "depth", "turn": 20496, "depth": 33, "t": 1364.5, "value": 33, "dname": "Gehennom"}
+{"kind": "special", "turn": 20496, "depth": 33, "t": 1364.5, "name": "juiblex", "lvl": "Dlvl:33 "}
+{"kind": "item_lost", "turn": 20516, "depth": 33, "t": 1366.6, "item": "speed boots", "messages": ["You hit Juiblex!", "The giant mummy hits!", "The giant mummy hits!", "You hit the giant mummy!", "You destroy the giant mummy!", "It looks rather muddy down here.", "You see here a green gem.", "You see here a green gem.", "You step onto a polymorph trap!", "You feel a change coming over you.", "You turn into a marilith!", "You break out of your armor!", "Your boots are pushed off your feet!", "You feel yourself slow down a bit."], "last_action": {"act": "move", "why": ["new or desired item at {'x': 68, 'y': 10, 'glyph': '$', 'color': 'yellow', 'feature': None, 'seen': "], "dir": "S"}}
+{"kind": "heartbeat", "turn": 21036, "depth": 33, "t": 1370.3, "lvl": "Dlvl:33", "dname": "Gehennom", "hp": 20, "hpmax": 20, "xl": 7, "ac": -18, "requests": 30899, "actions": 24081}
+{"kind": "item_gained", "turn": 21166, "depth": 33, "t": 1371.5, "item": "speed boots"}
+{"kind": "end", "turn": 21952, "depth": 29, "t": 1482.9, "outcome": "stuck", "reason": "fixation: target (59, 4, 'Dlvl:29 ') keeps coming back after 3 recoveries (examining tile {'x': 59, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'flo)"}

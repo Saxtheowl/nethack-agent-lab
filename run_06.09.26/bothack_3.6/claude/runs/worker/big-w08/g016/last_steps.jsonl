@@ -1,0 +1,800 @@
+{"act": "look", "why": ["examining tile {'x': 24, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 17961, "k": "cmd", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115}
+{"m": "You see no objects here."}
+{"act": "apply", "why": ["putting {'F': None} into bag at j", "bag items"], "slot": "j"}
+{"a": "a"}
+{"r": 17962, "k": "yn", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "q": "What do you want to use or apply? [ijzE or ?*]"}
+{"a": "j"}
+{"r": 17963, "k": "menu", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:i"}
+{"a": [2]}
+{"r": 17964, "k": "menu", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "p": "Put in what?", "items": ["# Coins", "$ 3799 gold pieces", "# Amulets", "f a blessed amulet of reflection (being worn)", "# Weapons", "b the blessed rustproof +4 Excalibur (weapon in hand)", "m 4 +0 darts (at the ready)", "s 3 +0 daggers", "V a +0 elven dagger", "Y a blessed +1 dart", "# Armor", "c an uncursed +3 small shield (being worn)", "e a blessed greased +2 gray dragon scale mail (being worn)", "g a blessed fireproof +2 pair of speed boots (being worn)", "q an uncursed +0 orcish helm", "r a cursed -1 orcish helm (being worn)", "t an uncursed +0 dwarvish cloak (being worn)", "u a blessed corroded +1 pair of gauntlets of power (being worn", "# Comestibles", "A 3 lumps of royal jelly", "G a pancake", "J an uncursed lump of royal jelly", "K 2 uncursed food rations", "L an uncursed lembas wafer", "P an uncursed partly eaten lizard corpse", "# Scrolls", "F a scroll of identify", "# Wands", "z a wand of fire", "# Tools", "i a blessed +0 unicorn horn", "j an uncursed bag of holding containing 3 items", "E an uncursed skeleton key"]}
+{"a": [26]}
+{"r": 17965, "k": "cmd", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115}
+{"m": "You put a scroll of identify into the bag of holding."}
+{"act": "inventory", "why": ["requested inventory update"]}
+{"a": "i"}
+{"r": 17966, "k": "cmd", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115}
+{"act": "apply", "why": ["updating content of container at j"], "slot": "j"}
+{"a": "a"}
+{"r": 17967, "k": "yn", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "q": "What do you want to use or apply? [ijzE or ?*]"}
+{"a": "j"}
+{"r": 17968, "k": "menu", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "p": "Do what with your bag of holding?", "items": [": Look inside the bag of holding", "o take something out", "i put something in", "b both; take out, then put in", "r both reversed; put in, then take out", "s stash one item into the bag of holding", "# ", "q do nothing"]}
+{"note": "compat", "d": "container:o"}
+{"a": [1]}
+{"r": 17969, "k": "menu", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115, "p": "Take out what?", "items": ["# Scrolls", "a a scroll of identify", "b a scroll of teleportation", "c 2 uncursed scrolls of earth", "d an uncursed scroll of charging"]}
+{"a": []}
+{"r": 17970, "k": "cmd", "T": 14814, "lvl": "Dlvl:7", "u": [25, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17971, "k": "cmd", "T": 14815, "lvl": "Dlvl:7", "u": [26, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17972, "k": "cmd", "T": 14815, "lvl": "Dlvl:7", "u": [27, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 27, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17973, "k": "cmd", "T": 14816, "lvl": "Dlvl:7", "u": [28, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 28, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17974, "k": "cmd", "T": 14816, "lvl": "Dlvl:7", "u": [29, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 29, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17975, "k": "cmd", "T": 14817, "lvl": "Dlvl:7", "u": [30, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 30, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17976, "k": "cmd", "T": 14818, "lvl": "Dlvl:7", "u": [31, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 31, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17977, "k": "cmd", "T": 14819, "lvl": "Dlvl:7", "u": [32, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 32, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17978, "k": "cmd", "T": 14820, "lvl": "Dlvl:7", "u": [33, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 33, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17979, "k": "cmd", "T": 14821, "lvl": "Dlvl:7", "u": [34, 3], "hp": 115, "hpmax": 115}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 8, :y 4}"}
+{"a": ";"}
+{"r": 17980, "k": "pos", "T": 14821, "lvl": "Dlvl:7", "u": [34, 3], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(9, 3)"}
+{"r": 17981, "k": "cmd", "T": 14821, "lvl": "Dlvl:7", "u": [34, 3], "hp": 115, "hpmax": 115}
+{"m": "H        a giant humanoid (peaceful stone giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 34, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17982, "k": "cmd", "T": 14822, "lvl": "Dlvl:7", "u": [35, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 35, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17983, "k": "cmd", "T": 14822, "lvl": "Dlvl:7", "u": [36, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 36, 'y': 4, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 17984, "k": "cmd", "T": 14823, "lvl": "Dlvl:7", "u": [37, 3], "hp": 115, "hpmax": 115}
+{"act": "autotravel", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 24, :y 7}"}
+{"a": "_"}
+{"r": 17985, "k": "pos", "T": 14823, "lvl": "Dlvl:7", "u": [37, 3], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(25, 6)"}
+{"r": 17986, "k": "cmd", "T": 14830, "lvl": "Dlvl:7", "u": [25, 4], "hp": 115, "hpmax": 115}
+{"m": "A succubus blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 23, :y 5}"}
+{"a": ";"}
+{"r": 17987, "k": "pos", "T": 14830, "lvl": "Dlvl:7", "u": [25, 4], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(24, 4)"}
+{"r": 17988, "k": "cmd", "T": 14830, "lvl": "Dlvl:7", "u": [25, 4], "hp": 115, "hpmax": 115}
+{"m": "&        a major demon (succubus) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 5, 'known': 14830, 'first-known': 14830, 'glyph': '&', 'color': None, 'type':"], "dir": "W"}
+{"a": "h"}
+{"r": 17989, "k": "cmd", "T": 14831, "lvl": "Dlvl:7", "u": [25, 4], "hp": 115, "hpmax": 115}
+{"m": "You hit the succubus!"}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 5, 'known': 14831, 'first-known': 14830, 'glyph': '&', 'color': None, 'type':"], "dir": "W"}
+{"a": "h"}
+{"r": 17990, "k": "cmd", "T": 14831, "lvl": "Dlvl:7", "u": [25, 4], "hp": 115, "hpmax": 115}
+{"m": "You kill the succubus!"}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 17991, "k": "cmd", "T": 14832, "lvl": "Dlvl:7", "u": [25, 5], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 17992, "k": "cmd", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115}
+{"act": "open", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 17993, "k": "yn", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "l"}
+{"r": 17994, "k": "cmd", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115}
+{"m": "This door is locked."}
+{"act": "apply", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-locked', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "slot": "E"}
+{"a": "a"}
+{"r": 17995, "k": "yn", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "What do you want to use or apply? [ijzE or ?*]"}
+{"a": "E"}
+{"r": 17996, "k": "yn", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "l"}
+{"r": 17997, "k": "yn", "T": 14832, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "Unlock it?", "c": "yn"}
+{"a": "y"}
+{"r": 17998, "k": "cmd", "T": 14833, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115}
+{"m": "You succeed in unlocking the door."}
+{"act": "open", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 17999, "k": "yn", "T": 14833, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "l"}
+{"r": 18000, "k": "cmd", "T": 14833, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115}
+{"m": "The door resists!"}
+{"act": "open", "why": ["exploring {'x': 25, 'y': 7, 'glyph': ']', 'color': 'brown', 'feature': 'door-closed', 'seen': True, ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 18001, "k": "yn", "T": 14833, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "l"}
+{"r": 18002, "k": "cmd", "T": 14834, "lvl": "Dlvl:7", "u": [25, 6], "hp": 115, "hpmax": 115}
+{"m": "The door opens."}
+{"act": "move", "why": ["exploring {'x': 25, 'y': 7, 'glyph': '-', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'd", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18003, "k": "cmd", "T": 14834, "lvl": "Dlvl:7", "u": [26, 6], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18004, "k": "cmd", "T": 14835, "lvl": "Dlvl:7", "u": [27, 6], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18005, "k": "cmd", "T": 14836, "lvl": "Dlvl:7", "u": [27, 7], "hp": 115, "hpmax": 115}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 26, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18006, "k": "cmd", "T": 14836, "lvl": "Dlvl:7", "u": [27, 8], "hp": 115, "hpmax": 115}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 18007, "k": "cmdcont", "T": 14836, "lvl": "Dlvl:7", "u": [27, 8], "hp": 115, "hpmax": 115}
+{"a": "0"}
+{"r": 18008, "k": "cmdcont", "T": 14836, "lvl": "Dlvl:7", "u": [27, 8], "hp": 115, "hpmax": 115}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 18009, "k": "cmd", "T": 14838, "lvl": "Dlvl:7", "u": [27, 8], "hp": 115, "hpmax": 115}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["hitting {'x': 27, 'y': 9, 'known': 14838, 'first-known': 14838, 'glyph': 'q', 'color': 'brown', 'typ", "targetting enemy {'x': 27, 'y': 9, 'known': 14838, 'first-known': 14838, 'glyph': 'q', 'color': 'bro"], "dir": "E"}
+{"a": "l"}
+{"r": 18010, "k": "cmd", "T": 14839, "lvl": "Dlvl:7", "u": [27, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the rothe!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 27, :y 9}"], "dir": "E"}
+{"a": "l"}
+{"r": 18011, "k": "cmd", "T": 14839, "lvl": "Dlvl:7", "u": [28, 8], "hp": 115, "hpmax": 115}
+{"m": "You see here a rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 27, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 18012, "k": "cmd", "T": 14839, "lvl": "Dlvl:7", "u": [28, 8], "hp": 115, "hpmax": 115}
+{"m": "You see here a rothe corpse."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 33, :y 7}"], "pos": "#Position{:x 33, :y 7}"}
+{"a": "_"}
+{"r": 18013, "k": "pos", "T": 14839, "lvl": "Dlvl:7", "u": [28, 8], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(34, 6)"}
+{"r": 18014, "k": "cmd", "T": 14841, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115}
+{"m": "A gas spore blocks your path."}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 8, 'known': 14841, 'first-known': 14841, 'glyph': 'e', 'color': None, 'type':", "targetting enemy {'x': 31, 'y': 8, 'known': 14841, 'first-known': 14841, 'glyph': 'e', 'color': None"], "dir": "NE"}
+{"a": "u"}
+{"r": 18015, "k": "cmd", "T": 14841, "lvl": "Dlvl:7", "u": [31, 8], "hp": 104, "hpmax": 115}
+{"m": "You kill the gas spore!"}
+{"m": "The dust vortex is caught in the gas spore's explosion!"}
+{"m": "You are caught in the gas spore's explosion!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 31, :y 8}"], "dir": "E"}
+{"a": "l"}
+{"r": 18016, "k": "cmd", "T": 14842, "lvl": "Dlvl:7", "u": [32, 8], "hp": 104, "hpmax": 115}
+{"m": "The dust vortex misses!"}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 8, 'known': 14842, 'first-known': 14842, 'glyph': 'v', 'color': 'brown', 'typ", "targetting enemy {'x': 31, 'y': 8, 'known': 14842, 'first-known': 14842, 'glyph': 'v', 'color': 'bro"], "dir": "N"}
+{"a": "k"}
+{"r": 18017, "k": "cmd", "T": 14842, "lvl": "Dlvl:7", "u": [32, 8], "hp": 104, "hpmax": 115}
+{"m": "You destroy the dust vortex!"}
+{"act": "move", "why": ["new or desired item at #Position{:x 33, :y 7}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18018, "k": "cmd", "T": 14843, "lvl": "Dlvl:7", "u": [33, 7], "hp": 104, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 33, :y 7}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18019, "k": "cmd", "T": 14843, "lvl": "Dlvl:7", "u": [34, 6], "hp": 104, "hpmax": 115}
+{"m": "You see here an uncursed dart."}
+{"act": "look", "why": ["examining tile {'x': 33, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18020, "k": "cmd", "T": 14843, "lvl": "Dlvl:7", "u": [34, 6], "hp": 104, "hpmax": 115}
+{"m": "You see here an uncursed dart."}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 10}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18021, "k": "cmd", "T": 14844, "lvl": "Dlvl:7", "u": [35, 7], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 10}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18022, "k": "cmd", "T": 14844, "lvl": "Dlvl:7", "u": [36, 8], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 36, :y 10}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18023, "k": "cmd", "T": 14845, "lvl": "Dlvl:7", "u": [37, 9], "hp": 105, "hpmax": 115}
+{"m": "There is a doorway here."}
+{"m": "You see here 2 yellowish brown gems."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 10, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18024, "k": "cmd", "T": 14845, "lvl": "Dlvl:7", "u": [37, 9], "hp": 105, "hpmax": 115}
+{"m": "There is a doorway here."}
+{"m": "You see here 2 yellowish brown gems."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 38, :y 14}"], "pos": "#Position{:x 38, :y 14}"}
+{"a": "_"}
+{"r": 18025, "k": "pos", "T": 14845, "lvl": "Dlvl:7", "u": [37, 9], "hp": 105, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(39, 13)"}
+{"r": 18026, "k": "cmd", "T": 14847, "lvl": "Dlvl:7", "u": [39, 13], "hp": 106, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 18027, "k": "cmd", "T": 14847, "lvl": "Dlvl:7", "u": [39, 13], "hp": 106, "hpmax": 115}
+{"m": "You see here a swirly potion."}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 17}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18028, "k": "cmd", "T": 14847, "lvl": "Dlvl:7", "u": [40, 14], "hp": 106, "hpmax": 115}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 34, :y 17}"], "pos": "#Position{:x 34, :y 17}"}
+{"a": "_"}
+{"r": 18029, "k": "pos", "T": 14847, "lvl": "Dlvl:7", "u": [40, 14], "hp": 106, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(35, 16)"}
+{"r": 18030, "k": "cmd", "T": 14850, "lvl": "Dlvl:7", "u": [35, 16], "hp": 107, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 17, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18031, "k": "cmd", "T": 14850, "lvl": "Dlvl:7", "u": [35, 16], "hp": 107, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 19}"], "dir": "SW"}
+{"a": "b"}
+{"r": 18032, "k": "cmd", "T": 14851, "lvl": "Dlvl:7", "u": [34, 17], "hp": 107, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 34, :y 19}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18033, "k": "cmd", "T": 14852, "lvl": "Dlvl:7", "u": [35, 18], "hp": 107, "hpmax": 115}
+{"m": "You see here a looking glass."}
+{"act": "look", "why": ["examining tile {'x': 34, 'y': 19, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18034, "k": "cmd", "T": 14852, "lvl": "Dlvl:7", "u": [35, 18], "hp": 107, "hpmax": 115}
+{"m": "You see here a looking glass."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 41, :y 8}"], "pos": "#Position{:x 41, :y 8}"}
+{"a": "_"}
+{"r": 18035, "k": "pos", "T": 14852, "lvl": "Dlvl:7", "u": [35, 18], "hp": 107, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(42, 7)"}
+{"r": 18036, "k": "cmd", "T": 14861, "lvl": "Dlvl:7", "u": [42, 7], "hp": 110, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 41, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18037, "k": "cmd", "T": 14861, "lvl": "Dlvl:7", "u": [42, 7], "hp": 110, "hpmax": 115}
+{"m": "You see here a stained spellbook."}
+{"act": "move", "why": ["new or desired item at #Position{:x 42, :y 8}"], "dir": "E"}
+{"a": "l"}
+{"r": 18038, "k": "cmd", "T": 14861, "lvl": "Dlvl:7", "u": [43, 7], "hp": 110, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 42, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18039, "k": "cmd", "T": 14861, "lvl": "Dlvl:7", "u": [43, 7], "hp": 110, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 45, :y 8}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18040, "k": "cmd", "T": 14862, "lvl": "Dlvl:7", "u": [44, 8], "hp": 111, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 45, :y 8}"], "dir": "E"}
+{"a": "l"}
+{"r": 18041, "k": "cmd", "T": 14862, "lvl": "Dlvl:7", "u": [45, 8], "hp": 111, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 6}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18042, "k": "cmd", "T": 14863, "lvl": "Dlvl:7", "u": [46, 7], "hp": 111, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 6}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18043, "k": "cmd", "T": 14864, "lvl": "Dlvl:7", "u": [47, 6], "hp": 111, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 47, :y 6}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18044, "k": "cmd", "T": 14864, "lvl": "Dlvl:7", "u": [48, 5], "hp": 111, "hpmax": 115}
+{"m": "You see here an uncursed brass lantern named empty."}
+{"act": "look", "why": ["examining tile {'x': 47, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': True"]}
+{"a": ":"}
+{"r": 18045, "k": "cmd", "T": 14864, "lvl": "Dlvl:7", "u": [48, 5], "hp": 111, "hpmax": 115}
+{"m": "You see here an uncursed brass lantern named empty."}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 6}"], "dir": "E"}
+{"a": "l"}
+{"r": 18046, "k": "cmd", "T": 14865, "lvl": "Dlvl:7", "u": [49, 5], "hp": 112, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 49, :y 6}"], "dir": "E"}
+{"a": "l"}
+{"r": 18047, "k": "cmd", "T": 14866, "lvl": "Dlvl:7", "u": [50, 5], "hp": 112, "hpmax": 115}
+{"m": "There is a staircase up here."}
+{"m": "You see here a banded mail."}
+{"act": "look", "why": ["examining tile {'x': 49, 'y': 6, 'glyph': '@', 'color': 'white', 'feature': 'stairs-up', 'seen': Tru"]}
+{"a": ":"}
+{"r": 18048, "k": "cmd", "T": 14866, "lvl": "Dlvl:7", "u": [50, 5], "hp": 112, "hpmax": 115}
+{"m": "There is a staircase up here."}
+{"m": "You see here a banded mail."}
+{"act": "move", "why": ["new or desired item at #Position{:x 51, :y 5}"], "dir": "E"}
+{"a": "l"}
+{"r": 18049, "k": "cmd", "T": 14866, "lvl": "Dlvl:7", "u": [51, 5], "hp": 112, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 51, :y 5}"], "dir": "NE"}
+{"a": "u"}
+{"r": 18050, "k": "cmd", "T": 14867, "lvl": "Dlvl:7", "u": [52, 4], "hp": 112, "hpmax": 115}
+{"m": "You see here a club."}
+{"act": "look", "why": ["examining tile {'x': 51, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18051, "k": "cmd", "T": 14867, "lvl": "Dlvl:7", "u": [52, 4], "hp": 112, "hpmax": 115}
+{"m": "You see here a club."}
+{"act": "move", "why": ["new or desired item at #Position{:x 54, :y 7}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18052, "k": "cmd", "T": 14867, "lvl": "Dlvl:7", "u": [53, 5], "hp": 112, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 54, :y 7}"], "dir": "SE"}
+{"a": "n"}
+{"r": 18053, "k": "cmd", "T": 14868, "lvl": "Dlvl:7", "u": [54, 6], "hp": 113, "hpmax": 115}
+{"act": "move", "why": ["new or desired item at #Position{:x 54, :y 7}"], "dir": "E"}
+{"a": "l"}
+{"r": 18054, "k": "cmd", "T": 14869, "lvl": "Dlvl:7", "u": [55, 6], "hp": 113, "hpmax": 115}
+{"m": "You see here 3 rocks."}
+{"act": "look", "why": ["examining tile {'x': 54, 'y': 7, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18055, "k": "cmd", "T": 14869, "lvl": "Dlvl:7", "u": [55, 6], "hp": 113, "hpmax": 115}
+{"m": "You see here 3 rocks."}
+{"act": "autotravel", "why": ["new or desired item at #Position{:x 59, :y 12}"], "pos": "#Position{:x 59, :y 12}"}
+{"a": "_"}
+{"r": 18056, "k": "pos", "T": 14869, "lvl": "Dlvl:7", "u": [55, 6], "hp": 113, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(60, 11)"}
+{"r": 18057, "k": "cmd", "T": 14872, "lvl": "Dlvl:7", "u": [60, 11], "hp": 114, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 59, 'y': 12, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, "]}
+{"a": ":"}
+{"r": 18058, "k": "cmd", "T": 14872, "lvl": "Dlvl:7", "u": [60, 11], "hp": 114, "hpmax": 115}
+{"m": "You see here 66 rocks."}
+{"act": "move", "why": ["new or desired item at {'x': 57, 'y': 14, 'glyph': '[', 'color': 'brown', 'feature': 'corridor', 'se"], "dir": "NW"}
+{"a": "y"}
+{"r": 18059, "k": "cmd", "T": 14872, "lvl": "Dlvl:7", "u": [59, 10], "hp": 114, "hpmax": 115}
+{"act": "autotravel", "why": ["new or desired item at {'x': 57, 'y': 14, 'glyph': '[', 'color': 'brown', 'feature': 'corridor', 'se"], "pos": "#Position{:x 57, :y 14}"}
+{"a": "_"}
+{"r": 18060, "k": "pos", "T": 14872, "lvl": "Dlvl:7", "u": [59, 10], "hp": 114, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(58, 13)"}
+{"r": 18061, "k": "cmd", "T": 14875, "lvl": "Dlvl:7", "u": [58, 13], "hp": 115, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 57, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'corridor', 'seen': Tru"]}
+{"a": ":"}
+{"r": 18062, "k": "cmd", "T": 14875, "lvl": "Dlvl:7", "u": [58, 13], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 16, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18063, "k": "cmd", "T": 14875, "lvl": "Dlvl:7", "u": [57, 12], "hp": 115, "hpmax": 115}
+{"act": "autotravel", "why": ["exploring {'x': 16, 'y': 8, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 16, :y 8}"}
+{"a": "_"}
+{"r": 18064, "k": "pos", "T": 14875, "lvl": "Dlvl:7", "u": [57, 12], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(17, 7)"}
+{"r": 18065, "k": "cmd", "T": 14901, "lvl": "Dlvl:7", "u": [17, 7], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 15, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18066, "k": "cmd", "T": 14902, "lvl": "Dlvl:7", "u": [16, 7], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 14, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18067, "k": "cmd", "T": 14903, "lvl": "Dlvl:7", "u": [15, 7], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 13, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18068, "k": "cmd", "T": 14903, "lvl": "Dlvl:7", "u": [14, 7], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18069, "k": "cmd", "T": 14904, "lvl": "Dlvl:7", "u": [13, 7], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18070, "k": "cmd", "T": 14904, "lvl": "Dlvl:7", "u": [13, 8], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18071, "k": "cmd", "T": 14905, "lvl": "Dlvl:7", "u": [13, 9], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18072, "k": "cmd", "T": 14906, "lvl": "Dlvl:7", "u": [13, 10], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 12, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18073, "k": "cmd", "T": 14906, "lvl": "Dlvl:7", "u": [13, 11], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 11, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18074, "k": "cmd", "T": 14907, "lvl": "Dlvl:7", "u": [12, 11], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 12, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18075, "k": "cmd", "T": 14908, "lvl": "Dlvl:7", "u": [11, 11], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 13, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18076, "k": "cmd", "T": 14908, "lvl": "Dlvl:7", "u": [11, 12], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 14, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18077, "k": "cmd", "T": 14909, "lvl": "Dlvl:7", "u": [11, 13], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 15, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18078, "k": "cmd", "T": 14909, "lvl": "Dlvl:7", "u": [11, 14], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 10, 'y': 16, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug'", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18079, "k": "cmd", "T": 14910, "lvl": "Dlvl:7", "u": [11, 15], "hp": 115, "hpmax": 115}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 4, :y 17}"}
+{"a": ";"}
+{"r": 18080, "k": "pos", "T": 14910, "lvl": "Dlvl:7", "u": [11, 15], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(5, 16)"}
+{"r": 18081, "k": "cmd", "T": 14910, "lvl": "Dlvl:7", "u": [11, 15], "hp": 115, "hpmax": 115}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 9, 'y': 16, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18082, "k": "cmd", "T": 14910, "lvl": "Dlvl:7", "u": [10, 15], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 14, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18083, "k": "cmd", "T": 14911, "lvl": "Dlvl:7", "u": [9, 14], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["targetting leftover enemy {'x': 4, 'y': 16, 'known': 14911, 'first-known': 14910, 'glyph': 'F', 'col"], "dir": "W"}
+{"a": "h"}
+{"r": 18084, "k": "cmd", "T": 14911, "lvl": "Dlvl:7", "u": [8, 14], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["targetting leftover enemy {'x': 4, 'y': 16, 'known': 14911, 'first-known': 14910, 'glyph': 'F', 'col"], "dir": "W"}
+{"a": "h"}
+{"r": 18085, "k": "cmd", "T": 14912, "lvl": "Dlvl:7", "u": [7, 14], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["targetting leftover enemy {'x': 4, 'y': 16, 'known': 14912, 'first-known': 14910, 'glyph': 'F', 'col"], "dir": "W"}
+{"a": "h"}
+{"r": 18086, "k": "cmd", "T": 14913, "lvl": "Dlvl:7", "u": [6, 14], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["hitting {'x': 4, 'y': 16, 'known': 14913, 'first-known': 14910, 'glyph': 'F', 'color': 'yellow', 'ty", "targetting leftover enemy {'x': 4, 'y': 16, 'known': 14913, 'first-known': 14910, 'glyph': 'F', 'col"], "dir": "SW"}
+{"a": "b"}
+{"r": 18087, "k": "cmd", "T": 14913, "lvl": "Dlvl:7", "u": [6, 14], "hp": 115, "hpmax": 115}
+{"m": "You kill the yellow mold!"}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18088, "k": "cmd", "T": 14914, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"m": "KAABLAMM!!!  You triggered a land mine!"}
+{"m": "You fall into a pit!"}
+{"act": "look", "why": ["examining tile {'x': 6, 'y': 14, 'glyph': '@', 'color': 'white', 'feature': 'trap', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 18089, "k": "cmd", "T": 14914, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"m": "There is a pit here."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18090, "k": "cmd", "T": 14914, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"m": "You are still in a pit."}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18091, "k": "cmd", "T": 14915, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 18092, "k": "cmd", "T": 14915, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 5, :y 15}"}
+{"a": ";"}
+{"r": 18093, "k": "pos", "T": 14915, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(6, 14)"}
+{"r": 18094, "k": "cmd", "T": 14915, "lvl": "Dlvl:7", "u": [7, 13], "hp": 103, "hpmax": 115}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18095, "k": "cmd", "T": 14916, "lvl": "Dlvl:7", "u": [7, 13], "hp": 104, "hpmax": 115}
+{"m": "You are still in a pit."}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18096, "k": "cmd", "T": 14916, "lvl": "Dlvl:7", "u": [7, 13], "hp": 104, "hpmax": 115}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18097, "k": "cmd", "T": 14917, "lvl": "Dlvl:7", "u": [7, 13], "hp": 104, "hpmax": 115}
+{"act": "move", "why": ["arbitrary direction", "untrap move", "untrapping self", "exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 18098, "k": "cmd", "T": 14918, "lvl": "Dlvl:7", "u": [7, 13], "hp": 104, "hpmax": 115}
+{"m": "You crawl to the edge of the pit."}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18099, "k": "cmd", "T": 14919, "lvl": "Dlvl:7", "u": [8, 12], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 12, 'glyph': '.', 'color': None, 'feature': 'floor', 'seen': True, 'dug': Fa", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18100, "k": "cmd", "T": 14919, "lvl": "Dlvl:7", "u": [9, 11], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 11, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18101, "k": "cmd", "T": 14920, "lvl": "Dlvl:7", "u": [9, 10], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 10, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug':", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18102, "k": "cmd", "T": 14920, "lvl": "Dlvl:7", "u": [9, 9], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 9, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug': ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18103, "k": "cmd", "T": 14921, "lvl": "Dlvl:7", "u": [9, 8], "hp": 105, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 8, 'y': 8, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug': ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18104, "k": "cmd", "T": 14921, "lvl": "Dlvl:7", "u": [9, 7], "hp": 105, "hpmax": 115}
+{"act": "autotravel", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 4, :y 6}"}
+{"a": "_"}
+{"r": 18105, "k": "pos", "T": 14921, "lvl": "Dlvl:7", "u": [9, 7], "hp": 105, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(5, 5)"}
+{"r": 18106, "k": "cmd", "T": 14922, "lvl": "Dlvl:7", "u": [9, 6], "hp": 106, "hpmax": 115}
+{"m": "A stone giant blocks your path."}
+{"act": "move", "why": ["arbitrary direction", "fidgeting to make peacefuls move", "peaceful blocker {'x': 8, 'y': 6, 'known': 14922, 'first-known': 14821, 'glyph': 'H', 'color': None,", "exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18107, "k": "cmd", "T": 14923, "lvl": "Dlvl:7", "u": [9, 7], "hp": 106, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18108, "k": "cmd", "T": 14923, "lvl": "Dlvl:7", "u": [9, 6], "hp": 106, "hpmax": 115}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 8, :y 16}"}
+{"a": ";"}
+{"r": 18109, "k": "pos", "T": 14923, "lvl": "Dlvl:7", "u": [9, 6], "hp": 106, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(9, 15)"}
+{"r": 18110, "k": "cmd", "T": 14923, "lvl": "Dlvl:7", "u": [9, 6], "hp": 106, "hpmax": 115}
+{"m": "G        a gnome (peaceful gnomish wizard) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "N"}
+{"a": "k"}
+{"r": 18111, "k": "cmd", "T": 14924, "lvl": "Dlvl:7", "u": [9, 5], "hp": 106, "hpmax": 115}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 6, :y 4}"}
+{"a": ";"}
+{"r": 18112, "k": "pos", "T": 14924, "lvl": "Dlvl:7", "u": [9, 5], "hp": 106, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(7, 3)"}
+{"r": 18113, "k": "cmd", "T": 14924, "lvl": "Dlvl:7", "u": [9, 5], "hp": 106, "hpmax": 115}
+{"m": "H        a giant humanoid (peaceful stone giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NW"}
+{"a": "y"}
+{"r": 18114, "k": "cmd", "T": 14925, "lvl": "Dlvl:7", "u": [8, 4], "hp": 107, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18115, "k": "cmd", "T": 14925, "lvl": "Dlvl:7", "u": [7, 4], "hp": 107, "hpmax": 115}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18116, "k": "cmd", "T": 14926, "lvl": "Dlvl:7", "u": [6, 4], "hp": 107, "hpmax": 115}
+{"m": "You see here an empty bag of tricks."}
+{"act": "look", "why": ["examining tile {'x': 5, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 18117, "k": "cmd", "T": 14926, "lvl": "Dlvl:7", "u": [6, 4], "hp": 107, "hpmax": 115}
+{"m": "You see here an empty bag of tricks."}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "W"}
+{"a": "h"}
+{"r": 18118, "k": "cmd", "T": 14926, "lvl": "Dlvl:7", "u": [5, 4], "hp": 107, "hpmax": 115}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"?\"."}
+{"act": "look", "why": ["examining tile {'x': 4, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, 'd"]}
+{"a": ":"}
+{"r": 18119, "k": "cmd", "T": 14926, "lvl": "Dlvl:7", "u": [5, 4], "hp": 107, "hpmax": 115}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 6, 'glyph': '|', 'color': 'brown', 'feature': 'door-open', 'seen': True, 'du", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18120, "k": "cmd", "T": 14927, "lvl": "Dlvl:7", "u": [5, 5], "hp": 107, "hpmax": 115}
+{"m": "You find a hidden passage."}
+{"act": "move", "why": ["exploring {'x': 4, 'y': 7, 'glyph': '#', 'color': None, 'feature': 'corridor', 'seen': True, 'dug': ", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18121, "k": "cmd", "T": 14927, "lvl": "Dlvl:7", "u": [5, 6], "hp": 107, "hpmax": 115}
+{"m": "You feel a wrenching sensation."}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 18122, "k": "cmdcont", "T": 14927, "lvl": "Dlvl:7", "u": [5, 6], "hp": 107, "hpmax": 115}
+{"a": "0"}
+{"r": 18123, "k": "cmdcont", "T": 14927, "lvl": "Dlvl:7", "u": [5, 6], "hp": 107, "hpmax": 115}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 18124, "k": "cmd", "T": 14933, "lvl": "Dlvl:7", "u": [5, 6], "hp": 109, "hpmax": 115}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 18125, "k": "cmdcont", "T": 14933, "lvl": "Dlvl:7", "u": [5, 6], "hp": 109, "hpmax": 115}
+{"a": "0"}
+{"r": 18126, "k": "cmdcont", "T": 14933, "lvl": "Dlvl:7", "u": [5, 6], "hp": 109, "hpmax": 115}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 18127, "k": "cmd", "T": 14938, "lvl": "Dlvl:7", "u": [5, 6], "hp": 111, "hpmax": 115}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 18128, "k": "cmdcont", "T": 14938, "lvl": "Dlvl:7", "u": [5, 6], "hp": 111, "hpmax": 115}
+{"a": "0"}
+{"r": 18129, "k": "cmdcont", "T": 14938, "lvl": "Dlvl:7", "u": [5, 6], "hp": 111, "hpmax": 115}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 18130, "k": "cmd", "T": 14943, "lvl": "Dlvl:7", "u": [5, 6], "hp": 113, "hpmax": 115}
+{"act": "repeated", "why": ["searching dead end", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"]}
+{"a": "1"}
+{"r": 18131, "k": "cmdcont", "T": 14943, "lvl": "Dlvl:7", "u": [5, 6], "hp": 113, "hpmax": 115}
+{"a": "0"}
+{"r": 18132, "k": "cmdcont", "T": 14943, "lvl": "Dlvl:7", "u": [5, 6], "hp": 113, "hpmax": 115}
+{"m": "Count: 10"}
+{"a": "s"}
+{"r": 18133, "k": "cmd", "T": 14949, "lvl": "Dlvl:7", "u": [5, 6], "hp": 115, "hpmax": 115}
+{"m": "You are in full health."}
+{"act": "autotravel", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 36, :y 4}"}
+{"a": "_"}
+{"r": 18134, "k": "pos", "T": 14949, "lvl": "Dlvl:7", "u": [5, 6], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 3)"}
+{"r": 18135, "k": "cmd", "T": 14953, "lvl": "Dlvl:7", "u": [8, 3], "hp": 115, "hpmax": 115}
+{"m": "A stone giant blocks your path."}
+{"act": "farlook", "why": ["examining ambiguous feature"], "pos": "#Position{:x 4, :y 7}"}
+{"a": ";"}
+{"r": 18136, "k": "pos", "T": 14953, "lvl": "Dlvl:7", "u": [8, 3], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(5, 6)"}
+{"r": 18137, "k": "cmd", "T": 14953, "lvl": "Dlvl:7", "u": [8, 3], "hp": 115, "hpmax": 115}
+{"m": "^        a trap (teleportation trap)"}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "NE"}
+{"a": "u"}
+{"r": 18138, "k": "cmd", "T": 14954, "lvl": "Dlvl:7", "u": [9, 2], "hp": 115, "hpmax": 115}
+{"act": "close", "why": ["closing door to kick it", "going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "SE"}
+{"a": "c"}
+{"r": 18139, "k": "yn", "T": 14954, "lvl": "Dlvl:7", "u": [9, 2], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "n"}
+{"r": 18140, "k": "cmd", "T": 14954, "lvl": "Dlvl:7", "u": [9, 2], "hp": 115, "hpmax": 115}
+{"m": "The door closes."}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "S"}
+{"a": "j"}
+{"r": 18141, "k": "cmd", "T": 14955, "lvl": "Dlvl:7", "u": [9, 3], "hp": 115, "hpmax": 115}
+{"act": "open", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "o"}
+{"r": 18142, "k": "yn", "T": 14955, "lvl": "Dlvl:7", "u": [9, 3], "hp": 115, "hpmax": 115, "q": "In what direction?"}
+{"a": "l"}
+{"r": 18143, "k": "cmd", "T": 14955, "lvl": "Dlvl:7", "u": [9, 3], "hp": 115, "hpmax": 115}
+{"m": "The door opens."}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18144, "k": "cmd", "T": 14956, "lvl": "Dlvl:7", "u": [10, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18145, "k": "cmd", "T": 14956, "lvl": "Dlvl:7", "u": [11, 3], "hp": 115, "hpmax": 115}
+{"act": "autotravel", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 36, :y 4}"}
+{"a": "_"}
+{"r": 18146, "k": "pos", "T": 14956, "lvl": "Dlvl:7", "u": [11, 3], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 3)"}
+{"r": 18147, "k": "cmd", "T": 14959, "lvl": "Dlvl:7", "u": [16, 3], "hp": 115, "hpmax": 115}
+{"m": "Your leg feels better."}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18148, "k": "cmd", "T": 14959, "lvl": "Dlvl:7", "u": [17, 3], "hp": 115, "hpmax": 115}
+{"act": "autotravel", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 36, :y 4}"}
+{"a": "_"}
+{"r": 18149, "k": "pos", "T": 14959, "lvl": "Dlvl:7", "u": [17, 3], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 3)"}
+{"r": 18150, "k": "cmd", "T": 14964, "lvl": "Dlvl:7", "u": [23, 3], "hp": 115, "hpmax": 115}
+{"m": "A killer bee blocks your path."}
+{"act": "move", "why": ["hitting {'x': 22, 'y': 5, 'known': 14964, 'first-known': 14964, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 22, 'y': 5, 'known': 14964, 'first-known': 14964, 'glyph': 'a', 'color': 'yel"], "dir": "S"}
+{"a": "j"}
+{"r": 18151, "k": "cmd", "T": 14965, "lvl": "Dlvl:7", "u": [23, 3], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"m": "The killer bee misses!"}
+{"act": "move", "why": ["new or desired item at {'x': 22, 'y': 5, 'glyph': 'a', 'color': 'yellow', 'feature': 'floor', 'seen'"], "dir": "S"}
+{"a": "j"}
+{"r": 18152, "k": "cmd", "T": 14965, "lvl": "Dlvl:7", "u": [23, 3], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 7, :y 4}"}
+{"a": ";"}
+{"r": 18153, "k": "pos", "T": 14965, "lvl": "Dlvl:7", "u": [23, 3], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(8, 3)"}
+{"r": 18154, "k": "cmd", "T": 14965, "lvl": "Dlvl:7", "u": [23, 3], "hp": 115, "hpmax": 115}
+{"m": "H        a giant humanoid (peaceful stone giant) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["new or desired item at {'x': 22, 'y': 5, 'glyph': '%', 'color': 'yellow', 'feature': 'floor', 'seen'"], "dir": "S"}
+{"a": "j"}
+{"r": 18155, "k": "cmd", "T": 14966, "lvl": "Dlvl:7", "u": [23, 4], "hp": 115, "hpmax": 115}
+{"m": "You see here 2 killer bee corpses."}
+{"act": "look", "why": ["examining tile {'x': 22, 'y': 5, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18156, "k": "cmd", "T": 14966, "lvl": "Dlvl:7", "u": [23, 4], "hp": 115, "hpmax": 115}
+{"m": "You see here 2 killer bee corpses."}
+{"act": "move", "why": ["targetting enemy {'x': 25, 'y': 7, 'known': 14966, 'first-known': 14966, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18157, "k": "cmd", "T": 14966, "lvl": "Dlvl:7", "u": [24, 4], "hp": 115, "hpmax": 115}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 24, 'y': 7, 'known': 14966, 'first-known': 14966, 'glyph': 'a', 'color': 'yel"]}
+{"a": "s"}
+{"r": 18158, "k": "cmd", "T": 14967, "lvl": "Dlvl:7", "u": [24, 4], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["hitting {'x': 23, 'y': 6, 'known': 14967, 'first-known': 14966, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 23, 'y': 6, 'known': 14967, 'first-known': 14966, 'glyph': 'a', 'color': 'yel"], "dir": "S"}
+{"a": "j"}
+{"r": 18159, "k": "cmd", "T": 14967, "lvl": "Dlvl:7", "u": [24, 4], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "autotravel", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "pos": "#Position{:x 36, :y 4}"}
+{"a": "_"}
+{"r": 18160, "k": "pos", "T": 14967, "lvl": "Dlvl:7", "u": [24, 4], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(37, 3)"}
+{"r": 18161, "k": "cmd", "T": 14974, "lvl": "Dlvl:7", "u": [37, 3], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18162, "k": "cmd", "T": 14975, "lvl": "Dlvl:7", "u": [38, 3], "hp": 115, "hpmax": 115}
+{"m": "With great effort you move the boulder."}
+{"m": "You hear someone counting money."}
+{"act": "look", "why": ["examining tile {'x': 37, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 18163, "k": "cmd", "T": 14975, "lvl": "Dlvl:7", "u": [38, 3], "hp": 115, "hpmax": 115}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18164, "k": "cmd", "T": 14975, "lvl": "Dlvl:7", "u": [39, 3], "hp": 115, "hpmax": 115}
+{"act": "look", "why": ["examining tile {'x': 38, 'y': 4, 'glyph': '@', 'color': 'white', 'feature': None, 'seen': True, 'dug"]}
+{"a": ":"}
+{"r": 18165, "k": "cmd", "T": 14975, "lvl": "Dlvl:7", "u": [39, 3], "hp": 115, "hpmax": 115}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["going to push an explorable boulder", "using cached exploration step", "reaching exploration target", "exploring main until sokoban", "full-explore", "progress"], "dir": "E"}
+{"a": "l"}
+{"r": 18166, "k": "cmd", "T": 14975, "lvl": "Dlvl:7", "u": [39, 3], "hp": 115, "hpmax": 115}
+{"m": "You try to move the boulder, but in vain."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 18167, "k": "pos", "T": 14975, "lvl": "Dlvl:7", "u": [39, 3], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 18168, "k": "cmd", "T": 14985, "lvl": "Dlvl:7", "u": [26, 6], "hp": 115, "hpmax": 115}
+{"m": "A killer bee blocks your path."}
+{"act": "move", "why": ["hitting {'x': 26, 'y': 7, 'known': 14985, 'first-known': 14985, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 26, 'y': 7, 'known': 14985, 'first-known': 14985, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18169, "k": "cmd", "T": 14985, "lvl": "Dlvl:7", "u": [26, 6], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 18170, "k": "pos", "T": 14985, "lvl": "Dlvl:7", "u": [26, 6], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 18171, "k": "cmd", "T": 14987, "lvl": "Dlvl:7", "u": [27, 7], "hp": 115, "hpmax": 115}
+{"m": "A monkey blocks your path."}
+{"act": "farlook", "why": ["examining monster"], "pos": "#Position{:x 27, :y 9}"}
+{"a": ";"}
+{"r": 18172, "k": "pos", "T": 14987, "lvl": "Dlvl:7", "u": [27, 7], "hp": 115, "hpmax": 115, "g": "an unknown object"}
+{"m": "Pick an object."}
+{"a": "(28, 8)"}
+{"r": 18173, "k": "cmd", "T": 14987, "lvl": "Dlvl:7", "u": [27, 7], "hp": 115, "hpmax": 115}
+{"m": "Y        an apelike creature (monkey) [seen: normal vision, infravision]"}
+{"act": "move", "why": ["hitting {'x': 27, 'y': 9, 'known': 14987, 'first-known': 14987, 'glyph': 'Y', 'color': None, 'type':", "targetting enemy {'x': 27, 'y': 9, 'known': 14987, 'first-known': 14987, 'glyph': 'Y', 'color': None"], "dir": "SE"}
+{"a": "n"}
+{"r": 18174, "k": "cmd", "T": 14988, "lvl": "Dlvl:7", "u": [27, 7], "hp": 115, "hpmax": 115}
+{"m": "You kill the monkey!"}
+{"act": "move", "why": ["new or desired item at {'x': 27, 'y': 9, 'glyph': '%', 'color': 'brown', 'feature': 'floor', 'seen':"], "dir": "SE"}
+{"a": "n"}
+{"r": 18175, "k": "cmd", "T": 14988, "lvl": "Dlvl:7", "u": [28, 8], "hp": 115, "hpmax": 115}
+{"m": "You see here a rothe corpse."}
+{"act": "look", "why": ["examining tile {'x': 27, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18176, "k": "cmd", "T": 14988, "lvl": "Dlvl:7", "u": [28, 8], "hp": 115, "hpmax": 115}
+{"m": "You see here a rothe corpse."}
+{"act": "move", "why": ["targetting enemy {'x': 31, 'y': 9, 'known': 14988, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18177, "k": "cmd", "T": 14989, "lvl": "Dlvl:7", "u": [29, 8], "hp": 115, "hpmax": 115}
+{"act": "search", "why": ["baiting monsters", "targetting enemy {'x': 30, 'y': 9, 'known': 14989, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"]}
+{"a": "s"}
+{"r": 18178, "k": "cmd", "T": 14989, "lvl": "Dlvl:7", "u": [29, 8], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["hitting {'x': 29, 'y': 9, 'known': 14989, 'first-known': 14988, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 29, 'y': 9, 'known': 14989, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18179, "k": "cmd", "T": 14990, "lvl": "Dlvl:7", "u": [29, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "move", "why": ["targetting enemy {'x': 31, 'y': 9, 'known': 14990, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18180, "k": "cmd", "T": 14990, "lvl": "Dlvl:7", "u": [30, 8], "hp": 115, "hpmax": 115}
+{"act": "move", "why": ["hitting {'x': 30, 'y': 9, 'known': 14990, 'first-known': 14988, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 30, 'y': 9, 'known': 14990, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18181, "k": "cmd", "T": 14991, "lvl": "Dlvl:7", "u": [30, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "move", "why": ["targetting enemy {'x': 31, 'y': 9, 'known': 14991, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18182, "k": "cmd", "T": 14992, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115}
+{"m": "There is an open door here."}
+{"m": "You see here a killer bee corpse."}
+{"m": "The killer bee just misses!"}
+{"act": "look", "why": ["examining tile {'x': 30, 'y': 9, 'glyph': '@', 'color': 'white', 'feature': 'door-open', 'seen': Tru"]}
+{"a": ":"}
+{"r": 18183, "k": "cmd", "T": 14992, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115}
+{"m": "There is an open door here."}
+{"m": "You see here a killer bee corpse."}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 8, 'known': 14992, 'first-known': 14988, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 31, 'y': 8, 'known': 14992, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "NE"}
+{"a": "u"}
+{"r": 18184, "k": "cmd", "T": 14993, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"m": "The killer bee misses!"}
+{"act": "move", "why": ["hitting {'x': 31, 'y': 9, 'known': 14993, 'first-known': 14988, 'glyph': 'a', 'color': 'yellow', 'ty", "targetting enemy {'x': 31, 'y': 9, 'known': 14993, 'first-known': 14988, 'glyph': 'a', 'color': 'yel"], "dir": "E"}
+{"a": "l"}
+{"r": 18185, "k": "cmd", "T": 14994, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the killer bee!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 18186, "k": "pos", "T": 14994, "lvl": "Dlvl:7", "u": [31, 8], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 18187, "k": "cmd", "T": 14997, "lvl": "Dlvl:7", "u": [37, 7], "hp": 115, "hpmax": 115}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E|???c?\"."}
+{"act": "look", "why": ["examining tile {'x': 36, 'y': 8, 'glyph': '@', 'color': 'white', 'feature': 'floor', 'seen': True, '"]}
+{"a": ":"}
+{"r": 18188, "k": "cmd", "T": 14997, "lvl": "Dlvl:7", "u": [37, 7], "hp": 115, "hpmax": 115}
+{"m": "Something is written here in the dust."}
+{"m": "You read: \"E|???c?\"."}
+{"m": "You see no objects here."}
+{"act": "move", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "dir": "SE"}
+{"a": "n"}
+{"r": 18189, "k": "cmd", "T": 14997, "lvl": "Dlvl:7", "u": [38, 8], "hp": 115, "hpmax": 115}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 18190, "k": "pos", "T": 14997, "lvl": "Dlvl:7", "u": [38, 8], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 18191, "k": "cmd", "T": 15001, "lvl": "Dlvl:7", "u": [44, 8], "hp": 115, "hpmax": 115}
+{"m": "A lichen blocks your path."}
+{"act": "move", "why": ["hitting {'x': 44, 'y': 9, 'known': 15001, 'first-known': 15001, 'glyph': 'F', 'color': 'bright-green", "targetting enemy {'x': 44, 'y': 9, 'known': 15001, 'first-known': 15001, 'glyph': 'F', 'color': 'bri"], "dir": "E"}
+{"a": "l"}
+{"r": 18192, "k": "cmd", "T": 15001, "lvl": "Dlvl:7", "u": [44, 8], "hp": 115, "hpmax": 115}
+{"m": "You kill the lichen!"}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 49, :y 6}"}
+{"a": "_"}
+{"r": 18193, "k": "pos", "T": 15001, "lvl": "Dlvl:7", "u": [44, 8], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"m": "Where do you want to travel to?"}
+{"a": "(50, 5)"}
+{"r": 18194, "k": "cmd", "T": 15005, "lvl": "Dlvl:7", "u": [50, 5], "hp": 115, "hpmax": 115}
+{"act": "ascend", "why": ["switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"]}
+{"a": "<"}
+{"r": 18195, "k": "cmd", "T": 15005, "lvl": "Dlvl:6", "u": [58, 18], "hp": 115, "hpmax": 115}
+{"m": "You climb up the stairs."}
+{"act": "autotravel", "why": ["seek going directly", "looking for the stairs-up", "switching within branch to Dlvl:4", "trying to enter mines from Dlvl:4", "seeking branch mines ( mines )", "seeking level mines end", "reaching exploration target", "exploring mines until end", "full-explore", "progress"], "pos": "#Position{:x 67, :y 6}"}
+{"a": "_"}
+{"r": 18196, "k": "pos", "T": 15005, "lvl": "Dlvl:6", "u": [58, 18], "hp": 115, "hpmax": 115, "g": "the desired destination"}
+{"note": "abort", "d": "limit: max_seconds 14400"}
+{"note": "perf", "d": "explorable versions=9595 calls=16509430 misses=819006"}
