@@ -151,6 +151,12 @@ class Supervisor(object):
         self._assist_seen = n
         saves = [e.get('turn') or 0 for e in ev if e.get('kind') == 'lifesave']
         k = self.limits['death_loop']
+        lvl = (self.engine.status.get('lvl') or '').strip()
+        if lvl in ('Earth', 'Air', 'Fire', 'Water', 'Astral Plane'):
+            # the endgame crowds kill the invincible hero again and again
+            # while it does progress toward the portal; the no-novelty and
+            # time limits still bound these levels
+            k = k * 4
         if len(saves) < k:
             return
         window_start = saves[-k]

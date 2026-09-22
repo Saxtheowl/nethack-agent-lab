@@ -327,3 +327,19 @@ def test_36_prompts_candles_and_burden():
                         "(n)")[0] == 'attach_candelabrum_candles'
     assert _choice_call("You have a little trouble lifting a pick-axe. "
                         "Continue? [ynq] (q)")[0] == 'lift_burden'
+
+
+def test_added_monsters_hash():
+    # the Kops added for 3.6 had no dumped hash: fight() crashed on them
+    from pybothack.monster import monster_type_hasheq
+    from pybothack.montype import name_to_monster
+    for n in ('Keystone Kop', 'Kop Kaptain', 'Twoflower', 'guide'):
+        assert isinstance(monster_type_hasheq(name_to_monster(n)), int)
+
+
+def test_planes_status_name():
+    from pybothack.nhbridge import dlvl_string
+    for n in ('Earth ', 'Air ', 'Fire ', 'Water '):
+        assert dlvl_string({'lvl': n}) == "End Game"
+    assert dlvl_string({'lvl': 'Astral Plane '}) == "Astral Plane"
+    assert dlvl_string({'lvl': 'Dlvl:3 '}) == "Dlvl:3"

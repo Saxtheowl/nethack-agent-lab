@@ -440,6 +440,12 @@ def game_handler(bh):
         if (new_dlvl == "Astral Plane"
                 and branch_key(game.deref()) != 'astral'):
             game.swap(assoc, 'branch-id', 'astral')
+        # the first "End Game" level is always the Plane of Earth; a hero
+        # level-teleported there (scenario) was left in 'main' and the
+        # planes logic never ran
+        if new_dlvl == "End Game" and branch_key(game.deref()) not in (
+                'earth', 'air', 'fire', 'water', 'astral'):
+            game.swap(assoc, 'branch-id', 'earth')
         if (new_dlvl.startswith("Home ")
                 and branch_key(game.deref()) != 'quest'):
             game.swap(assoc, 'branch-id', 'quest')

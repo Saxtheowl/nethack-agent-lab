@@ -1288,7 +1288,14 @@ def PickUp(label_or_list):
                     res.add(slot)
             if remaining:
                 log.warning("pickup: wanted labels not in the menu: %r "
-                            "(menu: %r)", remaining, list(options.values()))
+                            "(menu: %r)", remaining, list(options.values())[:12])
+                if not res:
+                    # stale memory of the pile: nothing we want is here any
+                    # more; stop picking here for a while (planes scenario
+                    # 403: 97 empty pickups, request storm)
+                    turn = bh.game.deref().get('turn')
+                    bh.game.swap(update_at_player,
+                                 lambda t: assoc(t, 'no-pickup', turn))
             return res
 
         def message(msg):

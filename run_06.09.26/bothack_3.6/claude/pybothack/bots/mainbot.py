@@ -177,6 +177,10 @@ def _choose_amulet(game):
 
 
 def wear_amulet(game):
+    # port: on the elemental planes the Amulet of Yendor is worn for its
+    # portal hints (assisted_planes_rush); do not swap it back for reflection
+    if at_planes(game) and have(game, real_amulet, {'worn'}):
+        return None
     if typekw(game.get('last-action')) != 'remove':
         found = _choose_amulet(game)
         if found:
@@ -447,6 +451,65 @@ def amulet_safekeeping(game):
     return None
 
 
+def assisted_planes_rush(game):
+    """Assisted tactics on the elemental planes: find the exit portal before
+    fighting what is not in the way.  The planes are crowded; with fight
+    first, big-w10 g022 fought on the Plane of Air for 15000 turns.  The
+    portals are hidden: the Amulet, wielded, gets warm near them (BotHack
+    narrows the walked area from "The Amulet ... feels hot/warm"), then the
+    remaining squares are walked on."""
+    if not rules36.assisted_tactics():
+        return None
+    if branch_key(game) not in ('earth', 'air', 'fire', 'water'):
+        return None
+    if not have(game, real_amulet, {'bagged'}):
+        return None
+    level = curlvl(game)
+    if any(portal_p(t) for t in tile_seq(level)):
+        r = seek(game, portal_p, {'no-explore'})
+        if r:
+            return with_reason("assisted planes: to the portal", r)
+    # BotHack's own per-plane search (Air: unwalked non-cloud squares in the
+    # east; Water: moving bubbles...) - normally reached only when there is
+    # nothing to fight, which never happens on the planes
+    from ..pathing import seek_portal
+    r = seek_portal(game)
+    if r:
+        return with_reason("assisted planes: BotHack portal search", r)
+    found = have(game, real_amulet)
+    if found and not found[1].get('in-use'):
+        # wizard.c amulet(): the hints come with the Amulet worn (uamul) or
+        # wielded; worn, the hero keeps the pick-axe for the Plane of Earth
+        # and the weapon (big-w12 g002: wielded Amulet vs digging)
+        r = make_use(game, found[0])
+        if r:
+            return with_reason("assisted planes: wearing the Amulet for its "
+                               "warmth", r)
+    from ..tile import diggable
+    r = seek(game, lambda t: (not t.get('walked') and not blocked(t)
+                              and (walkable(t) or diggable(t))),
+             {'no-explore'})
+    if r:
+        return with_reason("assisted planes: walking the squares where the "
+                           "portal can be", r)
+    key = (branch_key(game), (game.get('turn') or 0) // 2000)
+    if key not in _PLANES_LOGGED:
+        _PLANES_LOGGED.add(key)
+        tiles = list(tile_seq(level))
+        log.warning("planes rush idle on %s: amulet worn=%s, unwalked "
+                    "walkable=%d, unwalked diggable=%d, portal-range=%s",
+                    branch_key(game),
+                    bool(have(game, real_amulet, {'worn'})),
+                    sum(1 for t in tiles if walkable(t) and not t.get('walked')),
+                    sum(1 for t in tiles if not t.get('walked')
+                        and not walkable(t)),
+                    game.get('portal-range'))
+    return None
+
+
+_PLANES_LOGGED = set()
+
+
 _ASTRAL_UNIHORN = [-10]
 
 
@@ -708,6 +771,10 @@ def currently_desired(game):
 
 def handle_impairment(game):
     player = game['player']
+    if player.get('engulfed'):
+        # port: waiting out stun while an air elemental keeps pummeling the
+        # hero never ends (planes scenario 402): hit the engulfer instead
+        return kill_engulfer(game)
     res = None
     if has_hands(player) and 'ext-blind' in player['state']:
         res = with_reason("fixing external blindness", Wipe())
@@ -3285,6 +3352,7 @@ def init(bh):
     reg(-99, offer_amulet)
     reg(-16, enhance)
     reg(-20, assisted_astral_rush)
+    reg(-20, assisted_planes_rush)
     # NB: no "bag the Amulet against theft": 3.6.7 pickup.c refuses the
     # Amulet, Bell, Candelabrum and Book in containers ("cannot be confined
     # in such trappings"); tried in big-w10, it only wasted turns

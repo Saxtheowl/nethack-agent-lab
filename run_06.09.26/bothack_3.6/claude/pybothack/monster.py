@@ -255,11 +255,14 @@ def monster_type_hasheq(t):
     if isinstance(t, str):
         return murmur3_hash_int(java_string_hash(t))
     key = '%s\t%s\t%s' % (t.get('name'), t.get('glyph'), t.get('color'))
-    try:
-        return _TYPE_HASH[key]
-    except KeyError:
-        raise KeyError("no dumped hasheq for monster type %r; re-run "
-                       "tools/cljcmp/dump_hash.clj" % (key,))
+    h = _TYPE_HASH.get(key)
+    if h is None:
+        # port: monster types added for 3.6.7 (Keystone Kops, Twoflower,
+        # guide) have no dumped Clojure hash; a deterministic stand-in keeps
+        # hash-ordered collections stable.  Raising here crashed the fight
+        # handler against any Kop (planes scenarios, 2026-09-22).
+        h = _TYPE_HASH[key] = murmur3_hash_int(java_string_hash(key))
+    return h
 
 
 def _field_hasheq(k, v):

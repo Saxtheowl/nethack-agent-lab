@@ -1,17 +1,52 @@
 {
- "description": "Default kit, XL 30, level-teleported to the Plane of Earth (the wizard-mode teleport adds the Amulet of Yendor); goal: reach the Astral Plane through Air, Fire and Water",
+ "description": "Default kit + endgame gear (Excalibur, +5 helm/gauntlets of power/cloak worn), XL 30, level-teleported to the Plane of Earth with the Amulet; goal: astral (then the offering)",
  "steps": [
   [
    "xl",
    30
   ],
   [
+   "wish",
+   "blessed rustproof +5 Excalibur"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 dwarvish iron helm"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 gauntlets of power"
+  ],
+  [
+   "wish",
+   "blessed fixed +5 elven cloak"
+  ],
+  [
+   "identify"
+  ],
+  [
+   "wield",
+   "Excalibur"
+  ],
+  [
+   "wear",
+   "helm"
+  ],
+  [
+   "wear",
+   "gauntlets"
+  ],
+  [
+   "wear",
+   "cloak"
+  ],
+  [
    "levelport_menu",
    "earth"
   ]
  ],
- "goal": "astral",
- "max_turns": 20000,
+ "goal": "ascended",
+ "max_turns": 40000,
  "profile": "fast",
  "skip": [
   "excalibur",

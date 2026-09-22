@@ -226,6 +226,12 @@ def str_string(v):
 
 def dlvl_string(st):
     lvl = (st.get('lvl') or '').strip()
+    # 3.6.2+ botl.c names the elemental planes ("Earth", "Air", "Fire",
+    # "Water"); 3.4.3 showed "End Game" for all of them and BotHack's planes
+    # logic (branch, portals, next plane) keys on that text.  Without it the
+    # bot never knew it was on a plane (fought on Earth for 18000 turns).
+    if lvl in ("Earth", "Air", "Fire", "Water") or lvl.startswith("Plane of"):
+        return "End Game"
     return lvl
 
 
@@ -922,10 +928,13 @@ class Bridge(object):
                 eng.escape()
                 ans = ESC
         elif kind == 'cmd':
-            # no action at all: a harmless no-time command keeps the game
-            # moving; the supervisor counts these
-            eng.key(ESC)
-            ans = ESC
+            # no action at all: search once.  An ESC (no game time) left the
+            # state unchanged and the bot answered nothing again, forever
+            # (Plane of Water, planes6-405); one turn lets the bubbles and
+            # monsters move and gives the handlers a new situation
+            eng.key('s')
+            ans = 's'
+            self.counters['fallback_search'] += 1
         else:
             eng.escape()
             ans = ESC
