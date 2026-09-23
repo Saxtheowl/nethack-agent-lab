@@ -8,6 +8,53 @@ Racine du projet : `run_06.09.26/bothack_3.6/claude/`. Le répertoire frère
 
 ---
 
+## Résultat principal (2026-09-22)
+
+**Première ascension assistée complète et entièrement automatique** :
+partie `full-c01/g011` (seed moteur 8011), du Dlvl 1 à l'offrande sur
+l'Astral, en **51 834 tours**. Verdict du moteur `ascended`, identique au
+xlogfile (`death: ascended`, 4 497 576 points, XL 19). Pas de mode wizard ni
+de scénario.
+
+Aides actives et journalisées :
+- invincibilité : 506 morts annulées ;
+- anti-famine : 3 interventions ;
+- kit de départ.
+
+Chronologie (tours) :
+
+| tour | étape |
+| --- | --- |
+| 226 | Dlvl 2 |
+| 989 | Minetown |
+| 3 713 | Sokoban |
+| 12 593 | Château |
+| 14 202 | Vallée |
+| 16 083 | Quête |
+| 23 859 | Vlad |
+| 25 415 | Chandelier |
+| 35 476 | Cloche |
+| 38 047 | Livre |
+| 38 390 | Invocation |
+| 38 806 | Amulette |
+| 43 942 | Plans |
+| 48 869 | Astral |
+| **51 834** | **Ascension** |
+
+Données : `runs/worker/full-c01/g011/` (manifest, result, progress, dumplog).
+
+Scénario `planes` (départ sur la Terre avec l'Amulette) : 2 ascensions
+vérifiées par le moteur. Les séries continuent en mode continu sur le
+miniforum : `full-c01`, `full-c02`, `planes-c01`.
+
+Corrections décisives des derniers jours :
+- prompt 3.6 « Attach your candles » (bougies jamais fixées) ;
+- récupération de la Cloche et du Chandelier chez leurs porteurs ;
+- noms des Plans en 3.6 (« Earth »… au lieu de « End Game ») ;
+- recherche de portail BotHack avant le combat ;
+- repli « search » quand aucune action n'est proposée ;
+- veto des actions refusées sans consommer de tour.
+
 ## 1. Objectif
 
 Demande initiale de l'utilisateur :

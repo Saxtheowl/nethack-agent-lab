@@ -23,6 +23,11 @@ log = logging.getLogger('bothack.tracker')
 
 
 def _transfer_pair(game, pair):
+    m = _paired_record(game, pair)
+    return reset_monster(game, m)
+
+
+def _paired_record(game, pair):
     old_monster, mon = pair
     player = game['player']
     cur = monster_at(game, mon)
@@ -44,7 +49,7 @@ def _transfer_pair(game, pair):
         m['fleeing'] = False
     if not cur or cur['glyph'] == 'I':
         m['remembered'] = True
-    return reset_monster(game, m)
+    return m
 
 
 def filter_visible_uniques(game):
@@ -63,6 +68,11 @@ def filter_visible_uniques(game):
 
 
 def _transfer_unpaired(game, unpaired):
+    m = _unpaired_record(game, unpaired)
+    return reset_monster(game, m) if m is not None else game
+
+
+def _unpaired_record(game, unpaired):
     player = game['player']
     tile = at_curlvl(game, unpaired)
     if (not tile_monster(tile)
@@ -72,8 +82,8 @@ def _transfer_unpaired(game, unpaired):
                  or (unpaired['glyph'] in ('1', '2', '3', '4', '5')
                      and (stairs(tile) or boulder(tile) or fountain_p(tile)
                           or altar_p(tile) or tile.get('new-items'))))):
-        return reset_monster(game, assoc(unpaired, 'remembered', True))
-    return game
+        return assoc(unpaired, 'remembered', True)
+    return None
 
 
 def track_monsters(new_game, old_game):
@@ -115,12 +125,29 @@ def track_monsters(new_game, old_game):
             # (apply dissoc (:monsters (curlvl new-game)) (keys pairs))
             new_monsters = dissoc(curlvl(new_game)['monsters'], *clj_keys(pairs))
             dist += 1
-    res = new_game
+    # port (performance): the transfers write distinct squares (an unpaired
+    # record only where no monster is shown, a pair at the new monster's
+    # square) and read only the new frame, so they are applied in one level
+    # update, in the original order.  One update_curlvl per monster copied
+    # the dungeon path each time: 58% of the bot's time on the crowded
+    # planes (profile 2026-09-23).
+    writes = []
     for m in clj_vals(dissoc(old_monsters, position(new_game['player']))):
-        res = _transfer_unpaired(res, m)
+        r = _unpaired_record(new_game, m)
+        if r is not None:
+            writes.append(r)
     for pair in clj_vals(pairs):
-        res = _transfer_pair(res, pair)
-    return res
+        writes.append(_paired_record(new_game, pair))
+    if not writes:
+        return new_game
+
+    def apply(lvl):
+        mons = lvl['monsters']
+        for w in writes:
+            mons = assoc(mons, position(w), w)
+        return assoc(lvl, 'monsters', mons)
+    from .dungeon import update_curlvl
+    return update_curlvl(new_game, apply)
 
 
 def _mark_kill(game, old_game):
