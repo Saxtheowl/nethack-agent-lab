@@ -101,7 +101,12 @@ def prepare_gamedir(gamedir, wizard=False, options=None, name='bot'):
         f.write("PANICTRACE_LIBC=0\nPANICTRACE_GDB=0\n")
         f.write("DUMPLOGFILE=%s\n" % os.path.join(nhdir, 'dumplog.txt'))
         f.write("POINTSMIN=1\nENTRYMAX=100\nPERSMAX=100\n")
-    rc = os.path.join(gamedir, 'nethackrc')
+    rc = os.path.join(os.path.abspath(gamedir), 'nethackrc')
+    if len(rc) >= 128:
+        # NetHack silently ignores NETHACKOPTIONS=<file> from BUFSZ/2 on
+        # (options.c): the game would start with a random character
+        raise ValueError("game directory path too long for NetHack's "
+                         "config file (%d >= 128): %s" % (len(rc), rc))
     opts = list(DEFAULT_OPTIONS if options is None else options)
     opts.append("name:%s" % name)
     with open(rc, 'w') as f:
@@ -168,6 +173,7 @@ class Engine(object):
         env['NH_ASSIST_LOG'] = os.path.join(self.gamedir, 'assist.jsonl')
         if self.seed is not None:
             env['NH_SEED'] = str(int(self.seed))
+            env['TZ'] = 'UTC'     # with the fixed clock of seeded games
         for k, v in self.assists.items():
             if k == 'NH_ASSIST_KIT' and v:
                 v = os.path.abspath(v)

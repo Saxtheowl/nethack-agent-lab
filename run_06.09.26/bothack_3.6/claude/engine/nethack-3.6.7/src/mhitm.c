@@ -199,6 +199,10 @@ boolean quietly;
     /* sanity checks; could matter if we unexpectedly get a long worm */
     if (!magr || !mdef || magr == mdef)
         return MM_MISS;
+    /* [bot] a long worm's segment list would not follow (see
+       mm_displacement) */
+    if (magr->wormno || mdef->wormno)
+        return MM_MISS;
     pa = magr->data, pd = mdef->data;
     tx = mdef->mx, ty = mdef->my; /* destination */
     fx = magr->mx, fy = magr->my; /* current location */

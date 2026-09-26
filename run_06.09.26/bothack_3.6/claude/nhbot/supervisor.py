@@ -295,7 +295,13 @@ class Supervisor(object):
         if len(targets) > 200:
             for k in [k for k, e in targets.items() if turn - e['last'] > 50]:
                 del targets[k]
-        if ((span >= self.limits['fixation_recover'] or ent['count'] >= 150)
+        # on the Astral Plane the altar is the goal and the crowd can block
+        # the way for a long time (full-c04 g017 aborted at the altar)
+        lvl_now = (self.engine.status.get('lvl') or '').strip()
+        slack = 5 if lvl_now == 'Astral Plane' else 1
+        recover_span = self.limits['fixation_recover'] * slack
+        recover_count = 150 * slack
+        if ((span >= recover_span or ent['count'] >= recover_count)
                 and ent['recovered'] < 3):
             ent['recovered'] += 1
             ent['first'] = turn
@@ -303,8 +309,8 @@ class Supervisor(object):
             detail = bridge.forget_target(key[0], key[1])
             self.rec.note('recovery', 'fixation #%d on %r (%s): %s'
                           % (ent['recovered'], key, text[:60], detail))
-        elif ent['recovered'] >= 3 and (span >= self.limits['fixation_recover']
-                                        or ent['count'] >= 150):
+        elif ent['recovered'] >= 3 and (span >= recover_span
+                                        or ent['count'] >= recover_count):
             raise BridgeAbort('stuck', 'fixation: target %r keeps coming '
                               'back after 3 recoveries (%s)'
                               % (key, text[:80]))

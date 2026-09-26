@@ -4,7 +4,10 @@
 /* Copyright (c) Robert Patrick Rankin, 1991                      */
 /* NetHack may be freely redistributed.  See license for details. */
 
-#include "hack.h" /* for config.h+extern.h */
+#include "hack.h"
+#ifdef BOT_GRAPHICS
+#include "winbot.h"
+#endif /* for config.h+extern.h */
 /*=
     Assorted 'small' utility routines.  They're virtually independent of
     NetHack, except that rounddiv may call panic().  setrandom calls one
@@ -925,7 +928,18 @@ time_t
 getnow()
 {
     time_t datetime = 0;
+#ifdef BOT_GRAPHICS
+    /* NH_SEED games must replay identically: night(), midnight(), the moon
+       phase and Friday 13th all change rn2() draws, so a seeded game uses a
+       fixed neutral clock (NH_FIXED_TIME, default Wed 2026-01-14 12:00 UTC:
+       day, waning crescent, not the 13th).  Real time is kept otherwise. */
+    const char *s;
 
+    if (assist_seed_set()) {
+        s = nh_getenv("NH_FIXED_TIME");
+        return (time_t) ((s && *s) ? atol(s) : 1768392000L);
+    }
+#endif
     (void) time((TIME_type) &datetime);
     return datetime;
 }

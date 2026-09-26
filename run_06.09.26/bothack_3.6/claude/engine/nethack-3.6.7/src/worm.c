@@ -630,6 +630,12 @@ register struct monst *worm;
         }
         curr = curr->nseg;
     }
+    /* [bot] bullet proofing: never leave the head on the map when the
+       segment list lost track of it (it would dangle once freed) */
+    if (isok(worm->mx, worm->my) && level.monsters[worm->mx][worm->my] == worm) {
+        remove_monster(worm->mx, worm->my);
+        newsym(worm->mx, worm->my);
+    }
 }
 
 /*

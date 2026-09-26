@@ -63,6 +63,23 @@ def run_one(args, gid, seed, extra):
     return p, logf, out, time.time()
 
 
+def games_running():
+    """rungame processes on this machine, whatever series or directory they
+    belong to (for --max-procs)."""
+    n = 0
+    for pid in os.listdir('/proc'):
+        if not pid.isdigit():
+            continue
+        try:
+            with open('/proc/%s/cmdline' % pid, 'rb') as f:
+                argv = f.read().split(b'\0')
+        except OSError:
+            continue
+        if b'nhbot.rungame' in argv:
+            n += 1
+    return n
+
+
 def harness_result(out, gid, seed, outcome, reason):
     res = {'game_id': gid, 'engine_seed': seed, 'outcome': outcome,
            'reason': reason, 'stages': {}, 'harness_generated': True}
@@ -161,6 +178,10 @@ def main(argv=None):
     ap.add_argument('--max-turns', type=int, default=None)
     ap.add_argument('--max-seconds', type=int, default=None)
     ap.add_argument('--stop-on-repeat', type=int, default=3)
+    ap.add_argument('--max-procs', type=int, default=None,
+                    help="start a game only while fewer rungame processes "
+                    "run on the machine (all series): a new series takes "
+                    "over as the games of an older one end")
     ap.add_argument('--runs-dir', default=os.path.join(ROOT, 'runs'))
     args = ap.parse_args(argv)
     args.outdir = os.path.join(args.runs_dir, args.name)
@@ -187,7 +208,9 @@ def main(argv=None):
     stopped = None
     hard_limit = (args.max_seconds or 12 * 3600) + 600
     while pending or running:
-        while pending and len(running) < args.jobs and not stopped:
+        while (pending and len(running) < args.jobs and not stopped
+               and (not args.max_procs
+                    or games_running() < args.max_procs)):
             i, seed = pending.pop(0)
             gid = "g%03d" % (i + 1)
             p, logf, out, t0 = run_one(args, gid, seed, extra)

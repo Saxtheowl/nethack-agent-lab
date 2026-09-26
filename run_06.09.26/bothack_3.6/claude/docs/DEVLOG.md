@@ -173,3 +173,56 @@ and the prepared Astral scenarios.
   level drainers); the hero ended at XL1 with 10 HP.  Lifesave now restores
   levels up to `u.ulevelmax` and max HP to the highest seen
   (`restored_levels`, `restored_hpmax` in the event).
+
+## 2026-09-23 — engine segfault on the Astral Plane, reproducible games
+
+### Segfault (vanilla 3.6.7 bug, not the assists)
+
+`replay-planes504` died with SIGSEGV at T=10409 on the Astral Plane.  The
+recorded trace, replayed into the engine alone (`tools/replay_engine.py`,
+same seed and clock, a few minutes), reproduces it exactly.  Under gdb it
+happened in `m_move` (monmove.c:1010): `m_at()` returned a freed monster.
+
+That monster was a **long worm**.  `mm_displacement()` lets a displacer (the
+Archon) swap places with a long worm that has no visible segments
+(`count_wsegs() == 0`).  `mdisplacem()` moves the monster on the map but not
+the worm's head segment.  When the worm later died (magic missile from
+another monster), `remove_worm()` cleared the head segment's *old* square,
+which was the Archon's.  The freed worm stayed on the map.
+
+Fix:
+- no displacement of long worms (`mon.c`, `mhitm.c`);
+- `remove_worm()` also clears the worm's own square if it still points to
+  the worm (`worm.c`).
+
+With the `worm.c` part alone, the unchanged trace replays past T=10409
+without crashing.  Engine crashes now leave a backtrace in `engine.stderr`
+(`winbot.c` signal handler; resolve with `addr2line -f -e nethack +offset`).
+
+### Determinism
+
+The copy of g011 (same seed) followed the original to the turn for 50 700
+turns, then diverged on the Astral Plane.  Cause: the engine reads the real
+clock.
+- `night()`, `midnight()`, the moon phase and Friday 13th change `rn2()`
+  draws.
+- g011 crossed 22:00 (NetHack's night) around T=50 687; the copy played in
+  the afternoon.
+
+Fix: a seeded game (`NH_SEED`) uses a fixed neutral clock:
+- `getnow()` returns `NH_FIXED_TIME`, by default Wed 2026-01-14 12:00 UTC:
+  daytime, waning crescent, not the 13th;
+- `TZ=UTC`.
+
+Also, `rungame` re-executes itself with `PYTHONHASHSEED=0`, because the
+order of string sets in the bot followed a hash that Python randomizes per
+process.  Two runs of the same seed now produce byte-identical protocol
+traces.
+
+Found on the way: NetHack silently ignores a `NETHACKOPTIONS` config file
+whose path is 128 characters or longer, and plays a random character.
+`prepare_gamedir` now refuses such paths.
+
+`series.py --max-procs N`: start a game only while fewer than N rungame
+processes run on the machine.  A new series takes over as the games of an
+older one end, without killing them.

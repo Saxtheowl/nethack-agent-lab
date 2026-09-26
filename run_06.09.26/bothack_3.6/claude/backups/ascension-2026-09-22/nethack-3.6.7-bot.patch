@@ -1,8 +1,8 @@
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/.hints engine/nethack-3.6.7/.hints
 --- vendor/NetHack-NetHack-3.6.7_Released/.hints	1970-01-01 00:00:00.000000000 +0000
-+++ engine/nethack-3.6.7/.hints	2026-09-23 18:29:25.341348195 +0000
++++ engine/nethack-3.6.7/.hints	2026-09-17 02:43:05.188696746 +0000
 @@ -0,0 +1 @@
-+linux-bot-headless
++linux-bot
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/include/config.h engine/nethack-3.6.7/include/config.h
 --- vendor/NetHack-NetHack-3.6.7_Released/include/config.h	2023-02-15 21:52:57.000000000 +0000
 +++ engine/nethack-3.6.7/include/config.h	2026-09-17 02:17:36.585029914 +0000
@@ -19,7 +19,7 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
  /* #define QT_GRAPHICS */    /* Qt interface */
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/include/dgn_comp.h engine/nethack-3.6.7/include/dgn_comp.h
 --- vendor/NetHack-NetHack-3.6.7_Released/include/dgn_comp.h	1970-01-01 00:00:00.000000000 +0000
-+++ engine/nethack-3.6.7/include/dgn_comp.h	2026-09-23 18:29:25.564350697 +0000
++++ engine/nethack-3.6.7/include/dgn_comp.h	2026-09-17 02:43:05.385698273 +0000
 @@ -0,0 +1,27 @@
 +#define INTEGER 257
 +#define A_DUNGEON 258
@@ -50,7 +50,7 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
 +extern YYSTYPE yylval;
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/include/lev_comp.h engine/nethack-3.6.7/include/lev_comp.h
 --- vendor/NetHack-NetHack-3.6.7_Released/include/lev_comp.h	1970-01-01 00:00:00.000000000 +0000
-+++ engine/nethack-3.6.7/include/lev_comp.h	2026-09-23 18:29:25.568350742 +0000
++++ engine/nethack-3.6.7/include/lev_comp.h	2026-09-17 02:43:05.387698288 +0000
 @@ -0,0 +1,212 @@
 +#define CHAR 257
 +#define INTEGER 258
@@ -894,72 +894,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
      /* in case of a subsequent panic(), there's no point trying to save */
      program_state.something_worth_saving = 0;
  #ifdef HANGUPHANDLING
-diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/src/hacklib.c engine/nethack-3.6.7/src/hacklib.c
---- vendor/NetHack-NetHack-3.6.7_Released/src/hacklib.c	2023-02-15 21:52:57.000000000 +0000
-+++ engine/nethack-3.6.7/src/hacklib.c	2026-09-23 18:34:15.280610609 +0000
-@@ -4,7 +4,10 @@
- /* Copyright (c) Robert Patrick Rankin, 1991                      */
- /* NetHack may be freely redistributed.  See license for details. */
- 
--#include "hack.h" /* for config.h+extern.h */
-+#include "hack.h"
-+#ifdef BOT_GRAPHICS
-+#include "winbot.h"
-+#endif /* for config.h+extern.h */
- /*=
-     Assorted 'small' utility routines.  They're virtually independent of
-     NetHack, except that rounddiv may call panic().  setrandom calls one
-@@ -925,7 +928,18 @@
- getnow()
- {
-     time_t datetime = 0;
--
-+#ifdef BOT_GRAPHICS
-+    /* NH_SEED games must replay identically: night(), midnight(), the moon
-+       phase and Friday 13th all change rn2() draws, so a seeded game uses a
-+       fixed neutral clock (NH_FIXED_TIME, default Wed 2026-01-14 12:00 UTC:
-+       day, waning crescent, not the 13th).  Real time is kept otherwise. */
-+    const char *s;
-+
-+    if (assist_seed_set()) {
-+        s = nh_getenv("NH_FIXED_TIME");
-+        return (time_t) ((s && *s) ? atol(s) : 1768392000L);
-+    }
-+#endif
-     (void) time((TIME_type) &datetime);
-     return datetime;
- }
-diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/src/mhitm.c engine/nethack-3.6.7/src/mhitm.c
---- vendor/NetHack-NetHack-3.6.7_Released/src/mhitm.c	2023-02-15 21:52:57.000000000 +0000
-+++ engine/nethack-3.6.7/src/mhitm.c	2026-09-23 18:53:54.089176092 +0000
-@@ -199,6 +199,10 @@
-     /* sanity checks; could matter if we unexpectedly get a long worm */
-     if (!magr || !mdef || magr == mdef)
-         return MM_MISS;
-+    /* [bot] a long worm's segment list would not follow (see
-+       mm_displacement) */
-+    if (magr->wormno || mdef->wormno)
-+        return MM_MISS;
-     pa = magr->data, pd = mdef->data;
-     tx = mdef->mx, ty = mdef->my; /* destination */
-     fx = magr->mx, fy = magr->my; /* current location */
-diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/src/mon.c engine/nethack-3.6.7/src/mon.c
---- vendor/NetHack-NetHack-3.6.7_Released/src/mon.c	2023-02-15 21:52:57.000000000 +0000
-+++ engine/nethack-3.6.7/src/mon.c	2026-09-23 18:53:54.089176092 +0000
-@@ -1584,8 +1584,11 @@
-         /* no displacing grid bugs diagonally */
-         && !(magr->mx != mdef->mx && magr->my != mdef->my
-              && NODIAG(monsndx(pd)))
--        /* no displacing trapped monsters or multi-location longworms */
--        && !mdef->mtrapped && (!mdef->wormno || !count_wsegs(mdef))
-+        /* no displacing trapped monsters or longworms: [bot] even a worm
-+           without visible segments keeps its head segment at the old spot,
-+           so its death then removes the displacer from the map and leaves
-+           the freed worm there (use after free, seen on the Astral Plane) */
-+        && !mdef->mtrapped && !mdef->wormno
-         /* riders can move anything; others, same size or smaller only */
-         && (is_rider(pa) || pa->msize >= pd->msize))
-         return ALLOW_MDISP;
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/src/timeout.c engine/nethack-3.6.7/src/timeout.c
 --- vendor/NetHack-NetHack-3.6.7_Released/src/timeout.c	2023-02-15 21:52:57.000000000 +0000
 +++ engine/nethack-3.6.7/src/timeout.c	2026-09-17 03:57:52.953573467 +0000
@@ -1026,22 +960,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
  #ifdef TTY_GRAPHICS
      { &tty_procs, win_tty_init CHAINR(0) },
  #endif
-diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/src/worm.c engine/nethack-3.6.7/src/worm.c
---- vendor/NetHack-NetHack-3.6.7_Released/src/worm.c	2023-02-15 21:52:57.000000000 +0000
-+++ engine/nethack-3.6.7/src/worm.c	2026-09-23 18:52:56.940560458 +0000
-@@ -630,6 +630,12 @@
-         }
-         curr = curr->nseg;
-     }
-+    /* [bot] bullet proofing: never leave the head on the map when the
-+       segment list lost track of it (it would dangle once freed) */
-+    if (isok(worm->mx, worm->my) && level.monsters[worm->mx][worm->my] == worm) {
-+        remove_monster(worm->mx, worm->my);
-+        newsym(worm->mx, worm->my);
-+    }
- }
- 
- /*
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/sys/share/unixtty.c engine/nethack-3.6.7/sys/share/unixtty.c
 --- vendor/NetHack-NetHack-3.6.7_Released/sys/share/unixtty.c	2023-02-15 21:52:57.000000000 +0000
 +++ engine/nethack-3.6.7/sys/share/unixtty.c	2026-09-17 02:17:10.871841403 +0000
@@ -1131,48 +1049,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
 +VARDIRPERM = 0755
 +VARFILEPERM = 0644
 +GAMEPERM = 0755
-diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/sys/unix/hints/linux-bot-headless engine/nethack-3.6.7/sys/unix/hints/linux-bot-headless
---- vendor/NetHack-NetHack-3.6.7_Released/sys/unix/hints/linux-bot-headless	1970-01-01 00:00:00.000000000 +0000
-+++ engine/nethack-3.6.7/sys/unix/hints/linux-bot-headless	2026-09-23 18:53:54.115176372 +0000
-@@ -0,0 +1,38 @@
-+#
-+# NetHack 3.6.7 hints: headless build, "bot" window port only (no tty, no ncurses).
-+# Used by engine/build.sh (PREFIX is passed on the make command line).
-+#
-+#-PRE
-+
-+PREFIX=$(BOTPREFIX)
-+HACKDIR=$(PREFIX)/nhdir
-+SHELLDIR = $(PREFIX)/bin
-+INSTDIR=$(HACKDIR)
-+VARDIR = $(HACKDIR)
-+
-+POSTINSTALL=cp -n sys/unix/sysconf $(INSTDIR)/sysconf; chmod $(VARFILEPERM) $(INSTDIR)/sysconf;
-+
-+CFLAGS=-g -O2 -I../include -DNOTPARMDECL
-+CFLAGS+=-DDLB
-+CFLAGS+=-DSYSCF -DSYSCF_FILE=\"sysconf\"
-+CFLAGS+=-DHACKDIR=\"$(HACKDIR)\"
-+CFLAGS+=-DDUMPLOG
-+CFLAGS+=-DCONFIG_ERROR_SECURE=FALSE
-+CFLAGS+=-DBOT_GRAPHICS -DBOT_HEADLESS -DDEFAULT_WINDOW_SYS=\"bot\"
-+CFLAGS+=-Wno-format-truncation
-+
-+LINK=$(CC)
-+LFLAGS=-rdynamic
-+
-+WINSRC = ../win/bot/winbot.c
-+WINOBJ = winbot.o
-+WINLIB =
-+
-+WINTTYLIB=
-+
-+CHOWN=true
-+CHGRP=true
-+
-+VARDIRPERM = 0755
-+VARFILEPERM = 0644
-+GAMEPERM = 0755
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/sys/unix/unixmain.c engine/nethack-3.6.7/sys/unix/unixmain.c
 --- vendor/NetHack-NetHack-3.6.7_Released/sys/unix/unixmain.c	2023-02-15 21:52:57.000000000 +0000
 +++ engine/nethack-3.6.7/sys/unix/unixmain.c	2026-09-16 21:38:55.551331797 +0000
@@ -1196,8 +1072,8 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
  
 diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=nethack' '--exclude=makedefs' '--exclude=lev_comp' '--exclude=dgn_comp' '--exclude=dlb' '--exclude=recover' '--exclude=*.lev' '--exclude=nhdat' '--exclude=date.h' '--exclude=onames.h' '--exclude=pm.h' '--exclude=vis_tab.*' '--exclude=lev_*.c' '--exclude=dgn_*.c' '--exclude=*_yacc.c' '--exclude=*_lex.c' '--exclude=*.tab.*' '--exclude=Sys*' '--exclude=monstr.c' '--exclude=tile.c' '--exclude=dat' '--exclude=util' '--exclude=doc' vendor/NetHack-NetHack-3.6.7_Released/win/bot/winbot.c engine/nethack-3.6.7/win/bot/winbot.c
 --- vendor/NetHack-NetHack-3.6.7_Released/win/bot/winbot.c	1970-01-01 00:00:00.000000000 +0000
-+++ engine/nethack-3.6.7/win/bot/winbot.c	2026-09-23 18:29:25.313347881 +0000
-@@ -0,0 +1,1406 @@
++++ engine/nethack-3.6.7/win/bot/winbot.c	2026-09-17 04:01:19.272560895 +0000
+@@ -0,0 +1,1380 @@
 +/* NetHack 3.6.7  winbot.c
 + *
 + * "bot" window port: a structured, synchronous JSON-lines protocol for
@@ -1238,8 +1114,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
 +#include "patchlevel.h"
 +
 +#include <errno.h>
-+#include <execinfo.h>
-+#include <signal.h>
 +#include <stdarg.h>
 +#include <unistd.h>
 +
@@ -1741,26 +1615,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
 +
 +/* ---------------------------------------------------------- window procs */
 +
-+/* a crash of the engine leaves a backtrace in engine.stderr (the harness
-+   has no core dumps): addr2line -f -e nethack <offsets> resolves it */
-+static void
-+bot_crash_handler(sig)
-+int sig;
-+{
-+    void *frames[64];
-+    int n;
-+    char buf[80];
-+
-+    n = snprintf(buf, sizeof buf, "\nwinbot: fatal signal %d at turn %ld\n",
-+                 sig, moves);
-+    if (n > 0)
-+        (void) write(2, buf, (size_t) n);
-+    n = backtrace(frames, 64);
-+    backtrace_symbols_fd(frames, n, 2);
-+    signal(sig, SIG_DFL);
-+    raise(sig);
-+}
-+
 +void
 +bot_init_nhwindows(argcp, argv)
 +int *argcp;
@@ -1772,10 +1626,6 @@ diff -ruN '--exclude=*.o' '--exclude=Makefile' '--exclude=*.orig' '--exclude=net
 +
 +    nhUse(argcp);
 +    nhUse(argv);
-+    signal(SIGSEGV, bot_crash_handler);
-+    signal(SIGBUS, bot_crash_handler);
-+    signal(SIGFPE, bot_crash_handler);
-+    signal(SIGABRT, bot_crash_handler);
 +    if ((s = nh_getenv("NH_BOT_IN_FD")) != 0)
 +        infd = atoi(s);
 +    if ((s = nh_getenv("NH_BOT_OUT_FD")) != 0)

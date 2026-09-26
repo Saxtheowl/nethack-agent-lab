@@ -16,6 +16,7 @@ Files written in --out:
 """
 import argparse
 import hashlib
+import gzip
 import json
 import logging
 import os
@@ -228,7 +229,10 @@ def run_game(args):
         os.path.join(out, 'last_steps.live.jsonl')))
     eng = Engine(out, seed=seed, wizard=args.wizard, assists=assists,
                  name=args.name,
-                 trace=(open(os.path.join(out, 'protocol.trace'), 'w')
+                 trace=(gzip.open(os.path.join(out, 'protocol.trace.gz'),
+                                  'wt', compresslevel=6)
+                        if args.record else
+                        open(os.path.join(out, 'protocol.trace'), 'w')
                         if args.protocol_trace else None))
     t0 = time.time()
     eng.start()
@@ -273,6 +277,11 @@ def run_game(args):
         except Exception:
             pass
     eng.stop()
+    if eng.trace is not None:
+        try:
+            eng.trace.close()       # flushes the gzip stream (--record)
+        except Exception:           # noqa: BLE001
+            pass
     elapsed = time.time() - t0
     xlog = read_xlogfile(out)
     outcome, reason = classify(abort, eng.verdict, xlog, eng.returncode,
@@ -372,6 +381,9 @@ def build_parser():
     ap.add_argument('--trace', action='store_true',
                     help="write every observation/answer to trace.jsonl")
     ap.add_argument('--protocol-trace', action='store_true')
+    ap.add_argument('--record', action='store_true',
+                    help="gzip the whole protocol (replay: "
+                         "tools/trace2ttyrec.py then ttyplay)")
     ap.add_argument('--keep-levels', action='store_true')
     ap.add_argument('--log', default='WARNING')
     return ap
@@ -407,4 +419,10 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
+    # a seed must replay the same game: the order of sets of strings in the
+    # bot follows the string hash, which Python randomizes per process
+    if os.environ.get('PYTHONHASHSEED') != '0':
+        os.environ['PYTHONHASHSEED'] = '0'
+        os.execv(sys.executable, [sys.executable, '-m', 'nhbot.rungame']
+                 + sys.argv[1:])
     sys.exit(main())

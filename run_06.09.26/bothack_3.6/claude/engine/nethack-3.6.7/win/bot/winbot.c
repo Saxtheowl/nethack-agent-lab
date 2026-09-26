@@ -38,6 +38,8 @@
 #include "patchlevel.h"
 
 #include <errno.h>
+#include <execinfo.h>
+#include <signal.h>
 #include <stdarg.h>
 #include <unistd.h>
 
@@ -539,6 +541,26 @@ const char *what, *got;
 
 /* ---------------------------------------------------------- window procs */
 
+/* a crash of the engine leaves a backtrace in engine.stderr (the harness
+   has no core dumps): addr2line -f -e nethack <offsets> resolves it */
+static void
+bot_crash_handler(sig)
+int sig;
+{
+    void *frames[64];
+    int n;
+    char buf[80];
+
+    n = snprintf(buf, sizeof buf, "\nwinbot: fatal signal %d at turn %ld\n",
+                 sig, moves);
+    if (n > 0)
+        (void) write(2, buf, (size_t) n);
+    n = backtrace(frames, 64);
+    backtrace_symbols_fd(frames, n, 2);
+    signal(sig, SIG_DFL);
+    raise(sig);
+}
+
 void
 bot_init_nhwindows(argcp, argv)
 int *argcp;
@@ -550,6 +572,10 @@ char **argv;
 
     nhUse(argcp);
     nhUse(argv);
+    signal(SIGSEGV, bot_crash_handler);
+    signal(SIGBUS, bot_crash_handler);
+    signal(SIGFPE, bot_crash_handler);
+    signal(SIGABRT, bot_crash_handler);
     if ((s = nh_getenv("NH_BOT_IN_FD")) != 0)
         infd = atoi(s);
     if ((s = nh_getenv("NH_BOT_OUT_FD")) != 0)

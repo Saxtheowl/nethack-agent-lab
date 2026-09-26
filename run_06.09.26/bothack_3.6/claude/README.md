@@ -127,6 +127,14 @@ Explain:
     python3 -m nhbot.analyze runs/mt01            # series summary
     python3 -m nhbot.analyze runs/mt01/g003 --steps 150
 
+Replays (like the ttyrecs of the BotHack port):
+
+    python3 -m nhbot.rungame --out runs/replays/x --seed 8011 --record   # record
+    tools/replay.sh runs/replays/x                       # convert + ttyplay
+    tools/replay.sh worker:bothack36-dev3/runs/dev/replay-8011   # from the worker
+    # engine alone, answers of a trace (reach a crash in minutes):
+    python3 tools/replay_engine.py <game>/protocol.trace.gz runs/re -- --seed N [--scenario S]
+
 Tests:
 
     python3 -m pytest -q tests

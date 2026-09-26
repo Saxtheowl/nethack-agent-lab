@@ -1584,8 +1584,11 @@ struct monst *magr, /* monster that is currently deciding where to move */
         /* no displacing grid bugs diagonally */
         && !(magr->mx != mdef->mx && magr->my != mdef->my
              && NODIAG(monsndx(pd)))
-        /* no displacing trapped monsters or multi-location longworms */
-        && !mdef->mtrapped && (!mdef->wormno || !count_wsegs(mdef))
+        /* no displacing trapped monsters or longworms: [bot] even a worm
+           without visible segments keeps its head segment at the old spot,
+           so its death then removes the displacer from the map and leaves
+           the freed worm there (use after free, seen on the Astral Plane) */
+        && !mdef->mtrapped && !mdef->wormno
         /* riders can move anything; others, same size or smaller only */
         && (is_rider(pa) || pa->msize >= pd->msize))
         return ALLOW_MDISP;
