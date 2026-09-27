@@ -179,7 +179,8 @@ def hp_guard(text, value, named):
         base = hp
     # a counted rest/search (n20s...) passes many turns in ONE command: nothing
     # can stop it in between, so it is refused when already hurt
-    if not named and re.match(r'^n?\d{2,}[s.]$', value or '') and hp < mx * 0.7:
+    # (number_pad: counts need the n prefix; bare digits are moves, e.g. farlook cursor keys)
+    if not named and re.match(r'^n\d+[s.]$', value or '') and hp < mx * 0.7:
         raise HPAlarm(f'Counted rest {value!r} refused at HP {hp}({mx}) (< 70%): a monster can hit you for '
                       'the whole count. Rest one turn at a time (s) with an HP check, or get safe first.')
     # Stoning / sliming: only curing actions may go through (eat a lizard or an
@@ -190,6 +191,10 @@ def hp_guard(text, value, named):
             re.match(r'^(?:n?\d|[_FmMsGg]|[hjklyubnHJKLYUBN]$|\d)', value or '') and value not in ('y', 'n')):
         raise HPAlarm(f'Refused {value!r}: you are turning to STONE/SLIME. Cure it NOW: eat a lizard corpse '
                       '(e + letter), or an acidic corpse, or #pray, before anything else.')
+    # several blind steps at low HP walked slot 2 into an Elvenking and a xorn
+    if not named and re.fullmatch(r'[1-46-9]{3,}', value or '') and hp < mx * 0.5:
+        raise HPAlarm(f'Refused {value!r}: {len(value)} steps in one go at HP {hp}({mx}) (< 50%). '
+                      'Move one step at a time and re-read the screen after each.')
     tripped = st.get("tripped", False) or (hp <= base - mx / 5 and hp < mx * 0.6)
     HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped}))
     if tripped and not (named and value == 'Escape'):
