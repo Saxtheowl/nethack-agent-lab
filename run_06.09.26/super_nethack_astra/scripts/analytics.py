@@ -191,3 +191,52 @@ if __name__ == '__main__':
     import sys
     s = summarize(sys.argv[1])
     print(json.dumps({k: v for k, v in s.items() if k not in ('series', 'key_events')}, ensure_ascii=False, indent=1)[:3000])
+
+
+# ---- "really important" moments for the replay timeline -------------------
+KIT = re.compile(r'bag of holding|unicorn horn|amulet of (?:reflection|life saving|ESP)|dragon scale|'
+                 r'wand of (?:wishing|digging|teleportation|death|sleep|cold|fire|lightning|create monster|polymorph|cancellation)|'
+                 r'speed boots|jumping boots|levitation boots|gauntlets of power|cloak of (?:magic resistance|displacement)|'
+                 r'magic marker|luckstone|ring of (?:free action|levitation|conflict|slow digestion|teleport control|regeneration)|'
+                 r'magic lamp|holy water|scroll of (?:genocide|charging|enchant armor)|blindfold|towel|Excalibur|'
+                 r'Magicbane|Mjollnir|Grayswandir|Stormbringer|Vorpal Blade|oilskin cloak|elven mithril|dwarvish mithril|'
+                 r'crystal plate mail|silver dragon|gray dragon', re.I)
+DANGEROUS = {'soldier ant', 'fire ant', 'cockatrice', 'chickatrice', 'mumak', 'troll', 'ice troll', 'rock troll',
+             'water troll', 'Olog-hai', 'mind flayer', 'master mind flayer', 'nymph', 'water nymph', 'wood nymph',
+             'mountain nymph', 'leprechaun', 'giant mimic', 'large mimic', 'owlbear', 'soldier', 'sergeant',
+             'lieutenant', 'captain', 'werewolf', 'werejackal', 'wererat', 'green slime', 'disenchanter',
+             'rust monster', 'gelatinous cube', 'cockatrice', 'ettin', 'titan', 'minotaur', 'purple worm',
+             'black dragon', 'red dragon', 'blue dragon', 'green dragon', 'yellow dragon', 'white dragon',
+             'orange dragon', 'silver dragon', 'gray dragon', 'lich', 'demilich', 'master lich', 'vampire',
+             'vampire lord', 'energy vortex', 'chameleon', 'giant spider', 'winter wolf', 'hell hound',
+             'Uruk-hai', 'orc shaman', 'gnome lord', 'dwarf lord', 'dwarf king', 'Woodland-elf', 'Green-elf',
+             'Grey-elf', 'elf-lord', 'Elvenking', 'xorn', 'umber hulk', 'zruty', 'jabberwock', 'storm giant',
+             'ettin mummy', 'giant mummy', 'panther', 'jaguar', 'lynx', 'yellow light', 'black light',
+             'floating eye', 'gold golem', 'air elemental', 'water demon', 'djinni', 'succubus', 'incubus'}
+IMPORTANT_TYPES = {'excalibur': '⚔ Excalibur', 'wish': '✨ Wish', 'lifesave': '✚ Lifesaved', 'intrinsic': '◆ Intrinsèque',
+                   'theft': '✋ Vol', 'death': '☠ Mort', 'lowhp': '♥ HP très bas', 'stoning': '🪨 Stoning',
+                   'sick': '☣ Deathly sick', 'altar': '⛪ Altar', 'faint': '💤 Fainted'}
+
+
+def key_events(gid):
+    """Really important moments (frame index, label) for the replay's filter."""
+    out, seen_mon = [], set()
+    for e in analyze(gid)['events']:
+        t, v = e['type'], e.get('v', '')
+        label = None
+        if t in IMPORTANT_TYPES:
+            label = IMPORTANT_TYPES[t] + ((' : ' + v) if t in ('intrinsic', 'lowhp', 'altar') else '')
+            if t == 'intrinsic':
+                label = '◆ ' + v
+        elif t == 'pickup' and KIT.search(v):
+            key = re.sub(r'\(.*|rustproof |fixed |[-+]\d+ ', '', v).strip()[:14]
+            if key in seen_mon:  # inventory lines repeat the same item
+                continue
+            seen_mon.add(key)
+            label = '💎 Objet clé : ' + re.sub(r'\s*\(.*$', '', v)
+        elif t in ('kill', 'hit_by', 'pet_kill') and v in DANGEROUS and v not in seen_mon:
+            seen_mon.add(v)
+            label = '👹 Monstre dangereux : ' + v
+        if label:
+            out.append({'f': e['f'], 'turn': e['turn'], 'type': t, 'label': label[:90]})
+    return out

@@ -612,6 +612,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send({'chronicle': out})
             if url.path == '/api/history':
                 return self.send(history())
+            if url.path == '/api/keyevents':
+                return self.send({'events': analytics.key_events(gid)})
             if url.path == '/api/styles':
                 return self.send(styles())
             if url.path == '/api/file':

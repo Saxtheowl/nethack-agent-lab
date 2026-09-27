@@ -211,6 +211,13 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
 .insight { background: #1c2a22; border: 1px solid #36513d; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px; }
 .insight li { margin: 4px 0; }
 .check { color: #9fe38e; } .nocheck { color: #3c4c50; }
+#mktip { position: fixed; z-index: 10000; display: none; pointer-events: none; background: #0b1114f2; border: 1px solid var(--accent);
+  border-radius: 8px; padding: 6px 10px; max-width: 420px; font-size: 13px; box-shadow: 0 4px 18px #000a; }
+#mktip b { display: block; color: var(--text); } #mktip small { color: var(--muted); font-size: 11.5px; }
+.mk.key, .ev.key::before { background: var(--gold); } .mk.chron.imp { background: var(--gold); }
+.timeline .mk.imp { top: 0; height: 13px; width: 4px; }
+.timeline.onlyimp .mk { top: -2px; height: 16px; width: 5px; transform: translateX(-2px); }
+.timeline .mk:hover { z-index: 3; }
 /* history tab */
 .hbig { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
 .hbig .tile .v { font-size: 34px; } .tile.bad .v { color: var(--bad); } .tile.good .v { color: #9fe38e; } .tile.gold .v { color: var(--gold); }
@@ -346,7 +353,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
         <h2 style="margin:0">Replay</h2>
         <select id="gamesel"></select>
         <span class="loading" id="rload"></span>
-        <span style="margin-left:auto" class="kbd">Espace lecture · ←/→ image · Maj+←/→ ±50 · N/P évènement · L direct · M marque-page</span>
+        <span style="margin-left:auto" class="kbd">Espace lecture · ←/→ image · Maj+←/→ ±50 · N/P évènement · I importants · L direct · M marque-page</span>
       </div>
       <div class="term" id="rterm"></div>
       <div class="timeline" id="timeline"><div class="track"></div><div class="fill" id="tfill"></div><div id="tmarks"></div><div class="knob" id="tknob"></div></div>
@@ -363,6 +370,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
           <option value="25">×25</option><option value="80">×80</option><option value="300">×300</option>
         </select>
         <label class="kbd"><input type="checkbox" id="skipidle" checked> sauter les pauses</label>
+        <button id="bimp" title="N'afficher que les évènements vraiment importants : objets clés, monstres dangereux, Excalibur, vols, HP très bas, morts, chronique ★★ (I)">★ Importants seulement</button>
         <button id="bmark" title="Ajouter un marque-page (M)">📌</button>
         <button id="bshare" title="Copier un lien vers cet instant">🔗</button>
         <button id="bbig" title="Grand écran (F)">⛶ Grand écran</button>
@@ -699,7 +707,7 @@ function computeDerived(from) {
     if (msg) {
       const all = ['1','2','3','4','5','6','7'].map(y => rowText(f.r[y])).join(' ');
       if (/You die|is fatal|Do you want your possessions identified/.test(all) && !R.events.some(e => e.type === 'death'))
-        R.events.push({f: i, type: 'death', label: '☠ Mort : ' + (all.match(/[^.!]*(?:fatal|You die)[^.!]*/) || [''])[0].trim().slice(0, 80)});
+        R.events.push({f: i, type: 'death', imp: true, label: '☠ Mort : ' + (all.match(/[^.!]*(?:fatal|You die)[^.!]*/) || [''])[0].trim().slice(0, 80)});
     }
   }
 }
@@ -715,7 +723,9 @@ async function loadGame(gid, at) {
     await fetchMore(true);
     try { R.log = (await api('/api/log?game=' + encodeURIComponent(gid))).log; } catch (e) { R.log = []; }
     for (const l of R.log) if (l.kind === 'decision' && l.text) R.events.push({f: frameAtTime(l.t), type: 'say', label: '💬 ' + l.text});
-    try { for (const c of (await api('/api/chronicle?game=' + encodeURIComponent(gid))).chronicle) R.events.push({f: c.frame, type: 'chron', label: (ICON[c.kind] || '★') + ' ' + c.title}); } catch (e) {}
+    try { for (const c of (await api('/api/chronicle?game=' + encodeURIComponent(gid))).chronicle) R.events.push({f: c.frame, type: 'chron', imp: (c.importance || 2) >= 2, label: (ICON[c.kind] || '★') + ' ' + c.title}); } catch (e) {}
+    try { for (const k of (await api('/api/keyevents?game=' + encodeURIComponent(gid))).events) R.events.push({f: k.f, type: 'key', imp: true, label: k.label}); } catch (e) {}
+    drawTimeline(); drawEvents();
     loadWhy(gid);
   }
   R.follow = at === 'live';
@@ -799,14 +809,36 @@ function tick(ts) {
 requestAnimationFrame(tick);
 
 /* timeline, events, chart */
-function allEvents() { return [...R.events, ...R.marks.map(m => ({f: m.f, type: 'mark', label: '📌 ' + m.note}))].sort((a, b) => a.f - b.f); }
+let ONLY_IMP = false;
+try { ONLY_IMP = localStorage.getItem('onlyImp') === '1'; } catch (e) {}
+function allEvents() {
+  const all = [...R.events, ...R.marks.map(m => ({f: m.f, type: 'mark', imp: true, label: '📌 ' + m.note}))];
+  return (ONLY_IMP ? all.filter(e => e.imp) : all).sort((a, b) => a.f - b.f);
+}
+const mkTip = el('div', {id: 'mktip'}); document.body.append(mkTip);
+function showTip(ev, e) {
+  const s = R.status[e.f];
+  mkTip.replaceChildren(el('b', {textContent: e.label}), el('small', {textContent: (s ? `T${s[0]} · Dlvl ${s[1]} · ` : '') + 'clic pour y aller'}));
+  mkTip.style.display = 'block';
+  const r = ev.currentTarget.getBoundingClientRect(), w = mkTip.offsetWidth;
+  mkTip.style.left = Math.max(6, Math.min(innerWidth - w - 6, r.left - w / 2)) + 'px';
+  mkTip.style.top = (r.top - mkTip.offsetHeight - 8) + 'px';
+}
 function drawTimeline() {
   const n = Math.max(1, R.frames.length - 1);
+  $('#timeline').classList.toggle('onlyimp', ONLY_IMP);
   $('#tmarks').replaceChildren(...allEvents().filter(e => e.type !== 'say' || R.log.length < 400).map(e => {
-    const m = el('div', {className: 'mk ' + e.type, title: e.label}); m.style.left = (e.f / n * 100) + '%';
-    m.onclick = ev => { ev.stopPropagation(); seek(e.f); }; return m;
+    const m = el('div', {className: 'mk ' + e.type + (e.imp ? ' imp' : '')}); m.style.left = (e.f / n * 100) + '%';
+    m.onmouseenter = ev => showTip(ev, e); m.onmouseleave = () => { mkTip.style.display = 'none'; };
+    m.onclick = ev => { ev.stopPropagation(); mkTip.style.display = 'none'; seek(e.f); }; return m;
   }));
 }
+function setOnlyImp(v) {
+  ONLY_IMP = v; try { localStorage.setItem('onlyImp', v ? '1' : '0'); } catch (e) {}
+  $('#bimp').classList.toggle('on', v); drawTimeline(); drawEvents();
+}
+$('#bimp').onclick = () => setOnlyImp(!ONLY_IMP);
+$('#bimp').classList.toggle('on', ONLY_IMP);
 $('#timeline').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); seek(Math.round((e.clientX - r.left) / r.width * (R.frames.length - 1))); };
 function drawEvents() {
   const list = $('#evlist');
@@ -889,6 +921,7 @@ addEventListener('keydown', e => {
   else if (k === 'ArrowLeft') { e.preventDefault(); seek(R.pos - (e.shiftKey ? 50 : 1)); }
   else if (k === 'Home') seek(0); else if (k === 'End') seek(R.frames.length - 1);
   else if (k === 'n' || k === 'N') nextEv(1); else if (k === 'p' || k === 'P') nextEv(-1);
+  else if (k === 'i' || k === 'I') setOnlyImp(!ONLY_IMP);
   else if (k === 'l' || k === 'L') $('#blive').click(); else if (k === 'm' || k === 'M') $('#bmark').click();
 });
 
