@@ -1,0 +1,19 @@
+#!/bin/bash
+# onworker [--timeout S] <command...>
+# Run a heavy computation (Sokoban solver, search, analysis...) on the
+# miniforum worker instead of this machine. Run it from your slot directory
+# (slots/N): that directory is copied to the worker (~/nethack-compute/slotN),
+# the command runs there with a time limit and an 8 GB memory cap, and any
+# files it creates are copied back. Stdout/stderr are shown here.
+set -euo pipefail
+tmo=600
+[ "${1:-}" = "--timeout" ] && { tmo=$2; shift 2; }
+here=$(pwd)
+name=$(basename "$here")
+[[ "$here" == */slots/* ]] || name="root-$(basename "$here")"
+remote="nethack-compute/slot$name"
+ssh -o BatchMode=yes miniforum-worker "mkdir -p ~/$remote"
+rsync -az --exclude '__pycache__' "$here/" "miniforum-worker:$remote/"
+cmd=$(printf '%q ' "$@")
+ssh -o BatchMode=yes miniforum-worker "cd ~/$remote && timeout $tmo prlimit --as=8000000000 bash -c $(printf '%q' "$cmd")" || echo "onworker: command failed or timed out (exit $?)" >&2
+rsync -az --exclude '__pycache__' "miniforum-worker:$remote/" "$here/"

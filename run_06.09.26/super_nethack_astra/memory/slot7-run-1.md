@@ -5,12 +5,13 @@ Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, slot3-run-1.
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: T7835 Dlvl7 (main) HP66(73) AC4 XL6, last prayer T6920 (faim) → next OK ~T8000+.
-Wield a: blessed rustproof +1 EXCALIBUR. Worn c +3 small shield, p +0 orcish helm, t +0 snow boots. Long sword Skilled. TELEPATHY (floating eye T7144).
-Food: 1 uncursed food ration (l). Spinach mangé T7700 (St 18/07). $4. Con 17 (rabid rat).
-Sky blue potion = gain level (vu un leprechaun la boire).
-Large dog laissé sur D7 (côté est, pièce 50-59,25-29) — abandonné, trop coûteux à ramener.
-D7 : '>' 3,17 (ouest), teleportation trap 58,26 (utile pour rejoindre l'ouest).
+URGENT: T10123 Minetown (Mines D7, sur l'altar 37,17) HP90(90) AC2 XL8 Fast, last prayer T9870 (faim) → next OK ~T10900+.
+Wield a: blessed rustproof +1 EXCALIBUR (Expert). Worn: T elven mithril-coat (-1, décursé holy water), V +1 faded pall (elven cloak), p +0 orcish helm, t +0 snow boots. TELEPATHY.
+Food: 1 uncursed food ration (Y). $26. Scrolls: g blessed ZELGO MER (= create monster), N blessed blank.
+IDs : VE FORBRYDERNE=magic mapping, ASHPD SODALG=amnesia (lu T10089, carte oubliée), PRATYAVAYAH=charging, ZELGO MER=create monster, LOREM IPSUM=enchant armor, YUM YUM=confuse monster, VELOX NEB (maudit, laissé)=?
+Potions : white=speed, pink=acid, puce=oil, murky=levitation, ruby=sleeping, swirly=healing, sky blue=gain level, clear bénie=holy water, dark/effervescent maudits laissés sur l'altar.
+Wands: q slow monster, d light, I oak (rechargée, inconnue), O spiked, W glass (inconnues, pas de msg à l'engrave). Rings non essayés : o bronze, f ruby (uncursed).
+Daggers : b +0, R 2 elven (uncursed). Shield volé par la mountain nymph de D10.
 Tout BUC-testé uncursed (altar neutre Minetown 37,17) : i 2 orcish daggers, b dagger ; scrolls f VE FORBRYDERNE, j PRATYAVAYAH, z ASHPD SODALG ;
 potions h white, r pink, w puce, x murky, J ruby ; ring o bronze ; wands q iridium (=slow monster), I oak (no engrave msg).
 Laissés sur l'altar : cursed dark potion, cursed jade ring. Gems C orange, D red, E 3 violet, F 2 white (non testées).
@@ -21,6 +22,8 @@ D1 fountain asséchée. D2 sink 52,19. D3 sink 68,14. D4 '<' 66,14, Mines '>' 38
 D5: '<' 29,22, '>' 16,27, fountains 17,26 62,13 75,18. D6: '<' 31,25, '>' 75,24, fountain 30,26. D7: '<' 56,14, level teleport trap vers 38,25.
 
 ## Lessons
+- Nymph endormie : ne pas l'attaquer au corps-à-corps si elle peut survivre à 1 coup ; elle a volé le +3 small shield (T9480). Préférer la fuir ou la tuer à distance.
+- Sokoban = niveau SOUS l'Oracle (dungeon.def : CHAINBRANCH oracle +1 up).
 - Level teleport trap (3.6.7) : disparaît après usage (deltrap dans level_tele_trap) ; le dog reste derrière.
 - Rothe : 3 attaques, jusqu'à 14/tour ; Elbereth dès la moitié des HP (il le respecte).
 - Were (jackal/rat) en forme animale : morsure = lycanthropy (prayer la guérit). En forme @ : le tuer vite.

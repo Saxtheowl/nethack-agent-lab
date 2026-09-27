@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+# board X0 X1 Y0 Y1: print the map region with exact x coordinates (x = screen column - 1 inside the frame)
+import subprocess, os, sys
+x0, x1, y0, y1 = map(int, sys.argv[1:5])
+out = subprocess.run(['python3', 'scripts/session.py', 'screen'], capture_output=True, text=True,
+                     env=dict(os.environ, NH_SLOT='7')).stdout.split('\n')
+# screen line index: row y is out[y] (line 0 is header?) -> detect by locating '@' vs Terminal cursor
+print('    ' + ''.join(str(x % 10) for x in range(x0, x1 + 1)))
+for y in range(y0, y1 + 1):
+    line = out[y] if y < len(out) else ''
+    print(f'{y:3} ' + ''.join(line[x] if x < len(line) else ' ' for x in range(x0, x1 + 1)))

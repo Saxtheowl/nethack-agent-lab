@@ -8,11 +8,13 @@ hp() { echo "$1" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2; }
 prev=$(hp "$($S screen --compact)")
 for i in $(seq "${2:-1}"); do
   out=$($S keys --compact --raw "$1" 2>&1)
+  if echo "$out" | grep -E '^0[1-7] ' | tail -1 | grep -q 'Really attack'; then $S keys --raw n >/dev/null; echo "STOP: peaceful in the way (answered n)"; break; fi
   h=$(hp "$out")
   msg=$(echo "$out" | grep -E '^0[1-7] ' | tail -2)
   echo "[$i] HP:$h $(echo "$out" | grep -o 'T:[0-9]*' | head -1) $(echo "$msg" | tail -1 | cut -c5-80)"
   [[ -n "$h" && -n "$prev" && "$h" -lt "$prev" ]] && { echo "STOP: HP loss"; break; }
-  echo "$out" | grep -E '^0[1-7] ' | tail -1 | grep -qE -- '--More--|\[yn|\?\]' && { echo "STOP: prompt"; break; }
+  cy=$(echo "$out" | grep -oE 'Terminal cursor[^:]*: [0-9]+,[0-9]+' | grep -oE '[0-9]+$')
+  [[ -n "$cy" && "$cy" -le 9 ]] && { echo "STOP: prompt/menu (cursor y=$cy)"; break; }
   echo "$out" | grep -E '^34 ' | grep -qE 'Weak|Faint' && { echo "STOP: hunger"; break; }
   adj=$(python3 - "$out" <<'PY'
 import re,sys
@@ -26,6 +28,8 @@ if not h: print('?'); sys.exit()
 hx,hy=int(h[1]),int(h[2])
 for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m):
     x,y=int(x),int(y)
+    import os
+    if g in os.environ.get('KK_IGNORE',''): continue
     if (g.isalpha() or g in "&';:~I") and (x,y)!=(hx,hy) and max(abs(x-hx),abs(y-hy))==1 and f'{x},{y}' not in pets:
         print(f'{g}@{x},{y}'); break
 PY

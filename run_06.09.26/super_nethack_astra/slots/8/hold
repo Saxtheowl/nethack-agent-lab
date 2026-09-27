@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/8/hold X Y DIR [n] [minHP]: hold a chokepoint; attack monster on X,Y with F+DIR, else search 1 turn.
+# Stops on HP < minHP, "stole", Blind, or a monster adjacent elsewhere.
+cd "$(dirname "$0")"
+x=$1; y=$2; d=$3; n=${4:-15}; min=${5:-40}
+for i in $(seq $n); do
+  o=$(./v)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "$min" ] && { echo "STOP HP $hp"; break; }
+  echo "$o" | grep -qiE "stole|steals|Blind" && { echo "STOP event"; echo "$o" | grep -E "^0[5-7]"; break; }
+  if echo "$o" | grep -qE " [A-Za-z:;'&]@$x,$y( |$)"; then ./k "F$d" >/dev/null; else ./k s >/dev/null; fi
+  sleep 0.3
+  ./v | grep -E "^07" | sed "s/^/$i /"
+done
+./v | grep -E "HP:|^Map"

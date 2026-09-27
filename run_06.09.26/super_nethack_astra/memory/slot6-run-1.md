@@ -5,15 +5,16 @@ Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, slot3-run-1.
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: T5302 Minetown Dlvl8 XL6 HP60/60 AC1 $183, SANS familier (dog laissé Mines D6, whistle). Prayers T2826, T4203, T4957 (lycanthropie guérie) -> prochaine >= ~T6000.
-Food: 2 food rations, fortune cookie, tripe. Wand of teleportation R (0:0 ! 3 zaps utilisés ; on peut encore la « wrest » 1 fois).
-Portés: rotted studded leather, +3 small shield, blessed iron shoes, dwarvish cloak. Manquent: helm, gloves.
-Minetown (variante grotte, beaucoup d'undead: elf zombies, human mummy téléportée) : temple Loki (chaotique) altar 56,26 porte 51,26 ;
-deli 43-45,25-26 (egg 14) ; general store 44-46,14-16 ; lighting shop 37-38,17-19 ; '>' 71,19 ; '<' 19,14 (NW). Gray unicorn hostile rôde (NE PAS attaquer).
-Scrolls: v ASHPD SODALG (base 100, uncursed), I VE FORBRYDERNE (base 50?). Potions: fizzy (1 blessed, 1 uncursed), puce, brilliant blue, clear=water.
-D4 Mines '>' 20,24 ; D5 = Oracle ; Sokoban '<' à trouver sur D4. D10: dwarvish mithril-coat à 38,21.
+URGENT: T7892 Dlvl6 XL7 HP51/67 AC1 $192, large dog tame, magic whistle G, UNICORN HORN h (pet-testée non maudite).
+Prayers: T2826, T4203, T4957, T6481, T8512 -> prochaine >= ~T9500. Food: 1 food ration f.
+D6: '<' main 52,15 (salle fermée, portes cachées 48,16 et 63,16), '<' SOKOBAN 64,26, '>' ?. 
+Wand of teleportation R (0:0). j hexagonal. v scroll of teleportation. Y 3 unlabeled (blank), d HACKEM MUCHE, X FOOBIE BLETCH.
+Oracle D5: '<' 12,13, '>' 62,22. D4: '>' Mines 20,24, HOLE 21,24, '>' main 46,14, bookstore. Minetown D8: temple Loki, deli.
+Outils: /tmp/claude-1000/xp6 N (explore), scripts/sokoban.py X Y PUSHES [--execute] (slots/6 n'a pas de wrapper: NH_SLOT=6).
 
 ## Lessons
+- T8509 : FAINTING pendant les scripts Sokoban (aucun contrôle de faim) -> prayer T8512. Tout script en boucle doit vérifier Hungry/Weak.
+- Sokoban = niveau JUSTE EN DESSOUS de l'Oracle (Oracle D5 -> entrée Sokoban D6, 2e '<'), pas au-dessus. #overview confirme.
 - explore.py continue même quand une nymph est adjacente : la water nymph du Mines D7 m'a volé magic whistle + hexagonal wand SANS que je le voie. Chercher « stole » dans les messages après chaque explore ; tuer les nymphs à vue.
 - Zapper une wand sur un monstre DEPUIS Elbereth = « You feel like a hypocrite » (alignement) et l'engraving s'efface : quitter la case avant de zapper.
 - Giant spider au Mines D11 et à Minetown : wand of teleportation dessus quand alignée.

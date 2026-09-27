@@ -10,7 +10,9 @@ for i in $(seq "$max"); do
   h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
   [[ "$h" -lt "$min" ]] && { echo "STOP: HP $h < $min"; break; }
   pets=$(echo "$o" | grep '^PETS')
-  nb=$(echo "$o" | grep '^Neighbors' | head -1)
+  cur=$(echo "$o" | grep -oE 'cursor \(x,y; usually hero when no menu\): [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+$')
+  nb=$(echo "$o" | grep "^Neighbors of @($cur)" | head -1)
+  [[ -z "$nb" ]] && nb=$(echo "$o" | grep '^Neighbors' | head -1)
   d=$(echo "$nb" | grep -oE "[1-9]:[$g]\([0-9]+,[0-9]+\)" | while read x; do c=$(echo "$x" | grep -oE '[0-9]+,[0-9]+'); echo "$pets" | grep -q "$c" || echo "${x:0:1}"; done | head -1)
   [[ -z "$d" ]] && { echo "nothing adjacent"; break; }
   r=$($S keys --compact "F$d")

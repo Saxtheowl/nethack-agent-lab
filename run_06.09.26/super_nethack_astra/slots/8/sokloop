@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/8/sokloop [holes] [soko2 args]: repeat (plan one hole with soko2.py, execute with sk); stop on any anomaly.
+cd "$(dirname "$0")"
+n=${1:-1}; shift
+for i in $(seq "$n"); do
+  plan=$(NH_SLOT=8 python3 soko2.py "$@")
+  echo "PLAN: $(echo "$plan" | tr '\n' ';')"
+  echo "$plan" | grep -q "^#.*pushes" || { echo "NO PLAN"; exit 1; }
+  while read -r x y d; do
+    [[ "$x" == "#" ]] && continue
+    out=$(./sk "$x" "$y" "$d" $SKARGS)
+    echo "$out" | grep -q "^Checked" || { echo "$out"; echo "STOPPED"; exit 1; }
+  done <<< "$(echo "$plan" | grep -v '^#')"
+  ./v | grep -E "^0[6-7]|HP:" | tail -2
+done

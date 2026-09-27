@@ -49,6 +49,12 @@ PURE rules — never break them:
   and as replay captions. Use it at every real decision, in French (but keep original English NetHack names for items and monsters: "plate mail", "master mind flayer", "wand of digging"..., and HP, Dlvl N, T1234, XL, AC, altar, fountain, shop, trap). scripts/nh_terms.py normalizes old texts.
 - Old ttyrecs can be imported: scripts/import_ttyrec.py <ttyrec> <game_id>.
 
+## Heavy computation → miniforum worker (user rule, 2026-09-27)
+Never run solvers/searches/analyses on this machine (8 games share 4 cores).
+Use `slots/N/onworker [--timeout S] <command>`: copies slots/N to
+miniforum-worker (~/nethack-compute/slotN), runs there (time limit, 8 GB cap),
+copies results back. A watchdog kills local helper processes above 2.5 GB.
+
 ## Controls
 
 - `python3 scripts/session.py screen [--compact]` — observe.

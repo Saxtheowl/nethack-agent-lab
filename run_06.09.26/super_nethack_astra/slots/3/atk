@@ -1,0 +1,31 @@
+#!/bin/bash
+# slots/3/atk DIR [N] [MINHP]: attack in direction DIR (number_pad digit) up to N times,
+# re-checking before EACH blow that the target square holds a non-pet monster; stops when it is gone,
+# on "Really attack", or when HP < MINHP (default 50% of max).
+export NH_SLOT=3
+cd "$(dirname "$0")/../.."
+d=$1; n=${2:-4}
+S="python3 scripts/session.py"
+for i in $(seq "$n"); do
+  out=$($S screen --compact)
+  r=$(python3 - "$d" "$out" "${3:-}" <<'PY'
+import re, sys
+d, out, minhp = sys.argv[1], sys.argv[2], sys.argv[3]
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+hp = re.search(r'HP:(\d+)\((\d+)\)', out); cur, mx = int(hp[1]), int(hp[2])
+lim = int(minhp) if minhp else mx // 2
+if cur < lim: print('lowhp'); sys.exit()
+h = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', out) or re.search(r' @@(\d+),(\d+)', m); hx, hy = int(h[1]), int(h[2])
+dx, dy = {'7':(-1,-1),'8':(0,-1),'9':(1,-1),'4':(-1,0),'6':(1,0),'1':(-1,1),'2':(0,1),'3':(1,1)}[d]
+t = f'{hx+dx},{hy+dy}'
+if t in pets: print('pet'); sys.exit()
+mons = {f'{x},{y}' for g, x, y in re.findall(r' ([A-Za-z@&;:\'I])@(\d+),(\d+)', m)}
+print('ok' if t in mons else 'gone')
+PY
+)
+  [ "$r" = ok ] || { echo "atk stop: $r"; break; }
+  o=$($S keys "F$d" --settle .5)
+  echo "$o" | grep -q 'Really attack' && { $S keys n >/dev/null; echo "atk stop: peaceful"; break; }
+done
+$S screen --compact | grep -E '^0[5-7] |^34'

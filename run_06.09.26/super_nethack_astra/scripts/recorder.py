@@ -98,7 +98,7 @@ def main():
                 if meta.get('status') == 'live':
                     frames.save_meta(gid, meta)
             last_meta = now
-        time.sleep(0.25)
+        time.sleep(0.5)
 
 
 if __name__ == '__main__':

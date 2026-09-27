@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/8/s4 X Y PRE: push boulder with PRE moves (ending at 34,14), then right until the first hole on row 14.
+cd "$(dirname "$0")"
+out=$(./sk "$1" "$2" "$3"); echo "$out" | grep -E "Checked|STOP|Error|07|HP:"
+echo "$out" | grep -q "^Checked" || exit 1
+h=$(./v | grep '^Map' | grep -oE '\^@[0-9]+,14' | head -1 | sed 's/\^@//; s/,14//')
+n=$((h - 34)); r=$(printf 'r%.0s' $(seq $n))
+echo "first hole $h -> $r"
+./sk 34 14 "$r" | grep -E "Checked|STOP|Error|07|HP:"

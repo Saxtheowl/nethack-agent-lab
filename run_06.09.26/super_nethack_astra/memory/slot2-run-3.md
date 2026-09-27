@@ -1,13 +1,23 @@
 # Emplacement 2, run 3 — journal (état le plus récent en haut)
 
-STYLE ASTRA (memory/astra-style.md, obligatoire) : lire l'écran avant chaque décision, combat UN coup à la fois
-en relisant les HP, farlook de tout inconnu, journal + ligne URGENT : T1644 Dlvl 4, HP 28(28), AC1, XL2, jamais prié ; a long sword, b dagger (quiver) + g 2 orcish daggers, c shield,
- e orcish helm, s scale mail ; food : d ration, p lichen, r candy bar, j 2 tins ; h spherical amulet (non id, ne pas porter) ;
- l scroll HAPAX LEGOMENON, q murky potion, m/n/o spellbooks (à vendre) ; kitten.
-D4 : '<' 51,25 ; '>' 74,14 ; room NE 70-76,12-17.
-D1 : '<' 18,12 ; '>' 29,14 ; FOUNTAIN 31,13 (Excalibur à XL5).
-D3 : '<' 70,17 ; '>' 43,25 ; fountains 15,13 et 27,26.
-D2 : '<' 44,15 ; '>' 16,22 ; Vanzac's antique weapons outlet 3-7,16-20 (']' en 4,19 = mimic ; 11 shuriken 77 zm).
+STYLE ASTRA (memory/astra-style.md).
+
+## DEATH T3013, Dlvl 7, XL2, 555 pts : « killed by a pony »
+Chaîne : descente rapide D1→D7 à XL2 (le kitten faisait toutes les kills) ; lu une scroll inconnue non maudite
+(ABRA KA DABRA = destroy armor) -> scale mail détruite, AC 0 -> 4 ; un pony hostile dans un couloir : 2 échanges,
+HP 28 -> 13 ; Elbereth écrit « Elber5th » (raté) pendant que le pony frappait -> HP 7 ; dernier coup tenté : mort.
+Leçons :
+- Ne pas descendre plus bas que Dlvl ~ XL+2 : à XL2, rester sur D1-D4 et faire MOI-MÊME les kills ; Oracle/Sokoban à XL6+.
+- Scroll inconnue : ne JAMAIS la lire en portant une armure de corps irremplaçable (destroy armor).
+- Contre un monstre qui fait >25 % de mes HP par tour : Elbereth AVANT de passer sous 50 %, pas à 13 HP.
+- Prayer seulement à HP < 1/7 ou < 6 : à 7 HP il n'y a plus de marge -> fuir/Elbereth plus tôt.
+
+## Dernier état
+T3013 Dlvl 7. Carte : D1 fountain 31,13 ; D2 weapon shop Vanzac 3-7,16-20 ; D5 4 spellbooks en 34,16 ; D7 altar d'Odin 26,14.
+IDs de cette partie : ABRA KA DABRA = destroy armor.
+
+## Lessons
+- T2913 : lire une scroll inconnue = ABRA KA DABRA = DESTROY ARMOR, scale mail perdue. Price-identifier d'abord (destroy armor base 100) ou retirer l'armure du corps... (elle vise la cape, puis le corps).
 
 ## Lessons (reprises du run 2)
 - Faim = problème n°1 d'une Valkyrie : garder 2+ food rations, manger chaque corpse FRAIS (vu mourir < 30 tours) et sûr.
