@@ -1283,8 +1283,8 @@ async function showStyleFile(path) {
 async function refreshStyles() {
   let S; try { S = await api('/api/styles'); } catch (e) { return; }
   const P = S.plan, done = P.history || [];
-  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), `Objectif : ${S.target} parties par style. Aujourd’hui : `,
-      ...Object.entries(S.counts).map(([st, n]) => el('span', {style: 'margin-right:8px'}, tag(st), ` ${n}/${S.target}`))),
+  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), 'Objectif : 6 Astra + 2 Wish abuser (plus de Tariru). Aujourd’hui : ',
+      ...Object.entries(S.counts).map(([st, n]) => el('span', {style: 'margin-right:8px'}, tag(st), ` ${n}/${(S.targets || {})[st] ?? S.target}`))),
     ...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
     ...(S.forecast || []).map((f, i) => el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: done.length + i + 1}),
       'À la prochaine mort d’un emplacement ', tag(f.from), ', il passera en ', tag(f.to)))];

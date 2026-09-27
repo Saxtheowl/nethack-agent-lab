@@ -482,7 +482,7 @@ def styles():
         if not moved:
             break
     return {'styles': reg['styles'], 'plan_rules': reg['plan_rules'], 'plan': plan,
-            'counts': counts, 'target': next_style.TARGET, 'forecast': forecast,
+            'counts': counts, 'target': next_style.TARGET, 'targets': next_style.TARGETS, 'forecast': forecast,
             'slots': {s: (v or {}).get('style') for s, v in slots.items()}, 'wish': wish_status()}
 
 

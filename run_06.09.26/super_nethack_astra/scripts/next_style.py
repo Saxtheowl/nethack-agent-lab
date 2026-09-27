@@ -21,6 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / '.runtime/style-plan.json'
 ORDER = ['wish_abuser', 'tariru_v2', 'tariru', 'astra']
 TARGET = 2
+# user decision 2026-09-27 ~19h: no more Tariru styles: 6 astra + 2 wish_abuser
+TARGETS = {'astra': 6, 'wish_abuser': 2, 'tariru': 0, 'tariru_v2': 0}
 
 
 def slot_style(s):
@@ -31,21 +33,17 @@ def slot_style(s):
 
 
 def choose(slot, styles):
-    current = styles.get(slot) or ('tariru' if slot == '1' else 'astra')
+    current = styles.get(slot) or 'astra'
     count = {st: 0 for st in ORDER}
     for s, st in styles.items():
         if st in count:
             count[st] += 1
-    allowed = ['tariru', 'tariru_v2'] if slot == '1' else ORDER
-    if slot == '1' and current not in allowed:
-        current = 'tariru'
-    if count.get(current, 0) <= TARGET and current in allowed:
-        # keep it, unless a style is still missing entirely and ours is at target... keep sticky
+    if count.get(current, 0) <= TARGETS.get(current, 0):
         return current
-    lacking = [st for st in ORDER if st in allowed and st != current and count[st] < TARGET]
+    lacking = [st for st in ORDER if st != current and count[st] < TARGETS[st]]
     if not lacking:
-        return current
-    return max(lacking, key=lambda st: (TARGET - count[st], -ORDER.index(st)))
+        return 'astra' if TARGETS.get(current, 0) == 0 else current
+    return max(lacking, key=lambda st: (TARGETS[st] - count[st], -ORDER.index(st)))
 
 
 def main():
@@ -55,7 +53,7 @@ def main():
     style = choose(slot, styles)
     if not dry:
         plan = json.loads(PLAN.read_text()) if PLAN.exists() else {'history': []}
-        plan['rule'] = f'{TARGET} parties par style (tariru, tariru_v2, astra, wish_abuser), remplacement progressif aux morts'
+        plan['rule'] = '6 astra + 2 wish_abuser (plus de styles Tariru, décision utilisateur 27/09 19h)'
         plan['queue'] = []
         if style != styles.get(slot):
             plan['history'].append({'slot': slot, 'style': style, 'from': styles.get(slot), 't': time.time()})
