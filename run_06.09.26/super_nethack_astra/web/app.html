@@ -131,6 +131,16 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 .chron .body { padding: 6px 0 4px 56px; color: #d4ddd0; }
 .chron .filters { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
 .mk.chron { background: var(--gold); height: 14px; top: 0; width: 4px; } .ev.chron::before { background: var(--gold); }
+/* theater / fullscreen */
+.theater { position: fixed !important; inset: 0; z-index: 30; margin: 0 !important; border-radius: 0 !important;
+  background: var(--bg) !important; padding: 10px 14px !important; display: flex !important; flex-direction: column; overflow: hidden; }
+.theater .term, .term.theater { flex: 1 1 auto; min-height: 0; }
+.theater .charts { display: none; }
+.theater .tbar { display: flex !important; }
+.tbar { display: none; align-items: center; gap: 12px; padding: 0 2px 8px; }
+.tbar .cap { font-size: 16px; color: #d6e0d0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbar .st { font-size: 15px; color: var(--muted); white-space: nowrap; } .tbar .st b { color: var(--text); }
+#livewrap.theater .tbar { display: flex !important; }
 @media (max-width: 1250px) { .cards { grid-template-columns: 1fr; } .replay, .livegrid { grid-template-columns: 1fr; } .tiles { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
@@ -145,7 +155,11 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 <section id="tab-live">
   <div class="slotbar" id="slotbar"></div>
   <div class="livegrid">
-    <div class="term" id="liveterm"></div>
+    <div id="livewrap" style="display:flex;flex-direction:column;min-width:0">
+      <div class="tbar"><span class="st" id="ltstat"></span><span class="cap" id="ltcap"></span><button id="lexit">✕ Quitter (Échap)</button></div>
+      <div class="term" id="liveterm"></div>
+      <div style="margin-top:8px"><button id="lbig">⛶ Grand écran (F)</button></div>
+    </div>
     <div class="side">
       <div class="panel"><h2>Statut</h2><div class="stats" id="livestats"></div><div class="hpbar" style="margin-top:8px"><i id="livehp"></i></div></div>
       <div class="panel feed"><h2>Décisions · commentaire de l'IA</h2><div id="livedec"></div></div>
@@ -161,7 +175,8 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
   <div class="tiles" id="tiles"></div>
 
   <div class="replay">
-    <div class="panel">
+    <div class="panel" id="rpanel">
+      <div class="tbar"><span class="st" id="tstat"></span><span class="cap" id="tcap"></span><button id="bexit">✕ Quitter (Échap)</button></div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
         <h2 style="margin:0">Replay</h2>
         <select id="gamesel"></select>
@@ -185,6 +200,7 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
         <label class="kbd"><input type="checkbox" id="skipidle" checked> sauter les pauses</label>
         <button id="bmark" title="Ajouter un marque-page (M)">📌</button>
         <button id="bshare" title="Copier un lien vers cet instant">🔗</button>
+        <button id="bbig" title="Grand écran (F)">⛶ Grand écran</button>
         <span class="pos" id="rpos"></span>
       </div>
       <div class="charts"><svg id="chart" viewBox="0 0 1000 90" preserveAspectRatio="none"></svg>
@@ -231,7 +247,13 @@ class Term {
   }
   fit() {
     const w = this.node.clientWidth - 20;
-    if (w > 0) this.node.style.fontSize = Math.max(4, w / ((this.x1) * 0.602)) + 'px';
+    if (w <= 0) return;
+    let size = w / (this.x1 * 0.602);
+    if (this.node.closest('.theater')) {
+      const h = this.node.clientHeight - 18;
+      if (h > 0) size = Math.min(size, h / ((this.y1 - this.y0) * 1.18));
+    }
+    this.node.style.fontSize = Math.max(4, size) + 'px';
   }
   render(rows) {
     for (let y = this.y0; y < this.y1; y++) {
@@ -336,9 +358,10 @@ function renderCards() {
         <div class="hpbar"><i></i></div>
         <div class="headline"></div>
         <div class="term mini"></div><div class="say"></div>
-        <div class="actions"><button class="km">★ Moments clés</button><button class="go">Plein écran</button><button class="rp">Rejouer</button><button class="lv">● Suivre ici</button></div>`;
+        <div class="actions"><button class="big">⛶ Grand écran</button><button class="km">★ Moments clés</button><button class="go">Plein écran</button><button class="rp">Rejouer</button><button class="lv">● Suivre ici</button></div>`;
       wrap.append(card);
       card.onclick = e => { if (e.target.closest('button')) return; const g = card.dataset.gid; g && openMoments(g); };
+      card.querySelector('.big').onclick = async () => { if (!card.dataset.gid) return; await loadGame(card.dataset.gid, 'live'); toggleBig($('#rpanel'), true); };
       card.querySelector('.km').onclick = () => card.dataset.gid && openMoments(card.dataset.gid);
       card.querySelector('.go').onclick = () => { liveSlot = s; setHash({slot: s}); showTab('live'); slotButtons(); };
       card.querySelector('.rp').onclick = () => card.dataset.gid && loadGame(card.dataset.gid, 0);
@@ -677,12 +700,43 @@ addEventListener('keydown', e => {
   else if (k === 'l' || k === 'L') $('#blive').click(); else if (k === 'm' || k === 'M') $('#bmark').click();
 });
 
+/* big screen */
+function toggleBig(node, on, fs = true) {
+  const want = on ?? !node.classList.contains('theater');
+  node.classList.toggle('theater', want);
+  document.body.style.overflow = want ? 'hidden' : '';
+  if (want) window.scrollTo(0, 0);
+  if (want && fs && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+  if (!want && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  setTimeout(() => { rTerm.fit(); liveTerm && liveTerm.fit(); }, 60);
+}
+$('#bbig').onclick = () => toggleBig($('#rpanel'));
+$('#bexit').onclick = () => toggleBig($('#rpanel'), false);
+$('#lbig').onclick = () => toggleBig($('#livewrap'));
+$('#lexit').onclick = () => toggleBig($('#livewrap'), false);
+document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) for (const n of document.querySelectorAll('.theater')) toggleBig(n, false); });
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.key === 'Escape') for (const n of document.querySelectorAll('.theater')) toggleBig(n, false);
+  if (e.key === 'f' || e.key === 'F') toggleBig(TAB === 'dash' ? $('#rpanel') : $('#livewrap'));
+});
+setInterval(() => {  // overlay texts while in big screen
+  if ($('#rpanel').classList.contains('theater')) {
+    $('#tstat').textContent = [...$('#rstats').children].map(c => c.textContent).join(' · ') + '   —   ' + ($('#gamesel').selectedOptions[0]?.textContent || '');
+    $('#tcap').textContent = $('#rcap').firstChild?.textContent || '';
+  }
+  if ($('#livewrap').classList.contains('theater')) {
+    $('#ltstat').textContent = `Partie ${liveSlot} · ` + [...$('#livestats').children].map(c => c.textContent).join(' · ');
+    $('#ltcap').textContent = $('#livedec').firstChild?.textContent || '';
+  }
+}, 500);
+
 /* boot */
 (async () => {
   const h = hashState();
   await refreshGames();
   showTab(h.tab === 'dash' ? 'dash' : 'live');
-  if (h.game) loadGame(h.game, h.f === 'live' ? 'live' : +(h.f || 0));
+  if (h.game) { await loadGame(h.game, h.f === 'live' ? 'live' : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
   pollLive();
 })();
