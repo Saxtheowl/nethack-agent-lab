@@ -46,3 +46,13 @@ MENUCOLOR="corpse"=brown
 MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=lightgreen
 MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=lightgreen
 MENUCOLOR=" gold piece"=yellow
+
+# Tariru-style stop signals (force a --More-- so they cannot scroll by unseen)
+OPTIONS=paranoid_confirmation:pray
+MSGTYPE=stop "You are beginning to feel weak."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find a polymorph trap."

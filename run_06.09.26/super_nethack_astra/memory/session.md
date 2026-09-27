@@ -1,5 +1,6 @@
 # Expedition memory — Claude, reproduction pure à la Astra
 
+Read memory/tariru-style.md before playing (all slots).
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
 

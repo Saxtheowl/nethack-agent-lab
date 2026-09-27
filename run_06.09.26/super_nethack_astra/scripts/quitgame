@@ -1,0 +1,15 @@
+#!/bin/bash
+# scripts/quitgame SLOT : #quit the slot's game (user decision), answer the
+# end-of-game questions with defaults. No save is kept.
+cd "$(dirname "$0")/.."
+export NH_SLOT=$1
+S="python3 scripts/session.py"
+$S keys --named Escape >/dev/null 2>&1; $S keys --named Escape >/dev/null 2>&1
+$S keys --raw '#quit' >/dev/null; $S keys --named Enter --settle .6 >/dev/null
+$S screen | grep -q 'Really quit' || { echo "no quit prompt"; exit 1; }
+$S keys --raw y --settle .8 >/dev/null
+for i in $(seq 30); do
+  $S screen | grep -q "No NetHack" && break
+  $S keys --named Enter --settle .4 >/dev/null 2>&1 || break
+done
+tail -1 engine/install/games/lib/nethackdir/xlogfile | tr '\t' '\n' | grep -E "^name|death=|turns="

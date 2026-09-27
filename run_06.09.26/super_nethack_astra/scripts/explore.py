@@ -155,8 +155,9 @@ def main():
     dead = set(data.get(str(level), []))
     fails = {}
     hp0 = st['hp']
+    hunger0 = st['status']
     if st['hp'] * 10 < st['max_hp'] * 6:
-        print('explore stop: HP below 60% — rest first (Elbereth + search)')
+        print('explore stop: HP below 60% — rest first: go upstairs / away from monsters, let the pet fight')
         session.print_screen(True)
         return
     known_down = sum(r[1:80].count('>') for r in st['rows'][10:31])
@@ -232,6 +233,10 @@ def main():
             break
         if st['level'] != level:
             reason = 'level changed'
+            break
+        hunger = re.search(r'\b(Hungry|Weak|Fainting)\b', st['status'])
+        if hunger and hunger[1] not in hunger0:
+            reason = f'{hunger[1]}: eat now (keep 2+ food items)'
             break
     data[str(level)] = sorted(dead)
     store.write_text(json.dumps(data))

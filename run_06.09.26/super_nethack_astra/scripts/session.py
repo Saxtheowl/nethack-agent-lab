@@ -68,6 +68,7 @@ def start():
     saved = any(SAVEDIR.glob(f'*{PLAYER}.gz')) or any(SAVEDIR.glob(f'*{PLAYER}'))
     if not saved or not info.get('game_id'):
         info = {'game_id': f'{PLAYER}-{stamp}', 'player': PLAYER, 'slot': SLOT, 'started': stamp}
+        (RUNTIME / f'explore-{SLOT}.json').unlink(missing_ok=True)  # new game: no stale dead ends
     info.setdefault('ttyrecs', []).append(record.name)
     SLOTFILE.write_text(json.dumps(info))
     record.parent.mkdir(exist_ok=True)
@@ -162,6 +163,24 @@ def print_screen(compact=False):
                 print(f'Neighbors of @({col},{row}): ' + ' '.join(neighbors))
     else:
         print(current, end='')
+
+
+def pickup_guard(value, current):
+    """Tariru-style safety: never auto-select every item in a menu, never pick
+    up a gray stone (possible loadstone) — kick it first."""
+    menu = re.search(r'(Pick up what\?|Take out what|What would you like to drop|'
+                     r'Put in what|Drop what type|Take out what type|What would you like)', current)
+    if menu and 'A' in value and re.search(r'A\) Auto-select every item', current):
+        return 'Refused: never use "A - Auto-select every item"; select items one by one.'
+    if menu:
+        for letter in value:
+            m = re.search(r'\b' + re.escape(letter) + r'\) [^│\n]*gr[ae]y stone', current)
+            if letter.isalpha() and m:
+                return 'Refused: gray stone in selection (possible loadstone); kick it first.'
+    lines = [l for l in current.splitlines()[1:8] if l.strip(' │')]
+    if value == ',' and lines and re.search(r'You see here [^.]*gr[ae]y stone', lines[-1]):
+        return 'Refused: gray stone here (possible loadstone); kick it first ("Thump!" = loadstone).'
+    return None
 
 
 def stash_gold(bag, expected_gold):
@@ -384,6 +403,10 @@ def main():
     elif args.command == 'attach':
         os.execvp('tmux', ['tmux', '-S', SOCKET, 'attach-session', '-r', '-t', SESSION])
     elif args.command == 'keys':
+        reason = pickup_guard(args.value, screen())
+        if reason:
+            audit.record('input_preflight_rejected', {'input': args.value, 'reason': reason})
+            raise RuntimeError(reason)
         if not args.named and not args.raw and len(args.value) > 1:
             observed = guard.observe(sys.modules[__name__])
             reason = guard.command_preflight(guard.state(*observed), args.value)

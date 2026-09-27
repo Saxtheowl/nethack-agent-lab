@@ -25,6 +25,7 @@ for i in $(seq 40); do
   hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1)
   cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
   echo -n "$cur "
-  echo "$o" | grep -q "hits!\|bites!\|stings!\|touches you" && { echo ATTACKED; break; }
+  [ -n "$prev" ] && [ "$cur" -lt "$prev" ] && { echo ATTACKED; break; }
+  prev=$cur
   [ $((cur * 100)) -ge $((max * target)) ] && { echo FULL; break; }
 done
