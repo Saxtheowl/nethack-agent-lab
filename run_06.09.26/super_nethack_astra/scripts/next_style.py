@@ -22,7 +22,7 @@ PLAN = ROOT / '.runtime/style-plan.json'
 ORDER = ['wish_abuser', 'tariru_v2', 'tariru', 'astra']
 TARGET = 2
 # user decision 2026-09-27 ~19h: no more Tariru styles: 6 astra + 2 wish_abuser
-TARGETS = {'astra': 6, 'wish_abuser': 2, 'tariru': 0, 'tariru_v2': 0}
+TARGETS = {'astra': 8, 'wish_abuser': 0, 'tariru': 0, 'tariru_v2': 0}  # 27/09 ~22h45: all slots astra
 
 
 def slot_style(s):
@@ -53,7 +53,7 @@ def main():
     style = choose(slot, styles)
     if not dry:
         plan = json.loads(PLAN.read_text()) if PLAN.exists() else {'history': []}
-        plan['rule'] = '6 astra + 2 wish_abuser (plus de styles Tariru, décision utilisateur 27/09 19h)'
+        plan['rule'] = '8 astra : tous les emplacements en style Astra (décision utilisateur 27/09 22h45)'
         plan['queue'] = []
         if style != styles.get(slot):
             plan['history'].append({'slot': slot, 'style': style, 'from': styles.get(slot), 't': time.time()})

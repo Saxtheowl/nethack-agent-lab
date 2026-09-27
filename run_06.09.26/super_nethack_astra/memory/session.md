@@ -7,8 +7,8 @@ Styles (registry: config/styles.json, shown in the dashboard tab Styles):
 - wish_abuser = start-scum on miniforum-worker (scripts/wish_scum.py) until a
   start offers a wish, then Astra: memory/style-wish-abuser.md.
 The style of your slot is "style" in .runtime/slot-N.json: read its files
-before playing. User decision 2026-09-27 ~19h: NO MORE Tariru styles. Target:
-6 astra + 2 wish_abuser; `python3 scripts/next_style.py N` gives the next
+before playing. User decision 2026-09-27 ~22h45: ALL slots play astra (no Tariru, no
+wish_abuser); `python3 scripts/next_style.py N` gives the next
 style after a death. Games in progress are never switched.
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
