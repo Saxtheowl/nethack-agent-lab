@@ -478,7 +478,7 @@ function showTab(t) {
 for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => showTab(b.dataset.tab);
 
 /* ---------- LIVE tab ---------- */
-let liveSlot = hashState().slot || '1', liveTerm = null, GAMES = [], SLOTS = {};
+let liveSlot = hashState().slot || '1', liveTerm = null, GAMES = [], SLOTS = {}, WISH = null;
 function slotButtons() {
   const bar = $('#slotbar'); bar.textContent = '';
   for (const s of ['1', '2', '3', '4', '5', '6', '7', '8']) {
@@ -520,7 +520,7 @@ const miniTerms = {};
 async function refreshGames() {
   try {
     const d = await api('/api/games');
-    GAMES = d.games; SLOTS = d.slots;
+    GAMES = d.games; SLOTS = d.slots; WISH = d.wish || null;
     slotButtons();
     if (TAB !== 'dash') return;
     renderCards(); renderTiles(); renderHistory(); fillGameSelect();
@@ -590,7 +590,10 @@ function renderCards() {
         card.querySelector('.say').textContent = dec ? '« ' + dec.text + ' »' : (l.commentary || '');
       }).catch(() => {});
     } else {
-      card.querySelector('.say').textContent = meta ? (meta.death ? '☠ ' + meta.death : '') : 'Aucune partie sur cet emplacement.';
+      const waitingWish = info && info.style === 'wish_abuser' && WISH && WISH.running;
+      card.querySelector('.say').textContent = waitingWish
+        ? `⏳ Partie terminée — recherche d’un nouveau wish sur le worker (${(WISH.attempts || 0).toLocaleString('fr-FR')} parties essayées au total)`
+        : meta ? (meta.death ? '☠ ' + meta.death + ' — la partie suivante démarre bientôt' : '') : 'Aucune partie sur cet emplacement.';
     }
   }
 }

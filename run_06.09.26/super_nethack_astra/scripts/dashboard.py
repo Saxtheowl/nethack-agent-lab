@@ -629,6 +629,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(live(slot))
             if url.path == '/api/games':
                 return self.send({'games': games(), 'slots': {s: slot_game(s) for s in '12345678'},
+                                  'wish': {k: wish_status().get(k) for k in ('attempts', 'running', 'fountains', 'quaffs')},
                                   'now': time.time()})
             if url.path == '/api/frames':
                 lines, total = frame_lines(gid, int(q.get('from', 0)), min(int(q.get('limit', 4000)), 20000))
