@@ -28,7 +28,11 @@ with contextlib.redirect_stdout(buf):
 c = buf.getvalue()
 m = re.search(r'^Map features.*$', c, re.M).group(0)
 pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', c, re.M).group(0)))
+# the hero is the '@' under the terminal cursor (other @ = shopkeepers, watchmen...)
+cur = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', c)
 h = re.search(r' @@(\d+),(\d+)', m)
+if cur and f' @@{cur[1]},{cur[2]}' in m:
+    h = cur
 hx, hy = int(h[1]), int(h[2])
 for g, x, y in re.findall(r' ([A-Za-z&;:\'])@(\d+),(\d+)', m):
     if max(abs(int(x) - hx), abs(int(y) - hy)) == 1 and f'{x},{y}' not in pets:

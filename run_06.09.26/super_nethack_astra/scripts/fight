@@ -15,7 +15,11 @@ import re, sys
 g, out = sys.argv[1], sys.argv[2]
 m = re.search(r'^Map features.*$', out, re.M).group(0)
 pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+# the hero is the '@' under the terminal cursor (other @ = shopkeepers, watchmen...)
+c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', out)
 h = re.search(r' @@(\d+),(\d+)', m)
+if c and f' @@{c[1]},{c[2]}' in m:
+    h = c
 if not h: print('nohero'); sys.exit()
 hx, hy = int(h[1]), int(h[2])
 best = None
