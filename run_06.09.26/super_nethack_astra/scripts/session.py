@@ -520,7 +520,8 @@ def main():
     elif args.command == 'ack-hp':
         ack_hp()
     elif args.command == 'keys':
-        reason = pickup_guard(args.value, screen())
+        # tmux key names (Enter, Escape, C-m...) are not menu letters
+        reason = None if args.named else pickup_guard(args.value, screen())
         if reason:
             audit.record('input_preflight_rejected', {'input': args.value, 'reason': reason})
             raise RuntimeError(reason)

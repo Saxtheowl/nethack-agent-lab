@@ -3,7 +3,7 @@
 # .runtime/where-N = "worker" -> the command runs on miniforum-worker (same
 # path, one shared ssh connection), else here. Used by every slots/N wrapper.
 R="$(cd "$(dirname "$0")/.." && pwd)"
-if [ "$(cat "$R/.runtime/where-${NH_SLOT:-1}" 2>/dev/null)" = worker ]; then
+if [ "${NH_HOST:-}" != worker ] && [ "$(cat "$R/.runtime/where-${NH_SLOT:-1}" 2>/dev/null)" = worker ]; then
   exec ssh -T -o BatchMode=yes -o ControlMaster=auto -o ControlPath=/tmp/ssh-nh-%C -o ControlPersist=900 \
     miniforum-worker "cd $R && NH_HOST=worker NH_SLOT=${NH_SLOT:-1} exec $(printf '%q ' "$@")"
 fi
