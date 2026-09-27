@@ -1,0 +1,35 @@
+#!/bin/bash
+# slots/4/kk <keys> [n] : send the same raw keys up to n times; stop at once on HP loss,
+# a message containing hits/bites/--More--/prompt, or an adjacent non-pet monster. Prints last status.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=4
+S="python3 scripts/session.py"
+hp() { echo "$1" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2; }
+prev=$(hp "$($S screen --compact)")
+for i in $(seq "${2:-1}"); do
+  out=$($S keys --compact --raw "$1" 2>&1)
+  h=$(hp "$out")
+  msg=$(echo "$out" | grep -E '^0[1-7] ' | tail -2)
+  echo "[$i] HP:$h $(echo "$out" | grep -o 'T:[0-9]*' | head -1) $(echo "$msg" | tail -1 | cut -c5-80)"
+  [[ -n "$h" && -n "$prev" && "$h" -lt "$prev" ]] && { echo "STOP: HP loss"; break; }
+  echo "$out" | grep -qE -- '--More--|\[yn|\?\]' && { echo "STOP: prompt"; break; }
+  adj=$(python3 - "$out" <<'PY'
+import re,sys
+s=sys.argv[1]
+m=re.search(r'^Map features.*$',s,re.M)
+if not m: print('?'); sys.exit()
+m=m.group(0)
+pl=re.search(r'^PETS.*$',s,re.M); pets=set(re.findall(r'(\d+,\d+)',pl.group(0))) if pl else set()
+h=re.search(r' @@(\d+),(\d+)',m)
+if not h: print('?'); sys.exit()
+hx,hy=int(h[1]),int(h[2])
+for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m):
+    x,y=int(x),int(y)
+    if (g.isalpha() or g in "&';:~I") and (x,y)!=(hx,hy) and max(abs(x-hx),abs(y-hy))==1 and f'{x},{y}' not in pets:
+        print(f'{g}@{x},{y}'); break
+PY
+)
+  [[ -n "$adj" ]] && { echo "STOP: adjacent $adj"; break; }
+  prev=$h
+done
+echo "$out" | grep -E '^Map|^PETS|^Neigh'

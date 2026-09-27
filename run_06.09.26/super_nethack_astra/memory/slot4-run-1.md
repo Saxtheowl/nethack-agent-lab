@@ -5,6 +5,15 @@ sans BotHack. Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, 
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: début de partie.
+URGENT: T1165 Dlvl2 HP27(27) AC5 XL2, prayer jamais (OK), little dog vivant.
+Porté: a +1 long sword (main), c +3 small shield, g orcish helm (testé chien). b dagger (+0 unc), i orcish dagger, j elven dagger (à lancer).
+Food: e food ration, f lichen corpse. h orange gem, m red gem, k cloudy potion, l scroll PRATYAVAYAH. Pas d'évasion.
+D1: fountain 41,18, '<' 41,16, '>' 4,14. BEAR TRAP 44,17. Silver spear 4,17, key 63,19.
+D2: '<' 13,27, '>' 53,13, FOUNTAIN 76,17 (Excalibur à XL5), shop quelque part (non trouvé), boulder corridor 50-63,20.
+
 
 ## Lessons
+- T970 : boucle « 6 puis s » sans contrôle HP → goblin m'a mise de 18 à 5 HP. Toujours slots/4/kk (arrêt sur perte HP / monstre adjacent).
+- #force avec la dagger b (pas l'épée : lame = risque de casse).
+- Bear trap : les déplacements en DIAGONALE décrémentent toujours u.utrap (orthogonal 1/5) → sortir en diagonale.
+- explore/travel passe sur un trap caché sous un objet : noter les traps.

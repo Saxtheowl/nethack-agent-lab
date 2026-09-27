@@ -1,0 +1,27 @@
+#!/bin/bash
+# slots/4/xp [rounds] : explore by 20-step chunks, stop on HP<70%, non-pet monster, Hungry, or explore stop other than budget.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=4
+for r in $(seq "${1:-4}"); do
+  out=$(python3 scripts/explore.py --steps 20 "${@:2}" 2>&1)
+  scr=$(python3 scripts/session.py screen --compact)
+  stop=$(echo "$out" | grep -o "explore stop: .*")
+  res=$(python3 - "$scr" <<'PY'
+import re,sys
+s=sys.argv[1]
+m=re.search(r'^Map features.*$',s,re.M).group(0)
+pl=re.search(r'^PETS.*$',s,re.M); pets=set(re.findall(r'(\d+,\d+)',pl.group(0))) if pl else set()
+mons=[f'{g}@{x},{y}' for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m) if (g.isalpha() or g in "&';:~") and g!='@' and f'{x},{y}' not in pets]
+hp=re.search(r'HP:(\d+)\((\d+)\)',s)
+bad=[]
+if mons: bad.append('monsters '+' '.join(mons))
+if hp and int(hp[1])*10<int(hp[2])*7: bad.append('HP low')
+if re.search(r'Hungry|Weak|Faint',s): bad.append('hunger')
+print(';'.join(bad))
+PY
+)
+  echo "round $r: $stop $res"
+  [[ -n "$res" ]] && break
+  [[ "$stop" != *"budget"* ]] && break
+done
+echo "$scr" | awk 'NR==1{next} {print}' | grep -E '^0[1-7] |^1|^2|^34|^Map|^PETS|^Neigh'

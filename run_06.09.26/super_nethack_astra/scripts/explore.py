@@ -33,6 +33,14 @@ def is_door(rows, x, y):
             or (tile(rows, x, y - 1) in WALLS and tile(rows, x, y + 1) in WALLS))
 
 
+def is_gap(rows, x, y):
+    """A doorless doorway: floor with wall on both sides."""
+    if tile(rows, x, y) not in '·.':
+        return False
+    return ((tile(rows, x - 1, y) in WALLS and tile(rows, x + 1, y) in WALLS)
+            or (tile(rows, x, y - 1) in WALLS and tile(rows, x, y + 1) in WALLS))
+
+
 def walkable(rows, x, y):
     c = tile(rows, x, y)
     return c in FLOOR or is_door(rows, x, y) or c == '0'
@@ -64,7 +72,7 @@ def nearest(rows, start, dead):
         cx, cy = todo.popleft()
         if (cx, cy) != start and frontier(rows, cx, cy) and f'{cx},{cy}' not in dead:
             o = openness(rows, cx, cy)
-            corridor = tile(rows, cx, cy) in '▒#' or is_door(rows, cx, cy)
+            corridor = tile(rows, cx, cy) in '▒#' or is_door(rows, cx, cy) or is_gap(rows, cx, cy)
             exits = sum(1 for dx, dy in DIRS if walkable(rows, cx + dx, cy + dy))
             # A corridor only leads somewhere new at a dead end (continuation
             # unseen or hidden); elsewhere its blank neighbours are just rock.
@@ -109,7 +117,10 @@ def open_a_door(st, dead):
                     old, sys.stdout = sys.stdout, sink
                     try:
                         if (cx, cy) != start:
-                            session.travel(cx, cy)
+                            try:
+                                session.travel(cx, cy)
+                            except RuntimeError:
+                                return False
                     finally:
                         sys.stdout = old
                 for _ in range(6):
@@ -215,7 +226,7 @@ def main():
                 d = (cell[0] - cur[0], cell[1] - cur[1])
                 if d not in keys:
                     break
-                session.send(keys[d])
+                session.send('m' + keys[d])  # m: never attack, even an unseen monster
                 obs = guard.settled(session)
                 st2 = guard.state(*obs) if obs else None
                 if st2 is None or st2['position'] != cell:

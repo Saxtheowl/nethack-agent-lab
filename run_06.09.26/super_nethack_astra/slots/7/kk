@@ -1,0 +1,3 @@
+#!/bin/bash
+# compact: keys then show messages (rows 01-09), status, features, neighbors
+"$(dirname "$0")/k" "$@" | grep -E '^0[1-9] |^Dlvl|^34 |^Map features|^PETS|^Neighbors|^Terminal' 

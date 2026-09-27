@@ -1,0 +1,5 @@
+#!/bin/bash
+# slots/8/ex [steps]: explore then print a compact view (stop reason, last msgs, map, status).
+cd "$(dirname "$0")"
+./explore --steps "${1:-25}" 2>&1 | grep -E "^explore" 
+./v | grep -vE "^Terminal|^   [0 ]" | grep -vE "^0[1-4] "

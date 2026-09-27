@@ -7,6 +7,29 @@ dessus, vérifier avec ':'), Minetown (temple : protection 400×XL) → Sokoban 
 Lire aussi les « Lessons » de memory/run-1.md, run-2.md, run-3.md, slot2-run-1.md, slot3-run-1.md.
 
 ## Current state
-Début de partie.
+T3870 Dlvl4, XL5, HP64/66, AC1, $8. EXCALIBUR (a, béni, rustproof +1) obtenu au 2e #dip (fountain D4 disparue).
+PRAYERS : T2068 (faim), T3582 (Fainting + lycanthropie guérie « purified ») -> pas avant ~T4600.
+Dog (grandi) vivant ; il porte ma dagger b (uncursed +0). Quiver : i 2 orcish daggers ; f 3 darts.
+Nouveau : cyan potion v, 2 yellowish brown gems u. Nourriture : AUCUNE -> manger les corpses frais (pas kobold, pas chien, pas dwarf).
+D5 : '<' 20,14, '>' 53,16. D4 '>' 50,27.
+Plan : descendre vers l'Oracle (D5-9) -> Sokoban (niveau au-dessus de l'Oracle, 2e '<').
+--- état précédent ---
+T2270 Dlvl3, XL3, HP41/41, AC1, $3. Little dog vivant (avec moi). PRAYER T2068 (faim) -> pas avant ~T3100.
+Inventaire : +1 long sword, dagger b + 2 orcish daggers i (quiver), 3 darts f, +3 small shield, orcish helm (testé par le chien),
++2 leather armor (achetée 33zm), tripe ration r, scrolls THARR k, GHOTI l, unlabeled n, VELOX NEB o, HAPAX LEGOMENON p,
+murky potion q, forked wand m (engrave : aucun message).
+D1 : '>' 70,13. D2 : '<' 46,27 ; '>' MINES 67,15 (NE) ; '>' main 30,28 + FOUNTAIN 30,27 (Excalibur à XL5 !).
+D3 : '<' 24,15, '>' 38,17. TRAP DOOR vers D4 vers 62-64,12-14 (près de la potion à 65,13, jamais ramassée) : éviter.
+D3 : Boyabai's used armor shop 3-15,14-16 (porte 14,17) : « piece of cloth » (cloak magique, 67zm) au sol 13,16,
+jungle boots 11zm (elven/kicking), +1 low boots 24zm, leather armor 7zm, crested helmet 67, +1 ring mail 147, ']' à 11,14 = mimic probable.
+D4 : '<' 17,17, '>' 50,27, fountain 34,23.
 
 ## Lessons
+- FAIM : une Valkyrie a faim toutes les ~700 tours ; vérifier Hungry sur la ligne 34 après CHAQUE action groupée (rest, waitpet,
+  combat). J'ai raté Hungry/Weak et me suis évanouie (Fainting) au milieu de rats + wererat -> lycanthropie. Prayer a sauvé.
+- Ne jamais enchaîner plusieurs explore dans une boucle for : la boucle ne s'arrête pas sur la perte de HP.
+- Le chien peut manger le corpse du floating eye : le tuer quand le chien est loin, ou se placer dessus tout de suite.
+- explore/travel ne connaissent pas les trap doors jamais vues : je suis tombée 2 fois dans la même trap door au D3 et le chien est resté en haut.
+- Le chien ne ramasse jamais d'objet cursed : s'il ramasse/lâche un objet, il est sûr (orcish helm testé ainsi).
+- Prix shop : une armure avec enchantement positif n'est jamais cursed à la génération (+2 leather armor = 33zm à Cha 8).
+- n<count>s pour chercher (number_pad) ; « 10s » ne marche pas.

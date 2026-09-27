@@ -1,0 +1,20 @@
+#!/bin/bash
+# scripts/searchat "x,y x,y ..." [turns]: at each spot search in chunks of 8,
+# stop on HP loss, hunger change, or when a new door/gap/corridor appears.
+cd "$(dirname "$0")/.."
+S="python3 scripts/session.py"
+n=${2:-16}
+base=$(scripts/doors)
+for p in $1; do
+  scripts/t ${p%,*} ${p#*,} >/dev/null
+  prev=""; st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  for i in $(seq $((n / 8))); do
+    $S keys n8s --settle .8 >/dev/null
+    o=$($S screen); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+    [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP HP loss at $p"; exit 1; }; prev=$hp
+    st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+    [ "$st" != "$st0" ] && [ -n "$st" ] && { echo "STOP $st"; exit 1; }
+    echo "$o" | grep -q "You find a hidden" && { echo "FOUND at $p: $(scripts/doors)"; exit 0; }
+  done
+  echo "$p: nothing"
+done

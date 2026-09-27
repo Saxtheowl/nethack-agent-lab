@@ -1,0 +1,26 @@
+#!/bin/bash
+# scripts/pettest LETTER : drop the item here, step aside, and watch the pet:
+# "moves only reluctantly" = cursed; pet standing on the square = not cursed.
+# One turn at a time, stops on HP loss. Then walk back and pick the item up.
+cd "$(dirname "$0")/.."
+S="python3 scripts/session.py"
+pos=$($S screen --compact | grep -o '^Neighbors of @([0-9]*,[0-9]*)' | head -1 | grep -oE '[0-9]+,[0-9]+')
+$S keys --raw "d$1" --settle .5 >/dev/null
+for k in 6 4 2 8 3 1 9 7; do
+  before=$($S screen --compact | grep -o '^Neighbors of @([0-9]*,[0-9]*)' | head -1)
+  $S keys $k --settle .4 >/dev/null
+  after=$($S screen --compact | grep -o '^Neighbors of @([0-9]*,[0-9]*)' | head -1)
+  [ "$before" != "$after" ] && break
+done
+res="undetermined"; prev=""
+for i in $(seq 20); do
+  out=$($S screen --compact)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { res="STOP: HP loss"; break; }
+  prev=$hp
+  $S screen | grep -q "reluctantly" && { res="CURSED"; break; }
+  echo "$out" | grep '^PETS' | grep -q " $pos\b\|: $pos" && { res="not cursed"; break; }
+  $S keys s --settle .3 >/dev/null
+done
+echo "pettest: $res"
+[ "$res" = "not cursed" ] || [ "$res" = "undetermined" ] || [ "$res" = "CURSED" ] || exit 1

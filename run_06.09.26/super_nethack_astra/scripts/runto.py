@@ -33,7 +33,7 @@ for _ in range(n):
     c = (x, y)
     while prev[c] != start:
         c = prev[c]
-    session.send(KEYS[(c[0] - start[0], c[1] - start[1])])
+    session.send('m' + KEYS[(c[0] - start[0], c[1] - start[1])])  # m: never attack
     obs = guard.settled(session)
     st2 = guard.state(*obs) if obs else None
     if st2 is None:
