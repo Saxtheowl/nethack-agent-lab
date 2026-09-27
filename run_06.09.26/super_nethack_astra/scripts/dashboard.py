@@ -11,6 +11,7 @@ API
   /api/log?game=ID          decisions / commands with timestamps
   /api/journal?game=ID      the run journal (markdown text)
   /api/strategy             cross-run statistics (analytics.py)
+  /api/resources            machines, storage, processes (Ressources tab)
 """
 import argparse
 import json
@@ -137,6 +138,10 @@ def highlights(gid, window=1000, count=3):
                     frame_at(rows, c['t']), c['t'], c.get('turn'), c.get('kind', 'event'),
                     c['title'], c.get('text', '')))
     last_turn = rows[-1][2][0] if rows else 0
+    if meta.get('status') == 'dead' and rows:
+        i, t, st = rows[-1]
+        evs.append((200, max(0, i - 40), t, st[0], 'death', 'Mort : ' + (meta.get('death') or '?'),
+                    meta.get('cause_summary') or ''))
     recent = [e for e in evs if e[3] is None or e[3] >= last_turn - window]
     recent.sort(key=lambda e: (-e[0], -(e[3] or 0)))
     out, seen = [], set()
@@ -311,6 +316,85 @@ def strategy():
     return data
 
 
+_worker_cache = {'t': 0, 'data': None}
+
+
+def _size(paths):
+    return sum(p.stat().st_size for p in paths if p.is_file())
+
+
+def _run(cmd, timeout=10):
+    try:
+        return subprocess.run(cmd, text=True, capture_output=True, timeout=timeout).stdout
+    except (subprocess.TimeoutExpired, OSError):
+        return ''
+
+
+def worker_status():
+    """miniforum-worker load/memory/disk, cached 5 minutes (one ssh call)."""
+    if _worker_cache['data'] and time.time() - _worker_cache['t'] < 300:
+        return _worker_cache['data']
+    out = _run(['ssh', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=5', 'miniforum-worker',
+                'hostname; nproc; cat /proc/loadavg; free -b | sed -n 2p; df -B1 ~ | tail -1; ls ~/nethack-compute 2>/dev/null | tr "\\n" " "'], 15)
+    lines = out.splitlines()
+    data = {'ok': len(lines) >= 5}
+    if data['ok']:
+        mem, disk = lines[3].split(), lines[4].split()
+        data.update(host=lines[0], cores=int(lines[1]), load=[float(x) for x in lines[2].split()[:3]],
+                    mem_total=int(mem[1]), mem_avail=int(mem[6]), disk_total=int(disk[1]), disk_used=int(disk[2]),
+                    compute_dirs=(lines[5].split() if len(lines) > 5 else []))
+    _worker_cache.update(t=time.time(), data=data)
+    return data
+
+
+def resources():
+    import os
+    import shutil
+    runs = ROOT / 'runs'
+    games_dir = frames.GAMES
+    gsz = {'frames': 0, 'log': 0, 'chronicle': 0, 'analytics': 0, 'meta': 0}
+    ngames = 0
+    for d in games_dir.iterdir() if games_dir.exists() else []:
+        ngames += 1
+        for k, f in (('frames', 'frames.jsonl'), ('log', 'log.jsonl'), ('chronicle', 'chronicle.jsonl'),
+                     ('analytics', 'analytics.json'), ('meta', 'meta.json')):
+            p = d / f
+            if p.exists():
+                gsz[k] += p.stat().st_size
+    ttyrecs = sorted(runs.glob('*.ttyrec'))
+    ledgers = sorted(runs.glob('ledger*.jsonl'))
+    du = shutil.disk_usage(ROOT)
+    mem = dict(l.split(':', 1) for l in Path('/proc/meminfo').read_text().splitlines() if ':' in l)
+    kb = lambda k: int(mem[k].split()[0]) * 1024
+    sessions = []
+    for l in _run(['tmux', '-S', SOCKET, 'ls', '-F', '#{session_name}|#{session_created}|#{pane_pid}']).splitlines():
+        name, created, pid = (l.split('|') + ['', ''])[:3]
+        sessions.append({'name': name, 'created': int(created or 0)})
+    git_root = ROOT
+    unpushed = _run(['git', '-C', str(git_root), 'rev-list', '--count', 'origin/main..main']).strip()
+    last_push = _run(['git', '-C', str(git_root), 'log', '-1', '--format=%ct', 'origin/main']).strip()
+    last_commit = _run(['git', '-C', str(git_root), 'log', '-1', '--format=%ct|%s']).strip().split('|', 1)
+    wd = runs / 'watchdog.log'
+    slots = {s: slot_game(s) for s in '12345678'}
+    helpers = sorted(p.name for p in (ROOT / 'scripts').iterdir() if p.is_file() and not p.name.endswith(('.pyc', '.json')))
+    return {
+        'now': time.time(),
+        'local': {'cores': os.cpu_count(), 'load': list(os.getloadavg()), 'mem_total': kb('MemTotal'), 'mem_avail': kb('MemAvailable'),
+                  'disk_total': du.total, 'disk_used': du.used, 'disk_free': du.free},
+        'worker': worker_status(),
+        'storage': {'games': ngames, 'games_bytes': gsz, 'ttyrec_n': len(ttyrecs), 'ttyrec_bytes': _size(ttyrecs),
+                    'ledgers': [{'name': p.name, 'bytes': p.stat().st_size} for p in ledgers],
+                    'engine_bytes': sum(f.stat().st_size for f in (ROOT / 'engine').rglob('*') if f.is_file()),
+                    'memory_bytes': sum(f.stat().st_size for f in (ROOT / 'memory').rglob('*') if f.is_file()),
+                    'slots_bytes': sum(f.stat().st_size for f in (ROOT / 'slots').rglob('*') if f.is_file())},
+        'git': {'unpushed': int(unpushed or 0), 'last_push': int(last_push or 0),
+                'last_commit': {'t': int(last_commit[0] or 0), 'msg': last_commit[1] if len(last_commit) > 1 else ''}},
+        'sessions': sessions, 'slots': slots,
+        'watchdog': wd.read_text().splitlines()[-8:] if wd.exists() else [],
+        'helpers': helpers,
+    }
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -400,6 +484,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send({'chronicle': out})
             if url.path == '/api/history':
                 return self.send(history())
+            if url.path == '/api/resources':
+                return self.send(resources())
             if url.path == '/api/strategy':
                 return self.send(strategy())
             if url.path == '/api/journal':

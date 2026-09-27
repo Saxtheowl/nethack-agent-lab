@@ -142,6 +142,22 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 .tbar .cap { font-size: 16px; color: #d6e0d0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tbar .st { font-size: 15px; color: var(--muted); white-space: nowrap; } .tbar .st b { color: var(--text); }
 #livewrap.theater .tbar { display: flex !important; }
+.card .prev { font-size: 12px; color: var(--muted); margin-top: 6px; border-top: 1px dashed var(--line); padding-top: 6px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.card .prev button { padding: 1px 7px; font-size: 12px; }
+.flow { display: flex; align-items: stretch; gap: 6px; flex-wrap: wrap; }
+.flow .node { flex: 1 1 150px; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.flow .node b { display: block; margin-bottom: 4px; } .flow .node small { color: #cfd8cc; font-size: 12.5px; line-height: 1.4; display: block; }
+.flow .node.ai { border-color: #6b6035; } .flow .node.ai b { color: var(--gold); } .flow .node.game { border-color: #35506b; } .flow .node.game b { color: var(--blue); }
+.flow .arrow { align-self: center; color: var(--muted); font-size: 18px; }
+code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--gold); }
+.meter { height: 8px; background: #22313a; border-radius: 4px; overflow: hidden; margin: 3px 0 8px; } .meter i { display: block; height: 100%; background: var(--accent); }
+.meter.hot i { background: var(--bad); } .meter.warm i { background: var(--warn); }
+.mach { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } .mach h3 { margin: 0 0 6px; font-size: 15px; } .mach .kbd { display: block; margin-bottom: 8px; }
+.mach .lbl { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); }
+.rlist { margin: 0; padding-left: 18px; font-size: 13.5px; } .rlist li { margin: 6px 0; color: #d4ddd0; } .rlist a { color: var(--blue); }
+.toolgrid { display: flex; flex-wrap: wrap; gap: 6px; } .toolgrid code { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+#rwarn li { margin: 4px 0; }
+@media (max-width: 700px) { .mach { grid-template-columns: 1fr; } .flow .arrow { display: none; } }
 /* strategy sub-tabs */
 .subtabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .subtabs button { border: none; background: transparent; color: var(--muted); font-size: 14px; padding: 7px 12px; border-radius: 8px; }
@@ -207,7 +223,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
 
 <header class="top">
   <h1>Claude joue à NetHack 3.6.7</h1>
-  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button></nav>
+  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button><button data-tab="res">Ressources</button></nav>
   <div class="right"><span id="conn">…</span><span>Joueur IA · Claude Opus 5.5 · local, sans aide</span></div>
 </header>
 
@@ -248,6 +264,50 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
     <div class="sfilters" id="sfilters"></div>
     <div id="sbody"><p class="loading">Calcul des statistiques…</p></div>
   </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="tab-res" class="hidden">
+  <div class="insight" id="rwarn"><b>Points d’attention</b><ul></ul></div>
+  <div class="panel" style="margin-bottom:16px"><h2>Comment tout s’enchaîne</h2>
+    <div class="flow">
+      <div class="node ai"><b>Claude — orchestrateur</b><small>Claude Code, modèle Claude Opus 5.5 (<code>claude-opus-5-5</code>). Lance et surveille les agents, construit les outils et le dashboard, relaie tes demandes.</small></div>
+      <div class="arrow">→</div>
+      <div class="node ai"><b>8 agents Claude</b><small>Un sous-agent par partie (même modèle). Chacun lit l’écran et choisit chaque touche lui-même, en suivant son style (Tariru ou Astra) et son journal <code>memory/…md</code>.</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>session.py</b><small>Le harnais adapté d’Astra : envoie les touches dans tmux, lit l’écran, écrit le journal des commandes (<code>log.jsonl</code>) et le ledger haché.</small></div>
+      <div class="arrow">→</div>
+      <div class="node game"><b>NetHack 3.6.7</b><small>Vanilla, compilé depuis le tarball officiel. 8 sessions tmux (<code>nethack</code>, <code>nethack2…8</code>) enregistrées en <code>ttyrec</code>. Pas de wizard mode, pas de save-scum.</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>recorder.py</b><small>Capture les 8 écrans toutes les 0,5 s et écrit les images différentielles (<code>frames.jsonl</code>) et l’état (<code>meta.json</code>).</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>dashboard.py</b><small>Serveur local <code>127.0.0.1:8766</code> : Live, replay, chronique, Historique, Stratégie (<code>analytics.py</code>).</small></div>
+    </div>
+    <p class="note" style="margin-top:10px">Les calculs lourds des agents (solveur de Sokoban, recherches) partent sur le worker <b>miniforum</b> via <code>scripts/onworker</code> (limite 8 Go, délai maximal). Un <code>watchdog</code> local tue tout helper Python qui dépasse 2,5 Go.</p>
+  </div>
+  <div class="panel" style="margin-bottom:16px"><h2>Machines</h2><div id="rmach"></div></div>
+  <div class="panel" style="margin-bottom:16px"><h2>Sauvegarde des replays et des données</h2><div id="rstore"></div></div>
+  <div class="sgrid">
+    <div class="panel"><h2>Processus (tmux)</h2><div id="rproc"></div></div>
+    <div class="panel"><h2>Parties en cours et agents</h2><div id="rslots"></div></div>
+  </div>
+  <div class="sgrid">
+    <div class="panel"><h2>Règles du jeu et de l’expérience</h2><ul class="rlist">
+      <li><b>Jeu pur :</b> NetHack 3.6.7 vanilla, Valkyrie naine (dwarf, female, lawful), aucun bot, pas de wizard/explore mode, pas de retour à une sauvegarde après une mort.</li>
+      <li><b>Chaque touche est choisie par un agent Claude</b> après lecture de l’écran ; les helpers (<code>travel</code>, <code>fight</code>, <code>rest</code>, <code>autoexplore</code>…) ne font que des actions bornées qui s’arrêtent au moindre danger (perte de HP, faim, monstre inconnu).</li>
+      <li><b>Styles :</b> partie 1 toujours <b>Tariru</b> (<code>memory/tariru-style.md</code>, tiré des parties du joueur Tariru, 144 ascensions) ; les autres en <b>Astra</b> (<code>memory/astra-style.md</code>, la méthode qui a ascensionné 1 fois sur 3) ; partie 6 en Tariru pour comparer.</li>
+      <li><b>Mémoire des agents :</b> un journal par run (<code>memory/run-N.md</code>, <code>memory/slotN-run-M.md</code>) : état, objets identifiés, menaces, leçons. Les leçons remontent dans l’Historique.</li>
+      <li><b>Options :</b> <code>config/nethackrc</code> — interface curses 144×36, <code>number_pad</code>, arrêt forcé sur les messages dangereux (Weak, deathly sick, stoning, strangulation, polymorph trap), confirmation pour <code>#pray</code>.</li>
+    </ul></div>
+    <div class="panel"><h2>Sources et références</h2><ul class="rlist">
+      <li><a href="https://github.com/kenforthewin/nethack_astra" target="_blank" rel="noopener">kenforthewin/nethack_astra</a> — le harnais d’origine (licence MIT, copie dans <code>upstream/</code>).</li>
+      <li><a href="https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/" target="_blank" rel="noopener">Article « LLM NetHack ascension »</a> — la partie Astra gagnante, rejouable.</li>
+      <li>NetHack 3.6.7 : code source dans <code>engine/nethack-3.6.7/src</code>, consulté par les agents pour vérifier une règle (Elbereth, prayer, priest…).</li>
+      <li>Tariru (NAO) : xlog et dumps publics ; les vidéos de ses parties ont servi au style Tariru.</li>
+      <li>Dépôt git : <code>Saxtheowl/nethack-agent-lab</code> (GitHub) — code, journaux, frames, ledgers.</li>
+    </ul></div>
+  </div>
+  <div class="panel"><h2>Outils (scripts/)</h2><p class="note">Utilisés par les agents (une copie par partie dans <code>slots/N/</code>) et par le serveur.</p><div id="rtools" class="toolgrid"></div></div>
 </section>
 
 <!-- DASHBOARD -->
@@ -369,6 +429,8 @@ function showTab(t) {
   $('#tab-live').classList.toggle('hidden', t !== 'live');
   $('#tab-dash').classList.toggle('hidden', t !== 'dash');
   $('#tab-hist').classList.toggle('hidden', t !== 'hist');
+  $('#tab-res').classList.toggle('hidden', t !== 'res');
+  if (t === 'res') refreshResources();
   if (t === 'hist') { refreshHistory(); showSub(); }
   if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
 }
@@ -442,7 +504,8 @@ function renderCards() {
         <div class="hpbar"><i></i></div>
         <div class="headline"></div>
         <div class="term mini"></div><div class="say"></div>
-        <div class="actions"><button class="big" title="Replay en grand écran, en direct">⛶ Grand</button><button class="km" title="Les 3 moments clés des 1000 derniers tours">★ Moments</button><button class="go" title="Onglet Live sur cette partie">Live</button><button class="rp" title="Rejouer depuis le début">Rejouer</button><button class="lv" title="Suivre dans le replay ci-dessous">● Suivre</button></div>`;
+        <div class="actions"><button class="big" title="Replay en grand écran, en direct">⛶ Grand</button><button class="km" title="Les 3 moments clés des 1000 derniers tours">★ Moments</button><button class="go" title="Onglet Live sur cette partie">Live</button><button class="rp" title="Rejouer depuis le début">Rejouer</button><button class="lv" title="Suivre dans le replay ci-dessous">● Suivre</button></div>
+        <div class="prev"></div>`;
       wrap.append(card);
       card.onclick = e => { if (e.target.closest('button')) return; const g = card.dataset.gid; g && openMoments(g); };
       card.querySelector('.big').onclick = async () => { if (!card.dataset.gid) return; await loadGame(card.dataset.gid, 'live'); toggleBig($('#rpanel'), true); };
@@ -452,6 +515,16 @@ function renderCards() {
       card.querySelector('.lv').onclick = () => card.dataset.gid && loadGame(card.dataset.gid, 'live');
     }
     card.dataset.gid = meta ? meta.id : '';
+    // the previous game of this slot (the card always shows the CURRENT one)
+    const prev = GAMES.filter(g => String(g.slot) === s && (!meta || g.id !== meta.id) && g.status !== 'live')
+      .sort((a, b) => (b.started || '').localeCompare(a.started || ''))[0];
+    const pv = card.querySelector('.prev');
+    if (prev && pv.dataset.id !== prev.id) {
+      pv.dataset.id = prev.id;
+      pv.replaceChildren(el('span', {textContent: `Partie précédente (run ${prev.run ?? '?'}) : ${prev.status === 'dead' ? '☠ ' + (prev.death || 'morte') : STATUS_FR[prev.status] || prev.status} · T${(prev.turns || prev.turn || 0).toLocaleString('fr-FR')} `}),
+        prev.status === 'dead' ? el('button', {textContent: '☠ Revoir la mort', onclick: () => loadGame(prev.id, 'death')}) : '',
+        el('button', {textContent: '★', title: 'Moments clés de la partie précédente', onclick: () => openMoments(prev.id)}));
+    }
     card.querySelector('.head b').textContent = `Partie ${s}`;
     card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}${meta.style ? ' · style ' + (meta.style === 'tariru' ? 'Tariru' : 'Astra') : ''}` : 'emplacement libre';
     const badge = card.querySelector('.badge');
@@ -621,28 +694,38 @@ async function loadGame(gid, at) {
     loadWhy(gid);
   }
   R.follow = at === 'live';
-  seek(at === 'live' || at === 'end' ? R.frames.length - 1 : (typeof at === 'number' ? at : 0));
+  if (at === 'death') {  // a little before the death screen
+    const d = R.events.find(e => e.type === 'death');
+    seek(Math.max(0, (d ? d.f : R.frames.length - 1) - 40));
+  } else seek(at === 'live' || at === 'end' ? R.frames.length - 1 : (typeof at === 'number' ? at : 0));
   $('#rterm').scrollIntoView({behavior: 'smooth', block: 'center'});
 }
 async function fetchMore(all) {
-  if (!R.gid || R.loading) return;
+  // one fetch at a time, and never mix frames of two games: a fetch started
+  // for a previous game (or before a reset) is discarded
+  while (R.fetchP) await R.fetchP;
+  if (!R.gid) return;
+  const gid = R.gid, frames = R.frames;
   R.loading = true;
-  try {
+  R.fetchP = (async () => {
     do {
-      const d = await api(`/api/frames?game=${encodeURIComponent(R.gid)}&from=${R.frames.length}&limit=5000`);
-      const start = R.frames.length;
-      for (const f of d.frames) R.frames.push(f);
+      const d = await api(`/api/frames?game=${encodeURIComponent(gid)}&from=${frames.length}&limit=5000`);
+      if (R.gid !== gid || R.frames !== frames) return;
+      const start = frames.length;
+      for (const f of d.frames) frames.push(f);
       R.total = d.total; computeDerived(start);
-      $('#rload').textContent = R.frames.length < R.total ? `chargement ${R.frames.length}/${R.total}…` : `${R.total} images`;
+      $('#rload').textContent = frames.length < R.total ? `chargement ${frames.length}/${R.total}…` : `${R.total} images`;
       if (!d.frames.length) break;
-    } while (all && R.frames.length < R.total);
-  } finally { R.loading = false; }
-  drawTimeline(); drawChart(); drawEvents();
+    } while (all && frames.length < R.total);
+  })().finally(() => { R.fetchP = null; R.loading = false; });
+  await R.fetchP;
+  if (R.gid === gid && R.frames === frames) { drawTimeline(); drawChart(); drawEvents(); }
 }
 setInterval(async () => {   // live growth of the selected game
   if (!R.gid || TAB !== 'dash') return;
   const m = GAMES.find(g => g.id === R.gid);
   if (!m || m.status !== 'live') return;
+  if (R.fetchP) return;
   const n = R.frames.length; await fetchMore(false);
   if (R.follow && R.frames.length > n) seek(R.frames.length - 1, true);
 }, 1000);
@@ -844,6 +927,7 @@ function renderRuns() {
     const ul = el('ul'); for (const l of r.lessons) ul.append(el('li', {textContent: l})); right.append(ul);
     if (!r.lessons.length) right.append(el('p', {className: 'kbd', textContent: 'Pas encore de leçon écrite.'}));
     right.append(el('div', {style: 'margin-top:10px;display:flex;gap:6px'},
+      r.status === 'dead' ? el('button', {textContent: '☠ Revoir la mort', onclick: () => loadGame(r.id, 'death')}) : '',
       el('button', {textContent: '▶ Rejouer depuis le début', onclick: () => loadGame(r.id, 0)}),
       el('button', {textContent: '★ Moments clés', onclick: () => openMoments(r.id)}),
       r.status === 'live' ? el('button', {textContent: '● Suivre en direct', onclick: () => loadGame(r.id, 'live')}) : ''));
@@ -1063,7 +1147,7 @@ function vHard(gs) {
     el('td', {className: 'num'}, heat(+hitRate(d).toFixed(1), mh)), el('td', {className: 'num'}, heat(+lowRate(d).toFixed(2), ml)), el('td', {className: 'num'}, heat(deaths[d] || 0, md))));
   const stalls = gs.flatMap(g => Object.entries(g.levels).map(([d, [a, b]]) => [`${gname(g)} · Dlvl ${d} (${STYLE_FR[styleOf(g)]})`, b - a])).sort((a, b) => b[1] - a[1]);
   const deathsList = gs.filter(g => g.status === 'dead').map(g => el('div', {className: 'lesson dead'}, `☠ ${gname(g)} · T${fmtN(g.turns)} · Dlvl ${g.series.length ? g.series[g.series.length - 1][1] : '?'} · XL ${g.maxxl} — ${g.death || '?'}`,
-    el('small', {textContent: g.cause_summary || ''}), el('button', {textContent: '▶ fin de partie', onclick: () => loadGame(g.id, 'end')})));
+    el('small', {textContent: g.cause_summary || ''}), el('button', {textContent: '▶ Revoir la mort', onclick: () => loadGame(g.id, 'death')})));
   return [panel('Difficulté par Dlvl', 'Coups reçus / 100 T et HP bas / 1000 T mesurent le danger réel ; les couleurs vont du calme (transparent) au rouge. Les lignes « tous styles » utilisent toutes les parties.',
       table([['', 'Niveau'], ['', 'Parties passées', 1], ['', 'T cumulés', 1], ['', 'T moyen / partie', 1], ['', 'Coups reçus /100T', 1], ['', 'HP bas /1000T', 1], ['', 'Morts', 1]], rows)),
     el('div', {className: 'sgrid'},
@@ -1115,6 +1199,64 @@ function vLessons(gs) {
         ...ls.map(l => { const g = gmap[l.game]; return el('div', {className: 'lesson ' + l.status}, l.text, el('small', {}, `${g ? gname(g) : l.game} · `, tag(l.style || 'avant-style'), ` · ${STATUS_FR[l.status] || l.status}`)); })))];
 }
 
+/* RESOURCES tab */
+const fmtB = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' Go' : b >= 1e6 ? (b / 1e6).toFixed(0) + ' Mo' : (b / 1e3).toFixed(0) + ' ko';
+const ago = t => { const m = Math.round((Date.now() / 1000 - t) / 60); return m < 60 ? `il y a ${m} min` : m < 1440 ? `il y a ${Math.round(m / 60)} h` : `il y a ${Math.round(m / 1440)} j`; };
+function meter(label, used, total, fmt = fmtB) {
+  const p = total ? used / total : 0, m = el('div', {className: 'meter ' + (p > .85 ? 'hot' : p > .7 ? 'warm' : '')}, el('i'));
+  m.firstChild.style.width = Math.min(100, p * 100) + '%';
+  return [el('div', {className: 'lbl'}, el('span', {textContent: label}), el('span', {textContent: `${fmt(used)} / ${fmt(total)} (${Math.round(p * 100)} %)`})), m];
+}
+async function refreshResources() {
+  let R2; try { R2 = await api('/api/resources'); } catch (e) { return; }
+  const L = R2.local, W = R2.worker, S = R2.storage, G = R2.git;
+  const loadFmt = v => v.toFixed(1);
+  const mach = (name, sub, m) => el('div', {}, el('h3', {textContent: name}), el('span', {className: 'kbd', textContent: sub}),
+    ...meter(`Charge CPU (moyenne 1 min, ${m.cores} cœurs)`, m.load[0], m.cores, loadFmt),
+    ...meter('Mémoire utilisée', m.mem_total - m.mem_avail, m.mem_total), ...meter('Disque', m.disk_used, m.disk_total));
+  $('#rmach').replaceChildren(el('div', {className: 'mach'},
+    mach('Ce PC', 'Les 8 parties NetHack, tmux, recorder, dashboard, et les agents Claude (côté client).', L),
+    W.ok ? mach('Worker miniforum', `ssh miniforum-worker · calculs lourds · dossiers : ${W.compute_dirs.join(', ') || '—'}`, W) : el('div', {}, el('h3', {textContent: 'Worker miniforum'}), el('p', {className: 'kbd', textContent: 'injoignable'}))),
+    el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Les modèles Claude tournent chez Anthropic (cloud) : le PC ne fait qu’envoyer l’écran et recevoir les touches. La charge locale vient surtout des 8 clients Claude Code, des helpers Python et du recorder.'}));
+  const gb = S.games_bytes, ledgerTot = S.ledgers.reduce((a, l) => a + l.bytes, 0);
+  const rows = [
+    ['Replays (images)', `runs/games/<partie>/frames.jsonl`, gb.frames, 'git', 'Écran complet toutes les 200 images, puis seulement les lignes qui changent. C’est ce que lit le replay.'],
+    ['Enregistrements bruts', `runs/*.ttyrec (${S.ttyrec_n})`, S.ttyrec_bytes, 'local seulement', 'Flux terminal exact de chaque lancement ; permet de tout reconstruire (import_ttyrec.py).'],
+    ['Commandes et décisions', 'runs/games/<partie>/log.jsonl', gb.log, 'git', 'Chaque touche envoyée et chaque phrase dite par l’agent, horodatées.'],
+    ['Chronique', 'runs/games/<partie>/chronicle.jsonl', gb.chronicle, 'git', 'Les évènements importants racontés par les agents.'],
+    ['État des parties', 'runs/games/<partie>/meta.json', gb.meta, 'git', 'Statut, T, Dlvl, HP, mort, style, journal.'],
+    ['Cache des statistiques', 'runs/games/<partie>/analytics.json', gb.analytics, 'git', 'Évènements extraits des messages (Stratégie). Recalculable.'],
+    ['Ledgers hachés', `runs/ledger*.jsonl (${S.ledgers.length})`, ledgerTot, 'git', 'Preuve anti-triche : chaque envoi et chaque écran, chaînés par hash.'],
+    ['Journaux des agents', 'memory/*.md', S.memory_bytes, 'git', 'Mémoire de chaque run : état, objets, leçons ; styles Tariru et Astra.'],
+    ['Outils des agents', 'slots/N/', S.slots_bytes, 'git', 'Copies des helpers + outils écrits par les agents (Sokoban…).'],
+    ['NetHack compilé', 'engine/', S.engine_bytes, 'local seulement', 'Sources 3.6.7 + binaire + sauvegardes en cours (save/).'],
+  ];
+  $('#rstore').replaceChildren(el('div', {className: 'stable'}, el('table', {},
+    el('thead', {}, el('tr', {}, ...['Quoi', 'Où', 'Taille', 'Copie', ''].map(h => el('th', {textContent: h})))),
+    el('tbody', {}, ...rows.map(([a, b, c, d, e]) => el('tr', {}, el('td', {}, el('b', {textContent: a})), el('td', {}, el('code', {textContent: b})),
+      td(fmtB(c), 'num'), td(d, d === 'git' ? 'good' : 'warm'), el('td', {style: 'white-space:normal;color:#cfd8cc;font-size:12.5px;min-width:320px', textContent: e})))))),
+    el('p', {className: 'note', style: 'margin-top:10px', textContent: `Dépôt git : dernier commit ${ago(G.last_commit.t)} ; dernier push vers GitHub ${G.last_push ? ago(G.last_push) : 'jamais'} ; ${G.unpushed} commit(s) pas encore poussés. ${S.games} parties enregistrées.`}));
+  const DESC = {nethack: 'Partie 1', recorder: 'recorder.py : capture des 8 écrans', viewer: 'dashboard.py : ce site', watchdog: 'watchdog.sh : limite mémoire des helpers'};
+  $('#rproc').replaceChildren(el('div', {className: 'stable'}, el('table', {}, el('thead', {}, el('tr', {}, ...['Session tmux', 'Rôle', 'Démarrée'].map(h => el('th', {textContent: h})))),
+    el('tbody', {}, ...R2.sessions.map(x => el('tr', {}, td(el('code', {textContent: x.name})), td(DESC[x.name] || (x.name.startsWith('nethack') ? 'Partie ' + x.name.slice(7) : '')), td(ago(x.created), 'dim')))))),
+    el('h4', {textContent: 'Watchdog (dernières lignes)', style: 'margin:12px 0 4px;font-size:12px;color:var(--accent)'}),
+    el('pre', {style: 'font-size:11.5px;color:var(--muted);white-space:pre-wrap;margin:0', textContent: R2.watchdog.join('\n') || 'rien à signaler'}));
+  $('#rslots').replaceChildren(el('div', {className: 'stable'}, el('table', {}, el('thead', {}, el('tr', {}, ...['Partie', 'Joueur', 'Run', 'Style', 'Journal', 'Depuis'].map(h => el('th', {textContent: h})))),
+    el('tbody', {}, ...Object.entries(R2.slots).filter(([, v]) => v).map(([k, v]) => el('tr', {}, td('Partie ' + k), td(v.player), td(v.run), el('td', {}, tag(v.style || 'avant-style')), td(el('code', {textContent: v.journal || '—'})), td((v.started || '').replace('.', ' '), 'dim')))))),
+    el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Chaque partie est jouée par un sous-agent Claude Opus 5.5 lancé par l’orchestrateur. Quand une partie meurt, l’orchestrateur relance l’emplacement (partie 1 : Tariru ; les autres : Astra).'}));
+  $('#rtools').replaceChildren(...R2.helpers.map(h => el('code', {textContent: h})));
+  const warn = [];
+  const dp = L.disk_used / L.disk_total;
+  if (dp > .85) warn.push(`Disque du PC rempli à <b>${Math.round(dp * 100)} %</b> (${fmtB(L.disk_free)} libres).`);
+  if (L.load[0] > L.cores * 1.2) warn.push(`Ce PC est chargé : charge <b>${L.load[0].toFixed(1)}</b> pour ${L.cores} cœurs.`);
+  if (ledgerTot > 5e8) warn.push(`Les ledgers pèsent <b>${fmtB(ledgerTot)}</b> et sont suivis par git (ils grossissent à chaque touche).`);
+  if (G.unpushed > 0) warn.push(`<b>${G.unpushed}</b> commit(s) pas encore poussés vers GitHub : tant qu’ils ne sont pas poussés, la seule copie est sur ce PC.`);
+  warn.push(`Les <code>ttyrec</code> (${fmtB(S.ttyrec_bytes)}) et les sauvegardes NetHack ne sont que sur ce PC.`);
+  if (!W.ok) warn.push('Le worker miniforum ne répond pas.');
+  $('#rwarn ul').innerHTML = warn.map(w => `<li>${w}</li>`).join('');
+}
+setInterval(() => TAB === 'res' && refreshResources(), 30000);
+
 /* big screen */
 function toggleBig(node, on, fs = true) {
   const want = on ?? !node.classList.contains('theater');
@@ -1150,8 +1292,8 @@ setInterval(() => {  // overlay texts while in big screen
 (async () => {
   const h = hashState();
   await refreshGames();
-  showTab(h.tab === 'dash' ? 'dash' : h.tab === 'live' ? 'live' : 'hist');
-  if (h.game) { await loadGame(h.game, h.f === 'live' ? 'live' : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
+  showTab(['dash', 'live', 'res'].includes(h.tab) ? h.tab : 'hist');
+  if (h.game) { await loadGame(h.game, h.f === 'live' || h.f === 'death' ? h.f : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
   pollLive();
 })();
