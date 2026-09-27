@@ -40,11 +40,6 @@ PY
   if [ $((n % 12)) = 0 ] && [ ${#pull[@]} -gt 0 ]; then
     for p in "${pull[@]}"; do rsync -aR -e "$SSH" "$W:$R/./$p" . 2>/dev/null; done
     rsync -a -e "$SSH" "$W:$R/runs/wish_scum/" runs/wish_scum/ 2>/dev/null
-    for s in 1 2 3 4 5 6 7 8; do  # hash-linked ledgers only grow: append
-      [ "$(cat .runtime/where-$s 2>/dev/null)" = worker ] || continue
-      l=runs/ledger-$s.jsonl; [ $s = 1 ] && l=runs/ledger.jsonl
-      rsync -a --append -e "$SSH" "$W:$R/$l" "$l" 2>/dev/null
-    done
   fi
   n=$((n + 1))
   sleep 5

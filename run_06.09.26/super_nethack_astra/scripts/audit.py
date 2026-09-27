@@ -47,7 +47,12 @@ def _head():
         return '0' * 64
 
 
+LEDGER_ENABLED = False  # user decision 2026-09-27: anti-cheat ledgers removed (disk load)
+
+
 def record(kind, data):
+    if not LEDGER_ENABLED:
+        return
     with _locked(f'ledger-{SLOT}.lock'):
         LEDGER.parent.mkdir(exist_ok=True)
         event = {'at': now(), 'kind': kind, 'prev': _head(), 'data': data}

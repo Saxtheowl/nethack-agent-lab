@@ -12,8 +12,6 @@ SESS=nethack$N; [ "$N" = 1 ] && SESS=nethack
 tmux -S $S kill-session -t $SESS 2>/dev/null || true
 echo worker > "$R/.runtime/where-$N"
 rsync -a "$R/.runtime/where-$N" "$R/.runtime/public-feed-$N.json" miniforum-worker:$R/.runtime/ 2>/dev/null || true
-L=runs/ledger-$N.jsonl; [ "$N" = 1 ] && L=runs/ledger.jsonl
-rsync -a "$R/$L" miniforum-worker:$R/runs/ 2>/dev/null || true   # the hash chain continues there
 ssh -o BatchMode=yes miniforum-worker "cd $R && rm -f .runtime/slot-$N.json && NH_HOST=worker NH_SLOT=$N python3 scripts/session.py start >/dev/null && python3 - <<PY
 import json
 p='.runtime/slot-$N.json'; d=json.load(open(p))
