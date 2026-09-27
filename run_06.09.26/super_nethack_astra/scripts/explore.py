@@ -17,6 +17,7 @@ import session
 
 THIEF_MSG = re.compile(r'stole|steals|snatches|charms you|seduces you|very attracted|Really attack|purse feels lighter|You are frozen|engulfs you')
 THIEF_GLYPHS = set('nl')
+DEADLY_GLYPHS = set('L&HTc;')  # liches, demons, giants, trolls, cockatrices, sea monsters
 
 FLOOR = set('▒·.<>$%!?=()[/*`"_{#') | set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@&;:\'')
 DOORS = set('-|+')
@@ -176,6 +177,7 @@ def main():
     hp0 = st['hp']
     hunger0 = st['status']
     msgs0 = {r[1:81] for r in st['rows'][1:9]}
+    seen0 = {c for r in st['rows'][10:31] for c in r[1:80]}  # already known when explore started
     if st['hp'] * 10 < st['max_hp'] * 6:
         print('explore stop: HP below 60% — rest first: go upstairs / away from monsters, let the pet fight')
         session.print_screen(True)
@@ -267,8 +269,12 @@ def main():
         if danger:
             reason = f'danger message: {danger[:70]}'
             break
-        if any(c in THIEF_GLYPHS for r in st['rows'][10:31] for c in r[1:80]):
+        seen = {c for r in st['rows'][10:31] for c in r[1:80]}
+        if seen & THIEF_GLYPHS:
             reason = 'nymph (n) or leprechaun (l) in view: kill it at range, never explore near it'
+            break
+        if seen & DEADLY_GLYPHS and (seen & DEADLY_GLYPHS) - seen0:
+            reason = f"deadly-class monster in view ({''.join(sorted(seen & DEADLY_GLYPHS))}: lich, demon, giant...): farlook it, decide yourself"
             break
         hunger = re.search(r'\b(Hungry|Weak|Fainting)\b', st['status'])
         if hunger and hunger[1] not in hunger0:

@@ -26,7 +26,7 @@ def state(screen, cursor, pets=()):
     turn = re.search(r'T:(\d+)', status)
     level = re.search(r'Dlvl:(\d+)', status)
     home = re.match(r'^\s*│?\s*Home ([1-9]\d*)\s', status)
-    plane = re.match(r'^\s*│?\s*(Earth|Air|Fire|Water|Astral)\s', status)
+    plane = re.match(r'^\s*│?\s*(Earth|Air|Fire|Water|Astral|Fort Ludios|End Game)\s', status)
     if not hp or not turn or not (level or home or plane) or not (10 <= y <= 30 and 0 <= x < 81):
         return None
     # The configured player glyph changes when polymorphed. Recognize only
