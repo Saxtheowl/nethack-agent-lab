@@ -166,12 +166,24 @@ def main():
     # Key the dead-end cache by level AND the upstairs position, so Mines and
     # main-dungeon levels with the same Dlvl number do not share it.
     ups = sorted((x, y) for y in range(10, 31) for x in range(1, 80) if st['rows'][y][x:x + 1] == '<')
-    level = f"{level}@{ups[0][0]},{ups[0][1]}" if ups else str(level)
     store = session.RUNTIME / f'explore-{session.SLOT}.json'
     try:
         data = json.loads(store.read_text())
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         data = {}
+    # the cache belongs to ONE game: drop it when the game id changed
+    try:
+        gid = json.loads(session.SLOTFILE.read_text()).get('game_id')
+    except (FileNotFoundError, json.JSONDecodeError):
+        gid = None
+    if data.get('_game') != gid:
+        data = {'_game': gid}
+    last = data.setdefault('_last', {})
+    if ups:
+        level = f"{level}@{ups[0][0]},{ups[0][1]}"
+        last[str(level_num)] = level
+    else:  # '<' hidden (hero or an object on it): reuse this level's last key
+        level = last.get(str(level_num), str(level))
     dead = set(data.get(str(level), []))
     fails = {}
     hp0 = st['hp']
