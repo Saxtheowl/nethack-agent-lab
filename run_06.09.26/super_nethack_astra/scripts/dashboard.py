@@ -211,11 +211,11 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send((WEB / 'index.html').read_bytes(), 'text/html; charset=utf-8')
             if url.path == '/api/live':
                 slot = q.get('slot', '1')
-                if slot not in ('1', '2', '3', '4', '5'):
+                if slot not in [str(n) for n in range(1, 9)]:
                     return self.send({'error': 'bad slot'}, code=400)
                 return self.send(live(slot))
             if url.path == '/api/games':
-                return self.send({'games': games(), 'slots': {s: slot_game(s) for s in '12345'},
+                return self.send({'games': games(), 'slots': {s: slot_game(s) for s in '12345678'},
                                   'now': time.time()})
             if url.path == '/api/frames':
                 lines, total = frame_lines(gid, int(q.get('from', 0)), min(int(q.get('limit', 4000)), 20000))

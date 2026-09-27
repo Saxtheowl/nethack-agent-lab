@@ -16,7 +16,7 @@ import frames
 from session import SOCKET, RUNTIME, ROOT
 from terminal import text_runs
 
-SLOTS = ('1', '2', '3', '4', '5')
+SLOTS = tuple(str(n) for n in range(1, 9))
 SAVEDIR = ROOT / 'engine/install/games/lib/nethackdir/save'
 
 
