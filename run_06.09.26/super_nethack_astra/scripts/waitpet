@@ -1,0 +1,32 @@
+#!/bin/bash
+# scripts/waitpet [max_turns]: wait (one 's' at a time) until the pet is
+# adjacent — stops at once on any HP loss or a non-pet monster adjacent.
+cd "$(dirname "$0")/.."
+S="python3 scripts/session.py"
+prev=""
+for i in $(seq "${1:-15}"); do
+  out=$($S screen --compact)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP: HP loss ($prev -> $hp)"; exit 1; }
+  prev=$hp
+  r=$(python3 - "$out" <<'PY'
+import re, sys
+out = sys.argv[1]
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+h = re.search(r' @@(\d+),(\d+)', m); hx, hy = int(h[1]), int(h[2])
+adj_pet = adj_foe = False
+for g, x, y in re.findall(r' ([A-Za-z@&;:\'])@(\d+),(\d+)', m):
+    x, y = int(x), int(y)
+    if (x, y) == (hx, hy) or max(abs(x - hx), abs(y - hy)) != 1:
+        continue
+    if f'{x},{y}' in pets: adj_pet = True
+    else: adj_foe = True
+print('foe' if adj_foe else 'pet' if adj_pet else 'none')
+PY
+)
+  [ "$r" = foe ] && { echo "STOP: monster adjacent"; exit 1; }
+  [ "$r" = pet ] && { echo "pet adjacent"; exit 0; }
+  $S keys s --settle .3 >/dev/null
+done
+echo "pet not adjacent after ${1:-15} turns"; exit 2
