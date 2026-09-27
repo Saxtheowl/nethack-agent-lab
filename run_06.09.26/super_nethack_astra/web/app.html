@@ -142,6 +142,44 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 .tbar .cap { font-size: 16px; color: #d6e0d0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tbar .st { font-size: 15px; color: var(--muted); white-space: nowrap; } .tbar .st b { color: var(--text); }
 #livewrap.theater .tbar { display: flex !important; }
+/* strategy sub-tabs */
+.subtabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.subtabs button { border: none; background: transparent; color: var(--muted); font-size: 14px; padding: 7px 12px; border-radius: 8px; }
+.subtabs button.on { background: var(--panel2); color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); }
+.subtabs .sep { width: 1px; background: var(--line); margin: 4px 6px; }
+.sfilters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+.sfilters input { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; min-width: 240px; }
+.sgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; margin-bottom: 16px; }
+.sgrid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 16px; }
+.panel .note { color: var(--muted); font-size: 12.5px; margin: -4px 0 10px; }
+.bars .row { display: grid; grid-template-columns: minmax(120px, 1.1fr) 3fr 44px; gap: 8px; align-items: center; font-size: 13px; margin: 3px 0; }
+.bars .row .bar { height: 12px; border-radius: 3px; background: var(--accent); opacity: .85; min-width: 2px; }
+.bars.bad .bar { background: var(--bad); } .bars.warn .bar { background: var(--warn); } .bars.blue .bar { background: var(--blue); } .bars.gold .bar { background: var(--gold); }
+.bars .row b { text-align: right; font-variant-numeric: tabular-nums; }
+.bars .row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--muted); font-size: 11px; font-family: system-ui, sans-serif; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 12px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } td.good { color: #9fe38e; } td.dim { color: var(--muted); }
+.stable { overflow-x: auto; } .stable table { font-size: 13px; } .stable td, .stable th { padding: 5px 7px; white-space: nowrap; }
+.heat { display: inline-block; min-width: 26px; text-align: center; border-radius: 4px; padding: 1px 4px; font-variant-numeric: tabular-nums; }
+.agent { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); padding: 12px 14px; }
+.agent .top { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; } .agent .top b { font-size: 15px; }
+.agent .kv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 10px 0; }
+.agent .kv div { background: var(--panel2); border-radius: 6px; padding: 6px 8px; } .agent .kv b { display: block; font-size: 15px; white-space: nowrap; } .agent .kv small { color: var(--muted); font-size: 11px; }
+.agent .notes { max-height: 210px; overflow: auto; font-size: 13px; border-top: 1px solid var(--line); padding-top: 6px; }
+.agent .notes p { margin: 4px 0; color: #d4ddd0; } .agent .notes time { color: var(--muted); font-family: monospace; font-size: 11.5px; margin-right: 6px; }
+.feedrow { display: grid; grid-template-columns: 70px 150px 110px 1fr 40px; gap: 10px; align-items: center; padding: 6px 4px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.feedrow:hover { background: var(--panel2); } .feedrow .g { color: var(--muted); font-size: 12px; } .feedrow .m { color: #cfd8cc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tag { font-size: 11.5px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); white-space: nowrap; }
+.tag.tariru { color: var(--gold); border-color: #6b6035; } .tag.astra { color: var(--blue); border-color: #35506b; }
+.lesson { border-left: 3px solid var(--line); padding: 6px 10px; margin: 6px 0; background: var(--panel); border-radius: 0 8px 8px 0; font-size: 13.5px; }
+.lesson.dead { border-left-color: var(--bad); } .lesson small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.insight { background: #1c2a22; border: 1px solid #36513d; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px; }
+.insight li { margin: 4px 0; }
+.check { color: #9fe38e; } .nocheck { color: #3c4c50; }
 /* history tab */
 .hbig { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
 .hbig .tile .v { font-size: 34px; } .tile.bad .v { color: var(--bad); } .tile.good .v { color: #9fe38e; } .tile.gold .v { color: var(--gold); }
@@ -193,6 +231,8 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 
 <!-- HISTORY -->
 <section id="tab-hist" class="hidden">
+  <nav class="subtabs" id="hsub"></nav>
+  <div id="hview-overview">
   <div class="hbig" id="hbig"></div>
   <div class="hgrid">
     <div class="panel"><h2>Par style de jeu</h2><table><thead><tr><th>Style</th><th>Parties</th><th>En cours</th><th>Morts</th><th>Dlvl max</th><th>XL max</th><th>T moyen à la mort</th></tr></thead><tbody id="hstyles"></tbody></table></div>
@@ -202,6 +242,11 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
     <h2>Toutes les parties — cliquer pour dérouler (fin, objets, chronique, leçons)</h2>
     <div class="hfilters" id="hfilters"></div>
     <div id="hruns"></div>
+  </div>
+  </div>
+  <div id="hview-strat" class="hidden">
+    <div class="sfilters" id="sfilters"></div>
+    <div id="sbody"><p class="loading">Calcul des statistiques…</p></div>
   </div>
 </section>
 
@@ -324,7 +369,7 @@ function showTab(t) {
   $('#tab-live').classList.toggle('hidden', t !== 'live');
   $('#tab-dash').classList.toggle('hidden', t !== 'dash');
   $('#tab-hist').classList.toggle('hidden', t !== 'hist');
-  if (t === 'hist') refreshHistory();
+  if (t === 'hist') { refreshHistory(); showSub(); }
   if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
 }
 for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => showTab(b.dataset.tab);
@@ -576,7 +621,7 @@ async function loadGame(gid, at) {
     loadWhy(gid);
   }
   R.follow = at === 'live';
-  seek(at === 'live' ? R.frames.length - 1 : (typeof at === 'number' ? at : 0));
+  seek(at === 'live' || at === 'end' ? R.frames.length - 1 : (typeof at === 'number' ? at : 0));
   $('#rterm').scrollIntoView({behavior: 'smooth', block: 'center'});
 }
 async function fetchMore(all) {
@@ -806,6 +851,268 @@ function renderRuns() {
     return d;
   }));
   if (!rs.length) $('#hruns').append(el('p', {className: 'kbd', textContent: 'Aucune partie ne correspond.'}));
+}
+
+/* STRATEGY sub-tabs (inside Historique) */
+const SUBS = [['overview', 'Vue générale'], ['sep'], ['s-summary', 'Stratégie · Synthèse'], ['s-prog', 'Progression'], ['s-fight', 'Combats'],
+  ['s-items', 'Objets'], ['s-surv', 'Survie'], ['s-hard', 'Où on galère'], ['s-agents', 'Agents'], ['s-events', 'Évènements'], ['s-lessons', 'Leçons']];
+let HSUB = hashState().sub || 'overview', STRAT = null, sStyle = '', sStatus = '', sText = '', sEvType = '', sChart = 'dlvl', sSort = ['turns', -1];
+const STYLE_COL = {tariru: '#efd69a', astra: '#7fb2e5', 'avant-style': '#8fa39b'};
+const styleOf = g => g.style || 'avant-style';
+const TARIRU_REF = {XL3: 1335, XL5: 4550, Dlvl5: 2000, Dlvl10: 9000};
+const TARIRU_CURVE = {dlvl: [[0, 1], [2000, 5], [4000, 6], [7000, 8], [9000, 10]], xl: [[0, 1], [1335, 3], [3150, 4], [4550, 5], [7000, 7], [9000, 8]],
+  ac: [[0, 6], [1100, 3], [3500, 0], [4067, -4], [4200, -7], [9000, -8]]};
+function renderSubnav() {
+  $('#hsub').replaceChildren(...SUBS.map(([k, l]) => k === 'sep' ? el('span', {className: 'sep'}) :
+    el('button', {className: HSUB === k ? 'on' : '', textContent: l, onclick: () => { HSUB = k; setHash({sub: k}); showSub(); }})));
+}
+function showSub() {
+  renderSubnav();
+  $('#hview-overview').classList.toggle('hidden', HSUB !== 'overview');
+  $('#hview-strat').classList.toggle('hidden', HSUB === 'overview');
+  if (HSUB !== 'overview') refreshStrategy();
+}
+async function refreshStrategy() {
+  if (!STRAT) $('#sbody').replaceChildren(el('p', {className: 'loading', textContent: 'Calcul des statistiques sur toutes les parties…'}));
+  try { STRAT = await api('/api/strategy'); } catch (e) { $('#sbody').replaceChildren(el('p', {className: 'loading', textContent: 'Erreur : ' + e.message})); return; }
+  renderStrategy();
+}
+setInterval(() => TAB === 'hist' && HSUB !== 'overview' && refreshStrategy(), 60000);
+function sGames() { return STRAT.games.filter(g => (!sStyle || styleOf(g) === sStyle) && (!sStatus || g.status === sStatus)); }
+const sum = (a, f) => a.reduce((s, x) => s + (f(x) || 0), 0);
+const avg = (a, f) => a.length ? sum(a, f) / a.length : 0;
+const fmtN = n => (n ?? 0).toLocaleString('fr-FR');
+function merge(gs, key) { const m = {}; for (const g of gs) for (const [k, v] of Object.entries(g[key] || {})) m[k] = (m[k] || 0) + v; return Object.entries(m).sort((a, b) => b[1] - a[1]); }
+function bars(rows, cls = '', limit = 15, fmt = v => v) {
+  const mx = Math.max(1, ...rows.slice(0, limit).map(r => r[1]));
+  const box = el('div', {className: 'bars ' + cls});
+  for (const [k, v, title] of rows.slice(0, limit)) { const b = el('div', {className: 'bar'}); b.style.width = (v / mx * 100) + '%';
+    box.append(el('div', {className: 'row', title: title || k}, el('span', {textContent: k}), el('div', {}, b), el('b', {textContent: fmt(v)}))); }
+  if (!rows.length) box.append(el('p', {className: 'kbd', textContent: 'Rien pour ce filtre.'}));
+  return box;
+}
+const panel = (title, note, ...kids) => el('div', {className: 'panel'}, el('h2', {textContent: title}), note ? el('p', {className: 'note', textContent: note}) : '', ...kids);
+const tag = st => el('span', {className: 'tag ' + st, textContent: STYLE_FR[st] || st});
+const gname = g => `P${g.slot} run ${g.run ?? '?'}`;
+function table(cols, rows, sortable) {
+  const t = el('table');
+  t.append(el('thead', {}, el('tr', {}, ...cols.map(([k, l, num]) => { const th = el('th', {className: num ? 'num' : '', textContent: l + (sortable && sSort[0] === k ? (sSort[1] > 0 ? ' ▲' : ' ▼') : '')});
+    if (sortable && k) { th.style.cursor = 'pointer'; th.onclick = () => { sSort = [k, sSort[0] === k ? -sSort[1] : -1]; renderStrategy(); }; } return th; }))));
+  const tb = el('tbody'); for (const r of rows) tb.append(r); t.append(tb);
+  return el('div', {className: 'stable'}, t);
+}
+function td(v, cls = '') { return el('td', {className: cls}, v ?? '—'); }
+function lineChart(gs, metric) {
+  const W = 960, H = 320, L = 40, B = 26, Tp = 10;
+  const pick = {dlvl: r => +r[1] || 0, xl: r => r[4], ac: r => r[5], hpmax: r => r[3], hp: r => r[3] ? Math.round(r[2] / r[3] * 100) : 0}[metric];
+  const maxT = Math.max(1000, ...gs.map(g => g.series.length ? g.series[g.series.length - 1][0] : 0));
+  let vals = gs.flatMap(g => g.series.map(pick)); if (TARIRU_CURVE[metric]) vals = vals.concat(TARIRU_CURVE[metric].map(p => p[1]));
+  let lo = Math.min(0, ...vals), hi = Math.max(1, ...vals);
+  const inv = metric === 'dlvl' || metric === 'ac';  // deeper / better AC drawn lower... AC: lower is better → draw upward
+  const x = t => L + (t / maxT) * (W - L - 10);
+  const y = v => metric === 'dlvl' ? Tp + (v - lo) / (hi - lo) * (H - Tp - B) : Tp + (hi - v) / (hi - lo) * (H - Tp - B);
+  const yAC = v => Tp + (v - lo) / (hi - lo) * (H - Tp - B);
+  const Y = metric === 'ac' ? yAC : y;
+  const ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const add = (tagn, at, text) => { const e = document.createElementNS(ns, tagn); for (const k in at) e.setAttribute(k, at[k]); if (text != null) e.textContent = text; svg.append(e); return e; };
+  const step = Math.max(1, Math.ceil((hi - lo) / 8));
+  for (let v = Math.ceil(lo); v <= hi; v += step) { add('line', {x1: L, x2: W - 10, y1: Y(v), y2: Y(v), stroke: '#22313a'}); add('text', {x: L - 6, y: Y(v) + 4, 'text-anchor': 'end'}, v); }
+  const tstep = maxT > 20000 ? 5000 : maxT > 8000 ? 2000 : 1000;
+  for (let t = 0; t <= maxT; t += tstep) add('text', {x: x(t), y: H - 6, 'text-anchor': 'middle'}, 'T' + t);
+  if (TARIRU_CURVE[metric]) add('polyline', {points: TARIRU_CURVE[metric].map(([t, v]) => `${x(t)},${Y(v)}`).join(' '), fill: 'none', stroke: '#e27d6f', 'stroke-width': 2, 'stroke-dasharray': '6 5', opacity: .9});
+  for (const g of gs) {
+    if (!g.series.length) continue;
+    const p = add('polyline', {points: g.series.map(r => `${x(r[0])},${Y(pick(r))}`).join(' '), fill: 'none', stroke: STYLE_COL[styleOf(g)], 'stroke-width': g.status === 'live' ? 2.2 : 1.4, opacity: g.status === 'live' ? .95 : .55});
+    const tt = document.createElementNS(ns, 'title'); tt.textContent = `${gname(g)} · ${STYLE_FR[styleOf(g)]} · ${STATUS_FR[g.status] || g.status}`; p.append(tt);
+    const last = g.series[g.series.length - 1];
+    if (g.status === 'dead') add('text', {x: x(last[0]), y: Y(pick(last)) + 4, 'text-anchor': 'middle', style: 'fill:#e27d6f;font-size:13px'}, '✖');
+  }
+  return el('div', {className: 'chart'}, svg);
+}
+function hasItem(g, re) { return Object.keys(g.pickups).some(k => re.test(k)) || g.chron_items.some(k => re.test(k.toLowerCase())); }
+const KEY_ITEMS = [['Excalibur', g => g.milestones.excalibur != null || g.chron_items.some(t => /excalibur/i.test(t))],
+  ['unicorn horn', /unicorn horn/], ['bag / sack', /\bbag\b|sack/], ['wand', /\bwand\b/], ['ring', /\bring\b/], ['amulet', /amulet/],
+  ['body armor', /\bmail\b|plate|jacket/], ['helm', /helm|\bcap\b|\bhat\b|fedora|helmet/], ['boots', /boots|shoes/], ['gloves', /gloves|gauntlets/],
+  ['cloak', /cloak|robe|mummy wrapping/], ['shield', /shield/], ['dagger', /dagger/], ['pick-axe', /pick-axe|mattock/],
+  ['luckstone', /luckstone/], ['telepathy', g => g.intrinsics.some(i => /mental acuity/.test(i))], ['speed', g => g.intrinsics.some(i => /quick|speed up/.test(i))]];
+const keyHas = (g, [, t]) => typeof t === 'function' ? t(g) : hasItem(g, t);
+function insightList(gs) {
+  const out = [], dead = gs.filter(g => g.status === 'dead');
+  const D = STRAT.depth.filter(d => d.turns > 200);
+  if (D.length) {
+    const worst = [...D].sort((a, b) => (b.hit / b.turns) - (a.hit / a.turns))[0];
+    const dd = [...D].sort((a, b) => b.deaths - a.deaths)[0];
+    out.push(`Le Dlvl le plus meurtrier : <b>Dlvl ${dd.dlvl}</b> (${dd.deaths} morts). Le plus dur à tenir : <b>Dlvl ${worst.dlvl}</b> (${(worst.hit / worst.turns * 100).toFixed(1)} coups reçus / 100 T).`);
+  }
+  const hb = merge(gs, 'hit_by'); if (hb.length) out.push(`Monstre qui nous blesse le plus souvent : <b>${hb[0][0]}</b> (${hb[0][1]} coups), puis ${hb.slice(1, 4).map(h => h[0]).join(', ')}.`);
+  const xl5 = gs.filter(g => g.milestones.XL5 != null); if (xl5.length) out.push(`XL5 atteint dans ${xl5.length}/${gs.length} parties, en moyenne à <b>T${Math.round(avg(xl5, g => g.milestones.XL5))}</b> (Tariru : T4550).`);
+  const d5 = gs.filter(g => g.milestones.Dlvl5 != null); if (d5.length) out.push(`Dlvl 5 atteint en moyenne à <b>T${Math.round(avg(d5, g => g.milestones.Dlvl5))}</b> (Tariru : T2000, mais avec AC 3 et le pet).`);
+  const ex = gs.filter(g => keyHas(g, KEY_ITEMS[0])); out.push(`Excalibur obtenue dans <b>${ex.length}/${gs.length}</b> parties.`);
+  if (dead.length) out.push(`Morts : T moyen <b>${fmtN(Math.round(avg(dead, g => g.turns)))}</b>, Dlvl moyen ${avg(dead, g => g.maxdepth).toFixed(1)}, XL moyen ${avg(dead, g => g.maxxl).toFixed(1)}. HP bas (≤1/4) avant la mort : ${avg(dead, g => g.n.lowhp).toFixed(1)} fois en moyenne.`);
+  for (const st of ['tariru', 'astra']) { const s = gs.filter(g => styleOf(g) === st); if (s.length) out.push(`Style <b>${STYLE_FR[st]}</b> : ${s.length} parties, Dlvl max moyen ${avg(s, g => g.maxdepth).toFixed(1)}, ${s.filter(g => g.status === 'dead').length} morts, ${(avg(s, g => g.n.lowhp / Math.max(1, g.turns) * 1000)).toFixed(2)} HP bas / 1000 T.`); }
+  const th = sum(gs, g => g.thefts); if (th) out.push(`Vols subis (nymph, monkey, leprechaun…) : <b>${th}</b> messages de vol.`);
+  return out;
+}
+function renderStrategy() {
+  if (!STRAT) return;
+  const mk = (label, on, fn) => el('button', {className: on ? 'on' : '', textContent: label, onclick: fn});
+  const search = el('input', {placeholder: 'Filtrer (monstre, objet, message, leçon…)', value: sText});
+  search.oninput = () => { sText = search.value; clearTimeout(search._t); search._t = setTimeout(() => { renderStrategy(); const i = $('#sfilters input'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); };
+  $('#sfilters').replaceChildren(
+    mk('Tous styles', !sStyle, () => { sStyle = ''; renderStrategy(); }),
+    ...['tariru', 'astra', 'avant-style'].map(st => mk(STYLE_FR[st], sStyle === st, () => { sStyle = st; renderStrategy(); })),
+    el('span', {textContent: ' · '}),
+    mk('Toutes', !sStatus, () => { sStatus = ''; renderStrategy(); }),
+    ...['live', 'dead', 'quit'].map(x => mk(STATUS_FR[x], sStatus === x, () => { sStatus = x; renderStrategy(); })),
+    search, el('span', {className: 'kbd', textContent: ` ${sGames().length} parties · mis à jour ${fmtT(STRAT.generated)}`}));
+  const gs = sGames(), body = $('#sbody'), keep = window.scrollY;
+  const V = {'s-summary': vSummary, 's-prog': vProg, 's-fight': vFight, 's-items': vItems, 's-surv': vSurv, 's-hard': vHard, 's-agents': vAgents, 's-events': vEvents, 's-lessons': vLessons}[HSUB];
+  body.replaceChildren(...(V ? V(gs) : []));
+  window.scrollTo(0, keep);
+}
+function vSummary(gs) {
+  const tiles = [['Parties', gs.length, ''], ['Monstres tués', fmtN(sum(gs, g => g.n.kill)), 'good'], ['Coups reçus', fmtN(sum(gs, g => g.n.hit_by)), 'bad'],
+    ['HP bas (≤1/4)', sum(gs, g => g.n.lowhp), 'bad'], ['Prayers', sum(gs, g => g.n.pray), ''], ['Elbereth', sum(gs, g => g.n.elbereth), ''],
+    ['Traps', sum(gs, g => g.n.trap), ''], ['Objets ramassés', fmtN(sum(gs, g => g.n.pickup)), 'gold'], ['Excalibur', gs.filter(g => keyHas(g, KEY_ITEMS[0])).length, 'gold'],
+    ['Touches envoyées', fmtN(sum(gs, g => g.agent.commands)), '']];
+  const cols = [['id', 'Partie'], ['style', 'Style'], ['status', 'Statut'], ['turns', 'T', 1], ['maxdepth', 'Dlvl', 1], ['maxxl', 'XL', 1], ['kill', 'Kills', 1], ['hit_by', 'Coups reçus', 1],
+    ['lowhp', 'HP bas', 1], ['pray', 'Prayers', 1], ['elbereth', 'Elbereth', 1], ['trap', 'Traps', 1], ['theft', 'Vols', 1], ['faint', 'Fainted', 1], ['pickup', 'Objets', 1], ['kpt', 'Touches/T', 1]];
+  const val = (g, k) => ({id: g.started, style: styleOf(g), status: g.status, turns: g.turns, maxdepth: g.maxdepth, maxxl: g.maxxl, kpt: g.agent.keys_per_turn}[k] ?? g.n[k] ?? 0);
+  const sorted = [...gs].sort((a, b) => { const x = val(a, sSort[0]), y = val(b, sSort[0]); return (x > y ? 1 : x < y ? -1 : 0) * sSort[1]; });
+  const rows = sorted.map(g => { const tr = el('tr', {className: 'pick', onclick: () => loadGame(g.id, 0), title: 'Rejouer cette partie'},
+    td(gname(g) + ' · ' + (g.started || '').slice(5)), el('td', {}, tag(styleOf(g))), el('td', {}, el('span', {className: 'badge ' + g.status, textContent: STATUS_FR[g.status] || g.status})),
+    td(fmtN(g.turns), 'num'), td(g.maxdepth, 'num'), td(g.maxxl, 'num'), td(g.n.kill, 'num'), td(g.n.hit_by, 'num'),
+    td(g.n.lowhp, 'num ' + (g.n.lowhp >= 5 ? 'hot' : g.n.lowhp >= 2 ? 'warm' : '')), td(g.n.pray, 'num'), td(g.n.elbereth, 'num'), td(g.n.trap, 'num'),
+    td(g.n.theft, 'num ' + (g.n.theft ? 'warm' : '')), td(g.n.faint, 'num ' + (g.n.faint ? 'hot' : '')), td(g.n.pickup, 'num'), td(g.agent.keys_per_turn, 'num'));
+    return tr; });
+  return [el('div', {className: 'hbig'}, ...tiles.map(([l, v, c]) => el('div', {className: 'tile ' + c}, el('div', {className: 'v', textContent: v}), el('div', {className: 'l', textContent: l})))),
+    el('div', {className: 'insight'}, el('b', {textContent: 'Ce que disent les chiffres'}), el('ul', {innerHTML: insightList(gs).map(s => `<li>${s}</li>`).join('')})),
+    panel('Toutes les parties en chiffres', 'Cliquer un en-tête pour trier, une ligne pour rejouer la partie. Chiffres extraits des messages du jeu (lignes du haut de l’écran).', table(cols, rows, true))];
+}
+function vProg(gs) {
+  const choose = el('div', {className: 'hfilters'}, ...[['dlvl', 'Dlvl (profondeur)'], ['xl', 'XL'], ['ac', 'AC'], ['hpmax', 'HP max'], ['hp', 'HP %']].map(([k, l]) =>
+    el('button', {className: sChart === k ? 'on' : '', textContent: l, onclick: () => { sChart = k; renderStrategy(); }})));
+  const legend = el('div', {className: 'legend'}, ...['tariru', 'astra', 'avant-style'].map(st => el('span', {}, el('i', {style: `background:${STYLE_COL[st]}`}), STYLE_FR[st])),
+    el('span', {}, el('i', {style: 'background:#e27d6f'}), 'Tariru réel (référence, pointillés)'), el('span', {textContent: '✖ = mort · trait épais = en cours'}));
+  const ms = ['XL3', 'XL5', 'XL8', 'Dlvl3', 'Dlvl5', 'Dlvl7', 'Dlvl10', 'excalibur'];
+  const rows = [el('tr', {style: 'background:#2a1e1c'}, td('Tariru (référence, game #47)'), td(''), ...ms.map(m => td(TARIRU_REF[m] ? 'T' + TARIRU_REF[m] : '—', 'num')))];
+  for (const g of [...gs].sort((a, b) => b.maxdepth - a.maxdepth)) rows.push(el('tr', {className: 'pick', onclick: () => loadGame(g.id, 0)}, td(gname(g) + ' · ' + (STATUS_FR[g.status] || g.status)), el('td', {}, tag(styleOf(g))),
+    ...ms.map(m => { const v = g.milestones[m]; const ref = TARIRU_REF[m]; return td(v != null ? 'T' + v : '—', 'num ' + (v == null ? 'dim' : ref && v < ref * 0.6 ? 'warm' : 'good')); })));
+  const note = 'En orange : jalon atteint beaucoup plus tôt que Tariru (descente trop rapide = danger). Tariru reste sur Dlvl 1-10 jusqu’à T19000.';
+  return [panel('Courbes de toutes les parties', 'Chaque ligne = une partie, de T0 à son dernier tour. Survoler une ligne pour son nom.', choose, lineChart(gs, sChart), legend),
+    panel('Jalons : tour où chaque étape a été atteinte', note, table([['', 'Partie'], ['', 'Style'], ...ms.map(m => ['', m, 1])], rows))];
+}
+function vFight(gs) {
+  const kills = merge(gs, 'kills'), hit = merge(gs, 'hit_by'), pk = merge(gs, 'pet_kills');
+  const causes = {}; for (const g of gs) if (g.status === 'dead' && g.death) { const k = g.death.replace(/^killed by (an?|the) /, ''); causes[k] = (causes[k] || 0) + 1; }
+  const dmg = hit.map(([k, v]) => [k, v]).slice(0, 18);
+  const ratio = hit.filter(([k]) => kills.find(x => x[0] === k)).map(([k, v]) => [k, +(v / kills.find(x => x[0] === k)[1]).toFixed(2), `${v} coups reçus pour ${kills.find(x => x[0] === k)[1]} tués`]).sort((a, b) => b[1] - a[1]);
+  const near = gs.filter(g => g.n.lowhp).map(g => [gname(g) + ' ' + (STYLE_FR[styleOf(g)] || ''), g.n.lowhp]).sort((a, b) => b[1] - a[1]);
+  return [el('div', {className: 'sgrid'},
+    panel('Monstres tués (par nous)', `${fmtN(kills.reduce((s, k) => s + k[1], 0))} kills, ${kills.length} espèces`, bars(kills.filter(k => !sText || k[0].includes(sText.toLowerCase())), '', 20)),
+    panel('Qui nous blesse le plus', 'Nombre de messages « The X bites/hits! »', bars(dmg.filter(k => !sText || k[0].includes(sText.toLowerCase())), 'bad', 18)),
+    panel('Monstres les plus coûteux', 'Coups reçus par monstre tué : > 1 = il nous touche plus qu’on ne le tue', bars(ratio, 'warn', 15)),
+    panel('Causes de mort', '', bars(Object.entries(causes).sort((a, b) => b[1] - a[1]), 'bad', 12)),
+    panel('Tués par les pets et autres', 'Messages « The X is killed! » (souvent le pet)', bars(pk, 'blue', 12)),
+    panel('Passages à HP ≤ 1/4 par partie', 'Tariru : sous 50 % seulement 4 fois en 29 000 T', bars(near, 'warn', 22)))];
+}
+function vItems(gs) {
+  const q = sText.toLowerCase();
+  const pk = merge(gs, 'pickups').filter(([k]) => !q || k.includes(q));
+  const games = {}; for (const g of gs) for (const k of Object.keys(g.pickups)) games[k] = (games[k] || 0) + 1;
+  const spread = Object.entries(games).filter(([k]) => !q || k.includes(q)).sort((a, b) => b[1] - a[1]);
+  const cls = {'Armes': /dagger|sword|axe|mace|spear|dart|arrow|bow|knife|hammer|club|flail|pick-axe|lance|scimitar|shuriken/, 'Armures': /mail|helm|cap|boots|shoes|gloves|gauntlets|cloak|robe|shield|jacket|hat|helmet|shirt/,
+    'Potions': /potion/, 'Scrolls': /scroll/, 'Wands': /wand/, 'Rings': /\bring\b/, 'Amulets': /amulet/, 'Gems/stones': /gem|stone|glass/, 'Food': /ration|corpse|mold|apple|carrot|egg|melon|lichen|tin|cram|lembas|pancake|banana|orange|fortune|candy|meat|kelp|pear|tripe/, 'Tools': /bag|sack|horn|lamp|candle|key|lock pick|whistle|mirror|blindfold|towel|tin opener|leash|stethoscope|camera|pick-axe|unicorn/};
+  const byCls = Object.entries(cls).map(([c, re]) => [c, sum(gs, g => Object.entries(g.pickups).filter(([k]) => re.test(k)).reduce((s, [, v]) => s + v, 0))]).sort((a, b) => b[1] - a[1]);
+  const mrows = gs.map(g => el('tr', {className: 'pick', onclick: () => loadGame(g.id, 0)}, td(gname(g)), el('td', {}, tag(styleOf(g))), td(STATUS_FR[g.status] || g.status),
+    ...KEY_ITEMS.map(k => el('td', {className: 'num'}, el('span', {className: keyHas(g, k) ? 'check' : 'nocheck', textContent: keyHas(g, k) ? '●' : '·'})))));
+  const chron = gs.flatMap(g => g.chron_items.map(t => [t, 1, gname(g)])).filter(([t]) => !q || t.toLowerCase().includes(q));
+  return [panel('Objets clés par partie', '● = ramassé au moins une fois (ou intrinsèque obtenu). Les parties qui meurent tôt n’ont souvent ni armure complète ni objet d’évasion.',
+      table([['', 'Partie'], ['', 'Style'], ['', 'Statut'], ...KEY_ITEMS.map(k => ['', k[0], 1])], mrows)),
+    el('div', {className: 'sgrid'},
+      panel('Objets les plus ramassés', `${pk.length} objets différents (noms tels qu’affichés, non identifiés = apparence)`, bars(pk, 'gold', 25)),
+      panel('Dans combien de parties', 'Objets trouvés dans le plus de parties différentes', bars(spread, 'gold', 25)),
+      panel('Par catégorie', 'Nombre de ramassages par type d’objet', bars(byCls, '', 12)),
+      panel('Trouvailles marquantes (chronique)', 'Notées par les agents comme importantes', bars(chron.map(([t, v, g]) => [`${t} — ${g}`, v]), 'gold', 40, () => '★')))];
+}
+function vSurv(gs) {
+  const rows = gs.map(g => { const per = g.turns ? 1000 / g.turns : 0; return el('tr', {className: 'pick', onclick: () => loadGame(g.id, 0)}, td(gname(g)), el('td', {}, tag(styleOf(g))), td(STATUS_FR[g.status] || g.status),
+    td(fmtN(g.turns), 'num'), td(g.n.pray, 'num'), td(g.pray_results.join(', ') || '—', 'dim'), td(g.n.hungry, 'num'), td(g.n.weak, 'num ' + (g.n.weak ? 'warm' : '')), td(g.n.faint, 'num ' + (g.n.faint ? 'hot' : '')),
+    td(g.n.lowhp, 'num ' + (g.n.lowhp >= 5 ? 'hot' : g.n.lowhp ? 'warm' : '')), td((g.n.lowhp * per).toFixed(2), 'num'), td(g.n.elbereth, 'num'), td(g.n.flee, 'num'), td(g.n.trap, 'num'), td(g.n.theft, 'num'), td(g.n.lifesave, 'num')); });
+  const pr = {}; for (const g of gs) for (const r of g.pray_results) pr[r] = (pr[r] || 0) + 1;
+  const eats = merge(gs, 'eaten'), traps = merge(gs, 'traps');
+  return [panel('Survie par partie', 'Prayers et résultats, faim (Hungry → Weak → Fainted), HP ≤ 1/4 (total et pour 1000 T), Elbereth écrits, monstres qui fuient, traps, vols, lifesave.',
+      table([['', 'Partie'], ['', 'Style'], ['', 'Statut'], ['', 'T', 1], ['', 'Prayers', 1], ['', 'Résultats'], ['', 'Hungry', 1], ['', 'Weak', 1], ['', 'Fainted', 1], ['', 'HP bas', 1], ['', 'HP bas/1000T', 1], ['', 'Elbereth', 1], ['', 'turns to flee', 1], ['', 'Traps', 1], ['', 'Vols', 1], ['', 'Lifesave', 1]], rows)),
+    el('div', {className: 'sgrid'},
+      panel('Traps déclenchés', '', bars(traps, 'warn', 18)),
+      panel('Résultats des prayers', '« You feel a hopeful feeling » = prière réussie, pas encore finie ; displeased = trop tôt', bars(Object.entries(pr).sort((a, b) => b[1] - a[1]), 'blue', 8)),
+      panel('Ce qu’on mange', 'Corpses et nourriture finis', bars(eats, '', 15)),
+      panel('Faim par style', 'Moyenne par partie', bars(['tariru', 'astra', 'avant-style'].map(st => { const s = gs.filter(g => styleOf(g) === st); return s.length ? [`${STYLE_FR[st]} · Weak+Fainted`, +avg(s, g => g.n.weak + g.n.faint).toFixed(1)] : null; }).filter(Boolean), 'warn')))];
+}
+function vHard(gs) {
+  const D = {}; const ids = new Set(gs.map(g => g.id));
+  for (const g of gs) for (const [d, [a, b]] of Object.entries(g.levels)) { const e = D[d] = D[d] || {turns: 0, visits: 0, games: []}; e.turns += Math.max(0, b - a); e.visits++; e.games.push([gname(g), b - a]); }
+  const gd = {}; for (const d of STRAT.depth) gd[d.dlvl] = d;
+  const deaths = {}; for (const g of gs) if (g.status === 'dead' && g.series.length) { const d = String(g.series[g.series.length - 1][1]); deaths[d] = (deaths[d] || 0) + 1; }
+  const heat = (v, mx) => { const s = el('span', {className: 'heat', textContent: v}); s.style.background = `rgba(226,125,111,${Math.min(.85, v / Math.max(mx, 1e-9) * .85)})`; return s; };
+  const lv = Object.keys(D).sort((a, b) => (+a || 99) - (+b || 99));
+  const hitRate = d => gd[d] && gd[d].turns ? gd[d].hit / gd[d].turns * 100 : 0, lowRate = d => gd[d] && gd[d].turns ? gd[d].lowhp / gd[d].turns * 1000 : 0;
+  const mh = Math.max(...lv.map(hitRate)), ml = Math.max(...lv.map(lowRate)), md = Math.max(1, ...Object.values(deaths));
+  const rows = lv.map(d => el('tr', {}, td('Dlvl ' + d), td(D[d].visits, 'num'), td(fmtN(D[d].turns), 'num'), td(fmtN(Math.round(D[d].turns / D[d].visits)), 'num'),
+    el('td', {className: 'num'}, heat(+hitRate(d).toFixed(1), mh)), el('td', {className: 'num'}, heat(+lowRate(d).toFixed(2), ml)), el('td', {className: 'num'}, heat(deaths[d] || 0, md))));
+  const stalls = gs.flatMap(g => Object.entries(g.levels).map(([d, [a, b]]) => [`${gname(g)} · Dlvl ${d} (${STYLE_FR[styleOf(g)]})`, b - a])).sort((a, b) => b[1] - a[1]);
+  const deathsList = gs.filter(g => g.status === 'dead').map(g => el('div', {className: 'lesson dead'}, `☠ ${gname(g)} · T${fmtN(g.turns)} · Dlvl ${g.series.length ? g.series[g.series.length - 1][1] : '?'} · XL ${g.maxxl} — ${g.death || '?'}`,
+    el('small', {textContent: g.cause_summary || ''}), el('button', {textContent: '▶ fin de partie', onclick: () => loadGame(g.id, 'end')})));
+  return [panel('Difficulté par Dlvl', 'Coups reçus / 100 T et HP bas / 1000 T mesurent le danger réel ; les couleurs vont du calme (transparent) au rouge. Les lignes « tous styles » utilisent toutes les parties.',
+      table([['', 'Niveau'], ['', 'Parties passées', 1], ['', 'T cumulés', 1], ['', 'T moyen / partie', 1], ['', 'Coups reçus /100T', 1], ['', 'HP bas /1000T', 1], ['', 'Morts', 1]], rows)),
+    el('div', {className: 'sgrid'},
+      panel('Où on reste bloqué le plus longtemps', 'Plus longs séjours sur un même Dlvl (T entre première et dernière visite)', bars(stalls, 'blue', 18, fmtN)),
+      panel('Les morts, une par une', 'Tour, profondeur, XL et cause', ...deathsList))];
+}
+function vAgents(gs) {
+  const cards = [...gs].sort((a, b) => (b.status === 'live') - (a.status === 'live') || +b.slot - +a.slot).map(g => {
+    const a = g.agent, notes = el('div', {className: 'notes'});
+    for (const n of [...a.notes].reverse().filter(n => !sText || n.text.toLowerCase().includes(sText.toLowerCase()))) notes.append(el('p', {}, el('time', {textContent: fmtT(n.t)}), n.text));
+    if (!a.notes.length) notes.append(el('p', {className: 'kbd', textContent: 'Aucune décision commentée.'}));
+    return el('div', {className: 'agent'}, el('div', {className: 'top'}, el('b', {textContent: `Partie ${g.slot} · run ${g.run ?? '?'}`}), tag(styleOf(g)), el('span', {className: 'badge ' + g.status, textContent: STATUS_FR[g.status] || g.status}),
+      el('span', {className: 'kbd', textContent: `T${fmtN(g.turns)} · Dlvl ${g.maxdepth} · XL ${g.maxxl}`})),
+      el('div', {className: 'kv'}, ...[[fmtN(a.commands), 'touches'], [a.keys_per_turn ?? '—', 'touches / T'], [a.turns_per_hour ? fmtN(a.turns_per_hour) : '—', 'T / heure'], [a.hours + ' h', 'temps de jeu'],
+        [a.travel, 'travel _'], [a.decisions, 'décisions dites'], [g.chronicle_n, 'chronique'], [g.lessons_n, 'leçons']].map(([v, l]) => el('div', {}, el('b', {textContent: v}), el('small', {textContent: l})))),
+      notes, el('div', {style: 'margin-top:8px;display:flex;gap:6px'}, el('button', {textContent: '▶ Rejouer', onclick: () => loadGame(g.id, 0)}), g.status === 'live' ? el('button', {textContent: '● Direct', onclick: () => loadGame(g.id, 'live')}) : ''));
+  });
+  const speed = gs.filter(g => g.agent.turns_per_hour).map(g => [gname(g) + ' ' + STYLE_FR[styleOf(g)], g.agent.turns_per_hour]).sort((a, b) => b[1] - a[1]);
+  const kpt = gs.filter(g => g.agent.keys_per_turn).map(g => [gname(g) + ' ' + STYLE_FR[styleOf(g)], g.agent.keys_per_turn]).sort((a, b) => b[1] - a[1]);
+  return [el('div', {className: 'sgrid'}, panel('Vitesse de jeu (T / heure)', 'Tours de jeu par heure réelle de l’agent', bars(speed, 'blue', 22, fmtN)),
+      panel('Touches par tour', 'Beaucoup de touches par tour = menus, farlook, recherches, hésitations', bars(kpt, '', 22))),
+    el('div', {className: 'sgrid3'}, ...cards)];
+}
+const EV_ICON = {xl: '⬆', pray: '🙏', trap: '⚠', theft: '✋', excalibur: '⚔', wish: '✨', lifesave: '✚', intrinsic: '◆', lowhp: '♥', death: '☠', faint: '💤', altar: '⛪', shop: '🏪', fall: '↓', level: '▼'};
+function vEvents(gs) {
+  const ids = new Set(gs.map(g => g.id)), q = sText.toLowerCase();
+  const all = STRAT.events.filter(e => ids.has(e.game));
+  const types = {}; for (const e of all) types[e.type] = (types[e.type] || 0) + 1;
+  const list = all.filter(e => (!sEvType || e.type === sEvType) && (!q || (e.msg + ' ' + e.v + ' ' + e.label).toLowerCase().includes(q)));
+  const chips = el('div', {className: 'hfilters'}, el('button', {className: !sEvType ? 'on' : '', textContent: `Tous (${all.length})`, onclick: () => { sEvType = ''; renderStrategy(); }}),
+    ...Object.entries(types).sort((a, b) => b[1] - a[1]).map(([t, n]) => el('button', {className: sEvType === t ? 'on' : '', textContent: `${EV_ICON[t] || '•'} ${EV_FR[t] || t} (${n})`, onclick: () => { sEvType = t; renderStrategy(); }})));
+  const gmap = Object.fromEntries(STRAT.games.map(g => [g.id, g]));
+  const rows = list.slice(0, 500).map(e => { const g = gmap[e.game];
+    const txt = e.type === 'level' ? `Nouveau Dlvl ${e.v} (record de la partie)` : e.type === 'xl' ? `XL ${e.v}` : e.type === 'lowhp' ? `HP ${e.v}` : e.msg || e.v;
+    return el('div', {className: 'feedrow'}, el('span', {className: 'kbd', textContent: 'T' + fmtN(e.turn)}), el('span', {className: 'g'}, `${gname(g)} `, tag(styleOf(g))),
+      el('span', {textContent: `${EV_ICON[e.type] || '•'} ${EV_FR[e.type] || e.type}`}), el('span', {className: 'm', title: txt, textContent: txt}),
+      el('button', {textContent: '▶', title: 'Revoir ce moment', onclick: () => loadGame(e.game, Math.max(0, e.frame - 15))})); });
+  return [panel('Tous les évènements clés, toutes parties', `${list.length} évènements (500 plus récents affichés). ▶ ouvre le replay juste avant le moment.`, chips, ...rows)];
+}
+const EV_FR = {xl: 'XL', pray: 'prayer', trap: 'trap', theft: 'vol', excalibur: 'Excalibur', wish: 'wish', lifesave: 'lifesave', intrinsic: 'intrinsèque', lowhp: 'HP bas', death: 'mort', faint: 'Fainted', altar: 'altar', shop: 'shop', fall: 'chute', level: 'Dlvl'};
+function vLessons(gs) {
+  const ids = new Set(gs.map(g => g.id)), q = sText.toLowerCase(), gmap = Object.fromEntries(STRAT.games.map(g => [g.id, g]));
+  const ls = STRAT.lessons.filter(l => ids.has(l.game) && (!q || l.text.toLowerCase().includes(q)));
+  const words = {}; const themes = {'Elbereth': /elbereth/i, 'prayer': /pray/i, 'faim / food': /hungry|weak|faint|food|eat/i, 'pet': /pet|dog|kitten|cat\b/i, 'fuite / escalier': /stair|flee|escape|upstairs/i,
+    'objets inconnus': /unknown|scroll|potion|wand/i, 'AC / armure': /\bAC\b|armor|armour|mail|helm/i, 'Mines': /mines|minetown/i, 'Sokoban': /sokoban|boulder/i, 'vol': /nymph|monkey|steal|stole|leprechaun/i, 'boucles / outils': /loop|script|tool|helper|autoexplore|fight/i};
+  for (const l of ls) for (const [t, re] of Object.entries(themes)) if (re.test(l.text)) words[t] = (words[t] || 0) + 1;
+  return [el('div', {className: 'sgrid'}, panel('Thèmes des leçons', 'Combien de leçons parlent de chaque sujet', bars(Object.entries(words).sort((a, b) => b[1] - a[1]), 'gold', 12)),
+      panel('Leçons', `${ls.length} leçons écrites par les agents dans leurs journaux (bord rouge = partie morte)`,
+        ...ls.map(l => { const g = gmap[l.game]; return el('div', {className: 'lesson ' + l.status}, l.text, el('small', {}, `${g ? gname(g) : l.game} · `, tag(l.style || 'avant-style'), ` · ${STATUS_FR[l.status] || l.status}`)); })))];
 }
 
 /* big screen */

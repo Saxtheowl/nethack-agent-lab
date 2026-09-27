@@ -10,6 +10,7 @@ API
   /api/frames?game=ID&from=N[&limit=M]   frame deltas (see frames.py)
   /api/log?game=ID          decisions / commands with timestamps
   /api/journal?game=ID      the run journal (markdown text)
+  /api/strategy             cross-run statistics (analytics.py)
 """
 import argparse
 import json
@@ -21,6 +22,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+import analytics
 import frames
 from terminal import text_runs
 
@@ -208,6 +210,107 @@ def history():
             'causes': sorted(causes.items(), key=lambda kv: -kv[1])}
 
 
+_strategy_cache = {'t': 0, 'data': None}
+EV_FR = {'xl': 'niveau XL', 'pray': 'prayer', 'trap': 'trap', 'theft': 'vol', 'excalibur': 'Excalibur',
+         'wish': 'wish', 'lifesave': 'lifesaved', 'intrinsic': 'intrinsèque', 'lowhp': 'HP bas',
+         'death': 'mort', 'faint': 'Fainted', 'altar': 'altar', 'shop': 'shop', 'fall': 'chute', 'level': 'Dlvl'}
+
+
+def agent_activity(gid):
+    p = frames.GAMES / gid / 'log.jsonl'
+    out = {'commands': 0, 'travel': 0, 'decisions': 0, 'first': None, 'last': None, 'notes': []}
+    if not p.exists():
+        return out
+    for l in p.read_text().splitlines():
+        try:
+            r = json.loads(l)
+        except json.JSONDecodeError:
+            continue
+        k = r.get('kind')
+        out['commands'] += k == 'command'
+        out['travel'] += k == 'travel'
+        if k == 'decision':
+            out['decisions'] += 1
+            out['notes'].append({'t': r['t'], 'text': r.get('text', '')[:300]})
+        out['first'] = out['first'] or r['t']
+        out['last'] = r['t']
+    out['notes'] = out['notes'][-60:]
+    return out
+
+
+def strategy():
+    """Cross-run statistics for the Stratégie sub-tabs (cached 60 s)."""
+    if _strategy_cache['data'] and time.time() - _strategy_cache['t'] < 60:
+        return _strategy_cache['data']
+    from collections import Counter
+    hist = history()
+    tot = {k: Counter() for k in ('kills', 'pet_kills', 'hit_by', 'pickups', 'traps', 'thefts', 'eaten', 'intrinsics', 'shops')}
+    kill_games = Counter()
+    depth = {}  # dlvl -> {turns, visits, lowhp, deaths, hits}
+    games_out, events, lessons = [], [], []
+    for r in hist['runs']:
+        gid = r['id']
+        try:
+            s = analytics.summarize(gid)
+        except Exception:
+            continue
+        for k in tot:
+            tot[k].update(s[k])
+        for k in s['kills']:
+            kill_games[k] += 1
+        for d, (a, b) in s['levels'].items():
+            e = depth.setdefault(d, {'turns': 0, 'visits': 0, 'lowhp': 0, 'deaths': 0, 'hit': 0})
+            e['turns'] += max(0, b - a)
+            e['visits'] += 1
+        cur = None
+        for e in analytics.analyze(gid)['events']:
+            if e['type'] == 'level':
+                cur = e['v']
+            elif e['type'] in ('lowhp', 'hit_by') and cur:
+                depth.setdefault(cur, {'turns': 0, 'visits': 0, 'lowhp': 0, 'deaths': 0, 'hit': 0})[
+                    'lowhp' if e['type'] == 'lowhp' else 'hit'] += 1
+        if r['status'] == 'dead' and s['series']:
+            d = str(s['series'][-1][1])
+            depth.setdefault(d, {'turns': 0, 'visits': 0, 'lowhp': 0, 'deaths': 0, 'hit': 0})['deaths'] += 1
+        for e in s['key_events']:
+            if e['type'] == 'level' and not (e['v'].isdigit() and int(e['v']) >= 3):
+                continue
+            events.append({'game': gid, 'slot': r['slot'], 'style': r['style'], 'turn': e['turn'], 't': e['t'],
+                           'frame': e['f'], 'type': e['type'], 'label': EV_FR.get(e['type'], e['type']),
+                           'v': e['v'], 'msg': e.get('msg', '')})
+        act = agent_activity(gid)
+        hours = ((act['last'] or 0) - (act['first'] or 0)) / 3600
+        for l in r['lessons']:
+            lessons.append({'game': gid, 'slot': r['slot'], 'style': r['style'], 'status': r['status'], 'text': l})
+        ser = s['series']
+        step = max(1, len(ser) // 150)
+        games_out.append({
+            **{k: r[k] for k in ('id', 'slot', 'run', 'style', 'status', 'death', 'turns', 'maxdepth', 'maxxl', 'started')},
+            'n': s['n'], 'milestones': s['milestones'], 'prayers': len(s['prayers']), 'pray_results': s['pray_results'],
+            'kills': dict(s['kills']), 'hit_by': dict(s['hit_by']), 'pet_kills': dict(s['pet_kills']),
+            'pickups': dict(s['pickups']), 'eaten': dict(s['eaten']), 'intrinsics': list(s['intrinsics']), 'traps': dict(s['traps']),
+            'chron_items': r['items'], 'lessons_n': len(r['lessons']), 'chronicle_n': len(r['chronicle']),
+            'cause_summary': r.get('cause_summary'), 'player': r.get('player'),
+            'thefts': sum(s['thefts'].values()), 'shops': list(s['shops']), 'altars': list(s['altars']),
+            'levels': s['levels'], 'series': ser[::step] + ser[-1:],
+            'agent': {**{k: act[k] for k in ('commands', 'travel', 'decisions')}, 'hours': round(hours, 2),
+                      'turns_per_hour': round((r['turns'] or 0) / hours) if hours > 0.05 else None,
+                      'keys_per_turn': round(act['commands'] / r['turns'], 2) if r['turns'] else None,
+                      'notes': act['notes']},
+        })
+    events.sort(key=lambda e: e['t'], reverse=True)
+    data = {
+        'generated': time.time(), 'total': hist['total'], 'styles': hist['styles'], 'causes': hist['causes'],
+        'games': games_out,
+        'top': {k: v.most_common(40) for k, v in tot.items()},
+        'kill_games': kill_games.most_common(40),
+        'depth': sorted(({'dlvl': d, **v} for d, v in depth.items()), key=lambda x: int(x['dlvl']) if x['dlvl'].isdigit() else 99),
+        'events': events[:3000], 'lessons': lessons,
+    }
+    _strategy_cache.update(t=time.time(), data=data)
+    return data
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -297,6 +400,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send({'chronicle': out})
             if url.path == '/api/history':
                 return self.send(history())
+            if url.path == '/api/strategy':
+                return self.send(strategy())
             if url.path == '/api/journal':
                 m = frames.load_meta(gid)
                 j = m.get('journal')
