@@ -33,6 +33,27 @@ NETHACK = ROOT / 'engine/install/games/lib/nethackdir/nethack'
 SAVEDIR = ROOT / 'engine/install/games/lib/nethackdir/save'
 PLAYER = 'Claude' if SLOT == '1' else f'Claude{SLOT}'
 SLOTFILE = RUNTIME / f'slot-{SLOT}.json'
+# wish_abuser: the game found by scripts/wish_scum.py stays on miniforum-worker
+# (its save file never moves, PURE rule); the local tmux session only attaches
+# to the worker's tmux over ssh. The slot file then holds
+# "remote": {"host", "sock", "session", "player"}.
+try:
+    REMOTE = json.loads(SLOTFILE.read_text()).get('remote')
+except (FileNotFoundError, json.JSONDecodeError):
+    REMOTE = None
+if REMOTE:
+    PLAYER = REMOTE['player']
+
+
+def remote_sh(command, timeout=20):
+    return subprocess.run(['ssh', '-o', 'BatchMode=yes', REMOTE['host'], command], text=True,
+                          capture_output=True, timeout=timeout)
+
+
+def remote_saved(remote, player):
+    r = subprocess.run(['ssh', '-o', 'BatchMode=yes', remote['host'],
+                        f'ls {SAVEDIR}/ 2>/dev/null | grep -c -- "{player}"'], text=True, capture_output=True, timeout=20)
+    return r.stdout.strip() not in ('', '0')
 COLS, ROWS = 144, 36
 
 
@@ -65,7 +86,12 @@ def start():
         info = json.loads(SLOTFILE.read_text())
     except FileNotFoundError:
         info = {}
-    saved = any(SAVEDIR.glob(f'*{PLAYER}.gz')) or any(SAVEDIR.glob(f'*{PLAYER}'))
+    if REMOTE:
+        saved = remote_saved(REMOTE, PLAYER)
+    else:
+        saved = any(SAVEDIR.glob(f'*{PLAYER}.gz')) or any(SAVEDIR.glob(f'*{PLAYER}'))
+    if REMOTE:  # the game id was set when the wish game was handed over
+        saved = True
     if not saved or not info.get('game_id'):
         info = {'game_id': f'{PLAYER}-{stamp}', 'player': PLAYER, 'slot': SLOT, 'started': stamp}
         (RUNTIME / f'explore-{SLOT}.json').unlink(missing_ok=True)  # new game: no stale dead ends
@@ -74,6 +100,15 @@ def start():
     record.parent.mkdir(exist_ok=True)
     command = ['env', f'NETHACKOPTIONS=@{ROOT / "config/nethackrc"}', 'TERM=screen-256color',
                'ttyrec', '-e', f'{NETHACK} -u {PLAYER}', str(record)]
+    if REMOTE:
+        sock, sess = REMOTE['sock'], REMOTE['session']
+        game = (f'env NETHACKOPTIONS=@{ROOT / "config/nethackrc"} TERM=screen-256color {NETHACK} -u {PLAYER}')
+        # (re)start the game on the worker if its tmux session is gone (after a save)
+        remote_sh(f"tmux -S {sock} has-session -t {sess} 2>/dev/null || "
+                  f"tmux -S {sock} -f {ROOT / 'config/tmux.conf'} new-session -d -s {sess} -x {COLS} -y {ROWS} '{game}'; "
+                  f"tmux -S {sock} set-option -t {sess} remain-on-exit off")
+        command = ['env', 'TERM=screen-256color', 'ttyrec', '-e',
+                   f"ssh -t -o BatchMode=yes {REMOTE['host']} tmux -S {sock} attach -t {sess}", str(record)]
     if alive():
         tmux('respawn-pane', '-t', TARGET, *command)
     else:

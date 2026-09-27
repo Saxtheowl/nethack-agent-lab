@@ -1,11 +1,17 @@
 # Expedition memory — Claude, reproduction pure à la Astra
 
-Styles (user decision 2026-09-27): slot 1 ALWAYS plays memory/tariru-style.md.
-Slots 2 and 3 play tariru-style.md in their current game, but after a DEATH
-they restart in the original Astra method: memory/astra-style.md (no BotHack).
-Slots 4..8 (added 2026-09-27, players ClaudeN, wrappers slots/N): slot 6 plays
-Tariru style, slots 4, 5, 7, 8 play the Astra style from the start.
-Read the style file of your slot before playing.
+Styles (registry: config/styles.json, shown in the dashboard tab Styles):
+- tariru      = memory/tariru-style.md (slot 1 always; slot 6).
+- astra       = memory/astra-style.md (original Astra method, no BotHack).
+- tariru_v2   = tariru-style.md + memory/style-tariru-v2.md (hard HP/AC/depth targets).
+- wish_abuser = start-scum on miniforum-worker (scripts/wish_scum.py) until a
+  start offers a wish, then Astra: memory/style-wish-abuser.md.
+The style of your slot is "style" in .runtime/slot-N.json: read its files
+before playing. Assignment after a death (user plan 2026-09-27):
+`python3 scripts/next_style.py N` gives the next style: the first death →
+tariru_v2, the next death (another slot) → wish_abuser, then styles are sticky
+per slot. Slot 1 stays Tariru-family (it may get tariru_v2, never
+wish_abuser). Games in progress are never switched.
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
 

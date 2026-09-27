@@ -1,0 +1,54 @@
+{
+  "styles": {
+    "tariru": {
+      "label": "Tariru",
+      "summary": "Le playbook tiré des parties de Tariru (NAO, 144 ascensions sur 156, 6/6 Valkyries naines).",
+      "files": ["memory/session.md", "memory/tariru-style.md"],
+      "targets": [["AC avant Minetown", "≤ 3"], ["AC avant Dlvl 10", "≤ 0"], ["Mines profondes", "pas avant XL 5 et AC ≤ 4"], ["Nourriture", "2+ rations"]],
+      "rules": ["Remplir tous les emplacements d'armure (testée non-cursed : altar ou pet).",
+                "Combat à distance : daggers lancées (Valk jusqu'à Expert), wands testées en gravant.",
+                "Elbereth selon les règles 3.6.7 : refuge, jamais plateforme de mêlée ; toujours relire avec ':'.",
+                "Route : Minetown (temple, protection 400×XL gold) → Sokoban → Mines' End.",
+                "Arrêt immédiat sur Weak, deathly sick, stoning, strangulation ; jamais combattre Weak.",
+                "Pet = arme principale au début ; jamais tuer pet ou peaceful (Luck)."]
+    },
+    "astra": {
+      "label": "Astra",
+      "summary": "La méthode d'origine qui a ascensionné (1 fois sur 3) : le LLM décide chaque action lui-même, sans BotHack.",
+      "files": ["memory/session.md", "memory/astra-style.md"],
+      "targets": [["Excalibur", "dip à XL 5"], ["Avant le Castle", "reflection + magic resistance"], ["Prayer", "~1000 T d'écart, seulement HP < 1/7 ou Weak"], ["Nourriture", "2+ rations"]],
+      "rules": ["Relire l'écran avant chaque décision ; combat = une commande à la fois.",
+                "Farlook de tout monstre ou objet inconnu avant d'interagir.",
+                "Journal + ligne d'urgence (T, Dlvl, HP, AC, XL, prayer, équipement, dangers) à jour.",
+                "Écrire ses propres outils (Sokoban, routes) quand le langage est peu fiable.",
+                "Route Valkyrie classique : Excalibur, Mines/Minetown, Sokoban, Quest ; wishes au Castle."]
+    },
+    "tariru_v2": {
+      "label": "Tariru v2 — Patience",
+      "summary": "Tariru + objectifs chiffrés mesurés sur les vrais écrans de Tariru (OCR de 14 h de vidéo, ~28 000 écrans).",
+      "files": ["memory/session.md", "memory/tariru-style.md", "memory/style-tariru-v2.md"],
+      "targets": [["HP", "≥ 50 % en permanence (sous 60 % : on recule)"], ["AC à T1500", "≤ 3"], ["AC à T3500", "≤ 0"], ["AC à T5000", "≤ −5"],
+                  ["Plus bas que Minetown", "seulement avec AC ≤ 0"], ["Rester sur Dlvl 1-10", "jusqu'à XL ≥ 10 et AC ≤ −5"]],
+      "rules": ["Tout le style Tariru (sections 1-7), plus les objectifs durs ci-contre.",
+                "Le pet combat avec nous : l'attendre avant tout vrai combat, le garder en vie.",
+                "Dans les Mines : combattre sur l'upstairs (Elbereth dessus, relu), remonter si plusieurs tireurs.",
+                "Référence Tariru : sous 50 % HP seulement 4 fois en 29 000 T ; Dlvl ≤ 10 jusqu'à T19000."]
+    },
+    "wish_abuser": {
+      "label": "Wish abuser",
+      "summary": "Start-scum (jamais save-scum) : on enchaîne les nouvelles parties sur le worker jusqu'à ce que le début offre un wish, puis on joue cette partie en style Astra.",
+      "files": ["memory/session.md", "memory/style-wish-abuser.md", "scripts/wish_scum.py", "memory/astra-style.md"],
+      "targets": [["Fountain dans la 1re pièce", "~10 % des parties (mklev.c : 1/10 par pièce)"], ["Wish par quaff", "~0,6 % (fate 23/30 × 19 %)"],
+                  ["Water demon hostile par quaff", "~2,7 %"], ["Quaffs par fountain", "~3 (dries up 1/3)"], ["Lamp", "25 % magic lamp (15 contre 45)"],
+                  ["Magic lamp blessed", "80 % wish (uncursed : 20 %)"], ["Parties attendues", "~500 pour un wish"]],
+      "rules": ["Seule la boucle « rien d'intéressant → #quit → nouvelle partie » est automatique (scripts/wish_scum.py sur miniforum-worker).",
+                "Dès qu'un wish (« For what do you wish? ») ou une lamp est trouvé, la partie reste sur le worker et un agent LLM prend la main.",
+                "La sauvegarde ne quitte jamais le worker (règle PURE) : l'emplacement local s'attache en ssh à la tmux du worker.",
+                "Wish conseillé : « blessed +2 gray dragon scale mail » (magic resistance + AC).",
+                "Lamp : ne pas la frotter uncursed ; la faire identifier au prix (shop), la bénir (holy water), puis #rub (80 %)."]
+    }
+  },
+  "plan_rules": ["À la prochaine mort d'un emplacement : il passe en tariru_v2.",
+                 "À la mort suivante (autre emplacement) : il passe en wish_abuser.",
+                 "Ensuite, un emplacement qui meurt garde son style pour sa partie suivante."]
+}

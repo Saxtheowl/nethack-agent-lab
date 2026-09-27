@@ -158,6 +158,20 @@ code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--gold)
 .toolgrid { display: flex; flex-wrap: wrap; gap: 6px; } .toolgrid code { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
 #rwarn li { margin: 4px 0; }
 @media (max-width: 700px) { .mach { grid-template-columns: 1fr; } .flow .arrow { display: none; } }
+.stylegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 16px; }
+.stylecard { border-top: 4px solid var(--line); }
+.stylecard h3 { margin: 0; font-size: 20px; } .stylecard .code { color: var(--muted); font-family: monospace; font-size: 12px; margin-left: 8px; }
+.stylecard .sum { color: #d4ddd0; margin: 6px 0 10px; font-size: 14px; }
+.stylecard h4 { margin: 12px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--accent); }
+.stylecard .files button { font-family: monospace; font-size: 12px; margin: 2px 4px 2px 0; }
+.stylecard table td { padding: 4px 6px; font-size: 13px; } .stylecard ul { margin: 0; padding-left: 18px; font-size: 13.5px; } .stylecard li { margin: 4px 0; color: #d4ddd0; }
+.stylecard .slotchips span { display: inline-block; margin: 2px 4px 0 0; }
+.filetext { white-space: pre-wrap; font-size: 12.5px; color: #d4ddd0; max-height: 70vh; overflow: auto; margin: 0; }
+.wishbox { background: #1f1a2b; border: 1px solid #4f3a6b; border-radius: 8px; padding: 10px 12px; margin-top: 10px; }
+.wishbox .kv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 8px 0; }
+.wishbox .kv div { background: #2a2338; border-radius: 6px; padding: 6px 8px; } .wishbox .kv b { display: block; font-size: 18px; } .wishbox .kv small { color: var(--muted); font-size: 11px; }
+.planstep { display: flex; gap: 10px; align-items: center; margin: 6px 0; font-size: 14px; } .planstep .n { background: var(--panel2); border: 1px solid var(--line); border-radius: 99px; width: 24px; height: 24px; display: grid; place-items: center; font-size: 12px; }
+.planstep.done { color: var(--muted); } .planstep.next { color: var(--text); font-weight: 600; }
 /* strategy sub-tabs */
 .subtabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .subtabs button { border: none; background: transparent; color: var(--muted); font-size: 14px; padding: 7px 12px; border-radius: 8px; }
@@ -191,6 +205,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
 .feedrow:hover { background: var(--panel2); } .feedrow .g { color: var(--muted); font-size: 12px; } .feedrow .m { color: #cfd8cc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tag { font-size: 11.5px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); white-space: nowrap; }
 .tag.tariru { color: var(--gold); border-color: #6b6035; } .tag.astra { color: var(--blue); border-color: #35506b; }
+.tag.tariru_v2 { color: #f0a35e; border-color: #6b4a2a; } .tag.wish_abuser { color: #c79bf0; border-color: #4f3a6b; }
 .lesson { border-left: 3px solid var(--line); padding: 6px 10px; margin: 6px 0; background: var(--panel); border-radius: 0 8px 8px 0; font-size: 13.5px; }
 .lesson.dead { border-left-color: var(--bad); } .lesson small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
 .insight { background: #1c2a22; border: 1px solid #36513d; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px; }
@@ -223,7 +238,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
 
 <header class="top">
   <h1>Claude joue à NetHack 3.6.7</h1>
-  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button><button data-tab="res">Ressources</button></nav>
+  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button><button data-tab="styles">Styles</button><button data-tab="res">Ressources</button></nav>
   <div class="right"><span id="conn">…</span><span>Joueur IA · Claude Opus 5.5 · local, sans aide</span></div>
 </header>
 
@@ -264,6 +279,13 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
     <div class="sfilters" id="sfilters"></div>
     <div id="sbody"><p class="loading">Calcul des statistiques…</p></div>
   </div>
+</section>
+
+<!-- STYLES -->
+<section id="tab-styles" class="hidden">
+  <div class="panel" style="margin-bottom:16px"><h2>Plan d’attribution des styles</h2><div id="splan"></div></div>
+  <div id="scards" class="stylegrid"></div>
+  <div class="panel hidden" id="sfile" style="margin-top:16px"><h2 id="sfiletitle"></h2><pre id="sfiletext" class="filetext"></pre></div>
 </section>
 
 <!-- RESOURCES -->
@@ -430,6 +452,8 @@ function showTab(t) {
   $('#tab-dash').classList.toggle('hidden', t !== 'dash');
   $('#tab-hist').classList.toggle('hidden', t !== 'hist');
   $('#tab-res').classList.toggle('hidden', t !== 'res');
+  $('#tab-styles').classList.toggle('hidden', t !== 'styles');
+  if (t === 'styles') refreshStyles();
   if (t === 'res') refreshResources();
   if (t === 'hist') { refreshHistory(); showSub(); }
   if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
@@ -526,7 +550,7 @@ function renderCards() {
         el('button', {textContent: '★', title: 'Moments clés de la partie précédente', onclick: () => openMoments(prev.id)}));
     }
     card.querySelector('.head b').textContent = `Partie ${s}`;
-    card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}${meta.style ? ' · style ' + (meta.style === 'tariru' ? 'Tariru' : 'Astra') : ''}` : 'emplacement libre';
+    card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}${meta.style ? ' · style ' + (STYLE_FR[meta.style] || meta.style) : ''}` : 'emplacement libre';
     const badge = card.querySelector('.badge');
     badge.className = 'badge ' + (meta ? meta.status : ''); badge.textContent = meta ? (STATUS_FR[meta.status] || meta.status) : '—';
     const m = meta || {};
@@ -874,7 +898,8 @@ async function refreshHistory() {
   renderHistoryTab();
 }
 setInterval(() => TAB === 'hist' && refreshHistory(), 20000);
-const STYLE_FR = {tariru: 'Tariru', astra: 'Astra', 'avant-style': 'avant les styles'};
+const STYLE_FR = {tariru: 'Tariru', tariru_v2: 'Tariru v2', astra: 'Astra', wish_abuser: 'Wish abuser', 'avant-style': 'avant les styles'};
+const STYLE_LIST = ['tariru', 'tariru_v2', 'astra', 'wish_abuser', 'avant-style'];
 function renderHistoryTab() {
   const T = HIST.total;
   const best = HIST.runs.reduce((a, r) => (r.maxdepth > (a ? a.maxdepth : -1) ? r : a), null);
@@ -941,7 +966,7 @@ function renderRuns() {
 const SUBS = [['overview', 'Vue générale'], ['sep'], ['s-summary', 'Stratégie · Synthèse'], ['s-prog', 'Progression'], ['s-fight', 'Combats'],
   ['s-items', 'Objets'], ['s-surv', 'Survie'], ['s-hard', 'Où on galère'], ['s-agents', 'Agents'], ['s-events', 'Évènements'], ['s-lessons', 'Leçons']];
 let HSUB = hashState().sub || 'overview', STRAT = null, sStyle = '', sStatus = '', sText = '', sEvType = '', sChart = 'dlvl', sSort = ['turns', -1];
-const STYLE_COL = {tariru: '#efd69a', astra: '#7fb2e5', 'avant-style': '#8fa39b'};
+const STYLE_COL = {tariru: '#efd69a', tariru_v2: '#f0a35e', astra: '#7fb2e5', wish_abuser: '#c79bf0', 'avant-style': '#8fa39b'};
 const styleOf = g => g.style || 'avant-style';
 const TARIRU_REF = {XL3: 1335, XL5: 4550, Dlvl5: 2000, Dlvl10: 9000};
 const TARIRU_CURVE = {dlvl: [[0, 1], [2000, 5], [4000, 6], [7000, 8], [9000, 10]], xl: [[0, 1], [1335, 3], [3150, 4], [4550, 5], [7000, 7], [9000, 8]],
@@ -1034,7 +1059,7 @@ function insightList(gs) {
   const d5 = gs.filter(g => g.milestones.Dlvl5 != null); if (d5.length) out.push(`Dlvl 5 atteint en moyenne à <b>T${Math.round(avg(d5, g => g.milestones.Dlvl5))}</b> (Tariru : T2000, mais avec AC 3 et le pet).`);
   const ex = gs.filter(g => keyHas(g, KEY_ITEMS[0])); out.push(`Excalibur obtenue dans <b>${ex.length}/${gs.length}</b> parties.`);
   if (dead.length) out.push(`Morts : T moyen <b>${fmtN(Math.round(avg(dead, g => g.turns)))}</b>, Dlvl moyen ${avg(dead, g => g.maxdepth).toFixed(1)}, XL moyen ${avg(dead, g => g.maxxl).toFixed(1)}. HP bas (≤1/4) avant la mort : ${avg(dead, g => g.n.lowhp).toFixed(1)} fois en moyenne.`);
-  for (const st of ['tariru', 'astra']) { const s = gs.filter(g => styleOf(g) === st); if (s.length) out.push(`Style <b>${STYLE_FR[st]}</b> : ${s.length} parties, Dlvl max moyen ${avg(s, g => g.maxdepth).toFixed(1)}, ${s.filter(g => g.status === 'dead').length} morts, ${(avg(s, g => g.n.lowhp / Math.max(1, g.turns) * 1000)).toFixed(2)} HP bas / 1000 T.`); }
+  for (const st of STYLE_LIST.slice(0, 4)) { const s = gs.filter(g => styleOf(g) === st); if (s.length) out.push(`Style <b>${STYLE_FR[st]}</b> : ${s.length} parties, Dlvl max moyen ${avg(s, g => g.maxdepth).toFixed(1)}, ${s.filter(g => g.status === 'dead').length} morts, ${(avg(s, g => g.n.lowhp / Math.max(1, g.turns) * 1000)).toFixed(2)} HP bas / 1000 T.`); }
   const th = sum(gs, g => g.thefts); if (th) out.push(`Vols subis (nymph, monkey, leprechaun…) : <b>${th}</b> messages de vol.`);
   return out;
 }
@@ -1045,7 +1070,7 @@ function renderStrategy() {
   search.oninput = () => { sText = search.value; clearTimeout(search._t); search._t = setTimeout(() => { renderStrategy(); const i = $('#sfilters input'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); };
   $('#sfilters').replaceChildren(
     mk('Tous styles', !sStyle, () => { sStyle = ''; renderStrategy(); }),
-    ...['tariru', 'astra', 'avant-style'].map(st => mk(STYLE_FR[st], sStyle === st, () => { sStyle = st; renderStrategy(); })),
+    ...STYLE_LIST.filter(st => STRAT.games.some(g => styleOf(g) === st)).map(st => mk(STYLE_FR[st], sStyle === st, () => { sStyle = st; renderStrategy(); })),
     el('span', {textContent: ' · '}),
     mk('Toutes', !sStatus, () => { sStatus = ''; renderStrategy(); }),
     ...['live', 'dead', 'quit'].map(x => mk(STATUS_FR[x], sStatus === x, () => { sStatus = x; renderStrategy(); })),
@@ -1077,7 +1102,7 @@ function vSummary(gs) {
 function vProg(gs) {
   const choose = el('div', {className: 'hfilters'}, ...[['dlvl', 'Dlvl (profondeur)'], ['xl', 'XL'], ['ac', 'AC'], ['hpmax', 'HP max'], ['hp', 'HP %']].map(([k, l]) =>
     el('button', {className: sChart === k ? 'on' : '', textContent: l, onclick: () => { sChart = k; renderStrategy(); }})));
-  const legend = el('div', {className: 'legend'}, ...['tariru', 'astra', 'avant-style'].map(st => el('span', {}, el('i', {style: `background:${STYLE_COL[st]}`}), STYLE_FR[st])),
+  const legend = el('div', {className: 'legend'}, ...STYLE_LIST.map(st => el('span', {}, el('i', {style: `background:${STYLE_COL[st]}`}), STYLE_FR[st])),
     el('span', {}, el('i', {style: 'background:#e27d6f'}), 'Tariru réel (référence, pointillés)'), el('span', {textContent: '✖ = mort · trait épais = en cours'}));
   const ms = ['XL3', 'XL5', 'XL8', 'Dlvl3', 'Dlvl5', 'Dlvl7', 'Dlvl10', 'excalibur'];
   const rows = [el('tr', {style: 'background:#2a1e1c'}, td('Tariru (référence, game #47)'), td(''), ...ms.map(m => td(TARIRU_REF[m] ? 'T' + TARIRU_REF[m] : '—', 'num')))];
@@ -1132,7 +1157,7 @@ function vSurv(gs) {
       panel('Traps déclenchés', '', bars(traps, 'warn', 18)),
       panel('Résultats des prayers', '« You feel a hopeful feeling » = prière réussie, pas encore finie ; displeased = trop tôt', bars(Object.entries(pr).sort((a, b) => b[1] - a[1]), 'blue', 8)),
       panel('Ce qu’on mange', 'Corpses et nourriture finis', bars(eats, '', 15)),
-      panel('Faim par style', 'Moyenne par partie', bars(['tariru', 'astra', 'avant-style'].map(st => { const s = gs.filter(g => styleOf(g) === st); return s.length ? [`${STYLE_FR[st]} · Weak+Fainted`, +avg(s, g => g.n.weak + g.n.faint).toFixed(1)] : null; }).filter(Boolean), 'warn')))];
+      panel('Faim par style', 'Moyenne par partie', bars(STYLE_LIST.map(st => { const s = gs.filter(g => styleOf(g) === st); return s.length ? [`${STYLE_FR[st]} · Weak+Fainted`, +avg(s, g => g.n.weak + g.n.faint).toFixed(1)] : null; }).filter(Boolean), 'warn')))];
 }
 function vHard(gs) {
   const D = {}; const ids = new Set(gs.map(g => g.id));
@@ -1198,6 +1223,52 @@ function vLessons(gs) {
       panel('Leçons', `${ls.length} leçons écrites par les agents dans leurs journaux (bord rouge = partie morte)`,
         ...ls.map(l => { const g = gmap[l.game]; return el('div', {className: 'lesson ' + l.status}, l.text, el('small', {}, `${g ? gname(g) : l.game} · `, tag(l.style || 'avant-style'), ` · ${STATUS_FR[l.status] || l.status}`)); })))];
 }
+
+/* STYLES tab */
+async function showStyleFile(path) {
+  try { const d = await api('/api/file?path=' + encodeURIComponent(path)); $('#sfiletitle').textContent = d.path; $('#sfiletext').textContent = d.text; $('#sfile').classList.remove('hidden'); $('#sfile').scrollIntoView({behavior: 'smooth'}); }
+  catch (e) { $('#sfiletitle').textContent = path + ' : introuvable'; $('#sfiletext').textContent = ''; $('#sfile').classList.remove('hidden'); }
+}
+async function refreshStyles() {
+  let S; try { S = await api('/api/styles'); } catch (e) { return; }
+  const P = S.plan, done = P.history || [];
+  const steps = [...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
+    ...(P.queue || []).map((st, i) => el('div', {className: 'planstep ' + (i === 0 ? 'next' : '')}, el('span', {className: 'n', textContent: done.length + i + 1}),
+      i === 0 ? 'À la prochaine mort d’un emplacement, il passera en ' : 'À la mort suivante (autre emplacement), il passera en ', tag(st), st === 'wish_abuser' ? ' (jamais la partie 1, qui reste Tariru)' : ''))];
+  if (!(P.queue || []).length) steps.push(el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: '∞'}), 'Chaque emplacement garde son style à la mort suivante.'));
+  $('#splan').replaceChildren(...steps,
+    el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Les parties en cours ne changent jamais de style. Un emplacement qui meurt garde ensuite son style (collant). Styles actuels : ' +
+      Object.entries(S.slots).map(([k, v]) => `P${k} ${STYLE_FR[v] || v || '—'}`).join(' · ')}));
+  const cards = Object.entries(S.styles).map(([name, st]) => {
+    const c = el('div', {className: 'panel stylecard'}); c.style.borderTopColor = STYLE_COL[name] || 'var(--line)';
+    const stats = st.stats || {};
+    c.append(el('div', {}, el('h3', {style: `color:${STYLE_COL[name]}`, textContent: st.label}, el('span', {className: 'code', textContent: name}))),
+      el('p', {className: 'sum', textContent: st.summary}),
+      el('h4', {textContent: 'Emplacements qui l’utilisent maintenant'}),
+      el('div', {className: 'slotchips'}, ...(st.slots.length ? st.slots.map(x => el('span', {className: 'badge live', textContent: 'Partie ' + x})) : [el('span', {className: 'kbd', textContent: 'aucun pour l’instant'})])),
+      el('h4', {textContent: 'Résultats'}),
+      el('div', {className: 'kbd', textContent: stats.games ? `${stats.games} parties · ${stats.live || 0} en cours · ${stats.dead || 0} mortes · Dlvl max ${stats.best_depth} · XL max ${stats.best_xl} · ${fmtN(stats.turns)} T joués` : 'pas encore de partie'}),
+      el('h4', {textContent: 'Fichiers (cliquer pour lire)'}),
+      el('div', {className: 'files'}, ...st.files.map(f => el('button', {textContent: f, onclick: () => showStyleFile(f)}))),
+      el('h4', {textContent: 'Objectifs et paramètres chiffrés'}),
+      el('table', {}, el('tbody', {}, ...st.targets.map(([k, v]) => el('tr', {}, td(k, 'dim'), el('td', {}, el('b', {textContent: v})))))),
+      el('h4', {textContent: 'Règles clés'}),
+      el('ul', {}, ...st.rules.map(r => el('li', {textContent: r}))));
+    if (name === 'wish_abuser') {
+      const W = S.wish || {};
+      const secs = W.started ? ((W.ended || (W.running ? Date.now() / 1000 : W.started)) - W.started) : 0;
+      const box = el('div', {className: 'wishbox'}, el('b', {textContent: W.running ? '● Boucle de scum en cours sur miniforum-worker' : W.attempts ? 'Boucle de scum arrêtée' : 'Boucle pas encore lancée (elle démarre quand un emplacement passe en wish_abuser)'}),
+        el('div', {className: 'kv'}, ...[[fmtN(W.attempts || 0), 'parties essayées'], [secs ? (secs / 60).toFixed(0) + ' min' : '—', 'temps passé'], [W.fountains || 0, 'fountains trouvées'], [W.quaffs || 0, 'quaffs'],
+          [W.demons_hostile || 0, 'water demons hostiles'], [W.lamps || 0, 'lamps trouvées'], [(W.found || []).length, 'wish/lamp gardés'], [W.deaths || 0, 'morts']].map(([v, l]) => el('div', {}, el('b', {textContent: v}), el('small', {textContent: l})))));
+      if (W.outcomes && Object.keys(W.outcomes).length) box.append(bars(Object.entries(W.outcomes).sort((a, b) => b[1] - a[1]), '', 10));
+      for (const f of W.found || []) box.append(el('p', {textContent: `✨ ${f.kind} — tentative ${f.attempt}, ${f.player}, session ${f.session} (${fmtT(f.t)}) : ${(f.messages || []).join(' · ')}`}));
+      c.append(el('h4', {textContent: 'Compteur de la boucle (parties rapides, pas une carte par partie)'}), box);
+    }
+    return c;
+  });
+  $('#scards').replaceChildren(...cards);
+}
+setInterval(() => TAB === 'styles' && refreshStyles(), 30000);
 
 /* RESOURCES tab */
 const fmtB = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' Go' : b >= 1e6 ? (b / 1e6).toFixed(0) + ' Mo' : (b / 1e3).toFixed(0) + ' ko';
@@ -1292,7 +1363,7 @@ setInterval(() => {  // overlay texts while in big screen
 (async () => {
   const h = hashState();
   await refreshGames();
-  showTab(['dash', 'live', 'res'].includes(h.tab) ? h.tab : 'hist');
+  showTab(['dash', 'live', 'res', 'styles'].includes(h.tab) ? h.tab : 'hist');
   if (h.game) { await loadGame(h.game, h.f === 'live' || h.f === 'death' ? h.f : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
   pollLive();

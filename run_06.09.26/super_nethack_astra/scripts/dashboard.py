@@ -12,6 +12,8 @@ API
   /api/journal?game=ID      the run journal (markdown text)
   /api/strategy             cross-run statistics (analytics.py)
   /api/resources            machines, storage, processes (Ressources tab)
+  /api/styles               play styles, assignment plan, wish_abuser counters
+  /api/file?path=memory/X.md  a style file (memory/*.md, scripts/wish_scum.py only)
 """
 import argparse
 import json
@@ -395,6 +397,52 @@ def resources():
     }
 
 
+_wish_cache = {'t': 0, 'data': None}
+STYLE_FILES = re.compile(r'^(memory/[A-Za-z0-9_.\-]+\.md|scripts/wish_scum\.py)$')
+
+
+def wish_status():
+    """runs/wish_scum/status.json on the worker (the scum loop runs there), cached 60 s."""
+    if _wish_cache['data'] is not None and time.time() - _wish_cache['t'] < 60:
+        return _wish_cache['data']
+    out = _run(['ssh', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=5', 'miniforum-worker',
+                f'cat {ROOT}/runs/wish_scum/status.json 2>/dev/null; echo; '
+                f'tail -5 {ROOT}/runs/wish_scum/attempts.jsonl 2>/dev/null'], 15)
+    parts = out.strip().split('\n')
+    data = {}
+    try:
+        data = json.loads(parts[0]) if parts and parts[0].strip() else {}
+        data['recent'] = [json.loads(l) for l in parts[1:] if l.strip()]
+    except json.JSONDecodeError:
+        data = {'error': 'status illisible'}
+    _wish_cache.update(t=time.time(), data=data)
+    return data
+
+
+def styles():
+    reg = json.loads((ROOT / 'config/styles.json').read_text())
+    try:
+        plan = json.loads((RUNTIME / 'style-plan.json').read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        plan = {'queue': [], 'history': []}
+    slots = {s: slot_game(s) for s in '12345678'}
+    hist = history()
+    per = {}
+    for r in hist['runs']:
+        st = r['style'] or 'avant-style'
+        e = per.setdefault(st, {'games': 0, 'live': 0, 'dead': 0, 'quit': 0, 'best_depth': 0, 'best_xl': 0, 'turns': 0})
+        e['games'] += 1
+        e[r['status']] = e.get(r['status'], 0) + 1
+        e['best_depth'] = max(e['best_depth'], r['maxdepth'] or 0)
+        e['best_xl'] = max(e['best_xl'], r['maxxl'] or 0)
+        e['turns'] += r['turns'] or 0
+    for name, st in reg['styles'].items():
+        st['slots'] = [s for s, v in slots.items() if v and v.get('style') == name]
+        st['stats'] = per.get(name, {})
+    return {'styles': reg['styles'], 'plan_rules': reg['plan_rules'], 'plan': plan,
+            'slots': {s: (v or {}).get('style') for s, v in slots.items()}, 'wish': wish_status()}
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -484,6 +532,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send({'chronicle': out})
             if url.path == '/api/history':
                 return self.send(history())
+            if url.path == '/api/styles':
+                return self.send(styles())
+            if url.path == '/api/file':
+                path = q.get('path', '')
+                if not STYLE_FILES.match(path) or not (ROOT / path).exists():
+                    return self.send({'error': 'fichier non autorisé'}, code=404)
+                return self.send({'path': path, 'text': (ROOT / path).read_text()})
             if url.path == '/api/resources':
                 return self.send(resources())
             if url.path == '/api/strategy':

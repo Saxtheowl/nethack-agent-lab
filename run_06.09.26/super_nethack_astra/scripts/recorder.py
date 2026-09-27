@@ -40,14 +40,31 @@ def pane_alive(slot):
     return r.returncode == 0 and r.stdout.strip() == '0'
 
 
-def finish(meta, player):
-    """Game pane closed: saved (to be resumed) or over (xlogfile has the verdict)."""
-    saved = any(SAVEDIR.glob(f'*{player}.gz')) or any(SAVEDIR.glob(f'*{player}'))
+def remote_xlog(remote):
+    r = subprocess.run(['ssh', '-o', 'BatchMode=yes', remote['host'], f'tail -50 {frames.XLOG}'],
+                       text=True, capture_output=True, timeout=20)
+    return [dict(f.split('=', 1) for f in l.split('\t') if '=' in f) for l in r.stdout.splitlines()]
+
+
+def finish(meta, player, remote=None):
+    """Game pane closed: saved (to be resumed) or over (xlogfile has the verdict).
+    A wish_abuser game lives on the worker: its save/xlogfile are read there."""
+    if remote:
+        from session import remote_saved
+        try:
+            saved = remote_saved(remote, player)
+            entries = remote_xlog(remote)
+        except subprocess.TimeoutExpired:
+            meta['status'] = 'stopped'
+            return
+    else:
+        saved = any(SAVEDIR.glob(f'*{player}.gz')) or any(SAVEDIR.glob(f'*{player}'))
+        entries = frames.xlog_entries()
     if saved:
         meta['status'] = 'saved'
         return
     started = meta.get('started_epoch', 0)
-    for entry in reversed(frames.xlog_entries()):
+    for entry in reversed(entries):
         if entry.get('name') == player and int(entry.get('endtime', 0)) >= started - 5:
             meta.update(status={'ascended': 'ascended', 'quit': 'quit'}.get(entry.get('death'), 'dead'),
                         death=entry.get('death'), points=int(entry.get('points', 0)),
@@ -72,7 +89,7 @@ def main():
             meta.update(id=gid, slot=slot, player=info['player'])
             meta.setdefault('started', info.get('started'))
             meta.setdefault('started_epoch', now)
-            for key in ('journal', 'run', 'style'):
+            for key in ('journal', 'run', 'style', 'remote'):
                 if info.get(key):
                     meta[key] = info[key]
             if is_alive:
@@ -90,7 +107,7 @@ def main():
                             meta['maxdepth'] = max(meta.get('maxdepth', 0), int(dlvl))
                 meta['status'] = 'live'
             elif alive.get(slot) and meta.get('status') == 'live':
-                finish(meta, info['player'])
+                finish(meta, info['player'], info.get('remote'))
                 frames.save_meta(gid, meta)
             alive[slot] = is_alive
         if now - last_meta > 2:
