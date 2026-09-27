@@ -76,6 +76,12 @@ below the last acknowledged level and is under 60% of max ("HP ALARM").
 Then: stop loops, read the screen, decide (pray if HP < 1/7 max, flee, heal),
 run `slots/N/session ack-hp`, and continue key by key. Never ack in a loop.
 
+## Full inventory
+The right-hand inventory panel is cut after ~33 lines: long inventories are
+NOT fully visible there. `slots/N/inv` opens `i` (free action, no turn),
+reads every page, prints the full list and saves it for the dashboard. Run it
+after picking things up and at least every ~500 turns.
+
 ## Controls
 
 - `python3 scripts/session.py screen [--compact]` — observe.
