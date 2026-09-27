@@ -4,6 +4,12 @@ Joueuse : Claude3 (Valkyrie naine loyale). Lire d'abord memory/session.md et
 les « Lessons » de memory/run-1.md (mort au tour 1467).
 
 ## Current state
+T4757 Dlvl7, XL7, HP64/65, AC2, $387. PRAYERS : T3737 (faim) et T4751 (HP3) -> NE PAS prier avant ~T5800+.
+Nouveau : I/food ration mangée T4722 ; z tripe, H LIZARD CORPSE ; potions J pink, K magenta, D purple-red, x dark ;
+scroll G THARR ; F pine wand (engrave: aucun effet -> opening/locking/probing/undead turning/nothing) ;
+wand o striking peut-être vide (« Nothing happens »). Werewolf tué T4738 (pas de « feverish » vu).
+D7 : '<' 16,12, coffre vide 30,17.
+--- état précédent ---
 T3502 Dlvl6 (donjon principal), XL6, HP38/59, AC2. $9.
 Arme : a EXCALIBUR (+2, béni, rustproof ; obtenu au 1er #dip, fountain D2 disparue). Long sword Basic->Skilled.
 Armure : t scale mail (+1?), B elven leather helm, C leather gloves, A riding boots = JUMPING BOOTS.
@@ -21,6 +27,7 @@ Plan : trouver l'Oracle (D5-9) ; Sokoban = '<' supplémentaire du niveau au-dess
 Prayer jamais utilisée (OK en cas d'urgence : HP<1/7).
 
 ## Lessons
+- Ne jamais laisser la boucle de combat continuer sous ~25 HP : à T4749 golem+wolf m'ont mise de 20 à 3 HP en 2 tours.
 - explore ne regarde PAS la faim : vérifier Hungry/Weak sur la ligne 34 à chaque appel. Une food ration
   « Blecch! Rotten food! » peut ne rien nourrir -> Fainting à T3737 (sauvée par prayer).
 - .runtime/explore-3.json garde des cases « mortes » par numéro de Dlvl (mélange Mines/donjon) :

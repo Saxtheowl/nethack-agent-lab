@@ -19,7 +19,7 @@ engrave() {
 for i in $(seq 40); do
   $S keys : --settle .4 >/dev/null
   $S screen | grep -q 'You read: "Elbereth"' || { echo "rewrite"; engrave || { echo "ENGRAVE FAILED"; break; }; }
-  $S keys n10s --settle 1 >/dev/null
+  $S keys "n${REST_CHUNK:-10}s" --settle 1 >/dev/null
   for j in 1 2; do $S screen | grep -q '>>' && $S keys --named Enter --settle .3 >/dev/null; done
   o=$($S screen)
   hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1)

@@ -4,9 +4,12 @@ Joueuse : Claude2 (Valkyrie naine loyale). Lire d'abord memory/session.md et
 les « Lessons » de memory/run-1.md (mort au tour 1467).
 
 ## Current state
-T3172 Dlvl1 : EXCALIBUR obtained (first dip, D1 fountain now gone). XL5 HP62 AC6 $0. TELEPATHY (ate floating eye T3115).
-Main dungeon: D2 main '>' 6,15 ; D3 '<' 64,16, '>' 31,21, Lugnaquillia bookstore 5-15,22-25 (door 10,21, mimic ']' at 9,23).
-Next: Dlvl 4+ main, find Oracle (D5-9); Sokoban up from the level above Oracle.
+T4510 main Dlvl5, XL6 HP75 AC3 (leather armor + orcish helm + shield +3), $226. Wielding blessed rustproof +1 EXCALIBUR (long sword Skilled).
+TELEPATHY (no blindfold yet). !!! CURSED LOADSTONE (V) stuck in pack -> Burdened. Fix: pray when prayer timeout low
+(last prayers T1955, T3734 -> try ~T4800+ ; cursed loadstone = minor trouble, needs timeout < 100) or scroll of remove curse.
+Food: U food ration, W 1 slime mold. Unknown wands: T jeweled, Y platinum, g silver (all no engrave msg). Scroll P XOR OTA (unknown), X purple-red potion (base 50 per deli).
+D4: '<' 9,12, '>' 71,28 (closet SE). D5: '<' 64,16, THRONE ROOM 73-77,27-28 (throne 75,28, peaceful dwarf king), '>' 14,18.
+D1 fountain used up (Excalibur). Next: Dlvl 6+, find Oracle; Sokoban = extra '<' on level above Oracle.
 Minetown: '<' 12,25, '>' 68,19. Temple of ODIN (neutral, cross-aligned) altar 56,26 door 51,26.
 Dirk's general store 44-46,14-16 (door 45,17): black gem 3333zm = real BLACK OPAL.
 Pengalengan's deli 43-45,25-26 (door 46,25). Lighting/tool shops 30-32,20-21 and 37-38,17-19. Fountains 43,20 and 30,26.
@@ -22,6 +25,8 @@ Price ID notes: CHA 8 -> buy x1.33.
 Plan: XL5 then Excalibur at D1 fountain 74,24; go main dungeon D2 '>' 6,15 down to Oracle, Sokoban up from level above Oracle.
 
 ## Lessons
+- NEVER use 'A) Auto-select every item' when looting containers: took a cursed LOADSTONE.
+  Take items one by one; never take gray stones.
 - NEVER send raw moves right after `t` without checking the cursor: travel silently
   fails when a peaceful is adjacent and the move bumps it ("Really attack the priest/
   shopkeeper?" happened twice — answered n).

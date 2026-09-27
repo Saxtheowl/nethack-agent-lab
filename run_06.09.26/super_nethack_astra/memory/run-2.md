@@ -1,5 +1,13 @@
 # Run 2 — journal (latest state first)
 
+## DEATH T3202, Minetown Dlvl 6, XL5, 1048 pts: "killed by a little dog"
+Chain: 4 rothes in Minetown (killed all, several near-deaths saved by
+Elbereth/fleeing); a monkey STOLE my +3 small shield (AC 5 → 9); fought a dog
++ orc zombie + monkeys while Weak → HP 2 → prayer (T3182) OK → HP 47; then I
+kept fighting in the crowd with AC 9 → HP 1 in ~10 turns (prayer on cooldown)
+→ Elbereth (fled) → it eroded ('Elbe?eth') while resting → little dog bit.
+
+
 Read run-1.md "Lessons" first (died T1467 to own scroll of fire vs master mind flayer).
 
 ## Current state
@@ -16,6 +24,15 @@ Plan: find temple (priest; buy protection needs 400*XL... later), sell/price
 items, then Mines' End or back for Sokoban. Excalibur at XL5 (fountain D3).
 
 ## Lessons (run 2)
+- Dust Elbereth in 3.6: 1/25 typo per letter at engraving (~28% broken) AND it
+  erodes each time it scares a monster. Only a short-term tool; verify with ':'.
+  A burned Elbereth (wand of fire/lightning) is the reliable version.
+- After a prayer, DISENGAGE: rest far away / go upstairs; never re-enter a melee
+  with low AC. Prayer cooldown ~500-1000 turns.
+- Monkeys (Y) steal armor: kill them first, never let them stay adjacent.
+- Minetown with rothes/crowds at XL3-5 and AC>5 is deadly: arrive with AC ≤ 3.
+- My fight helper does several attacks per call: check HP between EACH blow
+  when HP < 50%.
 - Never chain two explore runs: the first stopped for HP loss and the second
   walked into a rothe → HP 8. explore.py now refuses to start below 60% HP.
 - Elbereth is not absolute: a cornered/adjacent rothe still hit me twice.
