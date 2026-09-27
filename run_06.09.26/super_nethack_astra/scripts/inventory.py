@@ -17,7 +17,7 @@ import session
 ITEM = re.compile(r'(?:^|[│ ])\s?([a-zA-Z$#])\) (.+?)\s*(?:│|$)')
 CLASS = re.compile(r'[│ ](Coins|Amulets|Weapons|Armor|Comestibles|Scrolls|Spellbooks|Potions|Rings|Wands|Tools|'
                    r'Gems/Stones|Boulders/Statues|Iron balls|Chains|Venoms|Other)\s*│')
-PAGE = re.compile(r'\((\d+) of (\d+)\)')
+PAGE = re.compile(r'\((?:Page )?(\d+) of (\d+)\)')
 
 
 def parse(text, items, order):
