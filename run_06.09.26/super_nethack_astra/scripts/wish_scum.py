@@ -13,7 +13,7 @@ a lamp: as soon as one is found the game is left running in its tmux session
 (socket /tmp/wishscum.sock, session wishK) and an LLM agent takes over through
 `ssh -t miniforum-worker tmux -S /tmp/wishscum.sock attach -t wishK`.
 
-  python3 scripts/wish_scum.py [--workers 3] [--max 2000]
+  python3 scripts/wish_scum.py [--workers 3] [--max 2000] [--want 1]
 
 Writes runs/wish_scum/attempts.jsonl (one line per game) and
 runs/wish_scum/status.json (counters, found games) for the dashboard.
@@ -138,7 +138,8 @@ def status_line(lines):
 
 def attempt(k, player):
     s = f'wish{k}'
-    tmux('kill-session', '-t', s)
+    if tmux('has-session', '-t', s).returncode == 0:
+        end_game(s)  # leftover game (driver restarted): quit it properly, never a hangup save
     cmd = f'env NETHACKOPTIONS=@{ROOT / "config/nethackrc"} TERM=screen-256color {NETHACK} -u {player}'
     tmux('-f', str(ROOT / 'config/tmux.conf'), 'new-session', '-d', '-s', s, '-x', str(COLS), '-y', str(ROWS), cmd, check=True)
     log, entry = [], {'t': round(time.time()), 'worker': k, 'player': player, 'fountains': 0, 'quaffs': 0, 'lamps': 0}
@@ -235,11 +236,18 @@ def attempt(k, player):
     return entry
 
 
-def worker(k, max_attempts):
+def worker(k, max_attempts, want):
     player = f'Wish{k}'
+    with lock:
+        kept = any(f['session'] == f'wish{k}' for f in status['found'])
+    if kept and tmux('has-session', '-t', f'wish{k}').returncode == 0:
+        with lock:
+            status['workers'][str(k)] = f'found game kept in wish{k}: not scumming'
+            write_status()
+        return
     while True:
         with lock:
-            if not status['running'] or status['attempts'] >= max_attempts:
+            if not status['running'] or status['attempts'] >= max_attempts or len(status['found']) >= want:
                 status['workers'][str(k)] = 'stopped'
                 write_status()
                 return
@@ -260,7 +268,8 @@ def worker(k, max_attempts):
                 status['found'].append({'t': e['t'], 'worker': k, 'player': player, 'session': f'wish{k}',
                                         'kind': e['outcome'], 'attempt': status['attempts'], 'messages': e.get('messages', [])})
                 status['workers'][str(k)] = f'FOUND {e["outcome"]}: game kept in tmux session wish{k}'
-                status['running'] = False  # one found game is enough: stop the others
+                if len(status['found']) >= want:
+                    status['running'] = False  # enough games found: stop the others
                 write_status()
             return
 
@@ -269,6 +278,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--workers', type=int, default=3)
     p.add_argument('--max', type=int, default=2000)
+    p.add_argument('--want', type=int, default=1, help='number of found games to keep (one per wish_abuser slot)')
     a = p.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     try:  # continue the counters of an earlier run
@@ -279,8 +289,9 @@ def main():
     except (FileNotFoundError, json.JSONDecodeError):
         pass
     status['running'] = True
+    status['want'] = a.want
     write_status()
-    ts = [threading.Thread(target=worker, args=(k, a.max)) for k in range(1, a.workers + 1)]
+    ts = [threading.Thread(target=worker, args=(k, a.max, a.want)) for k in range(1, a.workers + 1)]
     for t in ts:
         t.start()
         time.sleep(0.5)
