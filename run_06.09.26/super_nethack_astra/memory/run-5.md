@@ -4,6 +4,17 @@ STYLE TARIRU (memory/tariru-style.md, obligatoire pour l'emplacement 1).
 Lire les Lessons de run-1..run-4. Jamais de boucle qui passe des tours sans
 vérifier les HP (waitpet, rest).
 
+## DEATH T5039, Dlvl 6 (below the Oracle), XL4, "killed by a little dog"
+Hostile little dog (speed 18) at HP 12/31: I melee'd it; it bit 3 times per
+exchange, 12 → 0. I was carrying a WAND OF SLEEP OR DEATH and never used it.
+- Emergency items are for emergencies: at HP < 50% vs a fast monster, zap the
+  attack wand / use Elbereth BEFORE meleeing. Fast monsters (d, f, speed>12)
+  get several hits per turn: HP thresholds must be higher (50%).
+- Food was the recurring problem: Valkyrie burns ~1 nutrition/turn; keep 2
+  food rations, eat fresh corpses of every safe kill.
+- The explorer's manual steps walked into a gas spore and an acid blob: now
+  m-prefixed. The kitten stole a jade ring and scrolls from a shop (worked).
+
 ## Current state
 URGENT: T2426 Dlvl4 HP26(29) AC6 XL3 $232, prayer T999 (next ~T2000+ ok), kitten alive.
 Wield +1 long sword (dagger b broke forcing a box). Quiver j orcish dagger, 4 darts f.

@@ -7,6 +7,18 @@ dessus, vérifier avec ':'), Minetown (temple : protection 400×XL) → Sokoban 
 Lire aussi les « Lessons » de memory/run-1.md, run-2.md, run-3.md, slot2-run-1.md, slot3-run-1.md.
 
 ## Current state
+T5090 Dlvl8 (throne room vidée, chest pillé), XL7, HP65/89, AC1, $158. Large dog avec moi (porte ma dagger b).
+PRAYERS : T2068, T3582, T4634 (faim) -> prochaine pas avant ~T5700.
+Armes : a Excalibur ; quiver i 2 orcish daggers ; H 3 daggers (BUC inconnu) ; f 3 darts.
+Nourriture : E 2 tripe rations, C slime mold, D tin, A LIZARD corpse (garder !).
+Outils : B UNICORN HORN (BUC inconnu : tester avant d'appliquer). Wands : m forked (engrave rien), x copper = SLOW MONSTER (« bugs slow down »).
+Potions : q murky, v cyan, z orange ; white = invisibility (vu un leprechaun la boire), brown = soin (leprechaun « looks much better »).
+Scrolls : k THARR, l GHOTI, n unlabeled, o VELOX NEB, p + F HAPAX LEGOMENON (ne s'empilent pas -> BUC différents), y PHOL ENDE WODAN.
+Gems : u 2 yellowish brown, w green, G 2 yellow.
+D6 : leprechaun hall 46-51,20-24 (hole 47,22 -> D7), '<' 58,16, '>' 74,13. D7 : '<' 64,19, '>' 22,14.
+D8 : '<' 47,16, '>' 61,18 (dans la throne room 61-65,17-20). Oracle pas encore vu (D5-D8) -> Sokoban = niveau au-dessus de l'Oracle.
+Des leprechauns invisibles volent mon or en boucle sur D6-D7.
+--- état précédent ---
 T3870 Dlvl4, XL5, HP64/66, AC1, $8. EXCALIBUR (a, béni, rustproof +1) obtenu au 2e #dip (fountain D4 disparue).
 PRAYERS : T2068 (faim), T3582 (Fainting + lycanthropie guérie « purified ») -> pas avant ~T4600.
 Dog (grandi) vivant ; il porte ma dagger b (uncursed +0). Quiver : i 2 orcish daggers ; f 3 darts.

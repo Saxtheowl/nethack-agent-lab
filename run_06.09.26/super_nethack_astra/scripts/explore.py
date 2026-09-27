@@ -204,7 +204,7 @@ def main():
             # Reached a corridor dead end: search there once for hidden passages.
             rows2 = st2['rows']
             exits = sum(1 for dx, dy in DIRS if walkable(rows2, target[0] + dx, target[1] + dy))
-            if (tile(rows2, *target) == '@' and exits <= 1 and args.search
+            if (args.search and frontier(rows2, *target)
                     and f's{target[0]},{target[1]}' not in dead):
                 dead.add(f's{target[0]},{target[1]}')
                 session.send(f'n{args.search}s')

@@ -11,6 +11,7 @@ import re,sys
 s=sys.argv[1]
 m=re.search(r'^Map features.*$',s,re.M).group(0)
 pl=re.search(r'^PETS.*$',s,re.M); pets=set(re.findall(r'(\d+,\d+)',pl.group(0))) if pl else set()
+import os; pets|=set(os.environ.get('XP_IGNORE','').split())
 mons=[f'{g}@{x},{y}' for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m) if (g.isalpha() or g in "&';:~") and g!='@' and f'{x},{y}' not in pets]
 hp=re.search(r'HP:(\d+)\((\d+)\)',s)
 bad=[]

@@ -1,0 +1,11 @@
+#!/bin/bash
+# slots/5/dip1 : one #dip of item a into the fountain; prints result line + status
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py keys --compact"
+$S '#dip' --raw >/dev/null; $S Enter --named >/dev/null
+o=$($S a)
+echo "$o" | grep -q 'into the fountain' || { echo "NO PROMPT"; echo "$o" | grep -E '^0[1-7]'; exit 1; }
+o=$($S y)
+echo "$o" | grep -E '^0[1-7] ' | tail -2
+echo "$o" | grep -E '^34|^Map|^Neigh'

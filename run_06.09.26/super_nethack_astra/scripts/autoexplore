@@ -5,7 +5,7 @@
 # new stairs, level change) stops and hands control back. Uses NH_SLOT.
 cd "$(dirname "$0")/.."
 S="python3 scripts/session.py"
-TRIVIAL='newt|jackal|grid bug|sewer rat|kobold|large kobold|lichen|gecko|fox|coyote|goblin|kobold zombie|gnome zombie|giant rat|bat|giant bat'
+TRIVIAL='newt|jackal|grid bug|sewer rat|kobold|large kobold|lichen|gecko|fox|coyote|goblin|kobold zombie|gnome zombie|giant rat|bat|giant bat|black naga hatchling|hill orc|homunculus|giant ant'
 for round in $(seq "${1:-6}"); do
   r=$(python3 scripts/explore.py --steps 40 --all)
   reason=$(echo "$r" | grep -o '^explore stop: .*')

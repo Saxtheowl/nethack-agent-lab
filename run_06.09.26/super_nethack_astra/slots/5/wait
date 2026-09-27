@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/5/wait N : search N single turns, stop on HP loss or hostile-looking adjacent letter / new message keyword
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+h0=$(python3 scripts/session.py screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "${1:-10}"); do
+  o=$(python3 scripts/session.py keys --compact s)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  m=$(echo "$o" | grep -E '^0[1-7] ' | tail -1)
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP HP $h0->$h"; break; }
+  echo "$m" | grep -qiE 'drops|picks up|appear|You hear|bites|hits|stole' && echo "$i: $m"
+done
+python3 scripts/session.py screen --compact | grep -E '^34|^Map|^PETS|^Neighbors'
