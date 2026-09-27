@@ -105,7 +105,8 @@ def nearest(rows, start, dead):
 
 def open_a_door(st, dead):
     """Go next to the nearest reachable closed door ('+') and open it
-    (kick when locked, a few tries). Returns True if something was attempted."""
+    (never kicks: returns 'locked door at x,y' so the player decides). Returns
+    True if something was attempted."""
     rows, start = st['rows'], st['position']
     seen = {start}
     todo = collections.deque([start])
@@ -131,10 +132,9 @@ def open_a_door(st, dead):
                     time.sleep(.6)
                     text = session.screen()
                     if 'This door is locked' in text:
-                        session.send('k')  # kick
-                        time.sleep(.3)
-                        session.send(k)
-                        time.sleep(.8)
+                        # never kick automatically: a locked door can be a shop
+                        # (slot 6 run 3 died to an angry shopkeeper) or a town door
+                        return f'locked door at {nx},{ny}'
                     now = guard.state(*guard.observe(session))
                     if now is None or tile(now['rows'], nx, ny) != '+':
                         break
@@ -186,7 +186,12 @@ def main():
         rows = st['rows']
         target, path = nearest(rows, st['position'], dead)
         if target is None:
-            if open_a_door(st, dead):
+            opened = open_a_door(st, dead)
+            if isinstance(opened, str):
+                reason = (opened + ': decide yourself (could be a SHOP: kicking it angers the shopkeeper; '
+                          'unlock with a tool / #force, or kick only with 400+ gold and stay next to the door)')
+                break
+            if opened:
                 st = guard.state(*guard.observe(session)) or st
                 continue
             reason = 'no reachable frontier left'
