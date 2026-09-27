@@ -67,6 +67,88 @@ def frame_lines(gid, start, limit):
     return out, total
 
 
+_status_cache = {}
+
+
+def statuses(gid):
+    """[(frame_index, t, status)] for frames carrying a status line (cached)."""
+    path = frames.GAMES / gid / 'frames.jsonl'
+    if not path.exists():
+        return []
+    c = _status_cache.setdefault(gid, {'pos': 0, 'n': 0, 'rows': []})
+    size = path.stat().st_size
+    if size < c['pos']:
+        c.update(pos=0, n=0, rows=[])
+    with open(path, 'rb') as f:
+        f.seek(c['pos'])
+        for line in f:
+            if not line.endswith(b'\n'):
+                break
+            c['pos'] += len(line)
+            m = re.search(rb'"t":([0-9.]+).*"s":(\[[^\]]*\]|null)', line)
+            if m and m[2] != b'null':
+                c['rows'].append((c['n'], float(m[1]), json.loads(m[2])))
+            c['n'] += 1
+    return c['rows']
+
+
+def chronicle(gid):
+    p = frames.GAMES / gid / 'chronicle.jsonl'
+    return [json.loads(l) for l in p.read_text().splitlines() if l.strip()] if p.exists() else []
+
+
+def frame_at(rows, t):
+    best = 0
+    for i, ft, _ in rows:
+        if ft <= t:
+            best = i
+        else:
+            break
+    return best
+
+
+def highlights(gid, window=1000, count=3):
+    """Most important moments of the last `window` game turns."""
+    rows = statuses(gid)
+    meta = frames.load_meta(gid)
+    evs = []
+    maxdepth, prev = 0, None
+    for i, t, s in rows:
+        turn, dlvl, hp, hpmax, xl, ac = s
+        depth = int(dlvl) if str(dlvl).isdigit() else 60
+        if prev:
+            if dlvl != prev[1]:
+                if depth > maxdepth:
+                    evs.append((35, i, t, turn, 'progress', f'Nouveau record : niveau {dlvl}', ''))
+                else:
+                    evs.append((8, i, t, turn, 'progress', f'Niveau {dlvl}', ''))
+            if xl > prev[4]:
+                evs.append((20 + xl, i, t, turn, 'progress', f"Niveau d'expérience {xl}", ''))
+            if hp <= hpmax / 3 < prev[2]:
+                evs.append((45, i, t, turn, 'danger', f'Danger : {hp}/{hpmax} PV', ''))
+            elif prev[2] - hp >= max(5, hpmax / 4):
+                evs.append((25, i, t, turn, 'danger', f'Gros coup encaissé : −{prev[2] - hp} PV', ''))
+        maxdepth = max(maxdepth, depth)
+        prev = s
+    for c in chronicle(gid):
+        evs.append(({3: 90, 2: 60, 1: 30}.get(c.get('importance'), 30) + (10 if c.get('kind') == 'death' else 0),
+                    frame_at(rows, c['t']), c['t'], c.get('turn'), c.get('kind', 'event'),
+                    c['title'], c.get('text', '')))
+    last_turn = rows[-1][2][0] if rows else 0
+    recent = [e for e in evs if e[3] is None or e[3] >= last_turn - window]
+    recent.sort(key=lambda e: (-e[0], -(e[3] or 0)))
+    out, seen = [], set()
+    for score, i, t, turn, kind, title, text in recent:
+        if title in seen:
+            continue
+        seen.add(title)
+        out.append({'score': score, 'frame': i, 't': t, 'turn': turn, 'kind': kind, 'title': title, 'text': text})
+        if len(out) == count:
+            break
+    out.sort(key=lambda e: e['turn'] or 0)
+    return {'game': gid, 'window': window, 'last_turn': last_turn, 'highlights': out}
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -143,6 +225,17 @@ class Handler(BaseHTTPRequestHandler):
                 p = frames.GAMES / gid / 'log.jsonl'
                 rows = [json.loads(l) for l in p.read_text().splitlines()] if p.exists() else []
                 return self.send({'log': rows})
+            if url.path == '/api/highlights':
+                return self.send(highlights(gid, int(q.get('window', 1000)), int(q.get('count', 3))))
+            if url.path == '/api/chronicle':
+                ids = [gid] if gid else [g['id'] for g in games()]
+                out = []
+                for g in ids:
+                    rows = statuses(g)
+                    for c in chronicle(g):
+                        out.append({**c, 'game': g, 'frame': frame_at(rows, c['t'])})
+                out.sort(key=lambda c: c['t'], reverse=True)
+                return self.send({'chronicle': out})
             if url.path == '/api/journal':
                 m = frames.load_meta(gid)
                 j = m.get('journal')

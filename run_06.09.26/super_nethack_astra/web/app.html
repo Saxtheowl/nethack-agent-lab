@@ -103,6 +103,34 @@ td.cause { max-width: 420px; color: #d6c8c0; }
 .kbd { font-family: monospace; font-size: 11.5px; color: var(--muted); }
 select { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
 .loading { color: var(--muted); font-size: 12.5px; }
+/* glanceable cards */
+.card { cursor: pointer; transition: border-color .15s; } .card:hover { border-color: var(--accent); }
+.card .head b { font-size: 22px; } .card .head .sub { font-size: 15px; }
+.card .badge { font-size: 15px; padding: 3px 12px; }
+.kpis { display: grid; grid-template-columns: 1.1fr 1fr .7fr 1.4fr; gap: 10px; align-items: end; }
+.kpi .v { font-size: 38px; font-weight: 700; line-height: 1; letter-spacing: -.01em; }
+.kpi .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+.kpi.hp .v.low { color: var(--bad); } .kpi.hp .v.mid { color: var(--warn); } .kpi.hp .v.ok { color: #9fe38e; }
+.card .hpbar { height: 10px; border-radius: 5px; }
+.card .headline { font-size: 16px; color: var(--gold); min-height: 1.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card .hint { font-size: 12px; color: var(--muted); }
+#modal { position: fixed; inset: 0; background: #000a; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 20px; }
+#modal .box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; max-width: 760px; width: 100%; max-height: 85vh; overflow: auto; padding: 20px 22px; }
+#modal h3 { margin: 0 0 4px; font-size: 20px; } #modal .sub { color: var(--muted); margin-bottom: 14px; }
+.moment { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; background: var(--panel2); }
+.moment .t { display: flex; gap: 10px; align-items: baseline; }
+.moment .t b { font-size: 17px; } .moment .t .when { margin-left: auto; color: var(--muted); font-family: monospace; font-size: 12.5px; white-space: nowrap; }
+.moment p { margin: 8px 0 8px; color: #d4ddd0; }
+.icon { font-size: 18px; width: 1.4em; display: inline-block; text-align: center; }
+.chron details { border-bottom: 1px solid var(--line); padding: 7px 4px; }
+.chron summary { cursor: pointer; display: flex; gap: 10px; align-items: baseline; list-style: none; }
+.chron summary::-webkit-details-marker { display: none; }
+.chron summary .stars { color: var(--gold); min-width: 42px; font-size: 12px; }
+.chron summary .g { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.chron summary .ti { font-weight: 600; } .chron details[open] summary .ti { color: var(--gold); }
+.chron .body { padding: 6px 0 4px 56px; color: #d4ddd0; }
+.chron .filters { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.mk.chron { background: var(--gold); height: 14px; top: 0; width: 4px; } .ev.chron::before { background: var(--gold); }
 @media (max-width: 1250px) { .cards { grid-template-columns: 1fr; } .replay, .livegrid { grid-template-columns: 1fr; } .tiles { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
@@ -169,6 +197,12 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
     </div>
   </div>
 
+  <div class="panel chron" style="margin-bottom:16px">
+    <h2>Chronique — les moments vraiment importants (cliquer pour dérouler)</h2>
+    <div class="filters" id="chronfilters"></div>
+    <div id="chronlist"></div>
+  </div>
+
   <div class="panel">
     <h2>Toutes les parties</h2>
     <table><thead><tr><th>Partie</th><th>Début</th><th>État</th><th>Tours</th><th>Prof. max</th><th>XL</th><th>Points</th><th>Cause / résumé</th><th></th></tr></thead>
@@ -176,6 +210,7 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
   </div>
 </section>
 </main>
+<div id="modal" class="hidden"><div class="box" id="modalbox"></div></div>
 
 <script>
 'use strict';
@@ -279,31 +314,52 @@ async function refreshGames() {
     slotButtons();
     if (TAB !== 'dash') return;
     renderCards(); renderTiles(); renderHistory(); fillGameSelect();
+    if (!CHRON.length) refreshChronicle();
   } catch (e) {}
 }
 setInterval(refreshGames, 3000);
 
+const ICON = {item: '💎', monster: '👹', danger: '⚠️', progress: '🧭', decision: '🧠', death: '☠️', event: '★'};
+const HEADLINES = {};
 function renderCards() {
   const wrap = $('#cards');
   for (const s of ['1', '2', '3']) {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     let card = wrap.querySelector(`[data-slot="${s}"]`);
     if (!card) {
-      card = el('div', {className: 'panel card'}); card.dataset.slot = s;
+      card = el('div', {className: 'panel card', title: 'Cliquer : les 3 moments clés des 1000 derniers tours'}); card.dataset.slot = s;
       card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
-        <div class="term mini"></div><div class="stats"></div><div class="hpbar"><i></i></div><div class="say"></div>
-        <div class="actions"><button class="go">Plein écran</button><button class="rp">Rejouer</button><button class="lv">● Suivre ici</button></div>`;
+        <div class="kpis"><div class="kpi"><div class="v dl"></div><div class="l">Niveau</div></div>
+          <div class="kpi"><div class="v tu"></div><div class="l">Tour</div></div>
+          <div class="kpi"><div class="v xl"></div><div class="l">XL</div></div>
+          <div class="kpi hp"><div class="v hpv"></div><div class="l">Points de vie</div></div></div>
+        <div class="hpbar"><i></i></div>
+        <div class="headline"></div>
+        <div class="term mini"></div><div class="say"></div>
+        <div class="actions"><button class="km">★ Moments clés</button><button class="go">Plein écran</button><button class="rp">Rejouer</button><button class="lv">● Suivre ici</button></div>`;
       wrap.append(card);
+      card.onclick = e => { if (e.target.closest('button')) return; const g = card.dataset.gid; g && openMoments(g); };
+      card.querySelector('.km').onclick = () => card.dataset.gid && openMoments(card.dataset.gid);
       card.querySelector('.go').onclick = () => { liveSlot = s; setHash({slot: s}); showTab('live'); slotButtons(); };
+      card.querySelector('.rp').onclick = () => card.dataset.gid && loadGame(card.dataset.gid, 0);
+      card.querySelector('.lv').onclick = () => card.dataset.gid && loadGame(card.dataset.gid, 'live');
     }
+    card.dataset.gid = meta ? meta.id : '';
     card.querySelector('.head b').textContent = `Partie ${s}`;
     card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}` : 'emplacement libre';
     const badge = card.querySelector('.badge');
     badge.className = 'badge ' + (meta ? meta.status : ''); badge.textContent = meta ? (STATUS_FR[meta.status] || meta.status) : '—';
-    statsHTML(card.querySelector('.stats'), meta || {}); hpWidth(card.querySelector('.hpbar i'), meta || {});
-    card.querySelector('.rp').onclick = () => meta && loadGame(meta.id, 0);
-    card.querySelector('.lv').onclick = () => meta && loadGame(meta.id, 'live');
-    card.querySelector('.mini').onclick = () => meta && loadGame(meta.id, 'live');
+    const m = meta || {};
+    card.querySelector('.dl').textContent = m.dlvl ?? '—';
+    card.querySelector('.tu').textContent = m.turn != null ? m.turn.toLocaleString('fr-FR') : '—';
+    card.querySelector('.xl').textContent = m.xl ?? '—';
+    const hv = card.querySelector('.hpv'), p = m.hpmax ? m.hp / m.hpmax : 1;
+    hv.textContent = m.hp != null ? `${m.hp}/${m.hpmax}` : '—'; hv.className = 'v hpv ' + (p < .34 ? 'low' : p < .67 ? 'mid' : 'ok');
+    hpWidth(card.querySelector('.hpbar i'), m);
+    if (meta) api('/api/highlights?game=' + encodeURIComponent(meta.id) + '&window=1000&count=1').then(h => {
+      const last = (h.highlights || [])[0];
+      card.querySelector('.headline').textContent = last ? `${ICON[last.kind] || '★'} T${last.turn ?? '?'} · ${last.title}` : '';
+    }).catch(() => {});
     if (!miniTerms[s]) miniTerms[s] = new Term(card.querySelector('.mini'), {y0: 9, y1: 32, x1: 82});
     if (meta && meta.status === 'live') {
       api('/api/live?slot=' + s).then(l => {
@@ -316,6 +372,57 @@ function renderCards() {
     }
   }
 }
+
+async function openMoments(gid) {
+  const g = GAMES.find(x => x.id === gid) || {id: gid};
+  const box = $('#modalbox');
+  box.replaceChildren(el('h3', {textContent: `${g.player || gid}${g.run ? ' · run ' + g.run : ''} — moments clés`}), el('div', {className: 'sub', textContent: 'Les 3 évènements les plus importants des 1000 derniers tours'}));
+  $('#modal').classList.remove('hidden');
+  let h;
+  try { h = await api('/api/highlights?game=' + encodeURIComponent(gid) + '&window=1000&count=3'); } catch (e) { box.append(el('p', {textContent: 'Erreur de chargement.'})); return; }
+  box.querySelector('.sub').textContent = `Les 3 évènements les plus importants des tours ${Math.max(0, h.last_turn - 1000)} à ${h.last_turn}`;
+  if (!h.highlights.length) box.append(el('p', {textContent: 'Rien de marquant pour l’instant.'}));
+  for (const e of h.highlights) {
+    box.append(el('div', {className: 'moment'},
+      el('div', {className: 't'}, el('span', {className: 'icon', textContent: ICON[e.kind] || '★'}), el('b', {textContent: e.title}), el('span', {className: 'when', textContent: `tour ${e.turn ?? '?'} · ${fmtT(e.t)}`})),
+      e.text ? el('p', {textContent: e.text}) : el('p', {className: 'kbd', textContent: '(détecté automatiquement)'}),
+      el('button', {textContent: '▶ Revoir ce moment', onclick: () => { closeModal(); loadGame(gid, Math.max(0, e.frame - 15)); }})));
+  }
+  box.append(el('div', {style: 'display:flex;gap:8px;margin-top:6px'},
+    el('button', {textContent: 'Toute la chronique de cette partie', onclick: () => { closeModal(); chronGame = gid; renderChronicle(); $('#chronlist').scrollIntoView({behavior: 'smooth'}); }}),
+    el('button', {textContent: 'Fermer', onclick: closeModal})));
+}
+function closeModal() { $('#modal').classList.add('hidden'); }
+$('#modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
+addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+let CHRON = [], chronGame = '';
+async function refreshChronicle() {
+  try { CHRON = (await api('/api/chronicle')).chronicle; } catch (e) { return; }
+  renderChronicle();
+}
+function renderChronicle() {
+  const f = $('#chronfilters');
+  const ids = [...new Set(CHRON.map(c => c.game))];
+  f.replaceChildren(el('button', {className: chronGame ? '' : 'on', textContent: 'Toutes', onclick: () => { chronGame = ''; renderChronicle(); }}),
+    ...ids.map(id => { const g = GAMES.find(x => x.id === id) || {}; return el('button', {className: chronGame === id ? 'on' : '', textContent: `${g.player || id}${g.run ? ' run ' + g.run : ''}`, onclick: () => { chronGame = id; renderChronicle(); }}); }));
+  const open = new Set([...document.querySelectorAll('#chronlist details[open]')].map(d => d.dataset.key));
+  const rows = CHRON.filter(c => !chronGame || c.game === chronGame);
+  $('#chronlist').replaceChildren(...rows.map(c => {
+    const g = GAMES.find(x => x.id === c.game) || {};
+    const key = c.game + c.t;
+    const d = el('details', {}, el('summary', {},
+      el('span', {className: 'icon', textContent: ICON[c.kind] || '★'}),
+      el('span', {className: 'stars', textContent: '★'.repeat(c.importance || 1)}),
+      el('span', {className: 'ti', textContent: c.title}),
+      el('span', {className: 'g', textContent: `${g.player || ''}${g.run ? ' run ' + g.run : ''} · T${c.turn ?? '?'} · niv. ${c.dlvl ?? '?'}`})),
+      el('div', {className: 'body'}, el('p', {textContent: c.text || '—'}),
+        el('button', {textContent: '▶ Revoir ce moment', onclick: () => loadGame(c.game, Math.max(0, c.frame - 15))})));
+    d.dataset.key = key; if (open.has(key)) d.open = true; return d;
+  }));
+  if (!rows.length) $('#chronlist').append(el('p', {className: 'kbd', textContent: 'Aucun évènement marquant enregistré.'}));
+}
+setInterval(() => TAB === 'dash' && refreshChronicle(), 10000);
 
 function renderTiles() {
   const done = GAMES.filter(g => g.status === 'dead' || g.status === 'ascended');
@@ -403,6 +510,7 @@ async function loadGame(gid, at) {
     await fetchMore(true);
     try { R.log = (await api('/api/log?game=' + encodeURIComponent(gid))).log; } catch (e) { R.log = []; }
     for (const l of R.log) if (l.kind === 'decision' && l.text) R.events.push({f: frameAtTime(l.t), type: 'say', label: '💬 ' + l.text});
+    try { for (const c of (await api('/api/chronicle?game=' + encodeURIComponent(gid))).chronicle) R.events.push({f: c.frame, type: 'chron', label: (ICON[c.kind] || '★') + ' ' + c.title}); } catch (e) {}
     loadWhy(gid);
   }
   R.follow = at === 'live';

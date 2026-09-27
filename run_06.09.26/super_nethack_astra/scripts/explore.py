@@ -27,7 +27,7 @@ def tile(rows, x, y):
 
 def is_door(rows, x, y):
     c = tile(rows, x, y)
-    if c not in DOORS:
+    if c not in DOORS and c != '@':  # the hero may be standing in a doorway
         return False
     return ((tile(rows, x - 1, y) in WALLS and tile(rows, x + 1, y) in WALLS)
             or (tile(rows, x, y - 1) in WALLS and tile(rows, x, y + 1) in WALLS))
@@ -65,7 +65,12 @@ def nearest(rows, start, dead):
         if (cx, cy) != start and frontier(rows, cx, cy) and f'{cx},{cy}' not in dead:
             o = openness(rows, cx, cy)
             corridor = tile(rows, cx, cy) in '▒#' or is_door(rows, cx, cy)
-            if o >= (3 if corridor else 7):
+            exits = sum(1 for dx, dy in DIRS if walkable(rows, cx + dx, cy + dy))
+            # A corridor only leads somewhere new at a dead end (continuation
+            # unseen or hidden); elsewhere its blank neighbours are just rock.
+            points = any(tile(rows, cx + dx, cy + dy) == ' ' and walkable(rows, cx - dx, cy - dy)
+                         for dx, dy in DIRS)
+            if (points and o >= 3) if corridor else o >= 7:
                 score = seen[(cx, cy)] - 3 * o
                 if best is None or score < best[0]:
                     best = (score, (cx, cy), seen[(cx, cy)])
@@ -91,6 +96,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--steps', type=int, default=6)
     p.add_argument('--all', action='store_true', help='do not stop at new stairs')
+    p.add_argument('--search', type=int, default=10, help='searches at corridor dead ends (0 = off)')
     args = p.parse_args()
     obs = guard.observe(session)
     st = guard.state(*obs)
@@ -127,8 +133,17 @@ def main():
             reason = 'prompt or unrecognized screen'
             break
         if st2['position'] == target:
-            # Reached: if its unknown neighbours are still unknown, never revisit.
-            if frontier(st2['rows'], *target):
+            # Reached a corridor dead end: search there once for hidden passages.
+            rows2 = st2['rows']
+            exits = sum(1 for dx, dy in DIRS if walkable(rows2, target[0] + dx, target[1] + dy))
+            if (tile(rows2, *target) == '@' and exits <= 1 and args.search
+                    and f's{target[0]},{target[1]}' not in dead):
+                dead.add(f's{target[0]},{target[1]}')
+                session.send(f'n{args.search}s')
+                obs = guard.settled(session)
+                st2 = guard.state(*obs) if obs else st2
+            # If its unknown neighbours are still unknown, never revisit.
+            if st2 and frontier(st2['rows'], *target) and st2['position'] == target:
                 dead.add(f'{target[0]},{target[1]}')
         elif st2['position'] == before:
             # Travel refuses to start beside any non-pet monster: take up to

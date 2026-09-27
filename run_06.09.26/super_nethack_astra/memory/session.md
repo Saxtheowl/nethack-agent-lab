@@ -37,6 +37,7 @@ PURE rules — never break them:
 - scripts/dashboard.py (tmux session `viewer`) serves http://127.0.0.1:8766/ :
   tab Live (any slot) and tab Dashboard (3 live cards, replay with timeline,
   events, HP/depth chart, bookmarks, lessons, history of all games).
+- `chronicle --importance 1-3 --kind item|monster|danger|progress|decision|death "Titre" "Explication"` (scripts/chronicle.py or slots/N/chronicle) = truly important moments, expandable on the dashboard; also feeds the "3 moments clés des 1000 derniers tours".
 - `say "texte"` (scripts/say or slots/N/say) = public AI commentary, shown live
   and as replay captions. Use it at every real decision, in French.
 - Old ttyrecs can be imported: scripts/import_ttyrec.py <ttyrec> <game_id>.
