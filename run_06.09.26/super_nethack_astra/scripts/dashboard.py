@@ -149,6 +149,65 @@ def highlights(gid, window=1000, count=3):
     return {'game': gid, 'window': window, 'last_turn': last_turn, 'highlights': out}
 
 
+def journal_sections(path):
+    """DEATH / ABANDONNÉE headline + text, and Lessons bullets, from a journal."""
+    out = {'end': None, 'end_text': '', 'lessons': []}
+    try:
+        text = (ROOT / path).read_text()
+    except (OSError, TypeError):
+        return out
+    for block in re.split(r'^## ', text, flags=re.M)[1:]:
+        title, _, body = block.partition('\n')
+        if re.match(r'(DEATH|ABANDONN)', title, re.I) and not out['end']:
+            out['end'] = title.strip()
+            out['end_text'] = ' '.join(l.strip() for l in body.splitlines() if l.strip() and not l.startswith('- '))[:1200]
+            out['lessons'] += [l[2:].strip() for l in body.splitlines() if l.startswith('- ')]
+        elif re.match(r'(Lessons|Leçons)', title, re.I):
+            cur = None
+            for l in body.splitlines():
+                if l.startswith('- '):
+                    cur = l[2:].strip(); out['lessons'].append(cur)
+                elif l.startswith('  ') and out['lessons'] and cur is not None:
+                    out['lessons'][-1] += ' ' + l.strip()
+    return out
+
+
+def history():
+    runs = []
+    for m in games():
+        gid = m['id']
+        rows = statuses(gid)
+        maxdepth = max([int(s[1]) for _, _, s in rows if str(s[1]).isdigit()] or [m.get('maxdepth') or m.get('maxlvl') or 0])
+        maxxl = max([s[4] for _, _, s in rows] or [m.get('xl') or 0])
+        lastturn = rows[-1][2][0] if rows else m.get('turn') or 0
+        chron = chronicle(gid)
+        for c in chron:
+            c['frame'] = frame_at(rows, c['t'])
+        j = journal_sections(m.get('journal'))
+        runs.append({**{k: m.get(k) for k in ('id', 'player', 'slot', 'run', 'style', 'status', 'death',
+                                            'points', 'started', 'cause_summary', 'journal')},
+                     'turns': m.get('turns') or lastturn, 'maxdepth': maxdepth, 'maxxl': maxxl,
+                     'items': [c['title'] for c in chron if c.get('kind') == 'item'],
+                     'chronicle': chron, 'end': j['end'], 'end_text': j['end_text'], 'lessons': j['lessons']})
+    def agg(rs):
+        done = [r for r in rs if r['status'] in ('dead', 'ascended')]
+        return {'games': len(rs), 'live': sum(r['status'] == 'live' for r in rs),
+                'dead': sum(r['status'] == 'dead' for r in rs), 'quit': sum(r['status'] == 'quit' for r in rs),
+                'ascended': sum(r['status'] == 'ascended' for r in rs),
+                'best_depth': max([r['maxdepth'] for r in rs] or [0]), 'best_xl': max([r['maxxl'] for r in rs] or [0]),
+                'turns': sum(r['turns'] or 0 for r in rs),
+                'avg_turns_at_death': round(sum(r['turns'] or 0 for r in done) / len(done)) if done else 0}
+    causes = {}
+    for r in runs:
+        if r['status'] == 'dead' and r['death']:
+            k = re.sub(r'^killed by (an?|the) ', '', r['death'])
+            causes[k] = causes.get(k, 0) + 1
+    return {'runs': runs, 'total': agg(runs),
+            'styles': {st: agg([r for r in runs if (r['style'] or 'avant-style') == st])
+                       for st in sorted({r['style'] or 'avant-style' for r in runs})},
+            'causes': sorted(causes.items(), key=lambda kv: -kv[1])}
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -236,6 +295,8 @@ class Handler(BaseHTTPRequestHandler):
                         out.append({**c, 'game': g, 'frame': frame_at(rows, c['t'])})
                 out.sort(key=lambda c: c['t'], reverse=True)
                 return self.send({'chronicle': out})
+            if url.path == '/api/history':
+                return self.send(history())
             if url.path == '/api/journal':
                 m = frames.load_meta(gid)
                 j = m.get('journal')

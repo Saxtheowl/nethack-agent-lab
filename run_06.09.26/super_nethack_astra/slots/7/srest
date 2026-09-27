@@ -9,7 +9,7 @@ for i in $(seq "${2:-20}"); do
   [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; break; }
   prev=$hp
   [ "$hp" -ge "$1" ] && { echo "TARGET"; break; }
-  [ $((t - t0)) -lt 10 ] && { echo "INTERRUPT (T$t)"; break; }
+  [ $((t - t0)) -lt 5 ] && { echo "INTERRUPT (T$t)"; break; }
   t0=$t
 done
 echo

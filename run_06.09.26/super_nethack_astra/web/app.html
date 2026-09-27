@@ -142,12 +142,34 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 .tbar .cap { font-size: 16px; color: #d6e0d0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tbar .st { font-size: 15px; color: var(--muted); white-space: nowrap; } .tbar .st b { color: var(--text); }
 #livewrap.theater .tbar { display: flex !important; }
+/* history tab */
+.hbig { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.hbig .tile .v { font-size: 34px; } .tile.bad .v { color: var(--bad); } .tile.good .v { color: #9fe38e; } .tile.gold .v { color: var(--gold); }
+.hgrid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; margin-bottom: 16px; }
+.cause { display: grid; grid-template-columns: 1fr 3fr 30px; gap: 8px; align-items: center; font-size: 13px; margin: 4px 0; }
+.cause .bar { height: 12px; background: var(--bad); border-radius: 3px; opacity: .8; }
+.hfilters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.hfilters input { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; min-width: 260px; }
+.runcard { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); margin-bottom: 10px; }
+.runcard > summary { list-style: none; cursor: pointer; padding: 12px 14px; display: grid; grid-template-columns: 230px 110px 90px 70px 1fr; gap: 12px; align-items: center; }
+.runcard > summary::-webkit-details-marker { display: none; }
+.runcard > summary:hover { background: var(--panel2); border-radius: 10px; }
+.runcard .who b { font-size: 15px; } .runcard .who small { display: block; color: var(--muted); font-size: 12px; }
+.runcard .num { font-size: 20px; font-weight: 650; } .runcard .num small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; text-transform: uppercase; letter-spacing: .06em; }
+.runcard .why1 { font-size: 13.5px; color: #e6d2cc; } .runcard .why1 .chips { margin-top: 4px; }
+.chip { display: inline-block; font-size: 11.5px; border: 1px solid #4a5a3a; color: #cfe6b8; border-radius: 99px; padding: 1px 8px; margin: 2px 4px 0 0; }
+.runbody { padding: 4px 18px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; font-size: 13.5px; }
+.runbody h4 { margin: 8px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--accent); }
+.runbody ul { margin: 0; padding-left: 18px; } .runbody li { margin: 3px 0; color: #d4ddd0; }
+.runbody .ce { margin: 6px 0; } .runbody .ce b { color: var(--gold); } .runbody .ce p { margin: 2px 0 2px 22px; color: #cfd8cc; }
+.runbody .endtext { color: #e6d2cc; }
+@media (max-width: 1250px) { .hgrid, .runbody { grid-template-columns: 1fr; } .runcard > summary { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 1250px) { .cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } .replay, .livegrid { grid-template-columns: 1fr; } .tiles { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
 <header class="top">
   <h1>Claude joue à NetHack 3.6.7</h1>
-  <nav class="tabs"><button data-tab="live">Live</button><button data-tab="dash">Dashboard</button></nav>
+  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button></nav>
   <div class="right"><span id="conn">…</span><span>Joueur IA · Claude Opus 5.5 · local, sans aide</span></div>
 </header>
 
@@ -166,6 +188,20 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
       <div class="panel feed"><h2>Décisions · commentaire de l'IA</h2><div id="livedec"></div></div>
       <div class="panel feed"><h2>Commandes envoyées</h2><div id="livecmd"></div></div>
     </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="tab-hist" class="hidden">
+  <div class="hbig" id="hbig"></div>
+  <div class="hgrid">
+    <div class="panel"><h2>Par style de jeu</h2><table><thead><tr><th>Style</th><th>Parties</th><th>En cours</th><th>Morts</th><th>Dlvl max</th><th>XL max</th><th>T moyen à la mort</th></tr></thead><tbody id="hstyles"></tbody></table></div>
+    <div class="panel"><h2>Causes de mort</h2><div id="hcauses"></div></div>
+  </div>
+  <div class="panel">
+    <h2>Toutes les parties — cliquer pour dérouler (fin, objets, chronique, leçons)</h2>
+    <div class="hfilters" id="hfilters"></div>
+    <div id="hruns"></div>
   </div>
 </section>
 
@@ -287,6 +323,8 @@ function showTab(t) {
   for (const b of document.querySelectorAll('nav.tabs button')) b.classList.toggle('on', b.dataset.tab === t);
   $('#tab-live').classList.toggle('hidden', t !== 'live');
   $('#tab-dash').classList.toggle('hidden', t !== 'dash');
+  $('#tab-hist').classList.toggle('hidden', t !== 'hist');
+  if (t === 'hist') refreshHistory();
   if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
 }
 for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => showTab(b.dataset.tab);
@@ -701,6 +739,75 @@ addEventListener('keydown', e => {
   else if (k === 'l' || k === 'L') $('#blive').click(); else if (k === 'm' || k === 'M') $('#bmark').click();
 });
 
+/* HISTORY tab */
+let HIST = null, hStyle = '', hStatus = '', hText = '';
+async function refreshHistory() {
+  try { HIST = await api('/api/history'); } catch (e) { return; }
+  renderHistoryTab();
+}
+setInterval(() => TAB === 'hist' && refreshHistory(), 20000);
+const STYLE_FR = {tariru: 'Tariru', astra: 'Astra', 'avant-style': 'avant les styles'};
+function renderHistoryTab() {
+  const T = HIST.total;
+  const best = HIST.runs.reduce((a, r) => (r.maxdepth > (a ? a.maxdepth : -1) ? r : a), null);
+  const tiles = [['Parties jouées', T.games, ''], ['En cours', T.live, 'good'], ['Morts', T.dead, 'bad'], ['Abandonnées', T.quit, ''],
+    ['Ascensions', T.ascended, 'gold'], ['Dlvl max', T.best_depth, ''], ['XL max', T.best_xl, ''],
+    ['T joués (total)', T.turns.toLocaleString('fr-FR'), ''], ['T moyen à la mort', T.avg_turns_at_death.toLocaleString('fr-FR'), '']];
+  $('#hbig').replaceChildren(...tiles.map(([l, v, c]) => el('div', {className: 'tile ' + c}, el('div', {className: 'v', textContent: v}), el('div', {className: 'l', textContent: l}))));
+  $('#hstyles').replaceChildren(...Object.entries(HIST.styles).map(([st, a]) => el('tr', {},
+    ...[STYLE_FR[st] || st, a.games, a.live, a.dead, a.best_depth, a.best_xl, a.avg_turns_at_death || '—'].map(v => el('td', {textContent: v})))));
+  const maxc = Math.max(1, ...HIST.causes.map(c => c[1]));
+  $('#hcauses').replaceChildren(...HIST.causes.map(([k, n]) => { const b = el('div', {className: 'bar'}); b.style.width = (n / maxc * 100) + '%';
+    return el('div', {className: 'cause'}, el('span', {textContent: k}), el('div', {}, b), el('b', {textContent: n})); }));
+  if (!HIST.causes.length) $('#hcauses').append(el('p', {className: 'kbd', textContent: 'Aucune mort.'}));
+  // filters
+  const mk = (label, on, fn) => el('button', {className: on ? 'on' : '', textContent: label, onclick: fn});
+  const search = el('input', {placeholder: 'Rechercher (monstre, objet, leçon…)', value: hText});
+  search.oninput = () => { hText = search.value; renderRuns(); };
+  $('#hfilters').replaceChildren(
+    mk('Tous styles', !hStyle, () => { hStyle = ''; renderHistoryTab(); }),
+    ...Object.keys(HIST.styles).map(st => mk(STYLE_FR[st] || st, hStyle === st, () => { hStyle = st; renderHistoryTab(); })),
+    el('span', {textContent: ' · '}),
+    mk('Tous', !hStatus, () => { hStatus = ''; renderHistoryTab(); }),
+    ...['live', 'dead', 'quit', 'ascended'].map(x => mk(STATUS_FR[x], hStatus === x, () => { hStatus = x; renderHistoryTab(); })),
+    search);
+  renderRuns();
+}
+function renderRuns() {
+  const q = hText.toLowerCase();
+  const open = new Set([...document.querySelectorAll('#hruns details[open]')].map(d => d.dataset.id));
+  const rs = HIST.runs.filter(r => (!hStyle || (r.style || 'avant-style') === hStyle) && (!hStatus || r.status === hStatus)
+    && (!q || JSON.stringify([r.player, r.death, r.cause_summary, r.end, r.end_text, r.lessons, r.chronicle.map(c => c.title + ' ' + c.text)]).toLowerCase().includes(q)));
+  $('#hruns').replaceChildren(...rs.map(r => {
+    const d = el('details', {className: 'runcard'}); d.dataset.id = r.id; if (open.has(r.id)) d.open = true;
+    const cause = r.status === 'dead' ? '☠ ' + (r.death || '?') : r.status === 'live' ? '● en cours' : r.status === 'quit' ? 'abandonnée (décision de l’utilisateur)' : (r.status === 'ascended' ? '✨ ASCENSION' : r.status);
+    const sum = el('summary', {},
+      el('div', {className: 'who'}, el('b', {textContent: `${r.player} · run ${r.run ?? '?'}`}), el('small', {textContent: `emplacement ${r.slot} · style ${STYLE_FR[r.style || 'avant-style']} · ${(r.started || '').replace('.', ' ')}`})),
+      el('div', {}, el('span', {className: 'badge ' + r.status, textContent: STATUS_FR[r.status] || r.status})),
+      el('div', {className: 'num', innerHTML: ''}, `T${(r.turns || 0).toLocaleString('fr-FR')}`, el('small', {textContent: 'tours'})),
+      el('div', {className: 'num'}, `${r.maxdepth || '?'}`, el('small', {textContent: 'Dlvl max'})),
+      el('div', {className: 'why1'}, el('div', {textContent: cause + (r.cause_summary ? ' — ' + r.cause_summary : '')}),
+        el('div', {className: 'chips'}, el('span', {className: 'chip', textContent: 'XL ' + (r.maxxl || '?')}), ...r.items.slice(0, 6).map(t => el('span', {className: 'chip', textContent: t})))));
+    d.append(sum);
+    const left = el('div'), right = el('div');
+    if (r.end) { left.append(el('h4', {textContent: 'Fin de partie'}), el('p', {className: 'endtext', textContent: r.end}), el('p', {className: 'endtext', textContent: r.end_text})); }
+    left.append(el('h4', {textContent: `Chronique (${r.chronicle.length})`}));
+    for (const c of r.chronicle) left.append(el('div', {className: 'ce'}, el('span', {className: 'icon', textContent: ICON[c.kind] || '★'}),
+      el('b', {textContent: ` T${c.turn ?? '?'} · ${c.title}`}), ' ', el('button', {textContent: '▶', title: 'Revoir', onclick: () => loadGame(r.id, Math.max(0, c.frame - 15))}), el('p', {textContent: c.text || ''})));
+    if (!r.chronicle.length) left.append(el('p', {className: 'kbd', textContent: 'Pas d’évènement marquant enregistré.'}));
+    right.append(el('h4', {textContent: `Leçons / réflexions (${r.lessons.length})`}));
+    const ul = el('ul'); for (const l of r.lessons) ul.append(el('li', {textContent: l})); right.append(ul);
+    if (!r.lessons.length) right.append(el('p', {className: 'kbd', textContent: 'Pas encore de leçon écrite.'}));
+    right.append(el('div', {style: 'margin-top:10px;display:flex;gap:6px'},
+      el('button', {textContent: '▶ Rejouer depuis le début', onclick: () => loadGame(r.id, 0)}),
+      el('button', {textContent: '★ Moments clés', onclick: () => openMoments(r.id)}),
+      r.status === 'live' ? el('button', {textContent: '● Suivre en direct', onclick: () => loadGame(r.id, 'live')}) : ''));
+    d.append(el('div', {className: 'runbody'}, left, right));
+    return d;
+  }));
+  if (!rs.length) $('#hruns').append(el('p', {className: 'kbd', textContent: 'Aucune partie ne correspond.'}));
+}
+
 /* big screen */
 function toggleBig(node, on, fs = true) {
   const want = on ?? !node.classList.contains('theater');
@@ -736,7 +843,7 @@ setInterval(() => {  // overlay texts while in big screen
 (async () => {
   const h = hashState();
   await refreshGames();
-  showTab(h.tab === 'dash' ? 'dash' : 'live');
+  showTab(h.tab === 'dash' ? 'dash' : h.tab === 'live' ? 'live' : 'hist');
   if (h.game) { await loadGame(h.game, h.f === 'live' ? 'live' : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
   pollLive();
