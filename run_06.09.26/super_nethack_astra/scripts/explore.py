@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+"""Frontier exploration over the remembered map: travel to the nearest known
+walkable cell that touches unexplored space, repeat. Stops on HP loss, a
+prompt, a new staircase, or when nothing is left. Proposes only moves the
+game's own travel command performs; every travel is logged by session.py."""
+import argparse
+import collections
+import json
+import re
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import guard
+import session
+
+FLOOR = set('▒·.<>$%!?=()[/*`"_{#') | set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@&;:\'')
+DOORS = set('-|+')
+WALLS = set('│─┌┐└┘├┤┬┴┼')
+DIRS = [(0, -1), (1, 0), (0, 1), (-1, 0), (1, -1), (1, 1), (-1, 1), (-1, -1)]
+
+
+def tile(rows, x, y):
+    return rows[y][x] if 1 <= x < 80 and 10 <= y <= 30 and x < len(rows[y]) else ' '
+
+
+def is_door(rows, x, y):
+    c = tile(rows, x, y)
+    if c not in DOORS:
+        return False
+    return ((tile(rows, x - 1, y) in WALLS and tile(rows, x + 1, y) in WALLS)
+            or (tile(rows, x, y - 1) in WALLS and tile(rows, x, y + 1) in WALLS))
+
+
+def walkable(rows, x, y):
+    c = tile(rows, x, y)
+    return c in FLOOR or is_door(rows, x, y) or c == '0'
+
+
+def frontier(rows, x, y):
+    if tile(rows, x, y) in '0^':
+        return False
+    for dx, dy in DIRS:
+        nx, ny = x + dx, y + dy
+        if 1 <= nx < 80 and 11 <= ny <= 29 and tile(rows, nx, ny) == ' ':
+            return True
+    return False
+
+
+def openness(rows, x, y):
+    """Unknown cells within radius 2: real unexplored space scores high,
+    a floor cell merely touching undisplayed rock scores low."""
+    return sum(1 for dy in range(-2, 3) for dx in range(-2, 3)
+               if 1 <= x + dx < 80 and 11 <= y + dy <= 29 and tile(rows, x + dx, y + dy) == ' ')
+
+
+def nearest(rows, start, dead):
+    todo = collections.deque([start])
+    seen = {start: 0}
+    parent = {start: None}
+    best = None
+    while todo:
+        cx, cy = todo.popleft()
+        if (cx, cy) != start and frontier(rows, cx, cy) and f'{cx},{cy}' not in dead:
+            o = openness(rows, cx, cy)
+            if o >= 7:
+                score = seen[(cx, cy)] - 3 * o
+                if best is None or score < best[0]:
+                    best = (score, (cx, cy), seen[(cx, cy)])
+        for dx, dy in DIRS:
+            nx, ny = cx + dx, cy + dy
+            if (nx, ny) in seen or not walkable(rows, nx, ny) or tile(rows, nx, ny) == '0':
+                continue
+            if dx and dy and (is_door(rows, cx, cy) or is_door(rows, nx, ny)):
+                continue
+            seen[(nx, ny)] = seen[(cx, cy)] + 1
+            parent[(nx, ny)] = (cx, cy)
+            todo.append((nx, ny))
+    if not best:
+        return None, None
+    path, cur = [], best[1]
+    while cur != start:
+        path.append(cur)
+        cur = parent[cur]
+    return best[1], path[::-1]
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('--steps', type=int, default=6)
+    args = p.parse_args()
+    obs = guard.observe(session)
+    st = guard.state(*obs)
+    if st is None:
+        raise SystemExit('Not at a map prompt.')
+    level = st['level']
+    store = session.RUNTIME / 'explore.json'
+    try:
+        data = json.loads(store.read_text())
+    except FileNotFoundError:
+        data = {}
+    dead = set(data.get(str(level), []))
+    hp0 = st['hp']
+    known_down = sum(r[1:80].count('>') for r in st['rows'][10:31])
+    reason = 'step budget used'
+    for _ in range(args.steps):
+        rows = st['rows']
+        target, path = nearest(rows, st['position'], dead)
+        if target is None:
+            reason = 'no reachable frontier left'
+            break
+        before = st['position']
+        with open('/dev/null', 'w') as sink:
+            old = sys.stdout
+            sys.stdout = sink
+            try:
+                session.travel(*target)
+            finally:
+                sys.stdout = old
+        obs = guard.observe(session)
+        st2 = guard.state(*obs)
+        if st2 is None:
+            reason = 'prompt or unrecognized screen'
+            break
+        if st2['position'] == target:
+            # Reached: if its unknown neighbours are still unknown, never revisit.
+            if frontier(st2['rows'], *target):
+                dead.add(f'{target[0]},{target[1]}')
+        elif st2['position'] == before:
+            # Travel refuses to start beside any non-pet monster: take up to
+            # two plain steps along the path, never into a monster glyph.
+            keys = {(0, -1): '8', (1, 0): '6', (0, 1): '2', (-1, 0): '4',
+                    (1, -1): '9', (1, 1): '3', (-1, 1): '1', (-1, -1): '7'}
+            moved = False
+            for cell in path[:2]:
+                cur = st2['position']
+                if tile(st2['rows'], *cell).isalpha() or tile(st2['rows'], *cell) == '@':
+                    break
+                d = (cell[0] - cur[0], cell[1] - cur[1])
+                if d not in keys:
+                    break
+                session.send(keys[d])
+                obs = guard.settled(session)
+                st2 = guard.state(*obs) if obs else None
+                if st2 is None or st2['position'] != cell:
+                    break
+                moved = True
+            if st2 is None:
+                reason = 'prompt or unrecognized screen after a step'
+                break
+            if not moved:
+                dead.add(f'{target[0]},{target[1]}')
+        st = st2
+        if st['hp'] < hp0:
+            reason = 'HP loss'
+            break
+        if sum(r[1:80].count('>') for r in st['rows'][10:31]) > known_down:
+            reason = 'new downstairs seen'
+            break
+        if st['level'] != level:
+            reason = 'level changed'
+            break
+    data[str(level)] = sorted(dead)
+    store.write_text(json.dumps(data))
+    print('explore stop:', reason)
+    session.print_screen(True)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""List doorways (doorless gaps) and doors visible on the map."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import session
+rows = session.screen().splitlines()
+W = set('│─┌┐└┘├┤┬┴┼')
+out = []
+for y in range(10, 31):
+    for x in range(1, 80):
+        c = rows[y][x]
+        if c in '·.' and ((rows[y][x-1] in W and rows[y][x+1] in W) or (rows[y-1][x] in W and rows[y+1][x] in W)):
+            out.append(f'gap {x},{y}')
+        elif c in '+-|' and ((rows[y][x-1] in W and rows[y][x+1] in W) or (rows[y-1][x] in W and rows[y+1][x] in W)):
+            out.append(f'door{c} {x},{y}')
+print(' '.join(out))

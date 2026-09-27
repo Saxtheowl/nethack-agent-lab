@@ -126,6 +126,8 @@ def print_screen(compact=False):
                     for col, char in enumerate(line[:81])
                     if char not in ' │─┌┐└┘·.▒}']
         print('Map features (x,y): ' + ' '.join(features))
+        pets = guard.observe(sys.modules[__name__])[2]
+        print('PETS (hilite, never attack): ' + (' '.join(f'{x},{y}' for x, y in sorted(pets)) or 'none visible'))
         lines = current.splitlines()
         for row, line in enumerate(lines):
             if not 10 <= row <= 30:
@@ -265,6 +267,39 @@ def wait_pets(x, y, limit):
     print_screen(True)
 
 
+def travel(x, y, confirm=True):
+    """Travel (_) to screen cell x,y: cursor to self (@), then 8-steps (HJKL
+    family) and single digit steps, then '.'. Stops on whatever the game shows."""
+    observed = guard.observe(sys.modules[__name__])
+    here = guard.state(*observed)
+    if here is None:
+        raise RuntimeError('Travel needs a recognized map prompt.')
+    hx, hy = here['position']
+    dx, dy = x - hx, y - hy
+    keys = ''
+    while dx or dy:
+        sx = (dx > 0) - (dx < 0)
+        sy = (dy > 0) - (dy < 0)
+        big = {(-1, 0): 'H', (1, 0): 'L', (0, -1): 'K', (0, 1): 'J',
+               (-1, -1): 'Y', (1, -1): 'U', (-1, 1): 'B', (1, 1): 'N'}[(sx, sy)]
+        small = {(-1, 0): '4', (1, 0): '6', (0, -1): '8', (0, 1): '2',
+                 (-1, -1): '7', (1, -1): '9', (-1, 1): '1', (1, 1): '3'}[(sx, sy)]
+        if (sx == 0 or abs(dx) >= 8) and (sy == 0 or abs(dy) >= 8):
+            keys += big
+            dx -= 8 * sx
+            dy -= 8 * sy
+        else:
+            keys += small
+            dx -= sx
+            dy -= sy
+    audit.record('travel', {'from': [hx, hy], 'to': [x, y], 'cursor_keys': keys})
+    send('_')
+    time.sleep(.3)
+    send('@' + keys + '.')
+    time.sleep(1.5)
+    print_screen(True)
+
+
 class Viewer(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
@@ -302,6 +337,9 @@ def main():
     keys.add_argument('--raw', action='store_true', help='Explicit bypass for menu input, recorded in the audit')
     keys.add_argument('--settle', type=float, default=1,
                       help='Seconds to allow terminal animations to finish (0–10)')
+    trav = sub.add_parser('travel', help='Travel command to screen cell x y')
+    trav.add_argument('x', type=int)
+    trav.add_argument('y', type=int)
     stash = sub.add_parser('stash-gold', help='One checked bag action; stop on unexpected menus or gold count')
     stash.add_argument('--bag', required=True, choices=list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'))
     stash.add_argument('--expected-gold', required=True, type=int)
@@ -350,6 +388,8 @@ def main():
             send(args.value, args.named)
             time.sleep(min(10, max(0, args.settle)))
             print_screen(args.compact)
+    elif args.command == 'travel':
+        travel(args.x, args.y)
     elif args.command == 'stash-gold':
         stash_gold(args.bag, args.expected_gold)
     elif args.command == 'wait-pets':

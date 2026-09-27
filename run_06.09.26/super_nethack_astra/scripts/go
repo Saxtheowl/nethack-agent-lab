@@ -1,0 +1,17 @@
+#!/bin/bash
+# scripts/go X Y [n]: repeated travel toward X,Y (also into unexplored space);
+# stops on arrival, HP loss, a prompt, or when no progress is made.
+cd "$(dirname "$0")/.."
+hp() { python3 scripts/session.py screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2; }
+pos() { python3 scripts/session.py screen --compact | grep -o '^Neighbors of @([0-9]*,[0-9]*)' | head -1; }
+h0=$(hp); p0=""
+for i in $(seq "${3:-8}"); do
+  out=$(python3 scripts/session.py travel "$1" "$2" 2>&1)
+  p=$(pos)
+  [[ "$p" == "Neighbors of @($1,$2)" ]] && break
+  [[ "$(hp)" -lt "$h0" ]] && { echo "STOP: HP loss"; break; }
+  echo "$out" | grep -q -- "--More--\|Really\|\[yn" && { echo "STOP: prompt"; break; }
+  [[ "$p" == "$p0" ]] && { echo "STOP: no progress"; break; }
+  p0="$p"
+done
+python3 scripts/session.py screen --compact | grep -E '^0[5-7] |^34|^Map|^PETS|^Neighbors'

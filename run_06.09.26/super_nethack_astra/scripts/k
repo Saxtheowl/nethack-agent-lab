@@ -1,0 +1,4 @@
+#!/bin/bash
+# Shorthand: scripts/k <keys> [session.py keys args]. Adds a column ruler so
+# map coordinates can be read directly (row number prefix = screen row).
+cd "$(dirname "$0")/.." && python3 scripts/session.py keys --compact "$@" | awk 'NR==2{print "   0         1         2         3         4         5         6         7         8"; print "   0123456789012345678901234567890123456789012345678901234567890123456789012345678901"} {print}'

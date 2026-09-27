@@ -1,0 +1,9 @@
+#!/bin/bash
+# Travel to x y, retrying (travel stops when something new comes into view).
+cd "$(dirname "$0")/.."
+for i in 1 2 3; do
+  out=$(python3 scripts/session.py travel "$1" "$2")
+  echo "$out" | grep -q "^Neighbors of @($1,$2)" && break
+  echo "$out" | grep -q "no travel path\|Really attack\|--More--" && break
+done
+echo "$out"
