@@ -1,0 +1,25 @@
+#!/bin/bash
+# slots/1/mel MINHP [n] [GLYPHS]: PC-side melee. Each step: stop if HP < MINHP,
+# if no adjacent hostile (letters in GLYPHS, default any letter except pets and @),
+# else F+dir on it. Prints the last message line.
+cd "$(dirname "$0")/../.."
+minhp=${1:?}; n=${2:-8}; gl=${3:-}
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  d=$(python3 - "$o" "$minhp" "$gl" <<'PY'
+import re, sys
+o, minhp, gl = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+hp = int(re.search(r'HP:(\d+)', o)[1])
+if hp < minhp: print('LOW'); sys.exit()
+nb = re.search(r'^Neighbors of @\((\d+),(\d+)\): (.*)$', o, re.M)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', o, re.M).group(0)))
+for k, g, x, y in re.findall(r'(\d):(\S)\((\d+),(\d+)\)', nb[3]):
+    if f'{x},{y}' in pets or not g.isalpha(): continue
+    if gl and g not in gl: continue
+    print(k); sys.exit()
+print('NONE')
+PY
+)
+  case "$d" in LOW) echo "mel: low HP"; exit 1;; NONE) echo "mel: none adjacent"; exit 0;; esac
+  slots/1/k --compact F$d | grep -E '^07' | cut -c1-80
+done

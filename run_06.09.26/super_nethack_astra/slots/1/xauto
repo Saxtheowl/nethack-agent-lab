@@ -1,0 +1,56 @@
+#!/bin/bash
+# scripts/autoexplore [rounds]: explore.py rounds; when interrupted by a
+# monster, farlook the adjacent ones and fight ONLY trivial ones (list below)
+# while HP >= 60%. Anything else (unknown monster, low HP, hunger, prompt,
+# new stairs, level change) stops and hands control back. Uses NH_SLOT.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+S="python3 scripts/session.py"
+TRIVIAL='garter snake|coyote|jackal|newt|rat|newt|jackal|grid bug|sewer rat|kobold|large kobold|lichen|gecko|fox|coyote|goblin|kobold zombie|gnome zombie|giant rat|bat|giant bat|black naga hatchling|hill orc|homunculus|giant ant|iguana'
+for round in $(seq "${1:-6}"); do
+  r=$(THIEVES=${THIEVES:-nl} python3 slots/1/xplore.py --steps 40 --all)
+  reason=$(echo "$r" | grep -o '^explore stop: .*')
+  echo "[$round] $reason"
+  case "$reason" in
+    *"HP loss"*|*"step budget"*) ;;
+    *) break;;
+  esac
+  [[ "$reason" == *"step budget"* ]] && continue
+  # identify adjacent non-pet monsters
+  adj=$(python3 - <<'PY'
+import re, sys
+sys.path.insert(0, 'scripts')
+import session
+out = session.screen()
+import io, contextlib
+buf = io.StringIO()
+with contextlib.redirect_stdout(buf):
+    session.print_screen(True)
+c = buf.getvalue()
+m = re.search(r'^Map features.*$', c, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', c, re.M).group(0)))
+# the hero is the '@' under the terminal cursor (other @ = shopkeepers, watchmen...)
+cur = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', c)
+h = re.search(r' @@(\d+),(\d+)', m)
+if cur and f' @@{cur[1]},{cur[2]}' in m:
+    h = cur
+hx, hy = int(h[1]), int(h[2])
+for g, x, y in re.findall(r' ([A-Za-z&;:\'])@(\d+),(\d+)', m):
+    if max(abs(int(x) - hx), abs(int(y) - hy)) == 1 and f'{x},{y}' not in pets:
+        print(g, x, y)
+PY
+)
+  [ -z "$adj" ] && continue
+  ok=1
+  while read -r g x y; do
+    name=$(scripts/look "$x" "$y")
+    echo "   adjacent: $name"
+    echo "$name" | grep -qiE "peaceful" && { ok=0; echo "   peaceful: stop"; break; }
+    echo "$name" | grep -qE "\((${TRIVIAL})\)" || { ok=0; echo "   not trivial: stop"; break; }
+  done <<< "$adj"
+  [ $ok = 1 ] || break
+  hp=$($S screen | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  [ $((cur * 10)) -lt $((max * 6)) ] && { echo "   HP $cur/$max < 60%: stop"; break; }
+  for g in $(echo "$adj" | awk '{print $1}' | sort -u); do scripts/fight "$g" 6 >/dev/null; done
+done
+$S screen --compact | grep -E '^0[5-7] |^34|^Map|^PETS' | cut -c1-200

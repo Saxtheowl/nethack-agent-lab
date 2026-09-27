@@ -1,0 +1,30 @@
+#!/bin/bash
+# slots/1/wolfwait [chunks]: wait (raw n5s) while in were-form; stop on HP loss,
+# return to human form, hunger, or an adjacent non-pet monster.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+prev=""
+for i in $(seq "${1:-40}"); do
+  o=$(slots/1/v)
+  h=$(echo "$o" | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep -oE "HD:[0-9]+|Xp:[0-9/]+|Blind|Hungry|Weak|Faint" | tr '\n' ' ')
+  [ -n "$prev" ] && [ "$h" -lt "$prev" ] && { echo "wolfwait: HP loss $h $st"; exit 1; }
+  echo "$st" | grep -qE "Xp" && { echo "wolfwait: HUMAN $st"; exit 2; }
+  echo "$st" | grep -qE "Weak|Faint" && { echo "wolfwait: $st"; exit 3; }
+  adj=$(python3 - "$o" <<'PY'
+import re, sys
+o = sys.argv[1]
+cur = re.search(r'Terminal cursor \(x,y[^)]*\): (\d+),(\d+)', o); hx, hy = int(cur[1]), int(cur[2])
+m = re.search(r'^Map features.*$', o, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', o, re.M).group(0)))
+for g, x, y in re.findall(r' ([A-Za-z&;:\'@])@(\d+),(\d+)', m):
+    x, y = int(x), int(y)
+    if (x, y) == (hx, hy) or f'{x},{y}' in pets: continue
+    if max(abs(x-hx), abs(y-hy)) == 1: print(g); break
+PY
+)
+  [ -n "$adj" ] && { echo "wolfwait: adjacent $adj"; exit 4; }
+  prev=$h
+  slots/1/k --raw n5s >/dev/null; sleep .4
+done
+echo "wolfwait: done"

@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/1/hold MINHP N: stand on Elbereth: 1 turn search at a time; every 4 turns (or after HP loss)
+# read the engraving and re-engrave if it is not "elbereth". Stop HP<MINHP or --More-- event.
+cd "$(dirname "$0")/../.."
+min=${1:?}; n=${2:-20}; prev=999
+for i in $(seq $n); do
+  o=$(slots/1/k --compact s)
+  echo "$o" | grep -q -- '--More--' && slots/1/k --raw $'\r' >/dev/null
+  h=$(slots/1/v | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo -n "$h "
+  [ "$h" -lt "$min" ] && { echo; echo "hold: low HP"; exit 1; }
+  if [ $((i % 4)) = 0 ] || [ "$h" -lt "$prev" ]; then
+    r=$(slots/1/k --compact : | grep -o 'You read: "[^"]*"' | tail -1); slots/1/k --named Escape >/dev/null
+    echo "$r" | grep -qi '"elbereth"' || { echo; echo "hold: re-engrave ($r)"; slots/1/elb; }
+  fi
+  prev=$h
+done
+echo
+slots/1/v | grep -E '^0[5-7]|^34'

@@ -1,0 +1,39 @@
+#!/bin/bash
+# slots/1/thr MINHP [n] [GLYPHS]: throw daggers (letters in $DAG, default "tsb") at an
+# ADJACENT or in-line (<=6, clear line) hostile letter; stop HP<MINHP / none / no daggers.
+cd "$(dirname "$0")/../.."
+minhp=${1:?}; n=${2:-8}; gl=${3:-}; DAG=${DAG:-tsb}
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  d=$(python3 - "$o" "$minhp" "$gl" <<'PY'
+import re, sys
+o, minhp, gl = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+hp = int(re.search(r'HP:(\d+)', o)[1])
+if hp < minhp: print('LOW'); sys.exit()
+nb = re.search(r'^Neighbors of @\((\d+),(\d+)\)', o, re.M); hx, hy = int(nb[1]), int(nb[2])
+m = re.search(r'^Map features.*$', o, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', o, re.M).group(0)))
+occ = {(int(x), int(y)) for g, x, y in re.findall(r' (\S)@(\d+),(\d+)', m) if g.isalpha() or g in '@0'}
+K = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+best = None
+for g, x, y in re.findall(r' ([A-Za-z&;:])@(\d+),(\d+)', m):
+    x, y = int(x), int(y)
+    if f'{x},{y}' in pets or (x, y) == (hx, hy): continue
+    if gl and g not in gl: continue
+    dx, dy = x - hx, y - hy; dist = max(abs(dx), abs(dy))
+    if dist > 6 or (dx and dy and abs(dx) != abs(dy)): continue
+    sx, sy = (dx > 0) - (dx < 0), (dy > 0) - (dy < 0)
+    if any((hx + sx*k, hy + sy*k) in occ for k in range(1, dist)): continue
+    if best is None or dist < best[0]: best = (dist, K[(sx, sy)])
+print(best[1] if best else 'NONE')
+PY
+)
+  case "$d" in LOW) echo "thr: low HP"; exit 1;; NONE) echo "thr: no target"; exit 0;; esac
+  thrown=0
+  for L in $(echo $DAG | grep -o .); do
+    r=$(slots/1/k --compact --raw t$L)
+    if echo "$r" | grep -q "In what direction"; then rr=$(slots/1/k --compact --raw $d); echo "$rr" | grep -E "^07" | cut -c1-80; echo "$rr" | grep -qE "Call a|--More--|\[yn" && { echo "thr: prompt"; exit 3; }; thrown=1; break; fi
+    slots/1/k --named Escape >/dev/null
+  done
+  [ $thrown = 0 ] && { echo "thr: no dagger left"; exit 2; }
+done

@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/1/wait MINHP TARGET [n]: search one turn at a time (PC side) until HP >= TARGET,
+# stop when HP < MINHP, on Weak/hungry change, or "stole".
+cd "$(dirname "$0")/../.."
+min=${1:?}; tgt=${2:?}; n=${3:-100}
+for i in $(seq $n); do
+  o=$(slots/1/k --compact n5s)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|Weak|Fainting|--More--' && { echo "wait: event"; break; }
+  [ "$h" -lt "$min" ] && { echo "wait: low HP $h"; exit 1; }
+  [ "$h" -ge "$tgt" ] && { echo "wait: target $h"; break; }
+done
+slots/1/v | grep -E '^0[5-7]|^34|^Map'

@@ -1,0 +1,6 @@
+#!/bin/bash
+# slots/1/xa [rounds]: run xauto on the worker, then print a short status (PC-side wrapper).
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+slots/1/w ./xauto "${1:-4}" 2>&1 | grep -E '^\[|adjacent|stop'
+slots/1/v | grep -E '^0[1-8]|^34|^Map'

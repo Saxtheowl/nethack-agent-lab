@@ -1,0 +1,8 @@
+#!/bin/bash
+# slots/1/reequip: after returning from were-form, pick up and put back on gear.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+slots/1/k --named Escape >/dev/null
+slots/1/pickup "long sword|iron shoes|orcish helm|small shield|mummy wrapping" | grep " - "
+for k in wa Wc Wo WO; do slots/1/k $k | sed -n 10p; done
+slots/1/v | grep Dlvl

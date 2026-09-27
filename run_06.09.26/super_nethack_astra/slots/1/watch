@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/1/watch MINHP GLYPHS [n]: search 1 turn at a time until a monster letter from GLYPHS
+# is on the map (not a pet), HP < MINHP, or an event message.
+cd "$(dirname "$0")/../.."
+min=${1:?}; gl=${2:?}; n=${3:-100}
+for i in $(seq $n); do
+  o=$(slots/1/k --compact s)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|steals|Weak|Fainting|--More--|charms' && { echo "watch: event"; break; }
+  [ "$h" -lt "$min" ] && { echo "watch: low HP $h"; break; }
+  m=$(echo "$o" | grep '^Map features' | grep -oE " [$gl]@[0-9]+,[0-9]+" | head -1)
+  [ -n "$m" ] && { echo "watch: seen$m"; break; }
+done
+slots/1/v | grep -E '^0[5-7]|^34|^Map'

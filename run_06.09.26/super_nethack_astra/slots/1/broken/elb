@@ -1,0 +1,10 @@
+#!/bin/bash
+# slots/1/elb: engrave Elbereth in the dust (replacing any engraving), then read it back.
+cd "$(dirname "$0")/../.."
+slots/1/k --compact E- >/dev/null; sleep .5
+slots/1/v | grep '^07' | grep -q 'add to the current' && slots/1/k --raw n >/dev/null
+slots/1/k --compact --raw Elbereth >/dev/null
+slots/1/k --compact --raw $'\r' >/dev/null
+r=$(slots/1/k --compact : | grep -o 'You read: "[^"]*"')
+slots/1/k --named Escape >/dev/null
+echo "elb: $r"
