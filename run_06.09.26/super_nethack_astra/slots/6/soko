@@ -1,0 +1,6 @@
+#!/bin/bash
+# slots/6/soko X Y PUSHES [extra args]: guarded Sokoban push plan (scripts/sokoban.py --execute) for slot 6.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+x=$1; y=$2; p=$3; shift 3
+python3 scripts/sokoban.py "$x" "$y" "$p" --execute --max-steps ${MAX:-50} "$@" 2>&1 | grep -vE '^[0-9][0-9] │ +│$' | grep -E 'STOP|Checked|keys|^(1[0-9]|2[0-9]|0[1-7]|34) '

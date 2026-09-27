@@ -1,0 +1,26 @@
+#!/bin/bash
+# slots/6/sokoloop PLAN [tries] [extra sokoban.py args]: run sokoplan.py; on a STOP for a peaceful/ignorable
+# monster letter in $WAITFOR (default A), rewrite the plan from the stopped line and retry after 3 searched turns.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+plan=$1; tries=${2:-10}; shift 2
+for t in $(seq $tries); do
+  out=$(IGN=${IGN:-uA} python3 -u slots/6/sokoplan.py "$plan" 0 "$@" 2>&1); echo "$out" | grep -E "^done|STOP|ALL|FAIL"
+  echo "$out" | grep -q "ALL DONE" && exit 0
+  st=$(echo "$out" | grep "STOP")
+  echo "$out" | grep -q "PLAN FAIL" && { python3 scripts/session.py keys --raw n3s >/dev/null; sleep .5; continue; }
+  echo "$st" | grep -qE "STOP (monster|no move)" || exit 1
+  echo "$st" | grep -q "STOP monster" && ! echo "$st" | grep -qE "'[${WAITFOR:-A}]'\)\]" && exit 1
+  python3 - "$plan" "$st" <<'PY'
+import re, sys
+plan, st = sys.argv[1], sys.argv[2]
+m = re.search(r"line (\d+) boulder \((\d+), (\d+)\) remaining pushes (\w+)", st)
+if not m: sys.exit(1)
+i = int(m[1]); lines = open(plan).read().splitlines()
+lines = [f"{m[2]} {m[3]} {m[4]}"] + lines[i+1:]
+open(plan, 'w').write('\n'.join(lines) + '\n')
+PY
+  [ $? = 0 ] || exit 1
+  python3 scripts/session.py screen | grep -q "Really attack" && python3 scripts/session.py keys --raw n >/dev/null
+  python3 scripts/session.py keys --raw n3s >/dev/null; sleep .5
+done

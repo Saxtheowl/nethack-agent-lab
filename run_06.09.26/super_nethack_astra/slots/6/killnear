@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/6/killnear [n]: attack an adjacent monster letter (hostile assumed: check farlook first!), else search 1 turn; stops HP<60%/hunger/no monster.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+for i in $(seq ${1:-8}); do
+  o=$(python3 scripts/session.py screen --compact)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); c=${hp#HP:}; c=${c%%(*}; m=${hp#*(}; m=${m%)}
+  [ $((c*100)) -lt $((m*60)) ] && { echo "STOP HP $hp"; exit 2; }
+  echo "$o" | grep -qE 'Hungry|Weak|Faint' && { echo "STOP hunger"; exit 3; }
+  echo "$o" | grep -q 'stole' && { echo "STOP stole"; exit 4; }
+  d=$(echo "$o" | grep '^Neighbors' | grep -oE '[1-9]:[A-Za-z&;:][(]' | head -1 | cut -c1)
+  if [ -n "$d" ]; then o=$(python3 scripts/session.py keys --compact --raw F$d); echo "$o" | grep -q 'Really attack' && { python3 scripts/session.py keys --raw n >/dev/null; echo "STOP peaceful"; exit 5; }
+  else echo "$o" | grep -q 'Map features.*[A-Za-z&]@' || { echo "none"; break; }; python3 scripts/session.py keys --compact --raw s >/dev/null; fi
+done
+python3 scripts/session.py screen --compact | grep -E '^0[4-7]|^34|Neighbors'

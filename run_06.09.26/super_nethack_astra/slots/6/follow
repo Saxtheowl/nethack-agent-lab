@@ -1,0 +1,22 @@
+#!/bin/bash
+# slots/6/follow [n]: follow the vault guard (the other @) step by step.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+for i in $(seq "${1:-30}"); do
+  o=$(python3 scripts/session.py screen --compact)
+  me=$(echo "$o" | grep -oE "^Terminal cursor[^:]*: [0-9]+,[0-9]+" | grep -oE "[0-9]+,[0-9]+$")
+  g=$(echo "$o" | grep "^Map" | grep -oE " @@[0-9]+,[0-9]+" | sed 's/ @@//' | grep -v "^$me$" | head -1)
+  [ -z "$g" ] && { echo "no guard visible; me=$me"; break; }
+  mx=${me%,*}; my=${me#*,}; gx=${g%,*}; gy=${g#*,}
+  adx=$((gx-mx)); ady=$((gy-my))
+  if [ ${adx#-} -le 1 ] && [ ${ady#-} -le 1 ]; then python3 scripts/session.py keys s --settle .4 >/dev/null
+  else
+    dx=$((adx>0?1:(adx<0?-1:0))); dy=$((ady>0?1:(ady<0?-1:0)))
+    k=$(python3 -c "print({(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}[($dx,$dy)])")
+    python3 scripts/session.py keys --raw $k --settle .4 >/dev/null
+  fi
+  python3 scripts/session.py screen | grep -q "Really attack" && { python3 scripts/session.py keys --raw n >/dev/null; echo PROMPT; }
+  python3 scripts/session.py screen | grep -q -- "--More--" && python3 scripts/session.py keys --named Enter >/dev/null
+  echo -n "$me>$g "
+done
+echo

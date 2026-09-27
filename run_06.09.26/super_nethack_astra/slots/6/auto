@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/6/auto [rounds]: xp (explore) then hold (fight adjacent non-dangerous) alternately.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+for r in $(seq "${1:-4}"); do
+  x=$(IGNNAME="${IGNNAME:-newt|rat|jackal|kobold|lichen|gnome|hobgoblin|goblin|orc|zombie|bat|ant$|dog|coyote|fox|iguana|gecko|yellow mold|green mold|acid blob|rock mole|floating eye}" STEPS=${STEPS:-2} MINOPEN=${MINOPEN:-7} slots/6/xp 6)
+  echo "$x" | grep '^\[' | tail -1 | cut -c1-220
+  h=$(slots/6/hold 8)
+  echo "$h" | grep -E "STOP|DANGER|peaceful adj" | head -2
+  echo "$h" | grep -q "DANGER" && break
+  echo "$h" | grep -qE "STOP (HP|weak|msg)" && break
+  echo "$x" | grep -qE "no reachable|level changed|WEAK|HP<60|MSG" && break
+done
+python3 scripts/session.py screen --compact | grep -E '^0[4-7] |^34|^Map' | cut -c1-200

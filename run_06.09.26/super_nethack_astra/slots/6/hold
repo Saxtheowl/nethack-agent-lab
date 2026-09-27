@@ -33,6 +33,7 @@ PY
     xy=${d% *}; d=${d#* }
     name=$(scripts/look ${xy%,*} ${xy#*,})
     if echo "$name" | grep -q peaceful; then echo "peaceful adjacent: $name"; d=s; fi
+    if echo "$name" | grep -qiE "floating eye|cockatrice|chickatrice|mind flayer|lich|umber hulk|soldier ant|gelatinous|green slime|pudding|disenchanter|rust monster"; then echo "DANGER adjacent: $name"; break; fi
   fi
   $S keys --raw "$d" --settle .4 >/dev/null
   $S screen | grep -q -- '--More--' && $S keys --named Enter --settle .3 >/dev/null

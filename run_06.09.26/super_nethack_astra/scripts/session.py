@@ -151,12 +151,56 @@ def start():
     print(screen())
 
 
+HPGUARD = RUNTIME / f'hpguard-{SLOT}.json'
+
+
+class HPAlarm(SystemExit):
+    pass
+
+
+def hp_guard(text, value, named):
+    """Harness-level HP alarm (user rule 2026-09-27, after 3 deaths in agents'
+    own loops): once HP has fallen by a fifth of max below the last
+    acknowledged level AND is under 60% of max, every key is refused (except
+    Escape) until the agent re-reads the screen and runs `session.py ack-hp`.
+    A loop that ignores errors can then no longer pass turns."""
+    m = re.search(r'HP:(\d+)\((\d+)\)', text)
+    if not m:
+        return
+    hp, mx = int(m[1]), int(m[2])
+    try:
+        st = json.loads(HPGUARD.read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        st = {}
+    base = st.get('base', hp)
+    if st.get('max') != mx:  # new game / new max: reset the baseline
+        base = max(hp, base) if st.get('max') else hp
+    if hp > base:
+        base = hp
+    tripped = st.get("tripped", False) or (hp <= base - mx / 5 and hp < mx * 0.6)
+    HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped}))
+    if tripped and not (named and value == 'Escape'):
+        raise HPAlarm(f'HP ALARM: HP {hp}({mx}) fell from {base}. Key {value!r} refused. '
+                      'Stop every loop, read the screen, decide (pray if HP < 1/7 max, flee, heal), '
+                      'then run: <slot>/session ack-hp   (then send your keys one by one).')
+
+
+def ack_hp():
+    text = screen()
+    m = re.search(r'HP:(\d+)\((\d+)\)', text)
+    if m:
+        HPGUARD.write_text(json.dumps({'base': int(m[1]), 'max': int(m[2]), 'hp': int(m[1]), 'tripped': False}))
+        print(f'HP alarm acknowledged at HP {m[1]}({m[2]}): keys allowed again.')
+
+
 def send(value, named=False, sensitive=False, publish=True):
     if not alive() or tmux('display-message', '-p', '-t', TARGET, '#{pane_dead}').stdout.strip() == '1':
         raise RuntimeError('No live NetHack pane; inspect screen and restart.')
     audit.require_healthy()
     visible = (not (RUNTIME / 'broadcast.hidden').exists()) and not sensitive
-    before = screen() if visible else '[hidden for privacy]'
+    current = screen()
+    hp_guard(current, value, named)
+    before = current if visible else '[hidden for privacy]'
     command_id = uuid.uuid4().hex
     turn = re.search(r'\bT:(\d+)', before)
     data = {'command_id': command_id, 'input': value if not sensitive else None,
@@ -433,7 +477,7 @@ class Viewer(BaseHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
-    for name in ('start', 'screen', 'attach', 'hide', 'show', 'viewer'):
+    for name in ('start', 'screen', 'attach', 'hide', 'show', 'viewer', 'ack-hp'):
         item = sub.add_parser(name)
         if name == 'screen':
             item.add_argument('--compact', action='store_true')
@@ -473,6 +517,8 @@ def main():
         print_screen(args.compact)
     elif args.command == 'attach':
         os.execvp('tmux', ['tmux', '-S', SOCKET, 'attach-session', '-r', '-t', SESSION])
+    elif args.command == 'ack-hp':
+        ack_hp()
     elif args.command == 'keys':
         reason = pickup_guard(args.value, screen())
         if reason:

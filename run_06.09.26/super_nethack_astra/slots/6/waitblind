@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/6/waitblind [chunks]: search 5 turns at a time until not Blind; stop on HP loss, hunger, adjacent monster.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"; prev=999
+for i in $(seq ${1:-20}); do
+  o=$($S screen --compact)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "$prev" ] && [ $prev != 999 ] && { echo "STOP HP $prev->$hp"; break; }; prev=$hp
+  echo "$o" | grep -qE 'Hungry|Weak|Faint' && { echo "STOP hunger"; break; }
+  echo "$o" | grep -q 'Blind' || { echo "not blind"; break; }
+  echo "$o" | grep '^Neighbors' | grep -qE '[1-9]:[A-Za-z&;:][(]' && { echo "STOP adjacent"; break; }
+  $S keys --compact --raw n5s >/dev/null; sleep .5
+done
+$S screen --compact | grep -E '^0[5-7]|^34|^Map|^Neigh'

@@ -70,6 +70,12 @@ Use `slots/N/onworker [--timeout S] <command>`: copies slots/N to
 miniforum-worker (~/nethack-compute/slotN), runs there (time limit, 8 GB cap),
 copies results back. A watchdog kills local helper processes above 2.5 GB.
 
+## HP alarm (harness, 2026-09-27 — 3 deaths came from agents' own loops)
+session.py refuses EVERY key (except Escape) once HP has fallen by 1/5 of max
+below the last acknowledged level and is under 60% of max ("HP ALARM").
+Then: stop loops, read the screen, decide (pray if HP < 1/7 max, flee, heal),
+run `slots/N/session ack-hp`, and continue key by key. Never ack in a loop.
+
 ## Controls
 
 - `python3 scripts/session.py screen [--compact]` — observe.

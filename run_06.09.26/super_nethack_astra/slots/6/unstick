@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/6/unstick [dir]: try to move in dir until the position changes (bear trap/pit); stops on HP loss > 5.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+p0=$($S screen --compact | grep -oE ' @@[0-9]+,[0-9]+' | head -1)
+h0=$($S screen | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq 40); do
+  $S keys --raw "${1:-4}" --settle .3 >/dev/null
+  o=$($S screen --compact)
+  p=$(echo "$o" | grep -oE ' @@[0-9]+,[0-9]+' | head -1)
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$p" != "$p0" ] && { echo "free after $i"; break; }
+  [ $((h0 - h)) -gt 5 ] && { echo "HP loss"; break; }
+  echo "$o" | grep -q 'Really attack' && { $S keys --raw n >/dev/null; echo "peaceful in the way"; break; }
+done
