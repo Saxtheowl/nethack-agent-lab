@@ -49,7 +49,7 @@ def finish(meta, player):
     started = meta.get('started_epoch', 0)
     for entry in reversed(frames.xlog_entries()):
         if entry.get('name') == player and int(entry.get('endtime', 0)) >= started - 5:
-            meta.update(status='ascended' if entry.get('death') == 'ascended' else 'dead',
+            meta.update(status={'ascended': 'ascended', 'quit': 'quit'}.get(entry.get('death'), 'dead'),
                         death=entry.get('death'), points=int(entry.get('points', 0)),
                         turns=int(entry.get('turns', 0)), maxlvl=int(entry.get('maxlvl', 0)),
                         endtime=int(entry.get('endtime', 0)))

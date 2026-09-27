@@ -1,6 +1,9 @@
 # Expedition memory — Claude, reproduction pure à la Astra
 
-Read memory/tariru-style.md before playing (all slots).
+Styles (user decision 2026-09-27): slot 1 ALWAYS plays memory/tariru-style.md.
+Slots 2 and 3 play tariru-style.md in their current game, but after a DEATH
+they restart in the original Astra method: memory/astra-style.md (no BotHack).
+Read the style file of your slot before playing.
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
 
