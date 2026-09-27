@@ -3,6 +3,23 @@
 Joueuse : Claude3 (Valkyrie naine loyale). Lire d'abord memory/session.md et
 les « Lessons » de memory/run-1.md (mort au tour 1467).
 
+## ABANDONNÉE T5795 — décision de l'utilisateur, pas une mort
+État : Dlvl7 (donjon principal), XL7, HP43/65, AC2, $1285, Hungry, debout sur Elbereth dans un zoo
+(2 ogres dont un archer avec elven bow, giant beetle, floating eye, spotted jelly autour).
+Faits marquants : Excalibur au 1er #dip (T2853), amulet of ESP, jumping boots, elven mithril-coat ;
+3 prayers réussies (T3737 faim, T4751 HP3, T5517 HP7) ; puis une water nymph a volé Excalibur,
+l'amulette et l'elven shield pendant un repos, et une elven dagger ramassée était maudite (soudée).
+Leçons principales :
+- Les nymphes volent pendant le repos : les tuer à vue (ou fuir le niveau) avant de se reposer ;
+  ne jamais se reposer sans vérifier l'inventaire (arme en main !) après « stole ».
+- Ne jamais wield une arme ramassée sans BUC connu (dagger maudite soudée à la main).
+- Elbereth en poussière rate ~28 % et s'efface : vérifier avec ':' après chaque gravure et chaque coup reçu ;
+  ne protège pas des tirs (ogre avec arc) — sortir de la ligne de tir.
+- Les zoos : ne pas y combattre sans issue ; le bruit attire les monstres errants (ogres).
+- Surveiller Hungry/Weak : une food ration « Rotten » ne nourrit pas (Fainting à T3737).
+- Le niveau Mines dlvl 2 (Dlvl5 ici) contenait le bones de la partie 1 avec le master mind flayer :
+  retirer l'amulet of ESP près d'un flayer (sinon chaque blast touche).
+
 ## Current state
 T4757 Dlvl7, XL7, HP64/65, AC2, $387. PRAYERS : T3737 (faim) et T4751 (HP3) -> NE PAS prier avant ~T5800+.
 Nouveau : I/food ration mangée T4722 ; z tripe, H LIZARD CORPSE ; potions J pink, K magenta, D purple-red, x dark ;

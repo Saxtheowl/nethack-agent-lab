@@ -103,7 +103,7 @@ def open_a_door(st, dead):
         cx, cy = todo.popleft()
         for (dx, dy), k in keys.items():
             nx, ny = cx + dx, cy + dy
-            if tile(rows, nx, ny) == '+' and is_door(rows, nx, ny) and f'd{nx},{ny}' not in dead:
+            if tile(rows, nx, ny) == '+' and f'd{nx},{ny}' not in dead:  # walls may be unseen yet
                 dead.add(f'd{nx},{ny}')
                 with open('/dev/null', 'w') as sink:
                     old, sys.stdout = sys.stdout, sink
@@ -146,7 +146,12 @@ def main():
     st = guard.state(*obs)
     if st is None:
         raise SystemExit('Not at a map prompt.')
+    level_num = st['level']
     level = st['level']
+    # Key the dead-end cache by level AND the upstairs position, so Mines and
+    # main-dungeon levels with the same Dlvl number do not share it.
+    ups = sorted((x, y) for y in range(10, 31) for x in range(1, 80) if st['rows'][y][x:x + 1] == '<')
+    level = f"{level}@{ups[0][0]},{ups[0][1]}" if ups else str(level)
     store = session.RUNTIME / f'explore-{session.SLOT}.json'
     try:
         data = json.loads(store.read_text())
@@ -231,7 +236,7 @@ def main():
         if not args.all and sum(r[1:80].count('>') for r in st['rows'][10:31]) > known_down:
             reason = 'new downstairs seen'
             break
-        if st['level'] != level:
+        if st['level'] != level_num:
             reason = 'level changed'
             break
         hunger = re.search(r'\b(Hungry|Weak|Fainting)\b', st['status'])
