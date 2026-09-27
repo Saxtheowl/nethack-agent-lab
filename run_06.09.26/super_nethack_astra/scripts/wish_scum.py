@@ -239,7 +239,7 @@ def attempt(k, player):
 def worker(k, max_attempts, want):
     player = f'Wish{k}'
     with lock:
-        kept = any(f['session'] == f'wish{k}' for f in status['found'])
+        kept = any(f['session'] == f'wish{k}' and not f.get('done') for f in status['found'])
     if kept and tmux('has-session', '-t', f'wish{k}').returncode == 0 and not dead(f'wish{k}'):
         with lock:
             status['workers'][str(k)] = f'found game kept in wish{k}: not scumming'
