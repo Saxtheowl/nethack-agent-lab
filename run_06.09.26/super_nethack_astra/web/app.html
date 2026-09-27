@@ -407,6 +407,7 @@ const $ = s => document.querySelector(s);
 const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); for (const k of kids) e.append(k); return e; };
 const fmtT = t => new Date(t * 1000).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit', second: '2-digit'});
 const STATUS_FR = {live: 'en direct', dead: 'morte', saved: 'sauvegardée', ascended: 'ASCENSION', stopped: 'arrêtée', quit: 'abandonnée'};
+const VISIBLE = () => !document.hidden;
 async function api(path) { const r = await fetch(path, {cache: 'no-store'}); if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }
 
 /* ---------- terminal rendering ---------- */
@@ -504,7 +505,7 @@ async function pollLive() {
       el('div', {className: 'cmd'}, el('time', {textContent: x.at ? new Date(x.at).toLocaleTimeString('fr-FR') : ''}), el('code', {textContent: x.text}), el('small', {textContent: (x.label || '') + (x.game_turn ? ' · T' + x.game_turn : '')}))));
   } catch (e) { $('#conn').textContent = 'déconnecté'; }
 }
-setInterval(pollLive, 700);
+setInterval(() => VISIBLE() && pollLive(), 1500);
 
 /* ---------- DASHBOARD: cards, tiles, history ---------- */
 const miniTerms = {};
@@ -518,7 +519,7 @@ async function refreshGames() {
     if (!CHRON.length) refreshChronicle();
   } catch (e) {}
 }
-setInterval(refreshGames, 3000);
+setInterval(() => VISIBLE() && refreshGames(), 5000);
 
 const ICON = {item: '💎', monster: '👹', danger: '⚠️', progress: '🧭', decision: '🧠', death: '☠️', event: '★'};
 const HEADLINES = {};
@@ -635,7 +636,7 @@ function renderChronicle() {
   }));
   if (!rows.length) $('#chronlist').append(el('p', {className: 'kbd', textContent: 'Aucun évènement marquant enregistré.'}));
 }
-setInterval(() => TAB === 'dash' && refreshChronicle(), 10000);
+setInterval(() => VISIBLE() && TAB === 'dash' && refreshChronicle(), 20000);
 
 function renderTiles() {
   const done = GAMES.filter(g => g.status === 'dead' || g.status === 'ascended');
@@ -757,7 +758,7 @@ async function fetchMore(all) {
   if (R.gid === gid && R.frames === frames) { drawTimeline(); drawChart(); drawEvents(); }
 }
 setInterval(async () => {   // live growth of the selected game
-  if (!R.gid || TAB !== 'dash') return;
+  if (!R.gid || TAB !== 'dash' || !VISIBLE()) return;
   const m = GAMES.find(g => g.id === R.gid);
   if (!m || m.status !== 'live') return;
   if (R.fetchP) return;
@@ -931,7 +932,7 @@ async function refreshHistory() {
   try { HIST = await api('/api/history'); } catch (e) { return; }
   renderHistoryTab();
 }
-setInterval(() => TAB === 'hist' && refreshHistory(), 20000);
+setInterval(() => VISIBLE() && TAB === 'hist' && refreshHistory(), 30000);
 const STYLE_FR = {tariru: 'Tariru', tariru_v2: 'Tariru v2', astra: 'Astra', wish_abuser: 'Wish abuser', 'avant-style': 'avant les styles'};
 const STYLE_LIST = ['tariru', 'tariru_v2', 'astra', 'wish_abuser', 'avant-style'];
 function renderHistoryTab() {
@@ -1020,7 +1021,7 @@ async function refreshStrategy() {
   try { STRAT = await api('/api/strategy'); } catch (e) { $('#sbody').replaceChildren(el('p', {className: 'loading', textContent: 'Erreur : ' + e.message})); return; }
   renderStrategy();
 }
-setInterval(() => TAB === 'hist' && HSUB !== 'overview' && refreshStrategy(), 60000);
+setInterval(() => VISIBLE() && TAB === 'hist' && HSUB !== 'overview' && refreshStrategy(), 90000);
 function sGames() { return STRAT.games.filter(g => (!sStyle || styleOf(g) === sStyle) && (!sStatus || g.status === sStatus)); }
 const sum = (a, f) => a.reduce((s, x) => s + (f(x) || 0), 0);
 const avg = (a, f) => a.length ? sum(a, f) / a.length : 0;
@@ -1304,7 +1305,7 @@ async function refreshStyles() {
   });
   $('#scards').replaceChildren(...cards);
 }
-setInterval(() => TAB === 'styles' && refreshStyles(), 30000);
+setInterval(() => VISIBLE() && TAB === 'styles' && refreshStyles(), 60000);
 
 /* RESOURCES tab */
 const fmtB = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' Go' : b >= 1e6 ? (b / 1e6).toFixed(0) + ' Mo' : (b / 1e3).toFixed(0) + ' ko';
@@ -1333,7 +1334,6 @@ async function refreshResources() {
     ['Chronique', 'runs/games/<partie>/chronicle.jsonl', gb.chronicle, 'git', 'Les évènements importants racontés par les agents.'],
     ['État des parties', 'runs/games/<partie>/meta.json', gb.meta, 'git', 'Statut, T, Dlvl, HP, mort, style, journal.'],
     ['Cache des statistiques', 'runs/games/<partie>/analytics.json', gb.analytics, 'git', 'Évènements extraits des messages (Stratégie). Recalculable.'],
-    ['Ledgers hachés', `runs/ledger*.jsonl (${S.ledgers.length})`, ledgerTot, 'git', 'Preuve anti-triche : chaque envoi et chaque écran, chaînés par hash.'],
     ['Journaux des agents', 'memory/*.md', S.memory_bytes, 'git', 'Mémoire de chaque run : état, objets, leçons ; styles Tariru et Astra.'],
     ['Outils des agents', 'slots/N/', S.slots_bytes, 'git', 'Copies des helpers + outils écrits par les agents (Sokoban…).'],
     ['NetHack compilé', 'engine/', S.engine_bytes, 'local seulement', 'Sources 3.6.7 + binaire + sauvegardes en cours (save/).'],
@@ -1356,13 +1356,12 @@ async function refreshResources() {
   const dp = L.disk_used / L.disk_total;
   if (dp > .85) warn.push(`Disque du PC rempli à <b>${Math.round(dp * 100)} %</b> (${fmtB(L.disk_free)} libres).`);
   if (L.load[0] > L.cores * 1.2) warn.push(`Ce PC est chargé : charge <b>${L.load[0].toFixed(1)}</b> pour ${L.cores} cœurs.`);
-  if (ledgerTot > 5e8) warn.push(`Les ledgers pèsent <b>${fmtB(ledgerTot)}</b> et sont suivis par git (ils grossissent à chaque touche).`);
   if (G.unpushed > 0) warn.push(`<b>${G.unpushed}</b> commit(s) pas encore poussés vers GitHub : tant qu’ils ne sont pas poussés, la seule copie est sur ce PC.`);
   warn.push(`Les <code>ttyrec</code> (${fmtB(S.ttyrec_bytes)}) et les sauvegardes NetHack ne sont que sur ce PC.`);
   if (!W.ok) warn.push('Le worker miniforum ne répond pas.');
   $('#rwarn ul').innerHTML = warn.map(w => `<li>${w}</li>`).join('');
 }
-setInterval(() => TAB === 'res' && refreshResources(), 30000);
+setInterval(() => VISIBLE() && TAB === 'res' && refreshResources(), 60000);
 
 /* big screen */
 function toggleBig(node, on, fs = true) {
