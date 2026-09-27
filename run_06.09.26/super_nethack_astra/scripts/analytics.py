@@ -238,5 +238,5 @@ def key_events(gid):
             seen_mon.add(v)
             label = '👹 Monstre dangereux : ' + v
         if label:
-            out.append({'f': e['f'], 'turn': e['turn'], 'type': t, 'label': label[:90]})
+            out.append({'f': e['f'], 't': e['t'], 'turn': e['turn'], 'type': t, 'label': label[:90], 'msg': e.get('msg', '')})
     return out

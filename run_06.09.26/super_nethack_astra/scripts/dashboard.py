@@ -486,6 +486,45 @@ def styles():
             'slots': {s: (v or {}).get('style') for s, v in slots.items()}, 'wish': wish_status()}
 
 
+_chron_all = {'t': 0, 'data': None}
+AUTO_KIND = {'pickup': 'item', 'excalibur': 'item', 'wish': 'item', 'intrinsic': 'progress', 'altar': 'progress',
+             'kill': 'monster', 'hit_by': 'monster', 'pet_kill': 'monster', 'theft': 'danger', 'lowhp': 'danger',
+             'faint': 'danger', 'stoning': 'danger', 'sick': 'danger', 'lifesave': 'danger', 'death': 'death'}
+
+
+def chronicle_all():
+    """Every game's chronicle + automatically detected key moments + deaths (cached 60 s)."""
+    if _chron_all['data'] is not None and time.time() - _chron_all['t'] < 60:
+        return _chron_all['data']
+    out = []
+    for m in games():
+        gid = m['id']
+        rows = statuses(gid)
+        info = {'game': gid, 'slot': m.get('slot'), 'style': m.get('style') or 'avant-style', 'status': m.get('status')}
+        death_note = ''
+        for c in chronicle(gid):
+            if c.get('kind') == 'death' and m.get('status') == 'dead':
+                death_note = c.get('text') or c.get('title') or ''
+                continue  # merged into the single death entry below
+            out.append({**c, **info, 'frame': frame_at(rows, c['t']), 'auto': False})
+        try:
+            for k in analytics.key_events(gid):
+                if k['type'] == 'death':
+                    continue
+                out.append({**info, 't': k['t'], 'turn': k['turn'], 'frame': k['f'], 'kind': AUTO_KIND.get(k['type'], 'event'),
+                            'importance': 2, 'title': k['label'], 'text': k.get('msg') or '', 'auto': True})
+        except Exception:
+            pass
+        if m.get('status') == 'dead' and rows:
+            i, t, st = rows[-1]
+            out.append({**info, 't': m.get('endtime') or t, 'turn': m.get('turns') or st[0], 'dlvl': st[1],
+                        'frame': max(0, i - 40), 'kind': 'death', 'importance': 3, 'auto': True,
+                        'title': '☠ ' + (m.get('death') or 'mort'), 'text': death_note or m.get('cause_summary') or ''})
+    out.sort(key=lambda c: c['t'], reverse=True)
+    _chron_all.update(t=time.time(), data=out)
+    return out
+
+
 def slot_game(slot):
     try:
         return json.loads((RUNTIME / f'slot-{slot}.json').read_text())
@@ -601,6 +640,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send({'log': rows})
             if url.path == '/api/highlights':
                 return self.send(highlights(gid, int(q.get('window', 1000)), int(q.get('count', 3))))
+            if url.path == '/api/chronicle' and q.get('all'):
+                return self.send({'chronicle': chronicle_all()})
             if url.path == '/api/chronicle':
                 ids = [gid] if gid else [g['id'] for g in games()]
                 out = []

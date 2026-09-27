@@ -176,6 +176,7 @@ code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--gold)
 .invbox .cls { color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: .07em; margin: 6px 0 2px; }
 .invbox .it { font-family: ui-monospace, monospace; color: #d4ddd0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .invbox .it b { color: var(--gold); } .invbox .hint { color: var(--muted); font-size: 11.5px; margin-top: 6px; }
+.chronsearch { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; min-width: 220px; margin-left: 8px; }
 /* strategy sub-tabs */
 .subtabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .subtabs button { border: none; background: transparent; color: var(--muted); font-size: 14px; padding: 7px 12px; border-radius: 8px; }
@@ -393,7 +394,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
   </div>
 
   <div class="panel chron" style="margin-bottom:16px">
-    <h2>Chronique — les moments vraiment importants (cliquer pour dérouler)</h2>
+    <h2>Chronique — moments importants de toutes les parties, par type (cliquer pour dérouler)</h2>
     <div class="filters" id="chronfilters"></div>
     <div id="chronlist"></div>
   </div>
@@ -505,6 +506,7 @@ async function pollLive() {
     if (d.rows.length) liveTerm.render(d.rows);
     else { liveTerm.render(Array(36).fill([])); liveTerm.rowEls[17].textContent = '   (aucune partie en cours sur cet emplacement)'; liveTerm.cache[17] = null; }
     statsHTML($('#livestats'), d.meta || {}); hpWidth($('#livehp'), d.meta || {});
+    if (d.meta && d.meta.id) showInventory($('#liveinv'), d.meta.id);
     const dec = (d.feed || []).filter(x => x.kind === 'decision').slice(-3).reverse();
     $('#livedec').replaceChildren(...(dec.length ? dec : [{text: d.commentary || 'En attente de la prochaine décision.'}]).map(x => el('p', {className: 'decision', textContent: x.text})));
     $('#livecmd').replaceChildren(...(d.feed || []).filter(x => x.kind === 'command').slice(-10).reverse().map(x =>
@@ -617,30 +619,37 @@ $('#modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
 addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 let CHRON = [], chronGame = '';
+let chronKind = '', chronAuto = true, chronText = '';
+const CHRON_KINDS = [['', 'Tout'], ['death', '☠ Morts récentes'], ['item', '💎 Objets'], ['monster', '👹 Monstres'], ['danger', '⚠️ Dangers'], ['progress', '🧭 Progrès'], ['decision', '🧠 Décisions']];
 async function refreshChronicle() {
-  try { CHRON = (await api('/api/chronicle')).chronicle; } catch (e) { return; }
+  try { CHRON = (await api('/api/chronicle?all=1')).chronicle; } catch (e) { return; }
   renderChronicle();
 }
 function renderChronicle() {
   const f = $('#chronfilters');
-  const ids = [...new Set(CHRON.map(c => c.game))];
-  f.replaceChildren(el('button', {className: chronGame ? '' : 'on', textContent: 'Toutes', onclick: () => { chronGame = ''; renderChronicle(); }}),
-    ...ids.map(id => { const g = GAMES.find(x => x.id === id) || {}; return el('button', {className: chronGame === id ? 'on' : '', textContent: `${g.player || id}${g.run ? ' run ' + g.run : ''}`, onclick: () => { chronGame = id; renderChronicle(); }}); }));
+  const base = CHRON.filter(c => (chronAuto || !c.auto) && (!chronGame || c.game === chronGame));
+  const count = k => base.filter(c => !k || c.kind === k).length;
+  const search = el('input', {placeholder: 'Rechercher (objet, monstre…)', value: chronText, className: 'chronsearch'});
+  search.oninput = () => { chronText = search.value; clearTimeout(search._t); search._t = setTimeout(() => { renderChronicle(); const i = $('.chronsearch'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); };
+  f.replaceChildren(...CHRON_KINDS.map(([k, l]) => el('button', {className: chronKind === k ? 'on' : '', textContent: `${l} (${count(k)})`, onclick: () => { chronKind = k; renderChronicle(); }})),
+    el('label', {className: 'kbd', style: 'margin-left:8px'}, (() => { const c = el('input', {type: 'checkbox', checked: chronAuto}); c.onchange = () => { chronAuto = c.checked; renderChronicle(); }; return c; })(), ' inclure les moments détectés automatiquement'),
+    search, chronGame ? el('button', {textContent: '✕ toutes les parties', onclick: () => { chronGame = ''; renderChronicle(); }}) : '');
   const open = new Set([...document.querySelectorAll('#chronlist details[open]')].map(d => d.dataset.key));
-  const rows = CHRON.filter(c => !chronGame || c.game === chronGame);
+  const q = chronText.toLowerCase();
+  const rows = base.filter(c => (!chronKind || c.kind === chronKind) && (!q || (c.title + ' ' + (c.text || '')).toLowerCase().includes(q))).slice(0, 300);
   $('#chronlist').replaceChildren(...rows.map(c => {
-    const g = GAMES.find(x => x.id === c.game) || {};
-    const key = c.game + c.t;
+    const key = c.game + c.t + c.title;
     const d = el('details', {}, el('summary', {},
       el('span', {className: 'icon', textContent: ICON[c.kind] || '★'}),
-      el('span', {className: 'stars', textContent: '★'.repeat(c.importance || 1)}),
+      el('span', {className: 'stars', textContent: c.auto ? '⚙' : '★'.repeat(c.importance || 1), title: c.auto ? 'détecté automatiquement dans les messages du jeu' : 'noté par l’agent'}),
       el('span', {className: 'ti', textContent: c.title}),
-      el('span', {className: 'g', textContent: `${g.player || ''}${g.run ? ' run ' + g.run : ''} · T${c.turn ?? '?'} · Dlvl ${c.dlvl ?? '?'}`})),
+      el('span', {className: 'g', textContent: `Partie ${c.slot ?? '?'} · ${STYLE_FR[c.style] || c.style || ''} · T${c.turn ?? '?'}${c.dlvl != null ? ' · Dlvl ' + c.dlvl : ''} · ${fmtT(c.t)}`})),
       el('div', {className: 'body'}, el('p', {textContent: c.text || '—'}),
-        el('button', {textContent: '▶ Revoir ce moment', onclick: () => loadGame(c.game, Math.max(0, c.frame - 15))})));
+        el('button', {textContent: '▶ Revoir ce moment', onclick: () => loadGame(c.game, Math.max(0, c.frame - 15))}),
+        ' ', el('button', {textContent: 'Seulement cette partie', onclick: () => { chronGame = c.game; renderChronicle(); }})));
     d.dataset.key = key; if (open.has(key)) d.open = true; return d;
   }));
-  if (!rows.length) $('#chronlist').append(el('p', {className: 'kbd', textContent: 'Aucun évènement marquant enregistré.'}));
+  if (!rows.length) $('#chronlist').append(el('p', {className: 'kbd', textContent: 'Rien pour ce filtre.'}));
 }
 setInterval(() => VISIBLE() && TAB === 'dash' && refreshChronicle(), 20000);
 
@@ -1374,6 +1383,8 @@ setInterval(() => VISIBLE() && TAB === 'res' && refreshResources(), 60000);
 const _invCache = {};
 async function showInventory(node, gid) {
   if (!gid) { node.replaceChildren(); return; }
+  const tk = node.id + gid; if (_invCache['t' + tk] && Date.now() - _invCache['t' + tk] < 15000) return;
+  _invCache['t' + tk] = Date.now();
   let d;
   try { d = await api('/api/inventory?game=' + encodeURIComponent(gid)); } catch (e) { return; }
   if (!d.items || !d.items.length) {
