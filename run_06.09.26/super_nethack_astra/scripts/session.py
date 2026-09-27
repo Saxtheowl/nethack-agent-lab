@@ -205,6 +205,13 @@ def send(value, named=False, sensitive=False, publish=True):
     visible = (not (RUNTIME / 'broadcast.hidden').exists()) and not sensitive
     current = screen()
     hp_guard(current, value, named)
+    # "Really attack the <peaceful>?" : a loop answering y killed a shopkeeper
+    # (slot 3) and a priestess (slot 7). Only a deliberate --really may say yes.
+    if not named and value in ('y', 'Y') and 'Really attack' in current and not os.environ.get('NH_REALLY'):
+        cy = tmux('display-message', '-p', '-t', TARGET, '#{cursor_y}').stdout.strip()
+        if cy.isdigit() and int(cy) < 9:
+            raise HPAlarm('Refused: "Really attack?" is on screen (peaceful: shopkeeper, priest, watchman...). '
+                          'Answer n (or Escape). To really attack, resend with: keys --really y')
     before = current if visible else '[hidden for privacy]'
     command_id = uuid.uuid4().hex
     turn = re.search(r'\bT:(\d+)', before)
@@ -492,6 +499,7 @@ def main():
     keys.add_argument('--compact', action='store_true')
     keys.add_argument('--why', help='Brief public rationale, recorded before these inputs')
     keys.add_argument('--raw', action='store_true', help='Explicit bypass for menu input, recorded in the audit')
+    keys.add_argument('--really', action='store_true', help='Allow answering y to "Really attack?"')
     keys.add_argument('--settle', type=float, default=1,
                       help='Seconds to allow terminal animations to finish (0–10)')
     trav = sub.add_parser('travel', help='Travel command to screen cell x y')
@@ -525,6 +533,8 @@ def main():
     elif args.command == 'ack-hp':
         ack_hp()
     elif args.command == 'keys':
+        if getattr(args, 'really', False):
+            os.environ['NH_REALLY'] = '1'
         # tmux key names (Enter, Escape, C-m...) are not menu letters
         reason = None if args.named else pickup_guard(args.value, screen())
         if reason:

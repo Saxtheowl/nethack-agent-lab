@@ -74,6 +74,11 @@ below the last acknowledged level and is under 60% of max ("HP ALARM").
 Then: stop loops, read the screen, decide (pray if HP < 1/7 max, flee, heal),
 run `slots/N/session ack-hp`, and continue key by key. Never ack in a loop.
 
+## Peacefuls
+session.py refuses `y` while "Really attack?" is on screen (a loop killed a
+shopkeeper and a priestess). Answer n. Only a deliberate `keys --really y`
+attacks. Farlook every @ before fighting.
+
 ## Full inventory
 The right-hand inventory panel is cut after ~33 lines: long inventories are
 NOT fully visible there. `slots/N/inv` opens `i` (free action, no turn),
