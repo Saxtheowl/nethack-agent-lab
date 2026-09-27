@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/5/elb : engrave Elbereth in the dust (replacing), verify with ':'; up to 3 tries
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+for t in 1 2 3; do
+  $S keys --raw E- >/dev/null
+  $S screen | grep -q 'add to the current' && $S keys --raw n >/dev/null
+  $S screen | grep -q 'wipe out the message' && true
+  $S keys --raw Elbereth >/dev/null; $S keys --named Enter >/dev/null
+  for i in 1 2 3; do $S screen | grep -q -- '--More--\|>>' && $S keys --named Enter >/dev/null; done
+  o=$($S keys --compact :)
+  echo "$o" | grep -q 'You read: "Elbereth"' && { echo "ELBERETH OK"; $S screen --compact | grep -E '^34|^Map'; exit 0; }
+  echo "try $t: $(echo "$o" | grep -o 'You read: "[^"]*"')"
+done
+echo "FAILED"; exit 1

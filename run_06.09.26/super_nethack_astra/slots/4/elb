@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/4/elb : engrave Elbereth in the dust (fingers), then check it with ':'. Prints OK/BAD.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=4
+S="python3 scripts/session.py"
+$S keys --raw E- --settle .5 >/dev/null
+$S screen | grep -q 'Do you want to add to the current' && $S keys --raw n --settle .4 >/dev/null
+$S keys --raw Elbereth --settle .3 >/dev/null
+$S keys --named Enter --settle .8 >/dev/null
+$S keys --raw : --settle .5 >/dev/null
+if $S screen | grep -q 'You read: "Elbereth"'; then echo OK; else echo BAD; $S screen | grep -o 'You read: "[^"]*"' | tail -1; fi
+$S keys --named Escape --settle .3 >/dev/null
+$S screen --compact | grep -E '^34|^Map'

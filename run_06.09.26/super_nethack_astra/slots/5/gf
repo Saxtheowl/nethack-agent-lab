@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/5/gf GLYPHS MINHP [max]: attack an adjacent non-pet monster whose glyph is in GLYPHS, one blow per step,
+# re-reading the screen each time; stops if HP < MINHP, nothing adjacent, or after max blows.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+g="$1"; min="$2"; max="${3:-10}"
+for i in $(seq "$max"); do
+  o=$($S screen --compact)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [[ "$h" -lt "$min" ]] && { echo "STOP: HP $h < $min"; break; }
+  pets=$(echo "$o" | grep '^PETS')
+  nb=$(echo "$o" | grep '^Neighbors' | head -1)
+  d=$(echo "$nb" | grep -oE "[1-9]:[$g]\([0-9]+,[0-9]+\)" | while read x; do c=$(echo "$x" | grep -oE '[0-9]+,[0-9]+'); echo "$pets" | grep -q "$c" || echo "${x:0:1}"; done | head -1)
+  [[ -z "$d" ]] && { echo "nothing adjacent"; break; }
+  r=$($S keys --compact "F$d")
+  echo "F$d: $(echo "$r" | grep -E '^0[1-7] ' | tail -1 | cut -c5-80) $(echo "$r" | grep -o 'HP:[0-9]*' | head -1)"
+done
+$S screen --compact | grep -E '^34|^Map|^Neigh' | head -3

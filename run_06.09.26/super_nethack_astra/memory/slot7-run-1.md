@@ -5,15 +5,17 @@ Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, slot3-run-1.
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: T5237 Dlvl1 HP62(62) AC4 XL5, last prayer T4231 (lycanthropy) → next OK ~T5300-5500+.
-Wield a blessed very? rusty +1 long sword (2 dips ratés à D1 : rouille ; fountain D1 asséchée). Worn c +3 small shield, p orcish helm, t snow boots.
-Food: ~2 food rations (l), slime mold (u), lichen corpse (B). 2 orcish daggers (i), dagger b. Gems C-F (inconnues).
-Wands: q iridium = slow monster.
-Unknown: potions h white, r pink, v dark, w puce, x murky; rings m jade, o bronze (non maudit); scrolls f, j, z.
-Large dog LAISSÉ sur Dlvl 7 (level teleport trap sur D7 m'a envoyée sur D1 à T5071).
-Plan : redescendre, #dip aux fountains D4 26,18 puis D5 (17,26 / 62,13 / 75,18), D6 30,26 ; récupérer le dog D7.
-D1: '>' 11,16. D2: '>' 67,26, sink 52,19. D3: '>' 6,13, sink 68,14. D4: '<' 66,14, '>' Mines 38,23, '>' main 57,26.
-D5: '<' 29,22, '>' 16,27. D6: '<' 31,25, '>' 75,24. D7: '<' 56,14, level teleport trap vers 38,25 (salle SE), shop (cash register).
+URGENT: T6600 Mines Dlvl7 (MINETOWN) HP73(73) AC4 XL6, last prayer T4231 → prayer faim OK vers ~T7000+.
+Wield a: blessed rustproof +1 EXCALIBUR (T5535). Worn c +3 small shield, p +0 orcish helm, t +0 snow boots. Long sword Skilled.
+Food: 1 uncursed food ration (l), 1 tin (L). $49. FAIM = problème n°1 (Valkyrie ~1 nutrition/tour ; rations 1/7 pourries).
+Tout BUC-testé uncursed (altar neutre Minetown 37,17) : i 2 orcish daggers, b dagger ; scrolls f VE FORBRYDERNE, j PRATYAVAYAH, z ASHPD SODALG ;
+potions h white, r pink, w puce, x murky, J ruby ; ring o bronze ; wands q iridium (=slow monster), I oak (no engrave msg).
+Laissés sur l'altar : cursed dark potion, cursed jade ring. Gems C orange, D red, E 3 violet, F 2 white (non testées).
+Minetown (D7 Mines, 'Grotto-like', dwarf qui creuse) : temple Odin (neutre) 37,17 ; Morven clothing 44-47,19 (elven cloak 'faded pall' 107zm, wands maple 200, silver 267, forked 356) ;
+Tjiwidej deli 51-55,22-23 (food ration 60zm, dark potion 67). Mines '<' 70,15, '>' 14,14.
+Large dog laissé sur main Dlvl 7 (depuis T5071).
+D1 fountain asséchée. D2 sink 52,19. D3 sink 68,14. D4 '<' 66,14, Mines '>' 38,23, main '>' 57,26 (fountain D4 disparue).
+D5: '<' 29,22, '>' 16,27, fountains 17,26 62,13 75,18. D6: '<' 31,25, '>' 75,24, fountain 30,26. D7: '<' 56,14, level teleport trap vers 38,25.
 
 ## Lessons
 - Level teleport trap : invisible jusqu'à ce qu'on marche dessus ; le dog reste derrière.

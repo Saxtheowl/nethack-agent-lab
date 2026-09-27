@@ -26,6 +26,7 @@ for i in $(seq 40); do
   cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
   echo -n "$cur "
   [ -n "$prev" ] && [ "$cur" -lt "$prev" ] && { echo ATTACKED; break; }
+  echo "$o" | grep -qE 'Weak|Fainting' && { echo "HUNGER: eat or pray"; break; }
   prev=$cur
   [ $((cur * 100)) -ge $((max * target)) ] && { echo FULL; break; }
 done

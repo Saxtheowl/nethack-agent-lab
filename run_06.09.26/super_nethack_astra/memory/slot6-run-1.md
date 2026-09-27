@@ -5,15 +5,18 @@ Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, slot3-run-1.
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: T3832 Mines Dlvl11 (tombée par trap door depuis Minetown D8) XL5 HP50/54 AC3 $690, SANS familier
-(dog laissé Mines D6 ; magic whistle G pour le rappeler quand même niveau). Prayer faite T2826 (prochaine >= ~T3900-4000, idéalement T4000+).
-FAIM: ~150 nutrition, reste 1 tripe. Minetown D8: general store (Budereyri) avec fortune cookie 21zm, 2 slime molds 102zm,
-zinc wand 300zm (base 150/200) ; lighting shop 37-38,17-19 ; temple de Loki (chaotique) pas encore trouvé ; '>' 71,19.
-Portés: studded leather t, +3 small shield. Non testés: B dwarvish cloak, E iron shoes, D dagger (quiver) -> altar Minetown.
-Scrolls: u identify, v ASHPD SODALG (base 100), I VE FORBRYDERNE (base 50 ? = light?). Potions: q puce (base 50), r/H fizzy (base 100?), A brilliant blue.
-Spellbook purple vendu 263 (niveau 7). D4 Mines '>' 20,24 ; D5 = Oracle ; Sokoban '<' à trouver sur D4.
+URGENT: T5302 Minetown Dlvl8 XL6 HP60/60 AC1 $183, SANS familier (dog laissé Mines D6, whistle). Prayers T2826, T4203, T4957 (lycanthropie guérie) -> prochaine >= ~T6000.
+Food: 2 food rations, fortune cookie, tripe. Wand of teleportation R (0:2 après 1 zap).
+Portés: rotted studded leather, +3 small shield, blessed iron shoes, dwarvish cloak. Manquent: helm, gloves.
+Minetown (variante grotte, beaucoup d'undead: elf zombies, human mummy téléportée) : temple Loki (chaotique) altar 56,26 porte 51,26 ;
+deli 43-45,25-26 (egg 14) ; general store 44-46,14-16 ; lighting shop 37-38,17-19 ; '>' 71,19 ; '<' PAS ENCORE TROUVÉ. Gray unicorn hostile rôde (NE PAS attaquer).
+Scrolls: v ASHPD SODALG (base 100, uncursed), I VE FORBRYDERNE (base 50?). Potions: fizzy (1 blessed, 1 uncursed), puce, brilliant blue, clear=water.
+D4 Mines '>' 20,24 ; D5 = Oracle ; Sokoban '<' à trouver sur D4. D10: dwarvish mithril-coat à 38,21.
 
 ## Lessons
+- NE PAS attaquer un gray unicorn au XL5 (butt+kick, speed 24) : 54 -> 16 HP en quelques tours.
+- Elbereth en poussière s'use aussi quand les monstres fuient (observé 3.6.7) : scripts/rest le réécrit.
+- explore --all continue même quand '<' est visible : en fuite, utiliser t X Y directement.
 - Mines: trap doors fréquentes (3 chutes !). explore/travel marchent dessus : pas de parade sauf chercher (s) ; garder le whistle pour le chien.
 - Pour tester le curse par le chien, il doit marcher DESSUS : peut prendre des dizaines de tours ; sinon altar.
 - Red mold: son feu passif touche même quand on RATE (−8 HP). Ne l'attaquer que HP pleins ; tuer à distance si possible.
