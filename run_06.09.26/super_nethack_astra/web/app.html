@@ -1232,10 +1232,12 @@ async function showStyleFile(path) {
 async function refreshStyles() {
   let S; try { S = await api('/api/styles'); } catch (e) { return; }
   const P = S.plan, done = P.history || [];
-  const steps = [...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
-    ...(P.queue || []).map((st, i) => el('div', {className: 'planstep ' + (i === 0 ? 'next' : '')}, el('span', {className: 'n', textContent: done.length + i + 1}),
-      i === 0 ? 'À la prochaine mort d’un emplacement, il passera en ' : 'À la mort suivante (autre emplacement), il passera en ', tag(st), st === 'wish_abuser' ? ' (jamais la partie 1, qui reste Tariru)' : ''))];
-  if (!(P.queue || []).length) steps.push(el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: '∞'}), 'Chaque emplacement garde son style à la mort suivante.'));
+  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), `Objectif : ${S.target} parties par style. Aujourd’hui : `,
+      ...Object.entries(S.counts).map(([st, n]) => el('span', {style: 'margin-right:8px'}, tag(st), ` ${n}/${S.target}`))),
+    ...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
+    ...(S.forecast || []).map((f, i) => el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: done.length + i + 1}),
+      'À la prochaine mort d’un emplacement ', tag(f.from), ', il passera en ', tag(f.to)))];
+  if (!(S.forecast || []).length) steps.push(el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: '∞'}), 'Équilibre atteint : chaque emplacement garde son style à la mort suivante.'));
   $('#splan').replaceChildren(...steps,
     el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Les parties en cours ne changent jamais de style. Un emplacement qui meurt garde ensuite son style (collant). Styles actuels : ' +
       Object.entries(S.slots).map(([k, v]) => `P${k} ${STYLE_FR[v] || v || '—'}`).join(' · ')}));

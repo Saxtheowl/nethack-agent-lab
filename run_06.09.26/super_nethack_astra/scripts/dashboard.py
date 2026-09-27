@@ -439,7 +439,23 @@ def styles():
     for name, st in reg['styles'].items():
         st['slots'] = [s for s, v in slots.items() if v and v.get('style') == name]
         st['stats'] = per.get(name, {})
+    import next_style
+    cur = {s: (v or {}).get('style') for s, v in slots.items()}
+    counts = {st: sum(1 for v in cur.values() if v == st) for st in next_style.ORDER}
+    forecast, sim = [], dict(cur)
+    for _ in range(8):  # next deaths of slots in surplus, in order
+        moved = False
+        for s in sorted(sim, key=lambda x: (x == '1', x)):
+            to = next_style.choose(s, sim)
+            if to != sim[s]:
+                forecast.append({'from': sim[s], 'to': to})
+                sim[s] = to
+                moved = True
+                break
+        if not moved:
+            break
     return {'styles': reg['styles'], 'plan_rules': reg['plan_rules'], 'plan': plan,
+            'counts': counts, 'target': next_style.TARGET, 'forecast': forecast,
             'slots': {s: (v or {}).get('style') for s, v in slots.items()}, 'wish': wish_status()}
 
 
