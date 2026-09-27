@@ -177,6 +177,11 @@ def hp_guard(text, value, named):
         base = max(hp, base) if st.get('max') else hp
     if hp > base:
         base = hp
+    # a counted rest/search (n20s...) passes many turns in ONE command: nothing
+    # can stop it in between, so it is refused when already hurt
+    if not named and re.match(r'^n?\d{2,}[s.]$', value or '') and hp < mx * 0.7:
+        raise HPAlarm(f'Counted rest {value!r} refused at HP {hp}({mx}) (< 70%): a monster can hit you for '
+                      'the whole count. Rest one turn at a time (s) with an HP check, or get safe first.')
     tripped = st.get("tripped", False) or (hp <= base - mx / 5 and hp < mx * 0.6)
     HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped}))
     if tripped and not (named and value == 'Escape'):
