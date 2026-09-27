@@ -4,7 +4,7 @@ cd "$(dirname "$0")/../.."
 export NH_SLOT=5
 S="python3 scripts/session.py"
 for t in 1 2 3; do
-  $S keys --raw E- >/dev/null
+  $S keys --raw E- >/dev/null; $S screen | grep -q "write in the dust\|add to the current\|Do you want to add" || { echo "ENGRAVE PROMPT MISSING"; $S keys --named Escape >/dev/null; exit 2; }
   $S screen | grep -q 'add to the current' && $S keys --raw n >/dev/null
   $S screen | grep -q 'wipe out the message' && true
   $S keys --raw Elbereth >/dev/null; $S keys --named Enter >/dev/null

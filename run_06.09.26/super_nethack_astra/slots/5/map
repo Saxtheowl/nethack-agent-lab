@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/5/map : print map rows 11-31 cols 0-80 cleanly with x ruler
+cd "$(dirname "$0")/../.."
+NH_SLOT=5 python3 - <<'PY'
+import sys; sys.path.insert(0,'scripts')
+import session
+rows = session.screen().splitlines()
+print('   ' + ''.join(str(i//10) for i in range(80)))
+print('   ' + ''.join(str(i%10) for i in range(80)))
+for y in range(11, 32):
+    r = rows[y] if y < len(rows) else ''
+    print(f'{y:2d} ' + r[:80])
+PY

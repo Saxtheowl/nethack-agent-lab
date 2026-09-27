@@ -5,9 +5,12 @@ Lire aussi les « Lessons » de memory/run-1..run-4, slot2-run-1, slot3-run-1.
 Jamais de boucle qui passe des tours sans vérifier les HP (waitpet, rest, explore).
 
 ## Current state
-URGENT: T6600 Mines Dlvl7 (MINETOWN) HP73(73) AC4 XL6, last prayer T4231 → prayer faim OK vers ~T7000+.
-Wield a: blessed rustproof +1 EXCALIBUR (T5535). Worn c +3 small shield, p +0 orcish helm, t +0 snow boots. Long sword Skilled.
-Food: 1 uncursed food ration (l), 1 tin (L). $49. FAIM = problème n°1 (Valkyrie ~1 nutrition/tour ; rations 1/7 pourries).
+URGENT: T7835 Dlvl7 (main) HP66(73) AC4 XL6, last prayer T6920 (faim) → next OK ~T8000+.
+Wield a: blessed rustproof +1 EXCALIBUR. Worn c +3 small shield, p +0 orcish helm, t +0 snow boots. Long sword Skilled. TELEPATHY (floating eye T7144).
+Food: 1 uncursed food ration (l). Spinach mangé T7700 (St 18/07). $4. Con 17 (rabid rat).
+Sky blue potion = gain level (vu un leprechaun la boire).
+Large dog laissé sur D7 (côté est, pièce 50-59,25-29) — abandonné, trop coûteux à ramener.
+D7 : '>' 3,17 (ouest), teleportation trap 58,26 (utile pour rejoindre l'ouest).
 Tout BUC-testé uncursed (altar neutre Minetown 37,17) : i 2 orcish daggers, b dagger ; scrolls f VE FORBRYDERNE, j PRATYAVAYAH, z ASHPD SODALG ;
 potions h white, r pink, w puce, x murky, J ruby ; ring o bronze ; wands q iridium (=slow monster), I oak (no engrave msg).
 Laissés sur l'altar : cursed dark potion, cursed jade ring. Gems C orange, D red, E 3 violet, F 2 white (non testées).
@@ -18,7 +21,7 @@ D1 fountain asséchée. D2 sink 52,19. D3 sink 68,14. D4 '<' 66,14, Mines '>' 38
 D5: '<' 29,22, '>' 16,27, fountains 17,26 62,13 75,18. D6: '<' 31,25, '>' 75,24, fountain 30,26. D7: '<' 56,14, level teleport trap vers 38,25.
 
 ## Lessons
-- Level teleport trap : invisible jusqu'à ce qu'on marche dessus ; le dog reste derrière.
+- Level teleport trap (3.6.7) : disparaît après usage (deltrap dans level_tele_trap) ; le dog reste derrière.
 - Rothe : 3 attaques, jusqu'à 14/tour ; Elbereth dès la moitié des HP (il le respecte).
 - Were (jackal/rat) en forme animale : morsure = lycanthropy (prayer la guérit). En forme @ : le tuer vite.
 - `grab '('` ramasse aussi les coffres (chest 600 poids → Burdened) : ne jamais grab '(' sans farlook.

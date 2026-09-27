@@ -1,0 +1,5 @@
+#!/bin/bash
+# slots/8/sk X Y PUSHES [extra]: plan+execute a Sokoban push sequence (scripts/sokoban.py, checked steps).
+export NH_SLOT=8
+cd "$(dirname "$0")/../.."
+python3 slots/8/sokoban8.py "$1" "$2" "$3" --execute --max-steps 50 "${@:4}" 2>&1 | grep -E "^\{|STOP|Checked|Error|assert|^0[5-7]|HP:|^Map"

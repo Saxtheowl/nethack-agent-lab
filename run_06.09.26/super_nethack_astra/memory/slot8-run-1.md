@@ -10,7 +10,9 @@ Wield a Excalibur (skilled long sword). Worn: c +3 small shield, x elven mithril
 Food: I lichen corpse, P 2 tripe rations. Hunger is the main problem: eat every safe corpse.
 Escape: v brass wand (tele/cancel/invis). q slow monster, y secret door det (several charges used), R light.
 Pet: large dog. Daggers b, w, orcish U to throw. V ornamental cope = PROBABLY CURSED (dog avoided it 30 turns) - do not wear until uncursed. T orcish helm spare.
-Oracle D7: '<' 57,14, '>' 65,22. Next: D8 has Sokoban '<'.
+Oracle D7: '<' 57,14, '>' 65,22.
+D8: '<' 41,25 (from D7), SOKOBAN '<' 19,14, fountain 47,16, boulder stuck 60,13; iron shoes carried by the dog somewhere.
+X unicorn horn (BUC unknown, from gray unicorn kill T6679).
 
 - D1: fountain 75,23; '>' 72,13. D2: '<' 36,14, main '>' 55,14, MINES '>' 13,17; fountain 33,28.
 - Mines: D3 '>' 9,27; D4 '<' 69,15 '>' 52,25; D5 '<' 32,27 '>' 30,18.
