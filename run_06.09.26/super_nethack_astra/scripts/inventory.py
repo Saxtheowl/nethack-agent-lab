@@ -17,21 +17,34 @@ import session
 ITEM = re.compile(r'(?:^|[│ ])\s?([a-zA-Z$#])\) (.+?)\s*(?:│|$)')
 CLASS = re.compile(r'[│ ](Coins|Amulets|Weapons|Armor|Comestibles|Scrolls|Spellbooks|Potions|Rings|Wands|Tools|'
                    r'Gems/Stones|Boulders/Statues|Iron balls|Chains|Venoms|Other)\s*│')
+CLASS_ORDER = ['Coins', 'Amulets', 'Weapons', 'Armor', 'Comestibles', 'Scrolls', 'Spellbooks', 'Potions', 'Rings',
+               'Wands', 'Tools', 'Gems/Stones', 'Boulders/Statues', 'Iron balls', 'Chains', 'Venoms', 'Other']
 PAGE = re.compile(r'\((?:Page )?(\d+) of (\d+)\)')
 
 
 def parse(text, items, order):
-    cls = None
-    for line in text.splitlines():
-        # the `i` menu sits left of the permanent panel: read the menu part first
-        for part in line.split('││'):
+    """Read the `i` menu (left of the permanent panel) and the panel itself in
+    two separate passes, so their class headers never mix. Menu text wins."""
+    lines = text.splitlines()
+    for which in ('menu', 'panel'):
+        cls = None
+        for line in lines:
+            parts = line.split('││')
+            if which == 'menu':
+                part = parts[0]
+            elif len(parts) > 1:
+                part = parts[-1]
+            else:
+                continue
             c = CLASS.search('│' + part + '│')
             if c:
                 cls = c[1]
             for m in ITEM.finditer(part):
                 letter, name = m[1], m[2].strip()
-                if len(name) > len(items.get(letter, {}).get('name', '')):
-                    items[letter] = {'letter': letter, 'name': name, 'class': cls or items.get(letter, {}).get('class')}
+                old = items.get(letter)
+                if old is None or (which == 'menu' and old['src'] == 'panel') or (
+                        old['src'] == which and len(name) > len(old['name'])):
+                    items[letter] = {'letter': letter, 'name': name, 'class': cls, 'src': which}
                 if letter not in order:
                     order.append(letter)
 
@@ -56,7 +69,8 @@ def main():
     if PAGE.search(session.screen()):
         session.send('Escape', named=True, publish=False)
     out = {'t': time.time(), 'turn': int(turn[1]) if turn else None,
-           'items': [items[k] for k in order if k in items]}
+           'items': sorted(({k: v for k, v in items[x].items() if k != 'src'} for x in order if x in items),
+                           key=lambda it: (CLASS_ORDER.index(it['class']) if it['class'] in CLASS_ORDER else 99))}
     try:
         info = json.loads(session.SLOTFILE.read_text())
         (frames.GAMES / info['game_id'] / 'inventory.json').write_text(json.dumps(out, ensure_ascii=False))
