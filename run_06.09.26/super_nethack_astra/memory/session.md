@@ -39,7 +39,7 @@ PURE rules — never break them:
   events, HP/depth chart, bookmarks, lessons, history of all games).
 - `chronicle --importance 1-3 --kind item|monster|danger|progress|decision|death "Titre" "Explication"` (scripts/chronicle.py or slots/N/chronicle) = truly important moments, expandable on the dashboard; also feeds the "3 moments clés des 1000 derniers tours".
 - `say "texte"` (scripts/say or slots/N/say) = public AI commentary, shown live
-  and as replay captions. Use it at every real decision, in French (but keep original English NetHack names for items and monsters: "plate mail", "master mind flayer", "wand of digging"...).
+  and as replay captions. Use it at every real decision, in French (but keep original English NetHack names for items and monsters: "plate mail", "master mind flayer", "wand of digging"..., and HP, Dlvl N, T1234, XL, AC, altar, fountain, shop, trap). scripts/nh_terms.py normalizes old texts.
 - Old ttyrecs can be imported: scripts/import_ttyrec.py <ttyrec> <game_id>.
 
 ## Controls
