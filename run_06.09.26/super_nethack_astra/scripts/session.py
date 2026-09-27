@@ -399,6 +399,12 @@ def travel(x, y, confirm=True):
     turn = re.search(r'T:(\d+)', screen())
     audit.publish('command', f'travel → {x},{y}', label='déplacement', game_turn=int(turn[1]) if turn else None)
     time.sleep(1.5)
+    # a travel prompt left open (unreachable target...) would swallow the next
+    # key: close it (Escape is harmless on the map)
+    if 'Where do you want to travel to' in screen() and tmux(
+            'display-message', '-p', '-t', TARGET, '#{cursor_y}').stdout.strip() not in ('', '0'):
+        send('Escape', named=True, publish=False)
+        time.sleep(.3)
     print_screen(True)
 
 
