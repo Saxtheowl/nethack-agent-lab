@@ -1,0 +1,10 @@
+#!/bin/bash
+# scripts/grab [glyphs]: travel to every visible item with these glyphs (default $)
+# and pick it up (',' ; menus are left open for review if several objects).
+cd "$(dirname "$0")/.."
+g="${1:-\$}"
+for p in $(python3 scripts/session.py screen --compact | grep '^Map' | grep -oE " [$g]@[0-9]+,[0-9]+" | sed 's/.*@//'); do
+  scripts/t ${p%,*} ${p#*,} >/dev/null
+  python3 scripts/session.py keys , --settle .5 >/dev/null
+  python3 scripts/session.py screen | sed -n '2,8p' | grep -v 'travel to' | tail -1 | cut -c1-80
+done

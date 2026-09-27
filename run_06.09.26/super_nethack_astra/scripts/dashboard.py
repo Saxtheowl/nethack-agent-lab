@@ -119,15 +119,15 @@ def highlights(gid, window=1000, count=3):
         if prev:
             if dlvl != prev[1]:
                 if depth > maxdepth:
-                    evs.append((35, i, t, turn, 'progress', f'Nouveau record : niveau {dlvl}', ''))
+                    evs.append((35, i, t, turn, 'progress', f'Nouveau record : Dlvl {dlvl}', ''))
                 else:
-                    evs.append((8, i, t, turn, 'progress', f'Niveau {dlvl}', ''))
+                    evs.append((8, i, t, turn, 'progress', f'Dlvl {dlvl}', ''))
             if xl > prev[4]:
-                evs.append((20 + xl, i, t, turn, 'progress', f"Niveau d'expérience {xl}", ''))
+                evs.append((20 + xl, i, t, turn, 'progress', f'XL {xl}', ''))
             if hp <= hpmax / 3 < prev[2]:
-                evs.append((45, i, t, turn, 'danger', f'Danger : {hp}/{hpmax} PV', ''))
+                evs.append((45, i, t, turn, 'danger', f'Danger : HP {hp}({hpmax})', ''))
             elif prev[2] - hp >= max(5, hpmax / 4):
-                evs.append((25, i, t, turn, 'danger', f'Gros coup encaissé : −{prev[2] - hp} PV', ''))
+                evs.append((25, i, t, turn, 'danger', f'Gros coup encaissé : HP −{prev[2] - hp}', ''))
         maxdepth = max(maxdepth, depth)
         prev = s
     for c in chronicle(gid):

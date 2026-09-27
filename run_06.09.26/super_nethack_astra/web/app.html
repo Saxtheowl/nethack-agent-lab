@@ -204,7 +204,7 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
         <span class="pos" id="rpos"></span>
       </div>
       <div class="charts"><svg id="chart" viewBox="0 0 1000 90" preserveAspectRatio="none"></svg>
-        <div class="kbd"><span style="color:#7ddc6f">━</span> PV %  <span style="color:var(--blue)">━</span> profondeur  — clic pour aller à l'instant</div></div>
+        <div class="kbd"><span style="color:#7ddc6f">━</span> HP %  <span style="color:var(--blue)">━</span> Dlvl  — clic pour aller à l'instant</div></div>
     </div>
     <div class="side">
       <div class="panel"><h2>À cet instant</h2><div class="stats" id="rstats"></div><div class="caption" id="rcap" style="margin-top:8px"></div></div>
@@ -221,7 +221,7 @@ select { background: var(--panel2); border: 1px solid var(--line); border-radius
 
   <div class="panel">
     <h2>Toutes les parties</h2>
-    <table><thead><tr><th>Partie</th><th>Début</th><th>État</th><th>Tours</th><th>Prof. max</th><th>XL</th><th>Points</th><th>Cause / résumé</th><th></th></tr></thead>
+    <table><thead><tr><th>Partie</th><th>Début</th><th>État</th><th>T</th><th>Dlvl max</th><th>XL</th><th>Points</th><th>Cause / résumé</th><th></th></tr></thead>
     <tbody id="hist"></tbody></table>
   </div>
 </section>
@@ -306,8 +306,8 @@ function slotButtons() {
 function statsHTML(node, m) {
   node.textContent = '';
   const add = (l, v) => node.append(el('span', {}, l + ' ', el('b', {textContent: v ?? '—'})));
-  add('Niveau', m.dlvl); add('Tour', m.turn); add('XL', m.xl); add('CA', m.ac); add('PV', m.hp != null ? `${m.hp}/${m.hpmax}` : null);
-  if (m.maxdepth) add('Prof. max', m.maxdepth);
+  add('Dlvl', m.dlvl); add('T', m.turn); add('XL', m.xl); add('AC', m.ac); add('HP', m.hp != null ? `${m.hp}(${m.hpmax})` : null);
+  if (m.maxdepth) add('Dlvl max', m.maxdepth);
 }
 function hpWidth(node, m) { const p = m.hpmax ? Math.max(0, Math.min(1, m.hp / m.hpmax)) : 0; node.style.width = (p * 100) + '%'; node.classList.toggle('low', p < .34); }
 async function pollLive() {
@@ -351,10 +351,10 @@ function renderCards() {
     if (!card) {
       card = el('div', {className: 'panel card', title: 'Cliquer : les 3 moments clés des 1000 derniers tours'}); card.dataset.slot = s;
       card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
-        <div class="kpis"><div class="kpi"><div class="v dl"></div><div class="l">Niveau</div></div>
-          <div class="kpi"><div class="v tu"></div><div class="l">Tour</div></div>
+        <div class="kpis"><div class="kpi"><div class="v dl"></div><div class="l">Dlvl</div></div>
+          <div class="kpi"><div class="v tu"></div><div class="l">T</div></div>
           <div class="kpi"><div class="v xl"></div><div class="l">XL</div></div>
-          <div class="kpi hp"><div class="v hpv"></div><div class="l">Points de vie</div></div></div>
+          <div class="kpi hp"><div class="v hpv"></div><div class="l">HP</div></div></div>
         <div class="hpbar"><i></i></div>
         <div class="headline"></div>
         <div class="term mini"></div><div class="say"></div>
@@ -377,7 +377,7 @@ function renderCards() {
     card.querySelector('.tu').textContent = m.turn != null ? m.turn.toLocaleString('fr-FR') : '—';
     card.querySelector('.xl').textContent = m.xl ?? '—';
     const hv = card.querySelector('.hpv'), p = m.hpmax ? m.hp / m.hpmax : 1;
-    hv.textContent = m.hp != null ? `${m.hp}/${m.hpmax}` : '—'; hv.className = 'v hpv ' + (p < .34 ? 'low' : p < .67 ? 'mid' : 'ok');
+    hv.textContent = m.hp != null ? `${m.hp}(${m.hpmax})` : '—'; hv.className = 'v hpv ' + (p < .34 ? 'low' : p < .67 ? 'mid' : 'ok');
     hpWidth(card.querySelector('.hpbar i'), m);
     if (meta) api('/api/highlights?game=' + encodeURIComponent(meta.id) + '&window=1000&count=1').then(h => {
       const last = (h.highlights || [])[0];
@@ -403,11 +403,11 @@ async function openMoments(gid) {
   $('#modal').classList.remove('hidden');
   let h;
   try { h = await api('/api/highlights?game=' + encodeURIComponent(gid) + '&window=1000&count=3'); } catch (e) { box.append(el('p', {textContent: 'Erreur de chargement.'})); return; }
-  box.querySelector('.sub').textContent = `Les 3 évènements les plus importants des tours ${Math.max(0, h.last_turn - 1000)} à ${h.last_turn}`;
+  box.querySelector('.sub').textContent = `Les 3 évènements les plus importants de T${Math.max(0, h.last_turn - 1000)} à T${h.last_turn}`;
   if (!h.highlights.length) box.append(el('p', {textContent: 'Rien de marquant pour l’instant.'}));
   for (const e of h.highlights) {
     box.append(el('div', {className: 'moment'},
-      el('div', {className: 't'}, el('span', {className: 'icon', textContent: ICON[e.kind] || '★'}), el('b', {textContent: e.title}), el('span', {className: 'when', textContent: `tour ${e.turn ?? '?'} · ${fmtT(e.t)}`})),
+      el('div', {className: 't'}, el('span', {className: 'icon', textContent: ICON[e.kind] || '★'}), el('b', {textContent: e.title}), el('span', {className: 'when', textContent: `T${e.turn ?? '?'} · ${fmtT(e.t)}`})),
       e.text ? el('p', {textContent: e.text}) : el('p', {className: 'kbd', textContent: '(détecté automatiquement)'}),
       el('button', {textContent: '▶ Revoir ce moment', onclick: () => { closeModal(); loadGame(gid, Math.max(0, e.frame - 15)); }})));
   }
@@ -438,7 +438,7 @@ function renderChronicle() {
       el('span', {className: 'icon', textContent: ICON[c.kind] || '★'}),
       el('span', {className: 'stars', textContent: '★'.repeat(c.importance || 1)}),
       el('span', {className: 'ti', textContent: c.title}),
-      el('span', {className: 'g', textContent: `${g.player || ''}${g.run ? ' run ' + g.run : ''} · T${c.turn ?? '?'} · niv. ${c.dlvl ?? '?'}`})),
+      el('span', {className: 'g', textContent: `${g.player || ''}${g.run ? ' run ' + g.run : ''} · T${c.turn ?? '?'} · Dlvl ${c.dlvl ?? '?'}`})),
       el('div', {className: 'body'}, el('p', {textContent: c.text || '—'}),
         el('button', {textContent: '▶ Revoir ce moment', onclick: () => loadGame(c.game, Math.max(0, c.frame - 15))})));
     d.dataset.key = key; if (open.has(key)) d.open = true; return d;
@@ -452,8 +452,8 @@ function renderTiles() {
   const tiles = [
     ['Parties', GAMES.length], ['En direct', GAMES.filter(g => g.status === 'live').length],
     ['Morts', GAMES.filter(g => g.status === 'dead').length],
-    ['Profondeur max', Math.max(0, ...GAMES.map(g => g.maxdepth || g.maxlvl || 0))],
-    ['Tours joués (total)', GAMES.reduce((a, g) => a + (g.turns || g.turn || 0), 0).toLocaleString('fr-FR')],
+    ['Dlvl max', Math.max(0, ...GAMES.map(g => g.maxdepth || g.maxlvl || 0))],
+    ['T joués (total)', GAMES.reduce((a, g) => a + (g.turns || g.turn || 0), 0).toLocaleString('fr-FR')],
   ];
   $('#tiles').replaceChildren(...tiles.map(([l, v]) => el('div', {className: 'tile'}, el('div', {className: 'v', textContent: v}), el('div', {className: 'l', textContent: l}))));
 }
@@ -508,10 +508,10 @@ function computeDerived(from) {
     R.ctSkip = R.ctSkip || []; R.ctSkip[i] = (i ? R.ctSkip[i - 1] : 0) + Math.min(dt, 1.2);
     const s = R.status[i], p = i ? R.status[i - 1] : null;
     if (s && p) {
-      if (s[1] !== p[1]) R.events.push({f: i, type: 'level', label: `Arrivée niveau ${s[1]} (T${s[0]})`});
-      if (s[4] > p[4]) R.events.push({f: i, type: 'xl', label: `Niveau d'expérience ${s[4]}`});
-      if (s[2] <= s[3] / 3 && p[2] > p[3] / 3) R.events.push({f: i, type: 'danger', label: `Danger : PV ${s[2]}/${s[3]}`});
-      else if (p[2] - s[2] >= Math.max(5, s[3] / 4)) R.events.push({f: i, type: 'hit', label: `Gros coup : −${p[2] - s[2]} PV`});
+      if (s[1] !== p[1]) R.events.push({f: i, type: 'level', label: `Dlvl ${s[1]} (T${s[0]})`});
+      if (s[4] > p[4]) R.events.push({f: i, type: 'xl', label: `XL ${s[4]}`});
+      if (s[2] <= s[3] / 3 && p[2] > p[3] / 3) R.events.push({f: i, type: 'danger', label: `Danger : HP ${s[2]}(${s[3]})`});
+      else if (p[2] - s[2] >= Math.max(5, s[3] / 4)) R.events.push({f: i, type: 'hit', label: `Gros coup : HP −${p[2] - s[2]}`});
     }
     const msg = f.r['1'] || f.r['2'] || f.r['3'];
     if (msg) {
@@ -656,7 +656,7 @@ async function loadWhy(gid) {
   let text = '';
   try { text = (await api('/api/journal?game=' + encodeURIComponent(gid))).text; } catch (e) {}
   box.textContent = '';
-  if (m.death) box.append(el('h3', {textContent: '☠ ' + m.death + (m.turns ? ` — tour ${m.turns}` : '')}));
+  if (m.death) box.append(el('h3', {textContent: '☠ ' + m.death + (m.turns ? ` — T${m.turns}` : '')}));
   if (m.cause_summary) box.append(el('p', {textContent: m.cause_summary}));
   const sections = text.split(/^## /m).slice(1).filter(s => /^(DEATH|Lessons|Leçons|Current state)/i.test(s));
   for (const sec of sections) {
