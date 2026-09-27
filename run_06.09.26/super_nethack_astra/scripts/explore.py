@@ -92,6 +92,50 @@ def nearest(rows, start, dead):
     return best[1], path[::-1]
 
 
+def open_a_door(st, dead):
+    """Go next to the nearest reachable closed door ('+') and open it
+    (kick when locked, a few tries). Returns True if something was attempted."""
+    rows, start = st['rows'], st['position']
+    seen = {start}
+    todo = collections.deque([start])
+    keys = {(0, -1): '8', (1, 0): '6', (0, 1): '2', (-1, 0): '4'}
+    while todo:
+        cx, cy = todo.popleft()
+        for (dx, dy), k in keys.items():
+            nx, ny = cx + dx, cy + dy
+            if tile(rows, nx, ny) == '+' and is_door(rows, nx, ny) and f'd{nx},{ny}' not in dead:
+                dead.add(f'd{nx},{ny}')
+                with open('/dev/null', 'w') as sink:
+                    old, sys.stdout = sys.stdout, sink
+                    try:
+                        if (cx, cy) != start:
+                            session.travel(cx, cy)
+                    finally:
+                        sys.stdout = old
+                for _ in range(6):
+                    session.send(k)
+                    time.sleep(.6)
+                    text = session.screen()
+                    if 'This door is locked' in text:
+                        session.send('k')  # kick
+                        time.sleep(.3)
+                        session.send(k)
+                        time.sleep(.8)
+                    now = guard.state(*guard.observe(session))
+                    if now is None or tile(now['rows'], nx, ny) != '+':
+                        break
+                return True
+        for dx, dy in DIRS:
+            nx, ny = cx + dx, cy + dy
+            if (nx, ny) in seen or not walkable(rows, nx, ny) or tile(rows, nx, ny).isalpha():
+                continue
+            if dx and dy and (is_door(rows, cx, cy) or is_door(rows, nx, ny)):
+                continue
+            seen.add((nx, ny))
+            todo.append((nx, ny))
+    return False
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--steps', type=int, default=6)
@@ -111,12 +155,19 @@ def main():
     dead = set(data.get(str(level), []))
     fails = {}
     hp0 = st['hp']
+    if st['hp'] * 10 < st['max_hp'] * 6:
+        print('explore stop: HP below 60% — rest first (Elbereth + search)')
+        session.print_screen(True)
+        return
     known_down = sum(r[1:80].count('>') for r in st['rows'][10:31])
     reason = 'step budget used'
     for _ in range(args.steps):
         rows = st['rows']
         target, path = nearest(rows, st['position'], dead)
         if target is None:
+            if open_a_door(st, dead):
+                st = guard.state(*guard.observe(session)) or st
+                continue
             reason = 'no reachable frontier left'
             break
         before = st['position']
