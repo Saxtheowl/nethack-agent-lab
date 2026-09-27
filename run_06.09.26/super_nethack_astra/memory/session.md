@@ -3,6 +3,8 @@
 Styles (user decision 2026-09-27): slot 1 ALWAYS plays memory/tariru-style.md.
 Slots 2 and 3 play tariru-style.md in their current game, but after a DEATH
 they restart in the original Astra method: memory/astra-style.md (no BotHack).
+Slots 4 and 5 (added 2026-09-27, player Claude4/Claude5, wrappers slots/4, slots/5)
+play the Astra style from the start.
 Read the style file of your slot before playing.
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
@@ -22,7 +24,7 @@ PURE rules — never break them:
   running process (RNG, unknown map): never.
 - Helper scripts allowed and encouraged (guard, route, sokoban) as for Astra.
 
-## Slots (3 games at once, since 2026-09-27)
+## Slots (5 games at once since 2026-09-27; 3 before)
 
 - Slot 1 = player Claude (journal memory/run-N.md), played by the main session.
 - Slot 2 = Claude2 (memory/slot2-run-N.md), slot 3 = Claude3 (memory/slot3-run-N.md).

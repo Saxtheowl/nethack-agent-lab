@@ -1,0 +1,4 @@
+#!/bin/bash
+export NH_SLOT=4
+cd "$(dirname "$0")/../.."
+exec python3 scripts/explore.py "$@"
