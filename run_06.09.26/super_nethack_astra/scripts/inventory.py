@@ -27,7 +27,8 @@ def parse(text, items, order):
     two separate passes, so their class headers never mix. Menu text wins."""
     lines = text.splitlines()
     for which in ('menu', 'panel'):
-        cls = None
+        # a new menu page continues the class of the previous page
+        cls = parse.last_menu_cls if which == 'menu' else None
         for line in lines:
             parts = line.split('││')
             if which == 'menu':
@@ -47,6 +48,11 @@ def parse(text, items, order):
                     items[letter] = {'letter': letter, 'name': name, 'class': cls, 'src': which}
                 if letter not in order:
                     order.append(letter)
+        if which == 'menu':
+            parse.last_menu_cls = cls
+
+
+parse.last_menu_cls = None
 
 
 def main():
