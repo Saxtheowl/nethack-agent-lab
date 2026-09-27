@@ -1,0 +1,60 @@
+#!/bin/bash
+# slots/1/shoot GLYPH [max]: if a GLYPH monster is in a straight line within 7
+# squares and nothing blocks the view line on the map, throw the quivered item at it
+# (f + dir). Adjacent -> melee (F), unless NOMELEE=1 (acid/passive monsters). Otherwise wait one turn. Stops on HP<50%.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+g="$1"; max="${2:-6}"; MELEEONLY="$3"
+for i in $(seq "$max"); do
+  out=$(python3 scripts/session.py screen --compact)
+  act=$(MELEEONLY="$MELEEONLY" python3 - "$g" "$out" <<'PY'
+import re, sys
+g, out = sys.argv[1], sys.argv[2]
+hp = re.search(r'HP:(\d+)\((\d+)\)', out)
+if int(hp[1])*2 < int(hp[2]): print('lowhp'); sys.exit()
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+nb = re.search(r'Terminal cursor \(x,y[^)]*\): (\d+),(\d+)', out)
+hx, hy = int(nb[1]), int(nb[2])
+K = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+best=None
+for x, y in re.findall(' ' + re.escape(g) + r'@(\d+),(\d+)', m):
+    if f'{x},{y}' in pets: continue
+    dx, dy = int(x)-hx, int(y)-hy
+    d = max(abs(dx), abs(dy))
+    if d == 0: continue
+    if dx and dy and abs(dx) != abs(dy): continue
+    if d > 7: continue
+    sx, sy = (dx>0)-(dx<0), (dy>0)-(dy<0)
+    occ = set((int(a), int(b)) for a, b in re.findall(r' [A-Za-z@&;:\'](?=@)@(\d+),(\d+)', m))
+    occ = set((int(a), int(b)) for _, a, b in re.findall(r' ([A-Za-z@&;:\'])@(\d+),(\d+)', m))
+    if any((hx + sx*j, hy + sy*j) in occ for j in range(1, d)): continue
+    k = K[(sx, sy)]
+    import os
+    cand = ('F' if d == 1 and not os.environ.get('NOMELEE') else 'f') + k
+    if best is None or d == 1: best = cand
+import os
+if os.environ.get('MELEEONLY') and best and best[0] == 'f': best = None
+print(best or 'wait')
+PY
+)
+  echo "shoot: $act"
+  case "$act" in
+    lowhp) echo "STOP low HP"; exit 1;;
+    wait) python3 scripts/session.py keys s --settle .3 >/dev/null;;
+    f*) scr=$(python3 scripts/session.py screen)
+        if ! echo "$scr" | grep -q "at the ready"; then :; fi
+        python3 scripts/session.py keys --raw f --settle .5 >/dev/null
+        scr=$(python3 scripts/session.py screen)
+        if echo "$scr" | grep -q "What do you want to throw"; then
+          opts=$(echo "$scr" | grep -o 'throw? \[[^]]*' | tail -1)
+          pick=""; for c in b I x n D; do echo "$opts" | grep -q "$c" && { pick=$c; break; }; done
+          [ -z "$pick" ] && { python3 scripts/session.py keys --named Escape >/dev/null; echo "no daggers"; exit 1; }
+          python3 scripts/session.py keys --raw "$pick" --settle .4 >/dev/null
+        fi
+        python3 scripts/session.py keys --raw "${act:1:1}" --settle .6 >/dev/null
+        python3 scripts/session.py screen --compact | sed -n 9,10p;;
+    *) python3 scripts/session.py keys --compact "$act" | sed -n 8,10p;;
+  esac
+  python3 scripts/session.py screen --compact | grep -q "^Map.* $g@" || { echo "gone"; exit 0; }
+done

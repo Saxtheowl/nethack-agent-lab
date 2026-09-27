@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/6/elb: engrave Elbereth in the dust (replacing), read back; up to 4 tries.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+for t in 1 2 3 4; do
+  $S keys --raw E- --settle .5 >/dev/null
+  $S screen | grep -q 'add to the current' && $S keys --raw n --settle .4 >/dev/null
+  $S keys --raw Elbereth >/dev/null; $S keys --named Enter --settle 1 >/dev/null
+  for i in 1 2 3; do $S screen | grep -q -- '--More--\|>>' && $S keys --named Enter --settle .3 >/dev/null; done
+  $S keys : --settle .5 >/dev/null
+  $S screen | grep -q 'You read: "Elbereth"' && { echo "ELBERETH OK (try $t)"; exit 0; }
+done
+echo "ELBERETH FAILED"; exit 1

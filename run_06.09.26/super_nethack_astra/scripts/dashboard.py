@@ -17,6 +17,7 @@ API
 """
 import argparse
 import json
+import os
 import re
 import subprocess
 import threading
@@ -349,6 +350,26 @@ def worker_status():
     return data
 
 
+HOSTED_ON_WORKER = os.environ.get('NH_HOST') == 'worker'
+
+
+def machine_stats():
+    import shutil
+    du = shutil.disk_usage(ROOT)
+    mem = dict(l.split(':', 1) for l in Path('/proc/meminfo').read_text().splitlines() if ':' in l)
+    kb = lambda k: int(mem[k].split()[0]) * 1024
+    return {'cores': os.cpu_count(), 'load': list(os.getloadavg()), 'mem_total': kb('MemTotal'),
+            'mem_avail': kb('MemAvailable'), 'disk_total': du.total, 'disk_used': du.used, 'disk_free': du.free}
+
+
+def pc_stats():
+    """The PC's figures, pushed every few seconds by scripts/worker_sync.sh."""
+    try:
+        return json.loads((RUNTIME / 'pc-stats.json').read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {'cores': 4, 'load': [0, 0, 0], 'mem_total': 1, 'mem_avail': 1, 'disk_total': 1, 'disk_used': 0, 'disk_free': 0}
+
+
 def resources():
     import os
     import shutil
@@ -365,11 +386,10 @@ def resources():
                 gsz[k] += p.stat().st_size
     ttyrecs = sorted(runs.glob('*.ttyrec'))
     ledgers = sorted(runs.glob('ledger*.jsonl'))
-    du = shutil.disk_usage(ROOT)
-    mem = dict(l.split(':', 1) for l in Path('/proc/meminfo').read_text().splitlines() if ':' in l)
-    kb = lambda k: int(mem[k].split()[0]) * 1024
+    me = machine_stats()
     sessions = []
-    for l in _run(['tmux', '-S', SOCKET, 'ls', '-F', '#{session_name}|#{session_created}|#{pane_pid}']).splitlines():
+    for l in (_run(['tmux', '-S', SOCKET, 'ls', '-F', '#{session_name}|#{session_created}|#{pane_pid}'])
+              + _run(['tmux', '-S', '/tmp/wishscum.sock', 'ls', '-F', '#{session_name}|#{session_created}|#{pane_pid}'])).splitlines():
         name, created, pid = (l.split('|') + ['', ''])[:3]
         sessions.append({'name': name, 'created': int(created or 0)})
     git_root = ROOT
@@ -381,15 +401,15 @@ def resources():
     helpers = sorted(p.name for p in (ROOT / 'scripts').iterdir() if p.is_file() and not p.name.endswith(('.pyc', '.json')))
     return {
         'now': time.time(),
-        'local': {'cores': os.cpu_count(), 'load': list(os.getloadavg()), 'mem_total': kb('MemTotal'), 'mem_avail': kb('MemAvailable'),
-                  'disk_total': du.total, 'disk_used': du.used, 'disk_free': du.free},
-        'worker': worker_status(),
+        'local': pc_stats() if HOSTED_ON_WORKER else me,
+        'worker': {'ok': True, 'host': 'miniforum-worker', **me, 'compute_dirs': []} if HOSTED_ON_WORKER else worker_status(),
+        'served_from': 'worker' if HOSTED_ON_WORKER else 'pc',
         'storage': {'games': ngames, 'games_bytes': gsz, 'ttyrec_n': len(ttyrecs), 'ttyrec_bytes': _size(ttyrecs),
                     'ledgers': [{'name': p.name, 'bytes': p.stat().st_size} for p in ledgers],
                     'engine_bytes': sum(f.stat().st_size for f in (ROOT / 'engine').rglob('*') if f.is_file()),
                     'memory_bytes': sum(f.stat().st_size for f in (ROOT / 'memory').rglob('*') if f.is_file()),
                     'slots_bytes': sum(f.stat().st_size for f in (ROOT / 'slots').rglob('*') if f.is_file())},
-        'git': {'unpushed': int(unpushed or 0), 'last_push': int(last_push or 0),
+        'git': pc_stats().get('git') if HOSTED_ON_WORKER else {'unpushed': int(unpushed or 0), 'last_push': int(last_push or 0),
                 'last_commit': {'t': int(last_commit[0] or 0), 'msg': last_commit[1] if len(last_commit) > 1 else ''}},
         'sessions': sessions, 'slots': slots,
         'watchdog': wd.read_text().splitlines()[-8:] if wd.exists() else [],
@@ -405,6 +425,13 @@ def wish_status():
     """runs/wish_scum/status.json on the worker (the scum loop runs there), cached 60 s."""
     if _wish_cache['data'] is not None and time.time() - _wish_cache['t'] < 60:
         return _wish_cache['data']
+    local = ROOT / 'runs/wish_scum/status.json'
+    if os.environ.get('NH_HOST') == 'worker' and local.exists():  # served from the worker itself
+        data = json.loads(local.read_text())
+        att = ROOT / 'runs/wish_scum/attempts.jsonl'
+        data['recent'] = [json.loads(l) for l in att.read_text().splitlines()[-5:]] if att.exists() else []
+        _wish_cache.update(t=time.time(), data=data)
+        return data
     out = _run(['ssh', '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=5', 'miniforum-worker',
                 f'cat {ROOT}/runs/wish_scum/status.json 2>/dev/null; echo; '
                 f'tail -5 {ROOT}/runs/wish_scum/attempts.jsonl 2>/dev/null'], 15)
@@ -466,11 +493,48 @@ def slot_game(slot):
         return None
 
 
+def last_screen(gid):
+    """Rebuild the latest screen of a game from the tail of its frames.jsonl."""
+    path = frames.GAMES / gid / 'frames.jsonl'
+    if not path.exists():
+        return []
+    with open(path, 'rb') as f:
+        f.seek(0, 2)
+        size = f.tell()
+        f.seek(max(0, size - 4_000_000))
+        lines = f.read().splitlines()
+    fr = []
+    for l in reversed(lines):
+        try:
+            x = json.loads(l)
+        except json.JSONDecodeError:
+            continue
+        fr.append(x)
+        if x['i'] % frames.KEYFRAME_EVERY == 0 or x['i'] == 0:
+            break
+    rows = {}
+    for x in reversed(fr):
+        rows.update(x['r'])
+    return [rows.get(str(y), []) for y in range(max((int(k) for k in rows), default=-1) + 1)]
+
+
 def live(slot):
-    session = 'nethack' if slot == '1' else f'nethack{slot}'
-    r = subprocess.run(['tmux', '-S', SOCKET, 'capture-pane', '-p', '-e', '-t', f'{session}:0.0'],
+    from session import slot_tmux
+    sock, session = slot_tmux(slot)
+    r = subprocess.run(['tmux', '-S', sock, 'capture-pane', '-p', '-e', '-t', f'{session}:0.0'],
                        text=True, capture_output=True)
     info = slot_game(slot) or {}
+    if (r.returncode != 0 or not r.stdout.strip()) and info.get('game_id'):
+        # the game runs on the other machine: show its last recorded frame
+        rows = last_screen(info['game_id'])
+        if rows:
+            meta = frames.load_meta(info['game_id'])
+            try:
+                feed = json.loads((RUNTIME / f'public-feed-{slot}.json').read_text())
+            except (FileNotFoundError, json.JSONDecodeError):
+                feed = []
+            return {'slot': slot, 'alive': meta.get('status') == 'live', 'rows': rows, 'meta': meta,
+                    'feed': feed[-40:], 'commentary': '', 'relayed': True}
     meta = frames.load_meta(info['game_id']) if info.get('game_id') else {}
     try:
         feed = json.loads((RUNTIME / f'public-feed-{slot}.json').read_text())

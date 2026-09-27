@@ -22,7 +22,7 @@ def cursor(o):
     m=re.search(r'Terminal cursor[^:]*: (\d+),(\d+)',o); return (int(m[1]),int(m[2]))
 def hp(o):
     m=re.search(r'HP:(\d+)\((\d+)\)',o); return int(m[1]),int(m[2])
-off={'8':(0,-1),'2':(0,1),'4':(-1,0),'6':(1,0)}
+off={'8':(0,-1),'2':(0,1),'4':(-1,0),'6':(1,0),'9':(1,-1),'3':(1,1),'1':(-1,1),'7':(-1,-1)}
 o=screen(); pos=cursor(o); hp0=hp(o)[0]
 start=int(sys.argv[sys.argv.index('--from')+1]) if '--from' in sys.argv else 0
 done=start
@@ -43,6 +43,7 @@ for st in plan[start:]:
         h=hp(o)[0]
         if h<hp0: print('STOP: HP loss',hp0,'->',h); sys.exit(3)
         pos=np
+        if re.search(r'Weak|Faint|Hungry', o.split('Dlvl')[-1][:120] if 'Dlvl' in o else ''): print('STOP: hunger at step',done); sys.exit(4)
     done+=1
     if st[0]!='walk': print('push',done,'boulder',b,'dir',d,'ok; hero',pos)
     if done-start>=mx: print('max reached'); break

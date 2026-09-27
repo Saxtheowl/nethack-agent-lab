@@ -13,19 +13,17 @@ import time
 from datetime import datetime, timezone
 
 import frames
-from session import SOCKET, RUNTIME, ROOT
+from session import SOCKET, RUNTIME, ROOT, HOST, slot_tmux, slot_where
 from terminal import text_runs
 
 SLOTS = tuple(str(n) for n in range(1, 9))
 SAVEDIR = ROOT / 'engine/install/games/lib/nethackdir/save'
 
 
-def tmux(*args):
-    return subprocess.run(['tmux', '-S', SOCKET, *args], text=True, capture_output=True)
-
-
-def session_name(slot):
-    return 'nethack' if slot == '1' else f'nethack{slot}'
+def tmux_slot(slot, *args):
+    sock, sess = slot_tmux(slot)
+    args = [a.replace('@S', sess) for a in args]
+    return subprocess.run(['tmux', '-S', sock, *args], text=True, capture_output=True)
 
 
 def slot_info(slot):
@@ -36,7 +34,7 @@ def slot_info(slot):
 
 
 def pane_alive(slot):
-    r = tmux('display-message', '-p', '-t', f'{session_name(slot)}:0.0', '#{pane_dead}')
+    r = tmux_slot(slot, 'display-message', '-p', '-t', '@S:0.0', '#{pane_dead}')
     return r.returncode == 0 and r.stdout.strip() == '0'
 
 
@@ -80,7 +78,7 @@ def main():
         now = time.time()
         for slot in SLOTS:
             info = slot_info(slot)
-            if not info:
+            if not info or slot_where(slot) != HOST:  # each machine records its own slots
                 continue
             gid = info['game_id']
             is_alive = pane_alive(slot)
@@ -95,7 +93,7 @@ def main():
             if is_alive:
                 if gid not in writers:
                     writers[gid] = frames.Writer(gid)
-                captured = tmux('capture-pane', '-p', '-e', '-t', f'{session_name(slot)}:0.0').stdout
+                captured = tmux_slot(slot, 'capture-pane', '-p', '-e', '-t', '@S:0.0').stdout
                 w = writers[gid]
                 if w.add(frames.segment_rows(text_runs(captured)), now):
                     meta['frames'] = w.index

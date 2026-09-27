@@ -1,0 +1,46 @@
+#!/bin/bash
+# slots/6/xp [rounds]: explore in chunks of 3 travel steps; stop when a
+# non-peaceful non-pet monster is visible (farlook checked), HP < 60%,
+# hunger, "stole"/danger message, or explore stopping for another reason.
+# IGN="x,y x,y" ignores cells (statues).
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+PEACE=""
+for r in $(seq "${1:-10}"); do
+  out=$(python3 slots/6/explore6.py --steps ${STEPS:-3} --all --minopen ${MINOPEN:-7} 2>&1)
+  reason=$(echo "$out" | grep -o '^explore stop: .*')
+  chk=$(python3 - "$out" <<'PY'
+import re, sys, os
+out = sys.argv[1]
+msgs = ' '.join(l[3:] for l in out.splitlines() if re.match(r'^0[1-9] ', l))
+m = re.search(r'^Map features.*$', out, re.M)
+p = re.search(r'^PETS.*$', out, re.M)
+st = re.search(r'HP:(\d+)\((\d+)\)', out)
+why = []
+if re.search(r'stole|steal|You feel weak|beginning to feel|slowing down|stiffening|little green|constrict|trap door|fall through', msgs): why.append('MSG: ' + msgs[:150])
+if st and int(st[1]) * 10 < int(st[2]) * 6: why.append('HP<60%')
+l34 = [l for l in out.splitlines() if l.startswith('34 ')]
+if l34 and re.search(r'Weak|Faint', l34[0]): why.append('WEAK')
+if m:
+    pets = set(re.findall(r'(\d+,\d+)', p.group(0))) if p else set()
+    ign = os.environ.get('IGN', '').split()
+    foes = [f'{g}@{x},{y}' for g, x, y in re.findall(r" ([A-Za-z&;:'])@(\d+),(\d+)", m.group(0)) if f'{x},{y}' not in pets and g != 'I' and f'{x},{y}' not in ign]
+    if foes: why.append('MONSTER ' + ' '.join(foes))
+print('; '.join(why))
+PY
+)
+  # farlook monsters: peaceful ones do not stop exploration
+  if [[ "$chk" == MONSTER* ]]; then
+    hostile=""
+    for f in ${chk#MONSTER }; do
+      xy=${f#*@}; name=$(scripts/look ${xy%,*} ${xy#*,})
+      echo "$name" | grep -qE "peaceful|statue|tame" && continue; [ -n "$IGNNAME" ] && echo "$name" | grep -qE "$IGNNAME" && continue
+      hostile="$hostile $f[$name]"
+    done
+    chk=${hostile:+MONSTER$hostile}
+  fi
+  echo "[$r] $reason ${chk:+| $chk}"
+  [ -n "$chk" ] && break
+  [[ "$reason" == *"step budget"* ]] || break
+done
+python3 scripts/session.py screen --compact | grep -E '^0[1-7] |^34|^Map|^PETS' | cut -c1-220

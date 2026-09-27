@@ -1,0 +1,9 @@
+#!/bin/bash
+# slot2 helper: dip weapon a into fountain once; print result lines
+cd "$(dirname "$0")"
+./k --raw '#dip' >/dev/null
+./k --named Enter >/dev/null
+./k --raw a >/dev/null
+out=$(./k --raw y)
+./k --raw ' ' >/dev/null 2>&1
+echo "$out" | grep -E '^0[4-7]|^34'

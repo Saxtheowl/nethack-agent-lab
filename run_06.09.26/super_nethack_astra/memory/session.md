@@ -55,6 +55,15 @@ PURE rules — never break them:
   and as replay captions. Use it at every real decision, in French (but keep original English NetHack names for items and monsters: "plate mail", "master mind flayer", "wand of digging"..., and HP, Dlvl N, T1234, XL, AC, altar, fountain, shop, trap). scripts/nh_terms.py normalizes old texts.
 - Old ttyrecs can be imported: scripts/import_ttyrec.py <ttyrec> <game_id>.
 
+## Tools on miniforum-worker (user request 2026-09-27 13h)
+Only the Claude agents run on the PC. Recorder, dashboard (tunnelled to
+127.0.0.1:8766), and every game started from now on live on miniforum-worker
+(same absolute path). `.runtime/where-N` = worker makes the slots/N wrappers
+run there (scripts/slotrun); your own helpers in slots/N/ must be run with
+`slots/N/w <command>`. scripts/worker_sync.sh (PC tmux `sync`) copies data
+both ways. Games started on the PC finish on the PC (saves never move).
+Do not edit .runtime/slot-N.json by hand for a worker slot.
+
 ## Heavy computation → miniforum worker (user rule, 2026-09-27)
 Never run solvers/searches/analyses on this machine (8 games share 4 cores).
 Use `slots/N/onworker [--timeout S] <command>`: copies slots/N to

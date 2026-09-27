@@ -1,0 +1,21 @@
+#!/bin/bash
+# slots/8/guardrest N: rest turn by turn; re-engrave Elbereth (typed E then rest) whenever ':' shows it damaged;
+# attack east (F6) only if HP dropped (something ignores Elbereth). Stops if HP <= 9 (pray!) or N turns.
+cd "$(dirname "$0")"
+eng() { ./k E >/dev/null; sleep 0.4; ./k --raw - >/dev/null; sleep 0.5
+  ./v | grep -q "add to the current" && { ./k --raw n >/dev/null; sleep 0.5; }
+  ./v | grep -q "write in the dust here" || { ./k --named Escape >/dev/null; return 1; }
+  ./k --raw E >/dev/null; sleep 0.2; ./k --raw lbereth >/dev/null; ./k --named Enter >/dev/null; sleep 0.5; }
+readeng() { ./k : >/dev/null; sleep 0.6; ./k --named Escape >/dev/null; ./k --raw $'\x10' >/dev/null; sleep 0.4; r=$(./v | grep -E "You read" | tail -1); ./k --named Escape >/dev/null; echo "$r" | grep -q '"Elbereth"'; }
+prev=$(./v | grep -o 'HP:[0-9]*' | cut -d: -f2)
+for i in $(seq ${1:-30}); do
+  readeng || { eng; echo -n "E "; }
+  ./k s >/dev/null; sleep 0.3
+  o=$(./v); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | cut -d: -f2)
+  echo -n "$hp "
+  [ $hp -le 9 ] && { echo "PRAY NOW"; break; }
+  echo "$o" | grep -qE "Fainting" && { echo "FAINTING"; break; }
+  if [ $hp -lt $prev ]; then echo "(hit)"; echo "$o" | grep -E "^0[6-7]"; fi
+  prev=$hp
+done
+echo; ./v | grep -E "HP:"

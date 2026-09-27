@@ -11,6 +11,7 @@ import os
 import re
 from pathlib import Path
 import secrets
+import shutil
 import subprocess
 import sys
 import time
@@ -38,9 +39,38 @@ SLOTFILE = RUNTIME / f'slot-{SLOT}.json'
 # to the worker's tmux over ssh. The slot file then holds
 # "remote": {"host", "sock", "session", "player"}.
 try:
-    REMOTE = json.loads(SLOTFILE.read_text()).get('remote')
+    _info = json.loads(SLOTFILE.read_text())
 except (FileNotFoundError, json.JSONDecodeError):
-    REMOTE = None
+    _info = {}
+REMOTE = _info.get('remote')
+# A slot can live in another tmux server/session (wish games on the worker:
+# "tmux_sock": "/tmp/wishscum.sock", "tmux_session": "wishK").
+SOCKET = _info.get('tmux_sock', SOCKET)
+SESSION = _info.get('tmux_session', SESSION)
+TARGET = f'{SESSION}:0.0'
+TTYREC = shutil.which('ttyrec') or str(Path.home() / 'bin/ttyrec')
+
+
+def slot_tmux(slot):
+    """(tmux socket, session) of a slot's game on this machine."""
+    try:
+        info = json.loads((RUNTIME / f'slot-{slot}.json').read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        info = {}
+    default = 'nethack' if slot == '1' else f'nethack{slot}'
+    base = '/tmp/nhstream-' + hashlib.sha256(str(ROOT).encode()).hexdigest()[:12] + '.sock'
+    return info.get('tmux_sock', base), info.get('tmux_session', default)
+
+
+def slot_where(slot):
+    """'worker' when the slot's game and tools live on miniforum-worker."""
+    try:
+        return (RUNTIME / f'where-{slot}').read_text().strip() or 'local'
+    except FileNotFoundError:
+        return 'local'
+
+
+HOST = os.environ.get('NH_HOST', 'local')  # 'worker' for processes started on the worker
 if REMOTE:
     PLAYER = REMOTE['player']
 
@@ -99,7 +129,7 @@ def start():
     SLOTFILE.write_text(json.dumps(info))
     record.parent.mkdir(exist_ok=True)
     command = ['env', f'NETHACKOPTIONS=@{ROOT / "config/nethackrc"}', 'TERM=screen-256color',
-               'ttyrec', '-e', f'{NETHACK} -u {PLAYER}', str(record)]
+               TTYREC, '-e', f'{NETHACK} -u {PLAYER}', str(record)]
     if REMOTE:
         sock, sess = REMOTE['sock'], REMOTE['session']
         game = (f'env NETHACKOPTIONS=@{ROOT / "config/nethackrc"} TERM=screen-256color {NETHACK} -u {PLAYER}')
@@ -107,7 +137,7 @@ def start():
         remote_sh(f"tmux -S {sock} has-session -t {sess} 2>/dev/null || "
                   f"tmux -S {sock} -f {ROOT / 'config/tmux.conf'} new-session -d -s {sess} -x {COLS} -y {ROWS} '{game}'; "
                   f"tmux -S {sock} set-option -t {sess} remain-on-exit off")
-        command = ['env', 'TERM=screen-256color', 'ttyrec', '-e',
+        command = ['env', 'TERM=screen-256color', TTYREC, '-e',
                    f"ssh -t -o BatchMode=yes {REMOTE['host']} tmux -S {sock} attach -t {sess}", str(record)]
     if alive():
         tmux('respawn-pane', '-t', TARGET, *command)

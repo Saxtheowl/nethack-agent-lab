@@ -1,0 +1,4 @@
+#!/bin/bash
+# slots/1/hit GLYPH [n]: melee the adjacent GLYPH (hero = terminal cursor), stop <50% HP.
+cd "$(dirname "$0")/../.."
+NOMELEE= exec env NH_SLOT=1 slots/1/shoot "$1" "${2:-6}" --melee-only

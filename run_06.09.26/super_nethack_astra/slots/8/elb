@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/8/elb: engrave Elbereth in the dust with fingers, answering each prompt explicitly; prints result.
+cd "$(dirname "$0")"
+./k E >/dev/null; sleep 0.4
+./v | grep -q "write with" || { echo "no E prompt"; ./k --named Escape >/dev/null; exit 1; }
+./k --raw - >/dev/null; sleep 0.5
+for i in 1 2 3; do
+  s=$(./v | grep -E "^0[1-7]" | tail -2)
+  if echo "$s" | grep -q "add to the current"; then ./k --raw n >/dev/null; sleep 0.4
+  elif echo "$s" | grep -q "Do you want to"; then ./k --raw n >/dev/null; sleep 0.4
+  elif echo "$s" | grep -q "write in the dust here"; then break
+  else ./k --named Enter >/dev/null; sleep 0.4; fi
+done
+./v | grep -q "write in the dust here" || { echo "no text prompt"; ./v | grep -E "^0[5-7]"; ./k --named Escape >/dev/null; exit 1; }
+./k --raw Elbereth >/dev/null; ./k --named Enter >/dev/null; sleep 0.6
+./v | grep -E "^0[6-7]"

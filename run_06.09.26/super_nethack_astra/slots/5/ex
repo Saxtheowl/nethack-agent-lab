@@ -1,6 +1,6 @@
 #!/bin/bash
 # slots/5/ex [steps]: explore --all, show stop reason + map + status
 cd "$(dirname "$0")/../.."
-o=$(slots/5/explore --steps "${1:-40}" --all 2>&1)
+o=$(python3 scripts/explore.py --steps "${1:-40}" --all 2>&1)
 echo "$o" | head -1
 echo "$o" | tail -n +3 | grep -vE 'travel to\?' 

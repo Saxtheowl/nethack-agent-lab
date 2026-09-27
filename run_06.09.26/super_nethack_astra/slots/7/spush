@@ -5,11 +5,14 @@ plan=$(NH_SLOT=7 python3 scripts/sokoban.py "$1" "$2" "$3" 2>&1 | grep '"keys"')
 [ -z "$plan" ] && { echo "NO PLAN"; NH_SLOT=7 python3 scripts/sokoban.py "$1" "$2" "$3" 2>&1 | tail -3; exit 1; }
 keys=$(echo "$plan" | python3 -c 'import json,sys;print(json.load(sys.stdin)["keys"])')
 echo "plan: $plan"
+pmb=$(slots/7/k : --raw | grep -E '^0[1-7] ')
 hp0=$(slots/7/v | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
 for ((i=0;i<${#keys};i++)); do
   o=$(slots/7/k "${keys:$i:1}" --raw)
+  mb=$(echo "$o" | grep -E '^0[1-7] '); if [ "$mb" == "$pmb" ]; then last=""; else last=$(echo "$mb" | tail -1); fi; pmb="$mb"
   hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
-  if echo "$o" | grep -q 'Really\|\[yn\]\|--More--\|>>'; then echo "PROMPT at $i"; echo "$o" | grep -E '^0[5-7] '; exit 1; fi
+  if echo "$last" | grep -q 'Really\|\[yn\]\|--More--\|>>\|Count:'; then echo "PROMPT at $i"; echo "$o" | grep -E '^0[5-7] '; exit 1; fi
+  if echo "$last" | grep -q "Perhaps that's why\|in vain\|You try to move\|won't roll\|There is a .* in the way\|stole\|You fall\|pull you down"; then echo "BLOCKED at $i"; echo "$o" | grep -E '^0[5-7] '; exit 1; fi
   [ -n "$hp" ] && [ "$hp" -lt "$hp0" ] && { echo "HP LOSS at $i"; echo "$o" | grep -E '^0[5-7] '; exit 1; }
 done
 slots/7/v | grep -E '^0[6-7] |^Terminal'

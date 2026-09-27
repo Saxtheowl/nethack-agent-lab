@@ -1,0 +1,47 @@
+#!/bin/bash
+# slots/1/follow DIR [max]: walk one step in DIR, then keep following the
+# corridor (the single new walkable neighbour) until fork, room, monster,
+# dead end or HP loss.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+S="python3 scripts/session.py"
+dir="$1"; max="${2:-40}"
+hp0=""
+prev=$($S screen --compact | grep -oE 'Terminal cursor[^:]*: [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+$')
+$S keys --compact "$dir" >/dev/null
+for i in $(seq "$max"); do
+  out=$($S screen --compact)
+  r=$(python3 - "$out" "$prev" <<'PY'
+import re, sys
+out, prev = sys.argv[1], sys.argv[2]
+cur = re.search(r'Terminal cursor \(x,y[^)]*\): (\d+),(\d+)', out); hx, hy = int(cur[1]), int(cur[2])
+hp = re.search(r'HP:(\d+)', out)[1]
+nb = None
+for m in re.finditer(r'^Neighbors of @\((\d+),(\d+)\): (.*)$', out, re.M):
+    if (int(m[1]), int(m[2])) == (hx, hy): nb = m[3]
+if nb is None: print('stop nonb', hp); sys.exit()
+cells = re.findall(r'(\d):(\S+?)\((\d+),(\d+)\)', nb)
+px, py = (map(int, prev.split(','))) if prev else (-9, -9)
+opts = []
+for k, g, x, y in cells:
+    x, y = int(x), int(y)
+    if g in ('▒', '#', '·', '.') and (x, y) != (px, py):
+        opts.append((k, g))
+    elif g not in ('▒','#','·','.','blank','│','─','┌','┐','└','┘','├','┤','┬','┴','┼','-','|','+'):
+        print('stop thing', hp); sys.exit()
+floor = [o for o in opts if o[1] in '·.']
+if floor: print('stop room', hp); sys.exit()
+if len(opts) == 2:
+    orth = [o for o in opts if o[0] in '2468']
+    if len(orth) == 1: opts = orth
+if len(opts) != 1: print('stop fork%d' % len(opts), hp); sys.exit()
+print('go ' + opts[0][0] + ' ' + hp + ' %d,%d' % (hx, hy))
+PY
+)
+  set -- $r
+  if [ "$1" != go ]; then echo "follow: $1 $2 at $($S screen --compact | grep -o 'cursor[^:]*: [0-9,]*')"; exit 0; fi
+  [ -n "$hp0" ] && [ "$3" -lt "$hp0" ] && { echo "follow: HP loss"; exit 1; }
+  hp0=$3; prev=$4
+  $S keys --compact "$2" >/dev/null
+done
+echo "follow: max steps"

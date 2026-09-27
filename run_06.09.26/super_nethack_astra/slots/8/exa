@@ -1,0 +1,5 @@
+#!/bin/bash
+# slots/8/exa [steps]: explore --all (no stop at stairs), then compact view without message history lines 1-4.
+cd "$(dirname "$0")"
+timeout 110 ./explore --all --steps "${1:-25}" 2>&1 | grep -E "^explore"
+./v | grep -vE "^Terminal|^   [0 ]" | grep -vE "^0[1-4] "

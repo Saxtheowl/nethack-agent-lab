@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/1/pickup [regex]: ',' then select every listed item (optionally only
+# those matching regex), one letter at a time; never gray stones, never 'A'.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+S="python3 scripts/session.py"
+re="${1:-.}"
+$S keys --compact , --settle .6 >/dev/null
+scr=$($S screen)
+if echo "$scr" | grep -q "Pick up what"; then
+  letters=$(echo "$scr" | grep -oE '[│ ] [a-zA-Z]\) [^│]*' | sed 's/^[│ ] //' | grep -viE "gr[ae]y stone|Auto-select|corpse" | grep -iE -- "$re" | cut -c1)
+  for l in $letters; do $S keys --raw "$l" --settle .2 >/dev/null; done
+  $S keys --raw $'\r' --settle .6 >/dev/null
+fi
+$S screen --compact | sed -n 4,10p | grep -E ' - |here|nothing' 

@@ -1,0 +1,26 @@
+#!/bin/bash
+# slots/3/elbrest [N] [TARGET_HP]: rest on an Elbereth square in 3-turn searches; after each, re-read the
+# engraving; re-engrave (fingers, replacing) if it is not exactly "Elbereth". Stops on HP loss > 4, Weak, target HP.
+export NH_SLOT=3
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+n=${1:-20}; target=${2:-999}
+engrave() {
+  $S keys E --settle .4 >/dev/null; $S keys - --settle .4 >/dev/null
+  $S screen | grep -q 'add to the current' && $S keys n --settle .4 >/dev/null
+  $S keys --raw Elbereth --settle .3 >/dev/null; $S keys --named Enter --settle .6 >/dev/null
+}
+prev=$($S screen --compact | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "$n"); do
+  r=$($S keys : --settle .4 | grep -o 'You read: "[^"]*"' | tail -1)
+  $S screen | grep -q 'Things that are here' && $S keys --named Escape >/dev/null
+  if [ "$r" != 'You read: "Elbereth"' ]; then echo "re-engrave (was: $r)"; engrave; fi
+  o=$($S keys s --settle .4)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep '^34' | tr -s ' ')
+  [ $((prev - h)) -gt 2 ] && { echo "STOP HP loss $prev -> $h"; break; }
+  [ -n "$NOWEAKSTOP" ] || { echo "$st" | grep -qE "Weak|Fainting" && { echo "STOP Weak"; break; }; }
+  [ "$h" -ge "$target" ] && { echo "target reached"; break; }
+  prev=$h
+done
+$S screen --compact | grep -E '^0[5-7] |^34|^Map'

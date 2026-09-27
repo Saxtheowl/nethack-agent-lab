@@ -1,3 +1,3 @@
 #!/bin/bash
 export NH_SLOT=7
-exec "$(dirname "$0")/../../scripts/look" "$@"
+exec "$(dirname "$0")/../../scripts/slotrun" scripts/look "$@"

@@ -1,0 +1,40 @@
+#!/bin/bash
+# slots/6/hold [n] [minpct]: hold position; attack adjacent non-pet monster
+# (F dir), else search 1 turn. Stops when HP < minpct% (default 60), on
+# hunger, on "stole"/prompt, or when no hostile letter is visible.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+for i in $(seq "${1:-10}"); do
+  out=$($S screen --compact)
+  d=$(python3 - "$out" "${2:-60}" <<'PY'
+import re, sys
+out, minpct = sys.argv[1], int(sys.argv[2])
+st = re.search(r'HP:(\d+)\((\d+)\)', out)
+if int(st[1]) * 100 < int(st[2]) * minpct: print('STOP HP ' + st[0]); sys.exit()
+line34 = [l for l in out.splitlines() if l.startswith('34 ')]
+if line34 and re.search(r'Weak|Faint', line34[0]): print('STOP weak'); sys.exit()
+ml = [l for l in out.splitlines() if re.match(r'^0[1-7] ', l)]
+if ml and re.search(r'stole|steal|--More--|\[yn', ml[-1]): print('STOP msg: ' + ml[-1][:80]); sys.exit()
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+h = re.search(r' @@(\d+),(\d+)', m); hx, hy = int(h[1]), int(h[2])
+foes = [(int(x), int(y)) for g, x, y in re.findall(r" ([A-Za-z&;:'@])@(\d+),(\d+)", m) if f'{x},{y}' not in pets and (int(x), int(y)) != (hx, hy) and g != 'I']
+adj = [(x, y) for x, y in foes if max(abs(x-hx), abs(y-hy)) == 1]
+if adj:
+    x, y = adj[0]
+    print(f'{x},{y} F' + {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}[(x-hx, y-hy)])
+elif foes: print('s')
+else: print('STOP clear')
+PY
+)
+  case "$d" in STOP*) echo "$d"; break;; esac
+  if [[ "$d" == *F* ]]; then
+    xy=${d% *}; d=${d#* }
+    name=$(scripts/look ${xy%,*} ${xy#*,})
+    if echo "$name" | grep -q peaceful; then echo "peaceful adjacent: $name"; d=s; fi
+  fi
+  $S keys --raw "$d" --settle .4 >/dev/null
+  $S screen | grep -q -- '--More--' && $S keys --named Enter --settle .3 >/dev/null
+done
+$S screen --compact | grep -E '^0[3-7] |^34|^Map|^PETS' | cut -c1-230

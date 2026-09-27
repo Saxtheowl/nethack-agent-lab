@@ -1,0 +1,17 @@
+#!/bin/bash
+# doorfight N MINHP : attack monsters adjacent (dirs from list) one blow at a time; wait with s when none. Stops on HP<MINHP, prompt, stole, Blind change.
+cd "$(dirname "$0")/../.."
+for i in $(seq "$1"); do
+  sc=$(slots/7/v); c=$(echo "$sc" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  n=$(echo "$sc" | grep "^Neighbors of @($c)")
+  d=$(echo "$n" | LC_ALL=C grep -oE "[1-9]:[A-Za-z@&;:'][(]" | head -1 | cut -c1)
+  if [ -z "$d" ]; then o=$(slots/7/k s --raw); else o=$(slots/7/k F$d --raw); fi
+  m=$(echo "$o" | grep -E '^0[1-7] ' | tail -2 | tr -s ' ')
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "[$d] HP$hp $(echo "$m" | tail -1 | cut -c1-90)"
+  echo "$m" | tail -1 | grep -q "Really attack\|Call a" && { slots/7/k Escape --named >/dev/null; echo PEACEFUL; break; }
+  echo "$o" | grep -q -- '--More--' && slots/7/k Enter --named >/dev/null
+  echo "$m" | grep -qi 'stole\|steals\|Stiff\|slowing down\|You are slowing' && { echo DANGER; break; }
+  [ "$hp" -lt "$2" ] && { echo LOWHP; break; }
+done
+slots/7/v | grep -E '^34|^Neigh'

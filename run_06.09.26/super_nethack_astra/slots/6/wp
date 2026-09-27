@@ -1,0 +1,34 @@
+#!/bin/bash
+# slots/6/wp [n]: wait (s) until the pet is adjacent; ignores peacefuls,
+# stops on HP loss or hostile adjacent (farlook checked).
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"; prev=""
+for i in $(seq "${1:-30}"); do
+  out=$($S screen --compact)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP: HP loss"; exit 1; }
+  prev=$hp
+  echo "$out" | grep '^34' | grep -qE 'Hungry|Weak|Faint' && { echo "STOP: HUNGER"; exit 1; }
+  r=$(python3 - "$out" <<'PY'
+import re, sys
+out = sys.argv[1]
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+h = re.search(r' @@(\d+),(\d+)', m); hx, hy = int(h[1]), int(h[2])
+res = []
+for g, x, y in re.findall(r" ([A-Za-z@&;:'])@(\d+),(\d+)", m):
+    x, y = int(x), int(y)
+    if (x, y) == (hx, hy) or max(abs(x - hx), abs(y - hy)) != 1: continue
+    res.append(('pet' if f'{x},{y}' in pets else 'foe') + f' {x} {y}')
+print('\n'.join(res))
+PY
+)
+  echo "$r" | grep -q '^pet' && { echo "pet adjacent"; exit 0; }
+  while read -r kind x y; do
+    [ "$kind" = foe ] || continue
+    scripts/look $x $y | grep -q peaceful || { echo "STOP: hostile adjacent at $x,$y"; exit 1; }
+  done <<< "$r"
+  $S keys s --settle .3 >/dev/null
+done
+echo "timeout"

@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/6/srest [target%] [maxchunks]: search-rest in 5-turn chunks (no Elbereth)
+# until HP >= target% ; stops on HP drop, hunger, or a hostile-looking monster adjacent.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+tgt=${1:-90}; prev=""
+for i in $(seq "${2:-30}"); do
+  o=$($S keys --compact n5s --settle .8)
+  $S screen | grep -q -- '--More--' && $S keys --named Enter --settle .3 >/dev/null
+  o=$($S screen --compact)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  echo -n "$cur "
+  [ -n "$prev" ] && [ "$cur" -lt "$prev" ] && { echo "HP DROP"; break; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak|Faint' && { echo HUNGER; break; }
+  echo "$o" | grep -qE 'stole|steal' && { echo STOLE; break; }
+  prev=$cur
+  [ $((cur * 100)) -ge $((max * tgt)) ] && { echo "OK"; break; }
+done
+$S screen --compact | grep -E '^0[5-7] |^34|^Map|^PETS' | cut -c1-200

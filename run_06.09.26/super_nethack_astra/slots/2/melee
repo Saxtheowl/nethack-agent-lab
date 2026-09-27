@@ -1,0 +1,14 @@
+#!/bin/bash
+# slot2 helper: melee F<dir> repeatedly until target gone/killed; stops if HP < 40% or stole
+cd "$(dirname "$0")"
+d=$1; n=${2:-6}
+for i in $(seq $n); do
+  out=$(./k --raw F$d)
+  echo "$out" | grep -E '^07'
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  echo "$out" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  [ $((cur*5)) -lt $((mx*2)) ] && { echo "LOWHP $cur/$mx"; exit 3; }
+  echo "$out" | grep -qE 'You kill|is killed|destroy' && { echo "$out" | grep '^Neigh'; exit 0; }
+  echo "$out" | grep -q "^Neighbors" && ! echo "$out" | grep '^Neighbors' | grep -qE " $d:[a-zA-Z@&;:]\(" && { echo GONE; exit 0; }
+done
+echo "$out" | grep -E '^34|^Neigh'

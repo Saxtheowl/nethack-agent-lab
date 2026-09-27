@@ -15,7 +15,7 @@ for i in $(seq "${2:-30}"); do
   [[ "$h" -lt "$prev" ]] && { echo "STOP: HP loss $prev->$h"; break; }
   [[ "$st" != "$st0" ]] && { echo "STOP: hunger $st"; break; }
   [[ "$h" -ge "$t" ]] && { echo "target reached"; break; }
-  echo "$o" | grep -E '^0[1-7] ' | tail -1 | grep -qiE 'appears|bites|hits' && { echo "STOP: $(echo "$o" | grep -E '^0[1-7] ' | tail -1)"; break; }
+  echo "$o" | grep -E '^0[1-7] ' | tail -1 | grep -qiE 'appears|bites you|hits!|bites!' && { echo "STOP: $(echo "$o" | grep -E '^0[1-7] ' | tail -1)"; break; }
   prev=$h
 done
 $S screen --compact | grep -E '^34|^Map|^Neigh'

@@ -22,6 +22,16 @@ def run(name, maxstates=400000):
         w=[not floor(x+dx,y+dy) for dx,dy in [(-1,0),(1,0),(0,-1),(0,1)]]
         return (w[0] or w[1]) and (w[2] or w[3])
     B=frozenset(L['boulders']); P=set(L['pits']); p=L['start']
+    cells=[(x,y) for y in range(H) for x in range(len(grid[y])) if floor(x,y)]
+    live=set(P)
+    ch=True
+    while ch:
+        ch=False
+        for c in cells:
+            if c in live: continue
+            for dx,dy in D.values():
+                if floor(c[0]-dx,c[1]-dy) and (c[0]+dx,c[1]+dy) in live:
+                    live.add(c); ch=True; break
     allsol=[]
     for target in L['pits']:
         start=(B,p)
@@ -42,7 +52,7 @@ def run(name, maxstates=400000):
                     if to==target:
                         found=(b-{bo},bo,np); break
                     if to in P: continue   # don't fill other pits out of order
-                    if dead(*to,P): continue
+                    if dead(*to,P) or to not in live: continue
                     q.append(((b-{bo})|{to},bo,np))
                 if found: break
             if found: break

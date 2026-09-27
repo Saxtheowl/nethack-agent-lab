@@ -1,0 +1,12 @@
+#!/bin/bash
+# slots/6/map: print the map rows with x ruler (rows[y][x] = map x,y)
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+python3 -c "
+import sys; sys.path.insert(0,'scripts'); import session
+rows=session.screen().splitlines()
+print('   '+''.join(str(i//10) if i%10==0 else ' ' for i in range(0,80)))
+print('   '+''.join(str(i%10) for i in range(0,80)))
+for y in range(10,31): print('%2d '%y+ rows[y][0:80].rstrip())
+print(rows[34][:80])
+"

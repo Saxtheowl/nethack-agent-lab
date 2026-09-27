@@ -1,0 +1,16 @@
+#!/bin/bash
+# slot2 helper: at chokepoint, search 1 turn at a time until a hostile is adjacent at 4 (63,15)
+# or HP drop/stole; then fight it. Usage: waitfight [maxturns]
+cd "$(dirname "$0")"
+max=${1:-10}
+for i in $(seq $max); do
+  s=$(./v)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1)
+  cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  if echo "$s" | grep -qiE 'stole|snatch'; then echo "STOLE"; exit 2; fi
+  if [ $((cur*2)) -lt $mx ]; then echo "LOWHP $cur/$mx"; exit 3; fi
+  adj=$(echo "$s" | grep '^Neighbors' | grep -oE '[1-9]:[a-zA-Z@&;:][(]' | head -1)
+  if [ -n "$adj" ]; then d=${adj%%:*}; g=${adj#*:}; g=${g%(}; echo "ADJ $g dir $d"; exit 0; fi
+  ./k --raw s >/dev/null
+done
+echo "TIMEOUT"

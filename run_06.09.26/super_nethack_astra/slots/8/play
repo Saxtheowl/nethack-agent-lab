@@ -1,0 +1,33 @@
+#!/bin/bash
+# slots/8/play [rounds]: explore; when a known-weak monster is adjacent, farlook it and fight it (one call of fight);
+# stops for anything else (unknown/dangerous monster, low HP, hunger, stairs, prompts) and prints the situation.
+cd "$(dirname "$0")"
+WEAK='pony|kitten|housecat|dwarf zombie|gnome mummy|acid blob|newt|sewer rat|giant rat|jackal|grid bug|kobold|large kobold|goblin|hobgoblin|gnome|gnome lord|lichen|gecko|coyote|fox|bat|hill orc|yellow mold XX|iguana|rabid rat|acid blob XX|homunculus|garter snake|manes|hobbit|giant ant|cave spider|centipede|little dog XX|kitten XX|jackal|fog cloud|gas spore XX|dingo|orc zombie|kobold zombie|gnome zombie|kobold lord|kobold shaman|orc shaman|hill orc|Mordor orc|Uruk-hai|snake|water moccasin'
+for r in $(seq ${1:-4}); do
+  out=$(timeout 100 ./explore --steps 25 2>&1 | grep -E "^explore")
+  o=$(./v)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  echo "[$r] $out | $hp"
+  [ $((cur*2)) -lt $max ] && { echo "STOP: HP low"; break; }
+  echo "$o" | grep -qE "Weak|Fainting|Blind|Conf|Stun|Hallu|Ill|Stone|Slime" && { echo "STOP: status"; echo "$o" | grep HP:; break; }
+  adj=$(echo "$o" | grep '^Neighbors' | head -1 | grep -oE "[0-9]:[A-Za-z:;&'@]\([0-9]+,[0-9]+\)" | head -3)
+  pets=$(echo "$o" | grep '^PETS')
+  fought=0
+  for a in $adj; do
+    xy=$(echo "$a" | grep -oE "[0-9]+,[0-9]+"); echo "$pets" | grep -q "$xy" && continue
+    x=${xy%,*}; y=${xy#*,}; d=${a%%:*}; g=${a:2:1}
+    name=$(./look $x $y | tail -1)
+    echo "  adj $a: $name"
+    if echo "$name" | grep -q peaceful; then continue; fi
+    if echo "$name" | grep -qE "\((floating eye|yellow mold|green mold|brown mold|red mold|blue jelly|spotted jelly|gas spore)"; then echo "  (ignored passive)"; fought=1; continue; fi
+    if echo "$name" | grep -qE "\(($WEAK)\)|\(($WEAK) "; then
+      for i in 1 2 3 4 5 6; do ./k "F$d" >/dev/null; sleep 0.3; o2=$(./v); echo "$o2" | grep -E "^07" | tail -1;
+        echo "$o2" | grep -q " $g@$x,$y" || break
+        h2=$(echo "$o2" | grep -o 'HP:[0-9]*' | cut -d: -f2); [ $((h2*2)) -lt $max ] && break; done
+      fought=1
+    else echo "STOP: unknown/dangerous monster"; exit 2; fi
+  done
+  if echo "$out" | grep -q "no reachable frontier" && [ -z "$cleared" ]; then echo '{}' > ../../.runtime/explore-8.json; cleared=1; continue; fi
+  echo "$out" | grep -qE "HP loss|step budget|Weak|Hungry" || { [ $fought = 1 ] || { echo "STOP: $out"; break; }; }
+done
+./v | grep -E "^0[5-7]|HP:|^Map"

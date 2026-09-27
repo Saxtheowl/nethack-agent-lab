@@ -1,0 +1,21 @@
+#!/bin/bash
+# slots/5/doorfight DIR MINHP N : hold position; each turn attack in DIR if a monster is there, else search 1 turn.
+# stops when HP < MINHP or after N turns. Prints each result line.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+declare -A DX=([1]=-1 [2]=0 [3]=1 [4]=-1 [6]=1 [7]=-1 [8]=0 [9]=1) DY=([1]=1 [2]=1 [3]=1 [4]=0 [6]=0 [7]=-1 [8]=-1 [9]=-1)
+d=$1; min=$2
+for i in $(seq "${3:-20}"); do
+  o=$($S screen --compact)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [[ "$h" -lt "$min" ]] && { echo "STOP HP $h"; break; }
+  cur=$(echo "$o" | grep -oE 'cursor \(x,y; usually hero when no menu\): [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+$')
+  x=$(( ${cur%,*} + ${DX[$d]} )); y=$(( ${cur#*,} + ${DY[$d]} ))
+  if echo "$o" | grep '^Map' | grep -qE " [a-zA-Z&;:]@$x,$y( |$)"; then
+    r=$($S keys --compact "F$d"); echo "F$d HP$h: $(echo "$r" | grep -E '^0[1-7] ' | tail -1 | cut -c5-80)"
+  else
+    r=$($S keys --compact s); m=$(echo "$r" | grep -E '^0[1-7] ' | tail -1 | cut -c5-80); echo "$m" | grep -qiE 'hits|bites|misses|throws|zaps' && echo "s HP$h: $m"
+  fi
+done
+$S screen --compact | grep -E '^34|^Map'

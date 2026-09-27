@@ -1,0 +1,12 @@
+#!/bin/bash
+# slots/6/dip: dip item a (long sword) into the fountain here once; print new messages.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+$S keys --raw '#dip' --settle .4 >/dev/null
+$S keys --named Enter --settle .5 >/dev/null
+$S screen | grep -q 'into the fountain\|Dip it into' || true
+$S keys --raw a --settle .5 >/dev/null
+$S screen | grep -q 'into the fountain? \[yn\]' && $S keys --raw y --settle 1 >/dev/null
+for i in 1 2 3; do $S screen | grep -q -- '--More--' && $S keys --named Enter --settle .4 >/dev/null; done
+$S screen --compact | grep -E '^0[3-7] |^34|^Map' | cut -c1-160

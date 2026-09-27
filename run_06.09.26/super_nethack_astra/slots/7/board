@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-# board X0 X1 Y0 Y1: print the map region with exact x coordinates (x = screen column - 1 inside the frame)
-import subprocess, os, sys
+# board X0 X1 Y0 Y1: print map region with exact coords (calibrated on the hero @ and the terminal cursor)
+import subprocess, os, sys, re
 x0, x1, y0, y1 = map(int, sys.argv[1:5])
-out = subprocess.run(['python3', 'scripts/session.py', 'screen'], capture_output=True, text=True,
-                     env=dict(os.environ, NH_SLOT='7')).stdout.split('\n')
-# screen line index: row y is out[y] (line 0 is header?) -> detect by locating '@' vs Terminal cursor
+env = dict(os.environ, NH_SLOT='7')
+comp = subprocess.run(['python3', 'scripts/session.py', 'screen', '--compact'], capture_output=True, text=True, env=env).stdout
+hx, hy = map(int, re.search(r'@@(\d+),(\d+)', comp).groups())
+out = subprocess.run(['python3', 'scripts/session.py', 'screen'], capture_output=True, text=True, env=env).stdout.split('\n')
+row = out[hy]
+cands = [i for i, c in enumerate(row) if c == '@']
+off = min(cands, key=lambda i: abs(i - hx)) - hx
 print('    ' + ''.join(str(x % 10) for x in range(x0, x1 + 1)))
 for y in range(y0, y1 + 1):
     line = out[y] if y < len(out) else ''
-    print(f'{y:3} ' + ''.join(line[x] if x < len(line) else ' ' for x in range(x0, x1 + 1)))
+    print(f'{y:3} ' + ''.join(line[x + off] if 0 <= x + off < len(line) else ' ' for x in range(x0, x1 + 1)))

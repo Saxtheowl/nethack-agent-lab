@@ -1,0 +1,11 @@
+#!/bin/bash
+# slots/5/grab2 GLYPHS : for each visible item glyph, goto it (HP-safe) and ',' ; stops at first problem.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+g="${1:-\$}"
+for p in $($S screen --compact | grep '^Map' | grep -oE " [$g]@[0-9]+,[0-9]+" | sed 's/.*@//'); do
+  out=$(slots/5/goto ${p%,*} ${p#*,}); echo "$out" | head -1
+  echo "$out" | grep -q "^ARRIVED" || break
+  $S keys --compact , | grep -E '^0[1-7] ' | tail -1 | cut -c1-80
+done

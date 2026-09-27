@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/5/goto X Y : travel to X,Y (via go, which stops on HP loss/prompt/no progress).
+# Never fights, never waits. Stops at once if HP dropped or a message shows an attack. Up to 3 go calls.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+hp() { $S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2; }
+h0=$(hp)
+for r in 1 2 3; do
+  scripts/go "$1" "$2" >/dev/null
+  o=$($S screen --compact)
+  cur=$(echo "$o" | grep -oE 'cursor \(x,y; usually hero when no menu\): [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+$')
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP: HP $h0->$h at $cur"; echo "$o" | grep -E '^0[1-7] ' | tail -2; exit 2; }
+  echo "$o" | grep -E '^0[1-7] ' | tail -1 | grep -qiE 'hits|bites|stings|touches|butts|kicks|claws|attacks' && { echo "STOP: attacked at $cur"; exit 2; }
+  [[ "$cur" == "$1,$2" ]] && { echo "ARRIVED $cur"; exit 0; }
+done
+echo "NOT ARRIVED (at $cur)"; exit 1

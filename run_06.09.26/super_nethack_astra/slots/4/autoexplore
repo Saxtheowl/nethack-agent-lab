@@ -1,3 +1,3 @@
 #!/bin/bash
 export NH_SLOT=4
-exec "$(dirname "$0")/../../scripts/autoexplore" "$@"
+exec "$(dirname "$0")/../../scripts/slotrun" scripts/autoexplore "$@"
