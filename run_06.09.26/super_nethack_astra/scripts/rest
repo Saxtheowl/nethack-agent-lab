@@ -1,0 +1,30 @@
+#!/bin/bash
+# scripts/rest [targetHP%]: rest on the current Elbereth square in 10-turn
+# chunks; re-checks the engraving each time and rewrites it if damaged
+# (1/25 typo chance per letter in dust). Stops on attack or HP target.
+cd "$(dirname "$0")/.."
+S="python3 scripts/session.py"
+target=${1:-95}
+engrave() {
+  for t in 1 2 3; do
+    $S keys --raw E- --settle .5 >/dev/null
+    $S screen | grep -q 'add to the current' && $S keys --raw n --settle .3 >/dev/null
+    $S keys --raw Elbereth >/dev/null; $S keys --named Enter --settle 1 >/dev/null
+    for i in 1 2 3; do $S screen | grep -q '>>' && $S keys --named Enter --settle .3 >/dev/null; done
+    $S keys : --settle .5 >/dev/null
+    $S screen | grep -q 'You read: "Elbereth"' && return 0
+  done
+  return 1
+}
+for i in $(seq 40); do
+  $S keys : --settle .4 >/dev/null
+  $S screen | grep -q 'You read: "Elbereth"' || { echo "rewrite"; engrave || { echo "ENGRAVE FAILED"; break; }; }
+  $S keys n10s --settle 1 >/dev/null
+  for j in 1 2; do $S screen | grep -q '>>' && $S keys --named Enter --settle .3 >/dev/null; done
+  o=$($S screen)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1)
+  cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  echo -n "$cur "
+  echo "$o" | grep -q "hits!\|bites!\|stings!\|touches you" && { echo ATTACKED; break; }
+  [ $((cur * 100)) -ge $((max * target)) ] && { echo FULL; break; }
+done
