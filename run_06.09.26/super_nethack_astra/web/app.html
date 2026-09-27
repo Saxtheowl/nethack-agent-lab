@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude joue à NetHack</title>
+<style>
+:root {
+  --bg: #0d1316; --panel: #131c20; --panel2: #18242a; --line: #2a3a40; --text: #e3e8de;
+  --muted: #8fa39b; --accent: #a9c58c; --warn: #e4b987; --bad: #e27d6f; --blue: #7fb2e5;
+  --gold: #efd69a; --term: #0a1012;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, select, input { font: inherit; color: inherit; }
+button { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.on { background: #24362c; border-color: var(--accent); color: #d8f0c0; }
+header.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 18px; padding: 10px 18px;
+  background: #0b1114ee; border-bottom: 1px solid var(--line); backdrop-filter: blur(4px); }
+header.top h1 { font-size: 17px; margin: 0; font-weight: 650; letter-spacing: .01em; }
+nav.tabs { display: flex; gap: 6px; }
+nav.tabs button { padding: 6px 16px; }
+header.top .right { margin-left: auto; color: var(--muted); font-size: 13px; display: flex; gap: 14px; align-items: center; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #55656b; margin-right: 6px; vertical-align: middle; }
+.dot.live { background: #7ddc6f; box-shadow: 0 0 6px #7ddc6f; animation: pulse 1.6s infinite; }
+.dot.dead { background: var(--bad); } .dot.saved { background: var(--warn); } .dot.ascended { background: var(--gold); }
+@keyframes pulse { 50% { opacity: .45; } }
+main { padding: 16px 18px 40px; max-width: 1800px; margin: 0 auto; }
+.hidden { display: none !important; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); margin: 0 0 10px; font-weight: 650; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-width: 0; }
+
+/* terminal */
+.term { background: var(--term); border: 1px solid #22313a; border-radius: 8px; padding: 8px 10px; overflow: hidden;
+  font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace; white-space: pre; color: #e5e5e5; }
+.term .row { height: 1.18em; line-height: 1.18em; overflow: hidden; }
+.term span.b { font-weight: bold; } .term span.d { opacity: .6; } .term span.u { text-decoration: underline; }
+
+/* live tab */
+.slotbar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.livegrid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; }
+.feed .decision { font-size: 15px; margin: 0 0 10px; }
+.feed .decision + .decision { color: var(--muted); font-size: 13.5px; }
+.cmd { display: flex; gap: 10px; font-size: 13px; line-height: 1.7; }
+.cmd time { color: var(--muted); font-family: monospace; min-width: 64px; }
+.cmd code { color: var(--gold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmd small { margin-left: auto; color: var(--muted); }
+
+/* dashboard */
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 16px; }
+.card { display: flex; flex-direction: column; gap: 8px; }
+.card .head { display: flex; align-items: baseline; gap: 8px; }
+.card .head b { font-size: 15px; } .card .head .sub { color: var(--muted); font-size: 12.5px; }
+.card .head .badge { margin-left: auto; }
+.badge { font-size: 11.5px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.badge.live { color: #b8f0a8; border-color: #3f6b3a; } .badge.dead { color: #f3aaa0; border-color: #6b3a35; }
+.badge.saved { color: var(--warn); border-color: #6b5535; } .badge.ascended { color: var(--gold); border-color: #6b6035; }
+.card .mini { font-size: 7.6px; cursor: pointer; }
+.card .mini:hover { border-color: var(--accent); }
+.stats { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.stats b { color: var(--text); font-weight: 600; }
+.hpbar { height: 6px; background: #2b1d1d; border-radius: 3px; overflow: hidden; }
+.hpbar i { display: block; height: 100%; background: linear-gradient(90deg, #7ddc6f, #b9e36d); }
+.hpbar i.low { background: linear-gradient(90deg, #e27d6f, #e4b987); }
+.card .say { font-size: 13px; color: #c9d4c4; min-height: 2.9em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card .actions { display: flex; gap: 6px; }
+.empty { color: var(--muted); font-size: 13px; padding: 30px 10px; text-align: center; border: 1px dashed var(--line); border-radius: 8px; }
+
+.tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+.tile .v { font-size: 24px; font-weight: 650; } .tile .l { color: var(--muted); font-size: 12px; }
+
+.replay { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; margin-bottom: 16px; }
+.controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.controls .pos { margin-left: auto; color: var(--muted); font-family: monospace; font-size: 12.5px; }
+.timeline { position: relative; height: 34px; margin-top: 10px; cursor: pointer; }
+.timeline .track { position: absolute; left: 0; right: 0; top: 14px; height: 6px; background: #22313a; border-radius: 3px; }
+.timeline .fill { position: absolute; left: 0; top: 14px; height: 6px; background: var(--accent); border-radius: 3px; }
+.timeline .knob { position: absolute; top: 8px; width: 4px; height: 18px; background: #fff; border-radius: 2px; transform: translateX(-2px); }
+.timeline .mk { position: absolute; top: 2px; width: 3px; height: 10px; border-radius: 1px; transform: translateX(-1px); }
+.timeline .mk:hover { transform: translateX(-1px) scaleY(1.6); }
+.mk.level, .ev.level::before { background: var(--blue); } .mk.xl, .ev.xl::before { background: var(--accent); }
+.mk.danger, .ev.danger::before { background: var(--warn); } .mk.hit, .ev.hit::before { background: #d9a05b; }
+.mk.death, .ev.death::before { background: var(--bad); } .mk.mark, .ev.mark::before { background: #c79bf0; }
+.mk.say, .ev.say::before { background: #6fb3a6; }
+.charts svg { width: 100%; height: 90px; display: block; cursor: pointer; }
+.side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.evlist { max-height: 260px; overflow: auto; font-size: 13px; }
+.ev { display: flex; gap: 8px; padding: 3px 4px; border-radius: 4px; cursor: pointer; align-items: baseline; }
+.ev::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 2px; transform: translateY(1px); }
+.ev:hover { background: var(--panel2); } .ev.cur { background: #22302a; }
+.ev .tt { color: var(--muted); font-family: monospace; font-size: 11.5px; min-width: 52px; }
+.caption { font-size: 14px; min-height: 3.2em; color: #d6e0d0; }
+.caption small { color: var(--muted); display: block; font-size: 12px; }
+.why { font-size: 13px; max-height: 300px; overflow: auto; }
+.why h3 { font-size: 13px; margin: 10px 0 4px; color: var(--warn); } .why p, .why li { margin: 3px 0; color: #cfd8cc; }
+.why ul { padding-left: 18px; margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+tr.pick { cursor: pointer; } tr.pick:hover td { background: var(--panel2); }
+td.cause { max-width: 420px; color: #d6c8c0; }
+.kbd { font-family: monospace; font-size: 11.5px; color: var(--muted); }
+select { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+.loading { color: var(--muted); font-size: 12.5px; }
+@media (max-width: 1250px) { .cards { grid-template-columns: 1fr; } .replay, .livegrid { grid-template-columns: 1fr; } .tiles { grid-template-columns: repeat(2, 1fr); } }
+</style>
+
+<header class="top">
+  <h1>Claude joue à NetHack 3.6.7</h1>
+  <nav class="tabs"><button data-tab="live">Live</button><button data-tab="dash">Dashboard</button></nav>
+  <div class="right"><span id="conn">…</span><span>Joueur IA · Claude Opus 5.5 · local, sans aide</span></div>
+</header>
+
+<main>
+<!-- LIVE -->
+<section id="tab-live">
+  <div class="slotbar" id="slotbar"></div>
+  <div class="livegrid">
+    <div class="term" id="liveterm"></div>
+    <div class="side">
+      <div class="panel"><h2>Statut</h2><div class="stats" id="livestats"></div><div class="hpbar" style="margin-top:8px"><i id="livehp"></i></div></div>
+      <div class="panel feed"><h2>Décisions · commentaire de l'IA</h2><div id="livedec"></div></div>
+      <div class="panel feed"><h2>Commandes envoyées</h2><div id="livecmd"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="tab-dash" class="hidden">
+  <h2>Parties en cours</h2>
+  <div class="cards" id="cards"></div>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="replay">
+    <div class="panel">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <h2 style="margin:0">Replay</h2>
+        <select id="gamesel"></select>
+        <span class="loading" id="rload"></span>
+        <span style="margin-left:auto" class="kbd">Espace lecture · ←/→ image · Maj+←/→ ±50 · N/P évènement · L direct · M marque-page</span>
+      </div>
+      <div class="term" id="rterm"></div>
+      <div class="timeline" id="timeline"><div class="track"></div><div class="fill" id="tfill"></div><div id="tmarks"></div><div class="knob" id="tknob"></div></div>
+      <div class="controls">
+        <button id="bstart" title="Début">⏮</button>
+        <button id="bprevev" title="Évènement précédent (P)">◀◆</button>
+        <button id="bback" title="-1 image">◀</button>
+        <button id="bplay" title="Lecture / pause (Espace)">▶ Lecture</button>
+        <button id="bfwd" title="+1 image">▶</button>
+        <button id="bnextev" title="Évènement suivant (N)">◆▶</button>
+        <button id="blive" title="Suivre en direct (L)">● Direct</button>
+        <select id="speed" title="Vitesse">
+          <option value="1">×1</option><option value="3">×3</option><option value="8" selected>×8</option>
+          <option value="25">×25</option><option value="80">×80</option><option value="300">×300</option>
+        </select>
+        <label class="kbd"><input type="checkbox" id="skipidle" checked> sauter les pauses</label>
+        <button id="bmark" title="Ajouter un marque-page (M)">📌</button>
+        <button id="bshare" title="Copier un lien vers cet instant">🔗</button>
+        <span class="pos" id="rpos"></span>
+      </div>
+      <div class="charts"><svg id="chart" viewBox="0 0 1000 90" preserveAspectRatio="none"></svg>
+        <div class="kbd"><span style="color:#7ddc6f">━</span> PV %  <span style="color:var(--blue)">━</span> profondeur  — clic pour aller à l'instant</div></div>
+    </div>
+    <div class="side">
+      <div class="panel"><h2>À cet instant</h2><div class="stats" id="rstats"></div><div class="caption" id="rcap" style="margin-top:8px"></div></div>
+      <div class="panel"><h2>Évènements</h2><div class="evlist" id="evlist"></div></div>
+      <div class="panel"><h2>Pourquoi / leçons</h2><div class="why" id="why"></div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Toutes les parties</h2>
+    <table><thead><tr><th>Partie</th><th>Début</th><th>État</th><th>Tours</th><th>Prof. max</th><th>XL</th><th>Points</th><th>Cause / résumé</th><th></th></tr></thead>
+    <tbody id="hist"></tbody></table>
+  </div>
+</section>
+</main>
+
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); for (const k of kids) e.append(k); return e; };
+const fmtT = t => new Date(t * 1000).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+const STATUS_FR = {live: 'en direct', dead: 'morte', saved: 'sauvegardée', ascended: 'ASCENSION', stopped: 'arrêtée'};
+async function api(path) { const r = await fetch(path, {cache: 'no-store'}); if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }
+
+/* ---------- terminal rendering ---------- */
+class Term {
+  constructor(node, {cols = 144, rows = 36, y0 = 0, y1 = 36, x1 = 144} = {}) {
+    Object.assign(this, {node, cols, rows, y0, y1, x1});
+    this.rowEls = []; this.cache = [];
+    node.textContent = '';
+    for (let y = y0; y < y1; y++) { const r = el('div', {className: 'row'}); node.append(r); this.rowEls.push(r); this.cache.push(null); }
+    this.fit(); new ResizeObserver(() => this.fit()).observe(node);
+  }
+  fit() {
+    const w = this.node.clientWidth - 20;
+    if (w > 0) this.node.style.fontSize = Math.max(4, w / ((this.x1) * 0.602)) + 'px';
+  }
+  render(rows) {
+    for (let y = this.y0; y < this.y1; y++) {
+      const row = rows[y] || [];
+      const key = JSON.stringify(row);
+      const i = y - this.y0;
+      if (this.cache[i] === key) continue;
+      this.cache[i] = key;
+      const frag = document.createDocumentFragment();
+      let x = 0;
+      for (const [text, fg, bg, fl] of row) {
+        if (x >= this.x1) break;
+        const t = text.slice(0, this.x1 - x).replace(/▒/g, '#'); x += text.length;
+        const s = el('span', {textContent: t});
+        if (fg) s.style.color = fg; if (bg) s.style.backgroundColor = bg;
+        if (fl) s.className = fl.split('').join(' ');
+        frag.append(s);
+      }
+      this.rowEls[i].replaceChildren(frag);
+    }
+  }
+}
+
+/* ---------- tabs & hash ---------- */
+let TAB = 'live';
+const hashState = () => Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
+function setHash(obj) { const h = new URLSearchParams({...hashState(), ...obj}); history.replaceState(null, '', '#' + h); }
+function showTab(t) {
+  TAB = t; setHash({tab: t});
+  for (const b of document.querySelectorAll('nav.tabs button')) b.classList.toggle('on', b.dataset.tab === t);
+  $('#tab-live').classList.toggle('hidden', t !== 'live');
+  $('#tab-dash').classList.toggle('hidden', t !== 'dash');
+  if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
+}
+for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => showTab(b.dataset.tab);
+
+/* ---------- LIVE tab ---------- */
+let liveSlot = hashState().slot || '1', liveTerm = null, GAMES = [], SLOTS = {};
+function slotButtons() {
+  const bar = $('#slotbar'); bar.textContent = '';
+  for (const s of ['1', '2', '3']) {
+    const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
+    const st = meta ? meta.status : 'none';
+    const b = el('button', {className: s === liveSlot ? 'on' : ''},
+      el('span', {className: 'dot ' + (st || '')}), `Partie ${s}` + (meta ? ` · ${meta.player} · T${meta.turn ?? '?'}` : ' · libre'));
+    b.onclick = () => { liveSlot = s; setHash({slot: s}); slotButtons(); pollLive(); };
+    bar.append(b);
+  }
+}
+function statsHTML(node, m) {
+  node.textContent = '';
+  const add = (l, v) => node.append(el('span', {}, l + ' ', el('b', {textContent: v ?? '—'})));
+  add('Niveau', m.dlvl); add('Tour', m.turn); add('XL', m.xl); add('CA', m.ac); add('PV', m.hp != null ? `${m.hp}/${m.hpmax}` : null);
+  if (m.maxdepth) add('Prof. max', m.maxdepth);
+}
+function hpWidth(node, m) { const p = m.hpmax ? Math.max(0, Math.min(1, m.hp / m.hpmax)) : 0; node.style.width = (p * 100) + '%'; node.classList.toggle('low', p < .34); }
+async function pollLive() {
+  if (TAB !== 'live') return;
+  try {
+    const d = await api('/api/live?slot=' + liveSlot);
+    $('#conn').textContent = 'connecté · ' + new Date().toLocaleTimeString('fr-FR');
+    if (!liveTerm) liveTerm = new Term($('#liveterm'));
+    if (d.rows.length) liveTerm.render(d.rows);
+    else { liveTerm.render(Array(36).fill([])); liveTerm.rowEls[17].textContent = '   (aucune partie en cours sur cet emplacement)'; liveTerm.cache[17] = null; }
+    statsHTML($('#livestats'), d.meta || {}); hpWidth($('#livehp'), d.meta || {});
+    const dec = (d.feed || []).filter(x => x.kind === 'decision').slice(-3).reverse();
+    $('#livedec').replaceChildren(...(dec.length ? dec : [{text: d.commentary || 'En attente de la prochaine décision.'}]).map(x => el('p', {className: 'decision', textContent: x.text})));
+    $('#livecmd').replaceChildren(...(d.feed || []).filter(x => x.kind === 'command').slice(-10).reverse().map(x =>
+      el('div', {className: 'cmd'}, el('time', {textContent: x.at ? new Date(x.at).toLocaleTimeString('fr-FR') : ''}), el('code', {textContent: x.text}), el('small', {textContent: (x.label || '') + (x.game_turn ? ' · T' + x.game_turn : '')}))));
+  } catch (e) { $('#conn').textContent = 'déconnecté'; }
+}
+setInterval(pollLive, 700);
+
+/* ---------- DASHBOARD: cards, tiles, history ---------- */
+const miniTerms = {};
+async function refreshGames() {
+  try {
+    const d = await api('/api/games');
+    GAMES = d.games; SLOTS = d.slots;
+    slotButtons();
+    if (TAB !== 'dash') return;
+    renderCards(); renderTiles(); renderHistory(); fillGameSelect();
+  } catch (e) {}
+}
+setInterval(refreshGames, 3000);
+
+function renderCards() {
+  const wrap = $('#cards');
+  for (const s of ['1', '2', '3']) {
+    const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
+    let card = wrap.querySelector(`[data-slot="${s}"]`);
+    if (!card) {
+      card = el('div', {className: 'panel card'}); card.dataset.slot = s;
+      card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
+        <div class="term mini"></div><div class="stats"></div><div class="hpbar"><i></i></div><div class="say"></div>
+        <div class="actions"><button class="go">Plein écran</button><button class="rp">Rejouer</button><button class="lv">● Suivre ici</button></div>`;
+      wrap.append(card);
+      card.querySelector('.go').onclick = () => { liveSlot = s; setHash({slot: s}); showTab('live'); slotButtons(); };
+    }
+    card.querySelector('.head b').textContent = `Partie ${s}`;
+    card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}` : 'emplacement libre';
+    const badge = card.querySelector('.badge');
+    badge.className = 'badge ' + (meta ? meta.status : ''); badge.textContent = meta ? (STATUS_FR[meta.status] || meta.status) : '—';
+    statsHTML(card.querySelector('.stats'), meta || {}); hpWidth(card.querySelector('.hpbar i'), meta || {});
+    card.querySelector('.rp').onclick = () => meta && loadGame(meta.id, 0);
+    card.querySelector('.lv').onclick = () => meta && loadGame(meta.id, 'live');
+    card.querySelector('.mini').onclick = () => meta && loadGame(meta.id, 'live');
+    if (!miniTerms[s]) miniTerms[s] = new Term(card.querySelector('.mini'), {y0: 9, y1: 32, x1: 82});
+    if (meta && meta.status === 'live') {
+      api('/api/live?slot=' + s).then(l => {
+        if (l.rows.length) miniTerms[s].render(l.rows);
+        const dec = (l.feed || []).filter(x => x.kind === 'decision').slice(-1)[0];
+        card.querySelector('.say').textContent = dec ? '« ' + dec.text + ' »' : (l.commentary || '');
+      }).catch(() => {});
+    } else {
+      card.querySelector('.say').textContent = meta ? (meta.death ? '☠ ' + meta.death : '') : 'Aucune partie sur cet emplacement.';
+    }
+  }
+}
+
+function renderTiles() {
+  const done = GAMES.filter(g => g.status === 'dead' || g.status === 'ascended');
+  const tiles = [
+    ['Parties', GAMES.length], ['En direct', GAMES.filter(g => g.status === 'live').length],
+    ['Morts', GAMES.filter(g => g.status === 'dead').length],
+    ['Profondeur max', Math.max(0, ...GAMES.map(g => g.maxdepth || g.maxlvl || 0))],
+    ['Tours joués (total)', GAMES.reduce((a, g) => a + (g.turns || g.turn || 0), 0).toLocaleString('fr-FR')],
+  ];
+  $('#tiles').replaceChildren(...tiles.map(([l, v]) => el('div', {className: 'tile'}, el('div', {className: 'v', textContent: v}), el('div', {className: 'l', textContent: l}))));
+}
+
+function renderHistory() {
+  $('#hist').replaceChildren(...GAMES.map(g => {
+    const tr = el('tr', {className: 'pick'});
+    const td = (t, c) => el('td', {textContent: t ?? '—', className: c || ''});
+    tr.append(td(`${g.player || ''}${g.run ? ' · run ' + g.run : ''} (emp. ${g.slot || '?'})`), td((g.started || '').replace('.', ' ')),
+      el('td', {}, el('span', {className: 'badge ' + g.status, textContent: STATUS_FR[g.status] || g.status || '?'})),
+      td(g.turns || g.turn), td(g.maxlvl || g.maxdepth), td(g.xl), td(g.points),
+      td((g.death ? '☠ ' + g.death : '') + (g.cause_summary ? ' — ' + g.cause_summary : ''), 'cause'),
+      el('td', {}, el('button', {textContent: '▶ Rejouer', onclick: e => { e.stopPropagation(); loadGame(g.id, 0); }})));
+    tr.onclick = () => loadGame(g.id, 0);
+    return tr;
+  }));
+}
+function fillGameSelect() {
+  const sel = $('#gamesel'), cur = R.gid;
+  const opts = GAMES.map(g => el('option', {value: g.id, textContent: `${g.player}${g.run ? ' run ' + g.run : ''} · ${STATUS_FR[g.status] || g.status} · T${g.turns || g.turn || '?'}`}));
+  sel.replaceChildren(...opts); if (cur) sel.value = cur;
+}
+$('#gamesel').onchange = e => loadGame(e.target.value, 0);
+
+/* ---------- REPLAY engine ---------- */
+const rTerm = new Term($('#rterm'));
+const R = {gid: null, frames: [], keys: [], status: [], ct: [], events: [], log: [], pos: 0, screen: null, screenPos: -1,
+  playing: false, follow: false, total: 0, loading: false, meta: null, marks: []};
+
+function applyFrame(screen, f) { for (const y in f.r) screen[+y] = f.r[y]; }
+function screenAt(j) {
+  if (R.screen && j === R.screenPos) return R.screen;
+  let start, screen;
+  if (R.screen && j > R.screenPos && j - R.screenPos < 400) { start = R.screenPos + 1; screen = R.screen; }
+  else {
+    let k = 0; for (const ki of R.keys) { if (ki <= j) k = ki; else break; }
+    screen = Array(36).fill(null).map(() => []); start = k;
+  }
+  for (let i = start; i <= j; i++) applyFrame(screen, R.frames[i]);
+  R.screen = screen; R.screenPos = j; return screen;
+}
+function rowText(row) { return (row || []).map(s => s[0]).join(''); }
+
+function computeDerived(from) {
+  const F = R.frames;
+  for (let i = from; i < F.length; i++) {
+    const f = F[i];
+    if (f.k) R.keys.push(i);
+    R.status[i] = f.s || (i ? R.status[i - 1] : null);
+    const dt = i ? Math.max(0, f.t - F[i - 1].t) : 0;
+    R.ct[i] = (i ? R.ct[i - 1] : 0) + dt;
+    R.ctSkip = R.ctSkip || []; R.ctSkip[i] = (i ? R.ctSkip[i - 1] : 0) + Math.min(dt, 1.2);
+    const s = R.status[i], p = i ? R.status[i - 1] : null;
+    if (s && p) {
+      if (s[1] !== p[1]) R.events.push({f: i, type: 'level', label: `Arrivée niveau ${s[1]} (T${s[0]})`});
+      if (s[4] > p[4]) R.events.push({f: i, type: 'xl', label: `Niveau d'expérience ${s[4]}`});
+      if (s[2] <= s[3] / 3 && p[2] > p[3] / 3) R.events.push({f: i, type: 'danger', label: `Danger : PV ${s[2]}/${s[3]}`});
+      else if (p[2] - s[2] >= Math.max(5, s[3] / 4)) R.events.push({f: i, type: 'hit', label: `Gros coup : −${p[2] - s[2]} PV`});
+    }
+    const msg = f.r['1'] || f.r['2'] || f.r['3'];
+    if (msg) {
+      const all = ['1','2','3','4','5','6','7'].map(y => rowText(f.r[y])).join(' ');
+      if (/You die|is fatal|Do you want your possessions identified/.test(all) && !R.events.some(e => e.type === 'death'))
+        R.events.push({f: i, type: 'death', label: '☠ Mort : ' + (all.match(/[^.!]*(?:fatal|You die)[^.!]*/) || [''])[0].trim().slice(0, 80)});
+    }
+  }
+}
+function frameAtTime(t) { let lo = 0, hi = R.frames.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (R.frames[m].t <= t) lo = m; else hi = m - 1; } return lo; }
+
+async function loadGame(gid, at) {
+  showTab('dash');
+  if (R.gid !== gid) {
+    Object.assign(R, {gid, frames: [], keys: [], status: [], ct: [], ctSkip: [], events: [], log: [], pos: 0, screen: null, screenPos: -1, playing: false, total: 0});
+    R.meta = GAMES.find(g => g.id === gid) || {};
+    R.marks = JSON.parse(localStorage.getItem('marks:' + gid) || '[]');
+    $('#gamesel').value = gid; setPlay(false);
+    await fetchMore(true);
+    try { R.log = (await api('/api/log?game=' + encodeURIComponent(gid))).log; } catch (e) { R.log = []; }
+    for (const l of R.log) if (l.kind === 'decision' && l.text) R.events.push({f: frameAtTime(l.t), type: 'say', label: '💬 ' + l.text});
+    loadWhy(gid);
+  }
+  R.follow = at === 'live';
+  seek(at === 'live' ? R.frames.length - 1 : (typeof at === 'number' ? at : 0));
+  $('#rterm').scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+async function fetchMore(all) {
+  if (!R.gid || R.loading) return;
+  R.loading = true;
+  try {
+    do {
+      const d = await api(`/api/frames?game=${encodeURIComponent(R.gid)}&from=${R.frames.length}&limit=5000`);
+      const start = R.frames.length;
+      for (const f of d.frames) R.frames.push(f);
+      R.total = d.total; computeDerived(start);
+      $('#rload').textContent = R.frames.length < R.total ? `chargement ${R.frames.length}/${R.total}…` : `${R.total} images`;
+      if (!d.frames.length) break;
+    } while (all && R.frames.length < R.total);
+  } finally { R.loading = false; }
+  drawTimeline(); drawChart(); drawEvents();
+}
+setInterval(async () => {   // live growth of the selected game
+  if (!R.gid || TAB !== 'dash') return;
+  const m = GAMES.find(g => g.id === R.gid);
+  if (!m || m.status !== 'live') return;
+  const n = R.frames.length; await fetchMore(false);
+  if (R.follow && R.frames.length > n) seek(R.frames.length - 1, true);
+}, 1000);
+
+function seek(j, keepFollow) {
+  if (!R.frames.length) { rTerm.render([]); return; }
+  j = Math.max(0, Math.min(R.frames.length - 1, j));
+  if (!keepFollow && j < R.frames.length - 1) R.follow = false;
+  R.pos = j; rTerm.render(screenAt(j));
+  const s = R.status[j] || [];
+  const f = R.frames[j];
+  $('#rpos').textContent = `image ${j + 1}/${R.frames.length} · ${fmtT(f.t)}` + (R.follow ? ' · DIRECT' : '');
+  const m = {turn: s[0], dlvl: s[1], hp: s[2], hpmax: s[3], xl: s[4], ac: s[5]};
+  statsHTML($('#rstats'), m);
+  // caption: latest decision/command before this frame
+  let dec = null, cmd = null;
+  for (const l of R.log) { if (l.t > f.t) break; if (l.kind === 'decision') dec = l; else if (l.kind === 'command' || l.kind === 'travel') cmd = l; }
+  const age = dec ? Math.round((f.t - dec.t) / 60) : 0;
+  $('#rcap').replaceChildren(el('div', {textContent: dec ? '« ' + dec.text + ' »' + (age > 2 ? ` (il y a ${age} min)` : '') : '—'}), el('small', {textContent: cmd ? `dernière commande : ${cmd.text} (${fmtT(cmd.t)})` : ''}));
+  const p = R.frames.length > 1 ? j / (R.frames.length - 1) : 0;
+  $('#tfill').style.width = (p * 100) + '%'; $('#tknob').style.left = (p * 100) + '%';
+  $('#blive').classList.toggle('on', R.follow);
+  drawChartCursor(); highlightEvent();
+  setHashSoon();
+}
+let hashTimer = null;
+function setHashSoon() { clearTimeout(hashTimer); hashTimer = setTimeout(() => setHash({tab: 'dash', game: R.gid, f: R.follow ? 'live' : R.pos}), 400); }
+
+/* playback */
+let lastTs = 0, clock = 0;
+function setPlay(on) { R.playing = on; $('#bplay').textContent = on ? '⏸ Pause' : '▶ Lecture'; lastTs = 0; if (on) { const arr = $('#skipidle').checked ? R.ctSkip : R.ct; clock = arr[R.pos] || 0; } }
+function tick(ts) {
+  if (R.playing && R.frames.length) {
+    if (lastTs) {
+      const arr = $('#skipidle').checked ? R.ctSkip : R.ct;
+      clock += (ts - lastTs) / 1000 * +$('#speed').value;
+      let j = R.pos;
+      while (j < R.frames.length - 1 && arr[j + 1] <= clock) j++;
+      if (j !== R.pos) seek(j, R.follow);
+      if (j >= R.frames.length - 1) { const m = GAMES.find(g => g.id === R.gid); if (m && m.status === 'live') { R.follow = true; } setPlay(false); }
+    }
+    lastTs = ts;
+  }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+/* timeline, events, chart */
+function allEvents() { return [...R.events, ...R.marks.map(m => ({f: m.f, type: 'mark', label: '📌 ' + m.note}))].sort((a, b) => a.f - b.f); }
+function drawTimeline() {
+  const n = Math.max(1, R.frames.length - 1);
+  $('#tmarks').replaceChildren(...allEvents().filter(e => e.type !== 'say' || R.log.length < 400).map(e => {
+    const m = el('div', {className: 'mk ' + e.type, title: e.label}); m.style.left = (e.f / n * 100) + '%';
+    m.onclick = ev => { ev.stopPropagation(); seek(e.f); }; return m;
+  }));
+}
+$('#timeline').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); seek(Math.round((e.clientX - r.left) / r.width * (R.frames.length - 1))); };
+function drawEvents() {
+  const list = $('#evlist');
+  list.replaceChildren(...allEvents().map(e => {
+    const s = R.status[e.f];
+    const d = el('div', {className: 'ev ' + e.type}, el('span', {className: 'tt', textContent: s ? 'T' + s[0] : '#' + e.f}), el('span', {textContent: e.label}));
+    d.dataset.f = e.f; d.onclick = () => seek(e.f); return d;
+  }));
+  if (!list.children.length) list.append(el('div', {className: 'kbd', textContent: 'Aucun évènement pour l’instant.'}));
+}
+function highlightEvent() {
+  let cur = null;
+  for (const d of $('#evlist').children) { d.classList.remove('cur'); if (+d.dataset.f <= R.pos) cur = d; }
+  if (cur) cur.classList.add('cur');
+}
+function drawChart() {
+  const svg = $('#chart'), n = Math.max(1, R.frames.length - 1), step = Math.max(1, Math.floor(R.frames.length / 1000));
+  let hp = '', dep = '';
+  const maxd = Math.max(5, ...R.status.filter(Boolean).map(s => +s[1] || 0));
+  for (let i = 0; i < R.frames.length; i += step) {
+    const s = R.status[i]; if (!s) continue;
+    const x = (i / n * 1000).toFixed(1);
+    hp += `${x},${(88 - (s[2] / s[3]) * 84).toFixed(1)} `;
+    dep += `${x},${(4 + ((+s[1] || 0) / maxd) * 84).toFixed(1)} `;
+  }
+  svg.innerHTML = `<rect x="0" y="0" width="1000" height="90" fill="#0f171a"/>
+    <polyline points="${dep}" fill="none" stroke="#7fb2e5" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    <polyline points="${hp}" fill="none" stroke="#7ddc6f" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    <line id="ccur" x1="0" x2="0" y1="0" y2="90" stroke="#fff" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+  drawChartCursor();
+}
+function drawChartCursor() { const c = $('#ccur'); if (!c) return; const x = R.pos / Math.max(1, R.frames.length - 1) * 1000; c.setAttribute('x1', x); c.setAttribute('x2', x); }
+$('#chart').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); seek(Math.round((e.clientX - r.left) / r.width * (R.frames.length - 1))); };
+
+/* journal: why I lost + lessons */
+async function loadWhy(gid) {
+  const box = $('#why'); box.textContent = '…';
+  const m = GAMES.find(g => g.id === gid) || {};
+  let text = '';
+  try { text = (await api('/api/journal?game=' + encodeURIComponent(gid))).text; } catch (e) {}
+  box.textContent = '';
+  if (m.death) box.append(el('h3', {textContent: '☠ ' + m.death + (m.turns ? ` — tour ${m.turns}` : '')}));
+  if (m.cause_summary) box.append(el('p', {textContent: m.cause_summary}));
+  const sections = text.split(/^## /m).slice(1).filter(s => /^(DEATH|Lessons|Leçons|Current state)/i.test(s));
+  for (const sec of sections) {
+    const [title, ...lines] = sec.split('\n');
+    box.append(el('h3', {textContent: title.trim()}));
+    let ul = null;
+    for (const line of lines) {
+      if (/^\s*-\s+/.test(line)) { if (!ul) { ul = el('ul'); box.append(ul); } ul.append(el('li', {textContent: line.replace(/^\s*-\s+/, '')})); }
+      else if (/^\s+\S/.test(line) && ul && ul.lastChild) ul.lastChild.textContent += ' ' + line.trim();
+      else if (line.trim()) {
+        const last = box.lastChild;
+        if (!ul && last && last.tagName === 'P' && last.dataset.open) last.textContent += ' ' + line.trim();
+        else { ul = null; const p = el('p', {textContent: line.trim()}); p.dataset.open = 1; box.append(p); }
+      } else if (box.lastChild) delete box.lastChild.dataset.open;
+    }
+  }
+  if (!box.children.length) box.append(el('p', {textContent: m.status === 'live' ? 'Partie en cours — pas encore de bilan.' : 'Pas de journal pour cette partie.'}));
+}
+
+/* controls */
+$('#bplay').onclick = () => setPlay(!R.playing);
+$('#bstart').onclick = () => seek(0);
+$('#bback').onclick = () => seek(R.pos - 1);
+$('#bfwd').onclick = () => seek(R.pos + 1);
+$('#blive').onclick = () => { R.follow = true; seek(R.frames.length - 1, true); };
+const nextEv = dir => { const ev = allEvents().filter(e => dir > 0 ? e.f > R.pos : e.f < R.pos); if (ev.length) seek(dir > 0 ? ev[0].f : ev[ev.length - 1].f); };
+$('#bnextev').onclick = () => nextEv(1); $('#bprevev').onclick = () => nextEv(-1);
+$('#bmark').onclick = () => {
+  if (!R.gid) return; const note = prompt('Note pour ce marque-page :', ''); if (note === null) return;
+  R.marks.push({f: R.pos, note: note || 'marque-page'}); localStorage.setItem('marks:' + R.gid, JSON.stringify(R.marks)); drawTimeline(); drawEvents();
+};
+$('#bshare').onclick = () => { setHash({tab: 'dash', game: R.gid, f: R.pos}); navigator.clipboard && navigator.clipboard.writeText(location.href); $('#bshare').textContent = '✓'; setTimeout(() => $('#bshare').textContent = '🔗', 1200); };
+addEventListener('keydown', e => {
+  if (TAB !== 'dash' || !R.gid || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  const k = e.key;
+  if (k === ' ') { e.preventDefault(); setPlay(!R.playing); }
+  else if (k === 'ArrowRight') { e.preventDefault(); seek(R.pos + (e.shiftKey ? 50 : 1)); }
+  else if (k === 'ArrowLeft') { e.preventDefault(); seek(R.pos - (e.shiftKey ? 50 : 1)); }
+  else if (k === 'Home') seek(0); else if (k === 'End') seek(R.frames.length - 1);
+  else if (k === 'n' || k === 'N') nextEv(1); else if (k === 'p' || k === 'P') nextEv(-1);
+  else if (k === 'l' || k === 'L') $('#blive').click(); else if (k === 'm' || k === 'M') $('#bmark').click();
+});
+
+/* boot */
+(async () => {
+  const h = hashState();
+  await refreshGames();
+  showTab(h.tab === 'dash' ? 'dash' : 'live');
+  if (h.game) loadGame(h.game, h.f === 'live' ? 'live' : +(h.f || 0));
+  else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
+  pollLive();
+})();
+</script>

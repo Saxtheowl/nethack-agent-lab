@@ -15,7 +15,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = ROOT / '.runtime'
-LEDGER = ROOT / 'runs' / 'ledger.jsonl'
+SLOT = os.environ.get('NH_SLOT', '1')
+LEDGER = ROOT / 'runs' / ('ledger.jsonl' if SLOT == '1' else f'ledger-{SLOT}.jsonl')
+FEED = f'public-feed-{SLOT}.json'
 
 
 def now():
@@ -46,7 +48,7 @@ def _head():
 
 
 def record(kind, data):
-    with _locked('ledger.lock'):
+    with _locked(f'ledger-{SLOT}.lock'):
         LEDGER.parent.mkdir(exist_ok=True)
         event = {'at': now(), 'kind': kind, 'prev': _head(), 'data': data}
         body = json.dumps(event, sort_keys=True, ensure_ascii=False)
@@ -72,9 +74,23 @@ def verify():
     print(f'{count} events, head {prev}')
 
 
+def game_log(kind, text, **details):
+    """Per-game decision/command log used for replay captions."""
+    try:
+        gid = json.loads((RUNTIME / f'slot-{SLOT}.json').read_text())['game_id']
+    except (FileNotFoundError, KeyError, json.JSONDecodeError):
+        return
+    path = ROOT / 'runs' / 'games' / gid / 'log.jsonl'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, 'a') as f:
+        f.write(json.dumps({'t': round(time.time(), 3), 'kind': kind, 'text': text, **details},
+                           ensure_ascii=False) + '\n')
+
+
 def publish(kind, text, **details):
-    path = RUNTIME / 'public-feed.json'
-    with _locked('public-feed.lock'):
+    game_log(kind, text, **details)
+    path = RUNTIME / FEED
+    with _locked(f'public-feed-{SLOT}.lock'):
         try:
             rows = json.loads(path.read_text())
         except FileNotFoundError:
@@ -87,7 +103,7 @@ def publish(kind, text, **details):
 
 def public_state():
     try:
-        feed = json.loads((RUNTIME / 'public-feed.json').read_text())
+        feed = json.loads((RUNTIME / FEED).read_text())
     except FileNotFoundError:
         feed = []
     return {'feed': feed, 'audit': {'healthy': True, 'head_sha256': _head()}}

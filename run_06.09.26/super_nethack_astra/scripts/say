@@ -1,0 +1,3 @@
+#!/bin/bash
+# scripts/say "texte" : commentaire public de l'IA (viewer + sous-titres du replay)
+cd "$(dirname "$0")/.." && python3 scripts/session.py note "$*"

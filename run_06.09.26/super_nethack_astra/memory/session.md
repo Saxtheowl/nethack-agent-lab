@@ -18,6 +18,29 @@ PURE rules — never break them:
   running process (RNG, unknown map): never.
 - Helper scripts allowed and encouraged (guard, route, sokoban) as for Astra.
 
+## Slots (3 games at once, since 2026-09-27)
+
+- Slot 1 = player Claude (journal memory/run-N.md), played by the main session.
+- Slot 2 = Claude2 (memory/slot2-run-N.md), slot 3 = Claude3 (memory/slot3-run-N.md).
+- Everything is selected by the env var NH_SLOT. Easiest: use the wrappers in
+  slots/2/ and slots/3/ (k v t go fight look doors say explore runto flee route
+  session) which export NH_SLOT for you. Slot 1 uses scripts/ directly.
+- Never send keys to another slot's game. Do not edit shared files in scripts/
+  or web/ (other games depend on them); note bugs in your journal instead.
+- New game after a death: `NH_SLOT=N python3 scripts/session.py start`, then
+  set "journal"/"run" in .runtime/slot-N.json and create the new journal file.
+
+## Recording, dashboard, replay
+
+- scripts/recorder.py (tmux session `recorder`) records every screen change of
+  every slot into runs/games/<game_id>/frames.jsonl (+ meta.json, log.jsonl).
+- scripts/dashboard.py (tmux session `viewer`) serves http://127.0.0.1:8766/ :
+  tab Live (any slot) and tab Dashboard (3 live cards, replay with timeline,
+  events, HP/depth chart, bookmarks, lessons, history of all games).
+- `say "texte"` (scripts/say or slots/N/say) = public AI commentary, shown live
+  and as replay captions. Use it at every real decision, in French.
+- Old ttyrecs can be imported: scripts/import_ttyrec.py <ttyrec> <game_id>.
+
 ## Controls
 
 - `python3 scripts/session.py screen [--compact]` — observe.

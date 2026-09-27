@@ -24,9 +24,15 @@ from terminal import text_runs
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = ROOT / '.runtime'
 SOCKET = '/tmp/nhstream-' + hashlib.sha256(str(ROOT).encode()).hexdigest()[:12] + '.sock'
-TARGET = 'nethack:0.0'
+# Several games can run side by side: NH_SLOT=1|2|3 selects the tmux session,
+# the NetHack player name (hence its save file) and the per-slot runtime files.
+SLOT = os.environ.get('NH_SLOT', '1')
+SESSION = 'nethack' if SLOT == '1' else f'nethack{SLOT}'
+TARGET = f'{SESSION}:0.0'
 NETHACK = ROOT / 'engine/install/games/lib/nethackdir/nethack'
-PLAYER = 'Claude'
+SAVEDIR = ROOT / 'engine/install/games/lib/nethackdir/save'
+PLAYER = 'Claude' if SLOT == '1' else f'Claude{SLOT}'
+SLOTFILE = RUNTIME / f'slot-{SLOT}.json'
 COLS, ROWS = 144, 36
 
 
@@ -36,7 +42,7 @@ def tmux(*args, check=True):
 
 
 def alive():
-    return tmux('has-session', '-t', 'nethack', check=False).returncode == 0
+    return tmux('has-session', '-t', SESSION, check=False).returncode == 0
 
 
 def screen(ansi=False):
@@ -53,7 +59,17 @@ def start():
             return
     # Every session is recorded by ttyrec (one file per start), like Hardfought.
     stamp = datetime.now(timezone.utc).strftime('%Y-%m-%d.%H:%M:%S')
-    record = ROOT / 'runs' / f'{stamp}.ttyrec'
+    record = ROOT / 'runs' / (f'{stamp}.ttyrec' if SLOT == '1' else f'{stamp}.slot{SLOT}.ttyrec')
+    # A game id survives save/restore: a new id only when no save file exists.
+    try:
+        info = json.loads(SLOTFILE.read_text())
+    except FileNotFoundError:
+        info = {}
+    saved = any(SAVEDIR.glob(f'*{PLAYER}.gz')) or any(SAVEDIR.glob(f'*{PLAYER}'))
+    if not saved or not info.get('game_id'):
+        info = {'game_id': f'{PLAYER}-{stamp}', 'player': PLAYER, 'slot': SLOT, 'started': stamp}
+    info.setdefault('ttyrecs', []).append(record.name)
+    SLOTFILE.write_text(json.dumps(info))
     record.parent.mkdir(exist_ok=True)
     command = ['env', f'NETHACKOPTIONS=@{ROOT / "config/nethackrc"}', 'TERM=screen-256color',
                'ttyrec', '-e', f'{NETHACK} -u {PLAYER}', str(record)]
@@ -61,15 +77,15 @@ def start():
         tmux('respawn-pane', '-t', TARGET, *command)
     else:
         subprocess.run(['tmux', '-S', SOCKET, '-f', str(ROOT / 'config/tmux.conf'),
-                        'new-session', '-d', '-s', 'nethack', '-x', str(COLS), '-y', str(ROWS),
+                        'new-session', '-d', '-s', SESSION, '-x', str(COLS), '-y', str(ROWS),
                         *command], check=True)
-    tmux('resize-window', '-t', 'nethack:0', '-x', str(COLS), '-y', str(ROWS))
-    audit.record('session_started', {'ttyrec': record.name})
+    tmux('resize-window', '-t', f'{SESSION}:0', '-x', str(COLS), '-y', str(ROWS))
+    audit.record('session_started', {'ttyrec': record.name, 'game_id': info['game_id']})
     time.sleep(1)
     print(screen())
 
 
-def send(value, named=False, sensitive=False):
+def send(value, named=False, sensitive=False, publish=True):
     if not alive() or tmux('display-message', '-p', '-t', TARGET, '#{pane_dead}').stdout.strip() == '1':
         raise RuntimeError('No live NetHack pane; inspect screen and restart.')
     audit.require_healthy()
@@ -92,7 +108,7 @@ def send(value, named=False, sensitive=False):
         audit.record('input_failed', {'command_id': command_id})
         raise
     audit.record('input_queued', {'command_id': command_id})
-    if visible and turn:
+    if visible and turn and publish:
         label = ('move ' + guard.NAMES[value]) if value in guard.NAMES else {
             '<': 'go upstairs', '>': 'go downstairs', 's': 'search', 'i': 'inspect inventory',
             'S': 'save game', ',': 'pick up', '.': 'wait'}.get(value, 'game input')
@@ -101,7 +117,7 @@ def send(value, named=False, sensitive=False):
 
 def snapshot():
     hidden = not (not (RUNTIME / 'broadcast.hidden').exists())
-    note = RUNTIME / 'commentary.txt'
+    note = RUNTIME / f'commentary-{SLOT}.txt'
     runs = text_runs('Preparing the expedition.\nThe game will appear here shortly.' if hidden else screen(ansi=True))
     activity = audit.public_state()
     if hidden:
@@ -293,9 +309,11 @@ def travel(x, y, confirm=True):
             dx -= sx
             dy -= sy
     audit.record('travel', {'from': [hx, hy], 'to': [x, y], 'cursor_keys': keys})
-    send('_')
+    send('_', publish=False)
     time.sleep(.3)
-    send('@' + keys + '.')
+    send('@' + keys + '.', publish=False)
+    turn = re.search(r'T:(\d+)', screen())
+    audit.publish('command', f'travel → {x},{y}', label='déplacement', game_turn=int(turn[1]) if turn else None)
     time.sleep(1.5)
     print_screen(True)
 
@@ -364,7 +382,7 @@ def main():
     elif args.command == 'screen':
         print_screen(args.compact)
     elif args.command == 'attach':
-        os.execvp('tmux', ['tmux', '-S', SOCKET, 'attach-session', '-r', '-t', 'nethack'])
+        os.execvp('tmux', ['tmux', '-S', SOCKET, 'attach-session', '-r', '-t', SESSION])
     elif args.command == 'keys':
         if not args.named and not args.raw and len(args.value) > 1:
             observed = guard.observe(sys.modules[__name__])
@@ -399,7 +417,7 @@ def main():
     elif args.command == 'note':
         audit.record('public_decision', {'text': args.text})
         audit.publish('decision', args.text, source='stream note')
-        (RUNTIME / 'commentary.txt').write_text(audit.clean(args.text, public=True) + '\n')
+        (RUNTIME / f'commentary-{SLOT}.txt').write_text(audit.clean(args.text, public=True) + '\n')
     elif args.command == 'hide':
         (RUNTIME / 'broadcast.hidden').touch()
     elif args.command == 'show':

@@ -1,0 +1,3 @@
+#!/bin/bash
+export NH_SLOT=3
+exec "$(dirname "$0")/../../scripts/k" "$@"

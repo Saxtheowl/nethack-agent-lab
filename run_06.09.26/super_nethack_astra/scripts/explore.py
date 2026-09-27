@@ -64,7 +64,8 @@ def nearest(rows, start, dead):
         cx, cy = todo.popleft()
         if (cx, cy) != start and frontier(rows, cx, cy) and f'{cx},{cy}' not in dead:
             o = openness(rows, cx, cy)
-            if o >= 7:
+            corridor = tile(rows, cx, cy) in '▒#' or is_door(rows, cx, cy)
+            if o >= (3 if corridor else 7):
                 score = seen[(cx, cy)] - 3 * o
                 if best is None or score < best[0]:
                     best = (score, (cx, cy), seen[(cx, cy)])
@@ -89,18 +90,20 @@ def nearest(rows, start, dead):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--steps', type=int, default=6)
+    p.add_argument('--all', action='store_true', help='do not stop at new stairs')
     args = p.parse_args()
     obs = guard.observe(session)
     st = guard.state(*obs)
     if st is None:
         raise SystemExit('Not at a map prompt.')
     level = st['level']
-    store = session.RUNTIME / 'explore.json'
+    store = session.RUNTIME / f'explore-{session.SLOT}.json'
     try:
         data = json.loads(store.read_text())
     except FileNotFoundError:
         data = {}
     dead = set(data.get(str(level), []))
+    fails = {}
     hp0 = st['hp']
     known_down = sum(r[1:80].count('>') for r in st['rows'][10:31])
     reason = 'step budget used'
@@ -150,12 +153,15 @@ def main():
                 reason = 'prompt or unrecognized screen after a step'
                 break
             if not moved:
-                dead.add(f'{target[0]},{target[1]}')
+                key = f'{target[0]},{target[1]}'
+                fails[key] = fails.get(key, 0) + 1
+                if fails[key] >= 3:
+                    dead.add(key)
         st = st2
         if st['hp'] < hp0:
             reason = 'HP loss'
             break
-        if sum(r[1:80].count('>') for r in st['rows'][10:31]) > known_down:
+        if not args.all and sum(r[1:80].count('>') for r in st['rows'][10:31]) > known_down:
             reason = 'new downstairs seen'
             break
         if st['level'] != level:

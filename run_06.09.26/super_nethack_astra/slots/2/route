@@ -1,0 +1,4 @@
+#!/bin/bash
+export NH_SLOT=2
+cd "$(dirname "$0")/../.."
+exec python3 scripts/route.py "$@"
