@@ -1,0 +1,10 @@
+#!/bin/bash
+# elb: engrave a fresh Elbereth in the dust (wipes an existing engraving), then read it back.
+D="$(dirname "$0")"
+$D/k E --raw >/dev/null
+out=$($D/k - --raw)
+echo "$out" | grep -q 'add to the current engraving' && out=$($D/k n --raw)
+echo "$out" | grep -q 'write in the dust here' || { echo "unexpected prompt"; echo "$out" | sed -n '4,10p'; exit 1; }
+$D/k Elbereth --raw >/dev/null
+$D/k --named Enter | grep -E '^0[5-7] |^34'
+$D/k : | grep -o 'You read: "[^"]*"' | tail -1

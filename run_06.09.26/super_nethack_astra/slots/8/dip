@@ -1,0 +1,7 @@
+#!/bin/bash
+# slots/8/dip: one #dip of the wielded long sword (a) into the fountain here; prints result.
+cd "$(dirname "$0")"
+./k --raw "#dip" >/dev/null; ./k --named Enter >/dev/null; ./k --raw a >/dev/null
+./v | grep -q "into the fountain?" || { echo "NO FOUNTAIN PROMPT"; ./v | grep -E "^0[5-7]"; exit 1; }
+./k --raw y >/dev/null; sleep 1
+./v | grep -E "^0[5-7]|HP:|^Map"

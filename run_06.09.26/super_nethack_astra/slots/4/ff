@@ -1,5 +1,5 @@
 #!/bin/bash
-# slots/4/ff <dir> [n] : F<dir> up to n times (default 3); stop if one exchange costs >=1/5 max HP or HP<60%, target gone, or HP < 50%.
+# slots/4/ff <dir> [n] : F<dir> up to n times (default 3); stop if one exchange costs >=1/5 max HP or HP<threshold, target gone, or HP < 50%.
 cd "$(dirname "$0")/../.."
 export NH_SLOT=4
 S="python3 scripts/session.py"
@@ -11,7 +11,7 @@ for i in $(seq "$n"); do
   echo "[$i] HP:$hp/$mx $(echo "$out" | grep -E '^0[1-7] ' | tail -1 | cut -c5-85)"
   echo "$out" | grep -qE -- '--More--|\[yn|You die' && { echo "STOP: prompt"; break; }
   [[ -n "$hp" && $(( (hp0-hp)*5 )) -ge "$mx" ]] && { echo "STOP: big HP loss ($hp0->$hp)"; break; }
-  [[ -n "$hp" && $((hp*10)) -lt $((mx*6)) ]] && { echo "STOP: HP<60%"; break; }
+  [[ -n "$hp" && $((hp*10)) -lt $((mx*${3:-6})) ]] && { echo "STOP: HP<threshold"; break; }
   hp0=$hp
   echo "$out" | grep -E '^0[1-7] ' | tail -1 | grep -qE "You (kill|destroy)|killed" && { echo "killed"; break; }
 done

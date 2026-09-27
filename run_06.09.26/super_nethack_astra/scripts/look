@@ -2,7 +2,7 @@
 # scripts/look x y : farlook a map cell (uses travel-style cursor keys from hero)
 cd "$(dirname "$0")/.."
 python3 - "$1" "$2" <<'PY'
-import sys, time
+import re, sys, time
 sys.path.insert(0, 'scripts')
 import session, guard
 x, y = int(sys.argv[1]), int(sys.argv[2])
@@ -19,6 +19,8 @@ while dx or dy:
     else:
         keys += small; dx -= sx; dy -= sy
 session.send(';'); time.sleep(.3); session.send(keys + '.'); time.sleep(.6)
-lines = [l for l in session.screen().splitlines()[1:8] if l.strip(' │')]
-print(lines[-1][:81].strip(' │'))
+lines = [l[:81].strip(' │') for l in session.screen().splitlines()[1:8] if l.strip(' │')]
+# the farlook answer starts with the glyph followed by spaces and may wrap
+start = max((i for i, l in enumerate(lines) if re.match(r'^\S\s{3,}', l)), default=len(lines) - 1)
+print(' '.join(lines[start:]))
 PY

@@ -5,15 +5,19 @@ Outils perso : slots/4/kk (touches répétées, arrêt HP/monstre), slots/4/ff (
 slots/4/xp (explore par tranches, arrêt monstre/HP/faim). NE JAMAIS utiliser `fight`.
 
 ## Current state
-URGENT: T1130 Dlvl2 HP26(43) AC6 XL4, prayer jamais (OK), pas de pet (perdu T1).
-Porté: a +1 long sword, c +3 small shield. b dagger, g dagger (acheté). Food: f food ration (BUC ?). e scroll ELBIB YLOH.
-D1: '<' 26,16, '>' 74,27 (pas de fountain).
-D2: '<' 24,12, FOUNTAIN 20,13 (Excalibur XL5) + fountains 64,14 et 63,27, SINK 73,28 (ne pas kicker : black pudding),
-  '>' 65,27. WEAPON SHOP 6-9,15-17 (Voulgezac) : PLATE MAIL 800 zm (6,16) — revenir avec l'or des Mines !
-  tripe 20, darts 27/33, statue goblin 38,25, acid blob vers 20,17.
+URGENT: T2296 Dlvl2 HP52(52) AC6 XL5, prayer T1659 (prochaine sûre ~T2700+), pas de pet. TELEPATHY (floating eye T1700).
+Porté: a blessed rustproof +1 EXCALIBUR, c +3 small shield. b +0 dagger (quiver), g dagger (lancer).
+Sac: f food ration (BUC?), i lichen corpse, j golden potion, k apron (= alchemy smock? BUC inconnu), e scroll ELBIB YLOH, h scroll GARVEN DEH. $60.
+D1: '<' 26,16, '>' 74,27.
+D2: '<' 24,12, '>' 65,27, fountain 20,13 (les 2 autres ont disparu), SINK 73,28 (ne pas kicker),
+  WEAPON SHOP 6-9,15-17 (Voulgezac) : PLATE MAIL 800 zm (6,16) — revenir avec l'or des Mines ! darts 27, tripe 20.
+D3: '<' 61,12, pas de '>' trouvé (ouest inexploré), yellow mold 51,26, werejackal tué (un autre hurle ?).
+Mines : entrée pas encore trouvée (D2 exploré ; D3 ouest ; D4).
 
 
 ## Lessons
+- T1659 : repos sur Elbereth avec kk sans test de faim → Fainting ! (kk teste maintenant Hungry/Weak). Prayer T1659 OK.
+- Giant bat : 2 morsures/tour ; à HP bas, Elbereth tout de suite (marche contre B).
 - Combat : un coup, relire. Prier sous 1/7 HP (prayer timeout initial ~300).
 - Bear trap : sortir en diagonale.
 - Food : Valkyrie a faim vite ; manger les corpses frais sûrs.

@@ -17,6 +17,7 @@ D4 '<' 38,13 '>' 26,25, MINES '>' 70,19 (porte cachée 41,14), delicatessen 3-10
 orcish helm probablement cursed en 39,13. Mines 1 (D5): '<' 69,15, faded pall (elven cloak) probablement cursed en 54,12.
 
 ## Lessons
+- T5452 : boucle F2 sans garde HP contre un small mimic + cave spider → 60 → 9 HP. TOUJOURS mettre une sortie HP dans les boucles de combat (break si HP < 50%).
 - #dip à une fountain : chaque essai peut rouiller l'épée et tarir la fountain ; à 1/6 par essai, prévoir plusieurs fountains.
 - Prayer pour la faim : T2356 et T4869 — acheter de la nourriture dès qu'on a de l'or, manger les corpses frais.
 - Faim : une seule ration au départ ; à T2356 Weak → prayer. Acheter/garder 2+ rations dès que possible.

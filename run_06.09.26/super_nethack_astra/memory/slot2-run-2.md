@@ -7,15 +7,15 @@ dessus, vérifier avec ':'), Minetown (temple : protection 400×XL) → Sokoban 
 Lire aussi les « Lessons » de memory/run-1.md, run-2.md, run-3.md, slot2-run-1.md, slot3-run-1.md.
 
 ## Current state
-T5797 Dlvl 3, XL5, HP 48(48), AC2, $32. EXCALIBUR (1er dip, fountain D3 disparue). Long sword Skilled. Chien PERDU (Mines D5).
-PRAYERS : T1878, T3103, T4158, T4887, T5170 -> prochaine pas avant ~T6400.
-Inventaire : a Excalibur, c +3 small shield, s ring mail, j jungle boots, r gauntlets of fumbling (à vendre), w PICK-AXE,
-e oil lamp, g WAND OF COLD, p jeweled wand + x copper wand (engrave : rien), t sprig of wolfsbane, v scroll VERR YED HORRE,
-n mottled + o thin spellbooks, gems u white, y violet, z 2 yellowish brown. Pas de dagger (cassée). Pas de nourriture.
-D4 : '<' 59,20 ; '>' 22,26 = ENTRÉE DES MINES (le '>' principal du D4 pas trouvé) ; rolling boulder trap 22,24.
-D5 (Mines 1) : '<' 3,24 ; '>' 70,23 ; anti-magic 60,23.
-D6 (Mines 2) : '<' 38,27 ; '>' 29,15 ; land mine (pit) 21,26 ; gray stone 8,25 (ne pas prendre).
-D3 : '>' 68,17 (room NE), liquor emporium d'Ossipewsk (porte 20,15).
+T7280 Dlvl 7 MINETOWN, XL6, HP 58(58), AC1, $99. Excalibur (Skilled). Chien perdu. Hungry (prier quand Weak : dernière T5170, OK).
+PRAYERS : T1878, T3103, T4158, T4887, T5170.
+Minetown (Dlvl 7) : '<' 76,18 ; '>' 15,20 ; temple d'ODIN (neutre, prêtresse) altar 52,21 ; Izchak ; bones de Claude (slot 1) + son FANTÔME
+ près du temple ; blue jelly 27,15 (ne pas toucher). Protection = 400×XL (2400 à XL6) : pas assez d'or.
+Inventaire (BUC testé altar) : a Excalibur, F dagger (quiver), A 10 darts, c +3 small shield, s ring mail, j jungle boots,
+C orcish helm, B mummy wrapping, r gauntlets of fumbling (unc), w pick-axe, e lamp, g wand of cold, p jeweled + x copper wands (unc),
+v BLESSED scroll VERR YED HORRE, G 2 cursed VENZAR BORGAVVE, D 2 unc effervescent potions, cursed potions H/I/J/K, L cursed agate ring,
+n/o spellbooks, gems : 2 red, 2 violet, white, 2 yellowish brown (+1 white/+1 brown maudits), t cursed wolfsbane.
+Plan : retour donjon principal (D4 : '>' principal pas encore trouvé, partie est) -> Oracle -> Sokoban (nourriture).
 D1 : ALTAR LAWFUL (Tyr) 3,14 ; fountains 6,23 et 22,15 ; '<' 9,24 ; '>' 22,16.
 D2 : '<' 11,17 ; '>' 73,25 (room SE, atteinte par la porte du bas 66,16 de la room NE) ; anti-magic trap 10,17.
 D3 : '<' 16,25 ; shop quelque part (cash register) ; vault (guard) ; teleport trap 62,26 ; room SE 55-66,24-28.

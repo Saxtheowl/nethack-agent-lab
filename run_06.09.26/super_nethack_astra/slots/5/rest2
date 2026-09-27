@@ -1,0 +1,21 @@
+#!/bin/bash
+# slots/5/rest2 TARGET_HP [max_chunks]: search in 20-turn chunks (n20s; the game interrupts
+# the count when a monster appears). Stops on HP loss, target reached, hunger change, or new monster letter adjacent.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+t=${1:-50}
+prev=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+for i in $(seq "${2:-30}"); do
+  o=$($S keys --compact n20s)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  [[ -z "$h" ]] && { echo "no HP read"; break; }
+  [[ "$h" -lt "$prev" ]] && { echo "STOP: HP loss $prev->$h"; break; }
+  [[ "$st" != "$st0" ]] && { echo "STOP: hunger $st"; break; }
+  [[ "$h" -ge "$t" ]] && { echo "target reached"; break; }
+  echo "$o" | grep -E '^0[1-7] ' | tail -1 | grep -qiE 'You stop|appears|see' && { echo "STOP: $(echo "$o" | grep -E '^0[1-7] ' | tail -1)"; break; }
+  prev=$h
+done
+$S screen --compact | grep -E '^34|^Map|^Neigh'

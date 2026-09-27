@@ -1,0 +1,16 @@
+#!/bin/bash
+# erest N: search 5 turns at a time up to N chunks on Elbereth; stop on HP loss,
+# broken engraving, or a monster adjacent message. Prints HP each chunk.
+D="$(dirname "$0")"
+prev=$($D/v | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "${1:-6}"); do
+  out=$($D/k n5s)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo -n "$hp "
+  [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; break; }
+  prev=$hp
+  eng=$($D/k : | grep -o 'You read: "[^"]*"')
+  echo "$eng" | grep -q '"Elbereth"' || { echo "ENGRAVING: $eng"; break; }
+  echo "$out" | grep -q 'HP:\([0-9]*\)(\1)' && { echo FULL; break; }
+done
+echo

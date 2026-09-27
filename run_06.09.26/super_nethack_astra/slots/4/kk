@@ -12,7 +12,8 @@ for i in $(seq "${2:-1}"); do
   msg=$(echo "$out" | grep -E '^0[1-7] ' | tail -2)
   echo "[$i] HP:$h $(echo "$out" | grep -o 'T:[0-9]*' | head -1) $(echo "$msg" | tail -1 | cut -c5-80)"
   [[ -n "$h" && -n "$prev" && "$h" -lt "$prev" ]] && { echo "STOP: HP loss"; break; }
-  echo "$out" | grep -qE -- '--More--|\[yn|\?\]' && { echo "STOP: prompt"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -1 | grep -qE -- '--More--|\[yn|\?\]' && { echo "STOP: prompt"; break; }
+  echo "$out" | grep -E '^34 ' | grep -qE 'Hungry|Weak|Faint' && { echo "STOP: hunger"; break; }
   adj=$(python3 - "$out" <<'PY'
 import re,sys
 s=sys.argv[1]

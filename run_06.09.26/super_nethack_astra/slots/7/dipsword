@@ -1,0 +1,8 @@
+#!/bin/bash
+# dipsword: one #dip of the wielded long sword (a) into the fountain here; prints result.
+D="$(dirname "$0")"
+$D/k '#dip' --raw >/dev/null
+$D/k --named Enter >/dev/null
+out=$($D/k a --raw)
+echo "$out" | grep -q 'into the fountain' || { echo "no fountain prompt"; echo "$out" | sed -n '4,10p'; exit 1; }
+$D/k y --raw | grep -E '^0[5-7] |^34|^Map'

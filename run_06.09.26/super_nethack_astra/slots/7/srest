@@ -1,0 +1,15 @@
+#!/bin/bash
+# srest TARGET_HP [chunks]: search n10s chunks; stop on HP loss, target, or interruption (<10 turns passed).
+D="$(dirname "$0")"
+st=$($D/v); prev=$(echo "$st" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2); t0=$(echo "$st" | grep -o 'T:[0-9]*' | cut -d: -f2)
+for i in $(seq "${2:-20}"); do
+  out=$($D/k n10s)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2); t=$(echo "$out" | grep -o 'T:[0-9]*' | cut -d: -f2)
+  echo -n "$hp "
+  [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; break; }
+  prev=$hp
+  [ "$hp" -ge "$1" ] && { echo "TARGET"; break; }
+  [ $((t - t0)) -lt 10 ] && { echo "INTERRUPT (T$t)"; break; }
+  t0=$t
+done
+echo
