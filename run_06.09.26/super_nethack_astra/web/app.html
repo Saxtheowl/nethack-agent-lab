@@ -369,7 +369,7 @@ function renderCards() {
     }
     card.dataset.gid = meta ? meta.id : '';
     card.querySelector('.head b').textContent = `Partie ${s}`;
-    card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}` : 'emplacement libre';
+    card.querySelector('.head .sub').textContent = meta ? `${meta.player}${meta.run ? ' · run ' + meta.run : ''}${meta.style ? ' · style ' + (meta.style === 'tariru' ? 'Tariru' : 'Astra') : ''}` : 'emplacement libre';
     const badge = card.querySelector('.badge');
     badge.className = 'badge ' + (meta ? meta.status : ''); badge.textContent = meta ? (STATUS_FR[meta.status] || meta.status) : '—';
     const m = meta || {};

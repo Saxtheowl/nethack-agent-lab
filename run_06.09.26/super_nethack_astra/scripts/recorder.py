@@ -72,7 +72,7 @@ def main():
             meta.update(id=gid, slot=slot, player=info['player'])
             meta.setdefault('started', info.get('started'))
             meta.setdefault('started_epoch', now)
-            for key in ('journal', 'run'):
+            for key in ('journal', 'run', 'style'):
                 if info.get(key):
                     meta[key] = info[key]
             if is_alive:
