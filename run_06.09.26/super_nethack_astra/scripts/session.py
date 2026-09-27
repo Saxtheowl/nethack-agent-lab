@@ -182,6 +182,14 @@ def hp_guard(text, value, named):
     if not named and re.match(r'^n?\d{2,}[s.]$', value or '') and hp < mx * 0.7:
         raise HPAlarm(f'Counted rest {value!r} refused at HP {hp}({mx}) (< 70%): a monster can hit you for '
                       'the whole count. Rest one turn at a time (s) with an HP check, or get safe first.')
+    # Stoning / sliming: only curing actions may go through (eat a lizard or an
+    # acidic corpse, pray, quaff, answer prompts). Slot 8 died exploring while Stone.
+    lines = text.splitlines()
+    status = ' '.join(lines[33:36]) if len(lines) > 35 else text[-400:]
+    if re.search(r'\b(Stone|Slime)\b', status) and not named and (
+            re.match(r'^(?:n?\d|[_FmMsGg]|[hjklyubnHJKLYUBN]$|\d)', value or '') and value not in ('y', 'n')):
+        raise HPAlarm(f'Refused {value!r}: you are turning to STONE/SLIME. Cure it NOW: eat a lizard corpse '
+                      '(e + letter), or an acidic corpse, or #pray, before anything else.')
     tripped = st.get("tripped", False) or (hp <= base - mx / 5 and hp < mx * 0.6)
     HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped}))
     if tripped and not (named and value == 'Escape'):
