@@ -218,6 +218,20 @@ def send(value, named=False, sensitive=False, publish=True):
     visible = (not (RUNTIME / 'broadcast.hidden').exists()) and not sensitive
     current = screen()
     hp_guard(current, value, named)
+    # a raw step onto a floating eye / gelatinous cube paralyses (slot 7 run 2 died
+    # that way to a yeti): refuse a first move (or F+dir) into an adjacent 'e'
+    m_step = re.match(r'^F?([1-46-9])', value or '') if not named else None
+    if m_step and not os.environ.get('NH_REALLY'):
+        cur = tmux('display-message', '-p', '-t', TARGET, '#{cursor_x},#{cursor_y}').stdout.strip().split(',')
+        if len(cur) == 2 and all(c.isdigit() for c in cur):
+            cx, cy = int(cur[0]), int(cur[1])
+            dx, dy = {'7': (-1, -1), '8': (0, -1), '9': (1, -1), '4': (-1, 0), '6': (1, 0),
+                      '1': (-1, 1), '2': (0, 1), '3': (1, 1)}[m_step[1]]
+            rows = current.splitlines()
+            tx, ty = cx + dx, cy + dy
+            if 10 <= cy <= 30 and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty]) and rows[ty][tx] == 'e':
+                raise HPAlarm(f"Refused {value!r}: an 'e' is on that square (floating eye = paralysis, "
+                              "sphere = explosion). Farlook it; kill it at range. Deliberate: keys --really.")
     # "Really attack the <peaceful>?" : a loop answering y killed a shopkeeper
     # (slot 3) and a priestess (slot 7). Only a deliberate --really may say yes.
     if not named and value in ('y', 'Y') and 'Really attack' in current and not os.environ.get('NH_REALLY'):
