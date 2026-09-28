@@ -87,3 +87,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
 - Sokoban zoo done right (slot 8 run 7): open the locked door with a key/lock pick, NEVER kick it (a kick wakes the
   whole zoo); with the Valkyrie's Stealth the zoo stays asleep and can be killed one sleeper at a time.
 - From ~D20 down, never dig down: Medusa (D21-24) — a hole drops you at a random spot in her gaze. Stairs only.
+- Sokoban top level: count the boulders you can spare before the first push and never leave two boulders side
+  by side against a wall (slot 1 run 13 ended one boulder short: zoo and prize lost for good).
