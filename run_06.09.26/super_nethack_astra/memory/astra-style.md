@@ -53,3 +53,13 @@ LLM decides every non-trivial action itself, from the screen it just read.
 - Never wield/wear items of unknown BUC; test on an altar or with the pet.
 - Kill thieves (nymphs, monkeys) at range; check inventory after "stole".
 - Stop a fight loop before ~1/2 HP; disengage after a prayer.
+
+## 6. Lessons from our 27/09 games (8 slots, ~30 deaths, best: Castle Dlvl 27, then Gehennom)
+- The Sokoban ZOO killed 3 games: enter only at full HP, AC <= 0, fight from the doorway BY HAND (never a
+  script), leave if a chameleon or a breath attacker shows up; never retreat into a dead end in line with a breather.
+- The Castle killed the 2 games that reached it: never fall into it by digging on Medusa's level (random spot in the
+  maze: minotaur); a master lich summons and curses: kill it fast or leave. Polymorph wand saved slot 3 there.
+- Read unknown scrolls only with the main body armor OFF (destroy armor) and never in danger.
+- Prayer timeout is random (rnz(350)): never count on a second prayer; food first, keep 2+ rations.
+- Every script that passes turns: stop on any HP loss, "stole", status change (Stone, Slime, Blind...).
+- Never answer y to "Really attack?" (peacefuls, priests, shopkeepers): luck and telepathy are lost.
