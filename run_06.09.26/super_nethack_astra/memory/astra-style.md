@@ -69,3 +69,6 @@ LLM decides every non-trivial action itself, from the screen it just read.
   after each dip (water moccasins, water demon, nymph can appear). Slot 2 run 7 died dipping 3 times in a loop.
 - Never step/attack into an 'e' (floating eye: paralysis for many turns). The harness refuses it now.
   Sokoban = the extra '<' on the level just BELOW the Oracle.
+- Fountain dips killed 2 games with water moccasins (poison): dip only with full HP, food in the pack, prayer
+  available, and step OFF the fountain before engraving Elbereth (you cannot engrave on a fountain). Eat before an
+  emergency prayer if Weak (prayer fixes only the worst trouble).
