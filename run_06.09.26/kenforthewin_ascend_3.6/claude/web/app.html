@@ -176,6 +176,9 @@ code { font-family: ui-monospace, monospace; font-size: 12px; color: var(--gold)
 .invbox .cls { color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: .07em; margin: 6px 0 2px; }
 .invbox .it { font-family: ui-monospace, monospace; color: #d4ddd0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .invbox .it b { color: var(--gold); } .invbox .hint { color: var(--muted); font-size: 11.5px; margin-top: 6px; }
+.invbox .bag { margin: 1px 0 4px 18px; padding-left: 8px; border-left: 2px solid var(--accent); }
+.invbox .bag .it { color: #b9c6b4; font-size: 12px; } .invbox .bag .it::before { content: '· '; color: var(--muted); }
+.invbox .bag .bh { color: var(--muted); font-size: 11px; }
 .chronsearch { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; min-width: 220px; margin-left: 8px; }
 /* strategy sub-tabs */
 .subtabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
@@ -1398,6 +1401,9 @@ async function showInventory(node, gid) {
   for (const it of d.items) {
     if (it.class !== cls) { cls = it.class; kids.push(el('div', {className: 'cls', textContent: cls || '?'})); }
     kids.push(el('div', {className: 'it', title: it.name}, el('b', {textContent: it.letter + ') '}), it.name));
+    if (it.contents) kids.push(el('div', {className: 'bag'},
+      el('div', {className: 'bh', textContent: it.contents.length ? `contenu (${it.contents.length})` : 'vide'}),
+      ...it.contents.map(c => el('div', {className: 'it', title: c, textContent: c}))));
   }
   kids.push(el('div', {className: 'hint', textContent: `${d.items.length} objets · relevé au T${d.turn ?? '?'} (${fmtT(d.t)})`}));
   node.replaceChildren(...kids);

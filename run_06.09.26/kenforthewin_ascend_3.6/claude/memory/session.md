@@ -87,6 +87,10 @@ The right-hand inventory panel is cut after ~33 lines: long inventories are
 NOT fully visible there. `slots/N/inv` opens `i` (free action, no turn),
 reads every page, prints the full list and saves it for the dashboard. Run it
 after picking things up and at least every ~500 turns.
+It also lists the contents of carried bags whose contents are known
+("containing N items"): `a` <bag> `:` then Escape, no turn (a bag of holding
+only when known uncursed/blessed: opening a cursed one destroys items).
+Run it after putting things in or taking them out of a bag too.
 
 ## Controls
 
