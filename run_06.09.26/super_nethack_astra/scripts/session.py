@@ -186,6 +186,12 @@ def hp_guard(text, value, named):
     if not named and re.match(r'^n\d+[s.]$', value or '') and hp < mx * 0.7:
         raise HPAlarm(f'Counted rest {value!r} refused at HP {hp}({mx}) (< 70%): a monster can hit you for '
                       'the whole count. Rest one turn at a time (s) with an HP check, or get safe first.')
+    # Sinking in lava: every turn not spent climbing out is fatal (slot 3 died so)
+    msgs = ' '.join(text.splitlines()[1:9])
+    if re.search(r'into the lava|sink (?:deeper )?into the lava|You are stuck in the lava', msgs) and not named and \
+            not re.fullmatch(r'[1-46-9]', value or ''):
+        raise HPAlarm(f'Refused {value!r}: you are IN LAVA. Only a single step out onto solid ground '
+                      '(one direction key, away from the }) can save you now.')
     # Stoning / sliming: only curing actions may go through (eat a lizard or an
     # acidic corpse, pray, quaff, answer prompts). Slot 8 died exploring while Stone.
     lines = text.splitlines()
@@ -236,6 +242,10 @@ def send(value, named=False, sensitive=False, publish=True):
                     and rows[ty][tx] == '@'):
                 raise HPAlarm(f"Refused {value!r}: F into an @ (shopkeeper, watchman, priest are @). "
                               "Farlook it first; if it is really hostile: keys --really " + value)
+            if (10 <= cy <= 30 and not value.startswith('F') and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty])
+                    and rows[ty][tx] == '}'):
+                raise HPAlarm(f"Refused {value!r}: that square is water or lava ('}}'). Walking into it drowns or "
+                              "burns you (slots 3 and 4 died that way). Go around; deliberate: keys --really.")
             if 10 <= cy <= 30 and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty]) and rows[ty][tx] == 'e':
                 raise HPAlarm(f"Refused {value!r}: an 'e' is on that square (floating eye = paralysis, "
                               "sphere = explosion). Farlook it; kill it at range. Deliberate: keys --really.")

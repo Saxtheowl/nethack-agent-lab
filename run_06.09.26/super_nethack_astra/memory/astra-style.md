@@ -76,3 +76,6 @@ LLM decides every non-trivial action itself, from the screen it just read.
   a shopkeeper/watchman/priest; F into an @ is refused without --really (slot 2 run 8 killed a shopkeeper).
 - A full Big Room: go back up at once or fight on the '<'; never cross it. Kill wand users first. Keep one healing
   potion and an escape usable while BLIND outside the bag. After life saving triggers, leave immediately.
+- Lava/water '}': no automatic straight-line movement near it; if you fall in lava, the ONLY action is one step out
+  onto ground (the harness refuses anything else). Never dig down next to water/lava (slot 3 lost its life saving
+  that way, then died in Surtur's lava during the Quest at XL14 — our deepest game: Dlvl 49, vibrating square found).
