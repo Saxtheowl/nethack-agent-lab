@@ -74,3 +74,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
   emergency prayer if Weak (prayer fixes only the worst trouble).
 - Your position is the "Terminal cursor (x,y)" line (the Neighbors line now shows only YOUR @). Never fight next to
   a shopkeeper/watchman/priest; F into an @ is refused without --really (slot 2 run 8 killed a shopkeeper).
+- A full Big Room: go back up at once or fight on the '<'; never cross it. Kill wand users first. Keep one healing
+  potion and an escape usable while BLIND outside the bag. After life saving triggers, leave immediately.

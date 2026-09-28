@@ -494,6 +494,15 @@ def travel(x, y, confirm=True):
     audit.record('travel', {'from': [hx, hy], 'to': [x, y], 'cursor_keys': keys})
     send('_', publish=False)
     time.sleep(.3)
+    # '@' outside the travel prompt toggles autopickup: only send it when the
+    # prompt is really open (the screen can lag one action behind over ssh)
+    for _ in range(5):
+        if 'Where do you want to travel to' in screen():
+            break
+        time.sleep(.3)
+    else:
+        send('Escape', named=True, publish=False)
+        raise RuntimeError('travel prompt did not open; nothing sent')
     send('@' + keys + '.', publish=False)
     turn = re.search(r'T:(\d+)', screen())
     audit.publish('command', f'travel → {x},{y}', label='déplacement', game_turn=int(turn[1]) if turn else None)
