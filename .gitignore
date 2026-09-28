@@ -22,3 +22,17 @@ BotHack/
 
 # Tool/runtime local state
 .claude/
+
+# Python environments and build leftovers (recreated by pip / make)
+.venv/
+venv/
+*.egg-info/
+node_modules/
+*.o
+*.a
+*.so
+
+# super_nethack_astra: recomputable caches and machine-local state
+run_06.09.26/super_nethack_astra/runs/games/*/analytics.json
+run_06.09.26/super_nethack_astra/runs/wish_scum/
+run_06.09.26/super_nethack_astra/runs/*.log
