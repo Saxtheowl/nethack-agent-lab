@@ -72,3 +72,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
 - Fountain dips killed 2 games with water moccasins (poison): dip only with full HP, food in the pack, prayer
   available, and step OFF the fountain before engraving Elbereth (you cannot engrave on a fountain). Eat before an
   emergency prayer if Weak (prayer fixes only the worst trouble).
+- Your position is the "Terminal cursor (x,y)" line (the Neighbors line now shows only YOUR @). Never fight next to
+  a shopkeeper/watchman/priest; F into an @ is refused without --really (slot 2 run 8 killed a shopkeeper).
