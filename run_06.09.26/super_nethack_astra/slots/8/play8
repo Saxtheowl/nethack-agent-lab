@@ -1,0 +1,40 @@
+#!/bin/bash
+# slots/8/play [rounds]: explore; when a known-weak monster is adjacent, farlook it and fight it (one call of fight);
+# stops for anything else (unknown/dangerous monster, low HP, hunger, stairs, prompts) and prints the situation.
+cd "$(dirname "$0")"
+export NH_SLOT=8
+# direct calls (wrappers would ssh to the worker from the worker)
+explore_() { (cd ../.. && python3 scripts/explore.py "$@"); }
+v_() { ../../scripts/v "$@"; }
+look_() { ../../scripts/look "$@"; }
+k_() { ../../scripts/k "$@"; }
+WEAK='raven|tengu|gargoyle|owlbear|long worm|quantum mechanic|titanothere|Nazgul|wraith|dog|vampire bat|vampire|water elemental|flesh golem|clay golem|stone golem|wood golem|leather golem|violet fungus|air elemental|fire elemental|dust vortex|ochre jelly|large mimic|giant mimic|rock piercer|iron piercer|piranha|giant beetle|centipede|mountain centaur|forest centaur|plains centaur|Grey-elf|Woodland-elf|Green-elf|Elvenking|shrieker|black pudding|owlbear|earth elemental|gremlin|carnivorous ape|ape|owlbear|yeti|ogre|ogre lord|ogre king|crocodile|leocrotta|wumpus|stone giant|hill giant|fire giant|frost giant|titanothere|baluchitherium|quasit|xorn|wraith|vampire bat|giant mimic|large mimic|small mimic|human zombie|giant zombie|ettin zombie|orc-captain|troll|ice troll|rock troll|olog-hai|warhorse|giant spider|scorpion|lizard|mastodon XX|sergeant|soldier|lieutenant|warhorse|horse|jaguar|lynx|panther|wolf|warg|winter wolf cub|jackal|soldier ant|fire ant|ettin mummy|human mummy|dwarf mummy|elf mummy|gnome king|dwarf lord|hill giant|energy vortex|dust vortex|fog cloud|rust monster|gold golem|straw golem|paper golem|rope golem|killer bee|black unicorn|gray unicorn|wolf|violet fungus|leprechaun|imp|goblin|gnome mummy|kobold mummy|rock mole|iguana|monkey|bugbear|red naga hatchling|black naga hatchling|green naga hatchling|golden naga hatchling|pony|giant bat|rothe|dwarf|hobbit|dog|jackal|coyote|giant beetle XX|pony|kitten|housecat|dwarf zombie|gnome mummy|acid blob|newt|sewer rat|giant rat|jackal|grid bug|kobold|large kobold|goblin|hobgoblin|gnome|gnome lord|lichen|gecko|coyote|fox|bat|hill orc|yellow mold XX|iguana|rabid rat|acid blob XX|homunculus|garter snake|manes|hobbit|giant ant|cave spider|centipede|little dog XX|kitten XX|jackal|fog cloud|gas spore XX|dingo|orc zombie|kobold zombie|gnome zombie|kobold lord|kobold shaman|orc shaman|hill orc|Mordor orc|Uruk-hai|snake|water moccasin'
+for r in $(seq ${1:-4}); do
+  out=$(cd ../.. && timeout 100 python3 scripts/explore.py --all --search 12 --steps 25 2>&1 | grep -E "^explore")
+  o=$(v_)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  echo "[$r] $out | $hp"
+  [ $((cur*5)) -lt $((max*3)) ] && { echo "STOP: HP low"; exit 4; }
+  echo "$o" | grep -qE "${HUNGRY_OK:+XX}Hungry|Weak|Fainting|Blind|Conf|Stun|Hallu|Ill|Stone|Slime" && { echo "STOP: status -- READ STATUS; Stone/Slime = EAT LIZARD NOW"; echo "$o" | grep HP:; exit 3; }
+  echo "$o" | grep -qiE "stole|steals|seduces|You feel feverish|turn to stone|slowing down" && { echo "STOP: danger message"; echo "$o" | grep -E "^0[5-7]"; exit 5; }
+  adj=$(echo "$o" | grep '^Neighbors' | head -1 | grep -oE "[0-9]:[A-Za-z:;&'@]\([0-9]+,[0-9]+\)" | head -3)
+  pets=$(echo "$o" | grep '^PETS')
+  fought=0
+  for a in $adj; do
+    xy=$(echo "$a" | grep -oE "[0-9]+,[0-9]+"); echo "$pets" | grep -q "$xy" && continue
+    x=${xy%,*}; y=${xy#*,}; d=${a%%:*}; g=${a:2:1}
+    name=$(look_ $x $y | tail -2 | tr "\n" " ")
+    echo "  adj $a: $name"
+    if echo "$name" | grep -qE "peaceful|called Wish4|statue of|remembered, unseen XX"; then continue; fi
+    if echo "$name" | grep -qE "\((floating eye|yellow mold|green mold|brown mold|red mold|blue jelly|spotted jelly|gas spore)"; then echo "  (ignored passive)"; fought=1; continue; fi
+    if echo "$name" | grep -qE "\(($WEAK)[),]|\(($WEAK) "; then
+      for i in 1 2 3 4 5 6; do k_ "F$d" >/dev/null; sleep 0.3; o2=$(v_); echo "$o2" | grep -E "^07" | tail -1;
+        echo "$o2" | grep -q " $g@$x,$y" || break
+        h2=$(echo "$o2" | grep -o 'HP:[0-9]*' | cut -d: -f2); [ $((h2*2)) -lt $max ] && break; done
+      fought=1
+    else echo "STOP: unknown/dangerous monster"; exit 2; fi
+  done
+  if echo "$out" | grep -q "no reachable frontier" && [ -z "$cleared" ]; then echo '{}' > ../../.runtime/explore-8.json; cleared=1; continue; fi
+  echo "$out" | grep -qE "HP loss|step budget" || { [ $fought = 1 ] || { echo "STOP: $out"; break; }; }
+done
+v_ | grep -E "^0[5-7]|HP:|^Map"

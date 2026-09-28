@@ -1,0 +1,20 @@
+#!/bin/bash
+# rest6 TARGET_HP [maxturns]: search one turn at a time until HP>=target; stops on HP drop,
+# hostile-looking letter adjacent, hunger status, or prompt.
+cd "$(dirname "$0")/../.."
+t=$1; n=${2:-200}
+prev=$(slots/5/session screen --compact | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  o=$(slots/5/session keys --compact s 2>&1)
+  echo "$o" | grep -q "HP ALARM" && { echo "ALARM"; exit 1; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "no hp read"; exit 1; }
+  [ "$hp" -lt "$prev" ] && { echo "HP drop $prev->$hp"; exit 1; }
+  prev=$hp
+  [ "$hp" -ge "$t" ] && { echo "rested to $hp"; exit 0; }
+  echo "$o" | grep -qE "Weak|Fainting|Hungry" && { echo "hunger"; exit 1; }
+  echo "$o" | grep -qE "\-\-More\-\-|\[yn|Really" && { echo "prompt"; exit 1; }
+  nb=$(echo "$o" | grep '^Neighbors' | head -1 | grep -oE ':[a-gi-zA-FH-Z&;:]\(' | tr -d ':(' | tr -d '\n')
+  [ -n "$nb" ] && { echo "adjacent: $nb"; exit 1; }
+done
+echo "timeout at $prev"

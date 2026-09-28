@@ -1,0 +1,14 @@
+#!/bin/bash
+# waitadj N: search 1 turn at a time until a monster (non-hero glyph) is adjacent, HP drops, or N turns. Prints adjacent monsters.
+cd "$(dirname "$0")"
+for i in $(seq 1 ${1:-5}); do
+  s=$(./v); me=$(echo "$s" | head -1 | grep -oE '[0-9]+,[0-9]+$'); h0=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  a=$(echo "$s" | grep '^Map' | python3 -c "
+import sys,re
+mx,my=map(int,'$me'.split(','))
+print(' '.join(g+'@'+x+','+y for g,x,y in re.findall(r\" ([A-Za-z&;:'@])@(\d+),(\d+)\", sys.stdin.read()) if (int(x),int(y))!=(mx,my) and g!=chr(39) and max(abs(int(x)-mx),abs(int(y)-my))==1))")
+  [ -n "$a" ] && { echo "ADJ $a HP:$h0"; exit 0; }
+  o=$(./k s --raw); h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$h0" ] && { echo "HP drop $h"; exit 0; }
+done
+echo "nothing after $i HP:$h"

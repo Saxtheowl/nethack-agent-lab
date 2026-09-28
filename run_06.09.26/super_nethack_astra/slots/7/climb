@@ -1,0 +1,29 @@
+#!/bin/bash
+# climb [KEY] [LEVELS]: travel to the staircase KEY ('<' default, or '>') with _ KEY . and take it,
+# repeated for LEVELS levels. Stops on HP drop, adjacent monster, prompt, Weak, or no progress.
+D="$(dirname "$0")"
+K=${1:-<}; L=${2:-1}
+hp() { echo "$1" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2; }
+hostile() { for xy in $(echo "$1" | LC_ALL=C grep -oE "[1-9]:[A-HJ-Za-z&;:@'][(][0-9]+,[0-9]+" | grep -oE '[0-9]+,[0-9]+'); do $D/look ${xy%,*} ${xy#*,} | grep -q peaceful || return 0; done; return 1; }
+me() { c=$(echo "$1" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$'); echo "$1" | grep "^Neighbors of @($c)" | head -1; }
+o=$($D/v); h0=$(hp "$o")
+for lev in $(seq "$L"); do
+  dl0=$(echo "$o" | grep -oE 'Dlvl:[0-9]+' | head -1)
+  for t in $(seq 12); do
+    $D/k _ --raw >/dev/null; $D/k "$K" --raw >/dev/null; o=$($D/k . --raw)
+    echo "$o" | grep -q -- '--More--' && o=$($D/k --named Enter --raw)
+    h=$(hp "$o")
+    [ "$h" -lt $((h0 - 5)) ] && { echo "HP DROP $h0->$h"; echo "$o" | grep -E '^0[5-7]|^34|Neigh'; exit 1; }
+    [ "$h" -gt "$h0" ] && h0=$h
+    echo "$o" | grep -qE 'Weak|Faint' && { echo WEAK; exit 1; }
+    n=$(me "$o")
+    if hostile "$n"; then echo "MONSTER: $n"; echo "$o" | grep -E '^0[5-7]|^34'; exit 2; fi
+    o=$($D/k "$K" --raw)
+    dl=$(echo "$o" | grep -oE 'Dlvl:[0-9]+' | head -1)
+    [ "$dl" != "$dl0" ] && { echo "now $dl T$(echo "$o" | grep -oE 'T:[0-9]+' | head -1)"; break; }
+  done
+  [ "$dl" == "$dl0" ] && { echo "STUCK on $dl0"; echo "$o" | grep -E '^0[5-7]|^34|Neigh'; exit 3; }
+  n=$(me "$o")
+  if hostile "$n"; then echo "MONSTER on arrival: $n"; exit 2; fi
+done
+echo "$o" | grep -E '^0[5-7]|^34'

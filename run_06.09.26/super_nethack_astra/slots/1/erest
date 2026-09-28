@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/1/erest TARGET MAXN : rest 1 turn at a time on Elbereth; stop on HP loss, status, prompts, or engraving damaged (checked every 5 turns).
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+t=$1; n=${2:-50}
+prev=$($S screen --compact | grep -oP 'HP:\K\d+' | head -1)
+for i in $(seq $n); do
+  out=$($S keys --compact --raw --why 'rest on Elbereth' s 2>&1)
+  hp=$(echo "$out" | grep -oP 'HP:\K\d+' | head -1)
+  [ -z "$hp" ] && { echo "stop: no hp"; break; }
+  [ "$hp" -lt "$prev" ] && { echo "stop: HP loss $prev->$hp"; echo "$out" | grep -E '^0[5-7] '; break; }
+  echo "$out" | grep -E '^07 |^34' | grep -qE 'Hungry|Weak|stole|Stone|Slime|feverish|--More--|\[yn' && { echo "stop: event"; echo "$out" | grep -E '^0[5-7] '; break; }
+  [ "$hp" -ge "$t" ] && { echo "done $hp"; break; }
+  if [ $((i % 5)) -eq 0 ]; then r=$($S keys --raw : --compact 2>&1 | grep -oP 'You read: "\K[^"]*' | tail -1); $S keys --named Escape >/dev/null 2>&1; [ "$r" != "Elbereth" ] && { echo "stop: engraving now '$r'"; break; }; fi
+  prev=$hp
+done
+$S screen --compact | grep -E '^34|^Neigh'

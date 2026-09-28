@@ -1,6 +1,6 @@
 # Run 11 — Claude, slot 1, style astra (lawful female dwarven Valkyrie, little dog)
 
-URGENT: T14753 SOKOBAN DONE. Dlvl4 Soko top, prize closet 43,27. Wearing R circular amulet = AMULET OF REFLECTION (Soko prize). HP99/103 AC-2 (high boots m thoroughly rotted by brown pudding) XL10. Last prayer T12467. Food: 3 food rations E, tin z, tripe C, egg j, lizards v V. Bag l (BoH) holds 3570 gold, spherical amulet f (unknown, was worn), cloak of invisibility t, scrolls READ ME/THARR, potions, rings, gems. Unknown wands G runed, X jeweled kept OUT of the bag (possible cancellation). Throwables: h orcish dagger, w 2 knives, K elven dagger, L 3 darts.
+URGENT: T17807 Dlvl13 (QUEST PORTAL LEVEL; portal not located yet) standing ON > 29,20. HP103/103 AC-2 XL10 (9164 xp) Fast, Satiated. Long sword Expert, Excalibur. R = AMULET OF REFLECTION worn. G = wand of teleportation (0:2). LAST PRAYER T17634 (next safe ~T18700+). Food: 1 food ration E, 1 K-ration r, tripe C, egg j, 2 cream pies (bag), lizards V x3 (stoning cure). Bag l: ~3760 gold, spherical amulet f, cloak of invisibility t (do NOT wear: hero not drawn -> helpers break), potions (2 smoky, 2 milky, golden, purple-red), ruby ring r, gems. Unknown: steel ring z, jeweled wand Y (boring engrave). Scroll of earth y, food detection p.
 
 ## Plans
 - Dlvl1-4: explore, daggers/armor, BUC-test with the kitten; 2+ food.
@@ -71,3 +71,21 @@ URGENT: T14753 SOKOBAN DONE. Dlvl4 Soko top, prize closet 43,27. Wearing R circu
 
 - T14563-14753 SOKOBAN 4 ZOO cleared from the dead-end 51,25 (doorway 50,25): quivering blob, werejackal, plains centaur, yeti, brown pudding (+1 clone), snake, tiger, rock piercer, molds (killed by thrown daggers). XL10 T14588. Loot: 3522 gold, 2 food rations, daggers. Prize closet 43,27 (door 44,27): circular amulet = reflection (worn), scare monster scroll turned to dust (FNORD = scare monster). Elven mithril-coat + elven shield + unicorn horn + looking glass left at 50,25.
   Lesson: brown pudding rots boots/shield by biting; kill it fast with Excalibur (splits are weak) instead of kicking.
+- T14814-15030: back down Soko 3/2/1 (killed Grey-elf band, owlbear, pit viper, hill orc band + giant spider + elf zombie holding the doorway 27,20 of Soko2; note: EMPTY doorways allow diagonal attacks). Dlvl8 altar: tin + opal ring cursed (left on altar 52,15). Tin wand S on Soko3 = speed monster. #enhance long sword -> Expert.
+- T15267 Dlvl10: scroll of identify (from wood nymph) -> diamond ring = cold resistance (dropped at 11,14). Engrave over engraving: RUNED wand G = 'engraving vanishes' (teleportation / cancellation / make invisible: NEVER put in the bag). JEWELED wand Y = no effect (boring). JUYED AWK YACC = create monster (orc-captain read it -> wood nymph).
+- Dlvl10: < 23,23, > 75,15, room NE 67-75,12-19 (doors kicked 61,23 and 75,19). Ate food ration T15288 (hunger came fast: maybe the rotten Mordor orc gave little).
+- T15497-16007 Dlvl11 Big Room: held the < stairs (retreated up twice at HP~56): killed air elemental x2 (one on Dlvl10), Woodland-elves, warg, ettin zombie, flesh golem, chickatrices, pit viper, yellow light (hallu -> unicorn horn), Mordor orcs, paper golem, floating eye (thrown dagger, no corpse). 2nd scroll of identify -> runed wand = TELEPORTATION (0:3). Gas spore on Dlvl10 killed with a thrown dagger (never melee an unknown 'e').
+- T16434 Dlvl12 (throne room sound; soldiers around): wearing t CLOAK OF INVISIBILITY (AC-3). TAKE IT OFF before entering any shop. Got C-ration q + 2 K-rations r from a sergeant. Hunger is fast (~1.3/turn): eat corpses whenever possible.
+- T16430-16850 Dlvl12: an INCUBUS visited twice while I searched (removed all armor, Pw max 16->13). Re-wore everything (AC-3). Scroll XOR OTA = FIRE. Level exit not found yet: explored rooms < 29-33,23-29; west room 10-21,20-27; NW room 35-46,12-15; mid room 38-45,20-24; NE room 55-62,13-19 (fountain); SE room 59-65,24-28 (fountain). Dead ends searched: 60,12 niche, 66,27, 44,25, 50,15. Beware: scripts/searchat misfires when a popup is open.
+- T17121: READ ME = DESTROY ARMOR (leather cloak gone, AC-2), THARR = EARTH (1 left, y). Teleported self with G (now 0:2) -> landed in the explored west room (wasted).
+- T17410 killed a PEACEFUL tengu by mistake (my killadj loop ignored the 'Really attack?' prompt): -5 alignment. killadj now stops on that prompt. Always farlook first.
+- Dlvl12 map: < 32,26; > 74,13 in the EAST room (67-7x,12-19), reached by the corridor that starts at 65,25 (just outside the SE room's east door 64,26) and goes north to the room's west door 67,16. Throne room not seen.
+- T17524 Dlvl13: quest portal message (Shrine of Destiny). < 41,15 in room 39-54,12-16 (west door kicked), > 29,20. Steel ring z found. T17634 prayed when Weak: OK (Tyr well-pleased).
+- T17690 Dlvl13: cockatrice killed with Excalibur (corpse at 37,20: no gloves, never touch). Crested helmet at 41,26 (unknown helm, left: 25% opposite alignment), black gem 45,13 left. Dlvl13 map: > room 26-33,19-26 (doors 27,20 / 27,22 / locked 33,24), < room 39-54,12-16, south room 40-47,25-28; unexplored: west door 15,25 and the east (corridors 60-66,16-19).
+
+## Next steps (session 5)
+- Food is the constraint (~1.1 nutrition/turn): eat every fresh safe corpse; pray only when Weak and >~1000 turns after T17634.
+- AC-2 is weak for Dlvl14+: look for armor (cloak! gauntlets, better boots); an altar to BUC-test the crested helmet (maybe telepathy/brilliance).
+- XL14 needed for the Quest (portal on Dlvl13). Go down slowly, hold stairs, retreat upstairs under ~55 HP.
+- Helpers (slots/1/, run with slots/1/w ./NAME): hold N MINHP (fights adjacent hostiles, farlooks, skips peacefuls/@/e/F), killadj G N (stops on 'Really attack?'), srch N (env SAFE=glyphs), s1rest/s1reste, elbok, pickall (skips corpses), throwat, dhold.
+- explore.py often says 'no reachable frontier' in dark areas: walk through doors by hand, then 'follow DIR'.

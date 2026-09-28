@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/8/tv X Y [n]: repeated travel to X,Y using the real cursor position; stops on arrival/HP loss/prompt/no progress. Run via slots/8/w.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+cur() { python3 scripts/session.py screen --compact | grep -o 'cursor (x,y; usually hero when no menu): [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$'; }
+hp() { python3 scripts/session.py screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2; }
+h0=$(hp); p0=""; same=0
+for i in $(seq "${3:-15}"); do
+  out=$(python3 scripts/session.py travel "$1" "$2" 2>&1)
+  p=$(cur)
+  [ "$p" = "$1,$2" ] && { echo "arrived"; break; }
+  [ "$(hp)" -lt "$h0" ] && { echo "STOP: HP loss"; break; }
+  echo "$out" | grep -q -- "--More--\|Really\|\[yn" && { echo "STOP: prompt"; break; }
+  if [ "$p" = "$p0" ]; then same=$((same+1)); [ $same -ge 2 ] && { echo "STOP: no progress at $p"; break; }; else same=0; fi
+  p0="$p"
+done
+python3 scripts/session.py screen --compact | grep -E '^0[5-7] |^34|^Map'
+echo "at $(cur)"

@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/1/door N MINHP [GLYPHS]: doorway fight. Each step: if a non-pet monster (GLYPHS, default l)
+# is orthogonally adjacent, F it; else search 1 turn. Re-reads HP EVERY step, stops on HP<MINHP or any
+# HP loss >= 8 in one step, or when nothing is visible.
+cd "$(dirname "$0")/../.."
+n=${1:-10}; min=${2:?}; gl=${3:-l}
+prev=$(slots/1/v | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  echo "$o" | grep -q "HP ALARM" && { echo "door: alarm"; exit 1; }
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$min" ] && { echo "door: low HP $h"; exit 1; }
+  [ $((prev - h)) -ge 8 ] && { echo "door: big hit $prev->$h"; exit 1; }
+  prev=$h
+  echo "$o" | grep '^Map' | grep -qE " [$gl]@" || { echo "door: none visible"; exit 0; }
+  d=$(echo "$o" | grep -oE "^Neighbors.*" | grep -oE "[2468]:[$gl]\(" | head -1 | cut -c1)
+  if [ -n "$d" ]; then slots/1/k --raw F$d | sed -n '/^07/p'; else slots/1/k s >/dev/null; fi
+done

@@ -1,0 +1,13 @@
+#!/bin/bash
+# slot2: search one turn at a time until HP>=target ($1) or N turns ($2); stop on HP drop, adjacent letter, stole, hunger
+cd "$(dirname "$0")"; target=${1:-100}; max=${2:-40}; prev=0
+for i in $(seq $max); do
+  o=$(./k --raw s 2>&1); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "NOHP"; echo "$o" | head -3; exit 6; }
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak' && { echo HUNGRY; exit 4; }
+  [ $prev -gt 0 ] && [ "$hp" -lt "$prev" ] && { echo "HPDROP $hp"; exit 3; }
+  echo "$o" | grep '^Neigh' | grep -qE '[1-9]:[a-zA-Z@&;:]\(' && { echo "ADJ"; echo "$o" | grep ^Neigh; exit 5; }
+  prev=$hp; [ "$hp" -ge "$target" ] && break
+done
+echo "$o" | grep -E '^34'

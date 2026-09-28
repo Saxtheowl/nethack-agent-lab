@@ -1,0 +1,15 @@
+#!/bin/bash
+# slot2: visit listed X,Y squares, take only coins (and daggers) from pile menus
+cd "$(dirname "$0")"
+for p in "$@"; do x=${p%,*}; y=${p#*,}
+  ./gg $x $y 2 >/dev/null; ./k --named Escape >/dev/null
+  o=$(./k --raw ,)
+  if echo "$o" | grep -q 'Pick up what'; then
+    sel=""; echo "$o" | grep -q "Coins" && sel='$'
+    for l in $(echo "$o" | grep -oE ' [a-z]\) [0-9a-z ]*(dagger|lembas|food ration|cram|K-ration|C-ration)' | awk '{print $1}' | tr -d ')'); do sel="$sel$l"; done
+    [ -n "$sel" ] && ./k --raw "$sel" >/dev/null; o=$(./k --named Enter)
+  fi
+  echo "$p: $(echo "$o" | grep -E '^0[67]' | tail -1 | tr -s ' ') $(echo "$o" | grep -o 'HP:[0-9]*' | head -1)"
+  ./k --named Escape >/dev/null
+done
+./v | grep -E '^34'

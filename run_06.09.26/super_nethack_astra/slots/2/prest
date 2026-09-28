@@ -1,0 +1,19 @@
+#!/bin/bash
+# slot2: search 1 turn at a time until HP>=$1 or $2 turns; ignores pets (PETS line) for adjacency.
+# stops on HP drop, stole, Hungry/Weak, non-pet adjacent monster, burn/freeze msgs, AC change
+cd "$(dirname "$0")"; target=${1:-100}; max=${2:-40}; prev=0; ac0=""
+for i in $(seq $max); do
+  o=$(./k --raw s 2>&1); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "NOHP"; echo "$o" | head -3; exit 6; }
+  ac=$(echo "$o" | grep -o 'AC:-*[0-9]*' | head -1); [ -z "$ac0" ] && ac0=$ac
+  [ "$ac" != "$ac0" ] && { echo "ACCHANGE $ac"; exit 7; }
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  echo "$o" | grep -E '^0[1-7]' | grep -qiE 'burn|freez|smoulder|catch fire|boil' && { echo BURN; exit 8; }
+  echo "$o" | grep '^34' | grep -qE "${HSTOP:-Hungry|Weak|Faint}" && { echo HUNGRY; echo "$o" | grep '^34'; exit 4; }
+  [ $prev -gt 0 ] && [ "$hp" -lt "$prev" ] && { echo "HPDROP $hp"; echo "$o" | grep -E '^0[5-7]'; exit 3; }
+  pets=$(echo "$o" | grep '^PETS' | grep -oE '[0-9]+,[0-9]+')
+  adj=$(echo "$o" | grep '^Neigh' | head -1 | grep -oE '[1-9]:[a-zA-Z@&;:]\([0-9]+,[0-9]+\)')
+  for a in $adj; do c=$(echo "$a" | grep -oE '[0-9]+,[0-9]+'); echo "$pets" | grep -qx "$c" || { echo "ADJ $a"; echo "$o" | grep -E '^0[5-7]|^Neigh'; exit 5; }; done
+  prev=$hp; [ "$hp" -ge "$target" ] && break
+done
+echo "$o" | grep -E '^34'

@@ -1,0 +1,25 @@
+#!/bin/bash
+# slots/3/xpf [ROUNDS] : explore; on "HP loss" kill adjacent non-@ monsters with atk (checks HP),
+# stop on anything else (new stairs, danger, deadly monster, nymph, prompt, locked door, low HP)
+cd "$(dirname "$0")"
+ROUNDS=${1:-6}
+for r in $(seq 1 $ROUNDS); do
+  o=$(timeout 110 ./explore --steps 20 2>&1)
+  reason=$(echo "$o" | grep -m1 'explore stop')
+  s=$(./v); st=$(echo "$s" | grep '^34')
+  h=$(echo "$st" | sed -E 's/.*HP:([0-9]+)\(([0-9]+)\).*/\1 \2/'); cur=${h% *}; mx=${h#* }
+  echo "$reason | $(echo "$st" | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+.*' | tr -s ' ')"
+  [ $(( cur * 10 )) -lt $(( mx * 6 )) ] && { echo "HP low: decide"; break; }
+  case "$reason" in
+    *"step budget"*) continue ;;
+    *"HP loss"*)
+      for k in 1 2 3 4; do
+        n=$(./v | grep Neighbors | head -1)
+        d=$(echo "$n" | grep -oE '[0-9]:[a-zA-Z:;&'"'"']\(' | grep -v blank | head -1 | cut -c1)
+        [ -z "$d" ] && break
+        ./atk $d 3 $(( mx * 6 / 10 )) | grep -E '^07|atk stop' | head -2
+      done ;;
+    *) break ;;
+  esac
+done
+./v | grep Map | grep -oE ' [<>]@[0-9,]+' | tr '\n' ' '; echo

@@ -1,0 +1,11 @@
+#!/bin/bash
+# slots/5/w ./xp [rounds]: repeat explore (40 steps) while it only stops on
+# "step budget used"; print stop reason + map summary. Run via slots/5/w.
+cd "$(dirname "$0")/../.."
+for i in $(seq "${1:-3}"); do
+  o=$(python3 scripts/explore.py --steps 40 2>&1)
+  r=$(echo "$o" | grep -m1 "explore stop")
+  echo "$r"
+  echo "$r" | grep -q "step budget used" || break
+done
+python3 scripts/session.py screen --compact | grep -vE '^0[1-5] |travel to\?' | awk 'NR==1{print "   0123456789012345678901234567890123456789012345678901234567890123456789012345678901"} {print}'

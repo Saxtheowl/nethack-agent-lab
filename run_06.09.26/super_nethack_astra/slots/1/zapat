@@ -1,0 +1,7 @@
+#!/bin/bash
+# slots/1/zapat LETTER DIR: z, letter, dir — each key checked against its prompt.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+o=$($S keys --raw z --settle .4 --compact); echo "$o" | grep -q "What do you want to zap" || { echo "no zap prompt"; $S keys --named Escape >/dev/null; exit 1; }
+o=$($S keys --raw "$1" --settle .4 --compact); echo "$o" | grep -q "In what direction" || { echo "no dir prompt"; echo "$o" | grep -E '^0[5-7] '; $S keys --named Escape >/dev/null; exit 1; }
+$S keys --raw "$2" --settle .6 --compact | grep -E '^0[4-7] |^34|^Map'

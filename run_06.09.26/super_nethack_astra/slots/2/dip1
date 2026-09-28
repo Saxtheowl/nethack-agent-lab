@@ -1,0 +1,5 @@
+#!/bin/bash
+# slot2: one #dip of item $1 into fountain; prints result lines
+cd "$(dirname "$0")"
+./k '#dip' >/dev/null; ./k --named Enter >/dev/null; ./k --raw $1 >/dev/null
+o=$(./k --raw y); echo "$o" | grep -E '^0[4-7]' | tail -3; echo "$o" | grep -E '^34|^Neigh|^Map'

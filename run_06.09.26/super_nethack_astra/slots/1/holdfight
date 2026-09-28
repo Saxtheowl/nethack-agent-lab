@@ -1,0 +1,32 @@
+#!/bin/bash
+# slots/1/holdfight GLYPHS N MINHP: stay in place; each turn, if a GLYPHS monster is adjacent,
+# F it (one blow), else search one turn. Re-reads HP every turn; stops at HP<MINHP, big hit (>=10), --More--.
+cd "$(dirname "$0")/../.."
+gl=$1; n=${2:-10}; min=${3:?}
+prev=$(slots/1/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  echo "$o" | grep -q "HP ALARM" && { echo "hold: alarm"; exit 1; }
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$min" ] && { echo "hold: low HP $h"; exit 1; }
+  [ $((prev - h)) -ge 10 ] && { echo "hold: big hit $prev->$h"; exit 1; }
+  prev=$h
+  d=$(python3 - "$gl" "$o" <<'PY'
+import re, sys
+g, out = sys.argv[1], sys.argv[2]
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', out); hx, hy = int(c[1]), int(c[2])
+for gg, x, y in re.findall(r' (['+re.escape(g)+r'])@(\d+),(\d+)', m):
+    if f'{x},{y}' in pets: continue
+    dx, dy = int(x)-hx, int(y)-hy
+    if max(abs(dx), abs(dy)) == 1:
+        print({(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}[(dx,dy)]); break
+else: print('s')
+PY
+)
+  if [ "$d" = s ]; then r=$(slots/1/k s); else r=$(slots/1/k F$d); fi
+  echo "$r" | grep -E '^0[1-7] ' | tail -1 | cut -c5-80
+  echo "$r" | grep -q -- '--More--' && { echo "hold: More"; exit 1; }
+done
+slots/1/v | grep -E '^34|^Map'

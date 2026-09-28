@@ -1,0 +1,13 @@
+#!/bin/bash
+# slot2: travel to X Y, then show what is here (':' look)
+cd "$(dirname "$0")"; ./go $1 $2 >/dev/null; ./k --named Escape >/dev/null
+./k --raw : >/dev/null; sleep 0.3
+NH_SLOT=2 python3 ../../scripts/session.py screen | python3 -c "
+import sys
+L=sys.stdin.read().splitlines()
+for y in range(0,20):
+  s=L[y]
+  if '│' in s[2:]:
+    i=s.find('│',2); print(s[i+1:].rstrip(' │'))
+" | grep -v '^\s*$'
+./k --named Escape >/dev/null; ./v | grep -E '^Neigh'

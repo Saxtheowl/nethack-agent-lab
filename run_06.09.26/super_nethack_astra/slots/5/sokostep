@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/5/sokostep N [planfile]: execute line N of the Sokoban plan (name x y pushes -> end) with scripts/sokoban.py --execute.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+l=$(sed -n "${1}p" "${2:-slots/5/soko2.txt}")
+set -- $l
+echo "step: $l"
+python3 scripts/sokoban.py "$2" "$3" "$4" --execute --max-steps 150 2>&1 | grep -E 'STOP|Checked|No |rror' | cut -c1-200
+python3 scripts/session.py screen --compact | grep -E '^0[6-7]|^34'

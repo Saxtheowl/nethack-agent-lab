@@ -1,0 +1,11 @@
+#!/bin/bash
+# unlock DIR: apply key z toward DIR until unlocked
+D="$(dirname "$0")"
+for i in 1 2 3 4 5; do
+  $D/k '#apply' >/dev/null 2>&1; $D/k --named Enter >/dev/null 2>&1; $D/k z >/dev/null 2>&1
+  o=$($D/k "$1" 2>&1)
+  echo "$o" | grep -q "Unlock it" || { echo "$o" | grep -E "^0[5-7]"; break; }
+  $D/k y >/dev/null 2>&1
+  for j in 1 2 3 4 5 6; do $D/v | grep -E "^0[0-9]" | tail -1 | grep -q "succeed in unlocking" && { echo UNLOCKED; exit 0; }; $D/k s >/dev/null 2>&1; done
+done
+$D/v | grep -E "^0[5-7]"

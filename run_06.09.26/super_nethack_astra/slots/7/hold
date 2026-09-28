@@ -1,0 +1,22 @@
+#!/bin/bash
+# hold N MINHP: stay in place; attack adjacent non-peaceful monster (one blow), else search 1 turn.
+# Stops: HP<MINHP, Weak, stole, not Blind anymore (if started Blind), prompt.
+D="$(dirname "$0")"
+b0=$($D/v | grep -c 'Blind'); h0=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "$1"); do
+  v=$($D/v); n=$(echo "$v" | grep '^Neigh' | head -1)
+  d=$(echo "$n" | LC_ALL=C grep -oE "[1-9]:[A-Za-z&;:'][(]" | head -1 | cut -c1)
+  if [ -n "$d" ]; then o=$($D/k F$d --raw); else o=$($D/k s --raw); d=s; fi
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  m=$(echo "$o" | grep -E '^07' | tr -s ' ' | cut -c1-80)
+  [ "$d" != s ] && echo "[$d] HP$hp $m"
+  echo "$o" | grep -q 'Really attack' && { $D/k n --raw >/dev/null; echo PEACEFUL; break; }
+  echo "$o" | grep -q -- '--More--' && $D/k --named Enter >/dev/null
+  echo "$o" | grep -qi 'stole\|steals\|Stiff\|slowing' && { echo DANGER; break; }
+  echo "$o" | grep -q 'Weak\|Faint' && { echo WEAK; break; }
+  [ "$hp" -lt "$2" ] && { echo LOWHP; break; }
+  [ "$hp" -lt $((h0 - 8)) ] && { echo "HP DROP $h0->$hp"; echo "$o" | grep -E '^0[5-7]'; break; }
+  [ "$hp" -gt "$h0" ] && h0=$hp
+  [ "$b0" = 1 ] && ! echo "$o" | grep -q 'Blind' && { echo UNBLIND; break; }
+done
+$D/v | grep -E '^34'

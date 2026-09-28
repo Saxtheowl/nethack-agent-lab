@@ -1,0 +1,22 @@
+#!/bin/bash
+# srest [target%] [chunks]: rest one search turn at a time (no Elbereth; for Gehennom).
+# Stops on HP drop, hunger, stole/Stone/Slime, any letter monster within 2 squares, or target reached.
+cd "$(dirname "$0")"
+target=${1:-90}; n=${2:-30}; prev=
+for i in $(seq $n); do
+  o=$(./k s --raw 2>&1)
+  for j in 1 2; do ./v | grep -q -- '--More--\|>>' && ./k --named Enter >/dev/null; done
+  s=$(./v)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  echo -n "$cur "
+  [ -n "$prev" ] && [ "$cur" -lt "$prev" ] && { echo "HP DROP"; break; }
+  echo "$s" | grep -E 'HP:[0-9]' | grep -qE 'Hungry|Weak|Faint|Stone|Slime|Conf|Stun|Blind' && { echo "STATUS"; break; }
+  echo "$s" | grep -E '^0[1-9]' | tail -2 | grep -qiE 'stole|You feel' && { echo "MSG"; break; }
+  pos=$(echo "$s" | grep -oE 'Terminal cursor[^:]*: [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+'); hx=${pos%,*}; hy=${pos#*,}
+  mf=$(echo "$s" | grep '^Map features')
+  near=$(echo "$mf" | grep -oE " [A-Za-z&;:']@[0-9]+,[0-9]+" | while read m; do c=${m#*@}; x=${c%,*}; y=${c#*,}; dx=$((x-hx)); dy=$((y-hy)); [ ${dx#-} -le 2 ] && [ ${dy#-} -le 2 ] && echo "$m"; done)
+  [ -n "$near" ] && { echo "MONSTER $near"; break; }
+  prev=$cur
+  [ $((cur * 100)) -ge $((max * target)) ] && { echo FULL; break; }
+done
+echo "$(./v | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+')"

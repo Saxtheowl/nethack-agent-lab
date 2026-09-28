@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/5/waitmon [chunks]: search 10 turns at a time until a monster letter shows on the map,
+# HP drops, or hunger changes. Prints the monster positions.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+for i in $(seq "${1:-20}"); do
+  o=$($S keys --compact n10s)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  m=$(echo "$o" | grep '^Map' | grep -oE ' [a-zA-Z&;:]@[0-9]+,[0-9]+')
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP: HP $h0->$h"; break; }
+  [[ "$st" != "$st0" ]] && { echo "STOP: hunger $st"; break; }
+  [[ -n "$m" ]] && { echo "MONSTER:$m"; break; }
+  h0=$h
+done
+$S screen --compact | grep -E '^34'

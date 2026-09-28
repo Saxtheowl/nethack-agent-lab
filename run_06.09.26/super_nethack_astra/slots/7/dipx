@@ -1,0 +1,5 @@
+#!/bin/bash
+# dipx: one #dip of item a into the fountain here; prints the result messages
+D="$(dirname "$0")"
+$D/k '#dip' >/dev/null 2>&1; $D/k --named Enter >/dev/null 2>&1; $D/k a >/dev/null 2>&1
+o=$($D/k y 2>&1); echo "$o" | grep -E "^0[0-9]|^34" | tail -4

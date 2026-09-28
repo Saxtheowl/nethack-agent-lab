@@ -1,0 +1,16 @@
+#!/bin/bash
+# rest2 TARGET N IGNORE: single 's'; stop on HP drop, target, Weak, adjacent monster, or any change in the
+# set of monster positions except glyphs in IGNORE (their appearance/moves are ignored).
+D="$(dirname "$0")"; T=$1; N=${2:-60}; IG="${3:-u}"
+snap() { echo "$1" | grep -o 'Map features.*' | tr ' ' '\n' | LC_ALL=C grep -E "^[A-Za-z@&;:'][@]" | grep -vE "^[$IG]@" | grep -v "^@@$me\$" | sort | tr '\n' ' '; }
+o=$($D/v); prev=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+me=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -oE '[0-9]+,[0-9]+$'); s0=$(snap "$o")
+for i in $(seq $N); do
+  o=$($D/k s --raw)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP"; exit 1; }
+  [ "$hp" -lt "$prev" ] && { echo "HP DROP $prev->$hp"; exit 1; }; prev=$hp
+  [ "$hp" -ge "$T" ] && { echo "TARGET $hp"; exit 0; }
+  echo "$o" | grep '^34' | grep -qE ' (Weak|Faint)' && { echo WEAK; exit 1; }
+  s=$(snap "$o"); [ "$s" != "$s0" ] && { echo "CHANGE [$s0] -> [$s] HP $hp"; exit 0; }
+done
+echo "HP $prev"

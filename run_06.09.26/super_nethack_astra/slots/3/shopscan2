@@ -1,0 +1,31 @@
+#!/bin/bash
+# shopscan2 KEY COUNT : step COUNT times with KEY; at each square print the items for sale (':'), newest message only.
+# Stops on mimic / HP loss / anything unexpected.
+cd "$(dirname "$0")"
+key=$1; n=$2
+hp0=$(./v | grep -oE 'HP:[0-9]+' | head -1)
+for i in $(seq 1 $n); do
+  out=$(./k "$key")
+  last=$(echo "$out" | grep -E '^0[0-9] ' | tail -1)
+  if echo "$last" | grep -qE 'Wait!|move right into|stuck to|Really'; then echo "STOP: $last"; break; fi
+  pos=$(./v | grep Terminal | grep -oE '[0-9]+,[0-9]+')
+  s=$(./k :)
+  if echo "$s" | grep -q 'Things that are here'; then
+    echo "$s" | python3 -c '
+import sys,re
+t=sys.stdin.read().splitlines()
+start=[i for i,l in enumerate(t) if "Things that are here" in l][-1]
+col=t[start].index("Things that are here")
+for l in t[start+1:start+20]:
+    seg=l[col:].strip(" │")
+    if not seg: continue
+    if "--More--" in seg or "└" in seg: break
+    print("'"$pos"' "+seg)'
+    for j in 1 2 3; do ./v | grep -qE 'More|Things that are here' && ./k --named Escape >/dev/null || break; done
+  else
+    echo "$pos $(echo "$s" | grep -E 'You see here|no objects' | tail -1 | sed -E 's/^[0-9]+ │//; s/ *│$//')"
+  fi
+  h=$(./v | grep -oE 'HP:[0-9]+' | head -1)
+  [ "${h#HP:}" -lt "${hp0#HP:}" ] && { echo "STOP: HP $h"; break; }; hp0=$h
+done
+./v | grep -E '^34'

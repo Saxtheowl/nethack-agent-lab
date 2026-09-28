@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/5/w ./ff DIR [MINHP] [N]: F-attack DIR one blow at a time; stop on a
+# kill, thin air, a prompt, HP below MINHP, or after N blows.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+d=$1; min=${2:-20}; n=${3:-6}
+for i in $(seq $n); do
+  o=$($S keys --compact "F$d" 2>&1)
+  m=$(echo "$o" | grep '^07 ' | cut -c 5-84); hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1)
+  echo "$hp $m"
+  echo "$o" | grep -q "refused\|ALARM" && { echo "$o" | tail -2; break; }
+  echo "$m" | grep -q "You kill\|You destroy\|thin air\|Really\|\[yn" && break
+  h=${hp#HP:}; h=${h%%(*}; [ "${h:-0}" -lt "$min" ] && { echo "LOW HP"; break; }
+done

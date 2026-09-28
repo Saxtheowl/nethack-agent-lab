@@ -1,0 +1,16 @@
+#!/bin/bash
+# slot2: search 1 turn at a time: stop on HP drop, stole, hunger, adjacent monster, AC change, burn/freeze msgs, target HP, N turns
+cd "$(dirname "$0")"; target=${1:-100}; max=${2:-40}; prev=0; ac0=""
+for i in $(seq $max); do
+  o=$(./k --raw s 2>&1); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "NOHP"; echo "$o" | head -3; exit 6; }
+  ac=$(echo "$o" | grep -o 'AC:-*[0-9]*' | head -1); [ -z "$ac0" ] && ac0=$ac
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak' && { echo HUNGRY; exit 4; }
+  [ $prev -gt 0 ] && [ "$hp" -lt "$prev" ] && { echo "HPDROP $hp"; echo "$o" | grep -E '^0[5-7]'; exit 3; }
+  [ "$ac" != "$ac0" ] && { echo "ACCHANGE $ac"; echo "$o" | grep -E '^0[5-7]'; exit 7; }
+  echo "$o" | grep '^07' | grep -qiE 'burn|freez|disintegrat|hits|touch|bites' && { echo "MSG"; echo "$o" | grep -E '^0[5-7]'; exit 8; }
+  echo "$o" | grep '^Neigh' | grep -qE '[1-9]:[A-Za-z&;:'"'"'@]\(' && { echo "ADJ"; echo "$o" | grep '^Neigh'; exit 5; }
+  prev=$hp; [ "$hp" -ge "$target" ] && break
+done
+echo "$o" | grep -E '^34|^Neigh'

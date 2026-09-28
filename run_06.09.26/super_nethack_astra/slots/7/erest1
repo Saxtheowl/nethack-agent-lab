@@ -1,0 +1,17 @@
+#!/bin/bash
+# erest1 TARGET [max]: single 's' per step while standing on Elbereth; adjacent monsters tolerated.
+# Stop on HP loss, Elbereth gone (checked every 5 steps), Hungry/Weak, "stole", or target reached.
+D="$(dirname "$0")"
+prev=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "${2:-80}"); do
+  o=$($D/k s --raw)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP read"; break; }
+  [ "$hp" -lt "$prev" ] && { echo "HP LOSS $prev->$hp"; break; }
+  prev=$hp; [ "$hp" -ge "$1" ] && { echo "TARGET $hp"; break; }
+  echo "$o" | grep '^34' | grep -qE ' (Hungry|Weak|Faint)' && { echo HUNGER; break; }
+  echo "$o" | grep -qE 'stole|--More--|\[yn' && { echo "EVENT"; break; }
+  if [ $((i % 5)) -eq 0 ]; then
+    $D/k : | grep -q 'You read: "Elbereth"' || { echo "ELBERETH GONE"; break; }
+  fi
+done
+echo "HP $prev"

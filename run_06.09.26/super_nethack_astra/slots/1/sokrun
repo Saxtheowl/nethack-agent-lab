@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/1/sokrun "X,Y:PUSHES" ... : execute push groups in order with scripts/sokoban.py; stop at first problem.
+cd "$(dirname "$0")/../.."
+for g in "$@"; do
+  xy=${g%%:*}; p=${g#*:}; x=${xy%,*}; y=${xy#*,}
+  o=$(slots/1/sok $x $y $p --execute --max-steps 50 $SOKEXTRA 2>&1)
+  if echo "$o" | grep -qE 'STOPPED|Error|assert|Traceback|No boulder|Blocked'; then echo "FAILED at $g"; echo "$o" | grep -vE '^[12][0-9] |^0' | tail -8; echo "$o" | grep -E '^0[5-7]|^34'; exit 1; fi
+  echo "ok $g ($(echo "$o" | grep -oE 'Checked [0-9]+ executed steps; remaining keys: ?[^ ]*'))"
+done

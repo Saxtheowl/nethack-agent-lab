@@ -1,0 +1,18 @@
+#!/bin/bash
+# xpv ROUNDS [MINHP]: explore 20 steps per round; on HP loss / monster stop, fight adjacent non-@ monsters (vfight 6).
+# Stops: HP<MINHP (default 100), '>' seen (prints it), @ adjacent, other stop reasons.
+cd "$(dirname "$0")"
+MIN=${2:-100}
+for r in $(seq 1 ${1:-5}); do
+  o=$(timeout 110 ./explore --steps 20 2>&1); reason=$(echo "$o" | grep -m1 'explore stop')
+  s=$(./v); h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  echo "r$r $reason HP:$h $(echo "$s" | grep -oE 'T:[0-9]+')"
+  echo "$s" | grep Map | grep -qE ' >@' && { echo "DOWNSTAIRS: $(echo "$s" | grep Map | grep -oE ' >@[0-9,]+')"; exit; }
+  [ "$h" -lt "$MIN" ] && { echo "STOP HP"; exit; }
+  echo "$s" | grep -qE 'Hungry|Weak' && { echo "STOP hunger"; exit; }
+  case "$reason" in
+    *budget*) ;;
+    *HP\ loss*|*monster*|*hostile*|*adjacent*) f=$(timeout 100 ./vfight 6 $MIN 2>&1 | tail -2); echo "  fight: $f"; echo "$f" | grep -qE 'STOP' && exit;;
+    *) exit;;
+  esac
+done

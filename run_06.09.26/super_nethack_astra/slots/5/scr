@@ -1,0 +1,4 @@
+#!/bin/bash
+# slots/5/w ./scr : full raw screen (all rows)
+cd "$(dirname "$0")/../.."
+python3 scripts/session.py screen | head -40

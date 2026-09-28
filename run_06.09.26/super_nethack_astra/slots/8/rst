@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/8/rst [target%] [maxchunks]: search in 10-turn chunks until HP>=target% (run via slots/8/w).
+# Stops on HP drop, hostile-looking monster adjacent, Hungry/Weak/Blind/Conf, 'stole'.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+t=${1:-85}; n=${2:-20}; prev=999
+for i in $(seq $n); do
+  o=$(python3 scripts/session.py keys --compact --raw --why "rest (search)" n10s 2>/dev/null)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -z "$cur" ] && { echo "no HP read"; break; }
+  [ $cur -lt $prev ] && [ $prev -ne 999 ] && { echo "STOP: HP dropped $cur"; break; }
+  prev=$cur
+  pat="Hungry|Weak|Faint|Blind|Conf|Stun"; [ -n "$RST_HUNGRY_OK" ] && pat="Weak|Faint|Blind|Conf|Stun"
+  echo "$o" | grep -qE "$pat" && { echo "STOP: status"; break; }
+  echo "$o" | grep -qiE "stole|steal" && { echo "STOP: theft"; break; }
+  echo "$o" | grep -qE "Neighbors.*[0-9]:[A-Za-z&;:'@][(]" && { echo "STOP: adjacent"; break; }
+  [ $((cur*100)) -ge $((mx*t)) ] && { echo "OK HP $cur/$mx"; break; }
+done
+python3 scripts/session.py screen --compact | grep -E "^0[67] |^34"

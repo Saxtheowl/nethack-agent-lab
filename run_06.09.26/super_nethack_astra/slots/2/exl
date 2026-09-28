@@ -1,0 +1,5 @@
+#!/bin/bash
+# slot2: repeat explore up to N times while it stops only on step budget
+cd "$(dirname "$0")"
+for i in $(seq ${1:-10}); do o=$(./explore 2>&1); r=$(echo "$o"|grep 'explore stop'); echo "$r $(echo "$o"|grep -o 'T:[0-9]*'|head -1) $(echo "$o"|grep -o 'HP:[0-9]*'|head -1)"; echo "$r" | grep -q budget || break; done
+echo "$o" | grep -v 'travel to' | grep -v '^Terminal'

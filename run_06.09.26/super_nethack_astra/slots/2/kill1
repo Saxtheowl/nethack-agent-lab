@@ -1,0 +1,9 @@
+#!/bin/bash
+# slot2: hit dir $1 until "You kill"/"thin air"/"destroy" or HP<$2 (default 80), max $3 blows (6)
+cd "$(dirname "$0")"
+for i in $(seq ${3:-6}); do
+  o=$(./hit $1 ${2:-80}); r=$?; echo "$o" | grep -E '^07'
+  [ $r -ne 0 ] && { echo "$o" | tail -3; exit $r; }
+  echo "$o" | grep -E '^07' | grep -qiE 'You kill|thin air|destroy|You hit it|harmlessly|Really' && break
+done
+echo "$o" | grep -E '^34|^Neigh'

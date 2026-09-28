@@ -1,0 +1,15 @@
+#!/bin/bash
+# slot2: hold a doorway: hit dir $1 when a monster letter is there, else search 1 turn. N iterations ($2), stop HP<$3.
+cd "$(dirname "$0")"
+for i in $(seq ${2:-10}); do
+  v=$(./v); c=$(echo "$v" | head -1 | grep -o '[0-9]*,[0-9]*$')
+  n=$(echo "$v" | grep "^Neighbors of @($c)")
+  t=$(echo "$n" | grep -oE " $1:[^(]*" | cut -d: -f2)
+  if echo "$t" | grep -qE '^[a-zA-Z&;:@]$'; then o=$(./k --raw F$1); else o=$(./k --raw s); fi
+  echo "$o" | grep -E '^0[5-7]' | tail -1 | tr -s ' '
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|snatch|slowing down|stiffen|limbs|cannot see|blind|HP ALARM' && { echo "*** STOP: special"; echo "$o" | grep -E '^0[1-7]'; break; }
+  [ -z "$hp" ] && { echo "*** no HP (refused?)"; break; }
+  [ "$hp" -lt "${3:-80}" ] && { echo "*** LOW HP $hp"; break; }
+done
+./v | grep -E '^34|^Terminal'; ./v | grep "^Neighbors of @($(./v | head -1 | grep -o '[0-9]*,[0-9]*$'))"

@@ -1,0 +1,11 @@
+#!/bin/bash
+# slot2: fight all adjacent hostile of glyph class $1 (e.g. @) around the HERO (cursor), one blow at a time; stop HP < $2
+cd "$(dirname "$0")"
+for i in $(seq ${3:-12}); do
+  v=$(./v); c=$(echo "$v" | head -1 | grep -o '[0-9]*,[0-9]*$')
+  n=$(echo "$v" | grep "^Neighbors of @($c)")
+  d=$(echo "$n" | grep -oE "[1-9]:$1" | head -1 | cut -c1)
+  [ -z "$d" ] && { echo "no adjacent $1"; break; }
+  ./hit $d ${2:-70} | grep -E '^07|^34|STOLE|LOWHP' ; [ ${PIPESTATUS[0]} -ne 0 ] && break
+done
+./v | grep "^Neighbors of @($(./v | head -1 | grep -o '[0-9]*,[0-9]*$'))"

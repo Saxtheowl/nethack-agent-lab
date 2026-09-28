@@ -1,0 +1,5 @@
+#!/bin/bash
+# slots/5/soko X Y PUSHES [--execute]: scripts/sokoban.py next to the game
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+exec python3 scripts/sokoban.py "$@"

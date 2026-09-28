@@ -1,0 +1,18 @@
+#!/bin/bash
+# watch N [IGNORE]: search 1 turn at a time (on the scare platform); stop when a monster glyph not in IGNORE
+# appears on the map (prints it), on HP drop, Weak/Fainting, stole, prompt.
+D="$(dirname "$0")"; N=${1:-100}; IG="${2:-}"
+o=$($D/v); prev=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+me=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -oE '[0-9]+,[0-9]+$')
+for i in $(seq $N); do
+  o=$($D/k s --raw)
+  for m in 1 2 3; do echo "$o" | grep -E "^0[1-7]" | grep -q ">>" || break; o=$($D/k --raw $'\r'); done
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP"; exit 1; }
+  [ "$hp" -lt "$prev" ] && { echo "HP DROP $prev->$hp"; exit 1; }; prev=$hp
+  echo "$o" | grep '^34' | grep -qE ' (Weak|Faint)' && { echo WEAK; exit 1; }
+  echo "$o" | grep -E '^0[67]' | grep -qE 'stole|\[yn' && { echo EVENT; exit 1; }
+  m=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | LC_ALL=C grep -E "^[A-Za-z@&;:'][@]" | grep -v "^@@$me\$")
+  [ -n "$IG" ] && m=$(echo "$m" | grep -vE "^[$IG]@")
+  [ -n "$m" ] && { echo "MON $(echo $m) T$(echo "$o" | grep -oE 'T:[0-9]+')"; exit 0; }
+done
+echo "quiet $(echo "$o" | grep -oE 'T:[0-9]+')"

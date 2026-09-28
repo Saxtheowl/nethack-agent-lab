@@ -1,0 +1,14 @@
+#!/bin/bash
+# waitk GLYPH [n]: search 1 turn at a time until a GLYPH is adjacent, HP drops, or n turns
+cd "$(dirname "$0")/../.."
+g="$1"; n="${2:-8}"
+hp0=$(slots/5/session screen --compact | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  o=$(slots/5/session screen --compact)
+  echo "$o" | grep '^Neigh' | grep -q ":$g(" && { echo "adjacent"; exit 0; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "$hp0" ] && { echo "HP loss"; exit 1; }
+  echo "$o" | grep -qE "Weak|Faint|stole" && { echo "status"; exit 1; }
+  slots/5/session keys --compact s >/dev/null
+done
+echo "timeout"

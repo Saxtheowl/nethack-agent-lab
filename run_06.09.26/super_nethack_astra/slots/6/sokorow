@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/6/sokorow X Y PREFIX : walk 4 steps west, run the planner prefix for boulder X,Y (must end at 35,25 pushing right),
+# then push right until the boulder plugs a hole. Stops on HP loss / monsters / failures.
+cd "$(dirname "$(readlink -f "$0")")/../.."
+S="python3 scripts/session.py"
+[ -n "$WEST" ] && for i in 1 2 3 4 5 6; do $S keys --compact 4 >/dev/null; done
+echo "$1 $2 $3" > slots/6/_row.txt
+out=$(IGN=f python3 slots/6/sokoplan.py slots/6/_row.txt 2>&1); echo "$out" | tail -1 | grep -q "ALL DONE" || { echo "PREFIX STOP"; echo "$out" | tail -2; exit 1; }
+hp0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq 18); do
+  o=$($S keys --compact 6)
+  echo "$o" | grep -E '^07' | cut -c1-70
+  echo "$o" | grep -q 'plugs\|fills' && { echo PLUGGED; break; }
+  echo "$o" | grep -q 'in vain\|Perhaps\|You try' && { echo BLOCKED; break; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$hp" ] && [ "$hp" -lt "$hp0" ] && { echo "HP LOSS"; break; }
+done

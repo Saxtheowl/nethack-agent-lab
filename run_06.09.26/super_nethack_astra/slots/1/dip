@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/1/dip LETTER: #dip LETTER into the fountain here, each prompt checked. Prints the result lines.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+$S keys --raw '#' --settle .3 >/dev/null
+$S keys --raw 'dip' --settle .3 >/dev/null
+o=$($S keys --named Enter --settle .5 --compact); echo "$o" | grep -q "What do you want to dip" || { echo "no dip prompt"; $S keys --named Escape >/dev/null; exit 1; }
+o=$($S keys --raw "$1" --settle .5 --compact); echo "$o" | grep -q "into the fountain" || { echo "no fountain prompt"; $S keys --named Escape >/dev/null; exit 1; }
+$S keys --raw y --settle .8 --compact | grep -E '^0[1-7] |^34|^Map'

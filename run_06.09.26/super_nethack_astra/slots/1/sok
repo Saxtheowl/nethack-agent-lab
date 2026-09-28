@@ -1,0 +1,4 @@
+#!/bin/bash
+# slots/1/sok X Y PUSHES [--execute --max-steps N]: shared Sokoban push executor for slot 1
+export NH_SLOT=1
+exec "$(dirname "$0")/../../scripts/slotrun" python3 scripts/sokoban.py "$@"

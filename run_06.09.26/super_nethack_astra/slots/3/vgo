@@ -1,0 +1,34 @@
+#!/bin/bash
+# vgo X Y [N]: travel (_) toward screen cell X,Y using the terminal cursor as hero position
+# (works when polymorphed, hero glyph not '@'). Repeats up to N times; stops on HP loss, arrival, no progress.
+cd "$(dirname "$0")"
+X=$1; Y=$2; N=${3:-5}
+hp() { ./v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2; }
+pos() { ./v | head -1 | grep -oE '[0-9]+,[0-9]+$'; }
+h0=$(hp)
+for i in $(seq 1 $N); do
+  p=$(pos); hx=${p%,*}; hy=${p#*,}
+  [ "$hx" = "$X" ] && [ "$hy" = "$Y" ] && { echo "arrived $p"; break; }
+  keys=$(python3 -c "
+dx,dy=$X-$hx,$Y-$hy
+k=''
+while dx or dy:
+    sx=(dx>0)-(dx<0); sy=(dy>0)-(dy<0)
+    big={(-1,0):'H',(1,0):'L',(0,-1):'K',(0,1):'J',(-1,-1):'Y',(1,-1):'U',(-1,1):'B',(1,1):'N'}[(sx,sy)]
+    small={(-1,0):'4',(1,0):'6',(0,-1):'8',(0,1):'2',(-1,-1):'7',(1,-1):'9',(-1,1):'1',(1,1):'3'}[(sx,sy)]
+    if (sx==0 or abs(dx)>=8) and (sy==0 or abs(dy)>=8):
+        k+=big; dx-=8*sx; dy-=8*sy
+    else:
+        k+=small; dx-=sx; dy-=sy
+print(k)")
+  ./k _ >/dev/null; ./k @ --raw >/dev/null
+  for ((j=0;j<${#keys};j++)); do ./k "${keys:$j:1}" --raw >/dev/null; done
+  o=$(./k . --raw)
+  m=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+  np=$(pos); h=$(hp)
+  echo "$np HP:$h $(echo $m | cut -c1-70)"
+  [ "$h" -lt "$h0" ] && { echo "STOP: HP loss"; break; }
+  h0=$h
+  [ "$np" = "$p" ] && { echo "STOP: no progress"; break; }
+  ./v | grep -qE 'More|\[yn' && { echo "STOP: prompt"; break; }
+done

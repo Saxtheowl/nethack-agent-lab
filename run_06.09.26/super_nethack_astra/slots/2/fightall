@@ -1,0 +1,20 @@
+#!/bin/bash
+# slot2 helper: fight every adjacent hostile (not peaceful, not pet, not e/F-passive dangerous list) until none; HP stop 45%
+cd "$(dirname "$0")"
+for round in $(seq ${1:-10}); do
+  s=$(./v)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((cur*100)) -lt $((mx*45)) ] && { echo "LOWHP $cur/$mx"; exit 3; }
+  echo "$s" | grep -E '^0[67]' | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  pets=$(echo "$s" | grep '^PETS' | grep -oE '[0-9]+,[0-9]+' | tr '\n' ' ')
+  target=""
+  for a in $(echo "$s" | grep '^Neighbors' | grep -oE '[1-9]:[a-zA-Z@&;:\x27][(][0-9]+,[0-9]+'); do
+    c=${a#*(}; case " $pets " in *" $c "*) continue;; esac
+    x=${c%,*}; y=${c#*,}; info=$(./look $x $y)
+    echo "$info" | grep -q peaceful && continue
+    echo "$info" | grep -qE 'floating eye|gas spore|cockatrice|chickatrice|acid blob|you \(' && { echo "AVOID: $info"; exit 4; }
+    target=${a%%:*}; echo "hit: $info"; break
+  done
+  [ -z "$target" ] && { echo CLEAR; exit 0; }
+  ./melee $target 4 | grep -E 'LOW|STOLE' && exit 3
+done

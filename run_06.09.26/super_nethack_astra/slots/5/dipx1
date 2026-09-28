@@ -1,0 +1,8 @@
+#!/bin/bash
+# one dip of item $1 into the fountain; print result lines
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+$S keys --raw "#dip" >/dev/null; $S keys --named Enter >/dev/null
+$S keys --raw "$1" >/dev/null
+o=$($S screen); echo "$o" | grep -q "into the fountain" && $S keys --raw y >/dev/null
+$S screen --compact | grep -E '^0[4-7] |^34'

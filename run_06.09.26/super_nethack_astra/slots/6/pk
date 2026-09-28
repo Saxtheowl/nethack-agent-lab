@@ -1,0 +1,21 @@
+#!/bin/bash
+# slots/6/pk X Y [X Y ...]: travel to each cell and look (:) there; stops on HP loss/hunger/monster msgs.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+while [ $# -ge 2 ]; do
+  h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  scripts/t $1 $2 >/dev/null
+  o=$($S screen --compact)
+  pos=$(echo "$o" | grep -o '^Neighbors of @([0-9]*,[0-9]*)')
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "== $1,$2 -> $pos HP $h"
+  [ "$h" -lt "$h0" ] && { echo "STOP HP loss"; break; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak|Faint' && { echo STOP hunger; break; }
+  [[ "$pos" != "Neighbors of @($1,$2)" ]] && { echo "STOP not arrived"; echo "$o" | grep -E '^0[1-7] '; break; }
+  m=$($S keys --compact : --settle .6 | grep -E '^0[1-9] ' | tail -2)
+  echo "$m"
+  echo "$m" | tail -1 | grep -qE 'You see here ([0-9]+|a) gold pieces?\.' && $S keys --compact , --settle .5 | grep -E '^0[1-9] ' | tail -1
+  $S screen | grep -q -- '--More--' && $S keys --named Escape >/dev/null
+  shift 2
+done

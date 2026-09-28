@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/5/zooscan: visit every zoo square (45-49 x 22-28, skip 46,28 yellow mold), ':' look, print objects.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+for y in 22 23 24 25 26 27 28; do for x in 45 46 47 48 49; do
+  [[ "$x,$y" == "46,28" ]] && continue
+  r=$(slots/5/goto "$x" "$y"); rc=$?
+  [[ $rc -eq 2 ]] && { echo "$r"; exit 2; }
+  $S keys --compact --why 'regarder le tas' : >/dev/null 2>&1
+  o=$($S screen)
+  items=$(echo "$o" | grep -oE '(You see here [^│]*|│[a-zA-Z0-9+][^│]{3,}│ *$)' | head -8 | tr '\n' ' ')
+  echo "$x,$y: $(echo "$o" | grep -E 'see here|Things that are here|no objects' | head -1 | tr -s ' ' | cut -c1-120)"
+  echo "$o" | grep -q 'Things that are here' && { echo "$o" | sed -n '1,14p' | grep -oE '│[^│]*│$' | head -10 | tr -s ' '; $S keys --named Escape >/dev/null 2>&1; }
+done; done

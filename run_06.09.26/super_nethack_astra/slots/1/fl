@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/1/fl X Y : farlook the map cell X,Y (moves cursor from hero with digit keys)
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+out=$($S screen --compact); hx=$(echo "$out"|grep -oP 'Neighbors of @\(\K\d+'); hy=$(echo "$out"|grep -oP 'Neighbors of @\(\d+,\K\d+')
+dx=$(( $1 - hx )); dy=$(( $2 - hy ))
+$S keys --raw ';' --settle .3 >/dev/null
+while [ $dx -ne 0 ] || [ $dy -ne 0 ]; do
+  if [ $dx -gt 0 ] && [ $dy -gt 0 ]; then k=3; dx=$((dx-1)); dy=$((dy-1));
+  elif [ $dx -gt 0 ] && [ $dy -lt 0 ]; then k=9; dx=$((dx-1)); dy=$((dy+1));
+  elif [ $dx -lt 0 ] && [ $dy -gt 0 ]; then k=1; dx=$((dx+1)); dy=$((dy-1));
+  elif [ $dx -lt 0 ] && [ $dy -lt 0 ]; then k=7; dx=$((dx+1)); dy=$((dy+1));
+  elif [ $dx -gt 0 ]; then k=6; dx=$((dx-1)); elif [ $dx -lt 0 ]; then k=4; dx=$((dx+1));
+  elif [ $dy -gt 0 ]; then k=2; dy=$((dy-1)); else k=8; dy=$((dy+1)); fi
+  $S keys --raw $k --settle .1 >/dev/null
+done
+$S keys --raw . --settle .5 --compact | grep -E '^0[1-8]' | tail -2

@@ -1,0 +1,19 @@
+#!/bin/bash
+# throwat GLYPH ITEM [turns]: wait turn by turn; when GLYPH aligned within 6 (not adjacent-only), throw ITEM at it once; stop.
+D="$(dirname "$0")"; g=$1; it=$2; n=${3:-10}
+declare -A dir=([-1,-1]=7 [0,-1]=8 [1,-1]=9 [-1,0]=4 [1,0]=6 [-1,1]=1 [0,1]=2 [1,1]=3)
+sg() { [ $1 -gt 0 ] && echo 1 || { [ $1 -lt 0 ] && echo -1 || echo 0; }; }
+o=$($D/v)
+for i in $(seq $n); do
+  me=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -oE '[0-9]+,[0-9]+$'); mx=${me%,*}; my=${me#*,}
+  t=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E "^$g@" | head -1 | grep -oE '[0-9]+,[0-9]+')
+  if [ -n "$t" ]; then
+    tx=${t%,*}; ty=${t#*,}; dx=$((tx-mx)); dy=$((ty-my)); ax=${dx#-}; ay=${dy#-}; d=$(( ax > ay ? ax : ay ))
+    if { [ $dx -eq 0 ] || [ $dy -eq 0 ] || [ $ax -eq $ay ]; } && [ $d -le 6 ]; then
+      k=${dir[$(sg $dx),$(sg $dy)]}; $D/k t >/dev/null; $D/k $it >/dev/null; o=$($D/k $k)
+      echo "THROW $k at $t (dist $d)"; echo "$o" | grep -E '^0[5-7]'; exit 0
+    fi
+  fi
+  o=$($D/k s --raw)
+done
+echo "no shot; target $t me $me"

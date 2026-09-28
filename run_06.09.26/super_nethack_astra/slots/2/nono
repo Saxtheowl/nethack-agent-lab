@@ -1,0 +1,5 @@
+#!/bin/bash
+# slot2: answer 'n' to consecutive seduction [yn] prompts (max 8), then show status
+cd "$(dirname "$0")"
+for i in $(seq 8); do o=$(./k --raw n); l=$(echo "$o" | grep -E '^0[67]' | tail -1); echo "$l" | tr -s ' '; echo "$l" | grep -q '\[yn\]' || break; done
+./v | grep -E '^34'; ./v | grep -oE '&@[0-9,]*'

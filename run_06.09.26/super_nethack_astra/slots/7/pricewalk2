@@ -1,0 +1,10 @@
+#!/bin/bash
+# pricewalk2 DIRS : take ONE step per digit (checked by guard), print the "for sale" line after each; stop if no move.
+cd "$(dirname "$0")/../.."
+for d in $(echo "$1" | grep -o .); do
+  out=$(python3 scripts/session.py keys --compact "$d" --settle .4 2>&1)
+  echo "$out" | grep -qE "ALARM|refus|Really" && { echo "STOP"; echo "$out" | head -12; exit; }
+  pos=$(echo "$out" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  msg=$(echo "$out" | grep -E '^0[1-7] ' | grep -iE 'for sale|see here|zorkmid|There are' | tail -2)
+  echo "$pos: $msg"
+done

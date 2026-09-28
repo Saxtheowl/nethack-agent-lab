@@ -1,0 +1,10 @@
+#!/bin/bash
+# slots/6/pw: pick up all weapons ( ')' class ) on this square.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+$S keys --raw , --settle .6 >/dev/null
+if $S screen | grep -q "Pick up what"; then
+  $S keys --raw ')' --settle .3 >/dev/null; $S keys --named Enter --settle .6 >/dev/null
+fi
+$S screen --compact | grep -E '^0[5-7] ' | tail -2

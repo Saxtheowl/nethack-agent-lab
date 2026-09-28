@@ -1,0 +1,12 @@
+#!/bin/bash
+# slot2: search n10s chunks until HP>=target; stop on HP drop, adjacent letter, stole, Hungry
+cd "$(dirname "$0")"; target=${1:-100}; max=${2:-15}; prev=999
+for i in $(seq $max); do
+  o=$(./k --raw n10s); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak' && { echo HUNGRY; exit 4; }
+  [ "$hp" -lt "$prev" ] && [ $prev -ne 999 ] && { echo "HPDROP $hp"; exit 3; }
+  echo "$o" | grep '^Neigh' | grep -qE '[1-9]:[a-zA-Z@&;:]\(' && { echo "ADJ"; echo "$o" | grep ^Neigh; exit 5; }
+  prev=$hp; [ "$hp" -ge "$target" ] && break
+done
+echo "$o" | grep -E '^34'

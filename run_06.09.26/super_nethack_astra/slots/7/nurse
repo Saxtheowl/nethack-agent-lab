@@ -1,0 +1,20 @@
+#!/bin/bash
+# nurse N: nurse dancing (naked, empty-handed): single 's' steps; stop on HP loss, nurse gone,
+# any monster glyph other than the nurse '@' and the peaceful tengu 'i' on the map, hunger, or prompts.
+D="$(dirname "$0")"
+prev=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "${1:-50}"); do
+  o=$($D/k s --raw)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}
+  [ -z "$cur" ] && { echo "no HP"; break; }
+  [ "$cur" -lt "$prev" ] && { echo "HP LOSS $prev->$hp"; break; }
+  prev=$cur
+  echo "$o" | grep '^34' | grep -qE ' (Hungry|Weak|Faint)' && { echo HUNGER; break; }
+  echo "$o" | grep -qE 'stole|--More--|\[yn' && { echo EVENT; break; }
+  mons=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E '^[A-Za-z@&;:]@' | grep -vE '^I@')
+  n=$(echo "$mons" | grep -c '^@@')
+  [ "$n" -lt 2 ] && { echo "NURSE GONE $hp"; break; }
+  other=$(echo "$mons" | grep -vE '^(@|i)@')
+  [ -n "$other" ] && { echo "OTHER $other"; break; }
+done
+echo "$hp"

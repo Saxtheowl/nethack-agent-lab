@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/1/srch N : search N single turns here; stop on HP loss, adjacent monster, status, or when the map-feature/neighbour line changes.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+b=$($S screen --compact); hp0=$(echo "$b" | grep -oP 'HP:\K\d+' | head -1); v0=$(slots/1/v 2>/dev/null | grep -cE '▒|·|\+|\|' )
+for i in $(seq ${1:-20}); do
+  o=$($S keys --compact --raw --why 'search (srch)' s 2>&1)
+  hp=$(echo "$o" | grep -oP 'HP:\K\d+' | head -1)
+  [ -n "$hp" ] && [ "$hp" -lt "$hp0" ] && { echo "stop: HP loss"; break; }
+  echo "$o" | grep -E '^Neighbors' | grep -oE ':[A-Za-z@&;:]\(' | grep -vE ":[${SAFE:-_}]\\(" | grep -q . && { echo "stop: monster"; break; }
+  echo "$o" | grep -qE 'Hungry|Weak|Blind|Conf|Stun|stole' && { echo "stop: status"; break; }
+  echo "$o" | grep -qE 'You find|hidden' && { echo "found: $(echo "$o" | grep -E '^07')"; break; }
+done
+$S screen --compact | grep -E '^Neighbors|^34'

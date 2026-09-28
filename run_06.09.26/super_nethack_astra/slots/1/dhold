@@ -1,0 +1,21 @@
+#!/bin/bash
+# slots/1/dhold DIR N MINHP : hold a chokepoint; attack F<DIR> when a monster is in that neighbour, else search 1 turn.
+# stops on: HP < MINHP, any HP loss > 15 in one step, stoning/slime/status, --More--, peaceful prompt, stole.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+d=$1; n=${2:-10}; minhp=${3:-50}
+for i in $(seq $n); do
+  scr=$($S screen --compact)
+  hp=$(echo "$scr" | grep -oP 'HP:\K\d+' | head -1)
+  [ "$hp" -lt "$minhp" ] && { echo "stop: HP $hp < $minhp"; break; }
+  cell=$(echo "$scr" | grep '^Neighbors' | grep -oP " $d:\K[^(]+")
+  [ "$cell" = "e" ] && { echo "stop: e at target, farlook first"; break; }
+  if echo "$cell" | grep -qE '^[A-Za-z&;@:'"'"']$'; then key="F$d"; why="hold door: attack $cell"; else key="s"; why="hold door: wait"; fi
+  out=$($S keys --compact --raw --why "$why" $key 2>&1)
+  msg=$(echo "$out" | grep -E '^0[1-7] ' | tail -2)
+  echo "$i [$cell] $key :: $(echo "$out" | grep -E '^07 ' | cut -c5-80)"
+  echo "$out" | grep -E "^07 |ALARM" | grep -qE 'ALARM|Really attack|--More--|Call a|Call an|What do you|In what direction|slowing down|feverish|frozen|cannot move|stiffening|limbs|stole|Slime|Stone' && { echo "stop: event"; echo "$msg"; break; }
+  nhp=$(echo "$out" | grep -oP 'HP:\K\d+' | head -1)
+  [ -n "$nhp" ] && [ $((hp - nhp)) -gt 15 ] && { echo "stop: big hit $hp->$nhp"; break; }
+done
+$S screen --compact | grep -E '^34|^Map|^Neigh'

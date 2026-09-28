@@ -1,0 +1,11 @@
+#!/bin/bash
+# hunt N: up to N rounds of camp2 20; after each kill, print adjacent non-floor squares (farlook) so items can be checked.
+D="$(dirname "$0")"
+for i in $(seq "$1"); do
+  r=$($D/camp2 20 2>&1); echo "$r" | tail -2 | cut -c1-160
+  echo "$r" | grep -q KILLED || exit 0
+  n=$($D/v | grep '^Neighbors' | head -1)
+  for cand in $(echo "$n" | LC_ALL=C grep -oE "[1-9]:[^·▒ (][(][0-9]+,[0-9]+" | grep -v '[│─┌┐└┘<>]'); do
+    xy=$(echo "$cand" | grep -oE '[0-9]+,[0-9]+'); echo "  $cand $($D/look ${xy%,*} ${xy#*,} | head -1 | cut -c10-90)"
+  done
+done

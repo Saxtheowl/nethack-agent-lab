@@ -1,0 +1,12 @@
+#!/bin/bash
+# slots/1/collect "x,y x,y ..." [regex]: travel to each square and pick up (menu-aware, via pickup).
+# Stops if HP < 60% or a hostile appears adjacent after travel.
+cd "$(dirname "$0")/../.."
+for p in $1; do
+  o=$(slots/1/t ${p%,*} ${p#*,})
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1)
+  h=${hp#HP:}; h=${h%%(*}; m=${hp#*(}; m=${m%)}
+  [ $((h*10)) -lt $((m*6)) ] && { echo "collect: low HP $hp"; exit 1; }
+  echo "$o" | grep -q "^Neighbors of @(${p%,*},${p#*,})" || { echo "$p: not reached"; echo "$o" | grep -E '^0[1-7]' | tail -1; exit 2; }
+  echo "$p: $(slots/1/w ./pickup "${2:-.}" | tail -2 | tr '\n' ' ')"
+done

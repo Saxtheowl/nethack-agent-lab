@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/6/retry N : run sokoplan on slots/6/_f.txt up to N times, waiting 3 turns between tries, updating remaining pushes.
+cd "$(dirname "$(readlink -f "$0")")/../.."
+for t in $(seq ${1:-5}); do
+  r=$(IGN=${IGN:-:Wdh} timeout 900 python3 slots/6/sokoplan.py slots/6/_f.txt 2>&1 | tail -1)
+  echo "try $t: $(echo "$r" | cut -c1-100)"
+  echo "$r" | grep -q "ALL DONE" && exit 0
+  echo "$r" | grep -q "STOP" && exit 1
+  b=$(echo "$r" | grep -oE "boulder \([0-9]+, [0-9]+\) remaining pushes [a-z]+")
+  [ -n "$b" ] && echo "$b" | awk '{gsub(/[(),]/,""); print $2, $3, $NF}' > slots/6/_f.txt
+  python3 scripts/session.py keys --compact n3s >/dev/null
+done
+exit 1

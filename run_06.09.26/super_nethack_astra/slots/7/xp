@@ -1,0 +1,40 @@
+#!/bin/bash
+# xp [rounds] : explore; when it stops next to a WEAK monster (farlook name in whitelist), fight it one blow at a time, then continue.
+# Stops (and prints) on: unknown/strong monster, HP<60%, prompt, stairs, nothing left.
+cd "$(dirname "$0")/../.."
+WEAK='grid bug|newt|lichen|jackal|sewer rat|kobold|fox|coyote|gecko|large kobold|kobold zombie|gnome zombie|goblin|hobbit|giant rat|garter snake|gnome|gnome lord|hill orc|rabbit|manes|homunculus|hobgoblin|giant bat|bat|dwarf zombie|orc zombie|little dog|sewer rat|kitten|cave spider|centipede'
+for r in $(seq "${1:-6}"); do
+  out=$(slots/7/explore --steps 120 2>&1)
+  why=$(echo "$out" | grep -o 'explore stop: .*')
+  echo "round $r: $why"
+  sc=$(slots/7/v)
+  c=$(echo "$sc" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  hp=$(echo "$sc" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((cur * 10)) -lt $((mx * 6)) ] && { echo "LOW HP $cur/$mx"; break; }
+  n=$(echo "$sc" | grep "^Neighbors of @($c)")
+  pets=$(echo "$sc" | grep '^PETS')
+  fought=0
+  for m in $(echo "$n" | LC_ALL=C grep -oE "[1-9]:[A-Za-z:][(][0-9]+,[0-9]+[)]"); do
+    d=${m:0:1}; xy=$(echo "$m" | grep -oE '[0-9]+,[0-9]+')
+    echo "$pets" | grep -q "$xy" && continue
+    name=$(slots/7/look ${xy%,*} ${xy#*,})
+    echo "  adj $d: $name"
+    echo "$name" | grep -qE "statue|boulder|remembered|peaceful" && continue
+    if echo "$name" | grep -qE "\(($WEAK)\)"; then
+      for b in 1 2 3 4 5 6 7 8; do
+        o=$(slots/7/k F$d --raw 2>&1)
+        echo "$o" | grep -q -- '--More--' && slots/7/k --named Enter >/dev/null 2>&1
+        echo "$o" | grep -E '^0[1-7] ' | tail -1 | grep -q 'Really attack' && { slots/7/k --named Escape >/dev/null; echo PEACEFUL; exit; }
+        o2=$(slots/7/v); echo "$o2" | grep "^Neighbors of @($c)" | grep -q "$d:[A-Za-z:]" || break
+      done
+      fought=1
+    else
+      echo "STOP: not whitelisted"; slots/7/v | grep -E '^0[5-7] |^34|^Neigh'; exit
+    fi
+  done
+  if [ $fought = 0 ]; then
+    case "$why" in *"HP loss"*) continue;; esac
+    echo "$out" | tail -25; exit
+  fi
+done
+slots/7/v | grep -E '^34|^Neigh'

@@ -1,0 +1,16 @@
+#!/bin/bash
+# goto X Y [n]: repeated travel to X,Y; stops on arrival, HP loss, no progress, or a prompt on the LAST message line
+D="$(dirname "$0")"
+hp() { $D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2; }
+pos() { $D/v | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$'; }
+h0=$(hp); last=""
+for i in $(seq "${3:-8}"); do
+  $D/session travel "$1" "$2" >/dev/null 2>&1
+  p=$(pos)
+  [ "$p" = "$1,$2" ] && { echo "ARRIVED $p"; break; }
+  [ "$(hp)" -lt "$h0" ] && { echo "STOP: HP loss at $p"; break; }
+  $D/v | grep -E "^0[0-9]" | tail -1 | grep -qE -- "--More--|Really|\[yn" && { echo "STOP: prompt at $p"; break; }
+  [ "$p" = "$last" ] && { echo "STOP: no progress at $p"; break; }
+  last=$p
+done
+$D/v | grep -E "^34"

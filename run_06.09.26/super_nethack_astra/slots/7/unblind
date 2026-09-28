@@ -1,0 +1,12 @@
+#!/bin/bash
+# unblind [max]: single 's' until Blind/Conf/Stun is gone; stop on HP loss
+D="$(dirname "$0")"
+prev=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "${1:-60}"); do
+  o=$($D/k s --raw 2>&1)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ -n "$hp" ] && [ "$hp" -lt "$prev" ] && { echo "HP LOSS $prev->$hp"; break; }
+  prev=${hp:-$prev}
+  echo "$o" | grep '^34' | grep -qE ' (Blind|Conf|Stun)' || { echo "CLEAR after $i"; break; }
+done
+$D/v | grep -E '^34'

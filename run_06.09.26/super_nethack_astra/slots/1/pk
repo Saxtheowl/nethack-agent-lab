@@ -1,0 +1,24 @@
+#!/bin/bash
+# slots/1/pk [regex]: ',' then select every menu item matching regex (python parse, UTF-8 safe), never gray stones.
+cd "$(dirname "$0")/../.."
+export PYTHONIOENCODING=utf-8 LC_ALL=C.UTF-8
+S="python3 scripts/session.py"
+re="${1:-.}"
+$S keys --raw , --settle .6 >/dev/null
+scr=$($S screen)
+if echo "$scr" | grep -q "Pick up what"; then
+  letters=$(python3 - "$re" "$scr" <<'PY'
+import re, sys
+pat, scr = sys.argv[1], sys.argv[2]
+out = []
+for m in re.finditer(r'[│ ] ([a-zA-Z$])\) ([^│]*)', scr):
+    l, t = m.group(1), m.group(2)
+    if re.search(r'gr[ae]y stone|corpse', t, re.I): continue
+    if re.search(pat, t, re.I): out.append(l)
+print(' '.join(dict.fromkeys(out)))
+PY
+)
+  for l in $letters; do $S keys --raw "$l" --settle .2 >/dev/null; done
+  $S keys --raw $'\r' --settle .6 >/dev/null
+fi
+$S screen --compact | grep -E '^0[1-7] ' | tail -2

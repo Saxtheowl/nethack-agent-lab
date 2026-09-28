@@ -1,0 +1,17 @@
+#!/bin/bash
+# steps DIR N: single steps in DIR, stop on HP loss, prompt (Really/[yn]), no move, or adjacent hostile-looking letter.
+D="$(dirname "$0")"; d=$1; n=${2:-5}
+prev=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); pc=""
+for i in $(seq $n); do
+  o=$($D/k --why steps $d 2>&1)
+  last=$(echo "$o" | grep -E '^0[1-7] ' | grep -vE '^0[1-7] │ +│$' | tail -1)
+  echo "$last" | grep -q 'Really attack' && { $D/k --raw n >/dev/null; echo "PEACEFUL in way"; break; }
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  c=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  [ -n "$hp" ] && [ "$hp" -lt "$prev" ] && { echo "HP LOSS $hp"; break; }
+  [ "$c" == "$pc" ] && { echo "STUCK $c"; break; }
+  pc=$c; prev=$hp
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak|Faint|Stone|Slime|Blind|Conf|Stun' && { echo STATUS; break; }
+  echo "$last" | grep -qE 'stole|steals' && { echo STOLE; break; }
+done
+$D/v | grep -E "^34|^Neighbors of @\($($D/v | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')\)"

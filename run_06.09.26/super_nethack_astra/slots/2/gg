@@ -1,0 +1,15 @@
+#!/bin/bash
+# slot2: go X Y retried up to N times (peaceful blockers); stops on HP loss/adjacent hostile check by caller
+cd "$(dirname "$0")"
+h0=$(./v | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq ${3:-6}); do
+  ./k --named Escape >/dev/null
+  o=$(./go $1 $2 2>&1)
+  n=$(echo "$o" | grep -o '^Neighbors of @([0-9]*,[0-9]*)' | tail -1)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | tail -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; break; }
+  [ -n "$h" ] && [ "$h" -lt "$h0" ] && { echo "HP LOSS $h"; break; }
+  echo "$n" | grep -q "@($1,$2)" && break
+  sleep 1
+done
+./v | grep -E '^0[1-7]|^34|^Neigh|Map feat' | grep -v 'travel to'

@@ -1,0 +1,25 @@
+#!/bin/bash
+# deadends: list corridor squares with <=1 walkable neighbour (candidates for hidden passages)
+D="$(dirname "$0")"
+$D/v | python3 -c "
+import sys
+rows={}
+for l in sys.stdin:
+    if l[:2].isdigit() and l[2]==' ':
+        r=int(l[:2]); rows[r]=l[3:].rstrip('\n')
+walk=set('▒·<>{#+|-_^%)([]!?*=/\$\"0@')
+def ch(x,y):
+    s=rows.get(y,'')
+    return s[x] if 0<=x<len(s) else ' '
+for y in range(10,32):
+    s=rows.get(y,'')
+    for x,c in enumerate(s):
+        if c!='▒': continue
+        n=0
+        for dx in (-1,0,1):
+            for dy in (-1,0,1):
+                if dx==dy==0: continue
+                c2=ch(x+dx,y+dy)
+                if c2 in walk or c2 in '│─' and False: n+=1
+        if n<=1: print(f'{x},{y} n={n}')
+"

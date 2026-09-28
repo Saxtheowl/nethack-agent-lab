@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/3/xp [ROUNDS] : run explore --steps 20 up to ROUNDS times; stop on any non-budget reason or HP<60%
+cd "$(dirname "$0")"
+ROUNDS=${1:-4}; EXTRA=${2:-}
+for r in $(seq 1 $ROUNDS); do
+  o=$(timeout 110 ./explore --steps 20 $EXTRA 2>&1)
+  reason=$(echo "$o" | grep -m1 'explore stop')
+  s=$(./v); echo "$reason | $(echo "$s" | grep '^34' | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+')"
+  echo "$reason" | grep -q 'step budget used' || break
+  hp=$(echo "$s" | grep '^34' | grep -oE 'HP:[0-9]+\([0-9]+\)' | tr -d 'HP:()' | sed 's/(/ /'); 
+  h=$(echo "$s" | grep '^34' | sed -E 's/.*HP:([0-9]+)\(([0-9]+)\).*/\1 \2/'); cur=${h% *}; mx=${h#* }; [ $(( cur * 10 )) -lt $(( mx * 6 )) ] && { echo "HP low"; break; }
+done
+./v | grep Map | grep -oE ' [<>]@[0-9,]+' | tr '\n' ' '; echo

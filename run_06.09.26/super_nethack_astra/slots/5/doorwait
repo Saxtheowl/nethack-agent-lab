@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/5/doorwait [n]: search one turn at a time until a non-peaceful-letter (not h/u) is adjacent,
+# HP drops, stole/HP ALARM, or n turns. Prints the last screen summary.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "${1:-10}"); do
+  o=$($S keys --compact --why 'attendre a la porte' s 2>&1)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qE 'HP ALARM|stole|steals|Hungry|Weak|Fainting|You return|human' && { echo "STOP: event"; break; }
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP: HP $h0->$h"; break; }
+  echo "$o" | grep -E '^Neigh' | grep -qE ':[a-gi-tv-zA-Z&;@](\(|\()' && { echo "STOP: adjacent"; break; }
+  h0=$h
+done
+$S screen --compact | grep -E '^0[5-7]|^2[2-8]|^34|^Neigh'

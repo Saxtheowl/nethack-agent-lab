@@ -1,0 +1,28 @@
+#!/bin/bash
+# slots/5/sokoraw X Y PUSHES : plan with scripts/sokoban.py (no execute) then send the keys raw one by one.
+# Stops on HP drop, blocked boulder, 'Really', or a non-moving step. Use when a harmless far monster blocks --execute.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+keys=$(python3 scripts/sokoban.py "$1" "$2" "$3" 2>&1 | grep -oE '"keys": "[0-9]+"' | grep -oE '[0-9]+')
+[ -z "$keys" ] && { echo "no plan"; python3 scripts/sokoban.py "$1" "$2" "$3" 2>&1 | tail -2; exit 1; }
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+prev=""
+for ((i=0;i<${#keys};i++)); do
+  c=${keys:$i:1}
+  o=$($S keys --compact --raw "$c" 2>&1)
+  p=$(echo "$o" | grep -oE 'Neighbors of @\([0-9,]+\)' | head -1)
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  last=$(echo "$o" | grep -E '^0[1-7] ' | tail -1)
+  if echo "$o" | grep -q 'ALARM' || echo "$last" | grep -qE 'Really|You hear a monster|try to move|Perhaps that'; then echo "STOP at key $i: $(echo "$o" | grep -E '^0[67]' | tail -1)"; exit 2; fi
+  echo "$o" | grep '^Map' | grep -qE ' [nl]@' && { echo "STOP nymph/leprechaun in view at key $i: $(echo "$o" | grep '^Map' | grep -oE ' [nl]@[0-9,]+')"; exit 3; }
+  echo "$o" | grep -E '^34' | grep -qE 'Weak|Fainting|Hungry' && { echo "STOP hunger at key $i"; exit 3; }
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP HP $h0->$h at key $i"; exit 2; }
+  if [[ "$p" == "$prev" ]]; then
+    # a popup (things here) may have eaten the key: resend once
+    o=$($S keys --compact --raw "$c" 2>&1); p=$(echo "$o" | grep -oE 'Neighbors of @\([0-9,]+\)' | head -1)
+    [[ "$p" == "$prev" ]] && { echo "STOP no move at key $i ($p)"; exit 2; }
+  fi
+  prev=$p
+done
+echo "DONE ${#keys} keys, $p"; echo "$o" | grep -E '^0[67]' | tail -1

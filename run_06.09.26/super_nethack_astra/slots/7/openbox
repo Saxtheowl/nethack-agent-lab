@@ -1,0 +1,12 @@
+#!/bin/bash
+# openbox: #loot the container here (force if locked), show its contents menu
+D="$(dirname "$0")"
+$D/k '#loot' >/dev/null 2>&1; $D/k --named Enter >/dev/null 2>&1
+o=$($D/k y 2>&1)
+if echo "$o" | grep -q "locked"; then
+  $D/k '#force' >/dev/null 2>&1; $D/k --named Enter >/dev/null 2>&1; $D/k y >/dev/null 2>&1
+  for i in 1 2 3 4 5 6 7 8; do $D/v | grep -qE "succeed in forcing|You force" && break; $D/k s >/dev/null 2>&1; done
+  $D/k '#loot' >/dev/null 2>&1; $D/k --named Enter >/dev/null 2>&1; $D/k y >/dev/null 2>&1
+fi
+$D/k o >/dev/null 2>&1
+$D/v | grep -E "^0[0-9]|^1[0-9]"

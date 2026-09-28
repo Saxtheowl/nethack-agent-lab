@@ -16,7 +16,8 @@ import guard
 import session
 
 THIEF_MSG = re.compile(r'stole|steals|snatches|charms you|seduces you|very attracted|Really attack|purse feels lighter|You are frozen|engulfs you')
-THIEF_GLYPHS = set('nl')
+import os
+THIEF_GLYPHS = set(os.environ.get('THIEVES', 'nl'))
 
 FLOOR = set('▒·.<>$%!?=()[/*`"_{#') | set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@&;:\'')
 DOORS = set('-|+')
@@ -133,10 +134,7 @@ def open_a_door(st, dead):
                     time.sleep(.6)
                     text = session.screen()
                     if 'This door is locked' in text:
-                        session.send('k')  # kick
-                        time.sleep(.3)
-                        session.send(k)
-                        time.sleep(.8)
+                        return f'locked door at {nx},{ny}'  # never kick (shop!)
                     now = guard.state(*guard.observe(session))
                     if now is None or tile(now['rows'], nx, ny) != '+':
                         break
@@ -191,7 +189,11 @@ def main():
         rows = st['rows']
         target, path = nearest(rows, st['position'], dead)
         if target is None:
-            if open_a_door(st, dead):
+            opened = open_a_door(st, dead)
+            if isinstance(opened, str):
+                reason = opened + ': decide yourself (could be a SHOP, never kick)'
+                break
+            if opened:
                 st = guard.state(*guard.observe(session)) or st
                 continue
             reason = 'no reachable frontier left'

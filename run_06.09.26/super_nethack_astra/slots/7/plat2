@@ -1,0 +1,28 @@
+#!/bin/bash
+# plat2 N: on scare monster; attack adjacent hostile elf-lord/Elvenking/other listed glyph (farlook each '@'),
+# else search. Stop on HP<90, drop>20, hunger, stole, prompt, unknown adjacent '@'.
+D="$(dirname "$0")"; G="${2:-c}"; N=${1:-30}
+o=$($D/v); prev=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq $N); do
+  me=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -oE '[0-9]+,[0-9]+$')
+  nb=$(echo "$o" | grep "^Neighbors of @($me)" | head -1)
+  k=s
+  for a in $(echo "$nb" | LC_ALL=C grep -oE "[1-9]:[A-Za-z@&;:'][(][0-9]+,[0-9]+"); do
+    g=${a:2:1}; d=${a:0:1}; xy=${a:4}
+    if [ "$g" = "@" ]; then
+      l=$($D/look ${xy%,*} ${xy#*,})
+      if echo "$l" | grep -qE 'elf-lord|Elvenking|Grey-elf|Woodland-elf|Green-elf' && ! echo "$l" | grep -qE 'peaceful|priest'; then k="F$d"; break; fi
+      echo "UNKNOWN @ $l"; exit 1
+    elif [[ "$G" == *"$g"* ]]; then k="F$d"; break
+    else echo "UNLISTED ADJ $a"; exit 1; fi
+  done
+  o=$($D/k $k --raw)
+  for m in 1 2 3; do echo "$o" | grep -E "^0[1-7]" | grep -q ">>" || break; o=$($D/k --raw $'\r'); done
+  echo "$o" | grep -E '^0[1-7]' | grep -E 'You kill|You destroy' | tail -1 | cut -c4-60
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP"; exit 1; }
+  { [ "$hp" -lt 90 ] || [ $((prev - hp)) -gt 20 ]; } && { echo "HP $hp"; exit 1; }
+  prev=$hp
+  echo "$o" | grep '^34' | grep -qE ' (Weak|Faint)' && { echo HUNGER; exit 1; }
+  echo "$o" | grep -E '^0[67]' | grep -qE 'stole|\[yn' && { echo EVENT; exit 1; }
+done
+echo "done HP $prev"

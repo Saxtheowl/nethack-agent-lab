@@ -1,0 +1,40 @@
+#!/bin/bash
+# vfight [N] [MINHP]: polymorphed-hero melee loop. Each round: if a non-@ monster letter is adjacent (8 dirs), F-attack it;
+# else search one turn. Stops when HP < MINHP (default 25), on prompt, or after N rounds. Never attacks '@' or peacefuls.
+cd "$(dirname "$0")"
+N=${1:-10}; MIN=${2:-25}; HUNT=${3:-}
+for i in $(seq 1 $N); do
+  s=$(./v)
+  h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$MIN" ] && { echo "STOP low HP $h"; exit; }
+  echo "$s" | grep -qE 'More|\[yn' && { echo "STOP prompt"; exit; }
+  d=$(python3 - "$s" "$HUNT" <<'PY'
+import re,sys
+s=sys.argv[1]
+c=re.search(r'Terminal cursor[^:]*: (\d+),(\d+)',s); hx,hy=int(c[1]),int(c[2])
+m=re.search(r'^Map features.*$',s,re.M).group(0)
+dirs={(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+for g,x,y in re.findall(r' ([A-Za-z&;:\'])@(\d+),(\d+)',m):
+    dx,dy=int(x)-hx,int(y)-hy
+    if (dx,dy) in dirs and g!='@':
+        print(dirs[(dx,dy)],g); sys.exit()
+if len(sys.argv)>2 and sys.argv[2]=='hunt':
+    best=None
+    for g,x,y in re.findall(r' ([A-Za-z&;:\'])@(\d+),(\d+)',m):
+        if g in '@V': continue
+        dx,dy=int(x)-hx,int(y)-hy; dd=max(abs(dx),abs(dy))
+        if dd<=6 and (best is None or dd<best[0]): best=(dd,dx,dy,g)
+    if best:
+        dx,dy=best[1],best[2]; print('M'+dirs[((dx>0)-(dx<0),(dy>0)-(dy<0))],best[3])
+PY
+)
+  if [ "${d:0:1}" = M ]; then
+    o=$(./k "${d:1:1}")
+  elif [ -n "$d" ]; then
+    o=$(./k "F${d% *}" --raw --why "vfight: adjacent ${d#* }")
+  else
+    o=$(./k s)
+  fi
+  echo "$o" | grep -qE 'Really attack' && { ./k n >/dev/null; echo "STOP peaceful"; exit; }
+  echo "r$i [$d] HP:$h $(echo "$o" | grep -E '^0[0-9]' | tail -1 | cut -c6-80)"
+done

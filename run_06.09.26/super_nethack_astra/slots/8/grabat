@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/8/grabat X,Y ...: travel to each square and pick up everything there except gray stones/corpses/boulders
+# (menus: selects all non-gray-stone, non-corpse lines). Run via slots/8/w.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+S="python3 scripts/session.py"
+for xy in "$@"; do
+  x=${xy%,*}; y=${xy#*,}
+  timeout 60 slots/8/tv $x $y 8 >/dev/null 2>&1
+  $S keys --named Escape >/dev/null 2>&1
+  o=$($S keys --compact --why "pick up" , 2>/dev/null)
+  scr=$($S screen)
+  if echo "$scr" | grep -q "Pick up what"; then
+    letters=$(echo "$scr" | grep -oE "│ ?[a-zA-Z$]\) [^│]*" | grep -viE "gr[ae]y stone|corpse|boulder|rocks?$|rock " | grep -oE "^│ ?[a-zA-Z$]" | tr -d '│ ' | tr -d '\n')
+    [ -n "$letters" ] && $S keys --raw --why "select" "$letters" >/dev/null
+    $S keys --named C-m >/dev/null
+  fi
+  $S screen --compact | grep -E "^0[67] " | tail -1
+done

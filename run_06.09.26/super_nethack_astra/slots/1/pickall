@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/1/pickall: escape stray popups, open ',' and pick every listed item (menu letters a-z and $), never 'A'.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+$S keys --named Escape >/dev/null
+o=$($S keys --raw , --settle .5)
+if echo "$o" | grep -q "Pick up what"; then
+  letters=$(echo "$o" | grep -v corpse | grep -oP '│ \K[a-z$](?=\) )' | tr -d '\n')
+  [ -n "$letters" ] && $S keys --raw "$letters" >/dev/null
+  $S keys --named Enter --compact | grep -E '^0[1-7]|^34'
+else
+  echo "$o" | grep -E '^│' | head -8 | cut -c1-82
+fi

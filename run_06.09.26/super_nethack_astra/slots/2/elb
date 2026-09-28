@@ -1,0 +1,7 @@
+#!/bin/bash
+# slot2: (re)write Elbereth in the dust here (wipes old engraving), then read it back.
+cd "$(dirname "$0")"
+o=$(./k E); o=$(./k -- -)
+echo "$o" | grep -q 'add to the current' && o=$(./k --raw n)
+./k --raw Elbereth >/dev/null; ./k --named Enter >/dev/null
+./k : | grep -E '^0[5-7]' | grep 'You read'; ./k --named Escape >/dev/null

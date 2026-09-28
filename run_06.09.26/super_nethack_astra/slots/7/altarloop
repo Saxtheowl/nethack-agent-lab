@@ -1,0 +1,16 @@
+#!/bin/bash
+# altarloop N: up to N times: camp2 20 on the altar; after a kill, if an adjacent square shows '%'
+# that is a corpse (farlook), sac it. Stops on any camp2 alert or failure.
+D="$(dirname "$0")"
+for i in $(seq "$1"); do
+  r=$($D/camp2 20 2>&1); echo "$r" | tail -2
+  echo "$r" | grep -q KILLED || exit 0
+  n=$($D/v | grep '^Neighbors' | head -1)
+  for cand in $(echo "$n" | grep -oE '[1-9]:%\([0-9]+,[0-9]+'); do
+    d=${cand%%:*}; xy=$(echo "$cand" | grep -oE '[0-9]+,[0-9]+')
+    l=$($D/look ${xy%,*} ${xy#*,} | head -c 120)
+    echo "$l" | grep -q 'corpse' || continue
+    echo "$l" | grep -qE '\((an? |[0-9]+ )' && echo "$l" | grep -qE 'corpses\)' && continue
+    echo "SAC $d: $l"; $D/sac $d || exit 1; break
+  done
+done

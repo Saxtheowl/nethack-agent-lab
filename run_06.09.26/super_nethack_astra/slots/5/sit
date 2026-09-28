@@ -1,0 +1,10 @@
+#!/bin/bash
+# slots/5/sit : one #sit, print the resulting messages and status line.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+$S keys --compact --raw '#' >/dev/null
+$S keys --compact --raw 'sit' >/dev/null
+o=$($S keys --compact --named Enter)
+echo "$o" | grep -E '^0[1-7]' | tail -3
+echo "$o" | grep -E '^34'

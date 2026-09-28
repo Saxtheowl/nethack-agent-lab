@@ -1,0 +1,14 @@
+#!/bin/bash
+# rows Y1 Y2 X1 X2 : print map region (screen coords) from compact screen
+cd "$(dirname "$0")/../.."
+NH_SLOT=4 slots/4/session screen --compact | python3 -c "
+import sys
+y1,y2,x1,x2=map(int,sys.argv[1:5])
+for l in sys.stdin:
+    if len(l)>3 and l[:2].isdigit() and l[2]==' ':
+        y=int(l[:2])
+        if y1<=y<=y2:
+            row=l[3:]
+            print('%02d %s'%(y,row[x1:x2+1]))
+print('   '+''.join(str(x%10) for x in range(x1,x2+1)))
+" "$@"

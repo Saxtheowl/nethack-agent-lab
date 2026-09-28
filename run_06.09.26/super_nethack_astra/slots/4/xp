@@ -3,7 +3,7 @@
 cd "$(dirname "$0")/../.."
 export NH_SLOT=4
 for r in $(seq "${1:-4}"); do
-  out=$(python3 scripts/explore.py --steps 20 "${@:2}" 2>&1)
+  out=$(python3 ${EXPLORE:-scripts/explore.py} --steps 20 "${@:2}" 2>&1)
   scr=$(python3 scripts/session.py screen --compact)
   stop=$(echo "$out" | grep -o "explore stop: .*")
   res=$(python3 - "$scr" <<'PY'
@@ -11,13 +11,13 @@ import re,sys
 s=sys.argv[1]
 m=re.search(r'^Map features.*$',s,re.M).group(0)
 pl=re.search(r'^PETS.*$',s,re.M); pets=set(re.findall(r'(\d+,\d+)',pl.group(0))) if pl else set()
-import os; pets|=set(os.environ.get('XP_IGNORE','').split())
-mons=[f'{g}@{x},{y}' for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m) if (g.isalpha() or g in "&';:~") and g!='@' and f'{x},{y}' not in pets]
+import os; pets|=set(os.environ.get('XP_IGNORE','').split()); ig=os.environ.get('XP_GLYPHS','')
+mons=[f'{g}@{x},{y}' for g,x,y in re.findall(r' (\S)@(\d+),(\d+)',m) if (g.isalpha() or g in "&';:~") and g!='@' and f'{x},{y}' not in pets and g not in ig]
 hp=re.search(r'HP:(\d+)\((\d+)\)',s)
 bad=[]
 if mons: bad.append('monsters '+' '.join(mons))
 if hp and int(hp[1])*10<int(hp[2])*7: bad.append('HP low')
-if re.search(r'Hungry|Weak|Faint',s): bad.append('hunger')
+if re.search(r'Weak|Faint' if os.environ.get('XP_WEAKONLY') else r'Hungry|Weak|Faint',s): bad.append('hunger')
 print(';'.join(bad))
 PY
 )

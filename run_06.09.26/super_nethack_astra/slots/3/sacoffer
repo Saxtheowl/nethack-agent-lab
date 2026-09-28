@@ -1,0 +1,26 @@
+#!/bin/bash
+# slots/3/sacoffer : pick up a light fresh corpse from an adjacent square (if any), come back to the altar, #offer it
+cd "$(dirname "$0")"
+ax=52; ay=16
+n=$(./v | grep Neighbors | head -1)
+p=$(echo "$n" | grep -oE '[0-9]:%\([0-9]+,[0-9]+\)' | head -1)
+[ -z "$p" ] && { echo "no corpse adjacent"; exit 0; }
+d=${p%%:*}
+./k $d >/dev/null
+./k , >/dev/null
+s=$(./v); l=$(echo "$s" | sed -n '1,30p' | grep -oE '[a-z]\) (a |an )?[a-z -]+ corpse' | head -1)
+if [ -n "$l" ]; then ./k ${l%%)*} >/dev/null; ./k --named Enter >/dev/null; else ./k --named Escape >/dev/null; fi
+./v | grep -E '^07' | cut -c5-80
+back=$(python3 -c "print({'1':'9','2':'8','3':'7','4':'6','6':'4','7':'3','8':'2','9':'1'}['$d'])")
+./k $back >/dev/null
+./k '#' >/dev/null; ./k --raw 'offer
+' >/dev/null; sleep 1
+l=$(./v | grep -E '^07'); echo "$l" | cut -c5-80
+if echo "$l" | grep -q 'sacrifice?'; then
+  c=$(echo "$l" | grep -oE '\[[A-Za-z]+' | cut -c2)
+  # offer the first corpse letter that is not the lizard U
+  for x in $(echo "$l" | grep -oE '\[[A-Za-z]+' | cut -c2- | grep -o .); do [ "$x" != "U" ] && { c=$x; break; }; done
+  [ "$c" = "U" ] && { ./k --named Escape >/dev/null; echo "only lizard"; exit 0; }
+  ./k $c >/dev/null; sleep 1
+  for i in 1 2 3 4; do l=$(./v | grep -E '^0[1-7] ' | tail -1); echo "$l" | cut -c5-85; case "$l" in *More*|*">>"*) ./k --named Enter >/dev/null;; *"[yn"*) ./k n >/dev/null;; *) break;; esac; done
+fi

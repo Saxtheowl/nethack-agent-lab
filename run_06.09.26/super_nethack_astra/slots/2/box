@@ -1,0 +1,10 @@
+#!/bin/bash
+# slot2: check box/chest here for traps, then open loot "take out" menu (all types). Prints screen.
+cd "$(dirname "$0")"
+./k '#untrap' >/dev/null; ./k --named Enter >/dev/null; ./k --raw . >/dev/null
+o=$(./k --raw y); echo "$o" | grep -E '^0[5-7]' | tail -2
+echo "$o" | grep -qiE 'no traps' || { echo "TRAP? stop"; exit 1; }
+./k '#loot' >/dev/null; ./k --named Enter >/dev/null; o=$(./k --raw y)
+echo "$o" | grep -qi locked && { echo LOCKED; exit 2; }
+echo "$o" | grep -qi 'empty' && { echo EMPTY; exit 3; }
+./k --raw o >/dev/null; ./k --raw a >/dev/null; ./k --named Enter | sed -n 4,22p

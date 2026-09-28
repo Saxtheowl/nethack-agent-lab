@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/6/sentinel N : blindfolded single-turn rest in the sealed closet; stop when a monster in GLYPHS is on row 26 east (45-49) or HP drops.
+cd "$(dirname "$(readlink -f "$0")")/../.."
+S="python3 scripts/session.py"; prev=""
+for i in $(seq ${1:-50}); do
+  o=$($S keys --compact s)
+  cur=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$cur" ] && { echo NOHP; break; }
+  [ -n "$prev" ] && [ "$cur" -lt "$prev" ] && { echo "HP DROP $cur"; break; }
+  m=$(echo "$o" | grep '^Map features' | grep -oE "[${GLYPHS:-NT}]@4[5-9],26")
+  [ -n "$m" ] && { echo "LINED $m HP $cur"; break; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak' && { echo HUNGER; break; }
+  prev=$cur
+  [ "$cur" -ge "${2:-80}" ] && { echo "OK $cur"; break; }
+done
+echo "end HP $cur"

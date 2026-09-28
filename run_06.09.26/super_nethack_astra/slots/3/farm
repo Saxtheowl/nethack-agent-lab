@@ -1,0 +1,16 @@
+#!/bin/bash
+# farm N XPTARGET: wait for random monsters with counted searches (n20s, interrupted by NetHack when a monster
+# appears), fight adjacent ones with fa. Stops at XP target, hunger, low HP, '@'/e adjacent, or N rounds.
+cd "$(dirname "$0")"
+n=${1:-20}; tgt=${2:-80000}
+for i in $(seq $n); do
+  s=$(./v)
+  xp=$(echo "$s" | grep -oE 'Xp:[0-9]+/[0-9]+' | cut -d/ -f2); [ "$xp" -ge "$tgt" ] && { echo "XP target reached $xp"; break; }
+  echo "$s" | grep -E 'HP:[0-9]' | grep -qE 'Hungry|Weak|Faint|Stone|Slime|Conf|Stun|Blind' && { echo STATUS; break; }
+  o=$(./k n20s --raw 2>&1); echo "$o" | grep -q "refused\|ALARM" && { echo "refused: $(echo "$o" | head -1)"; break; }
+  for j in 1 2; do ./v | grep -q -- '--More--\|>>' && ./k --named Enter >/dev/null; done
+  r=$(./fa 12 55); echo "$r" | grep -vq "none adjacent" && echo "$r" | grep -E '^\[' | tail -2
+  echo "$r" | grep -qE 'PEACEFUL|AVOID|LOW HP|ALARM|STATUS' && { echo "$r" | tail -2; break; }
+  near=$(./v | grep '^Map features' | grep -oE " [A-Za-z&;:'@]@[0-9]+,[0-9]+" | grep -v "^ @@" | tr '\n' ' ')
+  echo "round $i xp=$xp T=$(./v | grep -oE 'T:[0-9]+') near:$near"
+done

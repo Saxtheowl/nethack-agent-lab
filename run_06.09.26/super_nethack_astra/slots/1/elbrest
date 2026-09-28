@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/1/elbrest TARGET [ROUNDS]: rest on an Elbereth square; re-engrave when the engraving is not exactly Elbereth.
+# Uses sw (1 turn per step, stops on HP loss / --More--). Stops when HP >= TARGET or on HP loss.
+cd "$(dirname "$0")/../.."
+tgt=${1:?}; rounds=${2:-5}
+for k in $(seq $rounds); do
+  e=$(python3 scripts/session.py keys --raw : --settle .5 --compact | grep -oE 'read: "[^"]*"')
+  echo "$e" | grep -q '"Elbereth"' || { echo "re-engrave ($e)"; slots/1/elb | tail -1; }
+  r=$(SWIGN="Cau'ZMaPbhG" SWSTOP='--More--|stole|weak|faint' slots/1/sw 60 $tgt 2>&1 | head -1); echo "$r"
+  echo "$r" | grep -q "target" && break
+  echo "$r" | grep -qE "HPloss|message|weak" && break
+done
+python3 scripts/session.py screen --compact | grep -E '^34'

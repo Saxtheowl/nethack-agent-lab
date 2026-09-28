@@ -1,0 +1,29 @@
+#!/bin/bash
+# slots/5/dig DIR N : apply the pick-axe (I) in direction DIR, then step DIR; repeat N times.
+# Stops on HP loss, a monster letter adjacent, or when the step does not move. Re-wields Excalibur (a) at the end.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+d="$1"; n="${2:-5}"
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "$n"); do
+  $S keys --compact a >/dev/null
+  o=$($S keys --compact --raw I)
+  if echo "$o" | grep -q 'In what direction do you want to dig'; then
+    o=$($S keys --compact --raw "$d")
+  else
+    echo "no dig prompt: $(echo "$o" | grep -E '^0[1-7]' | tail -1)"; $S keys --compact --named Escape >/dev/null; break
+  fi
+  echo "$o" | grep -E '^0[1-7]' | tail -1 | cut -c1-80
+  p0=$(echo "$o" | grep -oE 'Neighbors of @\([0-9,]+\)' | head -1)
+  o=$($S keys --compact "$d")
+  p1=$(echo "$o" | grep -oE 'Neighbors of @\([0-9,]+\)' | head -1)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP HP $h0->$h"; break; }
+  nb=$(echo "$o" | grep '^Neighbors' | head -1 | grep -oE '[1-9]:[a-zA-Z&;:@]\(' | head -1)
+  [[ -n "$nb" ]] && { echo "STOP monster $nb"; break; }
+  [[ "$p0" == "$p1" ]] && { echo "STOP no move at $p1"; break; }
+  echo "at $p1"
+done
+$S keys --compact w >/dev/null; $S keys --compact --raw a >/dev/null
+$S screen --compact | grep -E '^34|^Neigh' | head -2

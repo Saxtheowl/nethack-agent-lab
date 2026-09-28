@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/5/w ./door DIR [MINHP] [N]: hold position; if a monster letter is in
+# direction DIR attack it (F), else search. Stops at HP<MIN, prompt, or when
+# condition word $STOPWHEN (default Hallu) disappears from status.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+d=$1; min=${2:-25}; n=${3:-60}; w=${STOPWHEN:-Hallu}
+for i in $(seq $n); do
+  o=$($S screen --compact)
+  echo "$o" | grep '^34' | grep -q "$w" || { echo "no $w"; break; }
+  c=$(echo "$o" | grep -oE "Neighbors of @\([0-9,]*\).*" | head -1 | python3 -c "import sys,re;l=sys.stdin.read();m=re.search(r' $d:(.)\(',l);print(m.group(1) if m else '')")
+  if echo "$c" | grep -q '[A-Za-z&;:@'"'"']'; then r=$($S keys --compact "F$d" 2>&1); else r=$($S keys --compact s 2>&1); fi
+  echo "$r" | grep -q "refused\|ALARM" && { echo "$r" | grep -E "refused|ALARM" | head -1; break; }
+  echo "$r" | grep "^07 " | grep -q "\[yn" && { echo PROMPT; break; }
+  hp=$(echo "$r" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "HP:$hp c:$c $(echo "$r" | grep '^07 ' | cut -c 5-70)"
+  [ "${hp:-0}" -lt "$min" ] && { echo LOW; break; }
+done

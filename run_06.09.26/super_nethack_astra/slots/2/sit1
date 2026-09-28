@@ -1,0 +1,4 @@
+#!/bin/bash
+# slot2: ONE #sit, show messages (never loop this blindly: prompts can open)
+cd "$(dirname "$0")"
+./k --raw '#sit' >/dev/null; o=$(./k --named Enter); echo "$o" | grep -E '^0[1-7]|^34' | tail -4

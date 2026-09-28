@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/1/s1rest TARGET_HP MAXN : single 's' rests with checks (HP loss, hunger, stole, adjacent letter monster).
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+t=$1; n=${2:-100}
+prev=$($S screen --compact | grep -oP 'HP:\K\d+' | head -1)
+for i in $(seq $n); do
+  out=$($S keys --compact --raw --why 'rest 1 turn (s1reste on Elbereth)' s 2>&1)
+  hp=$(echo "$out" | grep -oP 'HP:\K\d+' | head -1)
+  [ -z "$hp" ] && { echo "stop: no hp read"; break; }
+  [ "$hp" -lt "$prev" ] && { echo "stop: HP loss $prev->$hp"; break; }
+  echo "$out" | grep -qE 'Hungry|Weak|Faint|stole|Stone|Slime|Blind|Conf|Stun' && { echo "stop: status"; break; }
+  echo "$out" | grep -E '^Neighbors' | grep -qE ':[@AH&]\(' && { echo "stop: adjacent monster"; break; }
+  echo "$out" | grep -q -- '--More--' && { echo "stop: more"; break; }
+  [ "$hp" -ge "$t" ] && { echo "done hp $hp"; break; }
+  prev=$hp
+done
+$S screen --compact | grep -E '^34|^Map'

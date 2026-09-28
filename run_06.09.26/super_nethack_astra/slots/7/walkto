@@ -1,0 +1,13 @@
+#!/bin/bash
+# walkto X Y GLYPH: travel toward X,Y step-batch; stop when GLYPH appears on the map, on HP loss, or arrival.
+D="$(dirname "$0")"; X=$1; Y=$2; g=$3
+hp0=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for t in $(seq 12); do
+  o=$($D/session travel $X $Y 2>&1; $D/v)
+  f=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E "^\\$g@" | head -3 | tr '\n' ' ')
+  [ -n "$f" ] && { echo "FOUND $f"; exit 0; }
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ "$hp" -lt "$hp0" ] && { echo "HP LOSS $hp"; exit 1; }
+  c=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  [ "$c" == "$X,$Y" ] && { echo ARRIVED; exit 0; }
+done
+echo "STUCK at $c"

@@ -1,0 +1,12 @@
+#!/bin/bash
+# slots/1/elb: engrave Elbereth in the dust with fingers; every prompt checked; then read it back.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+o=$($S keys --raw E --settle .4 --compact); echo "$o" | grep -q "write with" || { echo "no E prompt"; $S keys --named Escape >/dev/null; exit 1; }
+o=$($S keys --raw - --settle .5 --compact)
+if echo "$o" | grep -q "add to the current engraving"; then o=$($S keys --raw n --settle .5 --compact); fi
+if echo "$o" | grep -q "Do you want to wipe"; then o=$($S keys --raw y --settle .5 --compact); fi
+echo "$o" | grep -q "What do you want to write in the dust here" || { echo "no text prompt:"; echo "$o" | grep -E '^0[5-7]'; $S keys --named Escape >/dev/null; exit 1; }
+$S keys --raw Elbereth --settle .3 >/dev/null
+$S keys --named Enter --settle .6 --compact | grep -E '^0[6-7] |^34'
+$S keys --raw : --settle .5 --compact | grep -E 'read:'

@@ -1,0 +1,5 @@
+#!/bin/bash
+# slot2 helper: ',' then wait for the screen to settle and show top area
+cd "$(dirname "$0")"
+./k --raw , >/dev/null; sleep 0.8
+./v | sed -n '3,24p'

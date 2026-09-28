@@ -1,0 +1,27 @@
+#!/bin/bash
+# slots/1/doorhold N MINHP TARGET: stand still (doorway); each turn: if a hostile (not in $SAFE) is orthogonally
+# adjacent -> F it, else search. Stops at HP<MINHP, HP>=TARGET, alarm, --More--.
+cd "$(dirname "$0")/../.."
+n=${1:-50}; min=${2:?}; tgt=${3:-999}
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$min" ] && { echo "doorhold: low HP $h"; exit 1; }
+  [ "$h" -ge "$tgt" ] && { echo "doorhold: target $h"; exit 0; }
+  d=$(python3 - "$o" "${SAFE:-CGh@u}" <<'PY'
+import re, sys
+out, safe = sys.argv[1], sys.argv[2]
+m = re.search(r'Neighbors of @\((\d+),(\d+)\): (.*)$', out, re.M)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0))) if re.search(r'^PETS', out, re.M) else set()
+for d, g, x, y in re.findall(r'(\d):(\S)\((\d+),(\d+)\)', m.group(3)):
+    if (g.isalpha() or g in "'&;:") and g not in safe and f'{x},{y}' not in pets:
+        print(d); break
+else: print('s')
+PY
+)
+  if [ "$d" = s ]; then r=$(slots/1/k s 2>&1); else r=$(slots/1/k F$d 2>&1); fi
+  l=$(echo "$r" | grep -E '^07' | cut -c5-75); [ "$d" != s ] && echo "$l"
+  echo "$r" | grep -q "ALARM" && { echo "doorhold: alarm"; exit 1; }
+  echo "$r" | grep -q -- '--More--' && { echo "doorhold: More"; exit 1; }
+done
+slots/1/v | grep -E '^34'

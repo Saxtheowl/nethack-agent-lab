@@ -1,0 +1,12 @@
+#!/bin/bash
+# slot2: travel to X Y, retrying past peacefuls (waits a turn); stops on HP drop / hostile msgs
+cd "$(dirname "$0")"; X=$1; Y=$2
+hp0=$(./k --named Escape | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in 1 2 3 4 5 6; do
+  o=$(./t $X $Y); echo "$o" | grep -q "^Neighbors of @($X,$Y)" && { echo "ARRIVED"; echo "$o" | grep -E '^34'; exit 0; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$hp" ] && [ "$hp" -lt "$hp0" ] && { echo "HPDROP $hp"; echo "$o" | grep -E '^0[5-7]|^Neigh'; exit 3; }
+  echo "$o" | grep -qE 'Really attack|--More--' && { echo PROMPT; exit 4; }
+  ./k --named Escape >/dev/null; ./k s >/dev/null
+done
+echo "NOTARRIVED"; ./k --named Escape | grep -E '^0[5-7]|^34|^Neigh'

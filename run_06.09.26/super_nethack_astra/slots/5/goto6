@@ -1,0 +1,14 @@
+#!/bin/bash
+# goto6 X Y [tries]: repeated travel with waits when blocked by peacefuls; stops on HP loss/hunger status
+cd "$(dirname "$0")/../.."
+hp0=$(slots/5/session screen --compact | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq ${3:-15}); do
+  slots/5/go $1 $2 3 >/dev/null
+  o=$(slots/5/session screen --compact)
+  echo "$o" | head -1 | grep -q " $1,$2\$" && { echo "arrived"; exit 0; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "$hp0" ] && { echo "HP loss"; exit 1; }
+  echo "$o" | grep -qE "Weak|Faint|stole|--More--" && { echo "status"; exit 1; }
+  slots/5/session keys --compact s >/dev/null
+done
+echo "not arrived"

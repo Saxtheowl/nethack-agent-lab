@@ -1,0 +1,13 @@
+#!/bin/bash
+# slot2 helper: attack every adjacent G/o/k/h (court monsters) until none; HP stop 50%
+cd "$(dirname "$0")"
+for round in $(seq 12); do
+  s=$(./v)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((cur*2)) -lt $mx ] && { echo "LOWHP $cur/$mx"; exit 3; }
+  echo "$s" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  adj=$(echo "$s" | grep '^Neighbors' | grep -oE '[1-9]:[Gokh][(]' | head -1)
+  [ -z "$adj" ] && { echo "CLEAR"; echo "$s" | grep -E '^34|^Neigh'; exit 0; }
+  d=${adj%%:*}
+  ./melee $d 5 | grep -E '^07|LOW|STOLE'
+done

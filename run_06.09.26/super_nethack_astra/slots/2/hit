@@ -1,0 +1,7 @@
+#!/bin/bash
+# slot2: one F<dir> blow, print message lines + HP + neighbors; exit 3 if HP < $2 (default 50)
+cd "$(dirname "$0")"; o=$(./k --raw F$1)
+echo "$o" | grep -E '^0[5-7]|^34' | tr -s ' '; echo "$o" | grep '^Neigh'
+echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+hp=$(echo "$o" | grep -o "HP:[0-9]*" | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "$o" | grep -m1 ALARM; exit 5; }; [ "$hp" -lt "${2:-50}" ] && { echo LOWHP; exit 3; }
+exit 0

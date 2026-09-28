@@ -1,0 +1,11 @@
+#!/bin/bash
+# east [from] [to]: print map rows with character-accurate column slicing
+D="$(dirname "$0")"
+$D/v | python3 -c "
+import sys
+a,b=int(sys.argv[1]),int(sys.argv[2])
+for l in sys.stdin:
+    l=l.rstrip('\n')
+    if l[:2].isdigit() and 9<int(l[:2])<33:
+        print(l[:3]+l[3+a:3+b])
+" "${1:-40}" "${2:-82}"

@@ -8,7 +8,7 @@ t=${1:-50}
 prev=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
 st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
 for i in $(seq "${2:-30}"); do
-  o=$($S keys --compact n20s)
+  o=$($S keys --compact --raw n20s)
   h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
   st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
   [[ -z "$h" ]] && { echo "no HP read"; break; }

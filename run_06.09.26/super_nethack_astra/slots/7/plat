@@ -1,0 +1,24 @@
+#!/bin/bash
+# plat GLYPHS N: stand still (on scare monster); each turn, if a monster whose glyph is in GLYPHS
+# is adjacent, F-attack it, else search 1 turn. Stops: HP < 90 or drop > 15 in one step, Hungry/Weak,
+# stole, prompt, any adjacent monster glyph NOT in GLYPHS (farlook it yourself), kill message printed.
+D="$(dirname "$0")"; G="$1"; N=${2:-30}
+declare -A dir=([-1,-1]=7 [0,-1]=8 [1,-1]=9 [-1,0]=4 [1,0]=6 [-1,1]=1 [0,1]=2 [1,1]=3)
+o=$($D/v); prev=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq $N); do
+  me=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -oE '[0-9]+,[0-9]+$'); mx=${me%,*}; my=${me#*,}
+  nb=$(echo "$o" | grep "^Neighbors of @($me)" | head -1)
+  adj=$(echo "$nb" | LC_ALL=C grep -oE "[1-9]:[A-Za-z@&;:'][(]" | head -3)
+  k=s
+  for a in $adj; do g=${a:2:1}; d=${a:0:1}
+    if [[ "$G" == *"$g"* ]]; then k="F$d"; break; else echo "UNLISTED ADJ $a"; exit 1; fi
+  done
+  o=$($D/k $k --raw)
+  echo "$o" | grep -E '^0[67]' | grep -E 'kill|destroy' | cut -c4-80
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP"; exit 1; }
+  { [ "$hp" -lt 90 ] || [ $((prev - hp)) -gt 15 ]; } && { echo "HP $hp"; exit 1; }
+  prev=$hp
+  echo "$o" | grep '^34' | grep -qE ' (Hungry|Weak|Faint)' && { echo HUNGER; exit 1; }
+  echo "$o" | grep -qE 'stole|--More--|\[yn' && { echo EVENT; exit 1; }
+done
+echo "done HP $prev"

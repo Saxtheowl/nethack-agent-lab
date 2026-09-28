@@ -1,0 +1,16 @@
+#!/bin/bash
+# await N: search in blocks of 20 turns (n20s) up to N blocks; stop when the search is
+# interrupted (monster in view), HP drops, Hungry/Weak, or any hostile letter adjacent.
+D="$(dirname "$0")"
+h0=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "$1"); do
+  t0=$($D/v | grep -oE 'T:[0-9]+' | head -1 | cut -d: -f2)
+  o=$($D/k n20s --raw)
+  echo "$o" | grep -q -- '--More--' && o=$($D/k --named Enter --raw)
+  t=$(echo "$o" | grep -oE 'T:[0-9]+' | head -1 | cut -d: -f2)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "$h0" ] && { echo "HP $h0->$hp"; echo "$o" | grep -E '^0[5-7]|^34'; exit 1; }
+  echo "$o" | grep -qE 'Weak|Faint' && { echo HUNGRY; exit 1; }
+  if [ $((t - t0)) -lt 10 ]; then echo "interrupted T$t"; echo "$o" | grep -E '^0[6-7]|^Map'; exit 2; fi
+done
+echo "quiet until T$t"

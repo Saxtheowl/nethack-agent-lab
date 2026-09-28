@@ -1,0 +1,33 @@
+#!/bin/bash
+# slots/1/corr [n]: follow an unexplored corridor one step at a time: prefer a ▒/·/# neighbour
+# not visited yet (excluding where we came from). Stops on HP loss, monster adjacent, fork, or dead end.
+cd "$(dirname "$0")/../.."
+n=${1:-40}; prev=""; seen=""
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  r=$(python3 - "$o" "$seen" <<'PY'
+import re,sys
+o,seen=sys.argv[1],set(sys.argv[2].split())
+nb=re.search(r'^Neighbors of @\((\d+),(\d+)\): (.*)$',o,re.M)
+pets=set(re.findall(r'(\d+,\d+)',re.search(r'^PETS.*$',o,re.M)[0]))
+here=f'{nb[1]},{nb[2]}'
+c=[]
+for k,g,x,y in re.findall(r'(\d):(\S+?)\((\d+),(\d+)\)',nb[3]):
+    p=f'{x},{y}'
+    if g.isalpha() and len(g)==1 and p not in pets: print('MON',g,p); sys.exit()
+    if g in ('▒','·','#','.','>','<') and p not in seen: c.append((k,p,g))
+if not c: print('END',here); sys.exit()
+print('GO',c[0][0],here,len(c))
+PY
+)
+  set -- $r
+  case $1 in MON|END) echo "corr: $r"; exit 0;; esac
+  seen="$seen $3"
+  hp0=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1)
+  o2=$(slots/1/k --raw $2)
+  hp1=$(echo "$o2" | grep -oE 'HP:[0-9]+' | head -1)
+  [ "$hp0" != "$hp1" ] && { echo "corr: HP change $hp0 $hp1"; exit 1; }
+  echo "$o2" | grep -q '>' && echo "$o2" | grep '^Map' | grep -q '>@' && { echo "corr: stairs seen"; }
+  [ "$4" -gt 1 ] && [ $i -gt 1 ] && { echo "corr: fork at $3"; }
+done
+echo "corr: budget"

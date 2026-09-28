@@ -1,0 +1,18 @@
+#!/bin/bash
+# slot2: rest on Elbereth, re-engraving when it degrades (max $3 rewrites, default 6).
+# 's' one turn at a time until HP>=$1 or $2 turns; stops on HP drop, stole, Weak, level/status change.
+cd "$(dirname "$0")"; target=${1:-100}; max=${2:-40}; rw=${3:-6}; prev=0
+for i in $(seq $max); do
+  o=$(./k --raw s 2>&1); hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "NOHP"; echo "$o" | head -3; exit 6; }
+  echo "$o" | grep -qiE 'stole|snatch' && { echo STOLE; exit 2; }
+  echo "$o" | grep '^34' | grep -qE 'Weak|Faint|Stone|Slime|Blind|Conf|Stun|Ill' && { echo STATUS; echo "$o" | grep '^34'; exit 4; }
+  [ $prev -gt 0 ] && [ "$hp" -lt "$prev" ] && { echo "HPDROP $hp"; echo "$o" | grep -E '^0[5-7]'; exit 3; }
+  if [ $((i % 3)) -eq 0 ]; then e=$(./k : | grep -E '^0[5-7]'); ./k --named Escape >/dev/null
+    if ! echo "$e" | grep -q 'You read: "Elbereth"'; then
+      rw=$((rw-1)); [ $rw -lt 0 ] && { echo "NO MORE REWRITES"; exit 7; }
+      r=$(./elb); echo "$r" | grep -q '"Elbereth"' || r=$(./elb); echo "$r" | grep -q '"Elbereth"' || { echo "ENGRAVE FAIL"; exit 7; }
+    fi; fi
+  prev=$hp; [ "$hp" -ge "$target" ] && break
+done
+echo "$o" | grep -E '^34|^Neigh'

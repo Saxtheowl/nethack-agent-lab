@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/1/manpush2 "k:x,y ..." : like manpush but retries a blocked push up to 15 times (waiting 1 turn between).
+cd "$(dirname "$0")/../.."
+S="slots/1/session"
+prev=$($S screen --compact | grep -oP 'HP:\K\d+')
+for kv in $1; do k=${kv%%:*}; want=${kv#*:}; ok=0
+  for try in $(seq 15); do
+    o=$($S keys --compact --why 'sokoban manual push' $k)
+    pos=$(echo "$o" | grep -oP 'Neighbors of @\(\K[0-9,]+'); hp=$(echo "$o" | grep -oP 'HP:\K\d+')
+    if [ -n "$hp" ] && [ "$hp" -lt "$prev" ]; then echo "HP loss $prev->$hp"; echo "$o" | grep -E '^0[5-7]'; exit 1; fi
+    echo "$o" | grep -qE '\[yn|--More--' && { echo "prompt"; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+    [ "$pos" = "$want" ] && { ok=1; break; }
+    echo "$o" | grep -q 'behind the boulder' || { echo "MISMATCH after $k: at $pos want $want"; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+    $S keys --raw s --settle .3 >/dev/null
+  done
+  [ $ok = 1 ] || { echo "still blocked at $kv"; exit 1; }
+  prev=$hp
+done
+echo "manpush2 done at $pos"

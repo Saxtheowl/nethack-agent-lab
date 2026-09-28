@@ -1,0 +1,5 @@
+#!/bin/bash
+# slot2: descend '>' here, then travel to X Y (next '>' given by caller) if given
+cd "$(dirname "$0")"
+./k '>' | grep -E '^34'
+[ -n "$2" ] && ./gg $1 $2

@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/5/w ./hold [MINHP] [N]: stand still; each turn attack an adjacent
+# remembered-unseen 'I' or a hostile-looking letter (not @ G h peaceful check:
+# only I, a, d, i, o, r, x, F, Z, k, :), else search 1 turn. Stops when HP<MIN,
+# on a prompt, or when not Blind and nothing adjacent for 3 turns.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+min=${1:-20}; n=${2:-60}; idle=0
+for i in $(seq $n); do
+  o=$($S screen --compact)
+  nb=$(echo "$o" | grep -oE "Neighbors of @\([0-9,]*\).*" | head -1)
+  dir=$(echo "$nb" | grep -oE " [1-9]:[IadiorxFZks:]\(" | head -1 | cut -c 2)
+  if [ -n "$dir" ]; then r=$($S keys --compact "F$dir" 2>&1); idle=0; else r=$($S keys --compact s 2>&1); idle=$((idle+1)); fi
+  echo "$r" | grep -q "refused\|ALARM" && { echo "$r" | grep -E "refused|ALARM" | head -2; break; }; echo "$r" | grep "^07 " | grep -q "\[yn" && { echo PROMPT; break; }
+  hp=$(echo "$r" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "HP:$hp dir:${dir:--} $(echo "$r" | grep '^07 ' | cut -c 5-70)"
+  [ "${hp:-0}" -lt "$min" ] && { echo LOW; break; }
+  echo "$r" | grep -q Blind || [ $idle -lt 3 ] || { echo "clear"; break; }
+done

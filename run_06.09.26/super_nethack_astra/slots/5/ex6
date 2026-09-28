@@ -1,0 +1,5 @@
+#!/bin/bash
+# explore then show screen summary
+cd "$(dirname "$0")/../.."
+slots/5/explore --steps ${1:-20} 2>&1 | grep -iE "stop|reason|frontier|done" | tail -3
+slots/5/session screen --compact

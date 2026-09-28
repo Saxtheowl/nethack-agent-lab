@@ -1,0 +1,9 @@
+#!/bin/bash
+# slot2: kill every adjacent letter monster around hero at X,Y ($1,$2), one blow at a time; stop HP<$3; max 12 blows
+cd "$(dirname "$0")"
+for k in $(seq 12); do
+  n=$(./v | grep "^Neighbors of @($1,$2)"); [ -z "$n" ] && { echo "hero not at $1,$2"; exit 1; }
+  d=$(echo "$n" | grep -oE "[1-9]:[a-zA-Z&;:]\(" | head -1 | cut -c1); [ -z "$d" ] && break
+  ./hit $d ${3:-80} | grep -E '^07|^34|LOW|STOLE' | tr -s ' '; [ ${PIPESTATUS[0]} -ne 0 ] && exit 2
+done
+./v | grep "^Neighbors of @($1,$2)"

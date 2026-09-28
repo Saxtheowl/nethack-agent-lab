@@ -1,0 +1,4 @@
+#!/bin/bash
+# slots/1/elbok [N]: engrave Elbereth up to N times until it reads back exactly.
+cd "$(dirname "$0")"
+for i in $(seq ${1:-4}); do ./elb >/dev/null 2>&1; o=$(python3 ../../scripts/session.py keys --compact --named Escape); echo "$o" | grep -oE 'read: "[^"]*"' | tail -1; echo "$o" | grep -E '^34'; echo "$o" | grep -q 'read: "Elbereth"\.' && { echo OK; exit 0; }; echo "$o" | grep -E '^Neighbors'; done; exit 1

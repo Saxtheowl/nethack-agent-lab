@@ -1,0 +1,13 @@
+#!/bin/bash
+# slot2: pick up gold piles ($) in rows $1..$2 and cols $3..$4, by walking to each one
+cd "$(dirname "$0")"
+for p in $(./v | grep Map | tr ' ' '\n' | grep '^\$@' | cut -d@ -f2); do
+  x=${p%,*}; y=${p#*,}
+  [ $y -ge $1 ] && [ $y -le $2 ] && [ $x -ge $3 ] && [ $x -le $4 ] || continue
+  ./gg $x $y 2 >/dev/null; ./k --named Escape >/dev/null
+  o=$(./k --raw ,)
+  if echo "$o" | grep -q 'Pick up what'; then ./k --raw '$' >/dev/null; o=$(./k --named Enter); fi
+  echo "$o" | grep -E '^0[67]' | tail -1; echo "$o" | grep -o 'HP:[0-9]*' | head -1
+  ./k --named Escape >/dev/null
+done
+./v | grep -E '^34'

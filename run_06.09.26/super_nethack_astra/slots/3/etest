@@ -1,0 +1,18 @@
+#!/bin/bash
+# etest LETTER : engrave-test one wand; answers only the prompt on the last message line
+cd "$(dirname "$0")"
+last() { ./v | grep -E '^0[1-7] ' | grep -vE '^0[1-7] │ +│' | tail -1; }
+./k E >/dev/null; ./k "$1" >/dev/null; sleep 1
+for i in 1 2 3 4 5 6; do
+  l=$(last)
+  echo "$l"
+  case "$l" in
+    *"add to the current"*) ./k n >/dev/null ;;
+    *"Do you want to"*) ./k n >/dev/null ;;
+    *"What do you want to"*"here?"*) ./k --raw 'x
+' >/dev/null; sleep 1; last; break ;;
+    *More*|*">>"*) ./k --named Enter >/dev/null ;;
+    *) break ;;
+  esac
+done
+./v | grep -E '^0[4-7]|^34'

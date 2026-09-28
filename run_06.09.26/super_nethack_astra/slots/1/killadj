@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/1/killadj GLYPH [N]: attack an adjacent monster with this glyph (never @ or e), up to N blows; stops on HP < 50%.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"; g=$1
+for i in $(seq ${2:-6}); do
+  n=$($S screen --compact | grep -E '^Neighbors')
+  d=$(echo "$n" | grep -oP "([1-9]):\Q$g\E\(" | head -1 | cut -c1)
+  [ -z "$d" ] && { echo "no adjacent $g"; break; }
+  echo "$($S screen --compact)" | grep -q 'Really attack' && { $S keys --named Escape >/dev/null; echo "stop: peaceful prompt"; break; }
+  o=$($S keys --compact --why "kill $g" F$d)
+  echo "$o" | grep -qE 'Really attack|peaceful' && { $S keys --named Escape >/dev/null; echo "stop: PEACEFUL - not attacking"; break; }; echo "$o" | grep -E '^07|^34' | tr '\n' ' '; echo
+  hp=$(echo "$o" | grep -oP 'HP:\K\d+'); mx=$(echo "$o" | grep -oP 'HP:\d+\(\K\d+')
+  [ -n "$hp" ] && [ $((hp*2)) -lt "$mx" ] && { echo "stop: HP low"; break; }
+done

@@ -1,0 +1,8 @@
+#!/bin/bash
+# one fountain dip of item $1 (default a); prints the result lines
+cd "$(dirname "$(readlink -f "$0")")/../.."
+L=${1:-a}
+python3 scripts/session.py keys --compact '#dip' >/dev/null
+python3 scripts/session.py keys --compact --named Enter >/dev/null
+python3 scripts/session.py keys --compact "$L" >/dev/null
+python3 scripts/session.py keys --compact y | grep -E "^0[1-7]|^34|Map feat"

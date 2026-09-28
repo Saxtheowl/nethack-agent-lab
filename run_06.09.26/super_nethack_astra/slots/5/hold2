@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/5/w ./hold2 LETTERS MINHP N: each turn F-attack an adjacent monster whose letter is in LETTERS
+# (never pets/@), else search. Stop when HP<MINHP, HP drop >=10 in one turn, prompt, or N turns.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+L=$1; min=${2:-20}; n=${3:-10}; prev=""
+for i in $(seq $n); do
+  o=$($S screen --compact)
+  nb=$(echo "$o" | grep -oE "^Neighbors of @\([0-9,]*\).*" | head -1)
+  dir=$(echo "$nb" | grep -oE " [1-9]:[$L]\(" | head -1 | cut -c 2)
+  if [ -n "$dir" ]; then r=$($S keys --compact "F$dir" 2>&1); else r=$($S keys --compact s 2>&1); fi
+  echo "$r" | grep -q "refused\|ALARM" && { echo "$r" | grep -E "refused|ALARM" | head -2; break; }
+  hp=$(echo "$r" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  echo "HP:$hp dir:${dir:--} $(echo "$r" | grep '^07 ' | cut -c 5-80)"
+  echo "$r" | grep "^07 " | grep -q "\[yn" && { echo PROMPT; break; }
+  [ "${hp:-0}" -lt "$min" ] && { echo LOW; break; }
+  [ -n "$prev" ] && [ $((prev - hp)) -ge 10 ] && { echo "BIG DROP"; break; }
+  prev=$hp
+done

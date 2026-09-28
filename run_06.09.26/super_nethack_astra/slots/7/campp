@@ -1,0 +1,18 @@
+#!/bin/bash
+# campp ROUNDS OKGLYPHS: alternate watch/plat2 on the scare platform. Monsters whose glyph is in OKGLYPHS are
+# fought when adjacent; any other new glyph (or '@') stops for a manual decision. Stops on y/U/B (blind/confusion sources).
+D="$(dirname "$0")"; R=${1:-5}; OK="$2"
+for r in $(seq $R); do
+  w=$($D/watch 150 "u$OK"); echo "watch: $w"
+  if echo "$w" | grep -q '^MON'; then
+    xy=$(echo "$w" | grep -oE '@@[0-9]+,[0-9]+' | head -1 | cut -c3-)
+    others=$(echo "$w" | sed 's/^MON //; s/ TT.*//' | tr ' ' '\n' | grep -v '^@@')
+    [ -z "$xy" ] || [ -n "$others" ] && { echo "new monster -> manual"; exit 0; }
+    l=$($D/look ${xy%,*} ${xy#*,} | head -1)
+    echo "$l" | grep -qE 'elf-lord|Elvenking|Grey-elf|Woodland-elf|Green-elf' && ! echo "$l" | grep -qE 'peaceful' || { echo "manual: $l"; exit 0; }
+    echo "elf: $l"
+  fi
+  echo "$w" | grep -qE '^(quiet|MON)' || exit 1
+  p=$($D/plat2 20 "$OK" 2>&1 | tail -2); echo "plat: $p"
+  echo "$p" | grep -qE 'UNLISTED|UNKNOWN|HP |HUNGER|EVENT|no HP' && exit 1
+done

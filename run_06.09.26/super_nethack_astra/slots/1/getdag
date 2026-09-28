@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/1/getdag "x,y ...": travel to each square; pick up only daggers there (menu-aware). PC-side.
+cd "$(dirname "$0")/../.."
+for p in $1; do
+  slots/1/t ${p%,*} ${p#*,} >/dev/null
+  slots/1/k : >/dev/null
+  s=$(slots/1/session screen)
+  slots/1/k --named Escape >/dev/null
+  echo "$s" | grep -q dagger || { echo "$p: no dagger"; continue; }
+  slots/1/k , >/dev/null
+  s=$(slots/1/session screen)
+  if echo "$s" | grep -q "Pick up what"; then
+    for l in $(echo "$s" | grep -oE '[│ ] [a-z]\) [^│]*daggers?' | sed 's/^[│ ] //' | cut -c1); do slots/1/k --raw $l >/dev/null; done
+    slots/1/k --raw $'\r' >/dev/null
+  fi
+  echo "$p: $(slots/1/v | sed -n '/^07/p' | cut -c5-70)"
+done

@@ -1,0 +1,34 @@
+#!/bin/bash
+# slot2 helper: goto X Y — travel; kill adjacent trivial monsters on the way; stop on anything else.
+cd "$(dirname "$0")"
+X=$1; Y=$2
+TRIVIAL='newt|jackal|grid bug|sewer rat|kobold|large kobold|kobold lord|lichen|gecko|fox|coyote|goblin|hobgoblin|kobold zombie|gnome zombie|giant rat|rabid rat|wererat|raven|rothe|dingo|winter wolf cub|giant spider|bat|giant bat|iguana|violet fungus|garter snake|acid blob|yellow mold|hill orc|homunculus|rabbit|gnome lord|gnome|dwarf zombie|orc zombie|hobbit|large dog|elf zombie|human zombie|jackal|giant beetle|dog|little dog|soldier ant|jackalwere'
+np=0; last=""
+for i in $(seq 15); do
+  ./go $X $Y 2 >/dev/null 2>&1
+  s=$(./v)
+  pos=$(echo "$s" | grep -o "^Neighbors of @([0-9]*,[0-9]*)")
+  if [ "$pos" = "$last" ]; then np=$((np+1)); else np=0; fi; last=$pos
+  if [ $np -ge 3 ]; then ./k --raw s >/dev/null; fi
+  if [ $np -ge 5 ]; then break; fi
+  echo "$s" | grep -q "^Neighbors of @($X,$Y)" && { echo "ARRIVED"; echo "$s" | grep -E '^34'; exit 0; }
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((cur*2)) -lt $mx ] && { echo "LOWHP"; echo "$s" | grep -E '^0[4-7]|^34|^Neigh'; exit 3; }
+  echo "$s" | grep -E '^0[67]' | grep -qiE 'stole|snatch|--More--|\[yn' && { echo "PROMPT/STOLE"; echo "$s" | grep -E '^0[4-7]|^Neigh'; exit 2; }
+  pets=$(echo "$s" | grep '^PETS' | grep -oE '[0-9]+,[0-9]+' | tr '\n' ' ')
+  adj=""
+  for a in $(echo "$s" | grep '^Neighbors' | grep -oE '[1-9]:[a-zA-Z@&;:][(][0-9]+,[0-9]+'); do
+    c=${a#*(}; case " $pets " in *" $c "*) continue;; esac
+    cx=${c%,*}; cy=${c#*,}; ./look $cx $cy | grep -q peaceful && continue
+    adj=$a; break
+  done
+  if [ -n "$adj" ]; then
+    d=${adj%%:*}; c=${adj#*(}; x=${c%,*}; y=${c#*,}
+    name=$(./look $x $y | sed 's/.*(\(.*\)).*/\1/' | sed 's/.*(//;s/).*//')
+    info=$(./look $x $y)
+    if echo "$info" | grep -q peaceful; then echo "PEACEFUL adj: $info"; exit 4; fi
+    if echo "$info" | grep -qE "\((${TRIVIAL})\)"; then echo "fight: $info"; ./melee $d 6 | grep -E 'LOW|STOLE' && exit 3; continue; fi
+    echo "STOP adj: $info"; exit 5
+  fi
+done
+echo "NOPROGRESS"; ./v | grep -E '^0[4-7]|^34|^Neigh'

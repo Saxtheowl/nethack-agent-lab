@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/6/blindwait [max]: search one turn at a time while Blind; stop on HP drop, hunger, or sight back.
+cd "$(dirname "$(readlink -f "$0")")/../.."
+S="python3 scripts/session.py"; prev=""
+for i in $(seq ${1:-150}); do
+  o=$($S keys --compact s)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo NOHP; break; }
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "HP DROP $hp"; break; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak|Faint' && { echo HUNGER; break; }
+  echo "$o" | grep '^34' | grep -q Blind || { echo "SIGHT BACK after $i"; break; }
+  prev=$hp
+done
+$S screen --compact | grep -E '^34|^Neigh'

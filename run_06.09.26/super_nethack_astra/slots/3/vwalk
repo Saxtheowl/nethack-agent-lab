@@ -1,0 +1,20 @@
+#!/bin/bash
+# vwalk DIR N : step DIR up to N times (polymorphed hero ok); stop on HP loss, no move, or combat/unusual message.
+cd "$(dirname "$0")"
+d=$1; n=${2:-10}
+pos() { ./v | head -1 | grep -oE '[0-9]+,[0-9]+$'; }
+hp() { ./v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2; }
+h0=$(hp)
+prev=$(./v | grep -E "^0[0-9]" | tail -1)
+for i in $(seq 1 $n); do
+  p=$(pos)
+  o=$(./k "$d")
+  m=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+  np=$(pos); h=$(hp)
+  if [ "$h" -lt "$h0" ]; then echo "STOP HP $h at $np: $m"; exit; fi
+  h0=$h
+  if [ "$np" = "$p" ]; then echo "STOP blocked at $np: $m"; exit; fi
+  [ "$m" != "$prev" ] && echo "$m" | grep -qE 'Wait|You hit|Really|swings|You kill|You destroy|trap|feel' && { echo "STOP msg at $np: $m"; exit; }
+  prev=$m
+done
+echo "done at $(pos) HP $(hp)"

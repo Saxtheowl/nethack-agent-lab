@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/5/idle [chunks]: search 10 turns at a time; stop on HP loss, hunger change, form change, stole, alarm.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+f0=$($S screen | grep -oE 'HD:|Xp:' | head -1)
+for i in $(seq "${1:-20}"); do
+  o=$($S keys --compact --raw --why 'attendre (idle)' n10s 2>&1)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  echo "$o" | grep -qE 'HP ALARM|stole|steals' && { echo "STOP: event"; break; }
+  [[ -z "$h" ]] && { echo "no HP"; break; }
+  [[ "$h" -lt "$h0" ]] && { echo "STOP: HP $h0->$h"; break; }
+  [[ "$st" != "$st0" ]] && { echo "STOP: hunger $st"; break; }
+  f=$(echo "$o" | grep -oE 'HD:|Xp:' | head -1); [[ "$f" != "$f0" ]] && { echo "STOP: form change"; break; }
+  h0=$h
+done
+$S screen --compact | grep -E '^0[5-7]|^34|^Neigh'

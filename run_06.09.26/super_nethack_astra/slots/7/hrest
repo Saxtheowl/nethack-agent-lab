@@ -1,0 +1,15 @@
+#!/bin/bash
+# hrest TARGET [max]: single 's' per step (counted rests are refused under 70% HP); stop on HP loss,
+# a monster letter/@ adjacent, Hungry/Weak, or target reached.
+D="$(dirname "$0")"
+prev=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "${2:-80}"); do
+  o=$($D/k s --raw)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -z "$hp" ] && { echo "no HP read"; break; }
+  [ "$hp" -lt "$prev" ] && { echo "HP LOSS $prev->$hp"; break; }
+  prev=$hp; [ "$hp" -ge "$1" ] && { echo "TARGET $hp"; break; }
+  echo "$o" | grep '^34' | grep -qE ' (Weak|Faint)' && { echo HUNGER; break; }
+  c=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  echo "$o" | grep "^Neighbors of @($c)" | LC_ALL=C grep -qE "[1-9]:[A-HJ-Za-z&;:'@][(]" && { echo "ADJACENT"; break; }
+done
+$D/v | grep -E '^34'

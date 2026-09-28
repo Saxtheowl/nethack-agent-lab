@@ -1,0 +1,14 @@
+#!/bin/bash
+# shopscan "x,y x,y ...": travel onto each square, ':' look, print the item/price line. Stops on HP loss.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+hp0=$($S screen | grep -o 'HP:[0-9]*' | head -1)
+for p in $1; do
+  x=${p%,*}; y=${p#*,}
+  scripts/t $x $y >/dev/null
+  $S keys : --settle .5 >/dev/null
+  o=$($S screen)
+  echo "$p: $(echo "$o" | sed -n '2,12p' | grep -iE 'for sale|here|see|feel' | tail -3 | tr -s ' ' | tr '\n' ' ')"
+  echo "$o" | grep -q -- '--More--\|>>' && $S keys --named Escape >/dev/null
+  [ "$($S screen | grep -o 'HP:[0-9]*' | head -1)" != "$hp0" ] && { echo "HP change: stop"; break; }
+done

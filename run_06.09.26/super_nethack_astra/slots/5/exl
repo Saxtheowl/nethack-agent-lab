@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/5/w ./exl [n]: run explore --all up to n times while it only stops on step budget
+for i in $(seq ${1:-4}); do
+  out=$(NH_SLOT=5 python3 ../../scripts/explore.py --all --steps 30 2>&1)
+  r=$(echo "$out" | head -1)
+  echo "$r"
+  [[ "$r" == *"step budget used"* ]] || break
+done
+echo "$out" | tail -n +2

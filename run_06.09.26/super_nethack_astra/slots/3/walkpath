@@ -1,0 +1,31 @@
+#!/bin/bash
+# walkpath MINHP "x,y x,y ...": follow adjacent screen cells one by one. Fights non-@ monsters on the next cell.
+# Stops: HP<MINHP, @ in the way, secret door (suffix S) not yet open, no progress after 3 tries, prompts.
+cd "$(dirname "$0")"
+MIN=$1; shift
+for c in $@; do
+  S=""; case $c in *S) S=1; c=${c%S};; esac
+  X=${c%,*}; Y=${c#*,}
+  for t in 1 2 3 4 5 6; do
+    s=$(./v); cur=$(echo "$s" | head -1 | grep -oE '[0-9]+,[0-9]+$')
+    [ "$cur" = "$X,$Y" ] && break
+    h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+    [ "$h" -lt "$MIN" ] && { echo "STOP HP $h at $cur"; exit 1; }
+    hx=${cur%,*}; hy=${cur#*,}; dx=$((X-hx)); dy=$((Y-hy))
+    [ ${dx#-} -gt 1 -o ${dy#-} -gt 1 ] && { echo "STOP not adjacent $cur -> $X,$Y"; exit 1; }
+    d=$(python3 -c "print({(-1,-1):7,(0,-1):8,(1,-1):9,(-1,0):4,(1,0):6,(-1,1):1,(0,1):2,(1,1):3}[($dx,$dy)])")
+    g=$(echo "$s" | grep -oE " [A-Za-z@&;:'][@]$X,$Y" | head -1 | cut -c2)
+    if [ "$g" = "@" ]; then echo "STOP @ at $X,$Y (farlook it)"; exit 1; fi
+    if [ -n "$g" ]; then o=$(./k "F$d" --raw --why "walkpath fight $g" 2>&1)
+    else o=$(./k "$d" --raw 2>&1); fi
+    for j in 1 2 3; do echo "$o" | grep -E '^0[0-9]' | tail -1 | grep -q '>>' || break; o=$(./k " " --raw 2>&1); done
+    echo "$o" | grep -q ALARM && { echo "STOP ALARM"; exit 1; }
+    l=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+    echo "$l" | grep -qE 'Really|\[yn' && { ./k --named Escape >/dev/null 2>&1; echo "STOP prompt: $l"; exit 1; }
+    echo "$l" | grep -qiE 'stole|Weak|Fainting' && { echo "STOP msg: $l"; exit 1; }
+    [ -n "$g" ] && echo "  fight $g: $(echo $l | cut -c5-80)"
+  done
+  cur=$(./v | head -1 | grep -oE '[0-9]+,[0-9]+$')
+  [ "$cur" != "$X,$Y" ] && { echo "STOP stuck at $cur want $X,$Y ${S:+(secret door)}"; exit 1; }
+done
+echo "arrived $(./v | head -1 | grep -oE '[0-9]+,[0-9]+$') $(./v | grep -oE 'HP:[0-9]+\([0-9]+\)')"

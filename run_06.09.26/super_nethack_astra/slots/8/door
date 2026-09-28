@@ -1,0 +1,25 @@
+#!/bin/bash
+# slots/8/door DIR N MINHP: attack whatever hostile is in direction DIR, up to N blows, one at a time; stops on
+# low HP, peaceful, empty square, status (Stone/Slime/...), or when a cockatrice-class c is there (reports).
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+S="python3 scripts/session.py"
+d=$1; n=${2:-10}; minhp=${3:-35}
+declare -A DX=([1]=-1 [2]=0 [3]=1 [4]=-1 [6]=1 [7]=-1 [8]=0 [9]=1) DY=([1]=1 [2]=1 [3]=1 [4]=0 [6]=0 [7]=-1 [8]=-1 [9]=-1)
+for i in $(seq $n); do
+  o=$($S screen --compact)
+  st=$(echo "$o" | grep -E "^34")
+  echo "$st" | grep -qE "Stone|Slime|Hallu|Conf|Stun|Blind|Weak" && { echo "STOP status: $st"; exit 3; }
+  hp=$(echo "$st" | grep -o 'HP:[0-9]*' | cut -d: -f2); [ "$hp" -lt "$minhp" ] && { echo "STOP HP $hp"; exit 2; }
+  g=$(echo "$o" | grep "^Neigh" | grep -oE " $d:[^ ]*" | cut -c4)
+  case "$g" in [A-Za-z@\&\;\'\:]) ;; *) echo "empty ($g)"; exit 0;; esac
+  xy=$(echo "$o" | grep "^Neigh" | grep -oE " $d:[^ ]*" | grep -oE "[0-9]+,[0-9]+")
+  nm=$(bash scripts/look ${xy%,*} ${xy#*,} 2>/dev/null | tail -1)
+  echo "$nm" | grep -qE "peaceful|tame" && { echo "PEACEFUL: $nm"; exit 4; }
+  echo "$nm" | grep -qE "floating eye|gelatinous cube|blue jelly|spotted jelly" && { echo "PASSIVE-DANGER: $nm"; exit 6; }
+  echo "$nm" | grep -qiE "cockatrice|chickatrice" && echo "  (c: $nm)"
+  R=""; [ "$g" = "@" ] && R="--really"
+  r=$($S keys --compact --why "door fight (farlooked hostile)" $R F$d 2>&1)
+  echo "$r" | grep -qi "ALARM\|refused" && { echo "STOP guard: $(echo "$r" | head -2)"; exit 5; }
+  echo "$r" | grep -E "^07" | cut -c1-90
+done

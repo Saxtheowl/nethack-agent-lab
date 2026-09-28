@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/5/goto2 X Y [tries]: goto with waits (s x2) between attempts, for peaceful gnomes blocking corridors.
+# Stops at once on HP loss (goto exit 2).
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+for t in $(seq "${3:-5}"); do
+  r=$(slots/5/goto "$1" "$2"); rc=$?
+  echo "$r" | head -1
+  [[ $rc -eq 0 || $rc -eq 2 ]] && exit $rc
+  python3 scripts/session.py keys --compact s >/dev/null
+  python3 scripts/session.py keys --compact s >/dev/null
+done
+exit 1

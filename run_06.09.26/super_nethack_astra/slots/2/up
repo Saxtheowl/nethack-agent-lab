@@ -1,0 +1,7 @@
+#!/bin/bash
+# slot2: climb '<' here, then travel to the '<' of the new level (from Map features); print status
+cd "$(dirname "$0")"
+./k '<' | grep -E '^34'
+c=$(./v | grep -o '<@[0-9]*,[0-9]*' | head -1 | cut -d@ -f2)
+[ -z "$c" ] && { echo "no < known"; exit 1; }
+./gg ${c%,*} ${c#*,}

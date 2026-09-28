@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/5/dipx : ONE #dip of item 'a' (long sword) into the fountain here; prints the messages.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+$S keys --compact --raw '#' >/dev/null
+$S keys --compact --raw 'dip' >/dev/null
+o=$($S keys --compact --named Enter)
+echo "$o" | grep -q 'What do you want to dip' || { echo "NO DIP PROMPT"; echo "$o" | grep -E '^0[1-7]'; exit 1; }
+o=$($S keys --compact --raw a)
+echo "$o" | grep -q 'into the fountain' || { echo "NO FOUNTAIN PROMPT"; echo "$o" | grep -E '^0[1-7]'; exit 1; }
+o=$($S keys --compact --raw y)
+echo "$o" | grep -E '^0[1-7]|^34' | tail -4
+echo "$o" | grep '^Map'

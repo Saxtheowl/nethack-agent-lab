@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+# fexp N [MINHP]: frontier explorer for dark mazes. Walks (one checked step at a time) to the nearest
+# known passable cell that still has unknown neighbours. Stops: '>' or '<' seen (prints), monster within 3,
+# HP drop / HP<MINHP, prompts, "stole"/Weak/Stone/Slime, N steps. Visited cells kept in fexp-visited.json.
+import subprocess, sys, re, json, os
+from collections import deque
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+N = int(sys.argv[1]) if len(sys.argv) > 1 else 40
+MIN = int(sys.argv[2]) if len(sys.argv) > 2 else 110
+TRAPOK = 'traps' in sys.argv[3:]
+FIGHT = 'fight' in sys.argv[3:]
+DEBUG = 'debug' in sys.argv[3:]
+DIAG = 'diag' in sys.argv[3:]  # allow diagonal squeezes (inventory < 600 wt)
+AVOID = set(tuple(map(int, a[6:].split(','))) for a in sys.argv[3:] if a.startswith('avoid='))  # avoid=x,y
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(*a): return subprocess.run(['./k', *a], capture_output=True, text=True).stdout
+K = {(0,-1):'8',(1,-1):'9',(1,0):'6',(1,1):'3',(0,1):'2',(-1,1):'1',(-1,0):'4',(-1,-1):'7'}
+PASS = set('·.#▒<>[%)(!?/=*"$`_{+')
+MON = re.compile(r"[A-Za-z&;:'@]")
+def full():
+    return subprocess.run(['python3', '../../scripts/session.py', 'screen'], capture_output=True, text=True).stdout
+def parse(s):
+    L = full().splitlines()
+    rows = {y: L[y][:81] for y in range(10, 31) if y < len(L)}
+    c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    return rows, int(c[1]), int(c[2])
+def g(rows, x, y):
+    r = rows.get(y, '')
+    return r[x] if 0 <= x < len(r) else ' '
+VF = 'fexp-visited.json'
+try:
+    st = json.load(open(VF))
+except Exception:
+    st = {}
+s = v()
+_m = re.search(r'(?:Dlvl:|Home |Dlvl )(\d+)', s); dl = (('H' if 'Home ' in _m[0] else '') + _m[1]) if _m else 'x'
+vis = set(tuple(p) for p in st.get(dl, []))
+hp0 = None
+waits = 0
+chases = 0
+stuck_prev = False
+bad = {}
+for step in range(N):
+    s = v()
+    msg = '\n'.join(l for l in s.splitlines() if re.match(r'^0[1-9] ', l))
+    for _ in range(3):
+        cy = int(re.search(r'Terminal cursor[^:]*: \d+,(\d+)', s)[1])
+        lastm = [l for l in s.splitlines() if re.match(r'^0[1-9] ', l) and l[4:].strip()][-1:]
+        if lastm and re.search(r'Call an? .*:', lastm[0]) and cy < 10:
+            k('--named', 'Escape'); s = v()
+        elif 'Things that are here' in s or cy < 7:
+            k('--named', 'Escape'); s = v()
+        elif '>>' in msg or '--More--' in msg:
+            k(' ', '--raw'); s = v()
+        else: break
+        msg = '\n'.join(l for l in s.splitlines() if re.match(r'^0[1-9] ', l))
+    last = [l for l in s.splitlines() if re.match(r'^0[1-9] ', l) and l[4:].strip()][-1:]
+    stl = re.search(r'.*HP:\d+.*', s)[0]
+    if re.search(r'Stone|Slim|Weak|Faint|Hungry', stl) or (last and re.search(r'stole|\[yn|Really', last[0])):
+        print('STOP message/status'); break
+    rows, hx, hy = parse(s)
+    h = int(re.search(r'HP:(\d+)', s)[1])
+    if g(rows, hx-1, hy-1) == '/' and g(rows, hx+1, hy-1) == '\\' and h >= 60:
+        o = k('F4', '--raw', '--why', 'fexp: engulfed, hit from inside')
+        print('engulfed: hit', h); hp0 = None; continue
+    if stuck_prev and last and re.search(r'bear trap closes|caught in a bear trap', last[0]):
+        dg = [d for d in [(1,-1),(1,1),(-1,1),(-1,-1)] if g(rows, hx+d[0], hy+d[1]) in PASS]
+        if dg:
+            for _ in range(12):
+                k(K[dg[0]], '--raw', '--why', 'bear trap: diagonal struggle')
+                c3 = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', v())
+                if (int(c3[1]), int(c3[2])) != (hx, hy): break
+            print('bear trap escaped'); hp0 = None; stuck_prev = False; continue
+    if hp0 is not None and h < hp0: print('STOP HP drop', h); break
+    if h < MIN: print('STOP HP', h); break
+    hp0 = h
+    vis.add((hx, hy))
+    mf = re.search(r'^Map features.*$', s, re.M); mf = mf[0] if mf else ''
+    st_ = re.findall(r' ([<>])@(\d+),(\d+)', mf)
+    WANT = '<' if 'up' in sys.argv[3:] else '>'
+    if 'nostairs' not in sys.argv[3:] and any(c == WANT for c, _, _ in st_): print('STAIRS', st_); break
+    if 'novib' not in sys.argv[3:] and re.search(r'vibration', msg): print('VIBRATING SQUARE here', hx, hy); break
+    near = [(gl, int(x), int(y)) for gl, x, y in re.findall(r" ([A-Za-z&;:'@])@(\d+),(\d+)", mf)
+            if (int(x), int(y)) != (hx, hy) and max(abs(int(x)-hx), abs(int(y)-hy)) <= 3]
+    def seen_only_telepathy(m):
+        d = subprocess.run(['./look', str(m[1]), str(m[2])], capture_output=True, text=True).stdout
+        if re.search(r'statue|boulder', d): return True
+        return 'telepathy' in d and not re.search(r'normal vision|infravision', d)
+    near = [m for m in near if max(abs(m[1]-hx), abs(m[2]-hy)) == 1 or not seen_only_telepathy(m)]
+    adj = [m for m in near if max(abs(m[1]-hx), abs(m[2]-hy)) == 1]
+    mx = int(re.search(r'HP:\d+\((\d+)\)', s)[1])
+    if adj and FIGHT and h >= 0.6*mx:
+        gl, x, y = adj[0]
+        desc = subprocess.run(['./look', str(x), str(y)], capture_output=True, text=True).stdout.strip().splitlines()[-1:]
+        desc = desc[0] if desc else ''
+        if re.search(r'peaceful|floating eye|jelly|gelatinous|tame|shopkeeper|priest|guard', desc) or not desc or (gl == '@' and not re.search(r'\((soldier|sergeant|lieutenant|captain|nurse)\)', desc)):
+            print('STOP monster', near, desc); break
+        o = k('F' + K[(x-hx, y-hy)], '--raw', '--why', 'fexp fight ' + desc[:40])
+        if 'ALARM' in o: print('STOP ALARM'); break
+        m = [l for l in o.splitlines() if re.match(r'^0[1-9] ', l) and l[4:].strip()][-1:]
+        print('fight', gl, x, y, m[0][4:70].strip() if m else '')
+        hp0 = None; continue
+    if near and FIGHT and waits < 3 and h >= 0.7*mx:
+        desc = subprocess.run(['./look', str(near[0][1]), str(near[0][2])], capture_output=True, text=True).stdout.strip().splitlines()[-1:]
+        desc = desc[0] if desc else ''
+        if desc and not re.search(r'peaceful|floating eye|tame|shopkeeper|priest|guard|lich|mind flayer', desc) and (near[0][0] != '@' or re.search(r'\((soldier|sergeant|lieutenant|captain|nurse)\)', desc)):
+            waits += 1; k('s', '--raw'); print('wait for', desc[:50]); continue
+    chase = None
+    if near:
+        dd = subprocess.run(['./look', str(near[0][1]), str(near[0][2])], capture_output=True, text=True).stdout.strip().splitlines()[-1:]
+        dd = dd[0] if dd else ''
+        okc = dd and not re.search(r'peaceful|floating eye|tame|shopkeeper|priest|guard|lich|mind flayer', dd) and (near[0][0] != '@' or re.search(r'\((soldier|sergeant|lieutenant|captain|nurse)\)', dd))
+        if FIGHT and okc and chases < 8 and h >= 0.7*mx:
+            chase = (near[0][1], near[0][2]); chases += 1; print('chase', dd[:40])
+        else:
+            print('STOP monster', near, dd[:60]); break
+    else:
+        chases = 0
+    waits = 0
+    def passable(x, y):
+        ch = g(rows, x, y)
+        return ch in PASS or (x, y) == (hx, hy) or (ch.isalpha() and ch != '@' and max(abs(x-hx), abs(y-hy)) > 1)
+    def frontier(x, y):
+        if (x, y) in vis or bad.get((x, y), 0) >= 2: return False
+        return any(g(rows, x+dx, y+dy) == ' ' for dx, dy in K if 11 <= y+dy <= 29 and 1 <= x+dx <= 78)
+    def bfs(chase):
+        prev = {(hx, hy): None}; q = deque([(hx, hy)]); goal = None
+        while q:
+            c = q.popleft()
+            if c != (hx, hy) and ((chase and max(abs(c[0]-chase[0]), abs(c[1]-chase[1])) <= 1) or (not chase and frontier(*c))): goal = c; break
+            for (dx, dy) in K:
+                nx, ny = c[0]+dx, c[1]+dy
+                if (nx, ny) in prev: continue
+                if (nx, ny) in AVOID: continue
+                if g(rows, nx, ny) == '^':
+                    if not TRAPOK: continue
+                elif not passable(nx, ny): continue
+                fl = lambda x, y: passable(x, y) or g(rows, x, y) == '^'
+                if dx and dy and not DIAG and not (fl(c[0]+dx, c[1]) or fl(c[0], c[1]+dy)): continue
+                prev[(nx, ny)] = c; q.append((nx, ny))
+        return prev, goal
+    prev, goal = bfs(chase)
+    if not goal and chase: prev, goal = bfs(None)
+    if not goal:
+        print('STOP no frontier; reached', len(prev), sorted(prev)[:80] if DEBUG else ''); break
+    c = goal
+    if DEBUG: print('goal', goal)
+    if 'dry' in sys.argv[3:]: break
+    while prev[c] != (hx, hy): c = prev[c]
+    d = (c[0]-hx, c[1]-hy)
+    o = k(K[d], '--raw')
+    if 'ALARM' in o: print('STOP ALARM'); break
+    s2 = v(); c2 = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s2); nx, ny = int(c2[1]), int(c2[2])
+    if (nx, ny) == (hx, hy):
+        bad[c] = bad.get(c, 0) + 1  # could not enter (this run only)
+        stuck_prev = True
+        print('blocked', hx, hy, '->', c, [l for l in s2.splitlines() if re.match(r'^0[1-9]', l)][-1:])
+    else:
+        stuck_prev = False
+else:
+    print('done', N)
+st[dl] = sorted(vis); json.dump(st, open(VF, 'w'))
+s = v()
+print(re.search(r'Terminal cursor[^:]*: (\d+,\d+)', s)[1], re.search(r'HP:\d+\(\d+\).*T:\d+', s)[0])

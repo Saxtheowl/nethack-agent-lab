@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/6/ctest X Y [n]: search turn by turn until the pet steps on X,Y
+# (prints ON / RELUCTANT). Stops on HP loss, hunger, hostile msg, stole.
+export NH_SLOT=6
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"; prev=""
+for i in $(seq "${3:-40}"); do
+  o=$($S keys --compact s --settle .4)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP HP loss"; exit 1; }
+  prev=$hp
+  echo "$o" | grep -q "reluctant" && { echo "RELUCTANT (cursed)"; exit 0; }
+  echo "$o" | grep -qE "stole|steal" && { echo "STOP stole"; exit 1; }
+  echo "$o" | grep '^34' | grep -qE 'Hungry|Weak|Faint' && { echo "STOP hunger"; exit 1; }
+  echo "$o" | grep '^PETS' | grep -q "$1,$2" && { echo "ON after $i turns (not cursed)"; exit 0; }
+  echo "$o" | grep -qE "Really attack|--More--" && { echo "STOP prompt"; exit 1; }
+done
+echo "timeout"

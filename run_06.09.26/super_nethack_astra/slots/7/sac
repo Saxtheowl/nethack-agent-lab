@@ -1,0 +1,20 @@
+#!/bin/bash
+# sac DIR: step DIR off the altar, pick up the (single) corpse there, step back, #offer it.
+# Only for a square holding just the corpse (else the pickup menu is shown and we stop).
+D="$(dirname "$0")"
+declare -A back=([1]=9 [2]=8 [3]=7 [4]=6 [6]=4 [7]=3 [8]=2 [9]=1)
+$D/k "$1" >/dev/null 2>&1
+o=$($D/session keys --compact --raw ',' 2>&1); sleep 0.5; o="$o
+$($D/v)"
+if echo "$o" | grep -qE '[a-z]\) an? [a-zA-Z -]*corpse'; then
+  L=$(echo "$o" | grep -oE '[a-z]\) an? [a-zA-Z -]*corpse' | head -1 | cut -c1)
+  $D/session keys --compact --raw "$L" >/dev/null 2>&1
+  o=$($D/session keys --compact --named Enter 2>&1)
+fi
+echo "$o" | grep -q 'Continue? \[ynq\]' && o=$($D/session keys --compact --raw y 2>&1)
+it=$(echo "$o" | grep -oE '[A-Za-z] - [a-zA-Z -]*corpse' | head -1 | cut -c1)
+[ -z "$it" ] && { echo "no corpse picked"; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+$D/k "${back[$1]}" >/dev/null 2>&1
+$D/session keys --compact --raw '#offer' >/dev/null 2>&1
+$D/session keys --compact --named Enter >/dev/null 2>&1
+$D/session keys --compact --raw "$it" 2>&1 | grep -E '^0[5-7]|^34'

@@ -1,0 +1,18 @@
+#!/bin/bash
+# digdown: apply pick-axe k downward until the level changes (max 6 tries); stop on HP loss or odd message.
+cd "$(dirname "$0")"
+lv0=$(./v | grep -oE 'Dlvl:[0-9]+'); h0=$(./v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in 1 2 3 4 5 6; do
+  ./k "#" --raw >/dev/null 2>&1; ./k --named Escape >/dev/null 2>&1
+  ./k a --raw >/dev/null 2>&1; o=$(./k k --raw 2>&1)
+  l=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+  echo "$l" | grep -q 'direction' || { echo "STOP: $l"; exit 1; }
+  o=$(./k ">" --raw 2>&1)
+  for j in 1 2 3; do echo "$o" | grep -E '^0[0-9]' | tail -1 | grep -q '>>' || break; o=$(./k " " --raw 2>&1); done
+  l=$(echo "$o" | grep -E '^0[0-9]' | tail -2 | tr '\n' ' ')
+  s=$(./v); lv=$(echo "$s" | grep -oE 'Dlvl:[0-9]+'); h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  echo "  $lv HP:$h $(echo $l | cut -c1-150)"
+  [ "$lv" != "$lv0" ] && { echo "NEW LEVEL $lv"; exit 0; }
+  [ "$h" -lt "$h0" ] && { echo "STOP HP loss"; exit 1; }
+  echo "$l" | grep -qiE 'too hard|cannot|can.t dig|interrupt|stairs|throne|altar|here is' && { echo "STOP msg"; exit 1; }
+done

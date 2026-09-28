@@ -1,0 +1,34 @@
+#!/bin/bash
+# slots/1/srest [target%] : search-rest in 10-turn chunks (no Elbereth);
+# stops on HP loss, hunger, a non-pet monster within 2 squares, or target.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=1
+S="python3 scripts/session.py"
+t=${1:-90}; prev=""
+for i in $(seq 60); do
+  out=$($S screen --compact)
+  r=$(python3 - "$out" "$t" <<'PY'
+import re, sys
+out, t = sys.argv[1], int(sys.argv[2])
+hp = re.search(r'HP:(\d+)\((\d+)\)', out); c, m = int(hp[1]), int(hp[2])
+if re.search(r'Hungry|Weak|Faint', out): print('hunger'); sys.exit()
+mp = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+nb = re.search(r'^Neighbors of @\((\d+),(\d+)\)', out, re.M); hx, hy = int(nb[1]), int(nb[2])
+for g, x, y in re.findall(r' ([A-Za-z&;:\'@])@(\d+),(\d+)', mp):
+    x, y = int(x), int(y)
+    import os
+    if (x, y) == (hx, hy) or f'{x},{y}' in pets or g in os.environ.get('IGNORE', ''): continue
+    if max(abs(x-hx), abs(y-hy)) <= 2: print('monster ' + g); sys.exit()
+print('full' if c * 100 >= m * t else str(c))
+PY
+)
+  case "$r" in
+    full|hunger|monster*) echo "srest: $r"; exit 0;;
+  esac
+  [ -n "$prev" ] && [ "$r" -lt "$prev" ] && { echo "srest: HP loss"; exit 1; }
+  prev=$r
+  if [ "$r" -lt $(( ${MAXHP:-85}*7/10+1 )) ]; then for j in 1 2 3; do $S keys --raw s --settle .3 >/dev/null; done; else $S keys n10s --settle .8 >/dev/null; fi
+  $S screen | grep -q -- '--More--' && $S keys --named Enter >/dev/null
+done
+echo "srest: chunks used"

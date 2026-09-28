@@ -1,0 +1,27 @@
+#!/bin/bash
+# camp N: stay put (on the altar) for up to N rounds of 20 searches; fight whatever becomes
+# adjacent (one blow at a time, never '@' or peacefuls). Stops after a kill (to sacrifice),
+# on HP < 70% max, Weak, stolen/level-change, or prompt.
+D="$(dirname "$0")"
+me() { c=$(echo "$1" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$'); echo "$1" | grep "^Neighbors of @($c)" | head -1; }
+o=$($D/v); max=$(echo "$o" | grep -oE 'HP:[0-9]+\([0-9]+' | head -1 | cut -d'(' -f2)
+for r in $(seq "$1"); do
+  o=$($D/k n20s --raw)
+  for f in $(seq 12); do
+    echo "$o" | grep -q -- '--More--' && o=$($D/k --named Enter --raw)
+    hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+    [ "$hp" -lt $((max * 7 / 10)) ] && { echo "LOW HP $hp"; echo "$o" | grep -E '^0[5-7]|^34'; exit 1; }
+    echo "$o" | grep -qE 'Weak|Faint' && { echo WEAK; exit 1; }
+    echo "$o" | grep -qiE 'stole|steals|Really attack|Stiff|slowing down' && { echo "ALERT"; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+    n=$(me "$o")
+    d=$(echo "$n" | LC_ALL=C grep -oE "[1-9]:[A-HJ-Za-z&;:'][(]" | head -1 | cut -c1)
+    [ -z "$d" ] && break
+    xy=$(echo "$n" | LC_ALL=C grep -oE "$d:[A-HJ-Za-z&;:'][(][0-9]+,[0-9]+" | grep -oE '[0-9]+,[0-9]+')
+    $D/look ${xy%,*} ${xy#*,} | grep -q peaceful && break
+    o=$($D/k F$d --raw)
+    m=$(echo "$o" | grep -E '^0[5-7]' | tr -s ' ' | tail -2 | tr '\n' ' ')
+    echo "[$d] HP$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2) $m" | cut -c1-150
+    echo "$o" | grep -qE 'You kill|You destroy' && { echo KILLED; exit 0; }
+  done
+done
+echo "quiet T$(echo "$o" | grep -oE 'T:[0-9]+' | head -1)"

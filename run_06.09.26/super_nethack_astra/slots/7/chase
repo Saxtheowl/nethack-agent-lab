@@ -1,0 +1,19 @@
+#!/bin/bash
+# chase GLYPH [steps] [maxdist]: step toward GLYPH until it is aligned (row/col/diagonal) within maxdist; prints ALIGNED dir.
+D="$(dirname "$0")"; g=$1; n=${2:-15}; md=${3:-8}
+declare -A dir=([-1,-1]=7 [0,-1]=8 [1,-1]=9 [-1,0]=4 [1,0]=6 [-1,1]=1 [0,1]=2 [1,1]=3)
+sg() { [ $1 -gt 0 ] && echo 1 || { [ $1 -lt 0 ] && echo -1 || echo 0; }; }
+o=$($D/v)
+for i in $(seq $n); do
+  me=$(echo "$o" | grep -o '^Neighbors of @([0-9,]*)' | head -1 | grep -oE '[0-9]+,[0-9]+'); mx=${me%,*}; my=${me#*,}
+  t=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E "^$g@" | head -1 | grep -oE '[0-9]+,[0-9]+')
+  [ -z "$t" ] && { echo "LOST"; exit 1; }
+  tx=${t%,*}; ty=${t#*,}; dx=$((tx-mx)); dy=$((ty-my)); ax=${dx#-}; ay=${dy#-}
+  d=$(( ax > ay ? ax : ay ))
+  if { [ $dx -eq 0 ] || [ $dy -eq 0 ] || [ $ax -eq $ay ]; } && [ $d -le $md ]; then echo "ALIGNED ${dir[$(sg $dx),$(sg $dy)]} dist $d me $me target $t"; exit 0; fi
+  [ $d -le 1 ] && { echo "ADJ ${dir[$(sg $dx),$(sg $dy)]}"; exit 0; }
+  o=$($D/k --raw ${dir[$(sg $dx),$(sg $dy)]})
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  echo "$o" | grep -qiE 'stole|You stop|Really' && { echo STOP; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+done
+echo "not aligned: me $me target $t"

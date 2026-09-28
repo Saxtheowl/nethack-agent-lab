@@ -1,0 +1,12 @@
+#!/bin/bash
+# hitn DIR [N] [MINHP]: F-attack DIR up to N times; stop on kill/miss-target/alarm/HP<MINHP (checks only the last 2 message lines)
+cd "$(dirname "$0")"
+for i in $(seq 1 ${2:-4}); do
+  o=$(./k "F$1" --raw --why "hitn $1" 2>&1)
+  m=$(echo "$o" | grep -E '^0[0-9]' | tail -2 | cut -c6-84 | tr '\n' ' ')
+  h=$(./v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  echo "HP:$h $m"
+  echo "$o" | grep -q ALARM && { echo ALARM; break; }
+  echo "$m" | grep -qE "kill|destroy|thin air|harmlessly|Really|wall" && break
+  [ "$h" -lt "${3:-60}" ] && break
+done

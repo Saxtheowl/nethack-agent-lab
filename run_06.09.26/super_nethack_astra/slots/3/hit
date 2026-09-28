@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/3/hit DIR [N] [MINHP]: F-attack DIR up to N times, one blow per call, stop on kill/destroy/thin air/prompt or HP<MINHP
+cd "$(dirname "$0")"
+d=$1; n=${2:-5}; min=${3:-60}
+for i in $(seq $n); do
+  cy=$(./v | grep -m1 cursor | grep -oE "[0-9]+,[0-9]+" | cut -d, -f2); [ -n "$cy" ] && [ "$cy" -lt 10 ] && ./k --named Escape >/dev/null 2>&1
+  o=$(./k F$d 2>&1)
+  l7=$(echo "$o" | grep "^07"); st=$(echo "$o" | grep "^34")
+  echo "$l7" | cut -c1-84; 
+  h=$(echo "$st" | grep -oE 'HP:[0-9]+' | cut -d: -f2)
+  echo "$l7" | grep -qE "kill|destroy|thin air|Really|\?" && break
+  [ -n "$h" ] && [ "$h" -lt "$min" ] && { echo "LOW HP $h"; break; }
+done
+echo "$st" | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+.*' | tr -s ' '
+./v | grep Neighbors

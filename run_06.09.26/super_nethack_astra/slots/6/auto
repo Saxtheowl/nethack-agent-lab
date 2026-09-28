@@ -9,6 +9,6 @@ for r in $(seq "${1:-4}"); do
   echo "$h" | grep -E "STOP|DANGER|peaceful adj" | head -2
   echo "$h" | grep -q "DANGER" && break
   echo "$h" | grep -qE "STOP (HP|weak|msg)" && break
-  echo "$x" | grep -qE "no reachable|level changed|WEAK|HP<60|MSG" && break
+  echo "$x" | grep -qE "no reachable|locked door|level changed|WEAK|HP<60|MSG" && break
 done
 python3 scripts/session.py screen --compact | grep -E '^0[4-7] |^34|^Map' | cut -c1-200

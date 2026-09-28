@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# slot2 helper: print map region with column ruler. usage: region x0 x1 y0 y1
+import sys, subprocess, os
+x0,x1,y0,y1 = map(int, sys.argv[1:5])
+out = subprocess.run([os.path.join(os.path.dirname(os.path.abspath(__file__)),'v')],capture_output=True,text=True).stdout
+rows={}
+for line in out.split('\n'):
+    if len(line)>3 and line[:2].isdigit() and line[2]==' ':
+        rows[int(line[:2])]=line[4:]
+print('    '+''.join(str(x%10) for x in range(x0,x1+1)))
+for y in range(y0,y1+1):
+    r=rows.get(y,'')
+    print(f'{y:3d} '+''.join((r[x] if x<len(r) else ' ') for x in range(x0,x1+1)))

@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/5/hallwait [chunks]: search 5 turns at a time until Hallu disappears, HP drops, hunger changes, or stole.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=5
+S="python3 scripts/session.py"
+h0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+for i in $(seq "${1:-20}"); do
+  o=$($S keys --compact --why 'attendre fin Hallu' n5s 2>&1)
+  h=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  echo "$o" | grep -qE 'HP ALARM|stole|steals' && { echo "STOP: event"; break; }
+  [[ -n "$h" && "$h" -lt "$h0" ]] && { echo "STOP: HP $h0->$h"; break; }
+  [[ "$st" != "$st0" ]] && { echo "STOP: hunger $st"; break; }
+  echo "$o" | grep -q 'Hallu' || { echo "Hallu over"; break; }
+  h0=$h
+done
+$S screen --compact | grep -E '^0[5-7]|^34|^Neigh'

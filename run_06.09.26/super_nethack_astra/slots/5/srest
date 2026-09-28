@@ -1,0 +1,19 @@
+#!/bin/bash
+# slots/5/w ./srest TARGET_HP [maxturns]: search one turn at a time, stop when
+# HP >= TARGET, HP drops, hunger status appears/changes, or a --More-- shows.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+t=${1:?}; n=${2:-150}; prev=""
+st0=$($S screen | grep -oE 'Hungry|Weak|Fainting' | head -1)
+for i in $(seq $n); do
+  o=$($S keys s 2>&1)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "no HP read: $o" | tail -3; break; }
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "HP DROP $prev->$hp"; break; }
+  [ "$hp" -ge "$t" ] && { echo "target reached $hp"; break; }
+  st=$(echo "$o" | grep -oE 'Hungry|Weak|Fainting' | head -1)
+  [ "$st" != "$st0" ] && { echo "status $st"; break; }
+  echo "$o" | grep -qE 'More|refused' && { echo "prompt/refused"; break; }
+  prev=$hp
+done
+$S screen --compact | grep -E '^0[67] |^34|Neigh'

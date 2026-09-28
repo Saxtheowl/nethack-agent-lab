@@ -1,0 +1,15 @@
+#!/bin/bash
+# wrest N: zap wand X until a wish prompt appears; stops on HP drop, hunger, prompt, monster adjacent.
+cd "$(dirname "$0")"
+h0=$(./v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq 1 ${1:-50}); do
+  ./k z --raw >/dev/null 2>&1
+  o=$(./k X --raw 2>&1)
+  l=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+  echo "$l" | grep -qiE 'wish|wrest' && { echo "WISH at try $i: $l"; exit; }
+  echo "$l" | grep -q 'Nothing happens' || { echo "STOP odd: $l"; exit; }
+  s=$(./v); h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$h0" ] && { echo "STOP HP $h"; exit; }
+  echo "$s" | grep -qE 'Hungry|Weak|Fainting' && { echo "STOP hunger"; exit; }
+done
+echo "no wrest after $i; $(./v | grep -oE 'T:[0-9]+')"

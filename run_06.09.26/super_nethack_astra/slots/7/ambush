@@ -1,0 +1,23 @@
+#!/bin/bash
+# ambush GLYPH WAND [turns] [maxdist]: wait turn by turn; when GLYPH is aligned within maxdist, zap WAND at it once and stop.
+D="$(dirname "$0")"; g=$1; wd=$2; n=${3:-100}; md=${4:-7}
+declare -A dir=([-1,-1]=7 [0,-1]=8 [1,-1]=9 [-1,0]=4 [1,0]=6 [-1,1]=1 [0,1]=2 [1,1]=3)
+sg() { [ $1 -gt 0 ] && echo 1 || { [ $1 -lt 0 ] && echo -1 || echo 0; }; }
+o=$($D/v); hp0=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  me=$(echo "$o" | grep -o '^Neighbors of @([0-9,]*)' | head -1 | grep -oE '[0-9]+,[0-9]+'); mx=${me%,*}; my=${me#*,}
+  t=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E "^$g@" | head -1 | grep -oE '[0-9]+,[0-9]+')
+  if [ -n "$t" ]; then
+    tx=${t%,*}; ty=${t#*,}; dx=$((tx-mx)); dy=$((ty-my)); ax=${dx#-}; ay=${dy#-}; d=$(( ax > ay ? ax : ay ))
+    if { [ $dx -eq 0 ] || [ $dy -eq 0 ] || [ $ax -eq $ay ]; } && [ $d -le $md ]; then
+      k=${dir[$(sg $dx),$(sg $dy)]}; $D/k --raw z >/dev/null; $D/k --raw $wd >/dev/null; o=$($D/k --raw $k)
+      echo "ZAP $k at $t (dist $d)"; echo "$o" | grep -E '^0[3-7]'; exit 0
+    fi
+  fi
+  o=$($D/k --raw s)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ -n "$hp" ] && [ "$hp" -lt "$hp0" ] && { echo "HP LOSS $hp"; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+  echo "$o" | grep -qiE 'stole|steals' && { echo STOLE; echo "$o" | grep -E '^0[5-7]'; exit 1; }
+  c=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  echo "$o" | grep "^Neighbors of @($c)" | head -1 | LC_ALL=C grep -qE "[1-9]:[A-HJ-Za-z@&;:][(]" && { echo ADJ; echo "$o" | grep "^Neighbors of @($c)" | head -1; exit 1; }
+done
+echo "no sighting T$(echo "$o" | grep -oE 'T:[0-9]+' | head -1)"

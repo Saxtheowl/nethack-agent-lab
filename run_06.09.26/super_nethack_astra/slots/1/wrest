@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/1/wrest LETTER DIR [N]: zap an empty wand until a charge is wrested, then fire it in DIR. Stops on Weak/HP loss/odd prompt.
+cd "$(dirname "$0")/../.."
+S="slots/1/session"
+prev=$($S screen --compact | grep -oP 'HP:\K\d+')
+for i in $(seq ${3:-200}); do
+  $S keys --raw z --settle .3 >/dev/null
+  o=$($S keys --raw $1 --settle .5 --compact)
+  l7=$(echo "$o" | grep -E '^07')
+  if echo "$l7" | grep -q 'In what direction'; then r=$($S keys --raw $2 --settle 1 --compact); echo "WRESTED at try $i:"; echo "$r" | grep -E '^0[3-7]'; exit 0; fi
+  if echo "$o" | grep -qE 'wrest'; then echo "wrest msg"; echo "$o" | grep -E '^0[3-7]'; exit 0; fi
+  echo "$l7" | grep -q 'Nothing happens' || { echo "unexpected: $l7"; exit 1; }
+  st=$(echo "$o" | grep -E '^34'); hp=$(echo "$o" | grep -oP 'HP:\K\d+')
+  echo "$st" | grep -qE 'Weak|Faint' && { echo "Weak at try $i"; exit 1; }
+  [ "$hp" -lt "$prev" ] && { echo "HP loss"; exit 1; }
+done
+echo "no luck after $i tries"

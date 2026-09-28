@@ -1,0 +1,11 @@
+#!/bin/bash
+# vkill DIR [N]: F-attack DIR until destroy/kill/thin air, HP guard 25
+cd "$(dirname "$0")"
+for i in $(seq 1 ${2:-8}); do
+  o=$(./k "F$1" --raw --why "vkill $1")
+  m=$(echo "$o" | grep -E '^0[0-9]' | tail -1)
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  echo "HP:$h ${m:5:70}"
+  case "$m" in *destroy*|*kill*|*"thin air"*|*harmlessly*|*Really*) break;; esac
+  [ "$h" -lt 25 ] && break
+done

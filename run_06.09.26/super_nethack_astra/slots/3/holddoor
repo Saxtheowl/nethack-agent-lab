@@ -1,0 +1,18 @@
+#!/bin/bash
+# holddoor DIR DX DY [N] [MINHP]: hold a corridor; if a monster letter (incl @, harness refuses peacefuls) is at screen DX,DY, F-attack DIR; else search 1.
+cd "$(dirname "$0")"
+D=$1; X=$2; Y=$3; N=${4:-10}; MIN=${5:-30}
+for i in $(seq 1 $N); do
+  s=$(./v)
+  h=$(echo "$s" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$MIN" ] && { echo "STOP low HP $h"; exit; }
+  [ -n "$QUIET" ] && [ -n "$hp" ] && [ $((hp-h)) -gt 3 ] && { echo "STOP HP drop $hp->$h"; exit; }; hp=$h
+  echo "$s" | grep -E '^0[0-9]' | tail -1 | grep -qE 'More|\[yn' && { echo "STOP prompt"; exit; }
+  g=$(echo "$s" | grep -oE " [A-Za-z@&;:'][@]$X,$Y" | head -1 | cut -c2)
+  if [ -n "$g" ]; then o=$(./k "F$D" --raw --why "holddoor $g" 2>&1); else o=$(./k s --raw 2>&1); fi
+  for j in 1 2 3; do echo "$o" | grep -E '^0[0-9]' | tail -1 | grep -q '>>' || break; o=$(./k " " --raw 2>&1); done
+  echo "$o" | grep -E '^0[0-9]' | tail -1 | grep -q 'Call a' && ./k --named Escape >/dev/null 2>&1
+  echo "$o" | grep -q ALARM && { echo "STOP ALARM"; exit; }
+  echo "$o" | grep -qE 'Really attack' && { ./k n >/dev/null 2>&1; echo "STOP peaceful"; exit; }
+  echo "r$i [$g] HP:$h $(echo "$o" | grep -E '^0[0-9]' | tail -2 | cut -c6-84 | tr '\n' ' ')"
+done

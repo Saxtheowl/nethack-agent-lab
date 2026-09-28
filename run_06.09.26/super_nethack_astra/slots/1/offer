@@ -1,0 +1,8 @@
+#!/bin/bash
+# slots/1/offer LETTER [y|n]: drop the item in a shop, print the shk offer, answer (default n).
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+o=$($S keys --raw d --settle .4 --compact); echo "$o" | grep -q "What do you want to drop" || { echo "no drop prompt"; $S keys --named Escape >/dev/null; exit 1; }
+o=$($S keys --raw "$1" --settle .6 --compact)
+echo "$o" | grep -E '^0[1-7] ' | tail -3
+if echo "$o" | grep -q "Sell"; then $S keys --raw "${2:-n}" --settle .5 --compact | grep -E '^0[5-7] ' | tail -1; fi

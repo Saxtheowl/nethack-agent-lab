@@ -1,0 +1,35 @@
+#!/bin/bash
+# slots/1/hold N MINHP : stay in place; each turn attack one adjacent HOSTILE monster (farlooked; skips peaceful, @, e, F molds),
+# else search 1 turn. Stops: HP<MINHP, big hit >15, prompts/status events, @ adjacent (decide by hand).
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+n=${1:-10}; minhp=${2:-60}
+for i in $(seq $n); do
+  $S keys --named Escape >/dev/null 2>&1
+  scr=$($S screen --compact)
+  hp=$(echo "$scr" | grep -oP 'HP:\K\d+' | head -1)
+  [ "$hp" -lt "$minhp" ] && { echo "stop: HP $hp < $minhp"; break; }
+  nb=$(echo "$scr" | grep '^Neighbors')
+  me=$(echo "$nb" | grep -oP 'of @\(\K[0-9]+,[0-9]+'); mx=${me%,*}; my=${me#*,}
+  key="s"; why="hold: wait"
+  echo "$nb" | grep -qP ' [1-9]:@\(' && { echo "stop: @ adjacent"; break; }
+  for ent in $(echo "$nb" | grep -oP ' [1-9]:[A-Za-z&;:\x27]\(\d+,\d+\)'); do
+    d=${ent:0:1}; g=${ent:2:1}; xy=$(echo "$ent" | grep -oP '\(\K[0-9]+,[0-9]+'); 
+    [ "$g" = "e" ] && continue
+    [ "$g" = "F" ] && continue
+    lk=$(python3 - "$xy" <<'PY'
+import sys,subprocess
+x,y=sys.argv[1].split(',')
+print(subprocess.run(['scripts/look',x,y],capture_output=True,text=True).stdout.strip().splitlines()[-1:])
+PY
+)
+    echo "$lk" | grep -qi peaceful && continue
+    key="F$d"; why="hold: attack $g at $xy ($lk)"; break
+  done
+  out=$($S keys --compact --why "$why" $key 2>&1)
+  echo "$i $key :: $(echo "$out" | grep -E '^07 ' | cut -c5-80)"
+  echo "$out" | grep -E "^07 |ALARM|Refused" | grep -qE 'ALARM|Refused|Really attack|--More--|Call a|What do you|In what direction|slowing down|feverish|frozen|cannot move|stiffening|limbs|stole|Slime|Stone|You feel|Blind' && { echo "stop: event"; $S screen --compact | grep -E '^0[4-7]'; break; }
+  nhp=$(echo "$out" | grep -oP 'HP:\K\d+' | head -1)
+  [ -n "$nhp" ] && [ $((hp - nhp)) -gt 15 ] && { echo "stop: big hit $hp->$nhp"; break; }
+done
+$S screen --compact | grep -E '^34|^Neigh'

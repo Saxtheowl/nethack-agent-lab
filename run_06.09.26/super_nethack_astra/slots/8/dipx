@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/8/dipx [n]: dip item a into the fountain here up to n times (run via slots/8/w). Stops on Excalibur,
+# any monster appearing, fountain gone, HP loss, prompts.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+k() { python3 scripts/session.py keys --compact --raw --why "dip for Excalibur" "$@" 2>/dev/null; }
+kn() { python3 scripts/session.py keys --compact --named --why "dip for Excalibur" "$@" 2>/dev/null; }
+for i in $(seq "${1:-5}"); do
+  k "#dip" >/dev/null; kn Enter >/dev/null; k a >/dev/null
+  o=$(k y)
+  echo "$o" | grep -E "^0[4-7] " | tail -3
+  echo "$o" | grep -qE "Excalibur|hand reaches|dries up|disappears|nymph|demon|snake|moccasin|water moccasin" && { echo "STOP"; break; }
+  s=$(python3 scripts/session.py screen --compact)
+  echo "$s" | grep -qE "Neighbors.*[0-9]:[A-Za-z&;:'][(]" && { echo "STOP monster adjacent"; echo "$s" | grep Neigh; break; }
+done
+python3 scripts/session.py screen --compact | grep -E "^34|^Map"

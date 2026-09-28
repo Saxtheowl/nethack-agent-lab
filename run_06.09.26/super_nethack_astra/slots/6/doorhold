@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/6/doorhold N MINHP : in a doorway facing west: attack whatever is at dir 4, else wait 1 turn. Stops on low HP, thief, e/F glyph at 4.
+cd "$(dirname "$(readlink -f "$0")")/../.."
+S="python3 scripts/session.py"
+for i in $(seq ${1:-20}); do
+  o=$($S screen --compact)
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ "$hp" -lt "${2:-45}" ] && { echo "LOW HP $hp"; break; }
+  echo "$o" | grep '^34' | grep -qE 'Stone|Slime|Weak|Faint' && { echo "STATUS!"; echo "$o" | grep '^34'; break; }
+  n=$(echo "$o" | grep '^Neighbors' | head -1)
+  g=$(echo "$n" | grep -oE ' 4:[^(]+\(' | cut -c4- | tr -d '(')
+  if echo "$g" | grep -qE '^[eFc]$'; then echo "DANGER glyph $g at 4"; break; fi
+  if echo "$g" | grep -qE "^[a-zA-Z&;:'~I]$"; then r=$($S keys --compact F4); else r=$($S keys --compact s); fi
+  echo "$r" | grep -E '^07' | cut -c4-80
+  echo "$r" | grep -qE 'stole|slowing|HP ALARM' && { echo "ALERT"; break; }
+done
+$S screen --compact | grep -E '^34'

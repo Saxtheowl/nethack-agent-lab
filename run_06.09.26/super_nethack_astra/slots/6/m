@@ -1,0 +1,12 @@
+#!/bin/bash
+# slots/6/m : print map rows with x ruler (x = map column as in Map features)
+cd "$(dirname "$0")/../.."
+NH_SLOT=6 slots/6/session screen --compact | python3 -c "
+import sys,re
+print('   '+''.join(str(i//10) if i%10==0 else ' ' for i in range(80)))
+print('   '+''.join(str(i%10) for i in range(80)))
+for l in sys.stdin.read().splitlines():
+    m=re.match(r'^(\d\d) (.*)$',l)
+    if m and 10<=int(m[1])<=31:
+        print(m[1]+' '+m[2][0:80])
+"

@@ -1,0 +1,55 @@
+#!/bin/bash
+# mazewalk N [MINHP]: left-hand wall follower in a dark maze. Stops: '>' visible, monster letter within 2, HP drop, N steps.
+cd "$(dirname "$0")"
+N=${1:-40}; MIN=${2:-110}
+exec python3 - "$N" "$MIN" <<'PY'
+import subprocess,sys,re
+N,MIN=int(sys.argv[1]),int(sys.argv[2])
+def v(): return subprocess.run(['./v'],capture_output=True,text=True).stdout
+def k(x): return subprocess.run(['./k',x,'--raw'],capture_output=True,text=True).stdout+''
+D=[(0,-1),(1,-1),(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1)]
+K={(0,-1):'8',(1,-1):'9',(1,0):'6',(1,1):'3',(0,1):'2',(-1,1):'1',(-1,0):'4',(-1,-1):'7'}
+def parse(s):
+    rows={}
+    for l in s.splitlines():
+        m=re.match(r'^(\d\d) (.*)$',l)
+        if m: rows[int(m[1])]=m[2]
+    c=re.search(r'Terminal cursor[^:]*: (\d+),(\d+)',s)
+    return rows,int(c[1]),int(c[2])
+def g(rows,x,y):
+    r=rows.get(y,'')
+    return r[x] if 0<=x<len(r) else ' '
+PASS=set('·.#<>[%)(!?/=*"+$`_{')
+d=0; hp0=None
+for i in range(N):
+    s=v(); rows,hx,hy=parse(s)
+    for _ in range(3):
+        if hy>=12 and 'Things that are here' not in s and '>>' not in s.split('Map features')[0][-400:]: break
+        k(' ') if '>>' in s else subprocess.run(['./k','--named','Escape'],capture_output=True)
+        s=v(); rows,hx,hy=parse(s)
+    h=int(re.search(r'HP:(\d+)',s)[1])
+    if hp0 and h<hp0-3: print('STOP HP drop',h); break
+    if h<MIN: print('STOP HP',h); break
+    hp0=h
+    mf=re.search(r'^Map features.*$',s,re.M)
+    mf=mf[0] if mf else ''
+    if ' >@' in mf: print('DOWNSTAIRS', re.findall(r' >@[\d,]+',mf)); break
+    near=[(gl,int(x),int(y)) for gl,x,y in re.findall(r" ([A-Za-z&;:'@])@(\d+),(\d+)",mf) if (int(x),int(y))!=(hx,hy) and max(abs(int(x)-hx),abs(int(y)-hy))<=2]
+    if near: print('STOP monster',near); break
+    # orthogonal only moves for maze following (left-hand rule over 4 dirs)
+    O=[(0,-1),(1,0),(0,1),(-1,0)]
+    di=O.index(D[d]) if D[d] in O else 0
+    moved=False
+    for turn in (-1,0,1,2):
+        nd=O[(di+turn)%4]
+        ch=g(rows,hx+nd[0],hy+nd[1])
+        if ch in PASS and ch!='^':
+            k(K[nd]); d=D.index(nd); moved=True; break
+    if not moved: print('STOP no move'); break
+    s2=v(); _,nx,ny=parse(s2)
+    if (nx,ny)==(hx,hy):
+        print('STOP blocked at',hx,hy, [l for l in s2.splitlines() if re.match(r'^0\d',l)][-1][5:80]); break
+else:
+    print('done',N)
+s=v(); print(re.search(r'Terminal cursor[^:]*: (\d+,\d+)',s)[1], re.search(r'HP:\d+\(\d+\).*T:\d+',s)[0])
+PY

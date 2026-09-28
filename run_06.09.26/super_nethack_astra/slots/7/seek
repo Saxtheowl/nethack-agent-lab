@@ -1,0 +1,17 @@
+#!/bin/bash
+# seek GLYPH X1 Y1 X2 Y2 ...: travel to each waypoint in turn; stop as soon as GLYPH is on the map (prints its position), on HP loss or adjacent monster.
+D="$(dirname "$0")"; g="$1"; shift
+hp0=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+while [ $# -ge 2 ]; do
+  x=$1; y=$2; shift 2
+  for t in $(seq 6); do
+    o=$($D/session travel $x $y 2>&1; $D/v)
+    f=$(echo "$o" | grep -o 'Map features.*' | tr ' ' '\n' | grep -E "^\\$g@" | head -3 | tr '\n' ' ')
+    [ -n "$f" ] && { echo "FOUND $f"; echo "$o" | grep '^Neigh' | head -1; exit 0; }
+    hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); [ "$hp" -lt "$hp0" ] && { echo "HP LOSS $hp"; exit 1; }
+    c=$(echo "$o" | grep -o 'cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+    echo "$o" | grep "^Neighbors of @($c)" | head -1 | LC_ALL=C grep -qE "[1-9]:[A-HJ-Za-z@&;:][(]" && { echo "ADJ"; echo "$o" | grep "^Neighbors of @($c)" | head -1; exit 1; }
+    [ "$c" == "$x,$y" ] && break
+  done
+  echo "at $c"
+done

@@ -1,0 +1,30 @@
+#!/bin/bash
+# wrest N MINHP [LETTER] [DIR]: try to zap an empty wand (default W) up to N times;
+# when the charge is wrested, answer the direction (default '>') and stop.
+# Stops: HP<MINHP, HP drop >6, Weak, stole, wrapped/swings, adjacent monster, prompt, Elbereth gone.
+D="$(dirname "$0")"
+L=${3:-W}; DIR=${4:->}
+h0=$($D/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq "$1"); do
+  o=$($D/k z$L --raw)
+  if echo "$o" | grep -q 'In what direction'; then
+    echo "WRESTED at try $i"; $D/k "$DIR" --raw | grep -E '^0[1-7]|^34'; exit 0
+  fi
+  echo "$o" | grep -q -- '--More--' && o=$($D/k --named Enter --raw)
+  hp=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  msg=$(echo "$o" | grep -E '^07' | tr -s ' ')
+  if ! echo "$o" | grep -q 'Nothing happens'; then echo "UNEXPECTED try $i: $msg"; echo "$o" | grep -E '^0[4-7]|^34'; exit 2; fi
+  echo "$o" | grep -qi 'stole\|steals\|swings\|wrap\|Weak\|Faint\|drown' && { echo "DANGER: $msg"; exit 3; }
+  [ "$hp" -lt "$2" ] && { echo "LOWHP $hp"; exit 3; }
+  [ "$hp" -lt $((h0 - 6)) ] && { echo "HP DROP $h0->$hp: $msg"; exit 3; }
+  [ "$hp" -gt "$h0" ] && h0=$hp
+  n=$(echo "$o" | grep '^Neigh' | head -1)
+  echo "$n" | LC_ALL=C grep -qE "[1-9]:[A-Za-z&;:@][(]" && echo "adj try $i: $(echo $n | cut -c20-)"
+  if [ $((i % 15)) = 0 ]; then
+    e=$($D/k : --raw | grep -o 'You read: "[^"]*"' | tail -1)
+    $D/k --named Escape --raw >/dev/null
+    echo "try $i HP$hp $e"
+    echo "$e" | grep -q '"Elbereth"' || { echo "ELBERETH DAMAGED"; exit 5; }
+  fi
+done
+echo "no luck after $1"
