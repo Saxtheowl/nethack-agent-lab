@@ -33,6 +33,9 @@ node_modules/
 *.so
 
 # super_nethack_astra: recomputable caches and machine-local state
-run_06.09.26/super_nethack_astra/runs/games/*/analytics.json
-run_06.09.26/super_nethack_astra/runs/wish_scum/
-run_06.09.26/super_nethack_astra/runs/*.log
+run_06.09.26/kenforthewin_ascend_3.6/claude/runs/games/*/analytics.json
+run_06.09.26/kenforthewin_ascend_3.6/claude/runs/wish_scum/
+run_06.09.26/kenforthewin_ascend_3.6/claude/runs/*.log
+
+# compatibility symlink (old location of kenforthewin_ascend_3.6/claude)
+run_06.09.26/super_nethack_astra

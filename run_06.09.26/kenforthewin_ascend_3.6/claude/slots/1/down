@@ -1,0 +1,5 @@
+#!/bin/bash
+# slots/1/down X Y : travel to X,Y (known '>') and descend if arrived.
+cd "$(dirname "$0")/../.."
+out=$(slots/1/tv $1 $2 15); echo "$out" | tail -3
+echo "$out" | grep -q arrived && slots/1/session keys --compact --why "descendre" '>' 2>&1 | grep -E '^07 |HP:|Map'

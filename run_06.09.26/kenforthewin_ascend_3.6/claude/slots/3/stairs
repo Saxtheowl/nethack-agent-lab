@@ -1,0 +1,25 @@
+#!/bin/bash
+# stairs '>'|'<' : travel to the known staircase glyph (from Map features) and use it. Stops if unknown,
+# if travel does not arrive (monster/interrupt), or on low HP.
+cd "$(dirname "$0")"
+g=${1:->}
+c=$2
+for t in 1 2 3 4; do
+  s=$(./v)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; max=${hp#*(}; max=${max%)}
+  [ $((cur * 100)) -lt $((max * 60)) ] && { echo "LOW HP $cur"; exit 1; }
+  [ -z "$c" ] && c=$(echo "$s" | grep '^Map features' | grep -oE " [$g]@[0-9]+,[0-9]+" | head -1 | sed 's/.*@//')
+  if [ -z "$c" ]; then  # maybe hidden under an object: ask #terrain (no objects/monsters)
+    ./k '#terrain' --raw >/dev/null 2>&1; ./k --named Enter >/dev/null 2>&1; ./k a --raw >/dev/null 2>&1
+    c=$(./v | grep '^Map features' | grep -oE " [$g]@[0-9]+,[0-9]+" | head -1 | sed 's/.*@//')
+    ./k --named Escape >/dev/null 2>&1; ./k --named Escape >/dev/null 2>&1
+    [ -n "$c" ] && echo "(found $g at $c via #terrain)"
+  fi
+  [ -z "$c" ] && { echo "no $g known (if standing on it, press it directly)"; exit 1; }
+  pos=$(echo "$s" | grep -oE 'Terminal cursor[^:]*: [0-9]+,[0-9]+' | grep -oE '[0-9]+,[0-9]+')
+  if [ "$pos" = "$c" ]; then
+    o=$(./k "$g" 2>&1); echo "$o" | grep -E '^0[1-9]' | tail -1; echo "$o" | grep -oE '(Dlvl:|Home )[0-9]+'; exit 0
+  fi
+  ./session travel ${c%,*} ${c#*,} >/dev/null 2>&1
+done
+echo "did not reach $g at $c (now $(./v | grep -oE 'Terminal cursor[^:]*: [0-9]+,[0-9]+'))"; exit 1

@@ -1,0 +1,5 @@
+#!/bin/bash
+# local wrapper: run xauto on the worker, print summary + screen.
+cd "$(dirname "$0")/../.."
+slots/1/w env THIEVES=${THIEVES:-nl} ./xauto ${1:-4} 2>&1 | grep -E '^\[|adjacent|stop|trivial' | tail -8
+slots/1/session screen --compact | grep -E '^0[5-7] |HP:|Neigh|Map'

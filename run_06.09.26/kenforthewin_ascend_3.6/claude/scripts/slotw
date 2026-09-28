@@ -1,0 +1,14 @@
+#!/bin/bash
+# slots/N/w <command...>: run one of YOUR OWN helpers (files in slots/N/) next
+# to the game: on the worker when the slot lives there (slots/N is copied up
+# first and copied back after), else here. Runs inside slots/N.
+R="$(cd "$(dirname "$0")/.." && pwd -P)"
+N=${NH_SLOT:?}
+if [ "${NH_HOST:-}" != worker ] && [ "$(cat "$R/.runtime/where-$N" 2>/dev/null)" = worker ]; then
+  SSH="ssh -o BatchMode=yes -o ControlMaster=auto -o ControlPath=/tmp/ssh-nh-%C -o ControlPersist=900"
+  rsync -az -e "$SSH" --exclude __pycache__ "$R/slots/$N/" "miniforum-worker:$R/slots/$N/"
+  $SSH -T miniforum-worker "cd $R/slots/$N && NH_HOST=worker NH_SLOT=$N $(printf '%q ' "$@")"; rc=$?
+  rsync -az -e "$SSH" --exclude __pycache__ "miniforum-worker:$R/slots/$N/" "$R/slots/$N/"
+  exit $rc
+fi
+cd "$R/slots/$N" && exec "$@"

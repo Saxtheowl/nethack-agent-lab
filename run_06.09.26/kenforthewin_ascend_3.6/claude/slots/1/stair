@@ -1,0 +1,11 @@
+#!/bin/bash
+# slots/1/stair '<'|'>' : find the staircase with the travel cursor, travel there (slots/1/tv), then climb/descend if arrived.
+cd "$(dirname "$0")/../.."
+S="slots/1/session"; c=$1
+$S keys --named Escape >/dev/null 2>&1
+$S keys --compact --why "travel $c" '_' >/dev/null 2>&1
+xy=$($S keys --compact --why "travel $c" "$c" 2>&1 | grep -oP 'cursor \(x,y; usually hero when no menu\): \K[0-9]+,[0-9]+')
+$S keys --named Escape >/dev/null 2>&1; $S keys --named Escape >/dev/null 2>&1
+echo "stairs at $xy"
+out=$(slots/1/tv ${xy%,*} ${xy#*,} 15); echo "$out"
+echo "$out" | grep -q arrived && $S keys --compact --why "stairs $c" "$c" 2>&1 | grep -E '^07 |HP:|Map'

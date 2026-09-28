@@ -1,0 +1,24 @@
+#!/bin/bash
+# slots/8/pw X Y [n]: pet BUC watch. Item already on X,Y; search 1 turn at a time until the pet stands on X,Y
+# (= not cursed) or "reluctantly" (= cursed). Stops on HP drop, adjacent non-pet, bad status, theft, prompt. Run via slots/8/w.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+n=${3:-25}; prev=999; res=undetermined
+for i in $(seq $n); do
+  o=$(python3 scripts/session.py keys --compact --why "pet BUC watch" s 2>&1)
+  echo "$o" | grep -q "HP ALARM\|refused" && { res="STOP: guard refused"; break; }
+  hp=$(echo "$o" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}
+  [ -z "$cur" ] && { res="no HP read"; break; }
+  [ $cur -lt $prev ] && [ $prev -ne 999 ] && { res="STOP: HP dropped $cur"; break; }
+  prev=$cur
+  echo "$o" | grep -E "^34" | grep -qE "Hungry|Weak|Faint|Blind|Conf|Stun|Hallu|Ill|Stone|Slime" && { res="STOP: status"; break; }
+  python3 scripts/session.py screen | grep -q "reluctantly" && { res="CURSED"; break; }
+  echo "$o" | grep -E "^0[1-7]" | grep -qiE "stole|steal|--More--|\[yn" && { res="STOP: message/prompt"; break; }
+  echo "$o" | grep '^PETS' | grep -qE "(^|[ :])$1,$2( |$)" && { res="NOT CURSED (pet on $1,$2)"; break; }
+  pets=$(echo "$o" | grep '^PETS')
+  for a in $(echo "$o" | grep '^Neighbors' | grep -oE "[0-9]:[A-Za-z&;:'@]\([0-9]+,[0-9]+\)"); do
+    xy=$(echo "$a" | grep -oE "[0-9]+,[0-9]+"); echo "$pets" | grep -q "$xy" || { res="STOP: adjacent $a"; break 2; }
+  done
+done
+echo "pw: $res"
+python3 scripts/session.py screen --compact | grep -E "^0[4-7] |^34|^PETS"

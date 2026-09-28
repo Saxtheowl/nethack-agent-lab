@@ -1,0 +1,29 @@
+#!/bin/bash
+# slots/1/petwatch X Y [N]: wait one turn at a time (max N) until the pet stands on X,Y
+# (=> items there not cursed) or "reluctantly" appears (=> cursed). Stops on HP loss / adjacent foe.
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+prev=""
+r0=$($S screen | grep -c "reluctantly")
+for i in $(seq "${3:-20}"); do
+  out=$($S screen --compact)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP: HP loss"; exit 1; }
+  prev=$hp
+  [ "$($S screen | grep -c "reluctantly")" -gt "$r0" ] && { echo "petwatch: CURSED (reluctantly)"; exit 0; }
+  echo "$out" | grep '^PETS' | grep -qE "(^|[^0-9])$1,$2([^0-9]|$)" && { echo "petwatch: pet on $1,$2 -> not cursed"; exit 0; }
+  foe=$(python3 - "$out" <<'PY'
+import re, sys
+out = sys.argv[1]
+m = re.search(r'^Map features.*$', out, re.M).group(0)
+pets = set(re.findall(r'(\d+,\d+)', re.search(r'^PETS.*$', out, re.M).group(0)))
+c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', out); hx, hy = int(c[1]), int(c[2])
+for g, x, y in re.findall(r' ([A-Za-z&;:\'])@(\d+),(\d+)', m):
+    x, y = int(x), int(y)
+    if max(abs(x-hx), abs(y-hy)) == 1 and f'{x},{y}' not in pets: print('foe'); break
+PY
+)
+  [ "$foe" = foe ] && { echo "STOP: monster adjacent"; exit 1; }
+  $S keys s --settle .3 >/dev/null
+done
+echo "petwatch: undetermined after ${3:-20}"

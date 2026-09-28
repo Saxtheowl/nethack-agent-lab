@@ -1,0 +1,30 @@
+#!/bin/bash
+# slots/1/fk DIR [N] [MINHP]: F-attack in DIR until the target dies, max N, stop under MINHP.
+# Stops at once after "You kill"/"destroy", if the square in DIR is a PET (PETS line) or not a monster letter,
+# or on a "Really attack?" prompt. (Run 12: the old version killed the kitten that stepped in after the kill.)
+cd "$(dirname "$0")/../.."
+S=slots/1/session; d=$1; n=${2:-6}; minhp=${3:-50}
+declare -A OFF=([1]="-1 1" [2]="0 1" [3]="1 1" [4]="-1 0" [6]="1 0" [7]="-1 -1" [8]="0 -1" [9]="1 -1")
+check() {  # $1 = compact screen; prints ok if the DIR neighbour is a non-pet monster
+  python3 - "$1" "$d" <<'PY'
+import re, sys
+out, d = sys.argv[1], sys.argv[2]
+off = {'1':(-1,1),'2':(0,1),'3':(1,1),'4':(-1,0),'6':(1,0),'7':(-1,-1),'8':(0,-1),'9':(1,-1)}[d]
+c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', out)
+x, y = int(c[1]) + off[0], int(c[2]) + off[1]
+pets = set(re.findall(r'(\d+,\d+)', (re.search(r'^PETS.*$', out, re.M) or [''])[0]))
+if f'{x},{y}' in pets: print('pet'); sys.exit()
+m = re.search(r' %s:(.)\(%d,%d\)' % (d, x, y), out)
+print('ok' if m and re.match(r"[A-Za-z&;:'@]", m[1]) else 'none')
+PY
+}
+o=$($S screen --compact)
+[ "$(check "$o")" = ok ] || { echo "fk: no hostile target in dir $d ($(check "$o"))"; exit 1; }
+for i in $(seq $n); do
+  o=$($S keys --compact --why "combat dir $d" F$d 2>&1)
+  echo "$o" | grep -E '^0[1-7] |HP:' | tail -2 | sed 's/  */ /g'
+  echo "$o" | grep -q "Really attack" && { echo "stop: peaceful prompt"; $S keys --named Escape >/dev/null; break; }
+  echo "$o" | grep -E '^0[1-7] ' | tail -2 | grep -qE "You kill|You destroy|is killed|is destroyed" && { echo "fk: target killed"; break; }
+  hp=$(echo "$o"|grep -oP 'HP:\K\d+'|head -1); [ -n "$hp" ] && [ "$hp" -lt "$minhp" ] && { echo "stop: HP $hp"; break; }
+  r=$(check "$o"); [ "$r" = ok ] || { echo "fk: stop ($r in dir $d)"; break; }
+done
