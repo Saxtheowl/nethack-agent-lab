@@ -252,8 +252,7 @@ nav.tabs a.altui:hover { background: #2a2618; }
 
 <header class="top">
   <h1>Claude joue à NetHack 3.6.7</h1>
-  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button><button data-tab="styles">Styles</button><button data-tab="res">Ressources</button>
-    <a class="altui" href="/ui/a">A · Salle de contrôle</a><a class="altui" href="/ui/b">B · Récit</a><a class="altui" href="/ui/c">C · Parcours</a></nav>
+  <nav class="tabs"><button data-tab="hist">Historique</button><button data-tab="dash">Dashboard</button><button data-tab="live">Live</button><button data-tab="res">Ressources</button><a class="altui" href="/guide" target="_blank">📖 Guide</a></nav>
   <div class="right"><span id="conn">…</span><span>Joueur IA · Claude Opus 5.5 · local, sans aide</span></div>
 </header>
 
@@ -297,13 +296,6 @@ nav.tabs a.altui:hover { background: #2a2618; }
   </div>
 </section>
 
-<!-- STYLES -->
-<section id="tab-styles" class="hidden">
-  <div class="panel" style="margin-bottom:16px"><h2>Plan d’attribution des styles</h2><div id="splan"></div></div>
-  <div id="scards" class="stylegrid"></div>
-  <div class="panel hidden" id="sfile" style="margin-top:16px"><h2 id="sfiletitle"></h2><pre id="sfiletext" class="filetext"></pre></div>
-</section>
-
 <!-- RESOURCES -->
 <section id="tab-res" class="hidden">
   <div class="insight" id="rwarn"><b>Points d’attention</b><ul></ul></div>
@@ -334,7 +326,8 @@ nav.tabs a.altui:hover { background: #2a2618; }
     <div class="panel"><h2>Règles du jeu et de l’expérience</h2><ul class="rlist">
       <li><b>Jeu pur :</b> NetHack 3.6.7 vanilla, Valkyrie naine (dwarf, female, lawful), aucun bot, pas de wizard/explore mode, pas de retour à une sauvegarde après une mort.</li>
       <li><b>Chaque touche est choisie par un agent Claude</b> après lecture de l’écran ; les helpers (<code>travel</code>, <code>fight</code>, <code>rest</code>, <code>autoexplore</code>…) ne font que des actions bornées qui s’arrêtent au moindre danger (perte de HP, faim, monstre inconnu).</li>
-      <li><b>Styles :</b> partie 1 toujours <b>Tariru</b> (<code>memory/tariru-style.md</code>, tiré des parties du joueur Tariru, 144 ascensions) ; les autres en <b>Astra</b> (<code>memory/astra-style.md</code>, la méthode qui a ascensionné 1 fois sur 3) ; partie 6 en Tariru pour comparer.</li>
+      <li><b>Style :</b> toutes les parties jouent en <b>Astra</b> (<code>memory/astra-style.md</code>, la méthode qui a ascensionné 1 fois sur 3, enrichie des leçons de nos morts). Les styles Tariru, Tariru v2 et Wish abuser ont été essayés puis arrêtés : voir le <a href="/guide">guide</a>.</li>
+      <li><b>Garde-fous du harnais :</b> alarme HP, refus des attaques sur les @ et les « e », blocage pendant Stone/Slime, pas de repos compté blessé.</li>
       <li><b>Mémoire des agents :</b> un journal par run (<code>memory/run-N.md</code>, <code>memory/slotN-run-M.md</code>) : état, objets identifiés, menaces, leçons. Les leçons remontent dans l’Historique.</li>
       <li><b>Options :</b> <code>config/nethackrc</code> — interface curses 144×36, <code>number_pad</code>, arrêt forcé sur les messages dangereux (Weak, deathly sick, stoning, strangulation, polymorph trap), confirmation pour <code>#pray</code>.</li>
     </ul></div>
@@ -343,7 +336,8 @@ nav.tabs a.altui:hover { background: #2a2618; }
       <li><a href="https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/" target="_blank" rel="noopener">Article « LLM NetHack ascension »</a> — la partie Astra gagnante, rejouable.</li>
       <li>NetHack 3.6.7 : code source dans <code>engine/nethack-3.6.7/src</code>, consulté par les agents pour vérifier une règle (Elbereth, prayer, priest…).</li>
       <li>Tariru (NAO) : xlog et dumps publics ; les vidéos de ses parties ont servi au style Tariru.</li>
-      <li>Dépôt git : <code>Saxtheowl/nethack-agent-lab</code> (GitHub) — code, journaux, frames, ledgers.</li>
+      <li>Dépôt git : <code>Saxtheowl/nethack-agent-lab</code> (GitHub) — code, journaux, replays.</li>
+      <li>Documentation : <code>doc/</code> — <a href="/guide">guide illustré</a> et <code>doc/agent-externe.md</code> (brancher un autre agent, ex. Codex).</li>
     </ul></div>
   </div>
   <div class="panel"><h2>Outils (scripts/)</h2><p class="note">Utilisés par les agents (une copie par partie dans <code>slots/N/</code>) et par le serveur.</p><div id="rtools" class="toolgrid"></div></div>
@@ -353,7 +347,6 @@ nav.tabs a.altui:hover { background: #2a2618; }
 <section id="tab-dash" class="hidden">
   <h2>Parties en cours</h2>
   <div class="cards" id="cards"></div>
-  <div class="tiles" id="tiles"></div>
 
   <div class="replay">
     <div class="panel" id="rpanel">
@@ -402,11 +395,6 @@ nav.tabs a.altui:hover { background: #2a2618; }
     <div id="chronlist"></div>
   </div>
 
-  <div class="panel">
-    <h2>Toutes les parties</h2>
-    <table><thead><tr><th>Partie</th><th>Début</th><th>État</th><th>T</th><th>Dlvl max</th><th>XL</th><th>Points</th><th>Cause / résumé</th><th></th></tr></thead>
-    <tbody id="hist"></tbody></table>
-  </div>
 </section>
 </main>
 <div id="modal" class="hidden"><div class="box" id="modalbox"></div></div>
@@ -472,8 +460,6 @@ function showTab(t) {
   $('#tab-dash').classList.toggle('hidden', t !== 'dash');
   $('#tab-hist').classList.toggle('hidden', t !== 'hist');
   $('#tab-res').classList.toggle('hidden', t !== 'res');
-  $('#tab-styles').classList.toggle('hidden', t !== 'styles');
-  if (t === 'styles') refreshStyles();
   if (t === 'res') refreshResources();
   if (t === 'hist') { refreshHistory(); showSub(); }
   if (t === 'dash') { liveTerm && liveTerm.fit(); rTerm.fit(); refreshGames(); }
@@ -527,7 +513,7 @@ async function refreshGames() {
     if (RETIRED.includes(liveSlot)) { liveSlot = ['1','2','3','4','5','6','7','8'].find(x => !RETIRED.includes(x)) || '1'; }
     slotButtons();
     if (TAB !== 'dash') return;
-    renderCards(); renderTiles(); renderHistory(); fillGameSelect();
+    renderCards(); fillGameSelect();
     if (!CHRON.length) refreshChronicle();
   } catch (e) {}
 }
@@ -663,30 +649,8 @@ function renderChronicle() {
 }
 setInterval(() => VISIBLE() && TAB === 'dash' && refreshChronicle(), 20000);
 
-function renderTiles() {
-  const done = GAMES.filter(g => g.status === 'dead' || g.status === 'ascended');
-  const tiles = [
-    ['Parties', GAMES.length], ['En direct', GAMES.filter(g => g.status === 'live').length],
-    ['Morts', GAMES.filter(g => g.status === 'dead').length],
-    ['Dlvl max', Math.max(0, ...GAMES.map(g => g.maxdepth || g.maxlvl || 0))],
-    ['T joués (total)', GAMES.reduce((a, g) => a + (g.turns || g.turn || 0), 0).toLocaleString('fr-FR')],
-  ];
-  $('#tiles').replaceChildren(...tiles.map(([l, v]) => el('div', {className: 'tile'}, el('div', {className: 'v', textContent: v}), el('div', {className: 'l', textContent: l}))));
-}
 
-function renderHistory() {
-  $('#hist').replaceChildren(...GAMES.map(g => {
-    const tr = el('tr', {className: 'pick'});
-    const td = (t, c) => el('td', {textContent: t ?? '—', className: c || ''});
-    tr.append(td(`${g.player || ''}${g.run ? ' · run ' + g.run : ''} (emp. ${g.slot || '?'})`), td((g.started || '').replace('.', ' ')),
-      el('td', {}, el('span', {className: 'badge ' + g.status, textContent: STATUS_FR[g.status] || g.status || '?'})),
-      td(g.turns || g.turn), td(g.maxlvl || g.maxdepth), td(g.xl), td(g.points),
-      td((g.death ? '☠ ' + g.death : '') + (g.cause_summary ? ' — ' + g.cause_summary : ''), 'cause'),
-      el('td', {}, el('button', {textContent: '▶ Rejouer', onclick: e => { e.stopPropagation(); loadGame(g.id, 0); }})));
-    tr.onclick = () => loadGame(g.id, 0);
-    return tr;
-  }));
-}
+
 function fillGameSelect() {
   const sel = $('#gamesel'), cur = R.gid;
   const opts = GAMES.map(g => el('option', {value: g.id, textContent: `${g.player}${g.run ? ' run ' + g.run : ''} · ${STATUS_FR[g.status] || g.status} · T${g.turns || g.turn || '?'}`}));
@@ -959,7 +923,7 @@ async function refreshHistory() {
   renderHistoryTab();
 }
 setInterval(() => VISIBLE() && TAB === 'hist' && refreshHistory(), 30000);
-const STYLE_FR = {tariru: 'Tariru', tariru_v2: 'Tariru v2', astra: 'Astra', wish_abuser: 'Wish abuser', 'avant-style': 'avant les styles'};
+const STYLE_FR = {tariru: 'Tariru', tariru_v2: 'Tariru v2', astra: 'Astra', wish_abuser: 'Wish abuser', codex: 'Codex (agent externe)', 'avant-style': 'avant les styles'};
 const STYLE_LIST = ['tariru', 'tariru_v2', 'astra', 'wish_abuser', 'avant-style'];
 function renderHistoryTab() {
   const T = HIST.total;
@@ -1285,53 +1249,6 @@ function vLessons(gs) {
         ...ls.map(l => { const g = gmap[l.game]; return el('div', {className: 'lesson ' + l.status}, l.text, el('small', {}, `${g ? gname(g) : l.game} · `, tag(l.style || 'avant-style'), ` · ${STATUS_FR[l.status] || l.status}`)); })))];
 }
 
-/* STYLES tab */
-async function showStyleFile(path) {
-  try { const d = await api('/api/file?path=' + encodeURIComponent(path)); $('#sfiletitle').textContent = d.path; $('#sfiletext').textContent = d.text; $('#sfile').classList.remove('hidden'); $('#sfile').scrollIntoView({behavior: 'smooth'}); }
-  catch (e) { $('#sfiletitle').textContent = path + ' : introuvable'; $('#sfiletext').textContent = ''; $('#sfile').classList.remove('hidden'); }
-}
-async function refreshStyles() {
-  let S; try { S = await api('/api/styles'); } catch (e) { return; }
-  const P = S.plan, done = P.history || [];
-  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), '3 parties Astra en même temps (emplacements 1, 3, 8). Aujourd’hui : ',
-      ...Object.entries(S.counts).map(([st, n]) => el('span', {style: 'margin-right:8px'}, tag(st), ` ${n}/${(S.targets || {})[st] ?? S.target}`))),
-    ...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
-    ...(S.forecast || []).map((f, i) => el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: done.length + i + 1}),
-      'À la prochaine mort d’un emplacement ', tag(f.from), ', il passera en ', tag(f.to)))];
-  if (!(S.forecast || []).length) steps.push(el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: '∞'}), 'Équilibre atteint : chaque emplacement garde son style à la mort suivante.'));
-  $('#splan').replaceChildren(...steps,
-    el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Les parties en cours ne changent jamais de style. Un emplacement qui meurt garde ensuite son style (collant). Styles actuels : ' +
-      Object.entries(S.slots).map(([k, v]) => `P${k} ${STYLE_FR[v] || v || '—'}`).join(' · ')}));
-  const cards = Object.entries(S.styles).map(([name, st]) => {
-    const c = el('div', {className: 'panel stylecard'}); c.style.borderTopColor = STYLE_COL[name] || 'var(--line)';
-    const stats = st.stats || {};
-    c.append(el('div', {}, el('h3', {style: `color:${STYLE_COL[name]}`, textContent: st.label}, el('span', {className: 'code', textContent: name}))),
-      el('p', {className: 'sum', textContent: st.summary}),
-      el('h4', {textContent: 'Emplacements qui l’utilisent maintenant'}),
-      el('div', {className: 'slotchips'}, ...(st.slots.length ? st.slots.map(x => el('span', {className: 'badge live', textContent: 'Partie ' + x})) : [el('span', {className: 'kbd', textContent: 'aucun pour l’instant'})])),
-      el('h4', {textContent: 'Résultats'}),
-      el('div', {className: 'kbd', textContent: stats.games ? `${stats.games} parties · ${stats.live || 0} en cours · ${stats.dead || 0} mortes · Dlvl max ${stats.best_depth} · XL max ${stats.best_xl} · ${fmtN(stats.turns)} T joués` : 'pas encore de partie'}),
-      el('h4', {textContent: 'Fichiers (cliquer pour lire)'}),
-      el('div', {className: 'files'}, ...st.files.map(f => el('button', {textContent: f, onclick: () => showStyleFile(f)}))),
-      el('h4', {textContent: 'Objectifs et paramètres chiffrés'}),
-      el('table', {}, el('tbody', {}, ...st.targets.map(([k, v]) => el('tr', {}, td(k, 'dim'), el('td', {}, el('b', {textContent: v})))))),
-      el('h4', {textContent: 'Règles clés'}),
-      el('ul', {}, ...st.rules.map(r => el('li', {textContent: r}))));
-    if (name === 'wish_abuser') {
-      const W = S.wish || {};
-      const secs = W.started ? ((W.ended || (W.running ? Date.now() / 1000 : W.started)) - W.started) : 0;
-      const box = el('div', {className: 'wishbox'}, el('b', {textContent: W.running ? '● Boucle de scum en cours sur miniforum-worker' : W.attempts ? 'Boucle de scum arrêtée' : 'Boucle pas encore lancée (elle démarre quand un emplacement passe en wish_abuser)'}),
-        el('div', {className: 'kv'}, ...[[fmtN(W.attempts || 0), 'parties essayées'], [secs ? (secs / 60).toFixed(0) + ' min' : '—', 'temps passé'], [W.fountains || 0, 'fountains trouvées'], [W.quaffs || 0, 'quaffs'],
-          [W.demons_hostile || 0, 'water demons hostiles'], [W.lamps || 0, 'lamps trouvées'], [(W.found || []).length, 'wish/lamp gardés'], [W.deaths || 0, 'morts']].map(([v, l]) => el('div', {}, el('b', {textContent: v}), el('small', {textContent: l})))));
-      if (W.outcomes && Object.keys(W.outcomes).length) box.append(bars(Object.entries(W.outcomes).sort((a, b) => b[1] - a[1]), '', 10));
-      for (const f of W.found || []) box.append(el('p', {textContent: `✨ ${f.kind} — tentative ${f.attempt}, ${f.player}, session ${f.session} (${fmtT(f.t)}) : ${(f.messages || []).join(' · ')}`}));
-      c.append(el('h4', {textContent: 'Compteur de la boucle (parties rapides, pas une carte par partie)'}), box);
-    }
-    return c;
-  });
-  $('#scards').replaceChildren(...cards);
-}
-setInterval(() => VISIBLE() && TAB === 'styles' && refreshStyles(), 60000);
 
 /* RESOURCES tab */
 const fmtB = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' Go' : b >= 1e6 ? (b / 1e6).toFixed(0) + ' Mo' : (b / 1e3).toFixed(0) + ' ko';
@@ -1449,7 +1366,7 @@ setInterval(() => {  // overlay texts while in big screen
 (async () => {
   const h = hashState();
   await refreshGames();
-  showTab(['dash', 'live', 'res', 'styles'].includes(h.tab) ? h.tab : 'hist');
+  showTab(['dash', 'live', 'res'].includes(h.tab) ? h.tab : 'hist');
   if (h.game) { await loadGame(h.game, h.f === 'live' || h.f === 'death' ? h.f : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') {
     const act = ['1','2','3','4','5','6','7','8'].filter(x => !RETIRED.includes(x)).map(x => SLOTS[x] && SLOTS[x].game_id).filter(Boolean);

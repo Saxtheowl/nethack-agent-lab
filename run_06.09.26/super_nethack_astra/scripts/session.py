@@ -43,6 +43,9 @@ try:
 except (FileNotFoundError, json.JSONDecodeError):
     _info = {}
 REMOTE = _info.get('remote')
+# an external agent (e.g. Codex) plays under its own name: NH_PLAYER at the
+# first start, then the name recorded in the slot file
+PLAYER = os.environ.get('NH_PLAYER') or _info.get('player') or PLAYER
 # A slot can live in another tmux server/session (wish games on the worker:
 # "tmux_sock": "/tmp/wishscum.sock", "tmux_session": "wishK").
 SOCKET = _info.get('tmux_sock', SOCKET)

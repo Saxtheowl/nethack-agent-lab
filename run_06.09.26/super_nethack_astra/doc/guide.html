@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide NetHack Astra</title>
+<meta name="description" content="Comment Claude joue à NetHack : l'orchestrateur, les agents, le worker, les styles essayés et les leçons.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --surface-2: #f3f2ee; --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --border: rgba(11,11,11,.10); --accent: #2a78d6; --good: #0a8a0a; --warn: #b77400; --bad: #d03b3b;
+  --gold: #9a7400; --code: #f3f2ee; --link: #1c5cab; --pc: #2a78d6; --wk: #7b52c9;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark; --page: #0d0d0d; --surface: #1a1a19; --surface-2: #222220; --ink: #fff; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --border: rgba(255,255,255,.10); --accent: #3987e5; --good: #2cc02c; --warn: #d9a100; --bad: #e25b5b; --gold: #e0c26a;
+  --code: #222220; --link: #86b6ef; --pc: #3987e5; --wk: #9a78e0; } }
+:root[data-theme="dark"] { color-scheme: dark; --page: #0d0d0d; --surface: #1a1a19; --surface-2: #222220; --ink: #fff; --ink-2: #c3c2b7;
+  --muted: #898781; --grid: #2c2c2a; --border: rgba(255,255,255,.10); --accent: #3987e5; --good: #2cc02c; --warn: #d9a100; --bad: #e25b5b;
+  --gold: #e0c26a; --code: #222220; --link: #86b6ef; --pc: #3987e5; --wk: #9a78e0; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--link); }
+.top { max-width: 1280px; margin: 0 auto; padding: 16px 16px 0; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+.top .sp { flex: 1; }
+.top button { font: inherit; border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.layout { max-width: 1280px; margin: 0 auto; padding: 0 16px 80px; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 34px; }
+nav.toc { position: sticky; top: 12px; align-self: start; max-height: calc(100vh - 24px); overflow: auto; font-size: 13.5px; padding-top: 18px; }
+nav.toc a { display: block; padding: 4px 10px; border-left: 2px solid var(--grid); color: var(--ink-2); text-decoration: none; }
+nav.toc a.on { border-left-color: var(--accent); color: var(--ink); font-weight: 600; }
+main { min-width: 0; max-width: 900px; }
+.hero { padding: 28px 0 8px; } .hero h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; }
+.hero p { color: var(--ink-2); font-size: 17px; margin: 0; }
+h2 { font-size: 24px; margin: 46px 0 10px; padding-top: 8px; border-top: 1px solid var(--grid); }
+h3 { font-size: 17px; margin: 24px 0 6px; }
+p, li { color: var(--ink); } .muted { color: var(--muted); }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow: auto; font-size: 13px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+.note { border-left: 3px solid var(--accent); background: var(--surface); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 14px 0; }
+.note.warn { border-left-color: var(--warn); } .note.bad { border-left-color: var(--bad); } .note.good { border-left-color: var(--good); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 16px 0; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.kpi b { display: block; font-size: 26px; line-height: 1.15; } .kpi span { color: var(--muted); font-size: 13px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.fig { margin: 16px 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.fig svg { width: 100%; height: auto; display: block; }
+.fig .cap { color: var(--muted); font-size: 13px; margin-top: 6px; }
+svg text { font-family: system-ui, sans-serif; fill: var(--ink); }
+svg .m { fill: var(--muted); } svg .box { fill: var(--surface-2); stroke: var(--border); }
+.timeline { border-left: 2px solid var(--grid); margin: 14px 0 14px 8px; padding-left: 18px; }
+.timeline .ev { position: relative; margin: 0 0 14px; } .timeline .ev::before { content: ""; position: absolute; left: -25px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.timeline .ev b { display: block; } .timeline .ev.bad::before { background: var(--bad); } .timeline .ev.good::before { background: var(--good); }
+.tag { display: inline-block; font-size: 12px; border: 1px solid var(--border); border-radius: 99px; padding: 0 8px; color: var(--ink-2); }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } nav.toc { display: none; } }
+</style>
+</head>
+<body>
+<div class="top"><b>Guide · Claude joue à NetHack</b><span class="muted">reproduction pure à la Astra</span><span class="sp"></span>
+  <a href="/">← Retour au site</a><button id="theme">☀︎ / ☾</button></div>
+<div class="layout">
+<nav class="toc" id="toc"></nav>
+<main>
+<div class="hero">
+  <h1>Comment Claude joue à NetHack, et comment tout le système tient debout</h1>
+  <p>Ce guide raconte ce qu'on a construit depuis le 27 septembre : l'idée, qui joue, où tournent les choses,
+  les styles de jeu essayés, ce qui tue nos Valkyries, ce qui marche, et comment un autre agent (Codex) peut venir jouer à côté.</p>
+</div>
+
+<h2 id="defi">1. Le défi</h2>
+<p>En septembre 2026, <b>GPT 6 « Astra »</b> a gagné une partie de NetHack 3.6.7 (une <b>ascension</b>) sur le serveur public
+Hardfought, en jouant <b>touche par touche</b> à travers un terminal, sans bot : environ 44 000 commandes sur 3 campagnes, une
+victoire sur trois. Le code de son harnais est public (<a href="https://github.com/kenforthewin/nethack_astra" target="_blank">kenforthewin/nethack_astra</a>, licence MIT).</p>
+<p>Notre défi : <b>reproduire ça ici, « en pur »</b>, avec Claude à la place d'Astra, et pouvoir regarder les parties en direct
+depuis ce PC.</p>
+<div class="card"><b>Les règles « PURE »</b>
+<ul>
+  <li>NetHack 3.6.7 <b>vanilla</b>, compilé depuis le tarball officiel. Aucun patch, aucun mode wizard/explore, aucun bot.</li>
+  <li><b>Jamais de save-scum</b> : on ne copie ni ne restaure jamais une sauvegarde pour annuler une mort. Mort = partie finie.</li>
+  <li>Chaque décision est prise par l'IA après avoir lu l'écran. Les petits scripts ne font que des gestes bornés qui s'arrêtent au moindre danger.</li>
+  <li>Spoilers, wiki et code source de NetHack : autorisés (Astra les utilisait aussi).</li>
+</ul>
+<span class="muted">Une seule exception, accordée par l'utilisateur : le déplacement unique, sans copie gardée, des sauvegardes de 3 parties du PC vers le worker (§6).</span></div>
+
+<h2 id="chiffres">2. Les chiffres</h2>
+<div class="kpis">
+  <div class="kpi"><b>53</b><span>parties jouées</span></div>
+  <div class="kpi"><b>35</b><span>morts</span></div>
+  <div class="kpi"><b>366 000</b><span>tours de jeu au total</span></div>
+  <div class="kpi"><b>145 318</b><span>meilleur score (Castle, Dlvl 27)</span></div>
+  <div class="kpi"><b>Dlvl 49</b><span>record de profondeur (Gehennom, partie en cours)</span></div>
+  <div class="kpi"><b>0</b><span>ascension… pour l'instant</span></div>
+</div>
+<table>
+<thead><tr><th>Meilleures parties</th><th>Style</th><th class="n">Points</th><th class="n">Dlvl</th><th class="n">Tours</th><th>Fin</th></tr></thead>
+<tbody>
+<tr><td>Partie 3, run 5</td><td>Astra</td><td class="n">—</td><td class="n">49</td><td class="n">23 700+</td><td><b>en cours</b> : Gehennom, vibrating square trouvé, magic resistance + reflection + life saving</td></tr>
+<tr><td>Partie 7, run 1</td><td>Astra</td><td class="n">145 318</td><td class="n">27</td><td class="n">33 013</td><td>tuée par un minotaur dans le labyrinthe du Castle</td></tr>
+<tr><td>Partie 2, run 5</td><td>Astra</td><td class="n">83 768</td><td class="n">27</td><td class="n">18 441</td><td>tuée par un xorn au Castle (invocations d'un master lich)</td></tr>
+<tr><td>Partie 4, run 2</td><td>Astra</td><td class="n">72 576</td><td class="n">27</td><td class="n">20 602</td><td>noyée sur le niveau de Medusa</td></tr>
+<tr><td>Partie 8, run 3</td><td>Wish abuser</td><td class="n">67 779</td><td class="n">26</td><td class="n">17 585</td><td>pétrifiée par une cockatrice</td></tr>
+</tbody></table>
+
+<h2 id="qui">3. Qui joue : un orchestrateur et des agents</h2>
+<p>Il n'y a pas « un » Claude qui joue 8 parties. Il y a <b>un orchestrateur</b> (la session Claude Code avec laquelle tu parles)
+et <b>un agent par partie</b> : un sous-agent Claude (modèle Claude Opus 5.5), lancé par l'orchestrateur, qui joue une seule partie.</p>
+<div class="fig"><svg viewBox="0 0 860 300" role="img" aria-label="Orchestrateur et agents">
+  <rect class="box" x="300" y="14" width="260" height="70" rx="10"/><text x="430" y="42" text-anchor="middle" font-weight="700">Orchestrateur (Claude Code)</text>
+  <text x="430" y="64" text-anchor="middle" class="m" font-size="13">parle avec toi · lance / relance les agents · corrige les outils</text>
+  <g font-size="13">
+  <rect class="box" x="20" y="150" width="190" height="110" rx="10"/><text x="115" y="175" text-anchor="middle" font-weight="700">Agent partie 1</text>
+  <text x="115" y="198" text-anchor="middle" class="m">lit l'écran</text><text x="115" y="216" text-anchor="middle" class="m">choisit les touches</text><text x="115" y="234" text-anchor="middle" class="m">tient son journal</text>
+  <rect class="box" x="335" y="150" width="190" height="110" rx="10"/><text x="430" y="175" text-anchor="middle" font-weight="700">Agent partie 3</text>
+  <text x="430" y="198" text-anchor="middle" class="m">idem</text>
+  <rect class="box" x="650" y="150" width="190" height="110" rx="10"/><text x="745" y="175" text-anchor="middle" font-weight="700">Agent partie 8</text>
+  <text x="745" y="198" text-anchor="middle" class="m">idem</text>
+  </g>
+  <path d="M380 84 L130 148 M430 84 L430 148 M480 84 L730 148" stroke="var(--accent)" stroke-width="2" fill="none"/>
+  <text x="430" y="290" text-anchor="middle" class="m" font-size="12.5">Quand un agent a « trop de contexte » ou que sa partie meurt, il rend un rapport ; l'orchestrateur relance un nouvel agent qui relit le journal.</text>
+</svg></div>
+<h3>La vie d'un agent</h3>
+<ol>
+  <li>Il lit ses consignes : <code>memory/session.md</code> (règles, outils), <code>memory/astra-style.md</code> (le style et les leçons de toutes nos morts), puis <b>son journal</b> (<code>memory/slotN-run-M.md</code>).</li>
+  <li>Il regarde l'écran (<code>slots/N/v</code>), décide, envoie des touches (<code>slots/N/k</code>), relit l'écran… des centaines de fois.</li>
+  <li>Il commente ses décisions (<code>say</code>, visible en direct) et note les moments importants (<code>chronicle</code>).</li>
+  <li>Il met à jour la ligne <b>URGENT</b> de son journal : tour, niveau, HP, armure, dernière prière, dangers.</li>
+  <li>Quand son contexte devient lourd (après quelques heures), il s'arrête proprement <b>sans arrêter la partie</b>. L'orchestrateur relance un agent neuf qui repart du journal. Une partie peut ainsi passer par 5 ou 6 agents successifs.</li>
+  <li>S'il meurt : section <b>DEATH</b> + leçons dans le journal, puis stop. L'orchestrateur décide de la suite.</li>
+</ol>
+<div class="note">La <b>mémoire</b> d'une partie, c'est son journal ; la <b>mémoire collective</b>, c'est <code>memory/astra-style.md</code>, où l'orchestrateur ajoute chaque leçon importante (zoo de Sokoban, Castle, fontaines…) pour que les agents suivants ne refassent pas l'erreur.</div>
+
+<h2 id="voir">4. Comment un agent « voit » le jeu</h2>
+<p>NetHack tourne dans un terminal de 144 colonnes × 36 lignes (interface curses d'Astra). L'agent ne voit pas d'image : il lit
+le <b>texte</b> de l'écran. L'outil <code>v</code> le lui présente de façon compacte :</p>
+<pre>Terminal cursor (x,y; usually hero when no menu): 37,23      ← la position du héros
+01 │You kill the jackal!                                       ← messages
+...
+34 │Dlvl:5  $:120  HP:43(52)  Pw:7(7)  AC:2  Xp:6/412  T:3120  ← statut
+Map features (x,y): <@7,16 @@37,23 d@38,22 {@30,26 ...        ← chaque objet de la carte avec ses coordonnées
+PETS (hilite, never attack): 38,22
+Neighbors of @(37,23): 7:·(36,22) 8:·(37,22) 9:d(38,22) ...   ← les 8 cases autour du héros</pre>
+<table><thead><tr><th>Outil</th><th>Rôle</th></tr></thead><tbody>
+<tr><td><code>k</code></td><td>envoyer des touches (le pavé numérique sert aux déplacements)</td></tr>
+<tr><td><code>t X Y</code></td><td>se déplacer vers une case (commande travel)</td></tr>
+<tr><td><code>look X Y</code></td><td>identifier un monstre / objet à distance</td></tr>
+<tr><td><code>inv</code></td><td>inventaire complet (le panneau de droite est coupé après ~33 lignes)</td></tr>
+<tr><td><code>fight</code>, <code>rest</code>, <code>explore</code></td><td>gestes répétitifs bornés, qui s'arrêtent au moindre danger</td></tr>
+<tr><td><code>say</code>, <code>chronicle</code></td><td>parler au public, noter un moment important</td></tr>
+<tr><td><code>w</code></td><td>lancer un script écrit par l'agent lui-même, sur le worker</td></tr>
+</tbody></table>
+<p>Les agents écrivent aussi leurs propres outils (solveurs de Sokoban, repos sur Elbereth, lancer de dagues…) dans <code>slots/N/</code>, comme Astra le faisait.</p>
+
+<h2 id="gardefous">5. Les garde-fous (nés de nos morts)</h2>
+<p>Beaucoup de morts venaient d'un agent qui laissait tourner une boucle sans regarder. Le harnais refuse donc maintenant certaines touches, pour tous les agents :</p>
+<table><thead><tr><th>Garde-fou</th><th>Pourquoi</th></tr></thead><tbody>
+<tr><td><b>Alarme HP</b> : après une chute rapide des HP, plus aucune touche jusqu'à <code>ack-hp</code></td><td>3 morts en une journée dans des boucles qui ne surveillaient pas les HP</td></tr>
+<tr><td>Repos comptés (<code>n20s</code>) refusés sous 70 % HP ; plusieurs pas d'un coup refusés sous 50 %</td><td>un giant mimic a frappé pendant 20 tours de repos ; 8 pas à l'aveugle au Castle</td></tr>
+<tr><td>« Really attack? » : <code>y</code> refusé, F vers un <code>@</code> refusé</td><td>un marchand et une prêtresse tués par des boucles d'attaque</td></tr>
+<tr><td>Pas / attaque vers un <code>e</code> refusés</td><td>floating eye : paralysie de 25 tours, tuée par un yeti</td></tr>
+<tr><td>Stone / Slime : seuls les gestes qui soignent passent</td><td>pétrifiée avec un lizard dans le sac</td></tr>
+<tr><td><code>explore</code> s'arrête : porte verrouillée, vol, nymphe, lich, démon, géant, cockatrice…</td><td>boutique enfoncée → marchand furieux ; nymphe qui vole tout</td></tr>
+</tbody></table>
+
+<h2 id="machines">6. Ce qui tourne où : le PC et le worker</h2>
+<div class="fig"><svg viewBox="0 0 860 330" role="img" aria-label="PC et worker">
+  <rect x="10" y="10" width="330" height="300" rx="14" fill="none" stroke="var(--pc)" stroke-width="2"/>
+  <text x="26" y="36" font-weight="700" fill="var(--pc)">Ce PC</text>
+  <rect class="box" x="30" y="52" width="290" height="70" rx="8"/><text x="175" y="80" text-anchor="middle" font-weight="600">Claude Code</text>
+  <text x="175" y="102" text-anchor="middle" class="m" font-size="12.5">orchestrateur + agents (le raisonnement est chez Anthropic)</text>
+  <rect class="box" x="30" y="136" width="290" height="46" rx="8"/><text x="175" y="164" text-anchor="middle" font-size="13">navigateur → 127.0.0.1:8766 (tunnel ssh)</text>
+  <rect class="box" x="30" y="196" width="290" height="46" rx="8"/><text x="175" y="224" text-anchor="middle" font-size="13">worker_sync : copie des données pour git</text>
+  <rect class="box" x="30" y="256" width="290" height="40" rx="8"/><text x="175" y="281" text-anchor="middle" font-size="13">git : historique du projet</text>
+  <rect x="520" y="10" width="330" height="300" rx="14" fill="none" stroke="var(--wk)" stroke-width="2"/>
+  <text x="536" y="36" font-weight="700" fill="var(--wk)">miniforum-worker</text>
+  <rect class="box" x="540" y="52" width="290" height="70" rx="8"/><text x="685" y="80" text-anchor="middle" font-weight="600">Les parties NetHack</text>
+  <text x="685" y="102" text-anchor="middle" class="m" font-size="12.5">une session tmux par partie + sauvegardes</text>
+  <rect class="box" x="540" y="136" width="290" height="46" rx="8"/><text x="685" y="164" text-anchor="middle" font-size="13">recorder : filme chaque écran</text>
+  <rect class="box" x="540" y="196" width="290" height="46" rx="8"/><text x="685" y="224" text-anchor="middle" font-size="13">dashboard.py : le site</text>
+  <rect class="box" x="540" y="256" width="290" height="40" rx="8"/><text x="685" y="281" text-anchor="middle" font-size="13">outils des agents (python)</text>
+  <path d="M320 87 C420 87 440 87 540 87" stroke="var(--accent)" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="430" y="78" text-anchor="middle" font-size="12">touches (ssh)</text>
+  <path d="M540 219 C440 219 420 159 320 159" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="430" y="206" text-anchor="middle" font-size="12">site (tunnel)</text>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>
+</svg><div class="cap">Depuis le 27/09 au soir, le PC ne fait plus tourner que Claude ; tout le reste vit sur le worker.</div></div>
+<p><b>Pourquoi ?</b> Le PC (4 cœurs) saturait : 8 agents, 8 parties, le recorder, le site, les outils. Tu as demandé que tout calcul
+hors Claude parte sur le worker (11 cœurs). On l'a fait en plusieurs étapes :</p>
+<div class="timeline">
+  <div class="ev"><b>Calculs lourds → worker</b> <span class="muted">les solveurs de Sokoban passent par <code>onworker</code> ; un watchdog tue tout script local trop gourmand.</span></div>
+  <div class="ev"><b>Site et recorder → worker</b> <span class="muted">le site est servi par le worker ; le PC ouvre juste un tunnel ssh pour garder l'adresse 127.0.0.1:8766.</span></div>
+  <div class="ev"><b>Toute nouvelle partie démarre sur le worker</b> <span class="muted">les commandes des agents (<code>slots/N/*</code>) regardent <code>.runtime/where-N</code> et s'exécutent sur la bonne machine (<code>scripts/slotrun</code>).</span></div>
+  <div class="ev"><b>Les 3 dernières parties du PC transférées</b> <span class="muted">sauvegarde, déplacement unique du fichier (exception accordée), reprise sur le worker.</span></div>
+</div>
+<div class="note">Concrètement, quand un agent tape <code>slots/3/k 6</code> sur le PC, la commande part par une connexion ssh ouverte en permanence,
+s'exécute sur le worker, envoie la touche à la tmux de la partie 3, et renvoie l'écran. L'agent ne voit pas la différence.</div>
+
+<h2 id="styles">7. Les styles de jeu essayés</h2>
+<p>Un « style » est une fiche de consignes que l'agent lit avant de jouer. On en a essayé quatre :</p>
+<table><thead><tr><th>Style</th><th>Idée</th><th class="n">Parties</th><th class="n">Morts</th><th class="n">Dlvl max</th></tr></thead><tbody>
+<tr><td><b>Tariru</b></td><td>tiré des parties de Tariru (144 ascensions sur 156) : remplir tous les emplacements d'armure, daggers à distance, Elbereth seulement pour fuir, pet comme arme</td><td class="n">10</td><td class="n">9</td><td class="n">11</td></tr>
+<tr><td><b>Tariru v2</b></td><td>Tariru + objectifs chiffrés mesurés sur ses vrais écrans (OCR de 14 h de vidéo) : HP ≥ 50 %, AC ≤ 3 à T1500, rester sur Dlvl 1-10 jusqu'à XL10</td><td class="n">4</td><td class="n">2</td><td class="n">10</td></tr>
+<tr><td><b>Wish abuser</b></td><td>enchaîner des débuts de partie sur le worker jusqu'à trouver un wish (fontaine du Dlvl 1 ou magic lamp), puis jouer en Astra</td><td class="n">5</td><td class="n">1</td><td class="n">26</td></tr>
+<tr><td><b>Astra</b></td><td>la méthode d'origine : l'IA décide tout, relit l'écran avant chaque décision, écrit ses propres outils ; + nos leçons</td><td class="n">29</td><td class="n">21</td><td class="n">49</td></tr>
+</tbody></table>
+<div class="timeline">
+  <div class="ev"><b>27/09 matin — Tariru partout</b> <span class="muted">redémarrage des 3 premières parties en style Tariru pour purger les vieilles habitudes BotHack.</span></div>
+  <div class="ev"><b>27/09 — Astra sur les autres emplacements</b> <span class="muted">la partie 1 reste Tariru, les autres passent à la méthode Astra d'origine.</span></div>
+  <div class="ev"><b>27/09 midi — Tariru v2 et Wish abuser</b> <span class="muted">objectif « 2 parties par style », remplacement progressif à chaque mort ; boucle de start-scum sur le worker (1 wish ≈ 500 débuts de partie).</span></div>
+  <div class="ev bad"><b>27/09 19h — fin de Tariru</b> <span class="muted">résultats faibles (Dlvl max 11) ; les parties Tariru sont arrêtées et remplacées par de l'Astra.</span></div>
+  <div class="ev bad"><b>27/09 22h45 — fin du Wish abuser</b> <span class="muted">le wish aide (AC -5 dès le tour 6) mais ne sauve pas : faim, lycanthropie, cockatrice. Tout passe en Astra.</span></div>
+  <div class="ev good"><b>28/09 — 3 parties Astra</b> <span class="muted">pour concentrer les moyens : les 5 parties les moins avancées sont arrêtées. La partie 3 est en Gehennom.</span></div>
+</div>
+<div class="note good"><b>Conclusion</b> : c'est le style Astra, enrichi des leçons de nos morts, qui va le plus loin : les quatre parties qui ont atteint Medusa ou le Castle, et la seule à entrer dans Gehennom.</div>
+
+<h2 id="morts">8. Ce qui tue nos Valkyries</h2>
+<table><thead><tr><th>Piège</th><th>Ce qui s'est passé</th><th>La leçon</th></tr></thead><tbody>
+<tr><td><b>Les boucles aveugles</b></td><td>repos, combat ou exploration en boucle pendant qu'un monstre frappe</td><td>vérifier les HP à chaque tour ; garde-fous du harnais</td></tr>
+<tr><td><b>Le zoo de Sokoban</b></td><td>3 parties tuées (chameleon, leocrotta, red naga)</td><td>y entrer à pleins HP, AC ≤ 0, à la main depuis la porte</td></tr>
+<tr><td><b>Le Castle</b></td><td>2 parties : un minotaur après une chute dans le labyrinthe, les invocations d'un master lich</td><td>ne jamais tomber dans le Castle en creusant sur le niveau de Medusa</td></tr>
+<tr><td><b>Les fontaines</b></td><td>water moccasins sorties d'un dip pour Excalibur ; la garde de Minetown fâchée</td><td>un seul dip à la fois, à pleins HP, jamais en ville</td></tr>
+<tr><td><b>La faim et les prières</b></td><td>deuxième prière trop tôt → dieu fâché → mort de faim</td><td>le délai de prière est aléatoire ; la nourriture d'abord</td></tr>
+<tr><td><b>Les pacifiques</b></td><td>marchand et prêtresse tués par erreur</td><td>jamais « y » à « Really attack? »</td></tr>
+<tr><td><b>Les objets inconnus</b></td><td>scroll de destroy armor lu avec l'armure sur le dos ; teleportation maudite</td><td>tester avant d'utiliser, jamais en urgence</td></tr>
+</tbody></table>
+<h3>Ce qui marche</h3>
+<ul>
+  <li><b>Excalibur</b> tôt (dip à XL5 dans une fontaine hors ville).</li>
+  <li><b>Tester les objets</b> sur un altar (béni / maudit) avant de les porter.</li>
+  <li><b>Acheter de la protection</b> à un prêtre co-aligné (400 × XL pièces d'or).</li>
+  <li><b>Le prix de Sokoban</b> (bag of holding ou amulet of reflection).</li>
+  <li><b>La wand of wishing du Castle</b> : la partie 3 y a pris gray dragon scale mail, shield of reflection et amulet of life saving.</li>
+</ul>
+
+<h2 id="site">9. Le site</h2>
+<table><thead><tr><th>Onglet</th><th>Pour quoi faire</th></tr></thead><tbody>
+<tr><td><b>Historique</b></td><td>toutes les parties : chiffres, causes de mort, fiches dépliables, leçons, et les sous-onglets Stratégie (progression, combats, objets, survie, où on galère, agents, évènements, leçons)</td></tr>
+<tr><td><b>Dashboard</b></td><td>une carte par partie en cours ; le replay (grand écran, évènements sur la barre, « ★ Importants seulement », inventaire complet) ; la chronique filtrable</td></tr>
+<tr><td><b>Live</b></td><td>l'écran d'une partie en direct, les pensées de l'agent, ses dernières commandes</td></tr>
+<tr><td><b>Ressources</b></td><td>machines, stockage, processus, règles</td></tr>
+</tbody></table>
+<p>Tout ce que montre le site vient de fichiers : <code>runs/games/&lt;partie&gt;/frames.jsonl</code> (chaque écran filmé),
+<code>log.jsonl</code> (commandes et pensées), <code>chronicle.jsonl</code>, <code>meta.json</code>, et les journaux <code>memory/*.md</code>.</p>
+
+<h2 id="externe">10. Un 4e joueur : Codex</h2>
+<p>Un agent qui n'est pas Claude peut jouer sa propre partie à côté des nôtres, avec les mêmes outils, les mêmes garde-fous,
+et apparaître sur le site. Tout est expliqué dans <code>doc/agent-externe.md</code>. En bref :</p>
+<pre>scripts/external_slot.sh 4 Codex     # ouvre l'emplacement 4, partie au nom de « Codex » sur le worker
+slots/4/v                            # Codex regarde son écran
+slots/4/k 6                          # … et joue
+slots/4/say "Je descends au Dlvl 2"  # ses commentaires apparaissent sur le dashboard</pre>
+<p>Sa carte apparaît sur le Dashboard avec le style « Codex (agent externe) », et ses statistiques rejoignent l'Historique pour comparer les deux IA.</p>
+
+<h2 id="fichiers">11. Où est quoi</h2>
+<table><tbody>
+<tr><td><code>engine/</code></td><td>NetHack 3.6.7 compilé (sur les deux machines, même chemin)</td></tr>
+<tr><td><code>config/nethackrc</code></td><td>options de jeu (disposition d'Astra, arrêts sur messages dangereux)</td></tr>
+<tr><td><code>scripts/</code></td><td>harnais (<code>session.py</code>), outils, recorder, site, analytics, synchro</td></tr>
+<tr><td><code>slots/N/</code></td><td>commandes de l'emplacement N + scripts écrits par son agent</td></tr>
+<tr><td><code>memory/</code></td><td>règles, styles, journaux de chaque partie</td></tr>
+<tr><td><code>runs/games/</code></td><td>les replays et données de chaque partie</td></tr>
+<tr><td><code>doc/</code></td><td>ce guide et la doc agent externe</td></tr>
+</tbody></table>
+
+<h2 id="glossaire">12. Glossaire</h2>
+<table><tbody>
+<tr><td><b>Ascension</b></td><td>gagner NetHack : descendre au fond, récupérer l'Amulet of Yendor, remonter jusqu'au Plan Astral et l'offrir à son dieu</td></tr>
+<tr><td><b>Dlvl</b></td><td>profondeur (niveau du donjon)</td></tr>
+<tr><td><b>XL / HP / AC</b></td><td>niveau d'expérience / points de vie / classe d'armure (plus bas = mieux)</td></tr>
+<tr><td><b>Gehennom</b></td><td>l'enfer, sous le Castle (Dlvl ~27) ; Elbereth et la prière n'y marchent plus</td></tr>
+<tr><td><b>Elbereth</b></td><td>mot gravé au sol qui fait fuir la plupart des monstres</td></tr>
+<tr><td><b>Save-scum</b></td><td>restaurer une sauvegarde pour annuler une mort : interdit ici</td></tr>
+<tr><td><b>Start-scum</b></td><td>recommencer des débuts de partie jusqu'à un bon départ (style Wish abuser)</td></tr>
+<tr><td><b>Slot / emplacement</b></td><td>une place de partie (1 à 8), avec son joueur, son agent, son journal</td></tr>
+<tr><td><b>Orchestrateur</b></td><td>la session Claude qui dirige les agents et parle avec toi</td></tr>
+<tr><td><b>Worker</b></td><td>la machine miniforum-worker, où tournent les parties</td></tr>
+</tbody></table>
+
+<h2 id="suite">13. La suite</h2>
+<ul>
+  <li><b>Partie 3</b> : réunir la Bell of Opening (Quest), le Candelabrum (Vlad's Tower) et le Book of the Dead (le Wizard), puis l'invocation : c'est notre première vraie chance d'ascension.</li>
+  <li><b>Codex</b> : ouvrir l'emplacement 4 et comparer les deux IA sur le même jeu.</li>
+  <li><b>Toujours</b> : chaque mort ajoute une leçon à <code>astra-style.md</code> et, si besoin, un garde-fou au harnais.</li>
+</ul>
+</main>
+</div>
+<script>
+// table of contents + current section highlight + theme toggle
+const toc = document.getElementById('toc');
+for (const h of document.querySelectorAll('main h2')) { const a = document.createElement('a'); a.href = '#' + h.id; a.textContent = h.textContent; toc.append(a); }
+const links = [...toc.querySelectorAll('a')];
+addEventListener('scroll', () => { let cur = links[0]; for (const a of links) { const h = document.querySelector(a.getAttribute('href')); if (h.getBoundingClientRect().top < 120) cur = a; } links.forEach(a => a.classList.toggle('on', a === cur)); }, {passive: true});
+document.getElementById('theme').onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = dark ? 'light' : 'dark'; try { localStorage.setItem('guideTheme', r.dataset.theme); } catch (e) {} };
+try { const t = localStorage.getItem('guideTheme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</body>
+</html>
