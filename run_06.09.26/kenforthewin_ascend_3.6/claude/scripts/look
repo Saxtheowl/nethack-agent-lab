@@ -18,7 +18,23 @@ while dx or dy:
         keys += big; dx -= 8*sx; dy -= 8*sy
     else:
         keys += small; dx -= sx; dy -= sy
-session.send(';'); time.sleep(.3); session.send(keys + '.'); time.sleep(.6)
+session.send(';'); time.sleep(.3)
+# the cursor keys must only reach the farlook prompt: if it is not open (a
+# --More-- ate the ';') they would be real moves (slot 3 ran off with 'H')
+for _ in range(5):
+    if 'Pick an object' in session.screen():
+        break
+    time.sleep(.3)
+else:
+    session.send('Escape', named=True, publish=False)
+    sys.exit('farlook prompt did not open; nothing sent (dismiss --More-- first)')
+try:
+    # leading '@' = cursor on yourself (a no-op): the harness step guards
+    # then do not mistake the cursor keys for moves
+    session.send('@' + keys + '.', publish=False); time.sleep(.6)
+except BaseException:
+    session.send('Escape', named=True, publish=False)
+    raise
 lines = [l[:81].strip(' │') for l in session.screen().splitlines()[1:8] if l.strip(' │')]
 # the farlook answer starts with the glyph followed by spaces and may wrap
 start = max((i for i, l in enumerate(lines) if re.match(r'^\S\s{3,}', l)), default=len(lines) - 1)
