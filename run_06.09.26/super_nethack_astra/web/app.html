@@ -47,7 +47,7 @@ h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: v
 .cmd small { margin-left: auto; color: var(--muted); }
 
 /* dashboard */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; margin-bottom: 16px; }
+.cards { display: grid; grid-template-columns: repeat(var(--ncards, 4), minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
 @media (max-width: 1500px) { .cards { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); } }
 .card { display: flex; flex-direction: column; gap: 8px; }
 .card .head { display: flex; align-items: baseline; gap: 8px; }
@@ -538,6 +538,7 @@ function renderCards() {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     let card = wrap.querySelector(`[data-slot="${s}"]`);
     if (RETIRED.includes(s)) { if (card) card.remove(); continue; }  // only the active slots are shown
+    wrap.style.setProperty('--ncards', Math.max(1, Math.min(4, 8 - RETIRED.length)));
     if (!card) {
       card = el('div', {className: 'panel card', title: 'Cliquer : les 3 moments clés des 1000 derniers tours'}); card.dataset.slot = s;
       card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
@@ -1447,7 +1448,10 @@ setInterval(() => {  // overlay texts while in big screen
   await refreshGames();
   showTab(['dash', 'live', 'res', 'styles'].includes(h.tab) ? h.tab : 'hist');
   if (h.game) { await loadGame(h.game, h.f === 'live' || h.f === 'death' ? h.f : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
-  else if (GAMES.length && TAB === 'dash') loadGame(GAMES[0].id, 'live');
+  else if (GAMES.length && TAB === 'dash') {
+    const act = ['1','2','3','4','5','6','7','8'].filter(x => !RETIRED.includes(x)).map(x => SLOTS[x] && SLOTS[x].game_id).filter(Boolean);
+    loadGame(act[0] || GAMES[0].id, 'live');
+  }
   pollLive();
 })();
 </script>
