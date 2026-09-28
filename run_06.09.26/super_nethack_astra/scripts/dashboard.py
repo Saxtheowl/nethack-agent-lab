@@ -630,6 +630,8 @@ class Handler(BaseHTTPRequestHandler):
             if url.path == '/api/games':
                 return self.send({'games': games(), 'slots': {s: slot_game(s) for s in '12345678'},
                                   'wish': {k: wish_status().get(k) for k in ('attempts', 'running', 'fountains', 'quaffs')},
+                                  'retired': (json.loads((RUNTIME / 'style-plan.json').read_text()).get('retired', [])
+                                              if (RUNTIME / 'style-plan.json').exists() else []),
                                   'now': time.time()})
             if url.path == '/api/frames':
                 lines, total = frame_lines(gid, int(q.get('from', 0)), min(int(q.get('limit', 4000)), 20000))
