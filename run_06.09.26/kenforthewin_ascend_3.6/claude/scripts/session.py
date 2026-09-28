@@ -161,6 +161,9 @@ class HPAlarm(SystemExit):
     pass
 
 
+ALERT_MSG = re.compile(r'stole |steals |snatches |seduces you|engulfs you|swallows you|You are engulfed|You get swallowed')
+
+
 def hp_guard(text, value, named):
     """Harness-level HP alarm (user rule 2026-09-27, after 3 deaths in agents'
     own loops): once HP has fallen by a fifth of max below the last
@@ -205,7 +208,19 @@ def hp_guard(text, value, named):
         raise HPAlarm(f'Refused {value!r}: {len(value)} steps in one go at HP {hp}({mx}) (< 50%). '
                       'Move one step at a time and re-read the screen after each.')
     tripped = st.get("tripped", False) or (hp <= base - mx / 5 and hp < mx * 0.6)
-    HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped}))
+    # theft / engulfing: helper loops kept passing turns while a nymph stole
+    # Excalibur or a vortex digested the hero; stop once per new such message
+    seen = st.get('alerts', [])
+    alerts = [m for m in (l.split('││')[0].strip('│ ') for l in lines[1:8]) if ALERT_MSG.search(m)]
+    fresh = [a for a in alerts if a not in seen]
+    why = ''
+    if fresh:
+        tripped, why = True, fresh[0][:90]
+    HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped,
+                                   'alerts': (seen + fresh)[-40:]}))
+    if fresh and not (named and value == 'Escape'):
+        raise HPAlarm(f'ALERT: "{why}" — stop every loop, read the screen, deal with it (kill the thief at '
+                      'range, escape the engulfer), then run: <slot>/session ack-hp')
     if tripped and not (named and value == 'Escape'):
         raise HPAlarm(f'HP ALARM: HP {hp}({mx}) fell from {base}. Key {value!r} refused. '
                       'Stop every loop, read the screen, decide (pray if HP < 1/7 max, flee, heal), '
@@ -216,7 +231,11 @@ def ack_hp():
     text = screen()
     m = re.search(r'HP:(\d+)\((\d+)\)', text)
     if m:
-        HPGUARD.write_text(json.dumps({'base': int(m[1]), 'max': int(m[2]), 'hp': int(m[1]), 'tripped': False}))
+        try:
+            seen = json.loads(HPGUARD.read_text()).get('alerts', [])
+        except (FileNotFoundError, json.JSONDecodeError):
+            seen = []
+        HPGUARD.write_text(json.dumps({'base': int(m[1]), 'max': int(m[2]), 'hp': int(m[1]), 'tripped': False, 'alerts': seen}))
         print(f'HP alarm acknowledged at HP {m[1]}({m[2]}): keys allowed again.')
 
 
