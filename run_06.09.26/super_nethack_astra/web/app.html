@@ -223,20 +223,6 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
 .timeline .mk.imp { top: 0; height: 13px; width: 4px; }
 .timeline.onlyimp .mk { top: -2px; height: 16px; width: 5px; transform: translateX(-2px); }
 .timeline .mk:hover { z-index: 3; }
-.chapters { display: flex; height: 16px; margin-top: 8px; border-radius: 4px; overflow: hidden; cursor: pointer; }
-.chapters div { height: 100%; font-size: 10px; line-height: 16px; color: #0b1114; text-align: center; overflow: hidden; white-space: nowrap;
-  border-right: 1px solid #0b1114; min-width: 1px; }
-.chapters div:hover { filter: brightness(1.3); }
-.chapters div.cur { outline: 2px solid #fff; outline-offset: -2px; }
-.timeline .brush { position: absolute; top: 10px; height: 14px; background: #ffffff22; border: 1px solid #ffffff55; border-radius: 3px; pointer-events: none; }
-.zoomrow { display: flex; gap: 6px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
-.zoomrow button { padding: 2px 8px; font-size: 12px; } .zoomrow button.on { background: #24362c; border-color: var(--accent); }
-.timeline.zoom { height: 46px; margin-top: 2px; }
-.timeline.zoom .track { top: 30px; } .timeline.zoom .knob { top: 24px; }
-.timeline.zoom .mk { top: 18px; height: 10px; } .timeline.zoom .mk.imp { top: 14px; height: 14px; }
-.timeline.zoom .zl { position: absolute; top: 0; font-size: 10.5px; color: var(--gold); white-space: nowrap; transform: translateX(-50%);
-  max-width: 180px; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
-.theater .chapters, .theater .zoomrow, .theater .timeline.zoom { flex: 0 0 auto; }
 /* history tab */
 .hbig { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
 .hbig .tile .v { font-size: 34px; } .tile.bad .v { color: var(--bad); } .tile.good .v { color: #9fe38e; } .tile.gold .v { color: var(--gold); }
@@ -376,11 +362,7 @@ td.hot { color: var(--bad); font-weight: 600; } td.warm { color: var(--warn); } 
         <span style="margin-left:auto" class="kbd">Espace lecture · ←/→ image · Maj+←/→ ±50 · N/P évènement · I importants · L direct · M marque-page</span>
       </div>
       <div class="term" id="rterm"></div>
-      <div class="chapters" id="tchap" title="Chaque bloc = un séjour sur un Dlvl : cliquer pour y aller"></div>
-      <div class="timeline" id="timeline"><div class="track"></div><div class="fill" id="tfill"></div><div class="brush" id="tbrush"></div><div id="tmarks"></div><div class="knob" id="tknob"></div></div>
-      <div class="zoomrow"><span class="kbd">Zoom autour de l’instant :</span>
-        <span id="zoombtns"></span><span class="kbd" id="zrange"></span></div>
-      <div class="timeline zoom" id="tzoom"><div class="track"></div><div id="zmarks"></div><div class="knob" id="zknob"></div></div>
+      <div class="timeline" id="timeline"><div class="track"></div><div class="fill" id="tfill"></div><div id="tmarks"></div><div class="knob" id="tknob"></div></div>
       <div class="controls">
         <button id="bstart" title="Début">⏮</button>
         <button id="bprevev" title="Évènement précédent (P)">◀◆</button>
@@ -825,7 +807,7 @@ function seek(j, keepFollow) {
   const p = R.frames.length > 1 ? j / (R.frames.length - 1) : 0;
   $('#tfill').style.width = (p * 100) + '%'; $('#tknob').style.left = (p * 100) + '%';
   $('#blive').classList.toggle('on', R.follow);
-  drawChartCursor(); highlightEvent(); drawZoom();
+  drawChartCursor(); highlightEvent();
   setHashSoon();
 }
 let hashTimer = null;
@@ -869,8 +851,6 @@ function showTip(ev, e) {
 function drawTimeline() {
   const n = Math.max(1, R.frames.length - 1);
   $('#timeline').classList.toggle('onlyimp', ONLY_IMP);
-  $('#tzoom').classList.toggle('onlyimp', ONLY_IMP);
-  drawChapters();
   $('#tmarks').replaceChildren(...allEvents().filter(e => e.type !== 'say' || R.log.length < 400).map(e => {
     const m = el('div', {className: 'mk ' + e.type + (e.imp ? ' imp' : '')}); m.style.left = (e.f / n * 100) + '%';
     m.onmouseenter = ev => showTip(ev, e); m.onmouseleave = () => { mkTip.style.display = 'none'; };
@@ -1430,60 +1410,6 @@ async function showInventory(node, gid) {
 setInterval(() => { if (!VISIBLE()) return;
   if (TAB === 'live') { const info = SLOTS[liveSlot]; showInventory($('#liveinv'), info && info.game_id); }
   if (TAB === 'dash' && R.gid) showInventory($('#rinv'), R.gid); }, 15000);
-
-/* chapters (one block per Dlvl stay) + zoomed timeline around the current instant */
-const ZOOMS = [[0, 'auto'], [200, '200 images'], [1000, '1000'], [5000, '5000']];
-let ZOOM = 0;
-try { ZOOM = +(localStorage.getItem('zoomW') || 0); } catch (e) {}
-function zoomWidth() { const n = R.frames.length; return ZOOM || Math.max(150, Math.min(n, Math.round(n / 25))); }
-function drawChapters() {
-  const n = Math.max(1, R.frames.length - 1), segs = [];
-  let start = 0, cur = null;
-  for (let i = 0; i < R.frames.length; i++) {
-    const d = R.status[i] ? R.status[i][1] : cur;
-    if (d !== cur && i > 0) { segs.push([start, i - 1, cur]); start = i; }
-    cur = d;
-  }
-  segs.push([start, R.frames.length - 1, cur]);
-  const maxd = Math.max(5, ...segs.map(x => +x[2] || 0));
-  $('#tchap').replaceChildren(...segs.map(([a, b, d]) => {
-    const w = (b - a + 1) / (n + 1) * 100, depth = (+d || 0) / maxd;
-    const c = el('div', {textContent: w > 2.5 ? 'D' + (d ?? '?') : '', title: `Dlvl ${d ?? '?'} · images ${a}–${b}`});
-    c.style.width = w + '%'; c.style.background = `hsl(${200 - depth * 200}, 55%, ${62 - depth * 22}%)`;
-    c.dataset.a = a; c.dataset.b = b;
-    c.onclick = ev => { ev.stopPropagation(); seek(a); };
-    return c;
-  }));
-}
-function drawZoom() {
-  if (!R.frames.length) return;
-  const n = R.frames.length, W = zoomWidth();
-  const a = Math.max(0, Math.min(n - W, R.pos - Math.floor(W / 2))), b = Math.min(n - 1, a + W - 1);
-  R.zoomA = a; R.zoomB = b;
-  const span = Math.max(1, b - a);
-  const evs = allEvents().filter(e => e.f >= a && e.f <= b && (e.type !== 'say' || R.log.length < 400));
-  const kids = [];
-  let lastLabelX = -99;
-  for (const e of evs) {
-    const x = (e.f - a) / span * 100;
-    const m = el('div', {className: 'mk ' + e.type + (e.imp ? ' imp' : '')}); m.style.left = x + '%';
-    m.onmouseenter = ev => showTip(ev, e); m.onmouseleave = () => { mkTip.style.display = 'none'; };
-    m.onclick = ev => { ev.stopPropagation(); mkTip.style.display = 'none'; seek(e.f); };
-    kids.push(m);
-    if ((e.imp || evs.length <= 14) && x - lastLabelX > 9) { const l = el('div', {className: 'zl', textContent: e.label}); l.style.left = x + '%'; kids.push(l); lastLabelX = x; }
-  }
-  $('#zmarks').replaceChildren(...kids);
-  $('#zknob').style.left = ((R.pos - a) / span * 100) + '%';
-  const nn = Math.max(1, n - 1);
-  $('#tbrush').style.left = (a / nn * 100) + '%'; $('#tbrush').style.width = Math.max(0.4, (b - a) / nn * 100) + '%';
-  const sa = R.status[a], sb = R.status[b];
-  $('#zrange').textContent = ` images ${a}–${b}` + (sa && sb ? ` · T${sa[0]}–T${sb[0]}` : '') + ` · ${evs.length} évènements`;
-  for (const c of $('#tchap').children) c.classList.toggle('cur', R.pos >= +c.dataset.a && R.pos <= +c.dataset.b);
-}
-$('#zoombtns').replaceChildren(...ZOOMS.map(([w, l]) => { const b = el('button', {textContent: l, className: ZOOM === w ? 'on' : ''});
-  b.onclick = () => { ZOOM = w; try { localStorage.setItem('zoomW', w); } catch (e) {} for (const x of $('#zoombtns').children) x.classList.toggle('on', x === b); drawZoom(); }; return b; }));
-$('#tzoom').onclick = e => { if (R.zoomA == null) return; const r = e.currentTarget.getBoundingClientRect();
-  seek(Math.round(R.zoomA + (e.clientX - r.left) / r.width * (R.zoomB - R.zoomA))); };
 
 /* big screen */
 function toggleBig(node, on, fs = true) {
