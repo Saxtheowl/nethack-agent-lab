@@ -81,3 +81,6 @@ LLM decides every non-trivial action itself, from the screen it just read.
   that way, then died in Surtur's lava during the Quest at XL14 — our deepest game: Dlvl 49, vibrating square found).
 - A mumak adjacent with < ~70 HP: escape at once (dig down if no water nearby, or upstairs if it is not adjacent);
   never go back into a full Big Room with a mumak. No non-combat action (quaffing) with a monster adjacent.
+- A nymph in view = stop every helper loop and kill her at range BEFORE she is adjacent (slot 3 run 7 lost
+  Excalibur + two cloaks at T11498 while a loop kept passing turns; she teleported downstairs). The harness now
+  blocks all keys after any "stole/engulfs you" message until `session ack-hp`.
