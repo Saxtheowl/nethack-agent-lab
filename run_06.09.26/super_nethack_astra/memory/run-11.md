@@ -1,6 +1,6 @@
 # Run 11 — Claude, slot 1, style astra (lawful female dwarven Valkyrie, little dog)
 
-URGENT: T17807 Dlvl13 (QUEST PORTAL LEVEL; portal not located yet) standing ON > 29,20. HP103/103 AC-2 XL10 (9164 xp) Fast, Satiated. Long sword Expert, Excalibur. R = AMULET OF REFLECTION worn. G = wand of teleportation (0:2). LAST PRAYER T17634 (next safe ~T18700+). Food: 1 food ration E, 1 K-ration r, tripe C, egg j, 2 cream pies (bag), lizards V x3 (stoning cure). Bag l: ~3760 gold, spherical amulet f, cloak of invisibility t (do NOT wear: hero not drawn -> helpers break), potions (2 smoky, 2 milky, golden, purple-red), ruby ring r, gems. Unknown: steel ring z, jeweled wand Y (boring engrave). Scroll of earth y, food detection p.
+URGENT: T19845 Dlvl15 (> 5,26; general store Chicoutimi 3-9,13-15 door 6,16). HP110/110 AC-6 XL11. Excalibur a (+2). R = AMULET OF REFLECTION worn. G = wand of teleportation (0:2). Y = WAND OF LIGHTNING (bought, 1 charge used engraving). LAST PRAYER T17634. Food: 2 food rations I, 3 lembas (J x2, Z), K-ration r, tripe C, 2 cream pies (bag). Lizards V x3. Bag l: 186 gold, spherical amulet, cloak of invisibility (do NOT wear), potions (2 smoky, 2 milky, golden, speed), ruby ring. Unknown: white potion T (sell offer 100: base 200/300: full healing/levitation/gain level?), emerald potion M (offer 50), scroll PRATYAVAYAH X (offer 50 = base 100: magic mapping/teleport/gold det/confuse). Wolfsbane i, eucalyptus H.
 
 ## Plans
 - Dlvl1-4: explore, daggers/armor, BUC-test with the kitten; 2+ food.
@@ -17,7 +17,7 @@ URGENT: T17807 Dlvl13 (QUEST PORTAL LEVEL; portal not located yet) standing ON >
 - Price-ID: GARVEN DEH sell offer 25 -> base 50 (light) probably.
 - T2431 prayed (Weak) OK. T2546 killed gas spore with thrown dagger -> dog died in blast (-15 align, Luck -1). T2661 floating eye killed with daggers: no corpse.
 - T2951 pony -> XL5 (HP 23/49 during fight). Dips: Dlvl4 fountain dried (rust), Dlvl3 dried, Dlvl1 63,24 dried, Dlvl1 36,23 -> EXCALIBUR T3249.
-- T3523 read blessed identify: bag = BAG OF HOLDING, ruby=confusion, swirly=oil, VELOX NEB (shop 107)=EA/RC, GNIK SISI VLE base100, JUYED AWK YACC base200. Sold agate 100, stetho 38, light scroll 25, lock pick 10. Bought 3 food rations.
+- T3523 read blessed identify: bag = BAG OF HOLDING, ruby=confusion, swirly=oil, VELOX NEB = ENCHANT WEAPON (read T18986: Excalibur +2), GNIK SISI VLE base100, JUYED AWK YACC base200. Sold agate 100, stetho 38, light scroll 25, lock pick 10. Bought 3 food rations.
 - Dlvl5 main: no > found (vault + vault-teleporter closet 72,19 'ad aerarium'). Took the Mines at T4051. Dlvl4 shop has VELOX NEB (EA/RC) 107.
 - Mines: Dlvl4 > at 16,19; Dlvl5 < 34,23 > 67,24; Dlvl6 = MINETOWN (< 77,16): neutral temple (priest of Odin) altar 47,21, deli 50-52,20-22, tool shop 49-51,24-26, fountains 43,19 39,22. T4349 nymph stole orcish helm + oil.
 - T4776 bumped an invisible peaceful gnomish wizard in Minetown (angered, killed). Water nymph killed; mountain nymph stole dagger too. XL6 T4987 (kitten).
@@ -89,3 +89,11 @@ URGENT: T17807 Dlvl13 (QUEST PORTAL LEVEL; portal not located yet) standing ON >
 - XL14 needed for the Quest (portal on Dlvl13). Go down slowly, hold stairs, retreat upstairs under ~55 HP.
 - Helpers (slots/1/, run with slots/1/w ./NAME): hold N MINHP (fights adjacent hostiles, farlooks, skips peacefuls/@/e/F), killadj G N (stops on 'Really attack?'), srch N (env SAFE=glyphs), s1rest/s1reste, elbok, pickall (skips corpses), throwat, dhold.
 - explore.py often says 'no reachable frontier' in dark areas: walk through doors by hand, then 'follow DIR'.
+- T17807-18334 (session 6): trip Dlvl13 -> Minetown. Killed acid blob, 2 ravens (blinded: unicorn horn), tiger (ate), fog cloud, 2 gray unicorns (horn sold), horse, hobbit, iguanas, kobold shaman. Dlvl4 Pakka Pakka: sold unicorn horn 50, ring of cold res 75, black potion 75 (base 150), jeweled wand 75 (base 150); bought 2 food rations. A leprechaun stole ~120 loose gold on Dlvl4 (keep gold in the bag!). T18301 donated 4000 to the Minetown priest: AC -2 -> -6. Bought 2 lembas (deli). Steel ring z = uncursed (altar).
+- Dlvl14: < 57,13, > 34,25. Explored. Elven mithril-coat left at 42,28 (unknown BUC), splint mail 74,16. Killed warg (rotten), gray ooze, monkey, killer bees, winter wolf cub, werejackal (no bite), lizard. Picked white potion T, clear potion W. Strained leg kicking empty space (kick loop bug: grep saw old WHAMM line). Dx now 13.
+- New helpers: slots/1/tv X Y (travel loop w/ checks), slots/1/down X Y, slots/1/stair '<'|'>', slots/1/fk DIR [N] [MINHP], slots/1/xa2 N (xauto; ALWAYS run it with run_in_background: a timeout kills only the local ssh, the remote loop keeps playing!).
+- T19314-19845 Dlvl15: < 30,17, > 5,26, general store 3-9,13-15 (door 6,16; 2 small mimics killed inside; sells food ration/lembas 60, murky potion 133, black potion 200, yellow gems 4000, figurine, lantern 16). Umber hulk (confusion gaze) killed -> XL11, eaten. Shocking sphere exploded on me (nothing lost seen). Leprechauns: always put gold in the bag first.
+- Dlvl16: < 22,22, > 9,28, CHAOTIC ALTAR 8,26 (room 2-10,26-28). White potion T = uncursed, emerald M uncursed, PRATYAVAYAH X = CURSED (base 100: magic mapping/gold det/confuse monster). VERR YED HORRE = TELEPORTATION (read T20421). A Mordor orc zapped a balsa wand = FIRE at me (reflected); wand not found. Smoky potion e found. xplore.py THIEVES default 'nl' ... pass THIEVES=¤ (an altar '_' is not in it but any 'n'/'l' glyph stops it).
+
+## ABANDONNÉE — décision de l’utilisateur (28/09 ~12h)
+L’utilisateur relance les 3 parties Claude depuis le début : partie quittée (#quit).
