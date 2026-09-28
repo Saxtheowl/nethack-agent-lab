@@ -15,4 +15,4 @@ URGENT: T1636 Dlvl2 HP17(18) AC2 XL1. LAST PRAYER T1636 (Weak, ok). Wield a long
 Excalibur at XL5 in a NON-town fountain (Oracle fountains ideal), Mines to Minetown (buy food, co-aligned temple protection),
 Sokoban (entrance = up stairs on level below Oracle), then down. Big Room: fight from '<' or leave. Reflection before Castle.
 - D1: '<' 30,19, '>' 46,17. No fountain. Trap 68,15.
-- D2: '<' 29,25, '>' 11,16. Fountain heard (not found yet). Hidden passage 29,19. Crystal ball 12,14 (left).
+- D2: '<' 29,25, '>' 11,16 (main). FOUNTAIN 69,13 (NE room) for Excalibur at XL5. Brown mold 24,16 in corridor (don't touch). Hidden passage 29,19.
