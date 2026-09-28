@@ -2,9 +2,16 @@
 # slotrun <command...>: run a slot tool where the slot's game lives.
 # .runtime/where-N = "worker" -> the command runs on miniforum-worker (same
 # path, one shared ssh connection), else here. Used by every slots/N wrapper.
+# -tt gives the remote command a terminal: if the local caller is killed, the
+# remote command gets SIGHUP and stops too (no orphan loop left on the worker).
 R="$(cd "$(dirname "$0")/.." && pwd -P)"
 if [ "${NH_HOST:-}" != worker ] && [ "$(cat "$R/.runtime/where-${NH_SLOT:-1}" 2>/dev/null)" = worker ]; then
-  exec ssh -T -o BatchMode=yes -o ControlMaster=auto -o ControlPath=/tmp/ssh-nh-%C -o ControlPersist=900 \
-    miniforum-worker "cd $R && NH_HOST=worker NH_SLOT=${NH_SLOT:-1} exec $(printf '%q ' "$@")"
+  ssh -tt -o LogLevel=QUIET -o BatchMode=yes -o ControlMaster=auto -o ControlPath=/tmp/ssh-nh-%C -o ControlPersist=900 \
+    miniforum-worker "stty -echo -onlcr 2>/dev/null; cd $R && NH_HOST=worker NH_SLOT=${NH_SLOT:-1} exec $(printf '%q ' "$@")" </dev/null > >(tr -d '\r') &
+  pid=$!
+  trap 'kill $pid 2>/dev/null' TERM INT HUP
+  wait $pid; rc=$?
+  wait  # let the output filter finish
+  exit $rc
 fi
 cd "$R" && exec "$@"
