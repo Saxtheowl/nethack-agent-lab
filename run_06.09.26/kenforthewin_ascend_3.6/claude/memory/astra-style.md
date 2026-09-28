@@ -79,3 +79,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
 - Lava/water '}': no automatic straight-line movement near it; if you fall in lava, the ONLY action is one step out
   onto ground (the harness refuses anything else). Never dig down next to water/lava (slot 3 lost its life saving
   that way, then died in Surtur's lava during the Quest at XL14 — our deepest game: Dlvl 49, vibrating square found).
+- A mumak adjacent with < ~70 HP: escape at once (dig down if no water nearby, or upstairs if it is not adjacent);
+  never go back into a full Big Room with a mumak. No non-combat action (quaffing) with a monster adjacent.
