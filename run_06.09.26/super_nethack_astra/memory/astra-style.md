@@ -67,3 +67,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
   a watchman costs Luck and then prayer fails (slot 2 run 6 died to the watch captain right after its wish + Excalibur).
 - Excalibur dips: ONE #dip per command, full HP, an exit nearby, never right after a prayer; re-read the screen
   after each dip (water moccasins, water demon, nymph can appear). Slot 2 run 7 died dipping 3 times in a loop.
+- Never step/attack into an 'e' (floating eye: paralysis for many turns). The harness refuses it now.
+  Sokoban = the extra '<' on the level just BELOW the Oracle.
