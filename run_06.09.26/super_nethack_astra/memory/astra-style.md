@@ -63,3 +63,5 @@ LLM decides every non-trivial action itself, from the screen it just read.
 - Prayer timeout is random (rnz(350)): never count on a second prayer; food first, keep 2+ rations.
 - Every script that passes turns: stop on any HP loss, "stole", status change (Stone, Slime, Blind...).
 - Never answer y to "Really attack?" (peacefuls, priests, shopkeepers): luck and telepathy are lost.
+- NEVER dip for Excalibur in a Minetown (town) fountain: when the fountain dries up the watch turns hostile; killing
+  a watchman costs Luck and then prayer fails (slot 2 run 6 died to the watch captain right after its wish + Excalibur).
