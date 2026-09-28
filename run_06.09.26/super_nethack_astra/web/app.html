@@ -47,7 +47,7 @@ h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: v
 .cmd small { margin-left: auto; color: var(--muted); }
 
 /* dashboard */
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; margin-bottom: 16px; }
 @media (max-width: 1500px) { .cards { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); } }
 .card { display: flex; flex-direction: column; gap: 8px; }
 .card .head { display: flex; align-items: baseline; gap: 8px; }
@@ -481,7 +481,7 @@ for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => 
 let liveSlot = hashState().slot || '1', liveTerm = null, GAMES = [], SLOTS = {}, WISH = null, RETIRED = [];
 function slotButtons() {
   const bar = $('#slotbar'); bar.textContent = '';
-  for (const s of ['1', '2', '3', '4', '5', '6', '7', '8']) {
+  for (const s of ['1', '2', '3', '4', '5', '6', '7', '8'].filter(x => !RETIRED.includes(x))) {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     const st = meta ? meta.status : 'none';
     const b = el('button', {className: s === liveSlot ? 'on' : ''},
@@ -521,6 +521,7 @@ async function refreshGames() {
   try {
     const d = await api('/api/games');
     GAMES = d.games; SLOTS = d.slots; WISH = d.wish || null; RETIRED = d.retired || [];
+    if (RETIRED.includes(liveSlot)) { liveSlot = ['1','2','3','4','5','6','7','8'].find(x => !RETIRED.includes(x)) || '1'; }
     slotButtons();
     if (TAB !== 'dash') return;
     renderCards(); renderTiles(); renderHistory(); fillGameSelect();
@@ -536,6 +537,7 @@ function renderCards() {
   for (const s of ['1', '2', '3', '4', '5', '6', '7', '8']) {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     let card = wrap.querySelector(`[data-slot="${s}"]`);
+    if (RETIRED.includes(s)) { if (card) card.remove(); continue; }  // only the active slots are shown
     if (!card) {
       card = el('div', {className: 'panel card', title: 'Cliquer : les 3 moments clés des 1000 derniers tours'}); card.dataset.slot = s;
       card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
@@ -1287,7 +1289,7 @@ async function showStyleFile(path) {
 async function refreshStyles() {
   let S; try { S = await api('/api/styles'); } catch (e) { return; }
   const P = S.plan, done = P.history || [];
-  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), 'Objectif : les 8 emplacements en Astra. Aujourd’hui : ',
+  const steps = [el('div', {className: 'planstep next'}, el('span', {className: 'n', textContent: '🎯'}), '3 parties Astra en même temps (emplacements 1, 3, 8). Aujourd’hui : ',
       ...Object.entries(S.counts).map(([st, n]) => el('span', {style: 'margin-right:8px'}, tag(st), ` ${n}/${(S.targets || {})[st] ?? S.target}`))),
     ...done.map(h => el('div', {className: 'planstep done'}, el('span', {className: 'n', textContent: '✓'}), `Partie ${h.slot} est passée de ${STYLE_FR[h.from] || h.from || '?'} à `, tag(h.style), ` (${fmtT(h.t)})`)),
     ...(S.forecast || []).map((f, i) => el('div', {className: 'planstep'}, el('span', {className: 'n', textContent: done.length + i + 1}),
@@ -1343,7 +1345,7 @@ async function refreshResources() {
     ...meter(`Charge CPU (moyenne 1 min, ${m.cores} cœurs)`, m.load[0], m.cores, loadFmt),
     ...meter('Mémoire utilisée', m.mem_total - m.mem_avail, m.mem_total), ...meter('Disque', m.disk_used, m.disk_total));
   $('#rmach').replaceChildren(el('div', {className: 'mach'},
-    mach('Ce PC', 'Les 8 parties NetHack, tmux, recorder, dashboard, et les agents Claude (côté client).', L),
+    mach('Ce PC', 'Seulement les agents Claude (3 parties) ; tout le reste tourne sur le worker.', L),
     W.ok ? mach('Worker miniforum', `ssh miniforum-worker · calculs lourds · dossiers : ${W.compute_dirs.join(', ') || '—'}`, W) : el('div', {}, el('h3', {textContent: 'Worker miniforum'}), el('p', {className: 'kbd', textContent: 'injoignable'}))),
     el('p', {className: 'note', style: 'margin-top:10px', textContent: 'Les modèles Claude tournent chez Anthropic (cloud) : le PC ne fait qu’envoyer l’écran et recevoir les touches. La charge locale vient surtout des 8 clients Claude Code, des helpers Python et du recorder.'}));
   const gb = S.games_bytes, ledgerTot = S.ledgers.reduce((a, l) => a + l.bytes, 0);

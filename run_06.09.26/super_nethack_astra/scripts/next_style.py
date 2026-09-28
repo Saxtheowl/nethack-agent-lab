@@ -22,7 +22,7 @@ PLAN = ROOT / '.runtime/style-plan.json'
 ORDER = ['wish_abuser', 'tariru_v2', 'tariru', 'astra']
 TARGET = 2
 # user decision 2026-09-27 ~19h: no more Tariru styles: 6 astra + 2 wish_abuser
-TARGETS = {'astra': 8, 'wish_abuser': 0, 'tariru': 0, 'tariru_v2': 0}  # 27/09 ~22h45: all slots astra
+TARGETS = {'astra': 3, 'wish_abuser': 0, 'tariru': 0, 'tariru_v2': 0}  # 27/09 ~22h45: all slots astra
 
 
 def slot_style(s):

@@ -10,9 +10,9 @@ The style of your slot is "style" in .runtime/slot-N.json: read its files
 before playing. User decision 2026-09-27 ~22h45: ALL slots play astra (no Tariru, no
 wish_abuser); `python3 scripts/next_style.py N` gives the next
 style after a death. Games in progress are never switched.
-User decision 2026-09-28 ~07h: go down to 4 games: at each death, the slot is
-RETIRED (not restarted) until only 4 games run (.runtime/style-plan.json
-"retired"); after that, a dead slot restarts in astra.
+User decision 2026-09-28 ~08h: ONLY 3 games run at once: slots 1, 3, 8. Slots
+2, 4, 5, 6, 7 are retired (.runtime/style-plan.json "retired"). When one of the
+3 dies, its slot restarts in astra.
 Read this file first at every session / after every context compaction, then
 `memory/run-1.md` (latest state at the TOP), then inspect the real screen.
 
