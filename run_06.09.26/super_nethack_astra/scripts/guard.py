@@ -35,6 +35,10 @@ def state(screen, cursor, pets=()):
     gray_dragon = (len(rows) > 33 and 'the Gray Dragon' in rows[33][:81]
                    and re.search(r'\bHD:15\b', status) is not None)
     player_glyph = 'D' if gray_dragon else '@'
+    # any polymorphed form (status shows HD:n instead of Xp): the hero is the
+    # letter under the terminal cursor (slot 3 as a vampire lord in Gehennom)
+    if re.search(r'\bHD:\d+', status) and len(rows[y]) > x and rows[y][x].isalpha():
+        player_glyph = rows[y][x]
     if len(rows[y]) <= x or rows[y][x] != player_glyph:
         return None
     return {'rows': rows, 'position': cursor, 'hp': int(hp[1]), 'max_hp': int(hp[2]),
