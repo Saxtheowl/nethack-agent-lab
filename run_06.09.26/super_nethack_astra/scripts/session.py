@@ -229,6 +229,10 @@ def send(value, named=False, sensitive=False, publish=True):
                       '1': (-1, 1), '2': (0, 1), '3': (1, 1)}[m_step[1]]
             rows = current.splitlines()
             tx, ty = cx + dx, cy + dy
+            if (10 <= cy <= 30 and value.startswith('F') and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty])
+                    and rows[ty][tx] == '@'):
+                raise HPAlarm(f"Refused {value!r}: F into an @ (shopkeeper, watchman, priest are @). "
+                              "Farlook it first; if it is really hostile: keys --really " + value)
             if 10 <= cy <= 30 and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty]) and rows[ty][tx] == 'e':
                 raise HPAlarm(f"Refused {value!r}: an 'e' is on that square (floating eye = paralysis, "
                               "sphere = explosion). Farlook it; kill it at range. Deliberate: keys --really.")
@@ -294,11 +298,20 @@ def print_screen(compact=False):
         pets = guard.observe(sys.modules[__name__])[2]
         print('PETS (hilite, never attack): ' + (' '.join(f'{x},{y}' for x, y in sorted(pets)) or 'none visible'))
         lines = current.splitlines()
+        try:
+            hx, hy = map(int, cursor.split(','))
+            hero_xy = (hx, hy) if 0 <= hy < len(lines) and hx < len(lines[hy]) and lines[hy][hx] == '@' else None
+        except ValueError:
+            hero_xy = None
         for row, line in enumerate(lines):
             if not 10 <= row <= 30:
                 continue
             for col, char in enumerate(line[:81]):
                 if char != '@':
+                    continue
+                # only the hero's own @ (under the cursor): a watchman's line taken
+                # for the hero made slot 2 kill a shopkeeper
+                if hero_xy and (col, row) != hero_xy:
                     continue
                 neighbors = []
                 for key, dx, dy in [('7', -1, -1), ('8', 0, -1), ('9', 1, -1),
