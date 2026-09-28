@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcours des parties</title>
+<link rel="stylesheet" href="/ui/common.css">
+<style>
+.pick { display: flex; gap: 10px; padding: 12px 14px 0; flex-wrap: wrap; }
+.pick .g { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; cursor: pointer; min-width: 190px; }
+.pick .g.on { border-color: var(--accent); background: #1a2922; } .pick .g b { font-size: 16px; } .pick .g div { color: var(--muted); font-size: 12.5px; }
+.pick select { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px; }
+.body { display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 12px; padding: 12px 14px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-width: 0; }
+.panel h2 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 8px; }
+.scroller { overflow-x: auto; overflow-y: hidden; border-radius: 8px; background: #0e161a; }
+svg text { font-family: system-ui, sans-serif; }
+.pin { cursor: pointer; } .pin:hover circle { stroke: #fff; stroke-width: 2; }
+.zoom { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
+#tip { position: fixed; pointer-events: none; background: #0b1114f0; border: 1px solid var(--accent); border-radius: 8px; padding: 6px 10px; font-size: 13px; display: none; z-index: 9; max-width: 380px; }
+#view .term { height: 360px; }
+#vstat { margin: 6px 0; } #vsay { font-style: italic; color: #b9d3c8; min-height: 1.4em; }
+.steps { margin-top: 12px; }
+.step { display: grid; grid-template-columns: 70px 110px 1fr; gap: 10px; padding: 6px 4px; border-bottom: 1px solid var(--line); font-size: 13px; cursor: pointer; }
+.step:hover { background: var(--panel2); } .step b { color: var(--blue); } .step .ev2 { color: var(--gold); }
+@media (max-width: 1300px) { .body { grid-template-columns: 1fr; } }
+</style></head><body>
+<div class="top"><h1>Parcours des parties</h1><span class="muted small">la descente de chaque partie, niveau par niveau, avec tous ses moments</span><span class="sp"></span>
+  <nav><a href="/">Site actuel</a><a href="/ui/a">A · Salle de contrôle</a><a href="/ui/b">B · Récit</a><a href="/ui/c" class="on">C · Parcours</a></nav></div>
+<div class="pick" id="pick"></div>
+<div class="body">
+  <div class="panel">
+    <h2>La descente (profondeur au fil des tours) — survoler un point, cliquer pour voir l’écran</h2>
+    <div class="zoom"><span class="muted small">Largeur :</span><button data-z="1">Toute la partie</button><button data-z="3" class="on">×3</button><button data-z="8">×8</button><span class="muted small">(faire défiler horizontalement)</span>
+      <span style="flex:1"></span><label class="small muted"><input type="checkbox" id="allev"> aussi les petits évènements</label></div>
+    <div class="scroller" id="scroller"><svg id="chart"></svg></div>
+    <div class="steps" id="steps"></div>
+  </div>
+  <div class="panel" id="view">
+    <h2>L’écran à cet instant</h2>
+    <div id="vterm"></div>
+    <div id="vstat" class="small"></div>
+    <div style="display:flex;gap:6px;align-items:center"><button id="vback">◀ −20</button><button id="vplay">▶ Lecture</button><button id="vfwd">+20 ▶</button><button id="vlive">● Direct</button>
+      <input type="range" id="vslider" min="0" max="0" style="flex:1"></div>
+    <div id="vsay"></div>
+  </div>
+</div>
+<div id="tip"></div>
+<script src="/ui/common.js"></script>
+<script>
+let ZW = 3, ALLEV = false;
+const vterm = new Term($('#vterm'), {fitHeight: true});
+const player = new Player(vterm, pl => {
+  const g = pl.game, s = g.status[pl.pos] || [];
+  $('#vstat').innerHTML = `T <b>${s[0] ?? '?'}</b> · Dlvl <b>${s[1] ?? '?'}</b> · HP <b>${s[2] ?? '?'}/${s[3] ?? '?'}</b> · XL <b>${s[4] ?? '?'}</b> · AC <b>${s[5] ?? '?'}</b>` + (pl.follow ? ' · <b style="color:#7ddc6f">DIRECT</b>' : '');
+  $('#vslider').max = g.frames.length - 1; $('#vslider').value = pl.pos;
+  const d = g.sayAt(pl.pos); $('#vsay').textContent = d ? '« ' + d.text + ' »' : '';
+  $('#vplay').textContent = pl.playing ? '⏸ Pause' : '▶ Lecture';
+  const c = $('#cursor'); if (c && g.status[pl.pos]) { const x = X(g.status[pl.pos][0]); c.setAttribute('x1', x); c.setAttribute('x2', x); }
+});
+let X = () => 0;
+function drawChart() {
+  const g = player.game; if (!g) return;
+  const ns = 'http://www.w3.org/2000/svg', svg = $('#chart');
+  const vis = $('#scroller').clientWidth, W = Math.max(vis, vis * ZW), H = 420, L = 44, T = 50, B = 30;
+  svg.setAttribute('width', W); svg.setAttribute('height', H); svg.replaceChildren();
+  const add = (t, a, txt) => { const e = document.createElementNS(ns, t); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.append(e); return e; };
+  const pts = g.status.filter(Boolean), maxT = Math.max(100, pts.length ? pts[pts.length - 1][0] : 100), maxD = Math.max(5, ...pts.map(s => +s[1] || 0));
+  X = t => L + t / maxT * (W - L - 16);
+  const Y = d => T + (d - 1) / Math.max(1, maxD - 1) * (H - T - B);
+  for (let d = 1; d <= maxD; d += Math.max(1, Math.ceil(maxD / 12))) { add('line', {x1: L, x2: W - 10, y1: Y(d), y2: Y(d), stroke: '#1d2a30'}); add('text', {x: 8, y: Y(d) + 4, fill: '#8b9f97', 'font-size': 11}, 'D' + d); }
+  const tstep = maxT > 20000 ? 2000 : maxT > 6000 ? 1000 : 500;
+  for (let t = 0; t <= maxT; t += tstep) add('text', {x: X(t), y: H - 8, fill: '#8b9f97', 'font-size': 11, 'text-anchor': 'middle'}, 'T' + t);
+  const step = Math.max(1, Math.floor(g.frames.length / (W / 2)));
+  let d = '';
+  for (let i = 0; i < g.frames.length; i += step) { const s = g.status[i]; if (s) d += (d ? 'L' : 'M') + X(s[0]).toFixed(1) + ',' + Y(+s[1] || 1).toFixed(1); }
+  add('path', {d, fill: 'none', stroke: '#7fb2e5', 'stroke-width': 2.2});
+  add('line', {id: 'cursor', x1: 0, x2: 0, y1: T - 30, y2: H - B, stroke: '#ffffffaa', 'stroke-width': 1.5});
+  // pins: each event on the curve; labels alternate above to avoid overlaps
+  const evs = g.events.filter(e => e.kind !== 'say' && (ALLEV || e.imp));
+  const col = {death: '#e27d6f', item: '#efd69a', monster: '#e4b987', danger: '#e27d6f', level: '#7fb2e5', progress: '#a9c58c', xl: '#a9c58c'};
+  const lanes = [];  // last label x per lane
+  for (const e of evs) {
+    const s = g.status[e.f]; if (!s) continue;
+    const x = X(s[0]), y = Y(+s[1] || 1);
+    const gp = document.createElementNS(ns, 'g'); gp.setAttribute('class', 'pin'); svg.append(gp);
+    const c = document.createElementNS(ns, 'circle'); Object.entries({cx: x, cy: y, r: e.imp ? 6 : 4, fill: col[e.kind] || '#cccccc'}).forEach(([k, v]) => c.setAttribute(k, v)); gp.append(c);
+    if (e.imp) {
+      let lane = lanes.findIndex(lx => x - lx > 150); if (lane < 0) { lane = lanes.length; } lanes[lane] = x;
+      if (lane < 3) {
+        const ty = 12 + lane * 13;
+        const ln = document.createElementNS(ns, 'line'); Object.entries({x1: x, x2: x, y1: ty + 2, y2: y - 6, stroke: '#ffffff22'}).forEach(([k, v]) => ln.setAttribute(k, v)); gp.append(ln);
+        const t = document.createElementNS(ns, 'text'); Object.entries({x: x + 3, y: ty, fill: col[e.kind] || '#ddd', 'font-size': 11}).forEach(([k, v]) => t.setAttribute(k, v));
+        t.textContent = (ICONS[e.kind] || '•') + ' ' + e.label.slice(0, 26); gp.append(t);
+      }
+    }
+    gp.onmouseenter = ev => { const tp = $('#tip'); tp.innerHTML = `<b>${ICONS[e.kind] || '•'} ${e.label}</b><br><span class="muted">T${s[0]} · Dlvl ${s[1]}</span>` + (e.text ? '<br>' + e.text.slice(0, 200) : ''); tp.style.display = 'block'; tp.style.left = (ev.clientX + 12) + 'px'; tp.style.top = (ev.clientY + 12) + 'px'; };
+    gp.onmouseleave = () => $('#tip').style.display = 'none';
+    gp.onclick = () => { player.playing = false; player.seek(Math.max(0, e.f - 10)); };
+  }
+  svg.onclick = ev => { if (ev.target.closest('.pin')) return; const r = svg.getBoundingClientRect(); const t = (ev.clientX - r.left - L) / (W - L - 16) * maxT;
+    let best = 0; for (let i = 0; i < g.frames.length; i += 5) if (g.status[i] && g.status[i][0] <= t) best = i; player.playing = false; player.seek(best); };
+  drawSteps(); player.onSeek(player);
+}
+function drawSteps() {
+  const g = player.game, rows = [];
+  let cur = null;
+  for (let i = 0; i < g.frames.length; i++) {
+    const s = g.status[i]; if (!s) continue;
+    if (!cur || s[1] !== cur.d) { if (cur) cur.end = i - 1; cur = {d: s[1], f: i, t0: s[0], t1: s[0]}; rows.push(cur); } cur.t1 = s[0];
+  }
+  const firsts = {}; for (const r of rows) if (!firsts[r.d]) firsts[r.d] = r;
+  const list = Object.values(firsts).sort((a, b) => a.f - b.f);
+  $('#steps').replaceChildren(el('h2', {textContent: 'Étapes : première arrivée sur chaque niveau'}), ...list.map((r, i) => {
+    const nxt = list[i + 1], evs = g.events.filter(e => e.imp && e.kind !== 'level' && e.f >= r.f && (!nxt || e.f < nxt.f));
+    return el('div', {className: 'step', onclick: () => { player.playing = false; player.seek(r.f); document.getElementById('scroller').scrollLeft = X(r.t0) - 200; }},
+      el('b', {textContent: 'Dlvl ' + r.d}), el('span', {className: 'muted', textContent: 'dès T' + fmtN(r.t0)}),
+      el('span', {className: 'ev2', textContent: evs.slice(0, 4).map(e => (ICONS[e.kind] || '') + ' ' + e.label).join('   ') || '—'}));
+  }));
+}
+async function open(gid) {
+  for (const n of document.querySelectorAll('.pick .g')) n.classList.toggle('on', n.dataset.gid === gid);
+  $('#chart').replaceChildren(); $('#steps').textContent = 'Chargement…';
+  await player.open(gid, 'live'); drawChart(); vterm.fit();
+  $('#scroller').scrollLeft = 1e9;
+}
+for (const b of document.querySelectorAll('.zoom button')) b.onclick = () => { ZW = +b.dataset.z; for (const x of document.querySelectorAll('.zoom button')) x.classList.toggle('on', x === b); drawChart(); };
+$('#allev').onchange = e => { ALLEV = e.target.checked; drawChart(); };
+$('#vplay').onclick = () => { player.playing = !player.playing; player.follow = false; player.onSeek(player); };
+$('#vback').onclick = () => { player.playing = false; player.seek(player.pos - 20); };
+$('#vfwd').onclick = () => { player.playing = false; player.seek(player.pos + 20); };
+$('#vlive').onclick = () => { player.follow = true; player.seek(player.game.frames.length - 1); player.follow = true; };
+$('#vslider').oninput = e => { player.playing = false; player.seek(+e.target.value); };
+setInterval(() => { if (player.game && player.follow && !document.hidden) drawChart(); }, 60000);
+(async () => {
+  const {slots, games} = await activeSlots();
+  const picks = slots.map(s => { const m = s.meta; const n = el('div', {className: 'g', onclick: () => open(s.info.game_id)},
+    el('b', {textContent: `Partie ${s.slot}`}), el('div', {textContent: `Dlvl ${m.dlvl ?? '?'} · T${fmtN(m.turn)} · XL ${m.xl ?? '?'}`})); n.dataset.gid = s.info.game_id; return n; });
+  const liveIds = new Set(slots.map(s => s.info.game_id));
+  const sel = el('select', {onchange: e => e.target.value && open(e.target.value)}, el('option', {value: '', textContent: 'Une ancienne partie…'}),
+    ...games.filter(g => !liveIds.has(g.id)).slice(0, 40).map(g => el('option', {value: g.id, textContent: `${g.player} run ${g.run ?? '?'} · Dlvl ${g.maxdepth || g.dlvl || '?'} · ${STATUS_FR[g.status] || g.status}`})));
+  $('#pick').replaceChildren(...picks, sel);
+  if (slots[0]) open(slots[0].info.game_id);
+})();
+</script></body></html>

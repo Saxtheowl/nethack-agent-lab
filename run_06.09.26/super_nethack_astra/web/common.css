@@ -1,0 +1,26 @@
+:root {
+  --bg: #0c1215; --panel: #121b1f; --panel2: #18242a; --line: #243238; --text: #e4e9df; --muted: #8b9f97;
+  --accent: #a9c58c; --gold: #efd69a; --bad: #e27d6f; --warn: #e4b987; --blue: #7fb2e5; --term: #080d0f;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--blue); }
+button { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 7px; padding: 5px 11px; cursor: pointer; }
+button:hover { border-color: var(--accent); } button.on { background: #24362c; border-color: var(--accent); color: #d8f0c0; }
+.top { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: #0a1013; position: sticky; top: 0; z-index: 5; }
+.top h1 { font-size: 17px; margin: 0; font-weight: 650; } .top .sp { flex: 1; }
+.top nav a { color: var(--muted); text-decoration: none; padding: 5px 10px; border-radius: 7px; }
+.top nav a.on, .top nav a:hover { color: var(--text); background: var(--panel2); }
+.term { background: var(--term); border: 1px solid #1f2d33; border-radius: 8px; padding: 6px 8px; overflow: hidden;
+  font-family: "DejaVu Sans Mono", ui-monospace, monospace; color: #cfd8d2; white-space: pre; }
+.term .row { height: 1.18em; line-height: 1.18em; overflow: hidden; }
+.term span.b { font-weight: bold; } .term span.d { opacity: .6; } .term span.u { text-decoration: underline; }
+.muted { color: var(--muted); } .small { font-size: 12px; }
+.hpbar { height: 6px; background: #22313a; border-radius: 3px; overflow: hidden; } .hpbar i { display: block; height: 100%; background: #7ddc6f; }
+.hpbar.mid i { background: var(--warn); } .hpbar.low i { background: var(--bad); }
+.ev { display: flex; gap: 8px; align-items: baseline; padding: 5px 8px; border-radius: 6px; cursor: pointer; }
+.ev:hover { background: var(--panel2); } .ev.cur { background: #22302a; }
+.ev .ic { width: 20px; text-align: center; flex: none; } .ev .tt { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11.5px; min-width: 58px; flex: none; }
+.ev .lb { flex: 1; } .ev.imp .lb { color: var(--gold); font-weight: 600; } .ev.say .lb { color: #b9d3c8; font-style: italic; }
+.ev.death .lb { color: var(--bad); font-weight: 700; }
+input[type=range] { width: 100%; accent-color: var(--accent); }

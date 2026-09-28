@@ -620,6 +620,15 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if url.path in ('/', '/index.html'):
                 return self.send((WEB / 'app.html').read_bytes(), 'text/html; charset=utf-8')
+            if url.path.startswith('/ui/'):
+                name = url.path[4:] or 'a'
+                if re.fullmatch(r'[a-z]', name):
+                    name = f'ui-{name}.html'
+                if not re.fullmatch(r'[a-z0-9-]+\.(html|js|css)', name) or not (WEB / name).exists():
+                    return self.send({'error': 'not found'}, code=404)
+                mime = {'html': 'text/html; charset=utf-8', 'js': 'text/javascript; charset=utf-8',
+                        'css': 'text/css; charset=utf-8'}[name.rsplit('.', 1)[1]]
+                return self.send((WEB / name).read_bytes(), mime)
             if url.path == '/classic':
                 return self.send((WEB / 'index.html').read_bytes(), 'text/html; charset=utf-8')
             if url.path == '/api/live':
