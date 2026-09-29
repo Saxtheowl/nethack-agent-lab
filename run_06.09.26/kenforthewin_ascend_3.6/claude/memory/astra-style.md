@@ -104,3 +104,15 @@ LLM decides every non-trivial action itself, from the screen it just read.
   drawbridge, close it on whatever stands on it (crushes soldiers, a lich, trolls = XP). Crossing the bridge, a
   soldier's wand of lightning did 115 -> 20 HP and blew up every wand: cross at full HP with healing ready.
   Wishes spent: 2 blessed charging (recharge the wand), SDSM, cloak of MR, life saving, free action, GoP.
+- Castle back door + Valley (slot 8 run 7, T18012-19830): the minotaurs camp on the Castle arrival stairs and strike first ->
+  arrive by a hole dug on Medusa's level, cut a gap to the moat with a wand of digging and water-walk (walkers cannot follow).
+  A potion of levitation gets you over the 5 trap doors to the storerooms (food/armor/weapons/gems; 4 dragons behind secret
+  doors: a blue dragon's lightning broke a door), but you cannot eat corpses while levitating (a red dragon corpse went tainted)
+  and once it wears off the interior is sealed again. The Valley morgues give wraith corpses (+1 level each), but an ARCH-LICH
+  showed up: without magic resistance leave Gehennom (it warps next to you); stalkers follow you up stairs, liches do not.
+  Level teleport out of the no-teleport Castle works (confusion + scroll of teleportation). A werewolf bite = lycanthropy:
+  pray at once (the silver shield of reflection drops off while infected).
+- Slot 1 run 13 reached Gehennom with the Quest done (Orb of Fate + Bell) at T19000: Castle drawbridge opened
+  with a wand of opening zapped from a distance, garrison fought from a dug tunnel; wishes spent on charging
+  first. Never travel onto water with loose scrolls/potions (all scrolls blanked on Medusa's level).
+  In Gehennom PRAYER DOES NOT WORK (pray.c) and 7 candles are needed for the Invocation (Izchak, Minetown).
