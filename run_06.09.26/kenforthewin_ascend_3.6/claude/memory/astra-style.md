@@ -86,6 +86,15 @@ LLM decides every non-trivial action itself, from the screen it just read.
   blocks all keys after any "stole/engulfs you" message until `session ack-hp`.
 - Sokoban zoo done right (slot 8 run 7): open the locked door with a key/lock pick, NEVER kick it (a kick wakes the
   whole zoo); with the Valkyrie's Stealth the zoo stays asleep and can be killed one sleeper at a time.
-- From ~D20 down, never dig down: Medusa (D21-24) — a hole drops you at a random spot in her gaze. Stairs only.
+- Medusa's level (D21-24): arriving from above by stairs, hole or trapdoor puts you in the up-stairs region, far
+  from her (medusa.des TELEPORT_REGION ...,down), so digging down onto it is not the danger. The danger is
+  crossing the water and meeting her gaze there: get reflection or blind yourself first (see below).
 - Sokoban top level: count the boulders you can spare before the first push and never leave two boulders side
   by side against a wall (slot 1 run 13 ended one boulder short: zoo and prize lost for good).
+- Minetown watch (slot 8 run 7, T16568): once the watch turns hostile, killing a watchman still counts as murder for
+  a lawful/neutral ("You murderer!": Luck -2 and intrinsic telepathy LOST). While blind, F on an adjacent peaceful
+  asks no "Really attack?" — in a town, never fight blind; walk away from angry watchmen instead of killing them.
+- Medusa without reflection (slot 8 run 7, T17717, medusa-1): water walking to cross, a wand of digging razes her
+  (locked) door silently without the squeaky board, apply an expensive camera AT YOURSELF (blind 1-25 turns, gaze
+  harmless; telepathy shows her; re-flash as soon as sight returns — you act first that turn), then kill her blind.
+  Careful: a wand of teleportation zapped at her also teleports the Perseus statue lying on her square.
