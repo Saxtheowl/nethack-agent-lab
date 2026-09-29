@@ -161,6 +161,17 @@ class HPAlarm(SystemExit):
     pass
 
 
+def alert_key(msg):
+    """One alert per engulfer (a vortex re-engulfing you says it again and
+    again with other text around it: slot 1 had to ack 6 times); thefts keep
+    the whole line (each stolen item is news)."""
+    for sentence in re.split(r'[.!?]', msg):
+        m = re.search(r"^\s*(?:the |an? )?(.+?) (?:engulfs|swallows) you", sentence, re.I)
+        if m:
+            return 'engulf:' + m[1].lower()
+    return msg
+
+
 ALERT_MSG = re.compile(r'stole |steals |snatches |seduces you|engulfs you|swallows you|You are engulfed|You get swallowed')
 
 
@@ -212,12 +223,12 @@ def hp_guard(text, value, named):
     # Excalibur or a vortex digested the hero; stop once per new such message
     seen = st.get('alerts', [])
     alerts = [m for m in (l.split('││')[0].strip('│ ') for l in lines[1:8]) if ALERT_MSG.search(m)]
-    fresh = [a for a in alerts if a not in seen]
+    fresh = [a for a in alerts if alert_key(a) not in seen]
     why = ''
     if fresh:
         tripped, why = True, fresh[0][:90]
     HPGUARD.write_text(json.dumps({'base': base, 'max': mx, 'hp': hp, 'tripped': tripped,
-                                   'alerts': (seen + fresh)[-40:]}))
+                                   'alerts': (seen + [alert_key(a) for a in fresh])[-40:]}))
     if fresh and not (named and value == 'Escape'):
         raise HPAlarm(f'ALERT: "{why}" — stop every loop, read the screen, deal with it (kill the thief at '
                       'range, escape the engulfer), then run: <slot>/session ack-hp')
