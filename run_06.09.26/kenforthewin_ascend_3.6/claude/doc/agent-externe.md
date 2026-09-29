@@ -110,8 +110,9 @@ Le harnais refuse certaines touches et explique pourquoi :
 - **Repos comptés** (`n20s`) refusés sous 70 % HP ; **plusieurs pas d'un coup**
   refusés sous 50 % HP.
 - **« Really attack? »** : répondre `y` est refusé (pacifiques, prêtres,
-  marchands) sauf `k --really y`. **F vers un @** et **pas vers un `e`**
-  (floating eye) refusés sans `--really`.
+  marchands) sauf `k --really y`. **F vers un @** : le harnais fait d’abord un
+  farlook automatique de la case (gratuit) et refuse si le jeu dit « peaceful »
+  ou « tame » ; un **pas vers un `e`** (floating eye) est refusé sans `--really`.
 - **Stone / Slime** : seuls les gestes qui soignent passent (manger un lizard, prier…).
 - `explore` s'arrête devant une porte verrouillée (souvent une boutique), un vol,
   une nymphe/leprechaun, un lich/démon/géant/troll/cockatrice.

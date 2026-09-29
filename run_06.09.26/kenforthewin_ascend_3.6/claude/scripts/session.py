@@ -239,6 +239,37 @@ def ack_hp():
         print(f'HP alarm acknowledged at HP {m[1]}({m[2]}): keys allowed again.')
 
 
+def _newest_message(text):
+    msgs = [l.split('│')[1].strip() for l in text.splitlines()[1:8] if l.count('│') >= 2]
+    return next((m for m in reversed(msgs) if m), '')
+
+
+def peek(direction):
+    """Farlook the square next to the hero in `direction` (a number_pad
+    digit); a free action. Returns the game's description, or None."""
+    tmux('send-keys', '-t', TARGET, '-H', '--', '3b')  # ';' (see send())
+    for _ in range(8):
+        time.sleep(.25)
+        if _newest_message(screen()).startswith('Pick an object'):
+            break
+    else:
+        tmux('send-keys', '-t', TARGET, 'Escape')
+        return None
+    tmux('send-keys', '-t', TARGET, '-l', '--', direction + '.')
+    time.sleep(.8)
+    text = screen()
+    lines = [l.split('│')[1].strip() for l in text.splitlines()[1:8] if l.count('│') >= 2]
+    # the answer comes AFTER our "Pick an object." (older answers stay in the history)
+    pick = max((i for i, l in enumerate(lines) if l.startswith('Pick an object')), default=None)
+    start = next((i for i in range(len(lines)) if pick is not None and i > pick
+                  and re.match(r'^\S\s{3,}\S', lines[i])), None)
+    desc = ' '.join(l for l in lines[start:] if l).strip() if start is not None else None
+    if '--More--' in text or '>>' in (desc or ''):
+        tmux('send-keys', '-t', TARGET, 'Escape')
+        time.sleep(.3)
+    return desc
+
+
 def send(value, named=False, sensitive=False, publish=True):
     if not alive() or tmux('display-message', '-p', '-t', TARGET, '#{pane_dead}').stdout.strip() == '1':
         raise RuntimeError('No live NetHack pane; inspect screen and restart.')
@@ -259,8 +290,14 @@ def send(value, named=False, sensitive=False, publish=True):
             tx, ty = cx + dx, cy + dy
             if (10 <= cy <= 30 and value.startswith('F') and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty])
                     and rows[ty][tx] == '@'):
-                raise HPAlarm(f"Refused {value!r}: F into an @ (shopkeeper, watchman, priest are @). "
-                              "Farlook it first; if it is really hostile: keys --really " + value)
+                # shopkeepers, watchmen, priests are @: farlook the square first
+                # (free) and only let F through when the game does not call it
+                # peaceful or tame (and we are not hallucinating)
+                desc = peek(m_step[1])
+                if desc is None or re.search(r'\b(?:peaceful|tame)\b', desc) or 'Hallu' in ' '.join(current.splitlines()[33:36]):
+                    raise HPAlarm(f"Refused {value!r}: F into an @ — farlook says: {desc or '(no answer)'}. "
+                                  "Peaceful/tame (or unsure): do not attack. Deliberate: keys --really " + value)
+                current = screen()
             if (10 <= cy <= 30 and not value.startswith('F') and 0 <= ty < len(rows) and 0 <= tx < len(rows[ty])
                     and rows[ty][tx] == '}'):
                 raise HPAlarm(f"Refused {value!r}: that square is water or lava ('}}'). Walking into it drowns or "

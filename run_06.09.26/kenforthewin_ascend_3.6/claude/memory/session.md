@@ -80,7 +80,9 @@ run `slots/N/session ack-hp`, and continue key by key. Never ack in a loop.
 ## Peacefuls
 session.py refuses `y` while "Really attack?" is on screen (a loop killed a
 shopkeeper and a priestess). Answer n. Only a deliberate `keys --really y`
-attacks. Farlook every @ before fighting.
+attacks. Farlook every @ before fighting. `F<dir>` toward an @ farlooks that
+square automatically (free): it goes through when the game does not call the @
+peaceful or tame (and you are not hallucinating), else it is refused.
 
 ## Full inventory
 The right-hand inventory panel is cut after ~33 lines: long inventories are
