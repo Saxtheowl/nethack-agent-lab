@@ -120,3 +120,14 @@ LLM decides every non-trivial action itself, from the screen it just read.
   spell-heal ONLY if you are > 8 squares away (wizard.c tactics). Stay within 8 squares of those stairs (or on
   them) and finish them there. Boulders pushed onto trap doors plug them (Castle row 21, slot 3 run 7).
 - Gremlins steal intrinsics only at night: game clock hour < 6 or > 21, and the worker runs on UTC.
+- Castle front door, second approach (slot 8 run 7, T21342-25676, DIED): a wand of striking zapped at the RAISED drawbridge
+  destroys it (zap.c: the beam reaching the DBWALL calls destroy_drawbridge; an empty wand can still be wrested, 1/121 per zap).
+  The doorway is then a choke point from the moat square, and a water niche (moat between maze wall and tower wall, e.g.
+  screen 9,17) is a safe rest spot walkers cannot reach. BUT: standing on water held up by water walking boots, a mountain
+  nymph charmed me into taking the boots off -> "You sink like a rock", drowned. Never stand on water on boots/levitation
+  items when nymphs/succubi can reach you; freeze the square (wand of cold) or fight from land. An invisible demilich that
+  grew to ~level 17 summons nasties when you are within 7 squares; a troll wielding a chickatrice corpse stones on every hit.
+- Quest (Valkyrie) done at XL14 by slot 8 run 7: Surtur's fortress can have BOTH drawbridges raised (passtune only works at
+  the Castle): destroy one with striking, then a cold ray solidifies the lava span. Surtur teleports next to you and flees to
+  the up stairs to heal: finish him on the stairs. He carries the Bell of Opening. A polymorph trap on a quest level
+  destroyed body armor + cloak (no magic resistance).
