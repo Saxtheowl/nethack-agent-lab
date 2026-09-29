@@ -27,6 +27,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import analytics
+import bags
 import frames
 from terminal import text_runs
 
@@ -660,7 +661,18 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(history())
             if url.path == '/api/inventory':
                 p = frames.GAMES / gid / 'inventory.json'
-                return self.send(json.loads(p.read_text()) if p.exists() else {'items': []})
+                inv = json.loads(p.read_text()) if p.exists() else {'items': []}
+                # a bag the tool may not open: last contents the agent itself looked at
+                try:
+                    seen = json.loads((frames.GAMES / gid / 'bags.json').read_text())
+                except (FileNotFoundError, json.JSONDecodeError):
+                    seen = {}
+                for it in inv.get('items', []):
+                    if 'contents' not in it and re.search(r'\b(?:bag|sack)\b', it.get('name', '')):
+                        s = seen.get(bags.kind(it['name']))
+                        if s:
+                            it['seen'] = s
+                return self.send(inv)
             if url.path == '/api/keyevents':
                 return self.send({'events': analytics.key_events(gid)})
             if url.path == '/api/styles':

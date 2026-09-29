@@ -12,6 +12,7 @@ import subprocess
 import time
 from datetime import datetime, timezone
 
+import bags
 import frames
 from session import SOCKET, RUNTIME, ROOT, HOST, slot_tmux, slot_where
 from terminal import text_runs
@@ -73,7 +74,7 @@ def finish(meta, player, remote=None):
 
 
 def main():
-    writers, alive, metas, last_meta = {}, {}, {}, 0
+    writers, alive, metas, last_meta, watchers = {}, {}, {}, 0, {}
     while True:
         now = time.time()
         for slot in SLOTS:
@@ -95,7 +96,13 @@ def main():
                     writers[gid] = frames.Writer(gid)
                 captured = tmux_slot(slot, 'capture-pane', '-p', '-e', '-t', '@S:0.0').stdout
                 w = writers[gid]
-                if w.add(frames.segment_rows(text_runs(captured)), now):
+                rows = frames.segment_rows(text_runs(captured))
+                try:  # remember what the agent saw inside its bags (dashboard inventory)
+                    watchers.setdefault(gid, bags.Watcher(gid)).feed(
+                        [frames.row_text(r) for r in rows], meta.get('turn'))
+                except Exception:
+                    pass
+                if w.add(rows, now):
                     meta['frames'] = w.index
                     meta['updated'] = now
                     if w.last_status:

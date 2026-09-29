@@ -89,7 +89,9 @@ reads every page, prints the full list and saves it for the dashboard. Run it
 after picking things up and at least every ~500 turns.
 It also lists the contents of carried bags whose contents are known
 ("containing N items"): `a` <bag> `:` then Escape, no turn (a bag of holding
-only when known uncursed/blessed: opening a cursed one destroys items).
+only when known uncursed/blessed: opening a cursed one destroys items; a plain
+"bag" of unknown status only if bag of holding is in your discoveries).
+Whenever you look into a bag yourself (`:`), the dashboard keeps what you saw.
 Run it after putting things in or taking them out of a bag too.
 
 ## Controls

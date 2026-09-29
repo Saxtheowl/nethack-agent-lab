@@ -1404,6 +1404,11 @@ async function showInventory(node, gid) {
     if (it.contents) kids.push(el('div', {className: 'bag'},
       el('div', {className: 'bh', textContent: it.contents.length ? `contenu (${it.contents.length})` : 'vide'}),
       ...it.contents.map(c => el('div', {className: 'it', title: c, textContent: c}))));
+    else if (it.seen) kids.push(el('div', {className: 'bag'},
+      el('div', {className: 'bh', textContent: `contenu vu par l’agent au T${it.seen.turn ?? '?'} (${it.seen.items.length}) — peut avoir changé depuis`}),
+      ...it.seen.items.map(c => el('div', {className: 'it', title: c, textContent: c}))));
+    else if (/\b(bag|sack)\b.* containing \d+ item/.test(it.name)) kids.push(el('div', {className: 'bag'},
+      el('div', {className: 'bh', textContent: 'contenu pas encore vu : sac peut-être maudit (un bag of holding maudit détruit des objets à chaque ouverture), il s’affichera dès que l’agent regardera dedans'})));
   }
   kids.push(el('div', {className: 'hint', textContent: `${d.items.length} objets · relevé au T${d.turn ?? '?'} (${fmtT(d.t)})`}));
   node.replaceChildren(...kids);

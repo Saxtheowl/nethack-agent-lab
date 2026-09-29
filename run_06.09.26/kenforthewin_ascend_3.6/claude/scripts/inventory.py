@@ -11,12 +11,15 @@ Carried bags whose contents are already known ("containing N items") are
 looked into too (apply, ':'): free as well, because NetHack only charges a
 turn for a look that reveals unknown contents (pickup.c use_container). A bag
 of holding is only opened when known not cursed: opening a cursed one makes
-items vanish.
+items vanish. A plain "bag" of unknown curse status is opened only when the
+discoveries list (backslash, free) shows that bag of holding is already
+identified: that bag is then a sack or an oilskin sack, harmless to open.
 """
 import json
 import re
 import time
 
+import bags as bagmod
 import frames
 import session
 
@@ -97,16 +100,11 @@ def look_inside(letter):
             text = session.screen()
             lines = text.splitlines()
             if col is None:
-                hdr = next((i for i, l in enumerate(lines) if 'Contents of ' in l), None)
-                if hdr is None:
+                w = bagmod.window(lines)
+                if w is None:
                     return None
-                col, top = lines[hdr].index('Contents of '), hdr
-            for line in lines[top:]:
-                if len(line) <= col or line[col - 1] == '└':
-                    break
-                seg = line[col:].split('│')[0]
-                if seg.startswith('  ') and seg.strip() and not PAGE.fullmatch(seg.strip()):
-                    names.append(seg.strip())
+                col, top, _title = w
+            names += bagmod.items(lines, col, top)
             page = PAGE.search(text)
             if not page or page[1] == page[2] or text in seen:
                 break
@@ -121,6 +119,44 @@ def look_inside(letter):
                 break
             session.send('Escape', named=True, publish=False)
             time.sleep(.5)
+
+
+def discovered(what):
+    """Is `what` in the discoveries list (backslash: a free action)? Only the
+    discoveries window is read (the message history may name the item too)."""
+    found = False
+    try:
+        session.send('\\', publish=False)
+        time.sleep(.8)
+        col = top = None
+        seen = set()
+        for _ in range(8):
+            text = session.screen()
+            lines = text.splitlines()
+            if col is None:
+                hdr = next((i for i, l in enumerate(lines) if l.find('│Discoveries') >= 0), None)
+                if hdr is None:
+                    break  # "You haven't discovered anything yet..."
+                col, top = lines[hdr].index('│Discoveries') + 1, hdr
+            for line in lines[top:]:
+                if len(line) <= col or line[col - 1] == '└':
+                    break
+                if re.fullmatch(r'[* ] ' + re.escape(what) + r'(?: \(.*\))?', line[col:].split('│')[0].rstrip()):
+                    found = True
+            page = PAGE.search(text)
+            if found or not page or page[1] == page[2] or text in seen:
+                break
+            seen.add(text)
+            session.send('>', publish=False)
+            time.sleep(.6)
+    finally:
+        for _ in range(3):
+            text = session.screen()
+            if '│Discoveries' not in text and not PAGE.search(text):
+                break
+            session.send('Escape', named=True, publish=False)
+            time.sleep(.4)
+    return found
 
 
 def main():
@@ -142,12 +178,19 @@ def main():
     time.sleep(.4)
     if PAGE.search(session.screen()):
         session.send('Escape', named=True, publish=False)
-    bags = {}
+    bags, boh_known = {}, None
     for x in order:
         name = items.get(x, {}).get('name', '')
-        oilskin_or_sack = re.search(r'\bsack\b', name)
-        known_safe = re.search(r'\b(?:uncursed|blessed)\b', name) and not re.search(r'(?<!un)cursed', name)
-        if KNOWN_BAG.search(name) and (oilskin_or_sack or known_safe):
+        if not KNOWN_BAG.search(name):
+            continue
+        cursed = re.search(r'(?<!un)cursed', name)
+        known_safe = re.search(r'\b(?:uncursed|blessed)\b', name) and not cursed
+        safe = re.search(r'\bsack\b', name) or known_safe
+        if not safe and not cursed and bagmod.kind(name) == 'bag':
+            if boh_known is None:
+                boh_known = discovered('bag of holding')
+            safe = boh_known
+        if safe:
             bags[x] = look_inside(x)
     out = {'t': time.time(), 'turn': int(turn[1]) if turn else None,
            'items': sorted(({**{k: v for k, v in items[x].items() if k != 'src'},

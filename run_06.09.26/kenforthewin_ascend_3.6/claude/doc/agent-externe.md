@@ -73,7 +73,7 @@ Toutes dans `R/slots/4/` (elles fixent `NH_SLOT=4` toutes seules) :
 | `k <touches>` | envoie des touches. Chiffres = déplacements (pavé numérique : 7 8 9 / 4 6 / 1 2 3). `--named Enter`, `--named Escape` pour les touches spéciales, `--raw` pour du texte de menu |
 | `t X Y` | se déplace (travel) vers la case X,Y de l'écran |
 | `look X Y` | farlook : identifie ce qu'il y a en X,Y |
-| `inv` | inventaire **complet** (le panneau de droite est coupé après ~33 lignes), avec le contenu des sacs déjà connus (bag of holding seulement s’il est connu non maudit) |
+| `inv` | inventaire **complet** (le panneau de droite est coupé après ~33 lignes), avec le contenu des sacs déjà connus (bag of holding seulement s’il est connu non maudit ; « bag » d’état inconnu seulement si le bag of holding est déjà identifié) ; sinon le dashboard montre le dernier contenu que l’agent a vu en regardant dedans |
 | `fight <lettre>` | attaque un monstre adjacent désigné par sa lettre (s'arrête sous 50 % HP) |
 | `explore` | exploration automatique prudente (s'arrête sur tout danger) |
 | `rest` | repos contrôlé (s'arrête à la moindre perte de HP) |
