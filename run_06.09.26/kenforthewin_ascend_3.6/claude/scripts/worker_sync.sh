@@ -2,8 +2,11 @@
 # worker_sync.sh: keeps the PC and miniforum-worker in step while the tools
 # (recorder, dashboard, slot games) move to the worker. Runs on the PC in
 # tmux session `sync`. Every 5 s: PC -> worker for slots still played here
-# (their game folders, slot/feed files, journals) + the PC's load figures.
-# Every 60 s: worker -> PC for slots living on the worker (for git history).
+# (their game folders, slot/feed files) + the PC's load figures, and memory/
+# both ways (the player agents write their journals on the worker, the
+# orchestrator edits lessons here): the newer file wins (rsync -u).
+# Every 60 s: worker -> PC for slots living on the worker and the agents'
+# own helpers in slots/ (for git history).
 R="$(cd "$(dirname "$0")/.." && pwd -P)"
 cd "$R"
 SSH="ssh -o BatchMode=yes -o ControlMaster=auto -o ControlPath=/tmp/ssh-nh-sync-%C -o ControlPersist=900"
@@ -36,9 +39,12 @@ PY
       g=$(gid .runtime/slot-$s.json); [ -n "$g" ] && push+=("runs/games/$g")
     fi
   done
-  rsync -aR -e "$SSH" --exclude analytics.json "${push[@]}" memory "$W:$R/" 2>/dev/null
+  rsync -aR -e "$SSH" --exclude analytics.json "${push[@]}" "$W:$R/" 2>/dev/null
+  rsync -au -e "$SSH" memory/ "$W:$R/memory/" 2>/dev/null
+  rsync -au -e "$SSH" "$W:$R/memory/" memory/ 2>/dev/null
   if [ $((n % 12)) = 0 ] && [ ${#pull[@]} -gt 0 ]; then
     for p in "${pull[@]}"; do rsync -aR -e "$SSH" "$W:$R/./$p" . 2>/dev/null; done
+    rsync -au -e "$SSH" --exclude __pycache__ "$W:$R/slots/" slots/ 2>/dev/null
     rsync -a -e "$SSH" "$W:$R/runs/wish_scum/" runs/wish_scum/ 2>/dev/null
   fi
   n=$((n + 1))
