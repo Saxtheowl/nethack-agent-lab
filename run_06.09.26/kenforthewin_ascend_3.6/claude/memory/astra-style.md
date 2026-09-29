@@ -98,3 +98,9 @@ LLM decides every non-trivial action itself, from the screen it just read.
   (locked) door silently without the squeaky board, apply an expensive camera AT YOURSELF (blind 1-25 turns, gaze
   harmless; telepathy shows her; re-flash as soon as sight returns — you act first that turn), then kill her blind.
   Careful: a wand of teleportation zapped at her also teleports the Perseus statue lying on her square.
+- Castle done right (slot 3 run 7, XL10-12): monsters on a level you left do not move, so a guard parked on the
+  arrival stairs is killed by quick in-and-out visits; find the passtune by Mastermind with any instrument
+  (5 notes, gears = right note right place, tumblers = right note wrong place); standing on Elbereth by the
+  drawbridge, close it on whatever stands on it (crushes soldiers, a lich, trolls = XP). Crossing the bridge, a
+  soldier's wand of lightning did 115 -> 20 HP and blew up every wand: cross at full HP with healing ready.
+  Wishes spent: 2 blessed charging (recharge the wand), SDSM, cloak of MR, life saving, free action, GoP.
