@@ -1,0 +1,26 @@
+#!/bin/bash
+# slots/8/erest TARGET% [max]  (run via slots/8/w ./erest 97 200): rest one 's' at a time ON A VERIFIED
+# Elbereth square. Tolerates adjacent sea monsters (';', they respect Elbereth); stops on ANY HP drop,
+# status-line change, prompt/theft message, any other adjacent monster letter, or when the engraving
+# (checked every 10 turns with ':') is no longer exactly "Elbereth".
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+t=${1:-70}; n=${2:-150}; prev=999
+norm() { grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g; s/ +/ /g'; }
+chk() { python3 scripts/session.py keys --compact --why "check Elbereth" ':' 2>&1 | grep -oE 'You read: "[^"]*"' | tail -1; }
+[ "$(chk)" = 'You read: "Elbereth"' ] || { echo "STOP: no Elbereth here"; exit 1; }
+st0=$(python3 scripts/session.py screen --compact | norm)
+for i in $(seq "$n"); do
+  s=$(python3 scripts/session.py keys --compact --why "rest one turn on Elbereth" s 2>&1)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -z "$cur" ] && { echo "STOP: no status: $(echo "$s" | tail -1)"; break; }
+  [ "$prev" != 999 ] && [ "$cur" -lt "$prev" ] && { echo "STOP: HP dropped to $cur"; break; }
+  prev=$cur
+  [ "$(echo "$s" | norm)" != "$st0" ] && { echo "STOP: status changed"; break; }
+  echo "$s" | grep -E "^0[67] " | grep -qiE "stole|steal|--More--|\[yn|swings itself|engulf" && { echo "STOP: message"; break; }
+  adj=$(echo "$s" | grep '^Neighbors' | grep -oE "[1-9]:[A-Za-z@&:'][(][0-9]+,[0-9]+[)]")
+  [ -n "$adj" ] && { echo "STOP: adjacent $adj"; break; }
+  if [ $((i % 10)) -eq 0 ]; then [ "$(chk)" = 'You read: "Elbereth"' ] || { echo "STOP: Elbereth damaged"; break; }; fi
+  [ $((cur * 100)) -ge $((mx * t)) ] && { echo "OK HP $cur/$mx"; break; }
+done
+python3 scripts/session.py screen --compact | grep -E '^0[67] |^34|^Neighbors'

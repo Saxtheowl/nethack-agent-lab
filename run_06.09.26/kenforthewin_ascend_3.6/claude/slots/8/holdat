@@ -1,0 +1,26 @@
+#!/bin/bash
+# slots/8/holdat DIR [n] (run via slots/8/w ./holdat 8 10): hold a doorway: each turn, if a monster
+# is on square DIR, attack it once (F DIR); else search 1 turn. Stops: HP < 55%, Stone/Slime/
+# slowing/stiffening message, status change, theft, any '@' or 'e' at DIR, 'Really attack' prompt.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+d=$1; n=${2:-10}
+norm() { grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g; s/ +/ /g'; }
+st0=$(python3 scripts/session.py screen --compact | norm)
+for i in $(seq "$n"); do
+  s=$(python3 scripts/session.py screen --compact)
+  g=$(echo "$s" | grep '^Neighbors' | grep -oE " $d:[^ (]+" | cut -d: -f2)
+  case "$g" in
+    @|e) echo "STOP: '$g' at the door: decide yourself"; break;;
+    [A-Za-z\&\;:\']) a=$(python3 scripts/session.py keys --compact --why "hold door: attack $g" "F$d" 2>&1);;
+    *) a=$(python3 scripts/session.py keys --compact --why "hold door: wait" s 2>&1);;
+  esac
+  echo "$a" | grep -E '^07' | tail -1
+  echo "$a" | grep -qE "HP ALARM|efused" && { echo "STOP: harness"; break; }
+  hp=$(echo "$a" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -z "$cur" ] && { echo "STOP: no status"; break; }
+  [ $((cur * 100)) -lt $((mx * 55)) ] && { echo "STOP: HP $cur/$mx"; break; }
+  echo "$a" | grep -qiE "slowing down|stiffen|Stone|turning to|Slime|stole|steal|Really attack|--More--" && { echo "STOP: danger message"; break; }
+  [ "$(echo "$a" | norm)" != "$st0" ] && { echo "STOP: status changed"; break; }
+done
+python3 scripts/session.py screen --compact | grep -E '^34|^Map|^Neighbors'

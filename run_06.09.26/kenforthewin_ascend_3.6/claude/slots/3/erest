@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/3/erest N : rest on an Elbereth square: N single searches; ignores adjacent monsters (they should be scared)
+# but stops on ANY HP loss, hunger/status change, prompt, 'stole'/'engraving' messages. Run via slots/3/w ./erest
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+n=${1:-20}; prev=""
+for i in $(seq "$n"); do
+  out=$($S keys --compact s 2>&1)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "STOP: no status"; break; }
+  if [ -n "$prev" ] && [ "$hp" -lt "$prev" ]; then echo "STOP: HP loss $prev -> $hp"; break; fi
+  prev=$hp
+  st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Hungry|Weak|Fainting|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu')
+  [ -n "$st" ] && { echo "STOP: status $st"; break; }
+  cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt (cursor row $cy)"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|--More--|wipe|engrav|erase' && { echo "STOP: message"; break; }
+done
+echo "$out" | grep -E '^0[5-7] |^34|^Neigh'

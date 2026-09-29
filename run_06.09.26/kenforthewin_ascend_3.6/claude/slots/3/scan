@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/3/scan: telepathy scan = put on blindfold r, farlook every monster letter on the map, remove the
+# blindfold (2 turns). Refuses if already blind or a monster is adjacent. Run via slots/3/w ./scan
+cd "$(dirname "$0")"
+s=$(./v)
+echo "$s" | grep -q 'Blind' && { echo "already blind"; exit 1; }
+./k --why "telepathy scan" Pr >/dev/null
+s=$(./v)
+me=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+echo "$s" | grep -E '^34' | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+'
+echo "me $me"
+for p in $(echo "$s" | grep '^Map' | grep -oE " [A-Za-z&;:'@]@[0-9]+,[0-9]+" | tr -d ' '); do
+  c=${p%%@*}; xy=${p#*@}
+  [ "$xy" = "$me" ] && continue; [ -z "$c" ] && continue
+  echo "$c $xy: $(./look ${xy%,*} ${xy#*,} | sed -E 's/^. +//; s/ \[seen.*//' | cut -c1-70)"
+done
+./k --why "remove blindfold" Rr >/dev/null
+./v | grep -E '^34' | grep -oE 'T:[0-9]+ *[A-Za-z ]*'

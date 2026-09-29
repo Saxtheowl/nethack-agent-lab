@@ -1,0 +1,10 @@
+#!/bin/bash
+# slots/8/opendoor DIR : try to open the door in direction DIR up to 5 times (stops on opened/locked/no door).
+cd "$(dirname "$0")/../.."
+for i in 1 2 3 4 5; do
+  slots/8/k o --why "open door" >/dev/null
+  out=$(slots/8/k "$1" --raw --why "door direction")
+  msg=$(slots/8/v | sed -n 4,11p | grep -E "door opens|locked|no door|already open|resists|see no door|This door" | tail -1)
+  echo "$msg"
+  echo "$msg" | grep -qE "resists" || break
+done

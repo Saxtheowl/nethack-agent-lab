@@ -1,0 +1,18 @@
+{
+  "phase": "waiting_quota",
+  "time": 1790687449.791521,
+  "pid": 2587292,
+  "retry_seconds": 300,
+  "windows": {
+    "primary": {
+      "usedPercent": 23,
+      "windowDurationMins": 300,
+      "resetsAt": 1790702645
+    },
+    "secondary": {
+      "usedPercent": 100,
+      "windowDurationMins": 10080,
+      "resetsAt": 1791055733
+    }
+  }
+}

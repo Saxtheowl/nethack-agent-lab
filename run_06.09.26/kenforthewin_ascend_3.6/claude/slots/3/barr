@@ -1,0 +1,51 @@
+#!/bin/bash
+# slots/3/barr N [XMIN XMAX YMIN YMAX]: clear a barracks of (sleeping) soldiers. Each step: if an adjacent
+# '@' is farlooked as a hostile soldier/sergeant/lieutenant/captain, attack it (moving into it, so a
+# peaceful would only prompt); else step one square toward the nearest '@' inside the box (default the
+# south barracks 25-34 x 23-24). Stops on: HP < 60%, any non-'@' monster letter adjacent, a peaceful or
+# unknown '@', prompt/--More--, no target left, N actions. Run via slots/3/w ./barr
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re
+N = int(sys.argv[1]) if len(sys.argv) > 1 else 20
+X0, X1, Y0, Y1 = (int(a) for a in sys.argv[2:6]) if len(sys.argv) > 5 else (25, 34, 23, 24)
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(key): return subprocess.run(['./k', '--why', 'barracks: kill sleeping soldiers', key], capture_output=True, text=True).stdout
+def look(x, y): return subprocess.run(['./look', str(x), str(y)], capture_output=True, text=True).stdout
+D = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+OK = re.compile(r'\((soldier|sergeant|lieutenant|captain)\)')
+kills = 0
+for i in range(N):
+    s = v()
+    c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s); hx, hy = int(c[1]), int(c[2])
+    if hy < 10: print('STOP prompt'); break
+    hp = re.search(r'HP:(\d+)\((\d+)\)', s); h, mh = int(hp[1]), int(hp[2])
+    if h * 100 < mh * 60: print(f'STOP HP {h}/{mh}'); break
+    last = [l for l in s.splitlines() if re.match(r'^0\d ', l)]
+    if last and re.search(r'--More--|Really attack', last[-1]): print('STOP message', last[-1]); break
+    mf = re.search(r'^Map features.*$', s, re.M)[0]
+    mons = [(g, int(x), int(y)) for g, x, y in re.findall(r" (\S)@(\d+),(\d+)", mf) if re.match(r"[A-Za-z&;:'@]", g)]
+    mons = [m for m in mons if (m[1], m[2]) != (hx, hy)]
+    adj = [m for m in mons if max(abs(m[1]-hx), abs(m[2]-hy)) == 1]
+    other = [m for m in adj if m[0] != '@']
+    if other: print('STOP non-@ adjacent', other); break
+    target = None
+    for g, x, y in adj:
+        lk = look(x, y)
+        if 'peaceful' in lk or not OK.search(lk): print('STOP @ not a hostile soldier:', lk.strip()[:80]); target = 'bad'; break
+        target = (x, y); break
+    if target == 'bad': break
+    if target:
+        out = k(D[(target[0]-hx, target[1]-hy)])
+        if 'You kill' in out.split('\n')[-15:] or re.search(r'You kill', '\n'.join(l for l in out.splitlines() if re.match(r'^0[5-7] ', l))): kills += 1
+        continue
+    box = [m for m in mons if m[0] == '@' and X0 <= m[1] <= X1 and Y0 <= m[2] <= Y1]
+    if not box: print('no soldier left in the box'); break
+    g, x, y = min(box, key=lambda m: max(abs(m[1]-hx), abs(m[2]-hy)))
+    dx, dy = (x > hx) - (x < hx), (y > hy) - (y < hy)
+    out = k(D[(dx, dy)])
+else:
+    print('STOP actions', N)
+s = v()
+print('kills~', kills, re.search(r'HP:\d+\(\d+\).*T:\d+', s)[0])
+PY

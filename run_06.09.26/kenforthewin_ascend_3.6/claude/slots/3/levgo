@@ -1,0 +1,49 @@
+#!/bin/bash
+# slots/3/levgo "x,y x,y ..." [IGNORE]: walk/float ONE step at a time toward each waypoint in turn
+# (straight/diagonal steps). Stops on: HP loss, status change (e.g. Lev lost), prompt/--More--,
+# any non-pet monster within 2 squares (except IGNORE "x,y" statues), position not changing.
+# Run via slots/3/w ./levgo
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+wps="$1"; ign="${2:-}"
+out=$($S screen --compact 2>&1)
+prevhp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+prevst=$(echo "$out" | grep -E '^34 ' | grep -oE 'Lev|Hungry|Weak|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu' | tr '\n' ' ')
+for wp in $wps; do
+  tx=${wp%,*}; ty=${wp#*,}
+  for step in $(seq 1 90); do
+    pos=$(echo "$out" | grep -o 'Neighbors of @([0-9]*,[0-9]*)' | grep -o '[0-9]*,[0-9]*')
+    hx=${pos%,*}; hy=${pos#*,}
+    [ "$hx" = "$tx" ] && [ "$hy" = "$ty" ] && break
+    dx=$((tx>hx ? 1 : (tx<hx ? -1 : 0))); dy=$((ty>hy ? 1 : (ty<hy ? -1 : 0)))
+    case "$dx,$dy" in -1,-1) k=7;; 0,-1) k=8;; 1,-1) k=9;; -1,0) k=4;; 1,0) k=6;; -1,1) k=1;; 0,1) k=2;; 1,1) k=3;; esac
+    out=$($S keys --compact --why "levgo step to $tx,$ty" "$k" 2>&1)
+    echo "$out" | grep -q '^Refused' && { echo "STOP refused: $(echo "$out" | grep '^Refused')"; break 2; }
+    hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+    st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Lev|Hungry|Weak|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu' | tr '\n' ' ')
+    [ -n "$hp" ] && [ -n "$prevhp" ] && [ "$hp" -lt "$prevhp" ] && { echo "STOP HP loss $prevhp -> $hp"; break 2; }
+    prevhp=$hp
+    [ "$st" != "$prevst" ] && { echo "STOP status '$prevst' -> '$st'"; break 2; }
+    cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+    [ "${cy:-0}" -lt 10 ] && { echo "STOP prompt"; break 2; }
+    echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|engulf|swallow|--More--|>>|drown|swings itself' && { echo "STOP message"; break 2; }
+    npos=$(echo "$out" | grep -o 'Neighbors of @([0-9]*,[0-9]*)' | grep -o '[0-9]*,[0-9]*')
+    [ "$npos" = "$pos" ] && { echo "STOP did not move at $pos"; break 2; }
+    near=$(echo "$out" | IGN="$ign" python3 -c '
+import re,sys,os
+t=sys.stdin.read()
+ign=set(os.environ.get("IGN","").split())
+m=re.search(r"^Map features.*$",t,re.M); m=m.group(0) if m else ""
+pm=re.search(r"^PETS.*$",t,re.M); pets=pm.group(0) if pm else ""
+h=re.search(r"Neighbors of @\((\d+),(\d+)\)",t); hx,hy=int(h[1]),int(h[2])
+bad=[]
+for g,x,y in re.findall(r" ([A-Za-z@&;:\x27])@(\d+),(\d+)",m):
+    x,y=int(x),int(y)
+    if (x,y)==(hx,hy) or f"{x},{y}" in ign or f"{x},{y}" in pets: continue
+    if max(abs(x-hx),abs(y-hy))<=2: bad.append(f"{g}@{x},{y}")
+print(" ".join(bad))')
+    [ -n "$near" ] && { echo "STOP near: $near"; break 2; }
+  done
+done
+echo "$out" | grep -E '^0[5-7] |^34|^Neigh'

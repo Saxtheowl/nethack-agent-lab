@@ -1,0 +1,44 @@
+#!/bin/bash
+# slots/3/prestb TARGET% [MAXACTIONS] [IGNORE_GLYPHS]: like prest but allows the Blind status (blindfold +
+# telepathy): rest until HP >= TARGET% of max.
+# Stops on: HP loss, any non-pet monster letter adjacent or warning digit (1-5) within 3 (unless in IGNORE),
+# bad status (Stone Slime Conf Stun Ill FoodPois Hallu Weak), prompt/--More--, steal/engulf message.
+# Run via slots/3/w ./prestb
+cd "$(dirname "$0")"
+T=${1:-90}; N=${2:-60}; IG="${3:-}"
+exec python3 - "$T" "$N" "$IG" <<'PY'
+import subprocess, sys, re
+T, N, IG = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(*a): return subprocess.run(['./k', '--why', 'repos (prestb)', *a], capture_output=True, text=True).stdout
+MON = re.compile(r"[A-Za-z&;:'@]")
+prev = None
+for i in range(N):
+    s = v()
+    hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    me = re.search(r'Neighbors of @\((\d+),(\d+)\)', s)
+    if not hp or not me: print('STOP unreadable screen'); break
+    c, m = int(hp[1]), int(hp[2]); mx, my = int(me[1]), int(me[2])
+    st = re.search(r'^34 .*$', s, re.M); st = st[0] if st else ''
+    last = [l for l in s.splitlines() if re.match(r'^0[1-7] ', l)]
+    cur = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    if prev is not None and c < prev: print(f'STOP HP loss {prev}->{c}'); break
+    if c * 100 >= m * T: print(f'DONE HP {c}/{m}'); break
+    if re.search(r'Stone|Slime|Conf|Stun|Ill|FoodPois|Hallu|Weak', st): print('STOP status', st[-40:]); break
+    if cur and int(cur[2]) < 10: print('STOP prompt'); break
+    if last and re.search(r'stole|steal|engulf|swallow|--More--|>>', last[-1]): print('STOP message', last[-1][:80]); break
+    mf = re.search(r'^Map features.*$', s, re.M); pm = re.search(r'^PETS.*$', s, re.M)
+    pets = set(re.findall(r'(\d+,\d+)', pm[0] if pm else ''))
+    bad = []
+    for g, x, y in re.findall(r' (\S)@(\d+),(\d+)', mf[0] if mf else ''):
+        x, y = int(x), int(y)
+        if (x, y) == (mx, my) or f'{x},{y}' in pets or g in IG: continue
+        d = max(abs(x - mx), abs(y - my))
+        if (MON.fullmatch(g) and d <= 1) or (g in '12345' and d <= 3): bad.append(f'{g}@{x},{y}')
+    if bad: print('STOP monster near:', ' '.join(bad)); break
+    prev = c
+    k('n5s' if c * 10 >= m * 7 else 's')
+else:
+    print('STOP max actions')
+s = v(); m2 = re.search(r'HP:\S+.*T:\d+', s); print(m2[0] if m2 else '')
+PY

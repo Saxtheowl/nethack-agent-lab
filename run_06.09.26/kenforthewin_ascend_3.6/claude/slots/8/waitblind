@@ -1,0 +1,15 @@
+#!/bin/bash
+# slots/8/waitblind N : wait (search 10 at a time) up to N chunks while Blind; stop when sight returns,
+# when HP drops, or a monster is adjacent. Prints status each chunk.
+cd "$(dirname "$0")/../.."
+prev=$(slots/8/v | grep -oE "HP:[0-9]+" | cut -d: -f2)
+for i in $(seq 1 "${1:-10}"); do
+  out=$(slots/8/k n10s --why "wait out blindness")
+  hp=$(echo "$out" | grep -oE "HP:[0-9]+" | cut -d: -f2)
+  st=$(echo "$out" | grep -oE "T:[0-9]+.*" | head -1)
+  echo "$st HP:$hp"
+  echo "$out" | grep -q "Blind" || { echo "SIGHT BACK"; exit 0; }
+  [ -n "$hp" ] && [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; echo "$out" | grep Neighbors; exit 1; }
+  echo "$out" | grep Neighbors | grep -qE " [1-9]:[A-Za-z@&;:]\\(" && { echo "ADJACENT"; echo "$out" | grep Neighbors; exit 1; }
+  prev=$hp
+done

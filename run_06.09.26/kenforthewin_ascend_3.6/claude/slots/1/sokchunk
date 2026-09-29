@@ -1,0 +1,25 @@
+#!/bin/bash
+# slots/1/sokchunk "X,Y:PUSHES" ... : like sokrun, but splits each group into
+# chunks of at most $CH pushes (default 12), following the boulder, so no call
+# exceeds the 50-step executor cap. Stops at the first failure or leftover keys.
+# Run via: slots/1/w ./sokchunk 31,18:lll 29,24:uu
+cd "$(dirname "$0")/../.."
+CH=${CH:-12}
+for g in "$@"; do
+  xy=${g%%:*}; p=${g#*:}; x=${xy%,*}; y=${xy#*,}
+  while [ -n "$p" ]; do
+    chunk=${p:0:$CH}; p=${p:$CH}
+    o=$(slots/1/sok $x $y $chunk --execute --max-steps 50 $SOKEXTRA 2>&1)
+    if echo "$o" | grep -qE 'STOPPED|Error|assert|Traceback|No boulder|Blocked'; then
+      echo "FAILED at $x,$y:$chunk (rest: $p)"; echo "$o" | grep -E 'STOPPED|Error|No boulder|Blocked|assert' | head -3
+      echo "$o" | grep -E '^0[5-7]|^34'; exit 1
+    fi
+    rem=$(echo "$o" | grep -oE 'remaining keys: ?[^ ]*' | sed 's/remaining keys: \?//')
+    if [ -n "$rem" ]; then echo "LEFTOVER at $x,$y:$chunk keys=$rem (rest: $p)"; exit 2; fi
+    for ((i=0; i<${#chunk}; i++)); do
+      case ${chunk:$i:1} in l) x=$((x-1));; r) x=$((x+1));; u) y=$((y-1));; d) y=$((y+1));; esac
+    done
+    echo "ok chunk -> boulder now $x,$y"
+  done
+  echo "ok group $g"
+done

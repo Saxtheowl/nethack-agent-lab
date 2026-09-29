@@ -1,0 +1,11 @@
+#!/bin/bash
+# slots/8/climb: sequence of "X Y" up-stairs positions; uses goto2 per level; stops if the level did not change.
+cd "$(dirname "$0")/../.."
+for xy in "$@"; do
+  before=$(slots/8/v | grep -oE "(Dlvl:[0-9]+|Home [0-9]+)" | head -1)
+  set -- $xy
+  out=$(slots/8/goto2 ${xy% *} ${xy#* } '<' 2>&1)
+  after=$(slots/8/v | grep -oE "(Dlvl:[0-9]+|Home [0-9]+)" | head -1)
+  echo "$before -> $after ($xy)"
+  [ "$before" = "$after" ] && { echo "STOP: $out" | tail -3; exit 1; }
+done

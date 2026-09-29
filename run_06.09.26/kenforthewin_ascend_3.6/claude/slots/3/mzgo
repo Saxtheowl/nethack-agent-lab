@@ -1,0 +1,102 @@
+#!/bin/bash
+# mzgo X Y [MAXSTEPS] [STOPDIST]: walk through a dark MAZE (corridor width 2, walls 1: walls on screen
+# columns x%3==2 and rows y%3==0) toward screen square X,Y, one orthogonal step at a time.
+# Unknown (blank) wall slots are assumed open; a bump reveals the wall and the path is replanned.
+# Stops: arrived within STOPDIST (default 1), any HP loss, any non-pet monster letter within 2 squares,
+# steal/engulf/--More-- message, prompt, no path, MAXSTEPS (default 40). Run via slots/3/w ./mzgo
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re, collections
+TX, TY = int(sys.argv[1]), int(sys.argv[2])
+N = int(sys.argv[3]) if len(sys.argv) > 3 else 40
+SD = int(sys.argv[4]) if len(sys.argv) > 4 else 1
+IGN = set(tuple(map(int, q.split(','))) for q in (sys.argv[5].split(';') if len(sys.argv) > 5 else []) if q)
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(x): return subprocess.run(['./k', '--why', 'mzgo maze step', x], capture_output=True, text=True).stdout
+WALL = set('│─┌┐└┘├┤┬┴┼')
+MON = re.compile(r"[A-Za-z&;:'@]")
+def parse(s):
+    rows = {}
+    for l in s.splitlines():
+        m = re.match(r'^(\d\d) (.*)$', l)
+        if m: rows[int(m[1])] = m[2]
+    c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    pets = set()
+    pm = re.search(r'^PETS[^:]*:(.*)$', s, re.M)
+    if pm:
+        for a, b in re.findall(r'(\d+),(\d+)', pm[1]): pets.add((int(a), int(b)))
+    mf = re.search(r'^Map features.*$', s, re.M)
+    mons = []
+    if mf:
+        for g, x, y in re.findall(r" (\S)@(\d+),(\d+)", mf[0]):
+            if MON.match(g): mons.append((g, int(x), int(y)))
+    return rows, int(c[1]), int(c[2]), (int(hp[1]), int(hp[2])) if hp else None, pets, mons
+def g(rows, x, y):
+    r = rows.get(y, '')
+    return r[x] if 0 <= x < len(r) else ' '
+blocked = set()
+EYES = set()
+def passable(rows, x, y):
+    if not (1 <= x <= 79 and 10 <= y <= 31): return False
+    if (x, y) in EYES: return False
+    if (x, y) in blocked: return False
+    if x % 3 == 2 and y % 3 == 0: return False          # wall pillar
+    c = g(rows, x, y)
+    if c in WALL or c in '0^': return False
+    return True                                        # floor, object, monster or unknown slot
+def bfs(rows, sx, sy):
+    prev = {(sx, sy): None}; q = collections.deque([(sx, sy)]); end = None
+    while q:
+        p = q.popleft()
+        if abs(p[0]-TX) + abs(p[1]-TY) <= SD - 0 and max(abs(p[0]-TX), abs(p[1]-TY)) <= SD: end = p; break
+        for dx, dy in ((0,-1),(1,0),(0,1),(-1,0)):
+            n = (p[0]+dx, p[1]+dy)
+            if n not in prev and passable(rows, *n):
+                prev[n] = p; q.append(n)
+    if end is None: return None
+    path = []
+    while end != (sx, sy): path.append(end); end = prev[end]
+    return path[::-1]
+KEY = {(0,-1):'8',(1,0):'6',(0,1):'2',(-1,0):'4'}
+import os
+LEAD = os.environ.get('LEAD', '')   # e.g. LEAD=H : wait (search) whenever that pet is farther than 2
+waited = 0
+hp0 = None
+for i in range(N):
+    s = v(); rows, hx, hy, hp, pets, mons = parse(s)
+    for _ in range(2):
+        if hy < 10 and ('Things that are here' in s or 'You try to feel' in s):
+            subprocess.run(['./k', '--named', 'Escape'], capture_output=True)
+            s = v(); rows, hx, hy, hp, pets, mons = parse(s)
+    if hy < 10: print('STOP prompt/menu'); break
+    top = '\n'.join(l for l in s.splitlines() if re.match(r'^0\d ', l))
+    if re.search(r'stole|steals|seduces|engulfs|swallows|--More--|Really attack', top.split('\n')[-1] if top else ''):
+        print('STOP message'); break
+    if hp0 and hp and hp[0] < hp0: print('STOP HP loss', hp0, '->', hp[0]); break
+    if hp: hp0 = hp[0]
+    EYES.clear(); EYES.update((x, y) for m, x, y in mons if m == 'e')   # floating eyes: never step into, passive only
+    near = [(m, x, y) for m, x, y in mons if m != 'e' and (x, y) != (hx, hy) and (x, y) not in pets and (x, y) not in IGN and max(abs(x-hx), abs(y-hy)) <= 2]
+    if near: print('STOP monster near', near); break
+    if LEAD:
+        pl = [(x, y) for m, x, y in mons if m == LEAD and (x, y) in pets]
+        close = any(max(abs(x-hx), abs(y-hy)) <= (1 if max(abs(hx-TX), abs(hy-TY)) <= SD else 2) for x, y in pl)
+        if not close:
+            if waited >= 8: print('STOP pet', LEAD, 'lost', pl); break
+            k('s'); waited += 1; continue
+        waited = 0
+    if max(abs(hx-TX), abs(hy-TY)) <= SD: print('ARRIVED'); break
+    path = bfs(rows, hx, hy)
+    if not path: print('STOP no path'); break
+    nx, ny = path[0]
+    out = k(KEY[(nx-hx, ny-hy)])
+    s2 = v(); _, ax, ay, _, _, _ = parse(s2)
+    if (ax, ay) == (hx, hy):
+        blocked.add((nx, ny))
+else:
+    print('STOP steps', N)
+s = v()
+print(re.search(r'Terminal cursor[^:]*: (\d+,\d+)', s)[1], re.search(r'HP:\d+\(\d+\).*T:\d+.*', s)[0])
+for l in s.splitlines():
+    if re.match(r'^0[5-7] |^Map', l): print(l)
+PY

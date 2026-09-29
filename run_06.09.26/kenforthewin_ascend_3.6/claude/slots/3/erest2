@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/3/erest2 ROUNDS [TARGET_HP]: rest on Elbereth in chunks of 4 single searches (erest, stops on HP
+# loss); after each chunk verify the engraving with ':' and rewrite it (reelb) if worn. Stops when HP >=
+# TARGET (default max), on HP loss, or if the engraving cannot be restored. Run via slots/3/w ./erest2
+cd "$(dirname "$0")"
+R=${1:-10}; T=${2:-0}
+for r in $(seq "$R"); do
+  o=$(./erest 4 2>&1)
+  echo "$o" | grep -q 'STOP' && { echo "$o" | grep -E 'STOP|^0[5-7]|^34'; exit 1; }
+  ./k --why "check Elbereth" : >/dev/null; m=$(./k --named Escape)
+  if ! echo "$m" | grep -E '^0[1-7] ' | grep 'You read:' | tail -1 | grep -q 'You read: "Elbereth"'; then
+    echo "worn: $(echo "$m" | grep 'You read' | tail -1 | sed 's/.*You read://')"; ./reelb | grep -q OK || { ./reelb | grep -q OK || { echo "STOP: cannot rewrite"; exit 1; }; }
+  fi
+  s=$(./v); hp=$(echo "$s" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); c=${hp#HP:}; c=${c%%(*}; m2=${hp#*(}; m2=${m2%)}
+  [ "$T" = 0 ] && T=$m2
+  [ "$c" -ge "$T" ] && { echo "HP $c reached"; break; }
+done
+./v | grep -E '^34' | grep -oE 'HP:.*T:[0-9]+'

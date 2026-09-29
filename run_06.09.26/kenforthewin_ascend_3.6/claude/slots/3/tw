@@ -1,0 +1,25 @@
+#!/bin/bash
+# slots/3/tw X Y [rounds]: travel to X,Y; when blocked (no progress), wait one turn (s) and retry.
+# Stops on arrival, HP loss, level change, prompt, or an adjacent hostile-looking letter that is not a known peaceful? (only HP loss check here).
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+x=$1; y=$2; n=${3:-12}
+hp0=$($S screen | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+lv0=$($S screen | grep -o 'Dlvl:[0-9]*' | head -1)
+last=""
+for i in $(seq "$n"); do
+  out=$($S travel "$x" "$y" 2>&1)
+  scr=$($S screen --compact)
+  pos=$(echo "$scr" | grep -o '^Neighbors of @([0-9]*,[0-9]*)')
+  hp=$(echo "$scr" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  lv=$(echo "$scr" | grep -o 'Dlvl:[0-9]*' | head -1)
+  [ "$pos" = "Neighbors of @($x,$y)" ] && { echo "ARRIVED"; break; }
+  [ "$hp" -lt "$hp0" ] && { echo "STOP: HP loss"; break; }
+  [ "$lv" != "$lv0" ] && { echo "STOP: level changed"; break; }
+  cy=$(echo "$scr" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt"; break; }
+  if [ "$pos" = "$last" ]; then $S keys s >/dev/null 2>&1; fi
+  last=$pos
+done
+$S screen --compact | grep -E '^0[5-7] |^34|^Neigh'

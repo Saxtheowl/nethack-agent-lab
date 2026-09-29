@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/1/srch2 N : search N single turns here. Stops on HP loss, a monster or
+# warning digit adjacent, a status change, or when a NEW newest message line
+# appears (any new message stops it; old message lines are ignored).
+cd "$(dirname "$0")/../.."
+S="python3 scripts/session.py"
+b=$($S screen --compact); hp0=$(echo "$b" | grep -oP 'HP:\K\d+' | head -1)
+prev=$(echo "$b" | grep -E '^(0[1-9]|1[01]) ' | tail -1)
+for i in $(seq ${1:-20}); do
+  o=$($S keys --compact --raw --why 'search (srch2)' s 2>&1)
+  hp=$(echo "$o" | grep -oP 'HP:\K\d+' | head -1)
+  [ -z "$hp" ] && { echo "stop: no status (prompt?)"; break; }
+  [ "$hp" -lt "$hp0" ] && { echo "stop: HP loss $hp0 -> $hp"; break; }
+  echo "$o" | grep -E '^Neighbors' | grep -oE ':[A-Za-z@&;:1-5]\(' | grep -q . && { echo "stop: monster/warning adjacent"; break; }
+  last=$(echo "$o" | grep -E '^(0[1-9]|1[01]) ' | tail -1)
+  [ "${last:3}" != "${prev:3}" ] && { echo "stop (new message): $last"; break; }
+  echo "$o" | grep -E '^34' | grep -qE 'Hungry|Weak|Blind|Conf|Stun|Ill|Slime|Stone' && { echo "stop: status"; break; }
+done
+echo "searched $i"
+$S screen --compact | grep -E '^Neighbors|^34'

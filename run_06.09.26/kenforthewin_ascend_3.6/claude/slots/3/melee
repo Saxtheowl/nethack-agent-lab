@@ -1,0 +1,40 @@
+#!/bin/bash
+# slots/3/melee N GLYPHS [MINHP%]: up to N actions. Each action: if a non-pet monster whose glyph is in
+# GLYPHS (never '@', never 'e' floating eyes, never 'n'/'l' handled by hand) is adjacent, farlook it
+# (skip peaceful/tame) and hit it with F<dir>; else search one turn. Stops on HP < MINHP% (default 65),
+# any adjacent monster NOT in GLYPHS, prompt/--More--, steal/engulf messages, status change.
+# Run via slots/3/w ./melee
+cd "$(dirname "$0")"
+N=$1; G="$2"; M=${3:-65}
+for i in $(seq "$N"); do
+  s=$(./v)
+  cy=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  if [ "${cy:-0}" -lt 10 ] && echo "$s" | grep -E '^0[1-7] ' | tail -1 | grep -qE '>>|--More--'; then ./k --raw " " >/dev/null; s=$(./v); cy=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$'); fi
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP prompt"; break; }
+  echo "$s" | grep -E '^0[1-7] ' | tail -3 | grep -qiE 'stole|steal|seduc|engulf|swallow' && { echo "STOP message"; break; }
+  st=$(echo "$s" | grep -E '^34 ' | grep -oE 'Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu|Weak')
+  [ -n "$st" ] && { echo "STOP status $st"; break; }
+  hp=$(echo "$s" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); c=${hp#HP:}; c=${c%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((c*100)) -lt $((mx*M)) ] && { echo "STOP HP $c/$mx"; break; }
+  res=$(echo "$s" | G="$G" python3 -c '
+import re,sys,os
+t=sys.stdin.read(); G=os.environ["G"]
+n=re.search(r"^Neighbors of @\((\d+),(\d+)\): (.*)$",t,re.M)
+pm=re.search(r"^PETS.*$",t,re.M); pets=pm.group(0) if pm else ""
+tgt=None; bad=[]
+for k,c,x,y in re.findall(r"(\d):(.)\((\d+),(\d+)\)",n.group(3)):
+    if not (c.isalpha() or c in "@&;:\x27"): continue
+    if f"{x},{y}" in pets: continue
+    if c in G and c not in "@enl":
+        tgt = tgt or f"{k} {x} {y} {c}"
+    else: bad.append(f"{c}@{x},{y}")
+print(("BAD "+" ".join(bad)) if bad else ("T "+tgt) if tgt else "NONE")')
+  case "$res" in
+    BAD*) echo "STOP other adjacent: ${res#BAD }"; break;;
+    T*) set -- $res; d=$2; x=$3; y=$4
+        lk=$(./look $x $y | head -1); echo "$lk" | grep -qE 'peaceful|tame' && { echo "STOP peaceful/tame: $lk"; break; }
+        o=$(./k --why "melee $(echo "$lk" | grep -o '(.*)' | head -1)" F$d); echo "$o" | grep -E '^0[5-7]' | grep -oE 'You kill[^!]*!|You destroy[^!]*!' | head -2;;
+    *) ./k --why "wait for enemies" s >/dev/null;;
+  esac
+done
+./v | grep -E '^34' | grep -oE 'HP:.*T:[0-9]+'

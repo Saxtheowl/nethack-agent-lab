@@ -1,0 +1,23 @@
+#!/bin/bash
+# slots/3/rf TARGET_HP [ROUNDS]: rest (srest1 40) until HP >= TARGET; if a non-@ letter monster is adjacent,
+# farlook-checked atk kills it (atk refuses @, floating eye, peaceful). Stops on anything else / HP < 45%.
+# Run via slots/3/w ./rf
+cd "$(dirname "$0")"
+T=$1; R=${2:-8}
+for r in $(seq $R); do
+  s=$(./v); st=$(echo "$s" | grep '^34')
+  h=$(echo "$st" | sed -E 's/.*HP:([0-9]+)\(([0-9]+)\).*/\1 \2/'); cur=${h% *}; mx=${h#* }
+  [ "$cur" -ge "$T" ] && { echo "rf: HP $cur/$mx reached"; break; }
+  [ $((cur*100)) -lt $((mx*45)) ] && { echo "rf: HP low $cur/$mx: decide"; break; }
+  o=$(./srest1 40 2>&1); reason=$(echo "$o" | grep STOP)
+  echo "$reason $(echo "$o" | grep '^34' | grep -oE 'HP:[0-9]+\([0-9]+\).*T:[0-9]+')"
+  case "$reason" in
+    "") continue ;;
+    *adjacent*)
+      d=$(./v | grep '^Neighbors' | grep -oE "[1-9]:[a-zA-Z:;&']\(" | head -1 | cut -c1)
+      [ -z "$d" ] && { echo "rf: adjacent but no letter found"; break; }
+      a=$(./atk $d 5 $((mx*45/100))); echo "$a" | grep -E 'atk stop|^07'
+      echo "$a" | grep -q 'atk stop: gone' || break ;;
+    *) break ;;
+  esac
+done

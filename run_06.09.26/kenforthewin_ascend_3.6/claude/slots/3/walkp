@@ -1,0 +1,49 @@
+#!/bin/bash
+# walkp "x,y x,y ..." [IGNORE_GLYPHS] : follow an explicit path of ADJACENT screen squares, one step each.
+# Skips leading squares until the current position; stops on: a non-pet monster adjacent (glyph not in
+# IGNORE_GLYPHS), HP drop > 12 in one step or HP < 70%, prompt/--More--, steal/engulf/slime message,
+# refused key, not moving (bump), a 'P' within 3 squares (green slime!). Prints where it stopped.
+# Run via slots/3/w ./walkp
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re
+path = [tuple(map(int, p.split(','))) for p in sys.argv[1].split()]
+IGG = sys.argv[2] if len(sys.argv) > 2 else ''
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(x): return subprocess.run(['./k', '--why', 'walkp step', x], capture_output=True, text=True).stdout
+dirs = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+MON = re.compile(r"[A-Za-z&;:'@1-5]")
+def state(s):
+    c = re.search(r'Neighbors of @\((\d+),(\d+)\)', s); hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    pm = re.search(r'^PETS.*$', s, re.M); mf = re.search(r'^Map features.*$', s, re.M)
+    pets = set((int(a), int(b)) for a, b in re.findall(r'(\d+),(\d+)', pm[0] if pm else ''))
+    mons = [(g, int(a), int(b)) for g, a, b in re.findall(r" (\S)@(\d+),(\d+)", mf[0] if mf else '') if MON.fullmatch(g)]
+    return ((int(c[1]), int(c[2])) if c else None), ((int(hp[1]), int(hp[2])) if hp else (0, 1)), pets, mons
+s = v(); me, (hp0, mx), pets, mons = state(s)
+if me in path: path = path[path.index(me)+1:]
+for nxt in path:
+    near = [f'{g}@{x},{y}' for g, x, y in mons if (x, y) != me and (x, y) not in pets and g not in IGG and max(abs(x-me[0]), abs(y-me[1])) <= 1]
+    slime = [f'{g}@{x},{y}' for g, x, y in mons if g == 'P' and max(abs(x-me[0]), abs(y-me[1])) <= 3]
+    if slime: print('STOP P near:', slime); break
+    if near: print('STOP near:', ' '.join(near)); break
+    occ = [g for g, x, y in mons if (x, y) == nxt]
+    if occ: print('STOP next square occupied by', occ[0], nxt); break
+    d = (nxt[0]-me[0], nxt[1]-me[1])
+    if d not in dirs: print('STOP path not adjacent', me, nxt); break
+    out = k(dirs[d])
+    if 'Refused' in out: print('STOP refused:', [l for l in out.splitlines() if 'Refused' in l][0][:110]); break
+    s = v(); me2, (hp, mx), pets, mons = state(s)
+    last = [l for l in s.splitlines() if re.match(r'^0[1-7] ', l)]
+    if hp < hp0 - 12 or hp * 10 < mx * 7: print('STOP HP', hp0, '->', hp); me = me2; break
+    if last and re.search(r'stole|steal|engulf|swallow|--More--|>>|feel very well|slime', last[-1]): print('STOP message:', last[-1][3:83]); me = me2; break
+    cm = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    if cm and int(cm[2]) < 10 and 'Things that are here' in s:
+        subprocess.run(['./k', '--why', 'close popup', '--named', 'Escape'], capture_output=True, text=True)
+        s = v(); me2, (hp, mx), pets, mons = state(s); cm = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    if cm and int(cm[2]) < 10: print('STOP prompt'); me = me2; break
+    if me2 != nxt: print('STOP did not reach', nxt, 'at', me2); me = me2; break
+    me, hp0 = me2, hp
+else:
+    print('DONE')
+print(me)
+PY

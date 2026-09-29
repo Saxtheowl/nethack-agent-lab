@@ -1,0 +1,9 @@
+#!/bin/bash
+# slots/8/elb8 : (re)engrave Elbereth in the dust with fingers, answer n to "add to", then read it back.
+cd "$(dirname "$0")/../.."
+slots/8/k E --why "engrave Elbereth" >/dev/null
+o=$(slots/8/k - --raw --why "fingers")
+if echo "$o" | grep -q "add to the current engraving"; then slots/8/k n --raw --why "rewrite" >/dev/null; fi
+slots/8/k Elbereth --raw --why "text" >/dev/null
+slots/8/k --named Enter --why "engrave" >/dev/null
+slots/8/k ':' --why "read engraving" | grep -oE 'You read: "[^"]*"' | tail -1

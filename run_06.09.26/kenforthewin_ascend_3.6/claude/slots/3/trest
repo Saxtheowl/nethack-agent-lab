@@ -1,0 +1,36 @@
+#!/bin/bash
+# slots/3/trest TARGET_TURN [CHUNK]: counted searches (n<CHUNK>s) until T >= TARGET_TURN.
+# Stops on: HP loss, bad status, prompt, steal/engulf/--More--, a non-pet monster letter ADJACENT.
+# Run via slots/3/w ./trest
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+tgt=${1:?target turn}; c=${2:-20}; prev=""
+for i in $(seq 200); do
+  out=$($S screen --compact 2>&1)
+  t=$(echo "$out" | grep -oE 'T:[0-9]+' | head -1 | cut -d: -f2)
+  [ -n "$t" ] && [ "$t" -ge "$tgt" ] && { echo "TARGET reached T$t"; break; }
+  $S keys --compact "n${c}s" >/dev/null 2>&1
+  sleep 0.4
+  out=$($S screen --compact 2>&1)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "STOP: no status"; break; }
+  if [ -n "$prev" ] && [ "$hp" -lt "$prev" ]; then echo "STOP: HP loss $prev -> $hp"; break; fi
+  prev=$hp
+  st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Hungry|Weak|Fainting|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu')
+  [ -n "$st" ] && { echo "STOP: status $st"; break; }
+  cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt (cursor row $cy)"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|seduce|engulf|swallow|--More--|>>' && { echo "STOP: message"; break; }
+  adj=$(echo "$out" | python3 -c '
+import re,sys
+t=sys.stdin.read()
+n=re.search(r"^Neighbors of @\((\d+),(\d+)\): (.*)$",t,re.M)
+pm=re.search(r"^PETS.*$",t,re.M); pets=pm.group(0) if pm else ""
+bad=[]
+for k,c,x,y in re.findall(r"(\d):(.)\((\d+),(\d+)\)",n.group(3)):
+    if (c.isalpha() or c in "@&;:\x27") and f"{x},{y}" not in pets: bad.append(f"{c}@{x},{y}")
+print(" ".join(bad))')
+  [ -n "$adj" ] && { echo "STOP: adjacent $adj"; break; }
+done
+echo "$out" | grep -E '^0[5-7] |^34'

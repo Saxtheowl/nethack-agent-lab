@@ -1,0 +1,28 @@
+#!/bin/bash
+# slots/3/watchi N [R2] [IGNORE_LETTERS]: like watch, but monster letters in IGNORE_LETTERS (peacefuls) never stop it.
+# slots/3/watch N [R2] : pass up to N single turns ('s'), stop as soon as ANY monster letter is within
+# squared distance R2 (default 20) of @, or on HP loss, status change, prompt, or steal/engulf message.
+# Prints the last messages and monster positions. Run via slots/3/w ./watch
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+n=${1:-10}; R2=${2:-20}; IGN=${3:-}; prev=""
+for i in $(seq "$n"); do
+  out=$($S keys --compact s 2>&1)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "STOP: no status"; break; }
+  if [ -n "$prev" ] && [ "$hp" -lt "$prev" ]; then echo "STOP: HP loss $prev -> $hp"; break; fi
+  prev=$hp
+  st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Hungry|Weak|Fainting|Stone|Slime|Conf|Stun|Ill|FoodPois|Hallu')
+  [ -n "$st" ] && { echo "STOP: status $st"; break; }
+  cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt (cursor row $cy)"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|seduce|engulf|swallow|--More--' && { echo "STOP: message"; break; }
+  mf=$(echo "$out" | grep '^Map features')
+  me=$(echo "$mf" | grep -oE '@@[0-9]+,[0-9]+' | head -1 | tr -d '@')
+  mx=${me%,*}; my=${me#*,}
+  near=$(echo "$mf" | grep -oE '[A-Za-z:&;@'"'"']@[0-9]+,[0-9]+' | grep -v "^@@$me\$" | while read cp; do c=${cp:0:1}; p=${cp:2};
+     x=${p%,*}; y=${p#*,}; d=$(( (x-mx)*(x-mx) + (y-my)*(y-my) )); [ $d -le $R2 ] && [ -z "$IGN" -o "${IGN#*$c}" = "$IGN" ] && echo "$c@$p(d2=$d)"; done)
+  [ -n "$near" ] && { echo "STOP: near $near"; break; }
+done
+echo "$out" | grep -E '^0[5-7] |^34|^Map'

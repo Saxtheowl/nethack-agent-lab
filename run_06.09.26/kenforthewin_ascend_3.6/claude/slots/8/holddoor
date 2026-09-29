@@ -1,0 +1,30 @@
+#!/bin/bash
+# slots/8/holddoor DIR [turns]  (run via slots/8/w ./holddoor 6 60): wait in a dead-end room while
+# hallucinating; only strike back (F DIR) at the square DIR when THIS turn's message says something
+# attacked me ("hits!", "bites!", "misses!", "touches", "stings") and a monster glyph is there.
+# Stops: HP < 60%, status other than Hallu/Lev changed, theft/prompt, 'Really attack', no status.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+d=$1; n=${2:-60}
+norm() { grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g; s/Hallu|Lev//g; s/ +/ /g'; }
+st0=$(python3 scripts/session.py screen --compact | norm)
+for i in $(seq "$n"); do
+  s=$(python3 scripts/session.py keys --compact --raw --why "hold the door (wait)" n10s 2>&1)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -z "$cur" ] && { echo "STOP: no status"; break; }
+  [ $((cur * 10)) -lt $((mx * 6)) ] && { echo "STOP: HP $cur/$mx"; break; }
+  [ "$(echo "$s" | norm)" != "$st0" ] && { echo "STOP: status changed"; break; }
+  echo "$s" | grep -qiE "stole|steal|--More--|\[yn|Really attack" && { echo "STOP: message"; break; }
+  last=$(echo "$s" | grep -E '^07' )
+  if echo "$last" | grep -qE "hits!|bites!|misses!|touches you|stings|butts|kicks|claws"; then
+    if echo "$s" | grep '^Neighbors' | grep -qE " $d:[A-Za-z:;&'@][(]"; then
+      for k in 1 2 3; do
+        a=$(python3 scripts/session.py keys --compact --really --why "strike back at attacker (it attacked me; hallucinating)" "F$d" 2>&1)
+        echo "$a" | grep -E '^07' | tail -1
+        echo "$a" | grep -qE "Really attack|\[yn" && { python3 scripts/session.py keys --compact --why "no" n >/dev/null 2>&1; echo "STOP: peaceful"; exit; }
+        echo "$a" | grep '^Neighbors' | grep -qE " $d:[A-Za-z:;&'@][(]" || break
+      done
+    fi
+  fi
+done
+python3 scripts/session.py screen --compact | grep -E '^0[5-7] |^34|^Neighbors'

@@ -1,0 +1,32 @@
+#!/bin/bash
+# slots/8/goto2 X Y [> | <] : travel to X,Y; when travel stops next to a monster, farlook it:
+#   hostile (not 'peaceful'), not @ & e F ' : F-attack it (max 6 blows) and resume;
+#   peaceful: wait a turn and resume; anything else (or HP < 60%): stop for a human decision.
+# At X,Y, press the optional stair key.
+cd "$(dirname "$0")/../.."
+for round in $(seq 1 12); do
+  out=$(slots/8/t "$1" "$2")
+  pos=$(echo "$out" | grep -oE "Neighbors of @\([0-9]+,[0-9]+\)" | tail -1)
+  if [ "$pos" = "Neighbors of @($1,$2)" ]; then
+    [ -n "$3" ] && slots/8/k "$3" --why "take stairs" | grep -E "Dlvl|Terminal"
+    exit 0
+  fi
+  hp=$(slots/8/v | grep -oE "HP:[0-9]+\([0-9]+\)" | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  if [ -n "$cur" ] && [ $((cur * 10)) -lt $((mx * 6)) ]; then echo "STOP low HP $hp"; exit 1; fi
+  n=$(slots/8/v | grep "Neighbors" | tail -1)
+  mon=$(echo "$n" | grep -oE " [1-9]:[A-Za-z@&;:'][(][0-9]+,[0-9]+[)]" | head -1)
+  if [ -z "$mon" ]; then echo "STOP travel blocked at $pos"; echo "$out" | tail -2; exit 1; fi
+  d=$(echo "$mon" | tr -d ' ' | cut -d: -f1); ch=$(echo "$mon" | tr -d ' ' | cut -c3); xy=$(echo "$mon" | grep -oE "[0-9]+,[0-9]+"); x=${xy%,*}; y=${xy#*,}
+  desc=$(slots/8/look "$x" "$y" 2>&1 | tail -1)
+  echo "adjacent $ch at $xy: $desc"
+  case "$ch" in @|\&|e|F|\') echo "STOP: decide manually"; exit 1;; esac
+  if echo "$desc" | grep -qE "peaceful|statue|boulder"; then
+    if echo "$desc" | grep -q statue; then echo "STOP statue blocks"; exit 1; fi
+    slots/8/k s --why "let a peaceful move" >/dev/null; continue
+  fi
+  for b in 1 2 3 4 5 6; do
+    o=$(slots/8/k F$d --why "kill hostile $ch blocking travel")
+    echo "$o" | grep "Neighbors" | tail -1 | grep -qE " $d:$ch\(" || break
+  done
+done
+echo "STOP too many rounds"; exit 1

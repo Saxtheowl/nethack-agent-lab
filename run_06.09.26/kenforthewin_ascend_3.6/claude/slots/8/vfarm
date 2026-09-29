@@ -1,0 +1,56 @@
+#!/bin/bash
+# slots/8/vfarm [N] (run via slots/8/w ./vfarm 60): stand still (e.g. on the Valley '<') and deal with
+# what comes, ONE command per iteration:
+#  - an adjacent monster whose farlook name is whitelisted (wraith, zombie, mummy, ghost, vampire bat,
+#    vampire (not lord), manes, lemure, imp, homunculus) -> one F-attack at it;
+#  - after "You destroy/kill the wraith" -> farlook that square: "wraith corpse" => STOP (eat it by hand);
+#  - nothing adjacent -> rest one turn ('s').
+# STOPS on: any other adjacent monster, HP < 55% max, any status-line change (Blind excepted), a new
+# engulf/steal/--More--/[yn]/Stone/Slime message, a refused key, or after N iterations.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+n=${1:-40}; lim=${2:-55}
+WL='wraith|zombie|mummy|ghost|vampire bat|^vampire$|manes|lemure|imp$|homunculus'
+norm() { grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g; s/ Blind//; s/ +/ /g'; }
+scr() { python3 scripts/session.py screen --compact; }
+st0=$(scr | norm)
+m0=$(scr | grep -E '^07 ')
+declare -A DX=([7]=-1 [8]=0 [9]=1 [4]=-1 [6]=1 [1]=-1 [2]=0 [3]=1)
+declare -A DY=([7]=-1 [8]=-1 [9]=-1 [4]=0 [6]=0 [1]=1 [2]=1 [3]=1)
+for i in $(seq "$n"); do
+  s=$(scr)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*([0-9]*)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -z "$cur" ] && { echo "STOP: no status line"; break; }
+  [ $((cur * 100)) -lt $((mx * lim)) ] && { echo "STOP: HP $cur/$mx < $lim%"; break; }
+  [ "$(echo "$s" | norm)" != "$st0" ] && { echo "STOP: status changed: $(echo "$s" | grep '^34')"; break; }
+  l7=$(echo "$s" | grep -E '^07 ')
+  if [ "$l7" != "$m0" ] && echo "$l7" | grep -qiE 'stole|steal|engulf|--More--|\[yn|Stone|slime|swings itself'; then
+    echo "STOP: message $l7"; break; fi
+  nb=$(echo "$s" | grep '^Neighbors' | head -1)
+  mons=$(echo "$nb" | grep -oE "[1-9]:([A-Za-z&@;:']|blank)[(][0-9]+,[0-9]+[)]")
+  target=""
+  for m in $mons; do
+    d=${m%%:*}; xy=${m#*(}; xy=${xy%)}; x=${xy%,*}; y=${xy#*,}
+    desc=$(scripts/look "$x" "$y" 2>&1 | tail -1)
+    case "$desc" in *floor*|*wall*|*doorway*|*corpse*|*"dark part"*|*stairs*|*unexplored*|*stone*|*rock*|*" a wand"*|*potion*|*weapon*) continue;; esac
+    name=$(echo "$desc" | grep -oE '\(([^()]*)\)' | head -1 | tr -d '()' | sed -E "s/^(an?|the) //; s/.*'s ghost$/ghost/; s/ \[.*//")
+    if echo "$name" | grep -qE "$WL"; then target="$d $x $y $name"; break; fi
+    echo "STOP: adjacent $m = $desc"; exit 2
+  done
+  if [ -n "$target" ]; then
+    set -- $target; d=$1; x=$2; y=$3; shift 3; name="$*"
+    o=$(python3 scripts/session.py keys --compact --why "vfarm: attack adjacent $name" "F$d" 2>&1)
+    echo "$o" | grep -qE 'efuse|ALARM' && { echo "STOP: key refused: $(echo "$o" | tail -1)"; break; }
+    l=$(echo "$o" | grep -E '^07 ' | cut -c5-90)
+    echo "F$d $name: $l"
+    if echo "$o" | grep -qE 'You (destroy|kill) the wraith'; then
+      c=$(scripts/look "$x" "$y" 2>&1 | tail -1)
+      echo "$c" | grep -q 'wraith corpse' && { echo "WRAITH CORPSE at $x,$y"; exit 3; }
+    fi
+  else
+    o=$(python3 scripts/session.py keys --compact --why "vfarm: rest one turn" s 2>&1)
+    echo "$o" | grep -qE 'efuse|ALARM' && { echo "STOP: key refused: $(echo "$o" | tail -1)"; break; }
+  fi
+  m0=$(scr | grep -E '^07 ')
+done
+scr | grep -E '^0[67] |^34|^Neighbors'

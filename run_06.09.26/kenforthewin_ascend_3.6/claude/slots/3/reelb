@@ -1,0 +1,10 @@
+#!/bin/bash
+# slots/3/reelb: wipe the dust engraving here and write Elbereth with the finger, then verify with ':'.
+# Prints OK or FAIL. Run via slots/3/w ./reelb
+cd "$(dirname "$0")"
+o=$(./k --why "re-engrave Elbereth" E-)
+if echo "$o" | grep -q 'add to the current engraving'; then o=$(./k --raw n); fi
+echo "$o" | grep -q 'write in the dust here' || { ./k --named Escape >/dev/null; echo "FAIL: no text prompt"; exit 1; }
+./k --raw Elbereth >/dev/null; ./k --named Enter >/dev/null
+./k --why "verify Elbereth" : >/dev/null; o=$(./k --named Escape)
+echo "$o" | grep -E '^0[1-7] ' | grep 'You read:' | tail -1 | grep -q 'You read: "Elbereth"' && echo OK || { echo "FAIL: $(echo "$o" | grep 'You read' | tail -1)"; exit 1; }

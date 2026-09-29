@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/3/rest3 N [TARGET]: N single searches, auto-dismissing --More-- (>>) between them. Stops on HP loss,
+# hunger/status change, stolen/engulf messages, any other prompt, or HP >= TARGET. Run via slots/3/w ./rest3
+cd "$(dirname "$0")"
+N=${1:-20}; T=${2:-9999}; prev=""
+for i in $(seq "$N"); do
+  s=$(./v)
+  for j in 1 2 3 4; do
+    echo "$s" | grep -E '^0[1-7] ' | tail -1 | grep -qE '>>|--More--' || break
+    ./k --raw " " >/dev/null; s=$(./v)
+  done
+  echo "$s" | grep -E '^0[1-7] ' | grep -qiE 'stole|seduce|engulf|swallow' && { echo "STOP message"; break; }
+  cy=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$'); [ "${cy:-0}" -lt 10 ] && { echo "STOP prompt"; break; }
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP HP loss $prev -> $hp"; break; }
+  prev=$hp; [ "$hp" -ge "$T" ] && { echo "HP $hp reached"; break; }
+  echo "$s" | grep -E '^34' | grep -qE 'Hungry|Weak|Fainting|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu' && { echo "STOP status"; break; }
+  ./k --why "rest" s >/dev/null
+done
+./v | grep -E '^0[5-7]|^34' | tail -3

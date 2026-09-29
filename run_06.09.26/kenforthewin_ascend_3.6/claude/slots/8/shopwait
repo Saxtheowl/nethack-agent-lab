@@ -1,0 +1,24 @@
+#!/bin/bash
+# slots/8/shopwait X Y [chunks]: wait in 4-turn searches (via slots/8/w ./shopwait) until an
+# object (? + ! = " [ ( ) /) lies on X,Y (pet dropped it), or HP loss, hunger/status change,
+# a non-pet monster adjacent, theft message. Prints the stop reason.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+X=$1; Y=$2; n=${3:-15}
+s=$(python3 scripts/session.py screen --compact)
+hp0=$(echo "$s" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+st0=$(echo "$s" | grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g')
+for i in $(seq "$n"); do
+  s=$(python3 scripts/session.py keys --compact --raw --why "wait for pet at shop door" n4s 2>&1)
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$s" | grep '^34' | sed -E 's/(T|HP|Pw|Xp|\$):[^ ]*//g')
+  [ -z "$hp" ] && { echo "STOP: no status"; break; }
+  [ "$hp" -lt "$hp0" ] && { echo "STOP: HP loss"; break; }
+  [ "$st" != "$st0" ] && { echo "STOP: status changed"; break; }
+  echo "$s" | grep -qiE "stole|steal|--More--|\[yn" && { echo "STOP: message"; break; }
+  pets=$(echo "$s" | grep '^PETS' | grep -o '[0-9]*,[0-9]*' | tr '\n' ' ')
+  adj=$(echo "$s" | grep '^Neighbors' | grep -oE "[1-9]:[A-Za-z@&;:'][(][0-9]+,[0-9]+[)]" | while read c; do xy=${c#*(}; xy=${xy%)}; [[ " $pets " == *" $xy "* ]] || echo "$c"; done)
+  [ -n "$adj" ] && { echo "STOP: adjacent $adj"; break; }
+  echo "$s" | grep '^Map' | grep -qE "[?+!=\"\[()/%*]@$X,$Y( |$)" && { echo "FOUND: object at $X,$Y"; break; }
+done
+python3 scripts/session.py screen --compact | grep -E '^0[5-7] |^34|^Neighbors'

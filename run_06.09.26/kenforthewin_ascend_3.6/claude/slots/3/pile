@@ -1,0 +1,17 @@
+#!/bin/bash
+# slots/3/pile X Y ... : for each coordinate pair, travel there (stop if not arrived), ':' look, print what is here. Run via slots/3/w ./pile
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+while [ $# -ge 2 ]; do
+  x=$1; y=$2; shift 2
+  $S travel $x $y >/dev/null 2>&1; $S keys --named Escape >/dev/null 2>&1
+  scr=$($S screen --compact)
+  echo "$scr" | grep -q "^Neighbors of @($x,$y)" || { echo "== $x,$y NOT ARRIVED"; echo "$scr" | grep -E '^0[5-7] |^34'; break; }
+  hp=$(echo "$scr" | grep -o 'HP:[0-9]*' | head -1)
+  o=$($S keys --compact : 2>&1)
+  box=$(echo "$o" | grep -E '^[01][0-9] ' | grep -oE '│[^│]*│ *$' | tr -d '│' | sed 's/ *$//' | grep -v '^$' | tr '\n' ';')
+  [ -z "$box" ] && box=$(echo "$o" | grep -E '^07 ' | cut -c5-84)
+  echo "== $x,$y $hp: $box"
+  $S keys --named Escape >/dev/null 2>&1
+done

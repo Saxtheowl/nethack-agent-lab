@@ -10,7 +10,11 @@ S=/tmp/nhstream-$(printf %s "$R" | sha256sum | cut -c1-12).sock
 # background master holding our output open
 SSH="ssh -o BatchMode=yes -o ControlMaster=no -o ControlPath=/tmp/ssh-nh-%C"
 LABEL=$(cat "$R/.runtime/agent-$N" 2>/dev/null) || { echo "no agent recorded for slot $N" >&2; exit 1; }
-[ "${2:-}" = --stop ] && $SSH miniforum-worker "tmux -S $S kill-session -t agent$N" 2>/dev/null
+# --stop: end the agent now (the game itself just waits for keys); the killed
+# pane never writes its .rc, so write it here
+if [ "${2:-}" = --stop ]; then
+  $SSH miniforum-worker "tmux -S $S kill-session -t agent$N 2>/dev/null; cd $R/runs/agents && [ -e $LABEL.rc ] || echo stopped > $LABEL.rc"
+fi
 # the agent writes <label>.rc when it ends (the tmux pane itself stays: remain-on-exit)
 until $SSH miniforum-worker "test -e $R/runs/agents/$LABEL.rc"; do sleep 60; done
 $SSH miniforum-worker "tmux -S $S kill-session -t agent$N" 2>/dev/null

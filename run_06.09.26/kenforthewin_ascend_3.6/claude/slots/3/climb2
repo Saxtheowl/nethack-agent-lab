@@ -1,0 +1,30 @@
+#!/bin/bash
+# slots/3/climb2 X Y KEY: travel (game '_' travel, retried) to stairs at X,Y on the current level, then press KEY
+# ('<' or '>'). Stops (no stairs key) on: HP below 70%, a non-pet monster adjacent, a prompt, or not
+# reaching X,Y after 8 travel attempts. Run via slots/3/w ./climb2
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+X=$1; Y=$2; K=$3
+for i in $(seq 1 8); do
+  out=$($S travel "$X" "$Y" 2>&1)
+  s=$($S screen --compact 2>&1)
+  hp=$(echo "$s" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); c=${hp#HP:}; c=${c%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((c*100)) -lt $((mx*70)) ] && { echo "STOP HP $c/$mx"; echo "$s" | grep -E '^0[5-7] |^34|^Neigh'; exit 1; }
+  echo "$s" | grep -q "Neighbors of @($X,$Y)" && break
+  adj=$(echo "$s" | python3 -c '
+import re,sys
+t=sys.stdin.read()
+n=re.search(r"^Neighbors of @\((\d+),(\d+)\): (.*)$",t,re.M)
+pm=re.search(r"^PETS.*$",t,re.M); pets=pm.group(0) if pm else ""
+bad=[f"{c}@{x},{y}" for k,c,x,y in re.findall(r"(\d):(.)\((\d+),(\d+)\)",n.group(3)) if (c.isalpha() or c in "&;:\x27") and f"{x},{y}" not in pets]
+print(" ".join(bad))')
+  hostile=""
+  for m in $adj; do p=${m#*@}; lk=$(./slots/3/look ${p%,*} ${p#*,} 2>/dev/null | head -1); echo "$lk" | grep -qE 'peaceful|tame|statue' || hostile="$hostile $m"; done
+  [ -n "$hostile" ] && { echo "STOP adjacent hostile:$hostile"; echo "$s" | grep -E '^0[5-7] |^34|^Neigh'; exit 1; }
+  $S keys --compact --why "wait (travel blocked)" s >/dev/null 2>&1
+done
+s=$($S screen --compact 2>&1)
+echo "$s" | grep -q "Neighbors of @($X,$Y)" || { echo "STOP not at $X,$Y"; echo "$s" | grep -E '^0[5-7] |^34|^Neigh'; exit 1; }
+out=$($S keys --compact --why "stairs $K" "$K" 2>&1)
+echo "$out" | grep -E '^0[5-7] |^34|^Neigh'

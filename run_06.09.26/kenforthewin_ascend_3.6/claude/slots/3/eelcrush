@@ -1,0 +1,35 @@
+#!/bin/bash
+# slots/3/eelcrush [TURNS]: on the Elbereth square (13,21) with the drawbridge CLOSED: wear the blindfold
+# (telepathy shows eels hiding under water), wait turn by turn; when a sea monster ';' is at (14,21) (the
+# water under the raised bridge), play the passtune to OPEN the bridge (crushes it: giant eel = +1000 XP),
+# then play again to CLOSE it. Every 15 turns: remove the blindfold and check/rewrite Elbereth.
+# Stops on: HP loss >= 12 in one step, HP < 70%, Conf/Stun, not at 13,21, prompt. Leaves the bridge closed.
+# Run via slots/3/w ./eelcrush
+cd "$(dirname "$0")"
+N=${1:-30}
+blind() { ./v | grep -E '^34' | grep -q Blind; }
+elbok() { ./k --why "check Elbereth" : >/dev/null; o=$(./k --named Escape); echo "$o" | grep -E '^0[1-7] ' | grep 'You read:' | tail -1 | grep -q 'You read: "Elbereth"'; }
+bup() { blind || ./k --why "blindfold on (telepathy)" Pr >/dev/null; }
+bdown() { blind && ./k --why "blindfold off" Rr >/dev/null; }
+bdown; elbok || { ./reelb | grep -q OK || { echo "STOP: cannot write Elbereth"; exit 1; }; }
+bup; last=""
+for i in $(seq "$N"); do
+  s=$(./v)
+  me=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$')
+  [ "$me" != "13,21" ] && { echo "STOP: at $me (prompt?)"; break; }
+  hp=$(echo "$s" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); cur=${hp#HP:}; cur=${cur%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ -n "$last" ] && [ $((last-cur)) -ge 12 ] && { echo "STOP: HP $last -> $cur"; break; }
+  [ $((cur*100)) -lt $((mx*70)) ] && { echo "STOP: HP $cur/$mx"; break; }
+  [ -n "$last" ] && [ "$cur" -lt "$last" ] && echo "HP $last -> $cur: $(echo "$s" | grep -E "^0[5-7]" | tail -2 | tr -s " " | tr "\n" " ")"
+  last=$cur
+  echo "$s" | grep -E '^34' | grep -qE 'Conf|Stun|Hallu' && { echo "STOP: status"; break; }
+  if echo "$s" | grep '^Map' | grep -qE ' ;@14,21'; then
+    o=$(./tune PASS); echo "open on eel: $(echo "$o" | grep -oE 'crushed[^!]*!|You kill[^!]*!' | tr '\n' ' ')"
+    o=$(./tune PASS); echo "   close: $(echo "$o" | grep -oE 'coming up|crushed[^!]*!|You kill[^!]*!' | tr '\n' ' ')"
+  else
+    ./k --why "wait for an eel under the bridge" s >/dev/null
+  fi
+  if [ $((i % 6)) -eq 0 ]; then bdown; elbok || { echo "Elbereth worn: rewrite"; ./reelb | grep -q OK || { echo "STOP: Elbereth"; break; }; }; bup; fi
+done
+bdown
+./v | grep -E '^34' | grep -oE 'HP:.*T:[0-9]+'

@@ -1,0 +1,16 @@
+#!/bin/bash
+# xloop ROUNDS [EXTRA_IGNORE e.g. "12"]: alternate mexp exploration and melee against adjacent fightable monsters
+# (not @ e n l P). Stops on found stairs, P, @/e/n/l adjacent, HP/status/prompt/message stops.
+# EXTRA_IGNORE glyphs (typically low warning digits) do not stop mexp.
+# Run via slots/3/w ./xloop
+cd "$(dirname "$0")"
+R=${1:-6}; XI="${2:-}"
+for r in $(seq "$R"); do
+  o=$(./mexp 80 "@$XI" 2>&1 | tail -2); echo "$o" | head -1
+  echo "$o" | grep -q "^STOP near:" || { echo "$o" | tail -1; exit 0; }
+  g=$(echo "$o" | head -1 | grep -oE " [A-Za-z&;:'@1-5]@" | tr -d ' @' | tr -d '\n')
+  echo "$g" | grep -qE "[@enlP]" && { echo "$o" | tail -1; exit 0; }
+  echo "$g" | grep -qE "^[1-5]+$" && { g2=$(echo "$g"); }
+  m=$(./melee 12 "$g" 60 2>&1); echo "$m" | grep -E "kill|destroy|STOP" | head -3
+  echo "$m" | grep -qE "STOP (HP|status|prompt|message|peaceful)" && exit 0
+done

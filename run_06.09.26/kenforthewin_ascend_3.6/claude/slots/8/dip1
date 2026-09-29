@@ -1,0 +1,8 @@
+#!/bin/bash
+# slots/8/dip1: ONE #dip of item 'a' into the fountain here; prints messages, HP and neighbours.
+cd "$(dirname "$0")/../.."
+S=slots/8/k
+$S "#dip" >/dev/null; $S --named Enter >/dev/null
+o=$($S --raw a)
+echo "$o" | grep -q "into the fountain" || { echo "NO FOUNTAIN PROMPT"; echo "$o" | grep -E "^0[5-7]"; exit 1; }
+$S --raw y | grep -E "^0[1-7]|^34|^Neigh|^Map" | tail -6

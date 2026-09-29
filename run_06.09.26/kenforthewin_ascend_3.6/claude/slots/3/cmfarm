@@ -1,0 +1,57 @@
+#!/bin/bash
+# slots/3/cmfarm [ZAPS] [MINHP%]: XP farm with the wand of create monster 'e', standing on an escape staircase.
+# Each round: refuse if HP < MINHP% (default 85); zap e; farlook every monster within 2 squares; STOP (for a
+# human decision) if more than one monster appeared, if any farlook matches the danger list (peaceful, passive
+# or theft or drain or stoning monsters...), or on 'Nothing happens'. Otherwise kill the single newcomer with
+# scripts/fight (which stops below 1/2 HP). Stops on any unusual message. Run via slots/3/w ./cmfarm
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re
+Z = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+MINHP = int(sys.argv[2]) if len(sys.argv) > 2 else 85
+DANGER = ['peaceful', 'cockatrice', 'chickatrice', 'floating eye', 'elemental', 'mind flayer', 'nymph', 'gremlin',
+          'lich', 'vampire', 'wraith', 'disenchanter', 'slime', 'vortex', 'purple worm', 'trapper', 'lurker',
+          'dragon', 'minotaur', 'titan', 'jabberwock', 'shade', 'demon', 'fiend', 'balrog', 'Nazgul', 'light',
+          'gelatinous', 'jelly', 'pudding', 'ooze', 'leprechaun', 'Angel', 'Aleax', 'ki-rin', 'Archon', 'cobra',
+          'human', 'elf', 'unicorn', 'mimic', 'nurse', 'shopkeeper', 'watch', 'priest', 'medusa', 'green',
+          'skeleton', 'zruty', 'storm giant', 'barrow wight', 'master', 'arch', 'guardian naga', 'golden naga',
+          'red naga', 'hell hound', 'winter wolf', 'yellow', 'black', 'invisible', 'remembered', 'rust monster']
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(*a): return subprocess.run(['./k'] + list(a), capture_output=True, text=True).stdout
+def st(s):
+    c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s); hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    mf = re.search(r'^Map features.*$', s, re.M)
+    mons = [(g, int(x), int(y)) for g, x, y in re.findall(r" (\S)@(\d+),(\d+)", mf[0] if mf else '')
+            if re.match(r"[A-Za-z&;:'@]", g)]
+    return int(c[1]), int(c[2]), int(hp[1]), int(hp[2]), mons
+for r in range(Z):
+    s = v(); hx, hy, h, mh, mons = st(s)
+    if hy < 10: print('STOP: prompt/menu open'); break
+    if h * 100 < mh * MINHP: print(f'STOP: HP {h}/{mh} below {MINHP}%: rest first'); break
+    near = [m for m in mons if (m[1], m[2]) != (hx, hy) and max(abs(m[1]-hx), abs(m[2]-hy)) <= 2]
+    if near: print('STOP: monsters already near', near); break
+    out = k('--why', 'create monster for XP (cmfarm)', 'ze')
+    if 'Nothing happens' in out or 'wrest' in out: print('STOP: wand empty/wrested'); break
+    s = v(); hx, hy, h, mh, mons = st(s)
+    near = [m for m in mons if (m[1], m[2]) != (hx, hy) and max(abs(m[1]-hx), abs(m[2]-hy)) <= 2]
+    looks = []
+    for g, x, y in near:
+        lk = subprocess.run(['./look', str(x), str(y)], capture_output=True, text=True).stdout.strip()
+        looks.append((g, x, y, lk))
+    print(f'round {r+1}:', '; '.join(f'{g}@{x},{y} {re.sub(r"^. +", "", lk)[:60]}' for g, x, y, lk in looks) or 'nothing visible')
+    if len(near) != 1: print('STOP: not exactly one newcomer'); break
+    g, x, y, lk = looks[0]
+    bad = [d for d in DANGER if d.lower() in lk.lower()]
+    if bad: print('STOP: danger list', bad); break
+    if g == '@': print('STOP: @'); break
+    f = subprocess.run(['./fight', g, '8'], capture_output=True, text=True).stdout
+    s = v(); hx, hy, h, mh, mons = st(s)
+    msgs = [l[4:].strip(' │') for l in s.splitlines() if re.match(r'^0[5-7] ', l)]
+    print('   ->', ' | '.join(msgs)[-160:], f'HP {h}/{mh}')
+    if any((m[1], m[2]) == (x, y) or (m[0] == g and max(abs(m[1]-hx), abs(m[2]-hy)) <= 2) for m in mons if (m[1], m[2]) != (hx, hy)):
+        print('STOP: newcomer still alive'); break
+    if re.search(r'stole|seduce|engulf|swallow|You feel|turn to stone|slow|Stiff|--More--', ' '.join(msgs)):
+        print('STOP: message to read'); break
+s = v()
+print(re.search(r'HP:\d+\(\d+\).*T:\d+.*', s)[0])
+PY

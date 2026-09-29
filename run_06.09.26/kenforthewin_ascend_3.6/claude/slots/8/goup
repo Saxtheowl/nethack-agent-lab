@@ -1,0 +1,8 @@
+#!/bin/bash
+# slots/8/goup X Y : travel to the up stairs at X,Y (retrying) then climb; prints the new level line.
+# Stops (exit 1) if HP dropped, a prompt is open, or travel did not reach X,Y.
+cd "$(dirname "$0")/../.."
+out=$(slots/8/t "$1" "$2")
+pos=$(echo "$out" | grep -oE "Neighbors of @\([0-9]+,[0-9]+\)" | tail -1)
+if [ "$pos" != "Neighbors of @($1,$2)" ]; then echo "STOP: not at stairs ($pos)"; echo "$out" | tail -3; exit 1; fi
+slots/8/k "<" --why "climb stairs" | grep -E "Dlvl|Terminal"

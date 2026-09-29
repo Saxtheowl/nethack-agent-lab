@@ -1,0 +1,31 @@
+#!/bin/bash
+# slots/8/walk DIR [n]  (run via slots/8/w walk DIR n): single checked steps in one direction.
+# Stops when: position unchanged, any non-pet monster adjacent, HP loss, status change
+# IGN=Gh env: ignore adjacent G/h (peacefuls checked by farlook).
+# (Stone/Slime/Blind/Conf/Stun/Hungry/Weak...), theft/prompt message, water/lava ahead, or n steps.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=8
+d=$1; n=${2:-8}
+declare -A OFF=([1]="-1 1" [2]="0 1" [3]="1 1" [4]="-1 0" [6]="1 0" [7]="-1 -1" [8]="0 -1" [9]="1 -1")
+s0=$(python3 scripts/session.py screen --compact)
+st0=$(echo "$s0" | grep '^34' | sed 's/T:[0-9]*//; s/HP:[0-9]*([0-9]*)//; s/Pw:[0-9]*([0-9]*)//; s/Xp:[0-9]*\/[0-9]*//; s/\$:[0-9]*//')
+hp0=$(echo "$s0" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+for i in $(seq "$n"); do
+  pos0=$(echo "$s0" | grep -o '^Neighbors of @([0-9]*,[0-9]*)')
+  ahead=$(echo "$s0" | grep -o " $d:[^ ]*" | head -1)
+  case "$ahead" in *'}'*|*blank*|*'#'*) echo "STOP: ahead is '$ahead'"; break;; esac
+  s=$(python3 scripts/session.py keys --compact --why "walk $d" "$d" 2>&1)
+  pos=$(echo "$s" | grep -o '^Neighbors of @([0-9]*,[0-9]*)')
+  hp=$(echo "$s" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$s" | grep '^34' | sed 's/T:[0-9]*//; s/HP:[0-9]*([0-9]*)//; s/Pw:[0-9]*([0-9]*)//; s/Xp:[0-9]*\/[0-9]*//; s/\$:[0-9]*//')
+  s0=$s
+  [ -z "$hp" ] && { echo "STOP: no status (prompt?)"; break; }
+  [ "$hp" -lt "$hp0" ] && { echo "STOP: HP loss $hp0->$hp"; break; }
+  [ "$st" != "$st0" ] && { echo "STOP: status line changed"; break; }
+  echo "$s" | grep -qiE "stole|steal|--More--|\[yn|Really|You are frozen|turn to stone|slow|stiff" && { echo "STOP: message"; break; }
+  [ "$pos" == "$pos0" ] && { echo "STOP: did not move"; break; }
+  pets=$(echo "$s" | grep '^PETS' | grep -o '[0-9]*,[0-9]*' | tr '\n' ' ')
+  adj=$(echo "$s" | grep '^Neighbors' | grep -oE "[1-9]:[A-Za-z@&;:'][(][0-9]+,[0-9]+[)]" | while read c; do xy=${c#*(}; xy=${xy%)}; g=${c:2:1}; [[ -n "$IGN" && "$IGN" == *"$g"* ]] && continue; [[ " $pets " == *" $xy "* ]] || echo "$c"; done)
+  [ -n "$adj" ] && { echo "STOP: adjacent $adj"; break; }
+done
+python3 scripts/session.py screen --compact | grep -E '^0[5-7] |^34|^Map|^Neighbors'

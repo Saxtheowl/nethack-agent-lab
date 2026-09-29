@@ -1,0 +1,29 @@
+#!/bin/bash
+# slots/3/srest1 N : N single searches; stops on HP loss, hunger change, 'stole', any prompt/--More--, or a non-pet letter adjacent.
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+n=${1:-10}
+prev=""
+for i in $(seq "$n"); do
+  out=$($S keys --compact s 2>&1)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Hungry|Weak|Fainting|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois')
+  if [ -n "$prev" ] && [ "$hp" -lt "$prev" ]; then echo "STOP: HP loss $prev -> $hp"; break; fi
+  prev=$hp
+  [ -n "$st" ] && { echo "STOP: status $st"; break; }
+  cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt (cursor row $cy)"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|--More--' && { echo "STOP: message"; break; }
+  adj=$(echo "$out" | python3 -c '
+import re,sys
+t=sys.stdin.read()
+n=re.search(r"^Neighbors of @\((\d+),(\d+)\): (.*)$",t,re.M)
+pets=re.search(r"^PETS.*$",t,re.M).group(0)
+bad=[]
+for k,c,x,y in re.findall(r"(\d):(.)\((\d+),(\d+)\)",n.group(3)):
+    if (c.isalpha() or c in "@&;:\x27") and f"{x},{y}" not in pets: bad.append(c)
+print("".join(bad))')
+  [ -n "$adj" ] && { echo "STOP: adjacent $adj"; break; }
+done
+echo "$out" | grep -E '^0[5-7] |^34|^PETS|^Neigh'

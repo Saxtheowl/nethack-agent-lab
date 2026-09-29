@@ -1,0 +1,103 @@
+#!/bin/bash
+# mexp [MAXSTEPS] [IGNORE_GLYPHS]: explore a dark level (maze or cave) one step at a time: BFS over KNOWN
+# passable squares to the nearest known square that touches an unknown (blank) square, step once, re-read.
+# Bumps are remembered (persistent blocked set in mexp-state.json, reset when Dlvl changes).
+# Stops: a new '>' or '<' becomes visible (prints it), a non-pet monster adjacent (glyph not in IGNORE),
+# a 'P' within 3 squares, a warning digit 1-5 within 2 squares (unless in IGNORE), HP drop > 12 in one step or HP < 70%, status Conf/Stun/Blind/Slime/Stone/Ill,
+# prompt (popups 'Things that are here' are closed), steal/engulf message, no frontier left.
+# Run via slots/3/w ./mexp
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re, collections, json, os
+N = int(sys.argv[1]) if len(sys.argv) > 1 else 60
+IGG = sys.argv[2] if len(sys.argv) > 2 else ''
+ST = 'mexp-state.json'
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(x): return subprocess.run(['./k', '--why', 'mexp explore step', x], capture_output=True, text=True).stdout
+WALL = set('│─┌┐└┘├┤┬┴┼')
+BLOCK = WALL | set('^}0+')
+DOOR = set('|-')
+MON = re.compile(r"[A-Za-z&;:'@1-5]")
+dirs = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+def parse(s):
+    rows = {}
+    for l in s.splitlines():
+        m = re.match(r'^(\d\d) (.*)$', l)
+        if m and 11 <= int(m[1]) <= 31: rows[int(m[1])] = m[2]
+    c = re.search(r'Neighbors of @\((\d+),(\d+)\)', s); hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    dl = re.search(r'Dlvl:(\d+)', s)
+    pm = re.search(r'^PETS.*$', s, re.M); mf = re.search(r'^Map features.*$', s, re.M)
+    pets = set((int(a), int(b)) for a, b in re.findall(r'(\d+),(\d+)', pm[0] if pm else ''))
+    feats = re.findall(r" (\S)@(\d+),(\d+)", mf[0] if mf else '')
+    mons = [(g, int(a), int(b)) for g, a, b in feats if MON.fullmatch(g)]
+    stairs = set((g, int(a), int(b)) for g, a, b in feats if g in '<>')
+    st = re.search(r'^34 .*$', s, re.M)
+    return rows, ((int(c[1]), int(c[2])) if c else None), ((int(hp[1]), int(hp[2])) if hp else (0, 1)), pets, mons, stairs, (dl[1] if dl else '?'), (st[0] if st else '')
+def tile(rows, x, y):
+    r = rows.get(y)
+    return r[x] if r is not None and 0 < x < len(r) else ' '
+state = json.load(open(ST)) if os.path.exists(ST) else {}
+s = v(); rows, me, (hp0, mx), pets, mons, stairs, dl, stl = parse(s)
+if state.get('dl') != dl: state = {'dl': dl, 'blocked': [], 'seen': []}
+blocked = set(tuple(b) for b in state['blocked'])
+seen = set(tuple(b) for b in state.get('seen', []))
+def mark(p):
+    for dx in (-1,0,1):
+        for dy in (-1,0,1): seen.add((p[0]+dx, p[1]+dy))
+mark(me)
+seen_stairs = stairs
+def passable(rows, p):
+    t = tile(rows, *p)
+    return t != ' ' and t not in BLOCK and p not in blocked
+def frontier(rows, p):
+    if not passable(rows, p): return False
+    return any(tile(rows, p[0]+dx, p[1]+dy) == ' ' and (p[0]+dx, p[1]+dy) not in blocked and (p[0]+dx, p[1]+dy) not in seen and 1 <= p[0]+dx <= 79 and 11 <= p[1]+dy <= 31 for dx, dy in dirs)
+def plan(rows, me, monpos):
+    q = collections.deque([me]); prev = {me: None}; goal = None
+    while q:
+        c = q.popleft()
+        if c != me and frontier(rows, c): goal = c; break
+        for (dx, dy) in dirs:
+            n = (c[0]+dx, c[1]+dy)
+            if n in prev or not passable(rows, n) or n in monpos: continue
+            if dx and dy and (tile(rows, *n) in DOOR or tile(rows, *c) in DOOR): continue
+            prev[n] = c; q.append(n)
+    if not goal: return None, None
+    p = goal
+    while prev[p] != me: p = prev[p]
+    return p, goal
+msg = ''
+for step in range(N):
+    monpos = set((x, y) for g, x, y in mons if (x, y) != me)
+    near = [f'{g}@{x},{y}' for g, x, y in mons if (x, y) != me and (x, y) not in pets and g not in IGG and max(abs(x-me[0]), abs(y-me[1])) <= 1]
+    slime = [f'{g}@{x},{y}' for g, x, y in mons if g == 'P' and max(abs(x-me[0]), abs(y-me[1])) <= 3]
+    if slime: msg = 'STOP P near: ' + ' '.join(slime); break
+    warn2 = [f'{g}@{x},{y}' for g, x, y in mons if g in '12345' and g not in IGG and max(abs(x-me[0]), abs(y-me[1])) <= 2]
+    if warn2: msg = 'STOP warning near: ' + ' '.join(warn2); break
+    if near: msg = 'STOP near: ' + ' '.join(near); break
+    nxt, goal = plan(rows, me, monpos)
+    if not nxt: msg = 'STOP no frontier left'; break
+    out = k(dirs[(nxt[0]-me[0], nxt[1]-me[1])])
+    if 'Refused' in out:
+        blocked.add(nxt); continue
+    s = v(); rows2, me2, (hp, mx), pets, mons, stairs2, dl2, stl2 = parse(s)
+    if dl2 != dl: msg = 'STOP level changed to ' + dl2; me = me2; break
+    cm = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    if cm and int(cm[2]) < 10 and 'Things that are here' in s:
+        subprocess.run(['./k', '--why', 'close popup', '--named', 'Escape'], capture_output=True, text=True)
+        s = v(); rows2, me2, (hp, mx), pets, mons, stairs2, dl2, stl2 = parse(s); cm = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    last = [l for l in s.splitlines() if re.match(r'^0[1-7] ', l)]
+    if hp < hp0 - 12 or hp * 10 < mx * 7: msg = f'STOP HP {hp0} -> {hp}'; me = me2; break
+    if re.search(r'Conf|Stun|Blind|Slime|Stone|Ill|FoodPois|Hallu', stl2): msg = 'STOP status: ' + stl2[-30:]; me = me2; break
+    if last and re.search(r'stole|steal|engulf|swallow|--More--|>>|feel very well', last[-1]): msg = 'STOP message: ' + last[-1][3:83]; me = me2; break
+    if cm and int(cm[2]) < 10: msg = 'STOP prompt'; me = me2; break
+    new = stairs2 - seen_stairs
+    if me2 == me and not (last and 'pit' in last[-1]): blocked.add(nxt)
+    rows, me, hp0 = rows2, me2, hp
+    mark(me)
+    if new: msg = 'FOUND stairs: ' + ' '.join(f'{g}@{x},{y}' for g, x, y in new); seen_stairs = stairs2; break
+else:
+    msg = 'STOP max steps'
+state['blocked'] = sorted(blocked); state['seen'] = sorted(seen); json.dump(state, open(ST, 'w'))
+print(msg); print('at', me, 'known stairs:', ' '.join(f'{g}@{x},{y}' for g, x, y in sorted(seen_stairs)))
+PY

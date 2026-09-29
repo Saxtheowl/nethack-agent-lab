@@ -1,0 +1,36 @@
+#!/bin/bash
+# slots/3/hrest N [CHUNK]: counted searches (n<CHUNK>s) up to N chunks, until the status line no longer shows
+# "Satiated". Stops on: HP loss, bad status, prompt, steal/engulf/--More--, a non-pet monster letter within 3.
+# Run via slots/3/w ./hrest
+cd "$(dirname "$0")/../.."
+export NH_SLOT=3
+S="python3 scripts/session.py"
+n=${1:-10}; c=${2:-20}; prev=""
+for i in $(seq "$n"); do
+  $S keys --compact "n${c}s" >/dev/null 2>&1
+  sleep 0.5
+  out=$($S screen --compact 2>&1)
+  hp=$(echo "$out" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -z "$hp" ] && { echo "STOP: no status"; break; }
+  if [ -n "$prev" ] && [ "$hp" -lt "$prev" ]; then echo "STOP: HP loss $prev -> $hp"; break; fi
+  prev=$hp
+  st=$(echo "$out" | grep -E '^34 ' | grep -oE 'Hungry|Weak|Fainting|Stone|Slime|Blind|Conf|Stun|Ill|FoodPois|Hallu')
+  [ -n "$st" ] && { echo "STOP: status $st"; break; }
+  cy=$(echo "$out" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP: prompt (cursor row $cy)"; break; }
+  echo "$out" | grep -E '^0[1-7] ' | tail -2 | grep -qiE 'stole|steal|seduce|engulf|swallow|--More--' && { echo "STOP: message"; break; }
+  near=$(echo "$out" | python3 -c '
+import re,sys
+t=sys.stdin.read()
+me=re.search(r"Terminal cursor[^:]*: (\d+),(\d+)",t); hx,hy=int(me[1]),int(me[2])
+pm=re.search(r"^PETS.*$",t,re.M); pets=set(re.findall(r"(\d+,\d+)",pm[0])) if pm else set()
+mf=re.search(r"^Map features.*$",t,re.M); bad=[]
+if mf:
+  for g,x,y in re.findall(r" (\S)@(\d+),(\d+)",mf[0]):
+    x,y=int(x),int(y)
+    if re.match(r"[A-Za-z&;:@]",g) and (x,y)!=(hx,hy) and f"{x},{y}" not in pets and max(abs(x-hx),abs(y-hy))<=3: bad.append(f"{g}@{x},{y}")
+print(" ".join(bad))')
+  [ -n "$near" ] && { echo "STOP: near $near"; break; }
+  echo "$out" | grep -E '^34 ' | grep -q 'Satiated' || { echo "NOT SATIATED"; break; }
+done
+echo "$out" | grep -E '^0[5-7] |^34'

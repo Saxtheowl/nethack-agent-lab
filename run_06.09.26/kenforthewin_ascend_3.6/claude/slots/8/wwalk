@@ -1,0 +1,13 @@
+#!/bin/bash
+# slots/8/wwalk DIRS : water-walking single steps (--really), stop on HP loss or adjacent ';' / monster letter.
+cd "$(dirname "$0")/../.."
+prev=$(slots/8/v | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+for d in $(echo "$1" | grep -o .); do
+  o=$(slots/8/k "$d" --really --why "water walking")
+  pos=$(echo "$o" | grep -oE "Neighbors of @\([0-9]+,[0-9]+\).*" | tail -1)
+  hp=$(echo "$o" | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+  echo "$d -> $(echo "$pos" | cut -c1-24) HP:$hp"
+  [ -n "$hp" ] && [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; echo "$pos"; exit 3; }
+  prev=$hp
+  echo "$pos" | grep -qE " [1-9]:[A-Za-z;&][(]" && { echo "ADJACENT: $pos"; exit 2; }
+done

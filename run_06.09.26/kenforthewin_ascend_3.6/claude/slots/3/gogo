@@ -1,0 +1,89 @@
+#!/bin/bash
+# gogo X Y [MAXSTEPS] [IGNORE "x,y;x,y"] [NEARDIST=2] [IGNORE_GLYPHS e.g. "@"]: walk toward screen square X,Y one step at a time, replanning a BFS
+# after every step over the remembered map. Box-drawing walls, known traps '^', water/lava '}', boulders
+# '0' are blocked; ASCII '|' '-' are open doors (orthogonal entry/exit only); '+' closed door (stop);
+# unknown blank squares are assumed open (optimistic). Stops: arrival, HP loss, any non-pet monster
+# glyph within 2 squares (except IGNORE), steal/engulf/--More--, prompt, no path, no progress.
+# Run via slots/3/w ./gogo
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re, collections
+HPMAX = 1
+TX, TY = int(sys.argv[1]), int(sys.argv[2])
+N = int(sys.argv[3]) if len(sys.argv) > 3 else 60
+IGN = set(tuple(map(int, q.split(','))) for q in (sys.argv[4].split(';') if len(sys.argv) > 4 else []) if q)
+ND = int(sys.argv[5]) if len(sys.argv) > 5 else 2
+IGG = sys.argv[6] if len(sys.argv) > 6 else ''
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(x): return subprocess.run(['./k', '--why', 'gogo step', x], capture_output=True, text=True).stdout
+WALL = set('│─┌┐└┘├┤┬┴┼')
+BLOCK = WALL | set('^}0')
+DOOR = set('|-')
+MON = re.compile(r"[A-Za-z&;:'@1-5]")
+def parse(s):
+    rows = {}
+    for l in s.splitlines():
+        m = re.match(r'^(\d\d) (.*)$', l)
+        if m and 10 <= int(m[1]) <= 31: rows[int(m[1])] = m[2]
+    c = re.search(r'Neighbors of @\((\d+),(\d+)\)', s)
+    hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    global HPMAX
+    if hp: HPMAX = int(hp[2])
+    pets = set()
+    pm = re.search(r'^PETS[^:]*:(.*)$', s, re.M)
+    if pm:
+        for a, b in re.findall(r'(\d+),(\d+)', pm[1]): pets.add((int(a), int(b)))
+    mons = []
+    mf = re.search(r'^Map features.*$', s, re.M)
+    if mf:
+        for g, a, b in re.findall(r" (\S)@(\d+),(\d+)", mf[0]):
+            if MON.fullmatch(g): mons.append((g, int(a), int(b)))
+    return rows, (int(c[1]), int(c[2])) if c else None, int(hp[1]) if hp else 0, pets, mons
+def tile(rows, x, y):
+    r = rows.get(y)
+    if r is None or x < 1 or x >= len(r): return ' '
+    return r[x]
+dirs = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+def plan(rows, me):
+    q = collections.deque([me]); prev = {me: None}
+    while q:
+        c = q.popleft()
+        if c == (TX, TY): break
+        for (dx, dy) in dirs:
+            n = (c[0]+dx, c[1]+dy)
+            if n in prev or not (1 <= n[0] <= 79 and 11 <= n[1] <= 31): continue
+            t = tile(rows, *n); t0 = tile(rows, *c)
+            if n != (TX, TY) and t in BLOCK: continue
+            if t == '+': continue
+            if dx and dy and (t in DOOR or (c != me and t0 in DOOR)): continue
+            prev[n] = c; q.append(n)
+    if (TX, TY) not in prev: return None
+    p = (TX, TY)
+    while prev[p] != me: p = prev[p]
+    return p
+s = v(); rows, me, hp0, pets, mons = parse(s)
+for step in range(N):
+    if me == (TX, TY): print('ARRIVED', me); break
+    near = [f'{g}@{x},{y}' for g, x, y in mons if (x, y) != me and (x, y) not in pets and (x, y) not in IGN and g not in IGG and max(abs(x-me[0]), abs(y-me[1])) <= ND]
+    if near: print('STOP near:', ' '.join(near)); break
+    nxt = plan(rows, me)
+    if not nxt: print('STOP no path from', me); break
+    out = k(dirs[(nxt[0]-me[0], nxt[1]-me[1])])
+    if 'Refused' in out: print('STOP refused:', [l for l in out.splitlines() if 'Refused' in l][:1]); break
+    s = v(); rows2, me2, hp, pets, mons = parse(s)
+    msg = '\n'.join(l for l in s.splitlines() if re.match(r'^0[1-7] ', l))
+    if hp < hp0 - 12 or hp * 10 < HPMAX * 7: print('STOP HP', hp0, '->', hp); rows, me = rows2, me2; break
+    if re.search(r'stole|steal|engulf|swallow|--More--|>>', msg.splitlines()[-1] if msg else ''): print('STOP message'); break
+    cm = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    if cm and int(cm[2]) < 10: print('STOP prompt'); break
+    if me2 == me:
+        # bumped into something unknown: mark it blocked and replan
+        rows = rows2
+        r = rows.get(nxt[1], '')
+        if len(r) > nxt[0]: rows[nxt[1]] = r[:nxt[0]] + '─' + r[nxt[0]+1:]
+        continue
+    rows, me, hp0 = rows2, me2, hp
+else:
+    print('STOP max steps at', me)
+print(me)
+PY

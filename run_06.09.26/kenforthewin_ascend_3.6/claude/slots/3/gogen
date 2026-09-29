@@ -1,0 +1,73 @@
+#!/bin/bash
+# slots/3/gogen X Y [MAXSTEPS] [IGNORE "x,y;x,y"]: walk toward X,Y on any dark level. Known walls block,
+# unknown squares are assumed passable (optimistic BFS), replanned after every step. Diagonal moves allowed
+# except through doorways ('+','|','-' door glyphs are treated as orthogonal-only) and between two walls.
+# Stops: arrived, HP loss, adjacent non-pet monster letter (not ignored), prompt/--More--, no path, bump twice.
+# Run via slots/3/w ./gogen
+cd "$(dirname "$0")"
+exec python3 - "$@" <<'PY'
+import subprocess, sys, re, collections
+TX, TY = int(sys.argv[1]), int(sys.argv[2])
+N = int(sys.argv[3]) if len(sys.argv) > 3 else 40
+IGN = set(tuple(map(int, q.split(','))) for q in (sys.argv[4].split(';') if len(sys.argv) > 4 else []) if q)
+def v(): return subprocess.run(['./v'], capture_output=True, text=True).stdout
+def k(x): return subprocess.run(['./k', '--why', 'gogen step', x], capture_output=True, text=True).stdout
+WALL = set('│─┌┐└┘├┤┬┴┼ ')
+def parse(s):
+    rows = {}
+    for l in s.splitlines():
+        m = re.match(r'^(\d\d) (.*)$', l)
+        if m: rows[int(m[1])] = m[2]
+    c = re.search(r'Terminal cursor[^:]*: (\d+),(\d+)', s)
+    hp = re.search(r'HP:(\d+)\((\d+)\)', s)
+    nb = re.search(r'^Neighbors of @\((\d+),(\d+)\): (.*)$', s, re.M)
+    return rows, int(c[1]), int(c[2]), int(hp[1]) if hp else None, nb
+def glyph(rows, x, y):
+    r = rows.get(y, '')
+    return r[x] if x < len(r) else " "
+blocked = set()
+dirs = {(-1,-1):'7',(0,-1):'8',(1,-1):'9',(-1,0):'4',(1,0):'6',(-1,1):'1',(0,1):'2',(1,1):'3'}
+prevhp = None; bumps = 0
+for step in range(N):
+    s = v(); rows, hx, hy, hp, nb = parse(s)
+    if hy < 10: print('STOP prompt'); break
+    if prevhp is not None and hp is not None and hp < prevhp: print('STOP HP loss', prevhp, hp); break
+    prevhp = hp
+    if (hx, hy) == (TX, TY): print('ARRIVED'); break
+    pm = re.search(r'^PETS[^:]*:(.*)$', s, re.M)
+    pets = set((int(a), int(b)) for a, b in re.findall(r'(\d+),(\d+)', pm[1])) if pm else set()
+    if nb:
+        adj = [(c, int(x), int(y)) for d, c, x, y in re.findall(r'(\d):(.)\((\d+),(\d+)\)', nb[3]) if re.match(r"[A-Za-z&;:'@]", c) and (int(x), int(y)) not in IGN and (int(x), int(y)) not in pets]
+        if adj: print('STOP adjacent', adj); break
+    def wall(x, y):
+        if (x, y) in blocked: return True
+        if not (1 <= x <= 79 and 11 <= y <= 31): return True
+        g = glyph(rows, x, y)
+        return g in '│─┌┐└┘├┤┬┴┼0'
+    def isdoor(x, y): return glyph(rows, x, y) in '+|-' and False
+    prev = {(hx, hy): None}; q = collections.deque([(hx, hy)])
+    while q:
+        x, y = q.popleft()
+        if (x, y) == (TX, TY): break
+        for (dx, dy), c in dirs.items():
+            nx, ny = x+dx, y+dy
+            if (nx, ny) in prev or wall(nx, ny): continue
+            if dx and dy and wall(x+dx, y) and wall(x, y+dy): continue
+            prev[(nx, ny)] = (x, y); q.append((nx, ny))
+    if (TX, TY) not in prev: print('STOP no path'); break
+    cur = (TX, TY)
+    while prev[cur] != (hx, hy): cur = prev[cur]
+    d = dirs[(cur[0]-hx, cur[1]-hy)]
+    out = k(d)
+    s2 = v(); rows2, nx2, ny2, hp2, nb2 = parse(s2)
+    if ny2 < 10:
+        subprocess.run(['./k', '--named', 'Escape'], capture_output=True)
+        s2 = v(); rows2, nx2, ny2, hp2, nb2 = parse(s2)
+    if (nx2, ny2) == (hx, hy):
+        blocked.add(cur); bumps += 1
+        if bumps > 12: print('STOP too many bumps'); break
+    else:
+        bumps = 0
+s = v()
+print(re.search(r'Terminal cursor[^:]*: (\d+,\d+)', s)[1], re.search(r'HP:\S+', s)[0], re.search(r'T:\d+', s)[0])
+PY

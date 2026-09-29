@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""slots/8/mex [steps] [--to X,Y] (run: slots/8/w env IGN=Gh ./mex 40): explore with SINGLE checked
+steps (no travel, so peaceful gnomes next to you do not block it). Each step: BFS over the known
+map to the nearest frontier cell (or to X,Y), send one digit through session.py keys (its guard
+refuses water/lava/'e'). Stops on: HP loss, status change, warning message, non-pet monster
+adjacent (except glyphs in $IGN), new '>' seen, level change, no path, no progress."""
+import collections, os, re, subprocess, sys, time
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+os.chdir(ROOT)
+os.environ['NH_SLOT'] = '8'
+import session, guard  # noqa: E402
+from explore import tile, walkable, frontier, is_door, DIRS  # noqa: E402
+
+IGN = os.environ.get('IGN', '')
+KEY = {(0, -1): '8', (1, 0): '6', (0, 1): '2', (-1, 0): '4', (1, -1): '9', (1, 1): '3', (-1, 1): '1', (-1, -1): '7'}
+WARN = re.compile(r'stole|steal|--More--|\[yn|Really|frozen|turn to stone|slowing down|stiffening|You fall|'
+                  r'trap|feel feverish|engulf|You are hit|burn|sink', re.I)
+args = [a for a in sys.argv[1:]]
+steps = 40
+target = None
+while args:
+    a = args.pop(0)
+    if a == '--to':
+        target = tuple(int(v) for v in args.pop(0).split(','))
+    else:
+        steps = int(a)
+
+
+def obs():
+    o = guard.observe(session)
+    return guard.state(*o)
+
+
+def path_to(st, goal=None):
+    rows, start = st['rows'], st['position']
+    pets = st['pets']
+    prev = {start: None}
+    q = collections.deque([start])
+    while q:
+        c = q.popleft()
+        if c != start and ((goal and c == goal) or (not goal and c not in visited and frontier(rows, *c))):
+            p = [c]
+            while prev[p[-1]] != start:
+                p.append(prev[p[-1]])
+            return p[::-1]
+        for dx, dy in DIRS:
+            n = (c[0] + dx, c[1] + dy)
+            if n in prev:
+                continue
+            ch = tile(rows, *n)
+            if ch in '^}{0+' and n != goal:
+                continue
+            if not walkable(rows, *n) and n not in pets:
+                continue
+            if (ch.isalpha() or ch == '@') and n not in pets:
+                continue
+            if dx and dy and (is_door(rows, *c) or is_door(rows, *n)):
+                continue
+            if dx and dy and os.environ.get('ORTHO'):
+                continue
+            if os.environ.get('HEAVY') and dx and dy and not walkable(rows, c[0] + dx, c[1]) and not walkable(rows, c[0], c[1] + dy):
+                continue  # tight diagonal squeeze: too heavy to get through
+            prev[n] = c
+            q.append(n)
+    return None
+
+
+import json
+store = os.path.join(HERE, '.mex-visited.json')
+st = obs()
+try:
+    vd = json.load(open(store))
+except Exception:
+    vd = {}
+key = f"{st['level']}" if st else ''
+visited = set(tuple(v) for v in vd.get(key, []))
+if st is None:
+    sys.exit('mex: not at a map prompt')
+hp0, stat0 = st['hp'], re.sub(r'(T|HP|Pw|Xp|\$):\S+', '', st['status'])
+downs0 = sum(r[1:80].count('>') for r in st['rows'][10:31])
+msgs0 = [r[1:81] for r in st['rows'][1:8]]
+reason = 'step budget used'
+stuck = 0
+for i in range(steps):
+    p = path_to(st, target)
+    if not p:
+        reason = 'no path / no frontier'
+        break
+    nxt = p[0]
+    d = (nxt[0] - st['position'][0], nxt[1] - st['position'][1])
+    out = subprocess.run(['python3', 'scripts/session.py', 'keys', '--compact', '--why', 'mex step', KEY[d]],
+                         capture_output=True, text=True)
+    if 'efus' in out.stdout + out.stderr:
+        reason = 'guard refused: ' + (out.stdout + out.stderr).strip()[-120:]
+        break
+    time.sleep(.2)
+    new = obs()
+    if new is None and 'Things that are here' in session.screen():
+        subprocess.run(['python3', 'scripts/session.py', 'keys', '--compact', '--named', 'Escape'], capture_output=True)
+        time.sleep(.2)
+        new = obs()
+    if new is None:
+        reason = 'prompt or unrecognized screen'
+        break
+    msgs = [r[1:81] for r in new['rows'][1:8]]
+    fresh = [m for m in msgs[-2:] if m.strip() and m not in msgs0]
+    msgs0 = msgs
+    if new['hp'] < hp0:
+        reason = f"HP loss {hp0}->{new['hp']}"
+        st = new
+        break
+    if re.sub(r'(T|HP|Pw|Xp|\$):\S+', '', new['status']) != stat0:
+        reason = 'status line changed'
+        st = new
+        break
+    w = next((m.strip() for m in fresh if WARN.search(m)), None)
+    if w:
+        reason = 'message: ' + w[:70]
+        st = new
+        break
+    if new['level'] != st['level']:
+        reason = 'level changed'
+        st = new
+        break
+    if new['position'] == st['position']:
+        stuck += 1
+        if stuck >= 2:
+            reason = 'no progress'
+            st = new
+            break
+    else:
+        stuck = 0
+    st = new
+    visited.add(st['position'])
+    x, y = st['position']
+    adj = []
+    for dx, dy in DIRS:
+        ch = tile(st['rows'], x + dx, y + dy)
+        if (x + dx, y + dy) in st['pets']:
+            continue
+        if (ch.isalpha() or ch in "@&;:'") and ch not in IGN:
+            adj.append(f'{ch}({x + dx},{y + dy})')
+    if adj:
+        reason = 'adjacent ' + ' '.join(adj)
+        break
+    if sum(r[1:80].count('>') for r in st['rows'][10:31]) > downs0:
+        reason = 'new downstairs seen'
+        break
+    if target and st['position'] == target:
+        reason = 'arrived'
+        break
+vd[key] = sorted(visited)
+json.dump(vd, open(store, 'w'))
+print('mex stop:', reason)
+out = subprocess.run(['python3', 'scripts/session.py', 'screen', '--compact'], capture_output=True, text=True).stdout
+print('\n'.join(l for l in out.splitlines() if l[:2] in ('05', '06', '07', '34') or l.startswith(('Map', 'Neighbors'))))

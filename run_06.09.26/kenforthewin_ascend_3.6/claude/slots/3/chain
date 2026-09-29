@@ -1,0 +1,23 @@
+#!/bin/bash
+# slots/3/chain KEY "x,y x,y ...": for each level, climb2 to the stairs at x,y and press KEY ('<' or '>').
+# If climb2 stops on an adjacent hostile (non-@, non e/n/l), run melee (up to 6 actions) and retry (3 tries).
+# Stops on anything else (HP, @, nymph, prompt...). Run via slots/3/w ./chain
+cd "$(dirname "$0")"
+K="$1"; L="$2"
+for xy in $L; do
+  ok=""
+  for try in 1 2 3; do
+    r=$(./climb2 ${xy%,*} ${xy#*,} "$K" 2>&1)
+    if echo "$r" | grep -q "^STOP adjacent hostile"; then
+      g=$(echo "$r" | grep "^STOP adjacent hostile" | grep -oE " [A-Za-z&;:']@" | tr -d ' @' | tr -d '\n')
+      if echo "$g" | grep -qE '[@enl]'; then echo "$r" | head -1; echo "$r" | tail -3; exit 1; fi
+      m=$(./melee 6 "$g" 60 2>&1); echo "$m" | grep -E "kill|destroy|STOP" | head -3
+      echo "$m" | grep -q "STOP HP" && exit 1
+      continue
+    fi
+    if echo "$r" | grep -q "^STOP"; then echo "$r" | head -1; echo "$r" | tail -3; exit 1; fi
+    ok=1; break
+  done
+  [ -z "$ok" ] && { echo "STOP gave up at $xy"; exit 1; }
+  echo "$r" | grep -E '^34' | grep -oE 'Dlvl:[0-9]+|HP:[0-9]+\([0-9]+\)|T:[0-9]+' | tr '\n' ' '; echo
+done

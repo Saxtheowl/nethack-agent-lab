@@ -1,0 +1,16 @@
+#!/bin/bash
+# slots/3/wrest2 N [LETTER]: zap the empty wand LETTER (default b) up to N times to wrest its last charge
+# (1/121 per zap). Stops as soon as the message is not "Nothing happens" (wish prompt: type the wish by
+# hand), or on HP loss / hunger. Run via slots/3/w ./wrest2
+cd "$(dirname "$0")"
+N=${1:-40}; L=${2:-b}; prev=""
+for i in $(seq "$N"); do
+  o=$(./k --why "wrest the last wish" z$L)
+  msg=$(echo "$o" | grep -E '^07')
+  s=$(./v); hp=$(echo "$s" | grep -o 'HP:[0-9]*' | head -1 | cut -d: -f2)
+  [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "STOP: HP loss $prev -> $hp"; echo "$msg"; exit 1; }
+  prev=$hp
+  echo "$s" | grep -E '^34' | grep -qE 'Hungry|Weak|Fainting' && { echo "STOP: hunger"; exit 1; }
+  if ! echo "$msg" | grep -q 'Nothing happens'; then echo "STOP after $i zaps:"; echo "$o" | grep -E '^0[4-7]'; exit 0; fi
+done
+echo "no luck in $N zaps"; ./v | grep -E '^34' | grep -oE 'HP:.*T:[0-9]+'

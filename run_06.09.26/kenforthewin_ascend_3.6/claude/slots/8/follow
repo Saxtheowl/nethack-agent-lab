@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""slots/8/follow [n] (run via slots/8/w ./follow n): follow a corridor with single checked
+steps. At each step, move to the one adjacent corridor/door square not yet visited
+(prefers straight on). Stops at a fork, a room, a dead end, a non-pet monster adjacent,
+HP loss, status change, or a warning message. Never steps onto '}' or unknown squares."""
+import re, subprocess, sys, os
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+os.environ['NH_SLOT'] = '8'
+n = int(sys.argv[1]) if len(sys.argv) > 1 else 20
+OFF = {'1': (-1, 1), '2': (0, 1), '3': (1, 1), '4': (-1, 0), '6': (1, 0), '7': (-1, -1), '8': (0, -1), '9': (1, -1)}
+WARN = re.compile(r'stole|steal|--More--|\[yn|Really|frozen|stone|slow(ing)? down|stiff|You fall|trap', re.I)
+
+
+def screen(keys=None):
+    cmd = ['python3', 'scripts/session.py']
+    cmd += ['keys', '--compact', '--why', 'follow corridor', keys] if keys else ['screen', '--compact']
+    return subprocess.run(cmd, capture_output=True, text=True).stdout
+
+
+def parse(s):
+    m = re.search(r'^Neighbors of @\((\d+),(\d+)\): (.*)$', s, re.M)
+    if not m:
+        return None
+    pos = (int(m[1]), int(m[2]))
+    nb = {}
+    for d, g, x, y in re.findall(r'(\d):(\S+?)\((\d+),(\d+)\)', m[3]):
+        nb[d] = g
+    hp = re.search(r'HP:(\d+)', s)
+    st = re.search(r'^34.*$', s, re.M)
+    status = re.sub(r'(T|HP|Pw|Xp|\$):\S+', '', st[0]) if st else ''
+    pets = set(re.findall(r'(\d+,\d+)', (re.search(r'^PETS.*$', s, re.M) or [''])[0]))
+    return pos, nb, int(hp[1]) if hp else None, status, pets
+
+
+s = screen()
+p = parse(s)
+pos, nb, hp0, st0, pets = p
+visited = {pos}
+last_msgs = {l for l in s.splitlines() if l[:2] in ('01', '02', '03', '04', '05', '06', '07')}
+prev_dir = None
+reason = 'step budget used'
+for i in range(n):
+    cands, petc = [], []
+    for d, g in nb.items():
+        petsq = f'{pos[0] + OFF[d][0]},{pos[1] + OFF[d][1]}' in pets
+        if g in ('▒', '#', '+', '|', '-') or petsq:
+            dx, dy = OFF[d]
+            q = (pos[0] + dx, pos[1] + dy)
+            if q in visited:
+                continue
+            if g in ('+', '|', '-') and dx and dy:
+                continue
+            if g == '·':
+                continue  # room floor / doorway: stop, let the player look
+            (petc if petsq else cands).append((d, g, q))
+    doors = [d for d, g in nb.items() if g == '·' and OFF[d] and (pos[0] + OFF[d][0], pos[1] + OFF[d][1]) not in visited]
+    if not cands and len(petc) == 1:
+        cands = petc
+    if not cands:
+        reason = 'dead end or room edge (floor/doorway next: %s)' % ','.join(doors) if doors else 'dead end'
+        break
+    if len(cands) > 1:
+        straight = [c for c in cands if c[0] == prev_dir]
+        orth = [c for c in cands if OFF[c[0]][0] == 0 or OFF[c[0]][1] == 0]
+        if straight:
+            cands = straight
+        elif len(orth) == 1:
+            cands = orth
+        else:
+            reason = 'fork: ' + ' '.join(f'{c[0]}->{c[2]}' for c in cands)
+            break
+    d, g, q = cands[0]
+    s = screen(d)
+    p = parse(s)
+    if p is None:
+        reason = 'no map (prompt?)'
+        break
+    npos, nb, hp, st, pets = p
+    msgs = [l for l in s.splitlines() if l[:2] in ('01', '02', '03', '04', '05', '06', '07')]
+    new = msgs[-1:] if msgs and msgs[-1] not in last_msgs else []
+    last_msgs = set(msgs)
+    if WARN.search('\n'.join(new)):
+        reason = 'message'
+        pos = npos
+        break
+    if hp is None or hp < hp0:
+        reason = f'HP loss {hp0}->{hp}'
+        break
+    if st != st0:
+        reason = 'status changed'
+        break
+    if npos == pos:
+        reason = 'did not move'
+        break
+    visited.add(npos)
+    pos = npos
+    prev_dir = d
+    adj = [f'{dd}:{g}' for dd, g in nb.items() if re.match(r"^[A-Za-z@&;:']$", g) and g not in os.environ.get('IGN', '')
+           and f'{pos[0] + OFF[dd][0]},{pos[1] + OFF[dd][1]}' not in pets]
+    if adj:
+        reason = 'adjacent ' + ' '.join(adj)
+        break
+print('follow stop:', reason)
+out = screen()
+print('\n'.join(l for l in out.splitlines() if l[:2] in ('05', '06', '07', '34') or l.startswith(('Map', 'Neighbors'))))

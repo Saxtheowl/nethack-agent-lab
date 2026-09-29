@@ -1,0 +1,7 @@
+#!/bin/bash
+# slots/8/godown X Y : travel to the down stairs at X,Y then descend.
+cd "$(dirname "$0")/../.."
+out=$(slots/8/t "$1" "$2")
+pos=$(echo "$out" | grep -oE "Neighbors of @\([0-9]+,[0-9]+\)" | tail -1)
+if [ "$pos" != "Neighbors of @($1,$2)" ]; then echo "STOP: not at stairs ($pos)"; echo "$out" | tail -3; exit 1; fi
+slots/8/k ">" --why "descend stairs" | grep -E "Dlvl|Terminal"

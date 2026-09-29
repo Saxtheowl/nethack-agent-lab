@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/8/bstep DIRS : on Medusa's level, single steps while keeping blind (re-flash camera when sight returns).
+# Env NOSTOP=1: do not stop when a glyph is adjacent (statues). Always stops on HP loss.
+cd "$(dirname "$0")/../.."
+prev=$(slots/8/v | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+for d in $(echo "$1" | grep -o .); do
+  st=$(slots/8/v | grep -oE "T:[0-9]+.*" | head -1)
+  if ! echo "$st" | grep -q "Blind"; then
+    slots/8/k a --why "sight returned: re-blind with camera NOW" >/dev/null
+    slots/8/k y --why "camera" >/dev/null
+    o=$(slots/8/k . --raw --why "at myself"); echo "REFLASH $(echo "$o" | grep -oE "T:[0-9]+.*" | head -1)"
+  fi
+  o=$(slots/8/k "$d" --really --why "blind step toward Medusa")
+  pos=$(echo "$o" | grep -oE "Neighbors of @\([0-9]+,[0-9]+\).*" | tail -1)
+  hp=$(echo "$o" | grep -oE "HP:[0-9]+" | head -1 | cut -d: -f2)
+  echo "$d -> $pos | HP:$hp"
+  [ -n "$hp" ] && [ -n "$prev" ] && [ "$hp" -lt "$prev" ] && { echo "HP LOSS"; exit 3; }
+  prev=$hp
+  if [ -z "$NOSTOP" ] && echo "$pos" | grep -qE " [1-9]:[A-Za-z@&;:][(]"; then echo "ADJACENT"; exit 2; fi
+done

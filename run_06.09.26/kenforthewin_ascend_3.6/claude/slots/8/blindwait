@@ -1,0 +1,18 @@
+#!/bin/bash
+# slots/8/blindwait N : on Medusa's level. Each step: if not Blind -> apply camera at self immediately.
+# Otherwise search one turn. Stops when a monster is adjacent (prints neighbors) or after N turns.
+cd "$(dirname "$0")/../.."
+for i in $(seq 1 "${1:-10}"); do
+  st=$(slots/8/v | grep -oE "T:[0-9]+.*" | head -1)
+  if ! echo "$st" | grep -q "Blind"; then
+    slots/8/k a --why "sight returned: re-blind with camera NOW" >/dev/null
+    slots/8/k y --why "camera" >/dev/null
+    o=$(slots/8/k . --raw --why "at myself")
+    echo "REFLASH: $(echo "$o" | grep -oE "T:[0-9]+.*" | head -1)"
+    continue
+  fi
+  n=$(slots/8/v | grep Neighbors | tail -1)
+  if echo "$n" | grep -qE " [1-9]:[A-Za-z@&;:]\("; then echo "ADJACENT: $n"; echo "$st"; exit 2; fi
+  o=$(slots/8/k s --why "wait blind on the stairs for Medusa")
+  echo "$(echo "$o" | grep -oE "T:[0-9]+.*" | head -1) $(echo "$o" | grep -oE "HP:[0-9]+")"
+done

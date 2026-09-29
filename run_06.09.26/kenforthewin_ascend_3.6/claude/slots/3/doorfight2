@@ -1,0 +1,27 @@
+#!/bin/bash
+# slots/3/doorfight2 N DIR X Y [MINHP%] [IGNORE 'x,y x,y' = statues]: hold a doorway chokepoint: each turn, if a hostile monster is at
+# (X,Y) (the doorway, direction DIR from @), attack it with F DIR (farlook first: never a peaceful);
+# otherwise search one turn. Stops on HP < MINHP% (default 60), any other adjacent monster, a peaceful,
+# a prompt, N turns. Run via slots/3/w ./doorfight
+cd "$(dirname "$0")"
+N=$1; D=$2; X=$3; Y=$4; M=${5:-60}; IGN="${6:-}"
+for i in $(seq "$N"); do
+  s=$(./v)
+  cy=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$')
+  if [ "${cy:-0}" -lt 10 ] && echo "$s" | grep -E '^0[1-7] ' | tail -1 | grep -qE '>>|--More--'; then ./k --raw " " >/dev/null; s=$(./v); cy=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*$'); fi
+  [ "${cy:-0}" -lt 10 ] && { echo "STOP prompt"; break; }
+  hp=$(echo "$s" | grep -oE 'HP:[0-9]+\([0-9]+\)' | head -1); c=${hp#HP:}; c=${c%%(*}; mx=${hp#*(}; mx=${mx%)}
+  [ $((c*100)) -lt $((mx*M)) ] && { echo "STOP HP $c/$mx"; break; }
+  me=$(echo "$s" | grep -o 'Terminal cursor[^:]*: [0-9]*,[0-9]*' | grep -o '[0-9]*,[0-9]*$'); hx=${me%,*}; hy=${me#*,}
+  adj=$(echo "$s" | grep '^Map' | grep -oE " [A-Za-z&;:'@]@[0-9]+,[0-9]+" | tr -d ' ' | while read m; do p=${m#?@}; x=${p%,*}; y=${p#*,};
+        [ "$x,$y" = "$me" ] && continue; dx=$((x-hx)); dy=$((y-hy)); [ ${dx#-} -le 1 ] && [ ${dy#-} -le 1 ] && echo "$m"; done)
+  other=$(echo "$adj" | grep -v "@$X,$Y\$" | grep -v '^$'); for g in $IGN; do other=$(echo "$other" | grep -v "@$g\$"); done; other=$(echo "$other" | grep -v '^$')
+  [ -n "$other" ] && { echo "STOP other adjacent: $other"; break; }
+  if echo "$adj" | grep -q "@$X,$Y\$"; then
+    lk=$(./look $X $Y); echo "$lk" | grep -q peaceful && { echo "STOP peaceful: $lk"; break; }
+    o=$(./k --why "hold the doorway (move-attack)" $D); echo "$o" | grep -E '^0[5-7]' | grep -oE 'You kill[^!]*!|You destroy[^!]*!' | head -2
+  else
+    ./k --why "wait at the doorway" s >/dev/null
+  fi
+done
+./v | grep -E '^34' | grep -oE 'HP:.*T:[0-9]+'
