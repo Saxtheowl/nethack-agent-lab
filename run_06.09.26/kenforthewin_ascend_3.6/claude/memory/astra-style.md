@@ -131,3 +131,14 @@ LLM decides every non-trivial action itself, from the screen it just read.
   the Castle): destroy one with striking, then a cold ray solidifies the lava span. Surtur teleports next to you and flees to
   the up stairs to heal: finish him on the stairs. He carries the Bell of Opening. A polymorph trap on a quest level
   destroyed body armor + cloak (no magic resistance).
+- Wizard's Tower + Invocation (slot 1 run 13, T25761-26490, DONE): ELBERETH DOES NOT WORK IN GEHENNOM (onscary: Inhell);
+  a scroll of scare monster does. The Wizard wakes as soon as his chamber is opened, summons 4-5 nasties ("Destroy the
+  thief, my pets!"): 163 -> 41 HP in 4 turns in the open. Fight him only from a doorway/choke point; the Orb of Fate
+  #invoke (level teleport + teleport control) is a working emergency exit from the no-teleport tower. A hell hound's fire
+  MELTS the ice under you (you fall in, the sack gets wet: scrolls blanked): kill or teleport it away first (a wand of
+  teleportation zapped at monsters works on no-teleport levels). The Book may end up far from where the Wizard died: the
+  Orb applied as a CRYSTAL BALL (look for '+') found it; Int 11 = 45% bad effect (hallucination once). Invocation tools
+  cannot be buried under ice. On the bottom level, "99" at the controlled level-teleport prompt lands on the
+  vibrating-square level; crystal ball '^' shows the vibrating square as '~'. Invocation: apply Candelabrum (7 candles),
+  apply Bell, read Book within 5 turns (all three must be non-cursed). Source code is on the worker:
+  /home/roro/bothack36/engine/nethack-3.6.7/src (+ dat/*.des).
