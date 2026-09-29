@@ -116,3 +116,7 @@ LLM decides every non-trivial action itself, from the screen it just read.
   with a wand of opening zapped from a distance, garrison fought from a dug tunnel; wishes spent on charging
   first. Never travel onto water with loose scrolls/potions (all scrolls blanked on Medusa's level).
   In Gehennom PRAYER DOES NOT WORK (pray.c) and 7 candles are needed for the Invocation (Izchak, Minetown).
+- Covetous monsters (master lich, arch-lich, quest nemesis, Wizard): when hurt they go to the up stairs and
+  spell-heal ONLY if you are > 8 squares away (wizard.c tactics). Stay within 8 squares of those stairs (or on
+  them) and finish them there. Boulders pushed onto trap doors plug them (Castle row 21, slot 3 run 7).
+- Gremlins steal intrinsics only at night: game clock hour < 6 or > 21, and the worker runs on UTC.
