@@ -39,3 +39,9 @@ run_06.09.26/kenforthewin_ascend_3.6/claude/runs/*.log
 
 # compatibility symlink (old location of kenforthewin_ascend_3.6/claude)
 run_06.09.26/super_nethack_astra
+
+# Replay recordings of the NetHack games (big, append-only, rebuilt on disk by the
+# recorder; the dashboard reads them from disk): never in git
+run_06.09.26/**/runs/games/*/frames.jsonl
+run_06.09.26/**/runs/games/*/log.jsonl
+run_06.09.26/**/runs/agents/
