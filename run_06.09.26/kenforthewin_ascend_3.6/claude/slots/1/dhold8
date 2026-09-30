@@ -1,0 +1,49 @@
+#!/bin/bash
+# slots/1/dhold8 N MINHP [DIRS]: stand still in a doorway; each turn: if a monster (letter, &, ', ;, blank=ghost)
+# is on one of the allowed DIRS squares (default 8) -> F it, else search one turn.
+# Stops at: HP < MINHP, HP drop >= 15 in one turn, alarm, --More--, a monster on any NON-allowed neighbour square,
+# messages about curses/theft/summoning, or when nothing happened for 12 turns in a row.
+cd "$(dirname "$0")/../.."
+n=${1:-20}; min=${2:?}; dirs=${3:-8}
+prev=$(slots/1/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+idle=0
+pl=$(slots/1/v | grep -E '^0[1-7] ' | tail -1 | cut -c5-80)
+for i in $(seq $n); do
+  o=$(slots/1/v)
+  echo "$o" | grep -q "HP ALARM" && { echo "dhold: alarm"; exit 1; }
+  h=$(echo "$o" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+  [ "$h" -lt "$min" ] && { echo "dhold: low HP $h"; exit 1; }
+  [ $((prev - h)) -ge 15 ] && { echo "dhold: big hit $prev->$h"; exit 1; }
+  prev=$h
+  d=$(python3 - "$o" "$dirs" <<'PY'
+import re, sys
+out, dirs = sys.argv[1], sys.argv[2]
+m = re.search(r'Neighbors of @\((\d+),(\d+)\): (.*)$', out, re.M)
+res = 's'
+for d, g in re.findall(r'(\d):(blank|\S)\(\d+,\d+\)', m.group(3)):
+    mon = g == 'blank' or g.isalpha() or g in "'&;:"
+    if not mon:
+        continue
+    if d in dirs:
+        if res == 's':
+            res = d
+    else:
+        res = 'X' + d + g
+        break
+print(res)
+PY
+)
+  case "$d" in
+    X*) echo "dhold: monster on non-allowed side ${d:1}"; break;;
+    s) r=$(slots/1/k s 2>&1); idle=$((idle+1));;
+    *) r=$(slots/1/k F$d 2>&1); idle=0;;
+  esac
+  l=$(echo "$r" | grep -E '^0[1-7] ' | tail -1 | cut -c5-80); [ "$d" != s ] && echo "$l"
+  echo "$r" | grep -q "ALARM" && { echo "dhold: alarm"; exit 1; }
+  echo "$r" | grep -q -- '--More--' && { echo "dhold: More"; exit 1; }
+  [ "$l" != "$pl" ] && echo "$l" | grep -qiE 'stole|black glow|glows black|curse|summon| appears|feel|thief|attract|remove|take off|\[yn|sweet|engulf|can see again' && { echo "dhold: message: $l"; break; }
+  pl=$l
+  [ $idle -ge ${IDLE:-12} ] && { echo "dhold: idle $idle"; break; }
+  echo "$r" | grep -E '^34' | grep -q Blind || { [ -n "$UNTILSEE" ] && { echo "dhold: not blind"; break; }; }
+done
+slots/1/v | grep -E '^34'

@@ -1,0 +1,20 @@
+#!/bin/bash
+# slots/1/fdir D N: F toward direction D up to N times (one blow per command, re-read each time).
+# Stops when the target dies ("destroy"/"kill"), on "thin air", HP drop >= 15, HP < 60%, --More--, alarm, peaceful prompt.
+cd "$(dirname "$0")/../.."
+d=$1; n=${2:-6}
+prev=$(slots/1/v | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2)
+for i in $(seq $n); do
+  r=$(slots/1/k F$d 2>&1)
+  echo "$r" | grep -qE 'Really attack|refus' && { slots/1/k --named Escape >/dev/null; echo "fdir: refused/peaceful"; exit 1; }
+  l=$(echo "$r" | grep -E '^0[1-7] ' | tail -2 | cut -c5-80 | tr -s ' ' | tr '\n' '|')
+  h=$(echo "$r" | grep -oE 'HP:[0-9]+' | head -1 | cut -d: -f2); mx=$(echo "$r" | grep -oE 'HP:[0-9]+\([0-9]+' | head -1 | cut -d'(' -f2)
+  echo "$l HP:$h"
+  echo "$r" | grep -q "ALARM" && { echo "fdir: alarm"; exit 1; }
+  echo "$r" | grep -q -- '--More--' && { echo "fdir: More"; exit 1; }
+  echo "$r" | grep -E '^0[1-7] ' | tail -1 | grep -qE 'destroy|You kill|thin air|nothing there|dies|is killed' && break
+  [ -n "$h" ] && [ $((prev - h)) -ge 15 ] && { echo "fdir: big hit"; exit 1; }
+  [ -n "$h" ] && [ $((h * 10)) -lt $((mx * 6)) ] && { echo "fdir: HP low"; exit 1; }
+  prev=$h
+done
+slots/1/v | tail -1
