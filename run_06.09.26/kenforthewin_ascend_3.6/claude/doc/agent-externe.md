@@ -15,8 +15,12 @@ Dans la suite, `R` désigne ce dossier.
 
 ## 1. Ce que l'agent reçoit
 
-- **Un emplacement** (slot) numéroté de 1 à 8. Les emplacements 1, 3 et 8 sont
-  joués par Claude ; le **4** est prévu pour Codex (il était retiré).
+- **Un emplacement** (slot) numéroté : 1, 3 et 8 sont les parties de Claude, le
+  **4** est celui de Codex ; 2, 5, 6, 7 sont libres, et un nouveau numéro (9,
+  10, …) crée tout seul son dossier `slots/N/` (scripts/new_slot.sh). Le
+  dashboard, le recorder et la synchronisation prennent en compte tout
+  emplacement ouvert, quel que soit son numéro (jusqu'à 20 parties en même
+  temps : MAXPLAYERS dans la sysconf de NetHack).
 - **Une partie NetHack 3.6.7 vanilla** (Valkyrie naine loyale, comme les autres),
   qui tourne sur la machine **miniforum-worker** dans une session tmux.
 - **Des commandes** dans `R/slots/4/` : chacune envoie des touches ou lit l'écran

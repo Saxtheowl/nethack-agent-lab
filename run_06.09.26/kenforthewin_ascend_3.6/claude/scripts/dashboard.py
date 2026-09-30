@@ -27,6 +27,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import analytics
+from session import slot_ids
 import bags
 import frames
 from terminal import text_runs
@@ -398,7 +399,7 @@ def resources():
     last_push = _run(['git', '-C', str(git_root), 'log', '-1', '--format=%ct', 'origin/main']).strip()
     last_commit = _run(['git', '-C', str(git_root), 'log', '-1', '--format=%ct|%s']).strip().split('|', 1)
     wd = runs / 'watchdog.log'
-    slots = {s: slot_game(s) for s in '12345678'}
+    slots = {s: slot_game(s) for s in slot_ids()}
     helpers = sorted(p.name for p in (ROOT / 'scripts').iterdir() if p.is_file() and not p.name.endswith(('.pyc', '.json')))
     return {
         'now': time.time(),
@@ -453,7 +454,7 @@ def styles():
         plan = json.loads((RUNTIME / 'style-plan.json').read_text())
     except (FileNotFoundError, json.JSONDecodeError):
         plan = {'queue': [], 'history': []}
-    slots = {s: slot_game(s) for s in '12345678'}
+    slots = {s: slot_game(s) for s in slot_ids()}
     hist = history()
     per = {}
     for r in hist['runs']:
@@ -627,11 +628,11 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send((WEB / 'index.html').read_bytes(), 'text/html; charset=utf-8')
             if url.path == '/api/live':
                 slot = q.get('slot', '1')
-                if slot not in [str(n) for n in range(1, 9)]:
+                if slot not in slot_ids():
                     return self.send({'error': 'bad slot'}, code=400)
                 return self.send(live(slot))
             if url.path == '/api/games':
-                return self.send({'games': games(), 'slots': {s: slot_game(s) for s in '12345678'},
+                return self.send({'games': games(), 'slots': {s: slot_game(s) for s in slot_ids()},
                                   'wish': {k: wish_status().get(k) for k in ('attempts', 'running', 'fountains', 'quaffs')},
                                   'retired': (json.loads((RUNTIME / 'style-plan.json').read_text()).get('retired', [])
                                               if (RUNTIME / 'style-plan.json').exists() else []),

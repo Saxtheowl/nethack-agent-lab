@@ -30,7 +30,8 @@ PY
   mv .runtime/pc-stats.json.tmp .runtime/pc-stats.json
   push=(.runtime/pc-stats.json .runtime/style-plan.json config/styles.json)
   pull=()
-  for s in 1 2 3 4 5 6 7 8; do
+  for d in slots/*/; do  # every slot folder, whatever its number
+    s=${d#slots/}; s=${s%/}; [[ $s =~ ^[0-9]+$ ]] || continue
     if [ "$(cat .runtime/where-$s 2>/dev/null)" = worker ]; then
       pull+=(.runtime/slot-$s.json .runtime/public-feed-$s.json)
       g=$(gid .runtime/slot-$s.json); [ -n "$g" ] && pull+=("runs/games/$g")

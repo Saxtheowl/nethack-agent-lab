@@ -492,9 +492,10 @@ for (const b of document.querySelectorAll('nav.tabs button')) b.onclick = () => 
 
 /* ---------- LIVE tab ---------- */
 let liveSlot = hashState().slot || '1', liveTerm = null, GAMES = [], SLOTS = {}, WISH = null, RETIRED = [];
+const ALLSLOTS = () => Object.keys(SLOTS).sort((a, b) => a - b);  // every slots/N/ folder, any N
 function slotButtons() {
   const bar = $('#slotbar'); bar.textContent = '';
-  for (const s of ['1', '2', '3', '4', '5', '6', '7', '8'].filter(x => !RETIRED.includes(x))) {
+  for (const s of ALLSLOTS().filter(x => !RETIRED.includes(x))) {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     const st = meta ? meta.status : 'none';
     const b = el('button', {className: s === liveSlot ? 'on' : ''},
@@ -534,7 +535,7 @@ async function refreshGames() {
   try {
     const d = await api('/api/games');
     GAMES = d.games; SLOTS = d.slots; WISH = d.wish || null; RETIRED = d.retired || [];
-    if (RETIRED.includes(liveSlot)) { liveSlot = ['1','2','3','4','5','6','7','8'].find(x => !RETIRED.includes(x)) || '1'; }
+    if (RETIRED.includes(liveSlot)) { liveSlot = ALLSLOTS().find(x => !RETIRED.includes(x)) || '1'; }
     slotButtons();
     if (TAB !== 'dash') return;
     renderCards(); fillGameSelect();
@@ -547,11 +548,11 @@ const ICON = {item: '💎', monster: '👹', danger: '⚠️', progress: '🧭',
 const HEADLINES = {};
 function renderCards() {
   const wrap = $('#cards');
-  for (const s of ['1', '2', '3', '4', '5', '6', '7', '8']) {
+  for (const s of ALLSLOTS()) {
     const info = SLOTS[s], meta = info && GAMES.find(g => g.id === info.game_id);
     let card = wrap.querySelector(`[data-slot="${s}"]`);
     if (RETIRED.includes(s)) { if (card) card.remove(); continue; }  // only the active slots are shown
-    wrap.style.setProperty('--ncards', Math.max(1, Math.min(4, 8 - RETIRED.length)));
+    wrap.style.setProperty('--ncards', Math.max(1, Math.min(4, ALLSLOTS().filter(x => !RETIRED.includes(x)).length)));
     if (!card) {
       card = el('div', {className: 'panel card', title: 'Cliquer : les 3 moments clés des 1000 derniers tours'}); card.dataset.slot = s;
       card.innerHTML = `<div class="head"><b></b><span class="sub"></span><span class="badge"></span></div>
@@ -1455,7 +1456,7 @@ setInterval(() => {  // overlay texts while in big screen
   showTab(['dash', 'live', 'res'].includes(h.tab) ? h.tab : 'hist');
   if (h.game) { await loadGame(h.game, h.f === 'live' || h.f === 'death' ? h.f : +(h.f || 0)); if (h.big) toggleBig($('#rpanel'), true, false); }
   else if (GAMES.length && TAB === 'dash') {
-    const act = ['1','2','3','4','5','6','7','8'].filter(x => !RETIRED.includes(x)).map(x => SLOTS[x] && SLOTS[x].game_id).filter(Boolean);
+    const act = ALLSLOTS().filter(x => !RETIRED.includes(x)).map(x => SLOTS[x] && SLOTS[x].game_id).filter(Boolean);
     loadGame(act[0] || GAMES[0].id, 'live');
   }
   pollLive();

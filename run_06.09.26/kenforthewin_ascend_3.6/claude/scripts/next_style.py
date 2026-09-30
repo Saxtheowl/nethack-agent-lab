@@ -49,7 +49,8 @@ def choose(slot, styles):
 def main():
     slot = sys.argv[1]
     dry = '--dry-run' in sys.argv
-    styles = {str(s): slot_style(s) for s in range(1, 9)}
+    from session import slot_ids
+    styles = {s: slot_style(s) for s in slot_ids()}
     style = choose(slot, styles)
     if not dry:
         plan = json.loads(PLAN.read_text()) if PLAN.exists() else {'history': []}

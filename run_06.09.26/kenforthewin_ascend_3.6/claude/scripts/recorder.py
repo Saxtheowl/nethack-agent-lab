@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Continuous screen recorder for every game slot (1-3).
+"""Continuous screen recorder for every game slot (slots/N/, any N).
 
 Polls each slot's tmux pane a few times per second and appends a frame to
 runs/games/<game_id>/frames.jsonl whenever the screen changes, so any game
@@ -14,10 +14,9 @@ from datetime import datetime, timezone
 
 import bags
 import frames
-from session import SOCKET, RUNTIME, ROOT, HOST, slot_tmux, slot_where
+from session import SOCKET, RUNTIME, ROOT, HOST, slot_ids, slot_tmux, slot_where
 from terminal import text_runs
 
-SLOTS = tuple(str(n) for n in range(1, 9))
 SAVEDIR = ROOT / 'engine/install/games/lib/nethackdir/save'
 
 
@@ -77,7 +76,7 @@ def main():
     writers, alive, metas, last_meta, watchers = {}, {}, {}, 0, {}
     while True:
         now = time.time()
-        for slot in SLOTS:
+        for slot in slot_ids():
             info = slot_info(slot)
             if not info or slot_where(slot) != HOST:  # each machine records its own slots
                 continue

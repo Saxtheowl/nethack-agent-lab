@@ -54,6 +54,13 @@ TARGET = f'{SESSION}:0.0'
 TTYREC = shutil.which('ttyrec') or str(Path.home() / 'bin/ttyrec')
 
 
+def slot_ids():
+    """Every game slot, whatever its number: one folder slots/N/ with its
+    wrappers (scripts/new_slot.sh creates it). Sorted numerically."""
+    return sorted((d.name for d in (ROOT / 'slots').iterdir()
+                   if d.name.isdigit() and (d / 'k').exists()), key=int)
+
+
 def slot_tmux(slot):
     """(tmux socket, session) of a slot's game on this machine."""
     try:

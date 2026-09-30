@@ -9,6 +9,8 @@ N=$1; NAME=$2; STYLE=${3:-$(echo "$NAME" | tr 'A-Z' 'a-z')}
 R="$(cd "$(dirname "$0")/.." && pwd -P)"
 cd "$R"
 [[ "$NAME" =~ ^[A-Za-z][A-Za-z0-9]{0,15}$ ]] || { echo "name: letters/digits, max 16"; exit 1; }
+# a new slot number (9, 10, ...) gets its folder of wrappers first
+[ -x "slots/$N/k" ] || scripts/new_slot.sh "$N"
 python3 - "$N" <<'PY'
 import json, sys
 p = '.runtime/style-plan.json'; d = json.load(open(p))
